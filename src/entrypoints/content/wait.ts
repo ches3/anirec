@@ -16,9 +16,12 @@ export function wait(
 	}
 }
 
+// 再生開始からn秒待機
 function waitDelay(waitSecond: number, ctx: ContentScriptContext) {
 	return new Promise<void>((resolve, reject) => {
 		const timeout = setTimeout(resolve, waitSecond * 1000);
+
+		// ページ遷移時にクリーンアップ & reject
 		ctx.addEventListener(window, "wxt:locationchange", () => {
 			clearTimeout(timeout);
 			return reject();
@@ -26,6 +29,7 @@ function waitDelay(waitSecond: number, ctx: ContentScriptContext) {
 	});
 }
 
+// 再生終了まで待機
 function waitEnded(selector: string) {
 	return new Promise<void>((resolve, reject) => {
 		asyncQuerySelector(selector).then((elem) => {
@@ -42,6 +46,7 @@ function waitEnded(selector: string) {
 	});
 }
 
+// n秒間再生され続けるまで待機 (一時停止したら秒数リセット)
 function waitContinued(
 	waitSecond: number,
 	selector: string,
@@ -77,6 +82,7 @@ function waitContinued(
 				}
 			}, 1000);
 
+			// ページ遷移時にクリーンアップ & reject
 			ctx.addEventListener(window, "wxt:locationchange", () => {
 				cleanup();
 				return reject();

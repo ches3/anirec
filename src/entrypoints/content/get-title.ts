@@ -72,6 +72,8 @@ const abema = async () => {
 		return;
 	}
 
+	// 複数シーズンある作品の場合、シーズン名のみを取得
+	// e.g. 響け！ユーフォニアム | 響け!ユーフォニアム3
 	const workTitleMatch = workTitle.match(/^.* \| (.*)$/);
 	if (workTitleMatch) {
 		return {
