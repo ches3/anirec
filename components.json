@@ -9,7 +9,7 @@
 	},
 	"rsc": false,
 	"aliases": {
-		"utils": "@/lib/cn.ts",
+		"utils": "@/utils/cn.ts",
 		"components": "@/components"
 	}
 }
