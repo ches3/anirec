@@ -1,3 +1,4 @@
+import type { RecordTiming } from "@/utils/settings";
 import type { ContentScriptContext } from "wxt/client";
 import { asyncQuerySelector } from "./async-query-selector";
 

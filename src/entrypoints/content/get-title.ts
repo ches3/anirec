@@ -1,3 +1,4 @@
+import { fetchDMMContent, fetchDMMSeason } from "@/utils/fetch";
 import { asyncQuerySelector } from "./async-query-selector";
 
 export const getTitle = async (hostname: string) => {

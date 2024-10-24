@@ -1,3 +1,5 @@
+import { isPlayPage } from "@/utils/is-play-page";
+import { getRecordTiming, getToken } from "@/utils/settings";
 import { isRecorded, record, search } from "@ches3/annict-search";
 import type { ContentScriptContext } from "wxt/client";
 import { getTitle } from "./get-title";
