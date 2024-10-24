@@ -1,19 +1,18 @@
 import type { ContentScriptContext } from "wxt/client";
 import { asyncQuerySelector } from "./async-query-selector";
 
-export function wait(
-	whenRecord: "delay" | "ended" | "continued",
-	ctx: ContentScriptContext,
-) {
-	if (whenRecord === "delay") {
-		return waitDelay(180, ctx);
+export function wait(recordTiming: RecordTiming, ctx: ContentScriptContext) {
+	console.log("recordTiming", recordTiming);
+	if (recordTiming.type === "delay") {
+		return waitDelay(recordTiming.delaySeconds, ctx);
 	}
-	if (whenRecord === "ended") {
+	if (recordTiming.type === "ended") {
 		return waitEnded("video");
 	}
-	if (whenRecord === "continued") {
-		return waitContinued(90, "video", ctx);
+	if (recordTiming.type === "continued") {
+		return waitContinued(recordTiming.continuedSeconds, "video", ctx);
 	}
+	throw new Error("記録タイミングの値が不正です");
 }
 
 // 再生開始からn秒待機

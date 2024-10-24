@@ -40,7 +40,8 @@ async function script(ctx: ContentScriptContext) {
 
 	// 待機
 	console.log("start waiting");
-	await wait("continued", ctx);
+	const recordTiming = await getRecordTiming();
+	await wait(recordTiming, ctx);
 	console.log("end waiting");
 
 	// エピソードを検索
