@@ -48,7 +48,7 @@ function waitDelay(
 				// ページ遷移時にクリーンアップ & reject
 				ctx.addEventListener(window, "wxt:locationchange", () => {
 					clearTimeout(timeout);
-					return reject();
+					return reject(new Error("locationChange"));
 				});
 			});
 		});
@@ -115,7 +115,7 @@ function waitContinued(
 				// ページ遷移時にクリーンアップ & reject
 				ctx.addEventListener(window, "wxt:locationchange", () => {
 					cleanup();
-					return reject();
+					return reject(new Error("locationChange"));
 				});
 			});
 		});

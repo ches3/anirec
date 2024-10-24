@@ -41,7 +41,12 @@ async function script(ctx: ContentScriptContext) {
 	// 待機
 	console.log("start waiting");
 	const recordTiming = await getRecordTiming();
-	await wait(recordTiming, ctx);
+	await wait(recordTiming, ctx).catch((e: Error) => {
+		if (e.message === "locationChange") {
+			return;
+		}
+		throw e;
+	});
 	console.log("end waiting");
 
 	// エピソードを検索
