@@ -9,10 +9,18 @@ import { wait } from "./wait";
 export default defineContentScript({
 	matches: ["*://tv.dmm.com/*", "*://video.unext.jp/*", "*://abema.tv/*"],
 	main(ctx) {
-		script(ctx);
+		script(ctx).catch((e) => {
+			if (e instanceof Error && e.message !== "locationChange") {
+				console.error(e);
+			}
+		});
 		ctx.addEventListener(window, "wxt:locationchange", () => {
 			console.log("locationchange");
-			script(ctx);
+			script(ctx).catch((e) => {
+				if (e instanceof Error && e.message !== "locationChange") {
+					console.error(e);
+				}
+			});
 		});
 	},
 });
@@ -20,8 +28,7 @@ export default defineContentScript({
 async function script(ctx: ContentScriptContext) {
 	const token = await getToken();
 	if (!token) {
-		console.error("Annictトークンが設定されていません。");
-		return;
+		throw new Error("Annictトークンが設定されていません。");
 	}
 
 	// URLを検証
@@ -31,35 +38,30 @@ async function script(ctx: ContentScriptContext) {
 
 	// タイトルを取得
 	console.log("play page");
-	const title = await getTitleList(location.hostname).catch((e) => {
-		console.error("タイトルの取得に失敗しました。", e);
-		return;
+	const titleList = await getTitleList(location.hostname).catch((e) => {
+		if (e instanceof Error) {
+			throw new Error("タイトルの取得に失敗しました。", e);
+		}
 	});
-	if (!title) {
-		console.error("タイトルの取得に失敗しました。");
-		return;
+	if (!titleList) {
+		throw new Error("タイトルの取得に失敗しました。");
 	}
-	console.log("タイトル情報", title);
+	console.log("タイトル情報", titleList);
 
 	// 待機
 	console.log("start waiting");
 	const recordTiming = await getRecordTiming();
-	await wait(recordTiming, ctx).catch((e: Error) => {
-		if (e.message === "locationChange") {
-			return;
-		}
-		throw e;
-	});
+	await wait(recordTiming, ctx);
 	console.log("end waiting");
 
 	// エピソードを検索
-	const result = await searchFromList(title, token).catch((e) => {
-		console.error("エピソードの検索に失敗しました。", e);
-		return;
+	const result = await searchFromList(titleList, token).catch((e) => {
+		if (e instanceof Error) {
+			throw new Error("エピソードの検索に失敗しました。", e);
+		}
 	});
 	if (!result) {
-		console.error("エピソードが見つかりませんでした。", title);
-		return;
+		throw new Error("エピソードが見つかりませんでした。");
 	}
 
 	// エピソードを記録
@@ -69,8 +71,9 @@ async function script(ctx: ContentScriptContext) {
 		return;
 	}
 	await record(id, token).catch((e) => {
-		console.error("エピソードの記録に失敗しました。", e);
-		return;
+		if (e instanceof Error) {
+			throw new Error("エピソードの記録に失敗しました。", e);
+		}
 	});
 	console.log("エピソードを記録しました。", result);
 }
