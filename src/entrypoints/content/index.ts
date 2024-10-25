@@ -1,8 +1,9 @@
 import { isPlayPage } from "@/utils/is-play-page";
 import { getRecordTiming, getToken } from "@/utils/settings";
-import { isRecorded, record, search } from "@ches3/annict-search";
+import { isRecorded, record } from "@ches3/annict-search";
 import type { ContentScriptContext } from "wxt/client";
-import { getTitle } from "./get-title";
+import { getTitleList } from "./get-title";
+import { searchFromList } from "./search";
 import { wait } from "./wait";
 
 export default defineContentScript({
@@ -30,7 +31,7 @@ async function script(ctx: ContentScriptContext) {
 
 	// タイトルを取得
 	console.log("play page");
-	const title = await getTitle(location.hostname).catch((e) => {
+	const title = await getTitleList(location.hostname).catch((e) => {
 		console.error("タイトルの取得に失敗しました。", e);
 		return;
 	});
@@ -52,10 +53,7 @@ async function script(ctx: ContentScriptContext) {
 	console.log("end waiting");
 
 	// エピソードを検索
-	const result = await search(
-		{ workTitle: title.work, episodeTitle: title.episode },
-		token,
-	).catch((e) => {
+	const result = await searchFromList(title, token).catch((e) => {
 		console.error("エピソードの検索に失敗しました。", e);
 		return;
 	});

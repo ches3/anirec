@@ -1,7 +1,9 @@
 import { fetchDMMContent, fetchDMMSeason } from "@/utils/fetch";
 import { asyncQuerySelector } from "./async-query-selector";
 
-export const getTitle = async (hostname: string) => {
+export const getTitleList = async (
+	hostname: string,
+): Promise<Title[] | undefined> => {
 	if (hostname === "tv.dmm.com") {
 		return await dmm();
 	}
@@ -14,7 +16,7 @@ export const getTitle = async (hostname: string) => {
 	throw new Error("サポートされていないサイトです。");
 };
 
-const dmm = async () => {
+const dmm = async (): Promise<Title[] | undefined> => {
 	const searchParams = new URLSearchParams(location.search);
 	const seasonId = searchParams.get("season");
 	if (!seasonId) {
@@ -30,39 +32,47 @@ const dmm = async () => {
 		return;
 	}
 	if (season.seasonType === "SINGLE_EPISODE") {
-		return {
-			work: season.seasonName,
-			episode: "",
-		};
+		return [
+			{
+				workTitle: season.seasonName,
+				episodeTitle: "",
+			},
+		];
 	}
 	const content = await fetchDMMContent(contentId);
 	if (!content) {
 		return;
 	}
-	const episodeTitle = content.episodeTitle
-		? `${content.episodeNumberName} ${content.episodeTitle}`
-		: content.episodeNumberName;
+	const episodeTitle = `${content.episodeNumberName} ${content.episodeTitle}`;
 
-	return {
-		work: season.seasonName,
-		episode: episodeTitle,
-	};
+	return [
+		{
+			workTitle: season.seasonName,
+			episodeTitle: episodeTitle,
+		},
+		{
+			workTitle: `${season.titleName} ${season.seasonName}`,
+			episodeTitle: episodeTitle,
+		},
+	];
 };
 
-const unext = async () => {
+const unext = async (): Promise<Title[] | undefined> => {
 	const workTitle = (await asyncQuerySelector("h2"))?.textContent;
 	const episodeTitle = (await asyncQuerySelector("h3"))?.textContent || "";
 	if (!workTitle) {
 		return;
 	}
 
-	return {
-		work: workTitle,
-		episode: episodeTitle,
-	};
+	return [
+		{
+			workTitle: workTitle,
+			episodeTitle: episodeTitle,
+		},
+	];
 };
 
-const abema = async () => {
+const abema = async (): Promise<Title[] | undefined> => {
 	const workTitle = (
 		await asyncQuerySelector(".com-video-EpisodeTitle__series-info")
 	)?.textContent;
@@ -73,18 +83,27 @@ const abema = async () => {
 		return;
 	}
 
-	// 複数シーズンある作品の場合、シーズン名のみを取得
+	// 複数シーズンある作品の場合
 	// e.g. 響け！ユーフォニアム | 響け!ユーフォニアム3
-	const workTitleMatch = workTitle.match(/^.* \| (.*)$/);
+	// e.g. ちはやふる | 第1期
+	const workTitleMatch = workTitle.match(/^(.*) \| (.*)$/);
 	if (workTitleMatch) {
-		return {
-			work: workTitleMatch[1],
-			episode: episodeTitle,
-		};
+		return [
+			{
+				workTitle: workTitleMatch[2],
+				episodeTitle: episodeTitle,
+			},
+			{
+				workTitle: `${workTitleMatch[1]} ${workTitleMatch[2]}`,
+				episodeTitle: episodeTitle,
+			},
+		];
 	}
 
-	return {
-		work: workTitle,
-		episode: episodeTitle,
-	};
+	return [
+		{
+			workTitle: workTitle,
+			episodeTitle: episodeTitle,
+		},
+	];
 };

@@ -28,6 +28,7 @@ export const fetchDMMSeason = async (seasonId: string) => {
 	const Schema = object({
 		data: object({
 			video: object({
+				titleName: string(),
 				seasonName: string(),
 				seasonType: union([
 					literal("SINGLE_EPISODE"),
@@ -40,6 +41,7 @@ export const fetchDMMSeason = async (seasonId: string) => {
 	const query = `
     query FetchVideo {
       video(id: "${seasonId}") {
+				titleName
         seasonName
         seasonType
       }
