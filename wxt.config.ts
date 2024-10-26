@@ -13,6 +13,6 @@ export default defineConfig({
 		name: "Annict Recorder",
 		version: "0.1.0",
 		description: "",
-		permissions: ["storage"],
+		permissions: ["storage", "identity"],
 	},
 });

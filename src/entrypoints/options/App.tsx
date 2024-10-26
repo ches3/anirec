@@ -1,18 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
 	type RecordTiming,
 	getRecordTiming,
-	getToken,
 	saveRecordTiming,
-	saveToken,
 } from "@/utils/settings";
 import { RecordTimingOption } from "./RecordTimingOption";
+import { TokenOption } from "./TokenOption";
 
 function App() {
-	const [token, setToken] = useState<string>();
-
 	const [recordTimingType, setRecordTimingType] =
 		useState<RecordTiming["type"]>();
 	const [continuedSeconds, setContinuedSeconds] = useState<number>();
@@ -22,8 +17,6 @@ function App() {
 
 	useEffect(() => {
 		(async () => {
-			setToken((await getToken()) || "");
-
 			const recordTiming = await getRecordTiming();
 			setRecordTimingType(recordTiming.type);
 			setContinuedSeconds(recordTiming.continuedSeconds);
@@ -32,7 +25,6 @@ function App() {
 	}, []);
 
 	const handleSave = async () => {
-		await saveToken(token || "");
 		await saveRecordTiming(recordTimingType, continuedSeconds, delaySeconds);
 
 		setSaved(true);
@@ -43,14 +35,7 @@ function App() {
 
 	return (
 		<div className="mx-6 mt-2 mb-8 text-base">
-			<div>
-				<Label className="font-bold text-base">Annict Token</Label>
-				<Input
-					value={token}
-					onChange={(e) => setToken(e.target.value)}
-					className="mt-2"
-				/>
-			</div>
+			<TokenOption />
 			<RecordTimingOption
 				type={recordTimingType}
 				setType={setRecordTimingType}

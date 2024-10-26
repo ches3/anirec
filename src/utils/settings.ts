@@ -5,10 +5,6 @@ export async function getToken() {
 	return token;
 }
 
-export async function saveToken(token: string) {
-	await storage.setItem<string>("sync:token", token);
-}
-
 export type RecordTiming = {
 	type: "continued" | "delay" | "ended";
 	continuedSeconds: number;
