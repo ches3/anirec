@@ -1,4 +1,4 @@
-import { search } from "@ches3/annict-search";
+import { type SearchResult, search } from "@ches3/annict-search";
 
 export const searchFromList = async (
 	list: Title[],

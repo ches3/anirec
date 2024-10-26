@@ -2,10 +2,11 @@ import type { BaseIssue, BaseSchema } from "valibot";
 import { literal, object, parse, string, union } from "valibot";
 
 export const fetchGql = async <T>(
+	endpoint: string,
 	query: string,
 	schema: BaseSchema<unknown, T, BaseIssue<unknown>>,
 ) => {
-	const res = await fetch("https://api.tv.dmm.com/graphql", {
+	const res = await fetch(endpoint, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -48,7 +49,9 @@ export const fetchDMMSeason = async (seasonId: string) => {
     }
   `;
 
-	const data = await fetchGql(query, Schema);
+	const endpoint = "https://api.tv.dmm.com/graphql";
+
+	const data = await fetchGql(endpoint, query, Schema);
 	return data?.data.video;
 };
 
@@ -71,6 +74,41 @@ export const fetchDMMContent = async (contentId: string) => {
     }
   `;
 
-	const data = await fetchGql(query, Schema);
+	const endpoint = "https://api.tv.dmm.com/graphql";
+
+	const data = await fetchGql(endpoint, query, Schema);
 	return data?.data.videoContent;
+};
+
+export const fetchUnext = async (workId: string, episodeId: string) => {
+	const Schema = object({
+		data: object({
+			webfront_title_stage: object({
+				titleName: string(),
+				publishStyleCode: union([literal("VOD_SINGLE"), literal("VOD_MULTI")]),
+				episode: object({
+					displayNo: string(),
+					episodeName: string(),
+				}),
+			}),
+		}),
+	});
+
+	const query = `
+		query FetchTitle {
+			webfront_title_stage(id: "${workId}") {
+				titleName
+				publishStyleCode
+				episode(id: "${episodeId}") {
+					displayNo
+					episodeName
+				}
+			}
+		}
+	`;
+
+	const endpoint = "https://cc.unext.jp";
+
+	const data = await fetchGql(endpoint, query, Schema);
+	return data?.data.webfront_title_stage;
 };

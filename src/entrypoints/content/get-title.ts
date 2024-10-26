@@ -1,4 +1,4 @@
-import { fetchDMMContent, fetchDMMSeason } from "@/utils/fetch";
+import { fetchDMMContent, fetchDMMSeason, fetchUnext } from "@/utils/fetch";
 import { asyncQuerySelector } from "./async-query-selector";
 
 export const getTitleList = async (
@@ -35,6 +35,7 @@ const dmm = async (): Promise<Title[] | undefined> => {
 		return [
 			{
 				workTitle: season.seasonName,
+				episodeNumber: "",
 				episodeTitle: "",
 			},
 		];
@@ -43,31 +44,49 @@ const dmm = async (): Promise<Title[] | undefined> => {
 	if (!content) {
 		return;
 	}
-	const episodeTitle = `${content.episodeNumberName} ${content.episodeTitle}`;
 
 	return [
 		{
 			workTitle: season.seasonName,
-			episodeTitle: episodeTitle,
+			episodeNumber: content.episodeNumberName,
+			episodeTitle: content.episodeTitle,
 		},
 		{
 			workTitle: `${season.titleName} ${season.seasonName}`,
-			episodeTitle: episodeTitle,
+			episodeNumber: content.episodeNumberName,
+			episodeTitle: content.episodeTitle,
 		},
 	];
 };
 
 const unext = async (): Promise<Title[] | undefined> => {
-	const workTitle = (await asyncQuerySelector("h2"))?.textContent;
-	const episodeTitle = (await asyncQuerySelector("h3"))?.textContent || "";
-	if (!workTitle) {
+	const pathname = location.pathname;
+	const pathnameMatch = pathname.match(/^\/play\/([^/]+)\/([^/]+)/);
+	if (!pathnameMatch) {
 		return;
+	}
+	const workId = pathnameMatch[1];
+	const episodeId = pathnameMatch[2];
+
+	const data = await fetchUnext(workId, episodeId);
+
+	console.log(data);
+
+	if (data.publishStyleCode === "VOD_SINGLE") {
+		return [
+			{
+				workTitle: data.titleName,
+				episodeNumber: "",
+				episodeTitle: "",
+			},
+		];
 	}
 
 	return [
 		{
-			workTitle: workTitle,
-			episodeTitle: episodeTitle,
+			workTitle: data.titleName,
+			episodeNumber: data.episode.displayNo,
+			episodeTitle: data.episode.episodeName,
 		},
 	];
 };
