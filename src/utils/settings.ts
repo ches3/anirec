@@ -41,3 +41,32 @@ export async function saveRecordTiming(
 			delaySeconds !== undefined ? delaySeconds : prevRecordTiming.delaySeconds,
 	});
 }
+
+export type ServiceEnabled = {
+	dmm: boolean;
+	unext: boolean;
+	abema: boolean;
+	danime: boolean;
+};
+
+export async function getEnabledServices() {
+	const enabled = await storage.getItem<ServiceEnabled>("sync:enabledServices");
+	if (enabled) {
+		return enabled;
+	}
+	return {
+		dmm: true,
+		unext: true,
+		abema: true,
+		danime: true,
+	};
+}
+
+export async function setEnabledServices(enabled: ServiceEnabled) {
+	await storage.setItem<ServiceEnabled>("sync:enabledServices", {
+		dmm: enabled.dmm,
+		unext: enabled.unext,
+		abema: enabled.abema,
+		danime: enabled.danime,
+	});
+}
