@@ -7,7 +7,12 @@ import { searchFromList } from "./search";
 import { wait } from "./wait";
 
 export default defineContentScript({
-	matches: ["*://tv.dmm.com/*", "*://video.unext.jp/*", "*://abema.tv/*"],
+	matches: [
+		"*://tv.dmm.com/*",
+		"*://video.unext.jp/*",
+		"*://abema.tv/*",
+		"*://animestore.docomo.ne.jp/*",
+	],
 	main(ctx) {
 		script(ctx).catch((e) => {
 			if (e instanceof Error && e.message !== "locationChange") {
