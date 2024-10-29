@@ -12,7 +12,6 @@ async function getOAuthCode(): Promise<string> {
 	});
 	const paramsStr = params.toString();
 	const requestUrl = `https://annict.com/oauth/authorize?${paramsStr}`;
-	console.log("requestUrl", requestUrl);
 
 	const responseUrl = await browser.identity.launchWebAuthFlow({
 		url: requestUrl,
@@ -27,9 +26,14 @@ async function getOAuthCode(): Promise<string> {
 
 export async function generateToken(): Promise<void> {
 	const code = await getOAuthCode();
-	console.log("code", code);
+	const redirectUrl = browser.identity.getRedirectURL();
+	const params = new URLSearchParams({
+		code,
+		redirect_uri: redirectUrl,
+	});
+	const paramsStr = params.toString();
 	const res = await fetch(
-		`${import.meta.env.WXT_SERVER_URL}/token?code=${code}`,
+		`${import.meta.env.WXT_SERVER_URL}/token?${paramsStr}`,
 	);
 	if (!res.ok) {
 		throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
@@ -37,7 +41,6 @@ export async function generateToken(): Promise<void> {
 	const json = await res.json();
 	const token = json.access_token;
 	await storage.setItem<string>("sync:token", token);
-	console.log("token", token);
 }
 
 export async function revokeToken(): Promise<void> {
