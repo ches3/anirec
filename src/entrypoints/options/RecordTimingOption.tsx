@@ -1,15 +1,19 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import type { RecordTiming } from "@/utils/settings";
+import {
+	type RecordTiming,
+	getRecordTiming,
+	saveRecordTiming,
+} from "@/utils/settings";
 
 function SecondInput({
 	value,
-	setValue,
+	onSecondsChange,
 	isDisabled,
 }: {
 	value: number;
-	setValue: React.Dispatch<React.SetStateAction<number | undefined>>;
+	onSecondsChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	isDisabled: boolean;
 }) {
 	return (
@@ -17,10 +21,7 @@ function SecondInput({
 			<Input
 				className="w-14 text-right"
 				value={value}
-				onChange={(e) => {
-					const number = Number(e.target.value);
-					setValue(number);
-				}}
+				onChange={onSecondsChange}
 				disabled={isDisabled}
 				type="number"
 			/>
@@ -33,13 +34,13 @@ function RecordTimingOptionItem({
 	value,
 	label,
 	secondsValue,
-	setSecondsValue,
+	onSecondsChange,
 	isSelected,
 }: {
 	value: RecordTiming["type"];
 	label: string;
 	secondsValue?: number;
-	setSecondsValue?: React.Dispatch<React.SetStateAction<number | undefined>>;
+	onSecondsChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	isSelected: boolean;
 }) {
 	return (
@@ -50,10 +51,10 @@ function RecordTimingOptionItem({
 					{label}
 				</Label>
 			</div>
-			{secondsValue && setSecondsValue && (
+			{secondsValue !== undefined && onSecondsChange && (
 				<SecondInput
 					value={secondsValue}
-					setValue={setSecondsValue}
+					onSecondsChange={onSecondsChange}
 					isDisabled={!isSelected}
 				/>
 			)}
@@ -61,45 +62,59 @@ function RecordTimingOptionItem({
 	);
 }
 
-export function RecordTimingOption({
-	type,
-	setType,
-	continuedSeconds,
-	setContinuedSeconds,
-	delaySeconds,
-	setDelaySeconds,
-}: {
-	type: RecordTiming["type"] | undefined;
-	setType: React.Dispatch<
-		React.SetStateAction<RecordTiming["type"] | undefined>
-	>;
-	continuedSeconds: number | undefined;
-	setContinuedSeconds: React.Dispatch<React.SetStateAction<number | undefined>>;
-	delaySeconds: number | undefined;
-	setDelaySeconds: React.Dispatch<React.SetStateAction<number | undefined>>;
-}) {
+export function RecordTimingOption({ className }: { className?: string }) {
+	const [type, setType] = useState<RecordTiming["type"]>();
+	const [continuedSeconds, setContinuedSeconds] = useState<number>();
+	const [delaySeconds, setDelaySeconds] = useState<number>();
+
+	useEffect(() => {
+		(async () => {
+			const recordTiming = await getRecordTiming();
+			setType(recordTiming.type);
+			setContinuedSeconds(recordTiming.continuedSeconds);
+			setDelaySeconds(recordTiming.delaySeconds);
+		})();
+	}, []);
+
 	return (
-		<div className="mt-6">
+		<div className={className}>
 			<Label className="font-bold text-base">記録タイミング</Label>
 			<div className="mt-4">
 				<RadioGroup
-					defaultValue="continued"
 					value={type}
-					onValueChange={(value) => setType(value as RecordTiming["type"])}
+					onValueChange={async (v) => {
+						const value = v as RecordTiming["type"];
+						setType(value as RecordTiming["type"]);
+						await saveRecordTiming(value, continuedSeconds, delaySeconds);
+					}}
 					className="flex flex-col gap-4"
 				>
 					<RecordTimingOptionItem
 						value="continued"
 						label="n秒間再生し続けたら記録"
 						secondsValue={continuedSeconds}
-						setSecondsValue={setContinuedSeconds}
+						onSecondsChange={async (e) => {
+							const num = Number(e.target.value);
+							if (Number.isNaN(num)) {
+								return;
+							}
+							setContinuedSeconds(Number(num));
+							await saveRecordTiming(type, num, delaySeconds);
+						}}
 						isSelected={type === "continued"}
 					/>
 					<RecordTimingOptionItem
 						value="delay"
 						label="再生開始からn秒後に記録"
 						secondsValue={delaySeconds}
-						setSecondsValue={setDelaySeconds}
+						onSecondsChange={async (e) => {
+							const num = Number(e.target.value);
+							if (Number.isNaN(num)) {
+								return;
+							}
+							setDelaySeconds(Number(num));
+							await saveRecordTiming(type, continuedSeconds, num);
+						}}
 						isSelected={type === "delay"}
 					/>
 					<RecordTimingOptionItem
