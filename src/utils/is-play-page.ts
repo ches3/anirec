@@ -12,5 +12,8 @@ export const isPlayPage = (url: string): boolean => {
 	if (hostname === "abema.tv") {
 		return !!pathname.match(/\/video\/episode\//);
 	}
+	if (hostname === "animestore.docomo.ne.jp") {
+		return !!pathname.match(/\/animestore\/sc_d_pc/);
+	}
 	return false;
 };

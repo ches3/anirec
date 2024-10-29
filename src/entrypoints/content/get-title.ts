@@ -13,6 +13,9 @@ export const getTitleList = async (
 	if (hostname === "abema.tv") {
 		return await abema();
 	}
+	if (hostname === "animestore.docomo.ne.jp") {
+		return await danime();
+	}
 	throw new Error("サポートされていないサイトです。");
 };
 
@@ -125,4 +128,17 @@ const abema = async (): Promise<Title[] | undefined> => {
 			episodeTitle: episodeTitle,
 		},
 	];
+};
+
+const danime = async (): Promise<Title[] | undefined> => {
+	const workTitle = (await asyncQuerySelector(".backInfoTxt1"))?.textContent;
+	if (!workTitle) {
+		return;
+	}
+	const episodeNumber =
+		(await asyncQuerySelector(".backInfoTxt2"))?.textContent || "";
+	const episodeTitle =
+		(await asyncQuerySelector(".backInfoTxt3"))?.textContent || "";
+
+	return [{ workTitle, episodeNumber, episodeTitle }];
 };
