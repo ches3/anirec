@@ -62,7 +62,7 @@ export async function getEnabledServices() {
 	};
 }
 
-export async function setEnabledServices(enabled: ServiceEnabled) {
+export async function saveEnabledServices(enabled: ServiceEnabled) {
 	await storage.setItem<ServiceEnabled>("sync:enabledServices", {
 		dmm: enabled.dmm,
 		unext: enabled.unext,

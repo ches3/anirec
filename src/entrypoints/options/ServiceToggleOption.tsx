@@ -1,6 +1,10 @@
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { type ServiceEnabled, getEnabledServices } from "@/utils/settings";
+import {
+	type ServiceEnabled,
+	getEnabledServices,
+	saveEnabledServices,
+} from "@/utils/settings";
 
 function ServiceToggleOptionItem({
 	id,
@@ -43,6 +47,7 @@ export function ServiceToggleOption({ className }: { className?: string }) {
 		}
 		const newEnabled = { ...enabled, [id]: isEnabled };
 		setEnabled(newEnabled);
+		await saveEnabledServices(newEnabled);
 	};
 
 	return (

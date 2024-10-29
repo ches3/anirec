@@ -37,7 +37,7 @@ async function script(ctx: ContentScriptContext) {
 	}
 
 	// URLを検証
-	if (!isPlayPage(location.href)) {
+	if (!(await isPlayPage(location.href))) {
 		return;
 	}
 
