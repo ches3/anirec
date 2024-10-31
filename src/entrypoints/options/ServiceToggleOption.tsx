@@ -24,7 +24,7 @@ function ServiceToggleOptionItem({
 				checked={enabled}
 				onCheckedChange={(value) => onToggle(id, value)}
 			/>
-			<Label htmlFor={id} className="pl-4 cursor-pointer">
+			<Label htmlFor={id} className="pl-4 cursor-pointer font-normal text-base">
 				{label}
 			</Label>
 		</div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { generateToken, revokeToken } from "@/utils/auth";
+import { cn } from "@/utils/cn";
 
 function LoginButton({
 	setExists,
@@ -18,7 +19,14 @@ function LoginButton({
 	};
 
 	return (
-		<Button type="button" onClick={handleClick} className={className}>
+		<Button
+			type="button"
+			onClick={handleClick}
+			className={cn(
+				"bg-annict text-annict-foreground hover:bg-annict-hover",
+				className,
+			)}
+		>
 			ログイン
 		</Button>
 	);
@@ -41,7 +49,12 @@ function LogoutButton({
 	};
 
 	return (
-		<Button type="button" onClick={handleClick} className={className}>
+		<Button
+			type="button"
+			onClick={handleClick}
+			variant="secondary"
+			className={cn("hover:bg-secondary-hover", className)}
+		>
 			ログアウト
 		</Button>
 	);
@@ -59,7 +72,7 @@ export function TokenOption({ className }: { className?: string }) {
 
 	return (
 		<div className={className}>
-			<h2 className="font-bold">Annict連携</h2>
+			<h2 className="font-bold text-lg">Annict連携</h2>
 			{existsToken ? (
 				<LogoutButton setExists={setExistsToken} className="mt-4" />
 			) : (
