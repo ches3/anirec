@@ -34,7 +34,6 @@ export default defineConfig({
 			description: "",
 			permissions,
 			browser_specific_settings: browserSpecificSettings[browser],
-			a: "a",
 		};
 	},
 });
