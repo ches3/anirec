@@ -73,8 +73,6 @@ const unext = async (): Promise<Title[] | undefined> => {
 
 	const data = await fetchUnext(workId, episodeId);
 
-	console.log(data);
-
 	if (data.publishStyleCode === "VOD_SINGLE") {
 		return [
 			{

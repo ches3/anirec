@@ -3,7 +3,6 @@ import type { ContentScriptContext } from "wxt/client";
 import { asyncQuerySelector } from "./async-query-selector";
 
 export function wait(recordTiming: RecordTiming, ctx: ContentScriptContext) {
-	console.log("recordTiming", recordTiming);
 	if (recordTiming.type === "delay") {
 		return waitDelay(recordTiming.delaySeconds, "video", ctx);
 	}
@@ -105,7 +104,6 @@ function waitContinued(
 
 				// 1秒ごとに再生時間をチェック
 				const interval = setInterval(() => {
-					console.log("interval");
 					const playTime = elem.currentTime - startTime;
 					if (playTime > waitSecond) {
 						cleanup();

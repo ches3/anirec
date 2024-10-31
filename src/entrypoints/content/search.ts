@@ -5,7 +5,6 @@ export const searchFromList = async (
 	token: string,
 ): Promise<SearchResult> => {
 	for (const title of list) {
-		console.log("searching", title);
 		const result = await search(title, token);
 		if (result) {
 			return result;

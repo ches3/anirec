@@ -20,7 +20,6 @@ export default defineContentScript({
 			}
 		});
 		ctx.addEventListener(window, "wxt:locationchange", () => {
-			console.log("locationchange");
 			script(ctx).catch((e) => {
 				if (e instanceof Error && e.message !== "locationChange") {
 					console.error(e);
@@ -42,7 +41,6 @@ async function script(ctx: ContentScriptContext) {
 	}
 
 	// タイトルを取得
-	console.log("play page");
 	const titleList = await getTitleList(location.hostname).catch((e) => {
 		if (e instanceof Error) {
 			throw new Error("タイトルの取得に失敗しました。", e);
@@ -54,10 +52,8 @@ async function script(ctx: ContentScriptContext) {
 	console.log("タイトル情報", titleList);
 
 	// 待機
-	console.log("start waiting");
 	const recordTiming = await getRecordTiming();
 	await wait(recordTiming, ctx);
-	console.log("end waiting");
 
 	// エピソードを検索
 	const result = await searchFromList(titleList, token).catch((e) => {
