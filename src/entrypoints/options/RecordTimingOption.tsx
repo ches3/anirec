@@ -24,6 +24,7 @@ function SecondInput({
 				onChange={onSecondsChange}
 				disabled={isDisabled}
 				type="number"
+				min={0}
 			/>
 			<span className={isDisabled ? "opacity-50" : ""}>秒</span>
 		</div>
