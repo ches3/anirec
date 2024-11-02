@@ -72,7 +72,7 @@ function waitEnded(selector: string) {
 	});
 }
 
-// n秒間再生され続けるまで待機 (一時停止したら秒数リセット)
+// 合計n秒間再生されるまで待機 (一時停止中はカウントしない)
 function waitContinued(
 	waitSecond: number,
 	selector: string,
@@ -84,38 +84,23 @@ function waitContinued(
 				return reject(new Error("video要素の取得に失敗しました"));
 			}
 
-			// 再生開始まで待機
-			// レジューム再生時に即resolveされるのを防ぐため
-			waitPlaying(elem as HTMLVideoElement).then(() => {
-				let startTime = elem.currentTime;
+			let totalTime = 0;
 
-				const resetTime = () => {
-					startTime = elem.currentTime;
-				};
-
-				const cleanup = () => {
+			const interval = setInterval(() => {
+				if (elem.paused) {
+					return;
+				}
+				totalTime += 1;
+				if (totalTime >= waitSecond) {
 					clearInterval(interval);
-					elem.removeEventListener("pause", resetTime);
-					elem.removeEventListener("seeked", resetTime);
-				};
+					return resolve();
+				}
+			}, 1000);
 
-				elem.addEventListener("pause", resetTime);
-				elem.addEventListener("seeked", resetTime);
-
-				// 1秒ごとに再生時間をチェック
-				const interval = setInterval(() => {
-					const playTime = elem.currentTime - startTime;
-					if (playTime > waitSecond) {
-						cleanup();
-						return resolve();
-					}
-				}, 1000);
-
-				// ページ遷移時にクリーンアップ & reject
-				ctx.addEventListener(window, "wxt:locationchange", () => {
-					cleanup();
-					return reject(new Error("locationChange"));
-				});
+			// ページ遷移時にクリーンアップ & reject
+			ctx.addEventListener(window, "wxt:locationchange", () => {
+				clearInterval(interval);
+				return reject(new Error("locationChange"));
 			});
 		});
 	});
