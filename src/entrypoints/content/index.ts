@@ -1,5 +1,9 @@
 import { isPlayPage } from "@/utils/is-play-page";
-import { getRecordTiming, getToken } from "@/utils/settings";
+import {
+	getPreventDuplicateDays,
+	getRecordTiming,
+	getToken,
+} from "@/utils/settings";
 import { isRecorded, record } from "@ches3/annict-search";
 import type { ContentScriptContext } from "wxt/client";
 import { getTitleList } from "./get-title";
@@ -67,7 +71,8 @@ async function script(ctx: ContentScriptContext) {
 
 	// エピソードを記録
 	const id = result.episode?.id || result.id;
-	if (await isRecorded(id, 7, token)) {
+	const days = await getPreventDuplicateDays();
+	if (days && (await isRecorded(id, days, token))) {
 		console.log("このエピソードは記録済みです。", result);
 		return;
 	}

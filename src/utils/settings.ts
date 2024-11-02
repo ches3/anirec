@@ -70,3 +70,15 @@ export async function saveEnabledServices(enabled: ServiceEnabled) {
 		danime: enabled.danime,
 	});
 }
+
+export async function getPreventDuplicateDays() {
+	const days = await storage.getItem<number>("sync:preventDuplicateDays");
+	if (days !== null) {
+		return days;
+	}
+	return 7;
+}
+
+export async function savePreventDuplicateDays(days: number) {
+	await storage.setItem<number>("sync:preventDuplicateDays", days);
+}
