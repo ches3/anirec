@@ -17,6 +17,9 @@ async function getOAuthCode(): Promise<string> {
 		url: requestUrl,
 		interactive: true,
 	});
+	if (!responseUrl) {
+		throw new Error("Authorization failed.");
+	}
 	const code = new URL(responseUrl).searchParams.get("code");
 	if (!code) {
 		throw new Error("Authorization failed.");

@@ -1,5 +1,5 @@
 import type { RecordTiming } from "@/utils/settings";
-import type { ContentScriptContext } from "wxt/client";
+import type { ContentScriptContext } from "#imports";
 import { asyncQuerySelector } from "./async-query-selector";
 
 export function wait(recordTiming: RecordTiming, ctx: ContentScriptContext) {

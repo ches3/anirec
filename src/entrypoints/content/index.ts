@@ -5,7 +5,7 @@ import {
 	getToken,
 } from "@/utils/settings";
 import { isRecorded, record } from "@ches3/annict-search";
-import type { ContentScriptContext } from "wxt/client";
+import type { ContentScriptContext } from "#imports";
 import { getTitleList } from "./get-title";
 import { searchFromList } from "./search";
 import { wait } from "./wait";
