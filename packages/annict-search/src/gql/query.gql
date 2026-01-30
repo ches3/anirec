@@ -1,0 +1,73 @@
+query searchWorks($titles: [String!]) {
+	searchWorks(titles: $titles) {
+		nodes {
+			id
+			title
+			noEpisodes
+			episodes(orderBy: { field: SORT_NUMBER, direction: ASC }) {
+				nodes {
+					id
+					title
+					number
+					numberText
+				}
+			}
+			seriesList {
+				nodes {
+					name
+				}
+			}
+		}
+	}
+}
+
+query viewerActivities($last: Int, $after: String) {
+	viewer {
+		activities(
+			first: $last
+			after: $after
+			orderBy: { field: CREATED_AT, direction: DESC }
+		) {
+			edges {
+				item {
+					... on Review {
+						__typename
+						createdAt
+						work {
+							id
+							title
+						}
+					}
+					... on Record {
+						__typename
+						createdAt
+						work {
+							id
+							title
+						}
+						episode {
+							id
+							numberText
+							title
+						}
+					}
+				}
+			}
+			pageInfo {
+				endCursor
+			}
+		}
+	}
+}
+
+mutation createRecord($id: ID!) {
+	createRecord(input: { episodeId: $id }) {
+		clientMutationId
+	}
+}
+
+mutation createReview($id: ID!) {
+	createReview(input: { workId: $id, body: "" }) {
+		clientMutationId
+	}
+}

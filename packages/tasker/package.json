@@ -1,0 +1,10 @@
+{
+	"name": "@anirec/tasker",
+	"private": true,
+	"scripts": {
+		"build": "tsup"
+	},
+	"dependencies": {
+		"@anirec/annict-search": "workspace:*"
+	}
+}

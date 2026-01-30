@@ -1,41 +1,13 @@
 {
 	"name": "anirec",
 	"private": true,
-	"type": "module",
-	"scripts": {
-		"dev": "wxt",
-		"dev:firefox": "wxt -b firefox",
-		"build": "wxt build",
-		"build:firefox": "wxt build -b firefox",
-		"zip": "wxt zip",
-		"zip:firefox": "wxt zip -b firefox",
-		"compile": "tsc --noEmit"
-	},
-	"dependencies": {
-		"@ches3/annict-search": "^0.2.0",
-		"@radix-ui/react-label": "^2.1.0",
-		"@radix-ui/react-radio-group": "^1.2.1",
-		"@radix-ui/react-slot": "^1.1.0",
-		"@radix-ui/react-switch": "^1.1.1",
-		"class-variance-authority": "^0.7.0",
-		"clsx": "^2.1.1",
-		"lucide-react": "^0.451.0",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
-		"tailwind-merge": "^2.5.4",
-		"tailwindcss-animate": "^1.0.7",
-		"valibot": "^0.42.1"
-	},
+	"workspaces": [
+		"packages/*"
+	],
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"@types/chrome": "^0.0.270",
-		"@types/react": "^18.3.12",
-		"@types/react-dom": "^18.3.1",
-		"@wxt-dev/module-react": "^1.1.1",
-		"autoprefixer": "^10.4.20",
-		"postcss": "^8.4.47",
-		"tailwindcss": "^3.4.14",
+		"@biomejs/biome": "^2.3.13",
+		"tsup": "^8.3.5",
 		"typescript": "^5.6.3",
-		"wxt": "^0.20.13"
+		"vitest": "^2.1.3"
 	}
 }
