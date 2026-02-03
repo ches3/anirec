@@ -7,11 +7,12 @@
 		".": "./src/index.ts"
 	},
 	"scripts": {
+		"typecheck": "tsc --noEmit",
 		"test": "vitest",
+		"test:run": "vitest run",
 		"gql-gen": "graphql-codegen",
-		"lint": "biome lint --write ./src",
-		"format": "biome format --write ./src",
-		"check": "biome check --write ./src"
+		"check": "biome check --write .",
+		"check:dry": "biome check ."
 	},
 	"devDependencies": {
 		"@graphql-codegen/cli": "^5.0.3",

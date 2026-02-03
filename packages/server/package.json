@@ -3,7 +3,9 @@
 	"private": true,
 	"scripts": {
 		"dev": "wrangler dev",
-		"deploy": "wrangler deploy --minify"
+		"typecheck": "tsc --noEmit",
+		"check": "biome check --write .",
+		"check:dry": "biome check ."
 	},
 	"dependencies": {
 		"@hono/valibot-validator": "^0.4.0",

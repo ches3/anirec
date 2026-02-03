@@ -9,7 +9,9 @@
 		"build:firefox": "wxt build -b firefox",
 		"zip": "wxt zip",
 		"zip:firefox": "wxt zip -b firefox",
-		"compile": "tsc --noEmit"
+		"typecheck": "tsc --noEmit",
+		"check": "biome check --write .",
+		"check:dry": "biome check ."
 	},
 	"dependencies": {
 		"@anirec/annict-search": "workspace:*",
