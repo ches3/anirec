@@ -1,5 +1,6 @@
 import type { UserManifest } from "wxt";
 import { defineConfig } from "wxt";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
@@ -10,6 +11,9 @@ export default defineConfig({
 			fileFilter: () => false,
 		},
 	},
+	vite: () => ({
+		plugins: [tsconfigPaths()],
+	}),
 	manifest: ({ browser, manifestVersion }) => {
 		const permissions = ["storage", "identity"];
 		if (manifestVersion === 2) {

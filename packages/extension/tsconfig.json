@@ -5,7 +5,8 @@
     "allowImportingTsExtensions": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@anirec/annict-search": ["../annict-search/src/index.ts"]
     },
   }
 }

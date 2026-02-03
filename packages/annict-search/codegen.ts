@@ -15,6 +15,9 @@ const config: CodegenConfig = {
 	generates: {
 		"src/gql/generated.ts": {
 			plugins: ["typescript", "typescript-operations", "typed-document-node"],
+			config: {
+				useTypeImports: true,
+			},
 		},
 	},
 };

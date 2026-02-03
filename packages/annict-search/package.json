@@ -2,21 +2,11 @@
 	"name": "@anirec/annict-search",
 	"private": true,
 	"type": "module",
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
-	"types": "./dist/index.d.ts",
+	"main": "./src/index.ts",
 	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
-		}
+		".": "./src/index.ts"
 	},
-	"files": [
-		"dist"
-	],
 	"scripts": {
-		"build": "tsup",
 		"test": "vitest",
 		"gql-gen": "graphql-codegen",
 		"lint": "biome lint --write ./src",
