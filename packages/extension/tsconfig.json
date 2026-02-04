@@ -1,0 +1,12 @@
+{
+	"extends": "./.wxt/tsconfig.json",
+	"compilerOptions": {
+		"lib": ["esnext", "dom"],
+		"allowImportingTsExtensions": true,
+		"jsx": "react-jsx",
+		"paths": {
+			"@/*": ["./src/*"],
+			"@anirec/annict-search": ["../annict-search/src/index.ts"]
+		}
+	}
+}

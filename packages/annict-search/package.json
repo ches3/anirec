@@ -1,0 +1,32 @@
+{
+	"name": "@anirec/annict-search",
+	"private": true,
+	"type": "module",
+	"main": "./src/index.ts",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"scripts": {
+		"typecheck": "tsc --noEmit",
+		"test": "vitest",
+		"test:run": "vitest run",
+		"gql-gen": "graphql-codegen",
+		"check": "biome check --write .",
+		"check:dry": "biome check ."
+	},
+	"devDependencies": {
+		"@graphql-codegen/cli": "^5.0.3",
+		"@graphql-codegen/typed-document-node": "^5.0.10",
+		"@graphql-codegen/typescript": "^5.0.7",
+		"@graphql-codegen/typescript-operations": "^5.0.7",
+		"@graphql-typed-document-node/core": "^3.2.0",
+		"dotenv": "^16.4.5"
+	},
+	"dependencies": {
+		"@ches3/zenhan": "^1.0.1",
+		"@geolonia/japanese-numeral": "^1.0.2",
+		"graphql": "^16.9.0",
+		"graphql-request": "^7.1.0",
+		"romans": "^2.0.16"
+	}
+}
