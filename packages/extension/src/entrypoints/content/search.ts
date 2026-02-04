@@ -1,4 +1,5 @@
 import { type SearchResult, search } from "@anirec/annict-search";
+import type { Title } from "@/types";
 
 export const searchFromList = async (
 	list: Title[],

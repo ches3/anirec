@@ -69,7 +69,7 @@ export function normalize(title: string, options?: Options): string {
 		normalizedTitle = normalizedTitle.replace(numMatch.kanji, (match) => {
 			try {
 				return String(kanji2number(match));
-			} catch (e) {
+			} catch {
 				return match;
 			}
 		});
@@ -79,7 +79,7 @@ export function normalize(title: string, options?: Options): string {
 		normalizedTitle = normalizedTitle.replace(numMatch.roman, (match) => {
 			try {
 				return String(deromanize(match));
-			} catch (e) {
+			} catch {
 				return match;
 			}
 		});
@@ -130,7 +130,7 @@ export function normalize(title: string, options?: Options): string {
 	}
 
 	if (options?.remove?.symbol === true) {
-		normalizedTitle = normalizedTitle.replace(/[!-\/:-@\[-`{-~]/g, "");
+		normalizedTitle = normalizedTitle.replace(/[!-/:-@[-`{-~]/g, "");
 	}
 
 	if (options?.remove?.nonNumAndLetter === true) {

@@ -8,7 +8,7 @@ function normal(str: string): number | undefined {
 	if (!match) {
 		return;
 	}
-	const number = Number.parseInt(match[0]);
+	const number = Number.parseInt(match[0], 10);
 	if (Number.isNaN(number)) {
 		return;
 	}
@@ -20,7 +20,7 @@ function zen(str: string): number | undefined {
 	if (!match) {
 		return;
 	}
-	return Number.parseInt(toHan(match[0], { number: true }));
+	return Number.parseInt(toHan(match[0], { number: true }), 10);
 }
 
 function kansuji(str: string): number | undefined {
@@ -30,7 +30,7 @@ function kansuji(str: string): number | undefined {
 	}
 	try {
 		return kanji2number(match[0]);
-	} catch (e) {
+	} catch {
 		return;
 	}
 }
@@ -42,7 +42,7 @@ function roman(str: string): number | undefined {
 	}
 	try {
 		return deromanize(match[0]);
-	} catch (e) {
+	} catch {
 		return;
 	}
 }

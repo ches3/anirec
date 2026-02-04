@@ -1,3 +1,4 @@
+import type { Title } from "@/types";
 import { fetchDMMContent, fetchDMMSeason, fetchUnext } from "@/utils/fetch";
 import { asyncQuerySelector } from "./async-query-selector";
 

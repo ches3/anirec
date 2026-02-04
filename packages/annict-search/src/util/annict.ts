@@ -27,7 +27,7 @@ export async function searchWorks(
 	const works = nodes
 		.map((work) => {
 			if (!work) {
-				return;
+				return undefined;
 			}
 
 			const episodes = work.episodes?.nodes
@@ -83,6 +83,7 @@ export async function viewerActivities(
 			) {
 				return edge?.item;
 			}
+			return undefined;
 		})
 		.filter((item) => !!item);
 	return { items, cursor };

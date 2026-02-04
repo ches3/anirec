@@ -1,11 +1,11 @@
+import { isRecorded, record } from "@anirec/annict-search";
+import type { ContentScriptContext } from "#imports";
 import { isPlayPage } from "@/utils/is-play-page";
 import {
 	getPreventDuplicateDays,
 	getRecordTiming,
 	getToken,
 } from "@/utils/settings";
-import { isRecorded, record } from "@anirec/annict-search";
-import type { ContentScriptContext } from "#imports";
 import { getTitleList } from "./get-title";
 import { searchFromList } from "./search";
 import { wait } from "./wait";
