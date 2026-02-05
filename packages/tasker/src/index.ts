@@ -46,13 +46,7 @@ const main = async () => {
 		throw new Error("タイトルの取得に失敗しました。");
 	}
 
-	const result =
-		"title" in title
-			? await search({ title: title.title }, token)
-			: await search(
-					{ workTitle: title.workTitle, episodeTitle: title.episodeTitle },
-					token,
-				);
+	const result = await search(title, token);
 	if (!result) {
 		const titleStr =
 			"title" in title

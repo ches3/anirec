@@ -16,22 +16,6 @@ function getMatch(
 	}
 }
 
-export function extract(params: { title: string }): {
-	workTitle: string;
-	episode: ExtractedEpisode | undefined;
-};
-export function extract(params: { workTitle: string; episodeTitle: string }): {
-	workTitle: string;
-	episode: ExtractedEpisode | undefined;
-};
-export function extract(params: {
-	workTitle: string;
-	episodeNumber: string;
-	episodeTitle: string;
-}): {
-	workTitle: string;
-	episode: ExtractedEpisode | undefined;
-};
 export function extract(params: SearchParam): {
 	workTitle: string;
 	episode: ExtractedEpisode | undefined;

@@ -17,23 +17,11 @@ function buildFullTitle(params: SearchParam): string {
 	return [params.workTitle, params.episodeTitle].filter(Boolean).join(" ");
 }
 
-export function search(
-	params: { title: string },
-	token: string,
-): Promise<SearchResult>;
-export function search(
-	params: { workTitle: string; episodeTitle: string },
-	token: string,
-): Promise<SearchResult>;
-export function search(
-	params: { workTitle: string; episodeNumber: string; episodeTitle: string },
-	token: string,
-): Promise<SearchResult>;
 export async function search(
 	params: SearchParam,
 	token: string,
 ): Promise<SearchResult> {
-	const target = "title" in params ? extract(params) : extract(params);
+	const target = extract(params);
 	const words = variants(target.workTitle);
 	const works = await searchWorks(words, token);
 
