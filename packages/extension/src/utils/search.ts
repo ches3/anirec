@@ -1,8 +1,8 @@
+import type { SearchParam } from "@anirec/annict";
 import { type SearchResult, search } from "@anirec/annict";
-import type { Title } from "@/types";
 
 export const searchFromList = async (
-	list: Title[],
+	list: SearchParam[],
 	token: string,
 ): Promise<SearchResult> => {
 	for (const title of list) {

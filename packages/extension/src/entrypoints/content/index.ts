@@ -1,13 +1,14 @@
 import { isRecorded, record } from "@anirec/annict";
 import type { ContentScriptContext } from "#imports";
-import { isPlayPage } from "@/utils/is-play-page";
+import { searchFromList } from "@/utils/search";
 import {
+	getEnabledServices,
 	getPreventDuplicateDays,
 	getRecordTiming,
 	getToken,
 } from "@/utils/settings";
-import { getTitleList } from "./get-title";
-import { searchFromList } from "./search";
+import { identifyVod, isVodEnabled } from "@/utils/vod";
+import { extractSearchParams } from "./extract-search-params";
 import { wait } from "./wait";
 
 export default defineContentScript({
@@ -34,18 +35,27 @@ export default defineContentScript({
 });
 
 async function script(ctx: ContentScriptContext) {
+	const url = new URL(location.href);
+	const vod = identifyVod(url);
+	if (!vod) {
+		return;
+	}
+
+	const enabled = await getEnabledServices();
+	if (!isVodEnabled(vod, enabled)) {
+		return;
+	}
+
 	const token = await getToken();
 	if (!token) {
 		throw new Error("Annictトークンが設定されていません。");
 	}
 
-	// URLを検証
-	if (!(await isPlayPage(location.href))) {
-		return;
-	}
-
 	// タイトルを取得
-	const titleList = await getTitleList(location.hostname).catch((e) => {
+	const titleList = await extractSearchParams(vod, {
+		url,
+		queryRoot: document,
+	}).catch((e) => {
 		if (e instanceof Error) {
 			throw new Error("タイトルの取得に失敗しました。", e);
 		}

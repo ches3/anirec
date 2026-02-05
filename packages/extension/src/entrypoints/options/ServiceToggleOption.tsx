@@ -1,5 +1,6 @@
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import type { Vod } from "@/types";
 import {
 	getEnabledServices,
 	type ServiceEnabled,
@@ -12,10 +13,10 @@ function ServiceToggleOptionItem({
 	enabled,
 	onToggle,
 }: {
-	id: keyof ServiceEnabled;
+	id: Vod;
 	label: string;
 	enabled: boolean;
-	onToggle: (service: keyof ServiceEnabled, isEnabled: boolean) => void;
+	onToggle: (service: Vod, isEnabled: boolean) => void;
 }) {
 	return (
 		<div className="flex items-center">
@@ -41,7 +42,7 @@ export function ServiceToggleOption({ className }: { className?: string }) {
 		})();
 	}, []);
 
-	const onToggle = async (id: keyof ServiceEnabled, isEnabled: boolean) => {
+	const onToggle = async (id: Vod, isEnabled: boolean) => {
 		if (!enabled) {
 			return;
 		}

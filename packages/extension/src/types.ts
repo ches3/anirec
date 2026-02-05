@@ -1,5 +1,1 @@
-export type Title = {
-	workTitle: string;
-	episodeNumber?: string;
-	episodeTitle: string;
-};
+export type Vod = "dmm" | "unext" | "abema" | "danime";

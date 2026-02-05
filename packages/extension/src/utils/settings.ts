@@ -1,3 +1,5 @@
+import type { Vod } from "@/types";
+
 export async function getToken() {
 	const token =
 		(await storage.getItem<string>("sync:token")) ||
@@ -42,12 +44,7 @@ export async function saveRecordTiming(
 	});
 }
 
-export type ServiceEnabled = {
-	dmm: boolean;
-	unext: boolean;
-	abema: boolean;
-	danime: boolean;
-};
+export type ServiceEnabled = Record<Vod, boolean>;
 
 export async function getEnabledServices() {
 	const enabled = await storage.getItem<ServiceEnabled>("sync:enabledServices");
@@ -63,12 +60,7 @@ export async function getEnabledServices() {
 }
 
 export async function saveEnabledServices(enabled: ServiceEnabled) {
-	await storage.setItem<ServiceEnabled>("sync:enabledServices", {
-		dmm: enabled.dmm,
-		unext: enabled.unext,
-		abema: enabled.abema,
-		danime: enabled.danime,
-	});
+	await storage.setItem<ServiceEnabled>("sync:enabledServices", enabled);
 }
 
 export async function getPreventDuplicateDays() {

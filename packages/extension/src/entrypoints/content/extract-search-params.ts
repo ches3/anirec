@@ -1,53 +1,49 @@
-import type { Title } from "@/types";
+import type { SearchParam } from "@anirec/annict";
+import type { Vod } from "@/types";
+import { asyncQuerySelector } from "@/utils/async-query-selector";
 import { fetchDMMContent, fetchDMMSeason, fetchUnext } from "@/utils/fetch";
-import { asyncQuerySelector } from "./async-query-selector";
 
-export const getTitleList = async (
-	hostname: string,
-): Promise<Title[] | undefined> => {
-	if (hostname === "tv.dmm.com") {
-		return await dmm();
-	}
-	if (hostname === "video.unext.jp") {
-		return await unext();
-	}
-	if (hostname === "abema.tv") {
-		return await abema();
-	}
-	if (hostname === "animestore.docomo.ne.jp") {
-		return await danime();
-	}
-	throw new Error("サポートされていないサイトです。");
+type PageSource = {
+	url: URL;
+	queryRoot: ParentNode;
 };
 
-const dmm = async (): Promise<Title[] | undefined> => {
-	const searchParams = new URLSearchParams(location.search);
-	const seasonId = searchParams.get("season");
+export const extractSearchParams = async (
+	vod: Vod,
+	pageSource: PageSource,
+): Promise<SearchParam[] | undefined> => {
+	switch (vod) {
+		case "dmm":
+			return await dmm(pageSource.url);
+		case "unext":
+			return await unext(pageSource.url);
+		case "abema":
+			return await abema(pageSource.queryRoot);
+		case "danime":
+			return await danime(pageSource.queryRoot);
+	}
+};
+
+const dmm = async (url: URL): Promise<SearchParam[] | undefined> => {
+	const seasonId = url.searchParams.get("season");
 	if (!seasonId) {
 		return;
 	}
-	const contentId = searchParams.get("content");
+	const contentId = url.searchParams.get("content");
 	if (!contentId) {
 		return;
 	}
 
 	const season = await fetchDMMSeason(seasonId);
-	if (!season) {
-		return;
-	}
 	if (season.seasonType === "SINGLE_EPISODE") {
 		return [
 			{
 				workTitle: season.seasonName,
-				episodeNumber: "",
 				episodeTitle: "",
 			},
 		];
 	}
 	const content = await fetchDMMContent(contentId);
-	if (!content) {
-		return;
-	}
 
 	return [
 		{
@@ -63,8 +59,8 @@ const dmm = async (): Promise<Title[] | undefined> => {
 	];
 };
 
-const unext = async (): Promise<Title[] | undefined> => {
-	const pathname = location.pathname;
+const unext = async (url: URL): Promise<SearchParam[] | undefined> => {
+	const pathname = url.pathname;
 	const pathnameMatch = pathname.match(/^\/play\/([^/]+)\/([^/]+)/);
 	if (!pathnameMatch) {
 		return;
@@ -93,13 +89,19 @@ const unext = async (): Promise<Title[] | undefined> => {
 	];
 };
 
-const abema = async (): Promise<Title[] | undefined> => {
+const abema = async (
+	queryRoot: ParentNode,
+): Promise<SearchParam[] | undefined> => {
 	const workTitle = (
-		await asyncQuerySelector(".com-video-EpisodeTitle__series-info")
+		await asyncQuerySelector(".com-video-EpisodeTitle__series-info", queryRoot)
 	)?.textContent;
 	const episodeTitle =
-		(await asyncQuerySelector(".com-video-EpisodeTitle__episode-title"))
-			?.textContent || "";
+		(
+			await asyncQuerySelector(
+				".com-video-EpisodeTitle__episode-title",
+				queryRoot,
+			)
+		)?.textContent || "";
 	if (!workTitle) {
 		return;
 	}
@@ -129,15 +131,18 @@ const abema = async (): Promise<Title[] | undefined> => {
 	];
 };
 
-const danime = async (): Promise<Title[] | undefined> => {
-	const workTitle = (await asyncQuerySelector(".backInfoTxt1"))?.textContent;
+const danime = async (
+	queryRoot: ParentNode,
+): Promise<SearchParam[] | undefined> => {
+	const workTitle = (await asyncQuerySelector(".backInfoTxt1", queryRoot))
+		?.textContent;
 	if (!workTitle) {
 		return;
 	}
 	const episodeNumber =
-		(await asyncQuerySelector(".backInfoTxt2"))?.textContent || "";
+		(await asyncQuerySelector(".backInfoTxt2", queryRoot))?.textContent || "";
 	const episodeTitle =
-		(await asyncQuerySelector(".backInfoTxt3"))?.textContent || "";
+		(await asyncQuerySelector(".backInfoTxt3", queryRoot))?.textContent || "";
 
 	return [{ workTitle, episodeNumber, episodeTitle }];
 };
