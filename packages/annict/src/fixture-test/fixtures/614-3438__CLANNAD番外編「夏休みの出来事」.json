@@ -1,0 +1,346 @@
+{
+  "meta": {
+    "createdAt": "2026-02-05T05:57:39.929Z"
+  },
+  "input": {
+    "params": {
+      "title": "CLANNAD 番外編 「夏休みの出来事」"
+    },
+    "annictUrl": "https://annict.com/works/614/episodes/3438"
+  },
+  "expected": {
+    "id": "V29yay02MTQ=",
+    "title": "CLANNAD -クラナド-",
+    "episode": {
+      "id": "RXBpc29kZS0zNDM4",
+      "title": "夏休みの出来事",
+      "number": 23,
+      "numberText": "番外編"
+    }
+  },
+  "variants": [
+    "CLANNAD"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay0zMjc5",
+      "title": "劇場版 CLANNAD -クラナド-",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "CLANNAD"
+      ]
+    },
+    {
+      "id": "V29yay02MTQ=",
+      "title": "CLANNAD -クラナド-",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0zNDE2",
+          "title": "桜舞い散る坂道で",
+          "number": 1,
+          "numberText": "第1回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDE3",
+          "title": "最初の一歩",
+          "number": 2,
+          "numberText": "第2回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDE4",
+          "title": "涙のあとにもう一度",
+          "number": 3,
+          "numberText": "第3回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDE5",
+          "title": "仲間をさがそう",
+          "number": 4,
+          "numberText": "第4回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDIw",
+          "title": "彫刻のある風景",
+          "number": 5,
+          "numberText": "第5回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDIx",
+          "title": "姉と妹の創立者祭",
+          "number": 6,
+          "numberText": "第6回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDIy",
+          "title": "星形の気持ち",
+          "number": 7,
+          "numberText": "第7回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDIz",
+          "title": "黄昏に消える風",
+          "number": 8,
+          "numberText": "第8回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDI0",
+          "title": "夢の最後まで",
+          "number": 9,
+          "numberText": "第9回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDI1",
+          "title": "天才少女の挑戦",
+          "number": 10,
+          "numberText": "第10回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDI2",
+          "title": "放課後の狂想曲",
+          "number": 11,
+          "numberText": "第11回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDI3",
+          "title": "かくされた世界",
+          "number": 12,
+          "numberText": "第12回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDI4",
+          "title": "思い出の庭を",
+          "number": 13,
+          "numberText": "第13回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDI5",
+          "title": "Theory of Everything",
+          "number": 14,
+          "numberText": "第14回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDMw",
+          "title": "困った問題",
+          "number": 15,
+          "numberText": "第15回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDMx",
+          "title": "3 on 3",
+          "number": 16,
+          "numberText": "第16回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDMy",
+          "title": "不在の空間",
+          "number": 17,
+          "numberText": "第17回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDMz",
+          "title": "逆転の秘策",
+          "number": 18,
+          "numberText": "第18回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDM0",
+          "title": "新しい生活",
+          "number": 19,
+          "numberText": "第19回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDM1",
+          "title": "秘められた過去",
+          "number": 20,
+          "numberText": "第20回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDM2",
+          "title": "学園祭にむけて",
+          "number": 21,
+          "numberText": "第21回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDM3",
+          "title": "影二つ",
+          "number": 22,
+          "numberText": "最終回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDM4",
+          "title": "夏休みの出来事",
+          "number": 23,
+          "numberText": "番外編"
+        },
+        {
+          "id": "RXBpc29kZS0zNDM5",
+          "title": "もうひとつの世界 智代編",
+          "number": 24,
+          "numberText": "番外編"
+        }
+      ],
+      "seriesList": [
+        "CLANNAD"
+      ]
+    },
+    {
+      "id": "V29yay02MTU=",
+      "title": "CLANNAD～AFTER STORY～",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0zNDQw",
+          "title": "夏の終わりのサヨナラ",
+          "number": 1,
+          "numberText": "第1回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDQx",
+          "title": "いつわりの愛をさがして",
+          "number": 2,
+          "numberText": "第2回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDQy",
+          "title": "すれちがう心",
+          "number": 3,
+          "numberText": "第3回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDQz",
+          "title": "あの日と同じ笑顔で",
+          "number": 4,
+          "numberText": "第4回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDQ0",
+          "title": "君のいた季節",
+          "number": 5,
+          "numberText": "第5回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDQ1",
+          "title": "ずっとあなたのそばに",
+          "number": 6,
+          "numberText": "第6回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDQ2",
+          "title": "彼女の居場所",
+          "number": 7,
+          "numberText": "第7回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDQ3",
+          "title": "勇気ある闘い",
+          "number": 8,
+          "numberText": "第8回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDQ4",
+          "title": "坂道の途中",
+          "number": 9,
+          "numberText": "第9回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDQ5",
+          "title": "始まりの季節",
+          "number": 10,
+          "numberText": "第10回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDUw",
+          "title": "約束の創立者祭",
+          "number": 11,
+          "numberText": "第11回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDUx",
+          "title": "突然の出来事",
+          "number": 12,
+          "numberText": "第12回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDUy",
+          "title": "卒業",
+          "number": 13,
+          "numberText": "第13回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDUz",
+          "title": "新しい家族",
+          "number": 14,
+          "numberText": "第14回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDU0",
+          "title": "夏の名残りに",
+          "number": 15,
+          "numberText": "第15回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDU1",
+          "title": "白い闇",
+          "number": 16,
+          "numberText": "第16回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDU2",
+          "title": "夏時間",
+          "number": 17,
+          "numberText": "第17回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDU3",
+          "title": "大地の果て",
+          "number": 18,
+          "numberText": "第18回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDU4",
+          "title": "家路",
+          "number": 19,
+          "numberText": "第19回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDU5",
+          "title": "汐風の戯れ",
+          "number": 20,
+          "numberText": "第20回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDYw",
+          "title": "世界の終わり",
+          "number": 21,
+          "numberText": "第21回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDYx",
+          "title": "小さな手のひら",
+          "number": 22,
+          "numberText": "最終回"
+        },
+        {
+          "id": "RXBpc29kZS0zNDYy",
+          "title": "一年前の出来事",
+          "numberText": "番外編"
+        },
+        {
+          "id": "RXBpc29kZS0zNDYz",
+          "title": "もうひとつの世界 杏編",
+          "numberText": "番外編"
+        },
+        {
+          "id": "RXBpc29kZS0zNDY0",
+          "title": "緑の樹の下で",
+          "numberText": "総集編"
+        }
+      ],
+      "seriesList": [
+        "CLANNAD"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "createdAt": "2026-02-05T04:54:16.418Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "リズと青い鳥",
+      "episodeNumber": "本編",
+      "episodeTitle": ""
+    },
+    "annictUrl": "https://annict.com/works/5339"
+  },
+  "expected": {
+    "id": "V29yay01MzM5",
+    "title": "リズと青い鳥",
+    "episode": null
+  },
+  "variants": [
+    "リズと青い鳥"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay01MzM5",
+      "title": "リズと青い鳥",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    }
+  ]
+}

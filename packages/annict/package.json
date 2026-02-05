@@ -12,9 +12,11 @@
 		"test:run": "vitest run",
 		"gql-gen": "graphql-codegen",
 		"check": "biome check --write .",
-		"check:dry": "biome check ."
+		"check:dry": "biome check .",
+		"fixture": "bun run src/fixture-test/cli.ts"
 	},
 	"devDependencies": {
+		"@clack/prompts": "^1.0.0",
 		"@graphql-codegen/cli": "^5.0.3",
 		"@graphql-codegen/typed-document-node": "^5.0.10",
 		"@graphql-codegen/typescript": "^5.0.7",

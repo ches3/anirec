@@ -1,0 +1,709 @@
+{
+  "meta": {
+    "createdAt": "2026-02-05T08:27:19.111Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "『転生したらスライムだった件』OAD",
+      "episodeTitle": "第1話 外伝：HEY!尻!"
+    },
+    "annictUrl": "https://annict.com/works/7160"
+  },
+  "expected": {
+    "id": "V29yay03MTYw",
+    "title": "転生したらスライムだった件 OAD 外伝：HEY！尻！",
+    "episode": null
+  },
+  "variants": [
+    "『転生したらスライムだった件』OAD",
+    "転生したらスライムだった件OAD",
+    "転生したらスライムだった件"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay02NjE3",
+      "title": "転生したらスライムだった件 第2期 第1部",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMjgyMjQ=",
+          "title": "ヒナタ・サカグチ",
+          "number": 24,
+          "numberText": "閑話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjgyMjg=",
+          "title": "リムルの忙しい日々",
+          "number": 25,
+          "numberText": "第25話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjgzODA=",
+          "title": "獣王国との交易",
+          "number": 26,
+          "numberText": "第26話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg0ODQ=",
+          "title": "楽園、再び",
+          "number": 27,
+          "numberText": "第27話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg1OTI=",
+          "title": "謀略のファルムス王国",
+          "number": 28,
+          "numberText": "第28話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg2OTc=",
+          "title": "災厄の前奏曲",
+          "number": 29,
+          "numberText": "第29話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg4ODk=",
+          "title": "動き出す麗人",
+          "number": 30,
+          "numberText": "第30話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjkwMzY=",
+          "title": "絶望",
+          "number": 31,
+          "numberText": "第31話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjkxNDg=",
+          "title": "希望",
+          "number": 32,
+          "numberText": "第32話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjkyNjI=",
+          "title": "全てを賭けて",
+          "number": 33,
+          "numberText": "第33話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjkzNzA=",
+          "title": "神之怒",
+          "number": 34,
+          "numberText": "第34話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjk3MDE=",
+          "title": "魔王誕生",
+          "number": 35,
+          "numberText": "第35話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjk5MjQ=",
+          "title": "解き放たれし者",
+          "number": 36,
+          "numberText": "第36話"
+        }
+      ],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay04OTQw",
+      "title": "劇場版 転生したらスライムだった件 紅蓮の絆編",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay03NjQx",
+      "title": "転生したらスライムだった件 OAD 外伝：リムルの華麗な教師生活 その2",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay03MTYw",
+      "title": "転生したらスライムだった件 OAD 外伝：HEY！尻！",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay0xNDA2NQ==",
+      "title": "劇場版 転生したらスライムだった件  蒼海の涙編",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay03NjQy",
+      "title": "転生したらスライムだった件 OAD 外伝：リムルの華麗な教師生活 その3",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay02ODA1",
+      "title": "転生したらスライムだった件 OAD 外伝：Mの悲劇？",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay0xMDE3Ng==",
+      "title": "転生したらスライムだった件 第3期",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTg0MTk=",
+          "title": "悪魔と策謀",
+          "number": 49,
+          "numberText": "第49話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg1MzE=",
+          "title": "聖人の思惑",
+          "number": 50,
+          "numberText": "第50話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg2OTE=",
+          "title": "平和な日々",
+          "number": 51,
+          "numberText": "第51話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg4MDc=",
+          "title": "それぞれの役割",
+          "number": 52,
+          "numberText": "第52話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg5MjA=",
+          "title": "両翼会議",
+          "number": 53,
+          "numberText": "第53話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTkwODY=",
+          "title": "迫り来る者達",
+          "number": 54,
+          "numberText": "第54話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTkyNTc=",
+          "title": "聖魔激突",
+          "number": 55,
+          "numberText": "第55話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTkzOTI=",
+          "title": "ボタンのかけ違い",
+          "number": 56,
+          "numberText": "第56話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTk1NDE=",
+          "title": "七曜暗躍",
+          "number": 57,
+          "numberText": "第57話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTk4Nzg=",
+          "title": "神と魔王",
+          "number": 58,
+          "numberText": "第58話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAwMTY=",
+          "title": "和解と協定",
+          "number": 59,
+          "numberText": "第59話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAxMjI=",
+          "title": "開催準備",
+          "number": 60,
+          "numberText": "第60話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAyNTE=",
+          "title": "各国と招待状",
+          "number": 61,
+          "numberText": "第61話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAzNTc=",
+          "title": "迷宮と暴風竜",
+          "number": 62,
+          "numberText": "第62話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0NjE=",
+          "title": "謁見式",
+          "number": 63,
+          "numberText": "第63話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA3MzY=",
+          "title": "ベニマルの受難",
+          "number": 64,
+          "numberText": "第64話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA4NTM=",
+          "title": "閃光の勇者",
+          "number": 65,
+          "numberText": "第65話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA5Nzk=",
+          "title": "閑話：ルミナスメモリーズ",
+          "number": 65,
+          "numberText": "第65.5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjEwNjE=",
+          "title": "千客万来",
+          "number": 66,
+          "numberText": "第66話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjEyMzY=",
+          "title": "前夜祭",
+          "number": 67,
+          "numberText": "第67話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjEzNTg=",
+          "title": "開国祭",
+          "number": 68,
+          "numberText": "第68話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjE1MDM=",
+          "title": "武闘大会",
+          "number": 69,
+          "numberText": "第69話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjE2NTc=",
+          "title": "勇者との決着",
+          "number": 70,
+          "numberText": "第70話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjE4MTE=",
+          "title": "迷宮開放",
+          "number": 71,
+          "numberText": "第71話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjE5NTc=",
+          "title": "祭の後",
+          "number": 72,
+          "numberText": "第72話"
+        }
+      ],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay0xMDYwMg==",
+      "title": "転生したらスライムだった件 コリウスの夢",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTMzNzk=",
+          "title": "コリウス国へ",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTMzODA=",
+          "title": "大怪盗サトル",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTMzODE=",
+          "title": "紫と薔薇",
+          "number": 3,
+          "numberText": "第3話"
+        }
+      ],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay03MTYx",
+      "title": "転生したらスライムだった件 OAD 外伝：リムルの華麗な教師生活 その1",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay0xMjgxOQ==",
+      "title": "転生したらスライムだった件 閑話：ディアブロ日記",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay0xNDA2Ng==",
+      "title": "転生したらスライムだった件 第4期",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay01Nzg5",
+      "title": "転生したらスライムだった件",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMDQ0MDc=",
+          "title": "暴風竜ヴェルドラ",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQ1MjE=",
+          "title": "ゴブリンたちとの出会い",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQ2NjI=",
+          "title": "ゴブリン村での戦い",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQ4MDM=",
+          "title": "ドワーフの王国にて",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDUwMTM=",
+          "title": "英雄王ガゼル・ドワルゴ",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDUxMzE=",
+          "title": "シズ",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDUyNTU=",
+          "title": "爆炎の支配者",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDUzNzA=",
+          "title": "受け継がれる想い",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU1MDI=",
+          "title": "大鬼族(オーガ)の襲撃",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU2MjU=",
+          "title": "オークロード",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU3NDc=",
+          "title": "ガビル参上！",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU4ODk=",
+          "title": "狂いゆく歯車",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDYwNTM=",
+          "title": "大激突",
+          "number": 13,
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDYxNzg=",
+          "title": "全てを喰らう者",
+          "number": 14,
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDYyOTY=",
+          "title": "ジュラの森大同盟",
+          "number": 15,
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDY0MDU=",
+          "title": "魔王ミリム来襲",
+          "number": 16,
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDY2MzI=",
+          "title": "集う者達",
+          "number": 17,
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDY3NDY=",
+          "title": "忍び寄る悪意",
+          "number": 18,
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDg3NTc=",
+          "title": "暴風大妖渦(カリュブディス)",
+          "number": 19,
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDkwNzY=",
+          "title": "ユウキ・カグラザカ",
+          "number": 20,
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDk3MjU=",
+          "title": "シズさんの教え子達",
+          "number": 21,
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDk4MzM=",
+          "title": "迷宮攻略",
+          "number": 22,
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDk5Mzc=",
+          "title": "救われる魂",
+          "number": 23,
+          "numberText": "第23話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTAwOTg=",
+          "title": "外伝:黒と仮面",
+          "number": 24,
+          "numberText": "第24話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTA0MTk=",
+          "title": "ヴェルドラ日記",
+          "numberText": "閑話"
+        }
+      ],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay03Mzk4",
+      "title": "転生したらスライムだった件 転スラ日記",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzA1MTM=",
+          "title": "魔物の町の住人たち",
+          "number": 1,
+          "numberText": "1日記"
+        },
+        {
+          "id": "RXBpc29kZS0xMzA4OTE=",
+          "title": "春の空気と",
+          "number": 2,
+          "numberText": "2日記"
+        },
+        {
+          "id": "RXBpc29kZS0xMzEyNDU=",
+          "title": "ジュラの夏",
+          "number": 3,
+          "numberText": "3日記"
+        },
+        {
+          "id": "RXBpc29kZS0xMzE0NjY=",
+          "title": "水着の一日",
+          "number": 4,
+          "numberText": "4日記"
+        },
+        {
+          "id": "RXBpc29kZS0xMzE4MDc=",
+          "title": "再現ナツマツリ",
+          "number": 5,
+          "numberText": "5日記"
+        },
+        {
+          "id": "RXBpc29kZS0xMzE5NTk=",
+          "title": "うつろいかわる",
+          "number": 6,
+          "numberText": "6日記"
+        },
+        {
+          "id": "RXBpc29kZS0xMzIxMzE=",
+          "title": "魔王が来た！",
+          "number": 7,
+          "numberText": "7日記"
+        },
+        {
+          "id": "RXBpc29kZS0xMzMxMDE=",
+          "title": "みのりの秋",
+          "number": 8,
+          "numberText": "8日記"
+        },
+        {
+          "id": "RXBpc29kZS0xMzMyNzU=",
+          "title": "冬のおとずれ",
+          "number": 9,
+          "numberText": "9日記"
+        },
+        {
+          "id": "RXBpc29kZS0xMzM0NjE=",
+          "title": "魔物の町の雪化粧",
+          "number": 10,
+          "numberText": "10日記"
+        },
+        {
+          "id": "RXBpc29kZS0xMzM3MDE=",
+          "title": "サンタクロースはどこにいる",
+          "number": 11,
+          "numberText": "11日記"
+        },
+        {
+          "id": "RXBpc29kZS0xMzM4MzU=",
+          "title": "正月を満喫",
+          "number": 12,
+          "numberText": "12日記"
+        }
+      ],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    },
+    {
+      "id": "V29yay03NDEx",
+      "title": "転生したらスライムだった件 第2期 第2部",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzQyOTA=",
+          "title": "ヴェルドラ日記2",
+          "numberText": "閑話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQzNTg=",
+          "title": "訪れる者たち",
+          "number": 37,
+          "numberText": "第37話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1MjI=",
+          "title": "人魔会談",
+          "number": 38,
+          "numberText": "第38話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ3ODA=",
+          "title": "ラミリスの報せ",
+          "number": 39,
+          "numberText": "第39話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ5MDE=",
+          "title": "会議は踊る",
+          "number": 40,
+          "numberText": "第40話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzUwMTE=",
+          "title": "会戦前夜",
+          "number": 41,
+          "numberText": "第41話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzUyMzA=",
+          "title": "魔王たち",
+          "number": 42,
+          "numberText": "第42話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzUzNTA=",
+          "title": "開宴の合図",
+          "number": 43,
+          "numberText": "第43話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzU0Nzk=",
+          "title": "因縁の地で",
+          "number": 44,
+          "numberText": "第44話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzU3ODU=",
+          "title": "示指のアダルマン",
+          "number": 45,
+          "numberText": "第45話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzU5MzQ=",
+          "title": "魔王達の宴 〜ワルプルギス〜",
+          "number": 46,
+          "numberText": "第46話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzYwNDY=",
+          "title": "起死回生",
+          "number": 47,
+          "numberText": "第47話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzYyMTk=",
+          "title": "八星魔王 (オクタグラム)",
+          "number": 48,
+          "numberText": "第48話"
+        }
+      ],
+      "seriesList": [
+        "転生したらスライムだった件"
+      ]
+    }
+  ]
+}

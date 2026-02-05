@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "createdAt": "2026-02-05T04:30:27.154Z"
+  },
+  "input": {
+    "params": {
+      "title": "やはり俺の青春ラブコメはまちがっている。 第1話 こうして彼らのまちがった青春が始まる。"
+    },
+    "annictUrl": "https://annict.com/works/2255/episodes/6518"
+  },
+  "expected": {
+    "id": "V29yay0yMjU1",
+    "title": "やはり俺の青春ラブコメはまちがっている。",
+    "episode": {
+      "id": "RXBpc29kZS02NTE4",
+      "title": "こうして彼らのまちがった青春が始まる。",
+      "number": 1,
+      "numberText": "第1話"
+    }
+  },
+  "variants": [
+    "やはり俺の青春ラブコメはまちがっている。",
+    "やはり俺の青春ラブコメはまちがっている"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay02NTg0",
+      "title": "やはり俺の青春ラブコメはまちがっている。完",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMjMxNzI=",
+          "title": "やがて、季節は移ろい、雪は解けゆく。",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjQ1OTk=",
+          "title": "今日まで、その鍵には一度も触れたことがない。",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjQ2Nzk=",
+          "title": "やはり、一色いろはは最強の後輩である。",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjQ3ODU=",
+          "title": "ふと、由比ヶ浜結衣は未来に思いを馳せる。",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjQ4NTg=",
+          "title": "しみじみと、平塚静はいつかの昔を懐かしむ。",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjQ5NDQ=",
+          "title": "あらためて、比企谷八幡はかたりかける。",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjUyMzU=",
+          "title": "最後まで、由比ヶ浜結衣は見守り続ける。",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjUzNTA=",
+          "title": "せめて、もうまちがえたくないと願いながら。",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjU1NDQ=",
+          "title": "きっと、その香りをかぐたびに、思い出す季節がある。",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjU2NzM=",
+          "title": "颯爽と、平塚静は前を歩く。",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjU3NjU=",
+          "title": "想いは、触れた熱だけが確かに伝えている。",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjU4NzU=",
+          "title": "やはり俺の青春ラブコメはまちがっている。",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": [
+        "やはり俺の青春ラブコメはまちがっている。"
+      ]
+    },
+    {
+      "id": "V29yay0yMjU1",
+      "title": "やはり俺の青春ラブコメはまちがっている。",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS02NTE4",
+          "title": "こうして彼らのまちがった青春が始まる。",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS02NTE5",
+          "title": "きっと、誰しも等し並みに悩みを抱えている。",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS02NTIw",
+          "title": "たまにラブコメの神様はいいことをする。",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS02NTIx",
+          "title": "つまり、彼は友達が少ない。",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS02NTIy",
+          "title": "またしても、彼は元来た道へ引き返す。",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS02NTIz",
+          "title": "ようやく彼と彼女の始まりが終わる。",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS02NTI0",
+          "title": "ともあれ、夏休みなのに休めないのは何かおかしい。",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS02NTI1",
+          "title": "いずれ彼ら彼女らは真実を知る。",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS02NTI2",
+          "title": "三度、彼は元来た道へ引き返す。",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS02NTI3",
+          "title": "依然として彼らの距離は変わらずに、祭りはもうすぐカーニバる。",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS02NTI4",
+          "title": "そして、それぞれの舞台の幕が上がり、祭りは最高にフェスティバっている。",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS02NTI5",
+          "title": "それでも彼と彼女と彼女の青春はまちがい続ける。",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS02NTMw",
+          "title": "だから、彼らの祭りは終わらない。",
+          "number": 13,
+          "numberText": "番外編"
+        },
+        {
+          "id": "RXBpc29kZS02NTMx",
+          "title": "こちらとしても彼ら彼女らの行く末に幸多からんことを願わざるを得ない。",
+          "numberText": "OVA"
+        }
+      ],
+      "seriesList": [
+        "やはり俺の青春ラブコメはまちがっている。"
+      ]
+    },
+    {
+      "id": "V29yay00MjQ0",
+      "title": "やはり俺の青春ラブコメはまちがっている。続",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xODI0Ng==",
+          "title": "何故、彼らが奉仕部に来たのか誰も知らない。",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xODM4Ng==",
+          "title": "彼と彼女の告白は誰にも届かない。",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xODQ4OA==",
+          "title": "静かに、雪ノ下雪乃は決意する。",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xODYwNw==",
+          "title": "そして、由比ヶ浜結衣は宣言する。",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xODc2OQ==",
+          "title": "その部屋には、紅茶の香りはもうしない。",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xOTE5MA==",
+          "title": "つつがなく、会議は踊り、されど進まず。",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xOTM3MQ==",
+          "title": "されど、その部屋は終わらぬ日常を演じ続ける。",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xOTQ2MA==",
+          "title": "それでも、比企谷八幡は。",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xOTU3Ng==",
+          "title": "そして、雪ノ下雪乃は。",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xOTgwMA==",
+          "title": "それぞれの、掌の中の灯が照らすものは。",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xOTkxOA==",
+          "title": "いつでも、葉山隼人は期待に応えている。",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0yMDAzNw==",
+          "title": "未だ、彼の求める答えには手が届かず、本物はまちがい続ける。",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0yMDMzNQ==",
+          "title": "春は、降り積もる雪の下にて結われ、芽吹き始める。",
+          "number": 13,
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS04ODg3Mw==",
+          "title": "きっと、女の子はお砂糖とスパイスと素敵な何かでできている。",
+          "numberText": "OVA"
+        }
+      ],
+      "seriesList": [
+        "やはり俺の青春ラブコメはまちがっている。"
+      ]
+    },
+    {
+      "id": "V29yay03OTE5",
+      "title": "やはり俺の青春ラブコメはまちがっている。完 OVA「だから、思春期は終わらずに、青春は続いていく。」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "やはり俺の青春ラブコメはまちがっている。"
+      ]
+    }
+  ]
+}

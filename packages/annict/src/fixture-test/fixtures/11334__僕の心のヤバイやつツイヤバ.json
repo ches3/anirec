@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "createdAt": "2026-02-05T08:30:50.362Z"
+  },
+  "input": {
+    "params": {
+      "title": "僕の心のヤバイやつ ツイヤバ"
+    },
+    "annictUrl": "https://annict.com/works/11334"
+  },
+  "expected": {
+    "id": "V29yay0xMTMzNA==",
+    "title": "ツイヤバ",
+    "episode": null
+  },
+  "variants": [
+    "僕の心のヤバイやつ ツイヤバ",
+    "僕の心のヤバイやつ",
+    "ツイヤバ"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay0xMjA3OQ==",
+      "title": "僕の心のヤバイやつ 2期直前！「僕ヤバ」総集編SP",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "僕の心のヤバイやつ"
+      ]
+    },
+    {
+      "id": "V29yay0xMTMzNA==",
+      "title": "ツイヤバ",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "僕の心のヤバイやつ"
+      ]
+    },
+    {
+      "id": "V29yay0xMjYzMw==",
+      "title": "「僕の心のヤバイやつ」×「Re:ゼロから始める異世界生活」 ミニドラマ",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "僕の心のヤバイやつ",
+        "Re:ゼロから始める異世界生活"
+      ]
+    },
+    {
+      "id": "V29yay0xNDA3NQ==",
+      "title": "劇場版 僕の心のヤバイやつ",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "僕の心のヤバイやつ"
+      ]
+    },
+    {
+      "id": "V29yay05NzY3",
+      "title": "僕の心のヤバイやつ",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNDk4MjY=",
+          "title": "僕は奪われた",
+          "number": 1,
+          "numberText": "karte1"
+        },
+        {
+          "id": "RXBpc29kZS0xNDk5NjI=",
+          "title": "僕は死んだ",
+          "number": 2,
+          "numberText": "karte2"
+        },
+        {
+          "id": "RXBpc29kZS0xNTAwNzE=",
+          "title": "僕は抱きしめたい",
+          "number": 3,
+          "numberText": "karte3"
+        },
+        {
+          "id": "RXBpc29kZS0xNTAyMzc=",
+          "title": "僕は心の病",
+          "number": 4,
+          "numberText": "karte4"
+        },
+        {
+          "id": "RXBpc29kZS0xNTAzMzU=",
+          "title": "僕らははぐれた",
+          "number": 5,
+          "numberText": "karte5"
+        },
+        {
+          "id": "RXBpc29kZS0xNTA0Njc=",
+          "title": "僕は溶かした",
+          "number": 6,
+          "numberText": "karte6"
+        },
+        {
+          "id": "RXBpc29kZS0xNTA2MzY=",
+          "title": "僕らは入れ替わってる",
+          "number": 7,
+          "numberText": "karte7"
+        },
+        {
+          "id": "RXBpc29kZS0xNTA3ODk=",
+          "title": "僕は夢を見た",
+          "number": 8,
+          "numberText": "karte8"
+        },
+        {
+          "id": "RXBpc29kZS0xNTA5NDY=",
+          "title": "僕は山田が嫌い",
+          "number": 9,
+          "numberText": "karte9"
+        },
+        {
+          "id": "RXBpc29kZS0xNTEwNzI=",
+          "title": "僕らはゆっくり歩いた",
+          "number": 10,
+          "numberText": "karte10"
+        },
+        {
+          "id": "RXBpc29kZS0xNTEyMDk=",
+          "title": "僕らは少し似ている",
+          "number": 11,
+          "numberText": "karte11"
+        },
+        {
+          "id": "RXBpc29kZS0xNTEzMDk=",
+          "title": "僕は僕を知ってほしい",
+          "number": 12,
+          "numberText": "karte12"
+        }
+      ],
+      "seriesList": [
+        "僕の心のヤバイやつ"
+      ]
+    },
+    {
+      "id": "V29yay0xMDkyMg==",
+      "title": "僕の心のヤバイやつ 第2期",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTY1MDU=",
+          "title": "僕らは探している",
+          "number": 13,
+          "numberText": "karte13"
+        },
+        {
+          "id": "RXBpc29kZS0xNTY2MTA=",
+          "title": "僕は大人のなりかけ",
+          "number": 14,
+          "numberText": "karte14"
+        },
+        {
+          "id": "RXBpc29kZS0xNTY3MTY=",
+          "title": "僕は山田と",
+          "number": 15,
+          "numberText": "karte15"
+        },
+        {
+          "id": "RXBpc29kZS0xNTY5MDY=",
+          "title": "山田は僕を",
+          "number": 16,
+          "numberText": "karte16"
+        },
+        {
+          "id": "RXBpc29kZS0xNTczNDE=",
+          "title": "僕は知りたい",
+          "number": 17,
+          "numberText": "karte17"
+        },
+        {
+          "id": "RXBpc29kZS0xNTc0ODE=",
+          "title": "山田は僕が好き",
+          "number": 18,
+          "numberText": "karte18"
+        },
+        {
+          "id": "RXBpc29kZS0xNTc2NDE=",
+          "title": "僕らは溢れ出る",
+          "number": 19,
+          "numberText": "karte19"
+        },
+        {
+          "id": "RXBpc29kZS0xNTc3NjU=",
+          "title": "僕らは夜更かしした",
+          "number": 20,
+          "numberText": "karte20"
+        },
+        {
+          "id": "RXBpc29kZS0xNTc4Nzg=",
+          "title": "僕らは約束した",
+          "number": 21,
+          "numberText": "karte21"
+        },
+        {
+          "id": "RXBpc29kZS0xNTc5OTQ=",
+          "title": "僕は山田に近づきたい",
+          "number": 22,
+          "numberText": "karte22"
+        },
+        {
+          "id": "RXBpc29kZS0xNTgxMjc=",
+          "title": "僕は負けたくない",
+          "number": 23,
+          "numberText": "karte23"
+        },
+        {
+          "id": "RXBpc29kZS0xNTgyNjc=",
+          "title": "僕は伝えたい",
+          "number": 24,
+          "numberText": "karte24"
+        },
+        {
+          "id": "RXBpc29kZS0xNTgzNjU=",
+          "title": "僕と私の恋心",
+          "number": 25,
+          "numberText": "karte25"
+        }
+      ],
+      "seriesList": [
+        "僕の心のヤバイやつ"
+      ]
+    }
+  ]
+}
