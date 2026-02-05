@@ -1,4 +1,4 @@
-import { isRecorded, record } from "@anirec/annict-search";
+import { isRecorded, record } from "@anirec/annict";
 import type { ContentScriptContext } from "#imports";
 import { isPlayPage } from "@/utils/is-play-page";
 import {

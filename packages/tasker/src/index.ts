@@ -1,4 +1,4 @@
-import { isRecorded, record, search } from "@anirec/annict-search";
+import { isRecorded, record, search } from "@anirec/annict";
 
 declare const annict_token: string;
 declare const nltext: string;
