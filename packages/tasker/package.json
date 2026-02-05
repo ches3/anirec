@@ -8,6 +8,6 @@
 		"check:dry": "biome check ."
 	},
 	"dependencies": {
-		"@anirec/annict-search": "workspace:*"
+		"@anirec/annict": "workspace:*"
 	}
 }
