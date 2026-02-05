@@ -1,4 +1,4 @@
-import { type SearchResult, search } from "@anirec/annict-search";
+import { type SearchResult, search } from "@anirec/annict";
 import type { Title } from "@/types";
 
 export const searchFromList = async (
