@@ -1,5 +1,5 @@
 {
-	"name": "@anirec/annict-search",
+	"name": "@anirec/annict",
 	"private": true,
 	"type": "module",
 	"main": "./src/index.ts",

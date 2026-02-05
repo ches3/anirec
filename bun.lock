@@ -12,8 +12,8 @@
         "vitest": "^2.1.3",
       },
     },
-    "packages/annict-search": {
-      "name": "@anirec/annict-search",
+    "packages/annict": {
+      "name": "@anirec/annict",
       "dependencies": {
         "@ches3/zenhan": "^1.0.1",
         "@geolonia/japanese-numeral": "^1.0.2",
@@ -33,7 +33,7 @@
     "packages/extension": {
       "name": "@anirec/extension",
       "dependencies": {
-        "@anirec/annict-search": "workspace:*",
+        "@anirec/annict": "workspace:*",
         "@radix-ui/react-label": "^2.1.0",
         "@radix-ui/react-radio-group": "^1.2.1",
         "@radix-ui/react-slot": "^1.1.0",
@@ -74,7 +74,7 @@
     "packages/tasker": {
       "name": "@anirec/tasker",
       "dependencies": {
-        "@anirec/annict-search": "workspace:*",
+        "@anirec/annict": "workspace:*",
       },
     },
   },
@@ -85,7 +85,7 @@
 
     "@alloc/quick-lru": ["@alloc/quick-lru@5.2.0", "", {}, "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="],
 
-    "@anirec/annict-search": ["@anirec/annict-search@workspace:packages/annict-search"],
+    "@anirec/annict": ["@anirec/annict@workspace:packages/annict"],
 
     "@anirec/extension": ["@anirec/extension@workspace:packages/extension"],
 
