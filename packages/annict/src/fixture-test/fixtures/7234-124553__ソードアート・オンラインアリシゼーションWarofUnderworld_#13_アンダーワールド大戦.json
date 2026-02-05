@@ -1,0 +1,1154 @@
+{
+  "meta": {
+    "createdAt": "2026-02-05T05:17:29.369Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "ソードアート・オンライン アリシゼーション War of Underworld",
+      "episodeNumber": "#13",
+      "episodeTitle": "アンダーワールド大戦"
+    },
+    "annictUrl": "https://annict.com/works/7234/episodes/124553"
+  },
+  "expected": {
+    "id": "V29yay03MjM0",
+    "title": "ソードアート・オンライン アリシゼーション War of Underworld ‐THE LAST SEASON‐",
+    "episode": {
+      "id": "RXBpc29kZS0xMjQ1NTM=",
+      "title": "アンダーワールド大戦",
+      "number": 13,
+      "numberText": "第13話"
+    }
+  },
+  "variants": [
+    "ソードアート・オンライン アリシゼーション War of Underworld",
+    "ソードアート",
+    "オンライン",
+    "アリシゼーション",
+    "Underworld"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay0xMTAyNw==",
+      "title": "ソードアート・オンライン オルタナティブ ガンゲイル・オンラインII",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjIxMjI=",
+          "title": "二度あることは三度ある",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0xNjIzMDk=",
+          "title": "大貨車作戦",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0xNjI0Njk=",
+          "title": "クラレンスとシャーリー",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0xNjI2MzU=",
+          "title": "特別ルール、発動",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0xNjI4Nzk=",
+          "title": "ビトレイヤーズ・チョイス",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0xNjMwMDM=",
+          "title": "まだ時間はある攻防戦",
+          "number": 6,
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS0xNjMxODI=",
+          "title": "ターン・オーバー",
+          "number": 7,
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS0xNjMzNTE=",
+          "title": "決闘",
+          "number": 8,
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS0xNjM2Mzg=",
+          "title": "戦場への招待",
+          "number": 9,
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS0xNjM3ODQ=",
+          "title": "悪魔の城",
+          "number": 10,
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS0xNjM5NTY=",
+          "title": "ピトフーイの突撃",
+          "number": 11,
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS0xNjQwODE=",
+          "title": "戦う理由は",
+          "number": 12,
+          "numberText": "#12"
+        }
+      ],
+      "seriesList": [
+        "ガンゲイル・オンライン",
+        "ソードアート・オンライン"
+      ]
+    },
+    {
+      "id": "V29yay01NTUz",
+      "title": "ソードアート・オンライン オルタナティブ ガンゲイル・オンライン",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS05NzkyNA==",
+          "title": "スクワッド・ジャム",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS05ODg0Mw==",
+          "title": "GGO",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS05OTI4Mw==",
+          "title": "ファンレター",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS05OTc3Mw==",
+          "title": "デスゲーム",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS05OTk4NQ==",
+          "title": "ラストバトルは私に",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0xMDAyNjE=",
+          "title": "ルフラン",
+          "number": 5,
+          "numberText": "#5.5"
+        },
+        {
+          "id": "RXBpc29kZS0xMDAxOTg=",
+          "title": "SAO失敗者(ルーザー)",
+          "number": 6,
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA0MjM=",
+          "title": "セカンド・スクワッド・ジャム",
+          "number": 7,
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA2NTg=",
+          "title": "ブービートラップ",
+          "number": 8,
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA3Nzg=",
+          "title": "十分間の鏖殺",
+          "number": 9,
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA5ODc=",
+          "title": "魔王復活",
+          "number": 10,
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS0xMDExMDI=",
+          "title": "イカれたレン",
+          "number": 11,
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS0xMDEyMTQ=",
+          "title": "拍手",
+          "number": 12,
+          "numberText": "#12"
+        }
+      ],
+      "seriesList": [
+        "ソードアート・オンライン",
+        "ガンゲイル・オンライン"
+      ]
+    },
+    {
+      "id": "V29yay0xNDA3Mw==",
+      "title": "ソードアート・オンライン オルタナティブ ガンゲイル･オンライン 12.5話「GALA」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ガンゲイル・オンライン"
+      ]
+    },
+    {
+      "id": "V29yay00MDI3",
+      "title": "ソードアート・オンライン Extra Edition",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ソードアート・オンライン"
+      ]
+    },
+    {
+      "id": "V29yay02NjI0",
+      "title": "ファンタシースターオンライン2 エピソード・オラクル",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMTYyNDI=",
+          "title": "ずっとこの日を待っていた",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTYzNzU=",
+          "title": "不気味なナベリウス",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY1NzM=",
+          "title": "完全なるアークス",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY3Mzc=",
+          "title": "始まりの器",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY4MjM=",
+          "title": "ダーカー強襲",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY5OTA=",
+          "title": "終わりの始まり",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTcyMDI=",
+          "title": "ダークファルス",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTczOTk=",
+          "title": "もうそこにいないわたし",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc2MDk=",
+          "title": "アサシンと暴走龍",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc3NTY=",
+          "title": "最後のさようなら",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc4NTc=",
+          "title": "改変",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc5NTI=",
+          "title": "過去と未来",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTgxMDE=",
+          "title": "シャオ'sリポート",
+          "number": 12,
+          "numberText": "第12.5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTgwNDg=",
+          "title": "絶対令(アビス)",
+          "number": 13,
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjAxNzY=",
+          "title": "六芒均衡",
+          "number": 14,
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjAxNzc=",
+          "title": "再誕の日",
+          "number": 15,
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjAxNzg=",
+          "title": "果てしなき跋扈の終わり",
+          "number": 16,
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjAxNzk=",
+          "title": "十年前の、わたし",
+          "number": 17,
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjAzOTg=",
+          "title": "わたしが生まれた その理由",
+          "number": 18,
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjA1MTg=",
+          "title": "消された記録、残された記憶",
+          "number": 19,
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjA2OTg=",
+          "title": "歴史を騙し、現在を喰らう",
+          "number": 20,
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjA4ODE=",
+          "title": "サラとクラリスクレイス",
+          "number": 21,
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjI2OTE=",
+          "title": "フォトナーが生み出したもの",
+          "number": 22,
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjI4MTE=",
+          "title": "出来損ないの最高傑作",
+          "number": 23,
+          "numberText": "第23話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjI4OTM=",
+          "title": "【深遠なる闇】",
+          "number": 24,
+          "numberText": "第24話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjMxNzM=",
+          "title": "あなたが生まれたその理由",
+          "number": 25,
+          "numberText": "第25話"
+        }
+      ],
+      "seriesList": [
+        "ファンタシースターオンライン2"
+      ]
+    },
+    {
+      "id": "V29yay0xMTY2",
+      "title": "ソードアート・オンライン",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0zNjY5",
+          "title": "剣の世界",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0zNjcw",
+          "title": "ビーター",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0zNjcx",
+          "title": "赤鼻のトナカイ",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0zNjcy",
+          "title": "黒の剣士",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0zNjcz",
+          "title": "圏内事件",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0zNjc0",
+          "title": "幻の復讐者",
+          "number": 6,
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS0zNjc1",
+          "title": "心の温度",
+          "number": 7,
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS0zNjc2",
+          "title": "黒と白の剣舞",
+          "number": 8,
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS0zNjc3",
+          "title": "青眼の悪魔",
+          "number": 9,
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS0zNjc4",
+          "title": "紅の殺意",
+          "number": 10,
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS0zNjc5",
+          "title": "朝露の少女",
+          "number": 11,
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS0zNjgw",
+          "title": "ユイの心",
+          "number": 12,
+          "numberText": "#12"
+        },
+        {
+          "id": "RXBpc29kZS0zNjgx",
+          "title": "奈落の淵",
+          "number": 13,
+          "numberText": "#13"
+        },
+        {
+          "id": "RXBpc29kZS0zNjgy",
+          "title": "世界の終焉",
+          "number": 14,
+          "numberText": "#14"
+        },
+        {
+          "id": "RXBpc29kZS0zNjgz",
+          "title": "帰還",
+          "number": 15,
+          "numberText": "#15"
+        },
+        {
+          "id": "RXBpc29kZS0zNjg0",
+          "title": "妖精たちの国",
+          "number": 16,
+          "numberText": "#16"
+        },
+        {
+          "id": "RXBpc29kZS0zNjg1",
+          "title": "囚われの女王",
+          "number": 17,
+          "numberText": "#17"
+        },
+        {
+          "id": "RXBpc29kZS0zNjg2",
+          "title": "世界樹へ",
+          "number": 18,
+          "numberText": "#18"
+        },
+        {
+          "id": "RXBpc29kZS0zNjg3",
+          "title": "ルグルー回廊",
+          "number": 19,
+          "numberText": "#19"
+        },
+        {
+          "id": "RXBpc29kZS0zNjg4",
+          "title": "猛炎の将",
+          "number": 20,
+          "numberText": "#20"
+        },
+        {
+          "id": "RXBpc29kZS0zNjg5",
+          "title": "アルヴヘイムの真実",
+          "number": 21,
+          "numberText": "#21"
+        },
+        {
+          "id": "RXBpc29kZS0zNjkw",
+          "title": "グランド・クエスト",
+          "number": 22,
+          "numberText": "#22"
+        },
+        {
+          "id": "RXBpc29kZS0zNjkx",
+          "title": "絆",
+          "number": 23,
+          "numberText": "#23"
+        },
+        {
+          "id": "RXBpc29kZS0zNjky",
+          "title": "鍍金の勇者",
+          "number": 24,
+          "numberText": "#24"
+        },
+        {
+          "id": "RXBpc29kZS0zNjkz",
+          "title": "世界の種子",
+          "number": 25,
+          "numberText": "#25"
+        }
+      ],
+      "seriesList": [
+        "ソードアート・オンライン"
+      ]
+    },
+    {
+      "id": "V29yay00NzA5",
+      "title": "劇場版 ソードアート・オンライン -オーディナル・スケール-",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ソードアート・オンライン"
+      ]
+    },
+    {
+      "id": "V29yay05MDYx",
+      "title": "劇場版 ソードアート・オンライン -プログレッシブ- 冥き夕闇のスケルツォ",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ソードアート・オンライン"
+      ]
+    },
+    {
+      "id": "V29yay02Mzg5",
+      "title": "シュガー・ラッシュ：オンライン",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "シュガー・ラッシュ"
+      ]
+    },
+    {
+      "id": "V29yay03NjY5",
+      "title": "劇場版 ソードアート・オンライン -プログレッシブ- 星なき夜のアリア",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ソードアート・オンライン"
+      ]
+    },
+    {
+      "id": "V29yay03MjM0",
+      "title": "ソードアート・オンライン アリシゼーション War of Underworld ‐THE LAST SEASON‐",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMjQ0OTQ=",
+          "title": "レミニセンス",
+          "number": 12,
+          "numberText": "第12.5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjQ1NTM=",
+          "title": "アンダーワールド大戦",
+          "number": 13,
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjQ2MzI=",
+          "title": "無限の果て",
+          "number": 14,
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjQ3MzQ=",
+          "title": "扇動",
+          "number": 15,
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjQ4MDk=",
+          "title": "コード871",
+          "number": 16,
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjQ4ODI=",
+          "title": "悪魔の子",
+          "number": 17,
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjUwMTg=",
+          "title": "記憶",
+          "number": 18,
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjUyNzY=",
+          "title": "覚醒",
+          "number": 19,
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjUzOTA=",
+          "title": "夜空の剣",
+          "number": 20,
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjU1Njk=",
+          "title": "時の彼方",
+          "number": 21,
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjU3MDU=",
+          "title": "アリス",
+          "number": 22,
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjU4MTM=",
+          "title": "ニューワールド",
+          "number": 23,
+          "numberText": "第23話"
+        }
+      ],
+      "seriesList": [
+        "ソードアート・オンライン"
+      ]
+    },
+    {
+      "id": "V29yay02NTg3",
+      "title": "ソードアート・オンライン アリシゼーション War of Underworld",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMTYwNjU=",
+          "title": "リフレクション",
+          "numberText": "前半戦総集編"
+        },
+        {
+          "id": "RXBpc29kZS0xMTYzMTg=",
+          "title": "北の地にて",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY1NTQ=",
+          "title": "襲撃",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY2NDI=",
+          "title": "最終負荷実験",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY3OTU=",
+          "title": "ダークテリトリー",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY4ODI=",
+          "title": "開戦前夜",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTcxNzE=",
+          "title": "騎士たちの戦い",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTcyNjE=",
+          "title": "失格者の烙印",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc1ODQ=",
+          "title": "血と命",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc2OTk=",
+          "title": "剣と拳",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc4Mjc=",
+          "title": "創世神ステイシア",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc5MjQ=",
+          "title": "非情の選択",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTgwMTU=",
+          "title": "一筋の光",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": [
+        "ソードアート・オンライン"
+      ]
+    },
+    {
+      "id": "V29yay00MDkz",
+      "title": "ソードアート・オンラインII",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS04Mjgw",
+          "title": "銃の世界",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS04Mjgx",
+          "title": "氷の狙撃手",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS04ODEz",
+          "title": "鮮血の記憶",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS05MjQ1",
+          "title": "GGO",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS05NTEy",
+          "title": "銃と剣",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS05NzI3",
+          "title": "曠野の決闘",
+          "number": 6,
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS05OTE1",
+          "title": "紅の記憶",
+          "number": 7,
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS0xMDM4NA==",
+          "title": "バレット・オブ・バレッツ",
+          "number": 8,
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQ5NA==",
+          "title": "デス・ガン",
+          "number": 9,
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS0xMDc2Mw==",
+          "title": "死の追撃者",
+          "number": 10,
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS0xMDg0Nw==",
+          "title": "強さの意味",
+          "number": 11,
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS0xMTAxOQ==",
+          "title": "幻の銃弾",
+          "number": 12,
+          "numberText": "#12"
+        },
+        {
+          "id": "RXBpc29kZS0xMTE1MA==",
+          "title": "ファントム・バレット",
+          "number": 13,
+          "numberText": "#13"
+        },
+        {
+          "id": "RXBpc29kZS0xNDA1NA==",
+          "title": "小さな一歩",
+          "number": 14,
+          "numberText": "#14"
+        },
+        {
+          "id": "RXBpc29kZS0xNDIyNg==",
+          "title": "Debriefing",
+          "numberText": "#14.5"
+        },
+        {
+          "id": "RXBpc29kZS0xNDE0NA==",
+          "title": "湖の女王",
+          "number": 15,
+          "numberText": "#15"
+        },
+        {
+          "id": "RXBpc29kZS0xNDI0NQ==",
+          "title": "巨人の王",
+          "number": 16,
+          "numberText": "#16"
+        },
+        {
+          "id": "RXBpc29kZS0xNDQzMg==",
+          "title": "エクスキャリバー",
+          "number": 17,
+          "numberText": "#17"
+        },
+        {
+          "id": "RXBpc29kZS0xNDUyNQ==",
+          "title": "森の家",
+          "number": 18,
+          "numberText": "#18"
+        },
+        {
+          "id": "RXBpc29kZS0xNDYxNA==",
+          "title": "絶剣",
+          "number": 19,
+          "numberText": "#19"
+        },
+        {
+          "id": "RXBpc29kZS0xNDcyNQ==",
+          "title": "スリーピング・ナイツ",
+          "number": 20,
+          "numberText": "#20"
+        },
+        {
+          "id": "RXBpc29kZS0xNDg1Nw==",
+          "title": "剣士の碑",
+          "number": 21,
+          "numberText": "#21"
+        },
+        {
+          "id": "RXBpc29kZS0xNTAyMw==",
+          "title": "旅路の果て",
+          "number": 22,
+          "numberText": "#22"
+        },
+        {
+          "id": "RXBpc29kZS0xNTE2Nw==",
+          "title": "夢の始まり",
+          "number": 23,
+          "numberText": "#23"
+        },
+        {
+          "id": "RXBpc29kZS0xNTMwNw==",
+          "title": "マザーズ・ロザリオ",
+          "number": 24,
+          "numberText": "#24"
+        }
+      ],
+      "seriesList": [
+        "ソードアート・オンライン"
+      ]
+    },
+    {
+      "id": "V29yay00NTYx",
+      "title": "ファンタシースターオンライン2 ジ アニメーション",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS02NDU2NQ==",
+          "title": "「はじめまして」から始まるRPG",
+          "number": 1,
+          "numberText": "Quest 01"
+        },
+        {
+          "id": "RXBpc29kZS02NTQ1Ng==",
+          "title": "孤高の戦士",
+          "number": 2,
+          "numberText": "Quest 02"
+        },
+        {
+          "id": "RXBpc29kZS02NzE4Mg==",
+          "title": "ロールプレイ",
+          "number": 3,
+          "numberText": "Quest 03"
+        },
+        {
+          "id": "RXBpc29kZS02ODI5OA==",
+          "title": "ファンタシースターオフライン",
+          "number": 4,
+          "numberText": "Quest 04"
+        },
+        {
+          "id": "RXBpc29kZS02OTQ4OQ==",
+          "title": "アイカ",
+          "number": 5,
+          "numberText": "Quest 05"
+        },
+        {
+          "id": "RXBpc29kZS03MzAwMg==",
+          "title": "禁じられたPSO2",
+          "number": 6,
+          "numberText": "Quest 06"
+        },
+        {
+          "id": "RXBpc29kZS03MzEzMw==",
+          "title": "失踪",
+          "number": 7,
+          "numberText": "Quest 07"
+        },
+        {
+          "id": "RXBpc29kZS03MzIzNQ==",
+          "title": "ターニングポイント",
+          "number": 8,
+          "numberText": "Quest 08"
+        },
+        {
+          "id": "RXBpc29kZS03MzMzNw==",
+          "title": "戦力外通告",
+          "number": 9,
+          "numberText": "Quest 09"
+        },
+        {
+          "id": "RXBpc29kZS03MzUwOQ==",
+          "title": "依代",
+          "number": 10,
+          "numberText": "Quest 10"
+        },
+        {
+          "id": "RXBpc29kZS03MzY5Mw==",
+          "title": "ダークファルス",
+          "number": 11,
+          "numberText": "Quest 11"
+        },
+        {
+          "id": "RXBpc29kZS03NDY0Nw==",
+          "title": "境界を超えるRPG",
+          "number": 12,
+          "numberText": "Quest 12"
+        }
+      ],
+      "seriesList": [
+        "ファンタシースターオンライン2"
+      ]
+    },
+    {
+      "id": "V29yay01NTUw",
+      "title": "ソードアート・オンライン アリシゼーション",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMDQ0OTA=",
+          "title": "アンダーワールド",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQ2MzE=",
+          "title": "悪魔の樹",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQ3Njg=",
+          "title": "果ての山脈",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQ5NzY=",
+          "title": "旅立ち",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDUxMDQ=",
+          "title": "オーシャン・タートル",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDUyMjA=",
+          "title": "アリシゼーション計画",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDUzNDI=",
+          "title": "剣の学び舎",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU0NzU=",
+          "title": "剣士の矜持",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU1OTU=",
+          "title": "貴族の責務",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU3MjA=",
+          "title": "禁忌目録",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU4NTU=",
+          "title": "セントラル・カセドラル",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU5ODM=",
+          "title": "図書室の賢者",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDYxNTQ=",
+          "title": "支配者と調停者",
+          "number": 13,
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDYyNzI=",
+          "title": "紅蓮の騎士",
+          "number": 14,
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDYzODE=",
+          "title": "烈日の騎士",
+          "number": 15,
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDY2MDI=",
+          "title": "金木犀の騎士",
+          "number": 16,
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDY3MjU=",
+          "title": "休戦協定",
+          "number": 17,
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDg3Mjk=",
+          "title": "伝説の英雄",
+          "number": 18,
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDkwNTE=",
+          "title": "リコレクション",
+          "number": 18,
+          "numberText": "第18.5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDkxMzA=",
+          "title": "右目の封印",
+          "number": 19,
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDk3MDA=",
+          "title": "シンセサイズ",
+          "number": 20,
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDk5MDg=",
+          "title": "三十二番目の騎士",
+          "number": 21,
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTAwNzM=",
+          "title": "剣の巨人",
+          "number": 22,
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTAxODQ=",
+          "title": "アドミニストレータ",
+          "number": 23,
+          "numberText": "第23話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTAzODk=",
+          "title": "ぼくの英雄",
+          "number": 24,
+          "numberText": "第24話"
+        }
+      ],
+      "seriesList": [
+        "ソードアート・オンライン"
+      ]
+    }
+  ]
+}

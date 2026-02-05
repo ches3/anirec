@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "createdAt": "2026-02-05T06:09:58.700Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "もめんたりー・リリィ",
+      "episodeNumber": "第14話",
+      "episodeTitle": "続いていく割烹、割烹！"
+    },
+    "annictUrl": "https://annict.com/works/15074"
+  },
+  "expected": {
+    "id": "V29yay0xNTA3NA==",
+    "title": "もめんたりー・リリィ 第14話「続いていく割烹、割烹！」",
+    "episode": null
+  },
+  "variants": [
+    "もめんたりー・リリィ",
+    "もめんたりー"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay0xMjkwNw==",
+      "title": "もめんたりー・リリィ",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjQzMzQ=",
+          "title": "ひとりぼっちの後のさんまのひつまぶし",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjQ0MzA=",
+          "title": "みんなと一緒のサバ缶のイタリア風トマト鍋",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjQ1Mzc=",
+          "title": "忘れられないかに缶とサバ缶のちらし寿司",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjQ3MDQ=",
+          "title": "ぬくもり重ねた濃厚コンビーフ味噌ラーメン",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjUxMTQ=",
+          "title": "想いを伝えてサバと牡蠣の卵雑炊 崩しきりたんぽ風",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjU2MDM=",
+          "title": "プールと動画と夏の上海風イカ焼きそば",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjU4MTE=",
+          "title": "みんなで戦う塩むすび",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjYxNjM=",
+          "title": "雨がやんだらチョコレートバー",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjY0MDU=",
+          "title": "夜通し笑った隠し味に色々入れたら偶然おいしくなったカレー",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjY1MzU=",
+          "title": "もうひとりと足りない缶詰",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjc0NjE=",
+          "title": "触れないあの子とみんなで割烹",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjc5MTU=",
+          "title": "こんなに楽しいフルコース",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjgxNDE=",
+          "title": "みんながいる〆のお茶漬けバイキング",
+          "number": 13,
+          "numberText": "第13話"
+        }
+      ],
+      "seriesList": [
+        "もめんたりー・リリィ"
+      ]
+    },
+    {
+      "id": "V29yay0xNTA3NA==",
+      "title": "もめんたりー・リリィ 第14話「続いていく割烹、割烹！」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "もめんたりー・リリィ"
+      ]
+    }
+  ]
+}

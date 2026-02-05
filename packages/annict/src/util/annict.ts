@@ -2,12 +2,75 @@ import { request } from "graphql-request";
 import {
 	CreateRecordDocument,
 	CreateReviewDocument,
+	FetchNodeDocument,
 	SearchWorksDocument,
 	ViewerActivitiesDocument,
 } from "../gql/generated";
-import type { Activities, Work } from "../types";
+import type { Activities, Episode, Work } from "../types";
 
 const endpoint = "https://api.annict.com/graphql";
+
+export async function fetchNode(
+	id: string,
+	token: string,
+): Promise<
+	| { type: "Work"; work: Work; episode: null }
+	| { type: "Episode"; work: Omit<Work, "episodes">; episode: Episode }
+> {
+	const data = await request(
+		endpoint,
+		FetchNodeDocument,
+		{ id },
+		{ authorization: `Bearer ${token}` },
+	);
+
+	const node = data.node;
+	if (!node) {
+		throw new Error(`Node not found: ${id}`);
+	}
+
+	if (node.__typename === "Episode") {
+		const episode: Episode = {
+			id: node.id,
+			title: node.episodeTitle ?? undefined,
+			number: node.number ?? undefined,
+			numberText: node.numberText ?? undefined,
+		};
+		const seriesList = node.work.seriesList?.nodes
+			?.map((series) => series?.name)
+			.filter((name) => name !== undefined);
+		const work = {
+			id: node.work.id,
+			title: node.work.workTitle,
+			noEpisodes: false, // エピソードが存在するため
+			seriesList: seriesList,
+		};
+		return { type: "Episode", work, episode };
+	}
+
+	if (node.__typename === "Work") {
+		const seriesList = node.seriesList?.nodes
+			?.map((series) => series?.name)
+			.filter((name) => name !== undefined);
+		const work = {
+			id: node.id,
+			title: node.workTitle,
+			noEpisodes: node.noEpisodes,
+			episodes: node.episodes?.nodes
+				?.filter((episode) => !!episode)
+				.map((episode) => ({
+					id: episode.id,
+					title: episode.title || undefined,
+					number: episode.number || undefined,
+					numberText: episode.numberText || undefined,
+				})),
+			seriesList: seriesList,
+		};
+		return { type: "Work", work, episode: null };
+	}
+
+	throw new Error(`Unexpected node type: ${node.__typename}`);
+}
 
 export async function searchWorks(
 	titles: string[],

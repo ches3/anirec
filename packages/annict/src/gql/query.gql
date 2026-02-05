@@ -71,3 +71,42 @@ mutation createReview($id: ID!) {
 		clientMutationId
 	}
 }
+
+query fetchNode($id: ID!) {
+	node(id: $id) {
+		__typename
+		... on Episode {
+			id
+			episodeTitle: title
+			number
+			numberText
+			work {
+				id
+				workTitle: title
+				seriesList {
+					nodes {
+						name
+					}
+				}
+			}
+		}
+		... on Work {
+			id
+			workTitle: title
+			noEpisodes
+			episodes(orderBy: { field: SORT_NUMBER, direction: ASC }) {
+				nodes {
+					id
+					title
+					number
+					numberText
+				}
+			}
+			seriesList {
+				nodes {
+					name
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "createdAt": "2026-02-05T04:36:38.866Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "負けヒロインが多すぎる！",
+      "episodeTitle": "第1話 「プロ幼馴染八奈見杏菜の負けっぷり」"
+    },
+    "annictUrl": "https://annict.com/works/12075/episodes/160490"
+  },
+  "expected": {
+    "id": "V29yay0xMjA3NQ==",
+    "title": "負けヒロインが多すぎる！",
+    "episode": {
+      "id": "RXBpc29kZS0xNjA0OTA=",
+      "title": "プロ幼馴染み八奈見杏菜の負けっぷり",
+      "number": 1,
+      "numberText": "第1話"
+    }
+  },
+  "variants": [
+    "負けヒロインが多すぎる！",
+    "負けヒロインが多すぎる!",
+    "負けヒロインが多すぎる"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay0xMjA3NQ==",
+      "title": "負けヒロインが多すぎる！",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjA0OTA=",
+          "title": "プロ幼馴染み八奈見杏菜の負けっぷり",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA1ODU=",
+          "title": "約束された敗北を君に",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA3Njc=",
+          "title": "戦う前から負けている",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA4ODE=",
+          "title": "負けヒロインを覗く時、負けヒロインもまたあなたを覗いているのだ",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA5ODk=",
+          "title": "朝雲千早は惑わせる",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjEwOTk=",
+          "title": "振られたことのない者だけが、負けヒロインに石を投げなさい",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjEyNjc=",
+          "title": "ハッピーエンドの向こう側",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjEzODk=",
+          "title": "おこまりでしたらコンサルに",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjE1MzQ=",
+          "title": "先生は天井の染みかなんかだと思って、続きをどうぞ",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjE2OTM=",
+          "title": "さようならには早すぎる",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjE4NTA=",
+          "title": "結果責任についての話をしようか",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjE5OTM=",
+          "title": "俺はひょっとして、最終話でヒロインの横にいるポッと出のモブキャラなのだろうか",
+          "number": 12,
+          "numberText": "最終話"
+        }
+      ],
+      "seriesList": [
+        "負けヒロインが多すぎる！"
+      ]
+    },
+    {
+      "id": "V29yay0xNTg0MA==",
+      "title": "負けヒロインが多すぎる！2期",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": [
+        "負けヒロインが多すぎる！"
+      ]
+    }
+  ]
+}

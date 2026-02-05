@@ -1,0 +1,515 @@
+{
+  "meta": {
+    "createdAt": "2026-02-05T04:29:14.827Z"
+  },
+  "input": {
+    "params": {
+      "title": "劇場版 響け！ユーフォニアム〜北宇治高校吹奏楽部へようこそ〜"
+    },
+    "annictUrl": "https://annict.com/works/4819"
+  },
+  "expected": {
+    "id": "V29yay00ODE5",
+    "title": "劇場版 響け！ユーフォニアム～北宇治高校吹奏楽部へようこそ～",
+    "episode": null
+  },
+  "variants": [
+    "劇場版 響け！ユーフォニアム〜北宇治高校吹奏楽部へようこそ〜",
+    "劇場版 響け!ユーフォニアム〜北宇治高校吹奏楽部へようこそ〜",
+    " 響け！ユーフォニアム〜北宇治高校吹奏楽部へようこそ〜",
+    "響け",
+    "ユーフォニアム",
+    "北宇治高校吹奏楽部へようこそ"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay00ODE5",
+      "title": "劇場版 響け！ユーフォニアム～北宇治高校吹奏楽部へようこそ～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay00MzA4",
+      "title": "響け！ユーフォニアム",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xODM1Mg==",
+          "title": "ようこそハイスクール",
+          "number": 1,
+          "numberText": "第一回"
+        },
+        {
+          "id": "RXBpc29kZS0xODQ1Mw==",
+          "title": "よろしくユーフォニアム",
+          "number": 2,
+          "numberText": "第二回"
+        },
+        {
+          "id": "RXBpc29kZS0xODU3OQ==",
+          "title": "はじめてアンサンブル",
+          "number": 3,
+          "numberText": "第三回"
+        },
+        {
+          "id": "RXBpc29kZS0xODY4Mg==",
+          "title": "うたうよソルフェージュ",
+          "number": 4,
+          "numberText": "第四回"
+        },
+        {
+          "id": "RXBpc29kZS0xOTE2Ng==",
+          "title": "ただいまフェスティバル",
+          "number": 5,
+          "numberText": "第五回"
+        },
+        {
+          "id": "RXBpc29kZS0xOTM1MQ==",
+          "title": "きらきらチューバ",
+          "number": 6,
+          "numberText": "第六回"
+        },
+        {
+          "id": "RXBpc29kZS0xOTQ0MQ==",
+          "title": "なきむしサクソフォン",
+          "number": 7,
+          "numberText": "第七回"
+        },
+        {
+          "id": "RXBpc29kZS0xOTU1Mw==",
+          "title": "おまつりトライアングル",
+          "number": 8,
+          "numberText": "第八回"
+        },
+        {
+          "id": "RXBpc29kZS0xOTc1Nw==",
+          "title": "おねがいオーディション",
+          "number": 9,
+          "numberText": "第九回"
+        },
+        {
+          "id": "RXBpc29kZS0xOTg5Ng==",
+          "title": "まっすぐトランペット",
+          "number": 10,
+          "numberText": "第十回"
+        },
+        {
+          "id": "RXBpc29kZS0yMDAxNw==",
+          "title": "おかえりオーディション",
+          "number": 11,
+          "numberText": "第十一回"
+        },
+        {
+          "id": "RXBpc29kZS0yMDMxOQ==",
+          "title": "わたしのユーフォニアム",
+          "number": 12,
+          "numberText": "第十二回"
+        },
+        {
+          "id": "RXBpc29kZS0yMDM5MA==",
+          "title": "さよならコンクール",
+          "number": 13,
+          "numberText": "最終回"
+        },
+        {
+          "id": "RXBpc29kZS0zMjMwNA==",
+          "title": "かけだすモナカ",
+          "numberText": "番外編"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay0xMzY0Mg==",
+      "title": "劇場版 響け！ユーフォニアム～フォトセッションへようこそ",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjA1NzA=",
+          "number": 1,
+          "numberText": "1週目"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA1NzE=",
+          "number": 2,
+          "numberText": "2週目"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA1NzI=",
+          "number": 3,
+          "numberText": "3週目"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay04Njk2",
+      "title": "響け！ユーフォニアム2 未放送ショートムービー",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzQ1NjA=",
+          "title": "花火大会キッスへようこそ！",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjE=",
+          "title": "プールへようこそ！",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjI=",
+          "title": "メイド服へようこそ！",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjM=",
+          "title": "バトル文化祭へようこそ！",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjQ=",
+          "title": "フライング滝へようこそ！",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjU=",
+          "title": "画伯へようこそ！",
+          "number": 6,
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjY=",
+          "title": "安眠へようこそ！",
+          "number": 7,
+          "numberText": "#7"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay0xNTcxNw==",
+      "title": "最終楽章 響け！ユーフォニアム 前編",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay04Njk1",
+      "title": "響け！ユーフォニアム 未放送ショートムービー「吹奏楽部の日常」",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzQ1NTM=",
+          "title": "楽器をお掃除だフォ！",
+          "number": 1,
+          "numberText": "その①"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTQ=",
+          "title": "こんなあだ名は嫌だチュー！",
+          "number": 2,
+          "numberText": "その②"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTU=",
+          "title": "吹奏楽部男子の日常だボーン！",
+          "number": 3,
+          "numberText": "その③"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTY=",
+          "title": "チューバ君は王子様なのバス！",
+          "number": 4,
+          "numberText": "その④"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTc=",
+          "title": "毎日は危険がいっぱいだフォ！",
+          "number": 5,
+          "numberText": "その⑤"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTg=",
+          "title": "滝先生の秘密だフォ！",
+          "number": 6,
+          "numberText": "その⑥"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTk=",
+          "title": "移調楽器って何だチュー！",
+          "number": 7,
+          "numberText": "その⑦"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay00ODI2",
+      "title": "響け！ユーフォニアム2",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS03NzU4Nw==",
+          "title": "まなつのファンファーレ",
+          "number": 1,
+          "numberText": "第一回"
+        },
+        {
+          "id": "RXBpc29kZS03NzgxNw==",
+          "title": "とまどいフルート",
+          "number": 2,
+          "numberText": "第二回"
+        },
+        {
+          "id": "RXBpc29kZS03ODUzMA==",
+          "title": "なやめるノクターン",
+          "number": 3,
+          "numberText": "第三回"
+        },
+        {
+          "id": "RXBpc29kZS04MDEwMg==",
+          "title": "めざめるオーボエ",
+          "number": 4,
+          "numberText": "第四回"
+        },
+        {
+          "id": "RXBpc29kZS04MDI2Mg==",
+          "title": "きせきのハーモニー",
+          "number": 5,
+          "numberText": "第五回"
+        },
+        {
+          "id": "RXBpc29kZS04MDQzNw==",
+          "title": "あめふりコンダクター",
+          "number": 6,
+          "numberText": "第六回"
+        },
+        {
+          "id": "RXBpc29kZS04MDU1NA==",
+          "title": "えきびるコンサート",
+          "number": 7,
+          "numberText": "第七回"
+        },
+        {
+          "id": "RXBpc29kZS04MDczMw==",
+          "title": "かぜひきラプソディー",
+          "number": 8,
+          "numberText": "第八回"
+        },
+        {
+          "id": "RXBpc29kZS04MzMwNQ==",
+          "title": "ひびけ！ユーフォニアム",
+          "number": 9,
+          "numberText": "第九回"
+        },
+        {
+          "id": "RXBpc29kZS04ODQ1Nw==",
+          "title": "ほうかごオブリガート",
+          "number": 10,
+          "numberText": "第十回"
+        },
+        {
+          "id": "RXBpc29kZS04ODY3MQ==",
+          "title": "はつこいトランペット",
+          "number": 11,
+          "numberText": "第十一回"
+        },
+        {
+          "id": "RXBpc29kZS04ODc5Ng==",
+          "title": "さいごのコンクール",
+          "number": 12,
+          "numberText": "第十二回"
+        },
+        {
+          "id": "RXBpc29kZS04ODg4Nw==",
+          "title": "はるさきエピローグ",
+          "number": 13,
+          "numberText": "最終回"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay01MzM4",
+      "title": "劇場版 響け！ユーフォニアム～届けたいメロディ～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay0xMzU4NQ==",
+      "title": "響け！ユーフォニアム3 Extra Episode",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjA0MTE=",
+          "title": "いつでもナチュラル",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTI=",
+          "title": "かわいいドルチェ",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTM=",
+          "title": "てくてくアンダンテ",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTQ=",
+          "title": "すすむよラルゴ",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTU=",
+          "title": "きみへのアモローソ",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTY=",
+          "title": "あしたへコーダ",
+          "number": 6,
+          "numberText": "#6"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay05Njg5",
+      "title": "特別編 響け！ユーフォニアム～アンサンブルコンテスト～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay01MzQw",
+      "title": "劇場版 響け！ユーフォニアム～誓いのフィナーレ～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay02Njg4",
+      "title": "響け！ユーフォニアム3",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTg0NTI=",
+          "title": "あらたなユーフォニアム",
+          "number": 1,
+          "numberText": "第一回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg1Nzk=",
+          "title": "さんかくシンコペーション",
+          "number": 2,
+          "numberText": "第二回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg3Mjg=",
+          "title": "みずいろプレリュード",
+          "number": 3,
+          "numberText": "第三回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg4NTc=",
+          "title": "きみとのエチュード",
+          "number": 4,
+          "numberText": "第四回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg5NTc=",
+          "title": "ふたりでトワイライト",
+          "number": 5,
+          "numberText": "第五回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTkxMjc=",
+          "title": "ゆらぎのディゾナンス",
+          "number": 6,
+          "numberText": "第六回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTkyOTc=",
+          "title": "なついろフェルマータ",
+          "number": 7,
+          "numberText": "第七回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTk0Mjk=",
+          "title": "なやめるオスティナート",
+          "number": 8,
+          "numberText": "第八回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTk3MzU=",
+          "title": "ちぐはぐチューニング",
+          "number": 9,
+          "numberText": "第九回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTk5MTc=",
+          "title": "つたえるアルペジオ",
+          "number": 10,
+          "numberText": "第十回"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAwNTY=",
+          "title": "みらいへオーケストラ",
+          "number": 11,
+          "numberText": "第十一回"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAxNjA=",
+          "title": "さいごのソリスト",
+          "number": 12,
+          "numberText": "第十二回"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAzMDc=",
+          "title": "つながるメロディ",
+          "number": 13,
+          "numberText": "最終回"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    }
+  ]
+}

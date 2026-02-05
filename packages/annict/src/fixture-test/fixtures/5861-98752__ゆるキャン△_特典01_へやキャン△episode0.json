@@ -1,0 +1,377 @@
+{
+  "meta": {
+    "createdAt": "2026-02-05T08:11:11.243Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "ゆるキャン△",
+      "episodeNumber": "特典01",
+      "episodeTitle": "へやキャン△episode0"
+    },
+    "annictUrl": "https://annict.com/works/5861/episodes/98752"
+  },
+  "expected": {
+    "id": "V29yay01ODYx",
+    "title": "ゆるキャン△ 映像特典",
+    "episode": {
+      "id": "RXBpc29kZS05ODc1Mg==",
+      "title": "へやキャン△ episode0",
+      "number": 1,
+      "numberText": "第1巻特典"
+    }
+  },
+  "variants": [
+    "ゆるキャン△",
+    "ゆるキャン"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay02Mjky",
+      "title": "映画 ゆるキャン△",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ゆるキャン△"
+      ]
+    },
+    {
+      "id": "V29yay0xNDYyMA==",
+      "title": "ゆるキャン△ SEASON４",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": [
+        "ゆるキャン△"
+      ]
+    },
+    {
+      "id": "V29yay01ODYx",
+      "title": "ゆるキャン△ 映像特典",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS05ODc1Mg==",
+          "title": "へやキャン△ episode0",
+          "number": 1,
+          "numberText": "第1巻特典"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQ3MDA=",
+          "title": "ほらキャン△",
+          "number": 2,
+          "numberText": "第2巻特典"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQ3MDE=",
+          "title": "サバキャン△",
+          "number": 3,
+          "numberText": "第3巻特典"
+        }
+      ],
+      "seriesList": [
+        "ゆるキャン△"
+      ]
+    },
+    {
+      "id": "V29yay05MDQ1",
+      "title": "ゆるキャン△ SEASON2 映像特典",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzcxOTU=",
+          "title": "ミステリーキャンプ",
+          "number": 1,
+          "numberText": "完全新作アニメーション①"
+        },
+        {
+          "id": "RXBpc29kZS0xMzcxOTY=",
+          "title": "旅するしまりん",
+          "number": 2,
+          "numberText": "完全新作アニメーション②"
+        }
+      ],
+      "seriesList": [
+        "ゆるキャン△"
+      ]
+    },
+    {
+      "id": "V29yay0xMDEzNQ==",
+      "title": "ゆるキャン△ SEASON3",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTg0MDI=",
+          "title": "次、どこ行こうか",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg1MTg=",
+          "title": "プチキャンと庭キャン",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg2NzM=",
+          "title": "出発！吊り橋の国",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg3ODk=",
+          "title": "畑薙アタック!!地獄のデスロード",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg5MDY=",
+          "title": "焚き火と牛まつり",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTkwNjE=",
+          "title": "それじゃあまた、いつか",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTkxNzc=",
+          "title": "ホラかホンマか回想キャンプ",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTkzNzg=",
+          "title": "めしテロはじまるよ!!",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTk0ODU=",
+          "title": "ツーリングと桜めぐり",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTk4NjY=",
+          "title": "ちくわと電車と千明のソロキャン",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAwMDE=",
+          "title": "思い出の風景",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAxMDg=",
+          "title": "4月2日、花見キャンプ",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": [
+        "ゆるキャン△"
+      ]
+    },
+    {
+      "id": "V29yay01NDU5",
+      "title": "ゆるキャン△",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS05NjEyNA==",
+          "title": "ふじさんとカレーめん",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS05NjIxMw==",
+          "title": "ようこそ 野クルへ！",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS05NjM4NQ==",
+          "title": "ふじさんとまったりお鍋キャンプ",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS05NjQ5Mw==",
+          "title": "野クルとソロキャンガール",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS05NjYwNw==",
+          "title": "二つのキャンプ、二人の景色",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS05NjczOA==",
+          "title": "お肉と紅葉と謎の湖",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS05Njg1Mw==",
+          "title": "湖畔の夜とキャンプの人々",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS05Njk1MQ==",
+          "title": "テスト、カリブー、まんじゅううまい",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS05NzExMg==",
+          "title": "なでしこナビと湯けむりの夜",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS05NzIwOA==",
+          "title": "旅下手さんとキャンプ会議",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS05NzM0Nw==",
+          "title": "クリキャン！",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS05NzQ2NA==",
+          "title": "ふじさんとゆるキャンガール",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": [
+        "ゆるキャン△"
+      ]
+    },
+    {
+      "id": "V29yay0xMjg5Mw==",
+      "title": "ゆるキャン△ SEASON3 映像特典",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTg2Njk=",
+          "title": "野クルのへや",
+          "number": 1,
+          "numberText": "第1巻特典"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg2NzA=",
+          "title": "あめキャン△",
+          "number": 2,
+          "numberText": "第2巻特典"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg2NzE=",
+          "title": "リンとなでしこの伊奈ヶ湖春キャンプ",
+          "number": 3,
+          "numberText": "第3巻特典"
+        }
+      ],
+      "seriesList": [
+        "ゆるキャン△"
+      ]
+    },
+    {
+      "id": "V29yay02Mjkx",
+      "title": "ゆるキャン△ SEASON2",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMjgwNzU=",
+          "title": "旅のおともにカレーめん",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjgyOTQ=",
+          "title": "大晦日のソロキャンガール",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg0MDQ=",
+          "title": "たなぼたキャンプと改めて思ったこと",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg1MDc=",
+          "title": "バイトのお金で何を買う？",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg2MTc=",
+          "title": "カリブーくんと山中湖",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg3MjE=",
+          "title": "大間々岬の冬",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg5MTU=",
+          "title": "なでしこのソロキャン計画",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjkwNjk=",
+          "title": "ひとりのキャンプ",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjkxNzM=",
+          "title": "冬の終わりと出発の日",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjkyODc=",
+          "title": "伊豆キャン！はじまり",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjk2MTU=",
+          "title": "伊豆キャン!! みちゆき",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjk3MzE=",
+          "title": "伊豆キャン!!! バースデー！",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjk5NTM=",
+          "title": "ただいま",
+          "number": 13,
+          "numberText": "第13話"
+        }
+      ],
+      "seriesList": [
+        "ゆるキャン△"
+      ]
+    }
+  ]
+}
