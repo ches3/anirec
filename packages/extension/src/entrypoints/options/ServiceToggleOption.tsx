@@ -1,11 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import type { Vod } from "@/types";
-import {
-	getEnabledServices,
-	type ServiceEnabled,
-	saveEnabledServices,
-} from "@/utils/settings";
+import type { ServiceEnabled } from "@/utils/settings";
 
 function ServiceToggleOptionItem({
 	id,
@@ -32,56 +28,49 @@ function ServiceToggleOptionItem({
 	);
 }
 
-export function ServiceToggleOption({ className }: { className?: string }) {
-	const [enabled, setEnabled] = useState<ServiceEnabled>();
-
-	useEffect(() => {
-		(async () => {
-			const enabled = await getEnabledServices();
-			setEnabled(enabled);
-		})();
-	}, []);
-
-	const onToggle = async (id: Vod, isEnabled: boolean) => {
-		if (!enabled) {
-			return;
-		}
+export function ServiceToggleOption({
+	className,
+	enabled,
+	onChange,
+}: {
+	className?: string;
+	enabled: ServiceEnabled;
+	onChange: (nextEnabled: ServiceEnabled) => void;
+}) {
+	const onToggle = (id: Vod, isEnabled: boolean) => {
 		const newEnabled = { ...enabled, [id]: isEnabled };
-		setEnabled(newEnabled);
-		await saveEnabledServices(newEnabled);
+		onChange(newEnabled);
 	};
 
 	return (
-		enabled && (
-			<div className={className}>
-				<h2 className="text-lg font-bold">自動記録を有効にするサービス</h2>
-				<div className="flex flex-col gap-4 mt-4">
-					<ServiceToggleOptionItem
-						id="dmm"
-						label="DMM TV"
-						enabled={enabled.dmm}
-						onToggle={onToggle}
-					/>
-					<ServiceToggleOptionItem
-						id="unext"
-						label="U-NEXT"
-						enabled={enabled.unext}
-						onToggle={onToggle}
-					/>
-					<ServiceToggleOptionItem
-						id="abema"
-						label="ABEMA"
-						enabled={enabled.abema}
-						onToggle={onToggle}
-					/>
-					<ServiceToggleOptionItem
-						id="danime"
-						label="dアニメストア"
-						enabled={enabled.danime}
-						onToggle={onToggle}
-					/>
-				</div>
+		<div className={className}>
+			<h2 className="text-lg font-bold">自動記録を有効にするサービス</h2>
+			<div className="flex flex-col gap-4 mt-4">
+				<ServiceToggleOptionItem
+					id="dmm"
+					label="DMM TV"
+					enabled={enabled.dmm}
+					onToggle={onToggle}
+				/>
+				<ServiceToggleOptionItem
+					id="unext"
+					label="U-NEXT"
+					enabled={enabled.unext}
+					onToggle={onToggle}
+				/>
+				<ServiceToggleOptionItem
+					id="abema"
+					label="ABEMA"
+					enabled={enabled.abema}
+					onToggle={onToggle}
+				/>
+				<ServiceToggleOptionItem
+					id="danime"
+					label="dアニメストア"
+					enabled={enabled.danime}
+					onToggle={onToggle}
+				/>
 			</div>
-		)
+		</div>
 	);
 }

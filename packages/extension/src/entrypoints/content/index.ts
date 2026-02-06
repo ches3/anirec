@@ -1,12 +1,7 @@
 import { isRecorded, record } from "@anirec/annict";
 import type { ContentScriptContext } from "#imports";
 import { searchFromList } from "@/utils/search";
-import {
-	getEnabledServices,
-	getPreventDuplicateDays,
-	getRecordTiming,
-	getToken,
-} from "@/utils/settings";
+import { getRecordSettings, getToken } from "@/utils/settings";
 import { identifyVod, isVodEnabled } from "@/utils/vod";
 import { extractSearchParams } from "./extract-search-params";
 import { wait } from "./wait";
@@ -41,8 +36,8 @@ async function script(ctx: ContentScriptContext) {
 		return;
 	}
 
-	const enabled = await getEnabledServices();
-	if (!isVodEnabled(vod, enabled)) {
+	const recordSettings = await getRecordSettings();
+	if (!isVodEnabled(vod, recordSettings.enabledServices)) {
 		return;
 	}
 
@@ -66,8 +61,7 @@ async function script(ctx: ContentScriptContext) {
 	console.log("タイトル情報", titleList);
 
 	// 待機
-	const recordTiming = await getRecordTiming();
-	await wait(recordTiming, ctx);
+	await wait(recordSettings.timing, ctx);
 
 	// エピソードを検索
 	const result = await searchFromList(titleList, token).catch((e) => {
@@ -81,7 +75,7 @@ async function script(ctx: ContentScriptContext) {
 
 	// エピソードを記録
 	const id = result.episode?.id || result.id;
-	const days = await getPreventDuplicateDays();
+	const days = recordSettings.preventDuplicateDays;
 	if (days && (await isRecorded(id, days, token))) {
 		console.log("このエピソードは記録済みです。", result);
 		return;
