@@ -1,3 +1,5 @@
+import type { Vod } from "@/types";
+
 export async function getToken() {
 	const token =
 		(await storage.getItem<string>("sync:token")) ||
@@ -11,74 +13,61 @@ export type RecordTiming = {
 	delaySeconds: number;
 };
 
-const defaultRecordTiming: RecordTiming = {
-	type: "continued",
-	continuedSeconds: 90,
-	delaySeconds: 180,
+export type ServiceEnabled = Record<Vod, boolean>;
+
+export type RecordSettings = {
+	timing: RecordTiming;
+	enabledServices: ServiceEnabled;
+	preventDuplicateDays: number;
 };
 
-export async function getRecordTiming() {
-	const recordTiming = await storage.getItem<RecordTiming>("sync:recordTiming");
-	if (recordTiming) {
-		return recordTiming;
-	}
-	return defaultRecordTiming;
-}
-
-export async function saveRecordTiming(
-	type: RecordTiming["type"] | undefined,
-	continuedSeconds: number | undefined,
-	delaySeconds: number | undefined,
-) {
-	const prevRecordTiming = await getRecordTiming();
-	await storage.setItem<RecordTiming>("sync:recordTiming", {
-		type: type !== undefined ? type : prevRecordTiming.type,
-		continuedSeconds:
-			continuedSeconds !== undefined
-				? continuedSeconds
-				: prevRecordTiming.continuedSeconds,
-		delaySeconds:
-			delaySeconds !== undefined ? delaySeconds : prevRecordTiming.delaySeconds,
-	});
-}
-
-export type ServiceEnabled = {
-	dmm: boolean;
-	unext: boolean;
-	abema: boolean;
-	danime: boolean;
+export type RecordSettingsPatch = {
+	timing?: Partial<RecordTiming>;
+	enabledServices?: Partial<ServiceEnabled>;
+	preventDuplicateDays?: number;
 };
 
-export async function getEnabledServices() {
-	const enabled = await storage.getItem<ServiceEnabled>("sync:enabledServices");
-	if (enabled) {
-		return enabled;
-	}
+export function mergeRecordSettings(
+	base: RecordSettings,
+	incoming?: RecordSettingsPatch,
+): RecordSettings {
 	return {
+		...base,
+		...(incoming ?? {}),
+		timing: {
+			...base.timing,
+			...(incoming?.timing ?? {}),
+		},
+		enabledServices: {
+			...base.enabledServices,
+			...(incoming?.enabledServices ?? {}),
+		},
+	};
+}
+
+const defaultRecordSettings: RecordSettings = {
+	timing: {
+		type: "continued",
+		continuedSeconds: 90,
+		delaySeconds: 180,
+	},
+	enabledServices: {
 		dmm: true,
 		unext: true,
 		abema: true,
 		danime: true,
-	};
-}
+	},
+	preventDuplicateDays: 7,
+};
 
-export async function saveEnabledServices(enabled: ServiceEnabled) {
-	await storage.setItem<ServiceEnabled>("sync:enabledServices", {
-		dmm: enabled.dmm,
-		unext: enabled.unext,
-		abema: enabled.abema,
-		danime: enabled.danime,
-	});
-}
-
-export async function getPreventDuplicateDays() {
-	const days = await storage.getItem<number>("sync:preventDuplicateDays");
-	if (days !== null) {
-		return days;
+export async function getRecordSettings() {
+	const settings = await storage.getItem<RecordSettings>("sync:recordSettings");
+	if (!settings) {
+		return defaultRecordSettings;
 	}
-	return 7;
+	return mergeRecordSettings(defaultRecordSettings, settings);
 }
 
-export async function savePreventDuplicateDays(days: number) {
-	await storage.setItem<number>("sync:preventDuplicateDays", days);
+export async function saveRecordSettings(settings: RecordSettings) {
+	await storage.setItem<RecordSettings>("sync:recordSettings", settings);
 }

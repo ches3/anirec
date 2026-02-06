@@ -1,11 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import {
-	getRecordTiming,
-	type RecordTiming,
-	saveRecordTiming,
-} from "@/utils/settings";
+import type { RecordTiming } from "@/utils/settings";
 
 function SecondInput({
 	value,
@@ -66,19 +62,16 @@ function RecordTimingOptionItem({
 	);
 }
 
-export function RecordTimingOption({ className }: { className?: string }) {
-	const [type, setType] = useState<RecordTiming["type"]>();
-	const [continuedSeconds, setContinuedSeconds] = useState<number>();
-	const [delaySeconds, setDelaySeconds] = useState<number>();
-
-	useEffect(() => {
-		(async () => {
-			const recordTiming = await getRecordTiming();
-			setType(recordTiming.type);
-			setContinuedSeconds(recordTiming.continuedSeconds);
-			setDelaySeconds(recordTiming.delaySeconds);
-		})();
-	}, []);
+export function RecordTimingOption({
+	className,
+	timing,
+	onChange,
+}: {
+	className?: string;
+	timing: RecordTiming;
+	onChange: (patch: Partial<RecordTiming>) => void;
+}) {
+	const { type, continuedSeconds, delaySeconds } = timing;
 
 	return (
 		<div className={className}>
@@ -86,10 +79,9 @@ export function RecordTimingOption({ className }: { className?: string }) {
 			<div className="mt-4">
 				<RadioGroup
 					value={type}
-					onValueChange={async (v) => {
+					onValueChange={(v) => {
 						const value = v as RecordTiming["type"];
-						setType(value as RecordTiming["type"]);
-						await saveRecordTiming(value, continuedSeconds, delaySeconds);
+						onChange({ type: value });
 					}}
 					className="flex flex-col gap-4"
 				>
@@ -97,13 +89,12 @@ export function RecordTimingOption({ className }: { className?: string }) {
 						value="continued"
 						label="n秒間再生し続けたら記録"
 						secondsValue={continuedSeconds}
-						onSecondsChange={async (e) => {
+						onSecondsChange={(e) => {
 							const num = Number(e.target.value);
 							if (Number.isNaN(num)) {
 								return;
 							}
-							setContinuedSeconds(Number(num));
-							await saveRecordTiming(type, num, delaySeconds);
+							onChange({ continuedSeconds: num });
 						}}
 						isSelected={type === "continued"}
 					/>
@@ -111,13 +102,12 @@ export function RecordTimingOption({ className }: { className?: string }) {
 						value="delay"
 						label="再生開始からn秒後に記録"
 						secondsValue={delaySeconds}
-						onSecondsChange={async (e) => {
+						onSecondsChange={(e) => {
 							const num = Number(e.target.value);
 							if (Number.isNaN(num)) {
 								return;
 							}
-							setDelaySeconds(Number(num));
-							await saveRecordTiming(type, continuedSeconds, num);
+							onChange({ delaySeconds: num });
 						}}
 						isSelected={type === "delay"}
 					/>

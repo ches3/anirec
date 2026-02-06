@@ -1,22 +1,17 @@
 import { Input } from "@/components/ui/input";
-import {
-	getPreventDuplicateDays,
-	savePreventDuplicateDays,
-} from "@/utils/settings";
 
-export function PreventDuplicateOption({ className }: { className?: string }) {
-	const [value, setValue] = useState<number>(7);
-
-	useEffect(() => {
-		(async () => {
-			setValue(await getPreventDuplicateDays());
-		})();
-	}, []);
-
-	const handleOnChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+export function PreventDuplicateOption({
+	className,
+	value,
+	onChange,
+}: {
+	className?: string;
+	value: number;
+	onChange: (days: number) => void;
+}) {
+	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const num = Number(e.target.value);
-		setValue(num);
-		await savePreventDuplicateDays(num);
+		onChange(num);
 	};
 
 	return (

@@ -17,6 +17,9 @@
 						"ignore": ["tailwind"]
 					}
 				}
+			},
+			"nursery": {
+				"useExhaustiveSwitchCases": "error"
 			}
 		}
 	},

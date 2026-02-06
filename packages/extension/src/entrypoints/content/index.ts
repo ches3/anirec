@@ -1,13 +1,9 @@
 import { isRecorded, record } from "@anirec/annict";
 import type { ContentScriptContext } from "#imports";
-import { isPlayPage } from "@/utils/is-play-page";
-import {
-	getPreventDuplicateDays,
-	getRecordTiming,
-	getToken,
-} from "@/utils/settings";
-import { getTitleList } from "./get-title";
-import { searchFromList } from "./search";
+import { searchFromList } from "@/utils/search";
+import { getRecordSettings, getToken } from "@/utils/settings";
+import { identifyVod, isVodEnabled } from "@/utils/vod";
+import { extractSearchParams } from "./extract-search-params";
 import { wait } from "./wait";
 
 export default defineContentScript({
@@ -34,18 +30,27 @@ export default defineContentScript({
 });
 
 async function script(ctx: ContentScriptContext) {
+	const url = new URL(location.href);
+	const vod = identifyVod(url);
+	if (!vod) {
+		return;
+	}
+
+	const recordSettings = await getRecordSettings();
+	if (!isVodEnabled(vod, recordSettings.enabledServices)) {
+		return;
+	}
+
 	const token = await getToken();
 	if (!token) {
 		throw new Error("Annictトークンが設定されていません。");
 	}
 
-	// URLを検証
-	if (!(await isPlayPage(location.href))) {
-		return;
-	}
-
 	// タイトルを取得
-	const titleList = await getTitleList(location.hostname).catch((e) => {
+	const titleList = await extractSearchParams(vod, {
+		url,
+		queryRoot: document,
+	}).catch((e) => {
 		if (e instanceof Error) {
 			throw new Error("タイトルの取得に失敗しました。", e);
 		}
@@ -56,8 +61,7 @@ async function script(ctx: ContentScriptContext) {
 	console.log("タイトル情報", titleList);
 
 	// 待機
-	const recordTiming = await getRecordTiming();
-	await wait(recordTiming, ctx);
+	await wait(recordSettings.timing, ctx);
 
 	// エピソードを検索
 	const result = await searchFromList(titleList, token).catch((e) => {
@@ -71,7 +75,7 @@ async function script(ctx: ContentScriptContext) {
 
 	// エピソードを記録
 	const id = result.episode?.id || result.id;
-	const days = await getPreventDuplicateDays();
+	const days = recordSettings.preventDuplicateDays;
 	if (days && (await isRecorded(id, days, token))) {
 		console.log("このエピソードは記録済みです。", result);
 		return;

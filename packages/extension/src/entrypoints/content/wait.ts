@@ -1,6 +1,6 @@
 import type { ContentScriptContext } from "#imports";
+import { asyncQuerySelector } from "@/utils/async-query-selector";
 import type { RecordTiming } from "@/utils/settings";
-import { asyncQuerySelector } from "./async-query-selector";
 
 export function wait(recordTiming: RecordTiming, ctx: ContentScriptContext) {
 	if (recordTiming.type === "delay") {
@@ -36,7 +36,7 @@ function waitDelay(
 	ctx: ContentScriptContext,
 ) {
 	return new Promise<void>((resolve, reject) => {
-		asyncQuerySelector(selector).then((elem) => {
+		asyncQuerySelector(selector, document).then((elem) => {
 			if (!elem || !(elem instanceof HTMLVideoElement)) {
 				return reject(new Error("video要素の取得に失敗しました"));
 			}
@@ -58,7 +58,7 @@ function waitDelay(
 // 再生終了まで待機
 function waitEnded(selector: string) {
 	return new Promise<void>((resolve, reject) => {
-		asyncQuerySelector(selector).then((elem) => {
+		asyncQuerySelector(selector, document).then((elem) => {
 			if (!elem || !(elem instanceof HTMLVideoElement)) {
 				return reject(new Error("video要素の取得に失敗しました"));
 			}
@@ -79,7 +79,7 @@ function waitContinued(
 	ctx: ContentScriptContext,
 ) {
 	return new Promise<void>((resolve, reject) => {
-		asyncQuerySelector(selector).then((elem) => {
+		asyncQuerySelector(selector, document).then((elem) => {
 			if (!elem || !(elem instanceof HTMLVideoElement)) {
 				return reject(new Error("video要素の取得に失敗しました"));
 			}
