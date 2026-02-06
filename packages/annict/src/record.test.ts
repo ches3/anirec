@@ -10,7 +10,7 @@ vi.mock("./util/annict", async () => ({
 
 describe("record", () => {
 	afterEach(() => {
-		vi.restoreAllMocks();
+		vi.clearAllMocks();
 	});
 
 	test("エピソードを記録", async () => {
@@ -31,7 +31,7 @@ describe("record", () => {
 
 	test("不正なid", async () => {
 		const id = "あああああああああああ";
-		expect(record(id, "token")).rejects.toThrow(`Invalid id: ${id}`);
+		await expect(record(id, "token")).rejects.toThrow(`Invalid id: ${id}`);
 
 		expect(createRecord).not.toHaveBeenCalled();
 		expect(createReview).not.toHaveBeenCalled();
