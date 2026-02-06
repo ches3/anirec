@@ -14,7 +14,7 @@ import { TokenOption } from "./TokenOption";
 
 function App() {
 	const [recordSettings, setRecordSettings] = useState<RecordSettings>();
-	const recordSettingsRef = useRef<RecordSettings>();
+	const recordSettingsRef = useRef<RecordSettings | null>(null);
 
 	useEffect(() => {
 		(async () => {
