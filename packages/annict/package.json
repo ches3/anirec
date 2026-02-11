@@ -23,13 +23,12 @@
 		"@graphql-codegen/typescript-operations": "^5.0.7",
 		"@graphql-typed-document-node/core": "^3.2.0",
 		"@types/node": "^25.2.1",
-		"dotenv": "^17.2.4"
+		"dotenv": "^17.2.4",
+		"graphql": "^16.9.0"
 	},
 	"dependencies": {
 		"@ches3/zenhan": "^1.0.1",
 		"@geolonia/japanese-numeral": "^1.0.2",
-		"graphql": "^16.9.0",
-		"graphql-request": "^7.1.0",
 		"romans": "^3.1.0"
 	}
 }

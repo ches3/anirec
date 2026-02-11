@@ -1,7 +1,4 @@
-import type {
-	Episode as AnnictEpisode,
-	Work as AnnictWork,
-} from "./gql/generated";
+import type { AnnictEpisode, AnnictWork } from "./gql/generated";
 
 export type SearchParam =
 	| {

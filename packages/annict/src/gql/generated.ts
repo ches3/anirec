@@ -1,4 +1,4 @@
-import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
+import type { DocumentTypeDecoration } from '@graphql-typed-document-node/core';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -16,108 +16,108 @@ export type Scalars = {
   DateTime: { input: any; output: any; }
 };
 
-export type Activity = Node & {
+export type AnnictActivity = AnnictNode & {
   __typename?: 'Activity';
   annictId: Scalars['Int']['output'];
   /** ID of the object. */
   id: Scalars['ID']['output'];
-  user: User;
+  user: AnnictUser;
 };
 
-export enum ActivityAction {
+export enum AnnictActivityAction {
   Create = 'CREATE'
 }
 
 /** The connection type for Activity. */
-export type ActivityConnection = {
+export type AnnictActivityConnection = {
   __typename?: 'ActivityConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<ActivityEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictActivityEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Activity>>>;
+  nodes?: Maybe<Array<Maybe<AnnictActivity>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type ActivityEdge = {
+export type AnnictActivityEdge = {
   __typename?: 'ActivityEdge';
-  action: ActivityAction;
+  action: AnnictActivityAction;
   annictId: Scalars['Int']['output'];
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
-  item?: Maybe<ActivityItem>;
+  item?: Maybe<AnnictActivityItem>;
   /** The item at the end of the edge. */
-  node?: Maybe<Activity>;
-  user: User;
+  node?: Maybe<AnnictActivity>;
+  user: AnnictUser;
 };
 
-export type ActivityItem = MultipleRecord | Record | Review | Status;
+export type AnnictActivityItem = AnnictMultipleRecord | AnnictRecord | AnnictReview | AnnictStatus;
 
-export type ActivityOrder = {
-  direction: OrderDirection;
-  field: ActivityOrderField;
+export type AnnictActivityOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictActivityOrderField;
 };
 
-export enum ActivityOrderField {
+export enum AnnictActivityOrderField {
   CreatedAt = 'CREATED_AT'
 }
 
-export type Cast = Node & {
+export type AnnictCast = AnnictNode & {
   __typename?: 'Cast';
   annictId: Scalars['Int']['output'];
-  character: Character;
+  character: AnnictCharacter;
   id: Scalars['ID']['output'];
   name: Scalars['String']['output'];
   nameEn: Scalars['String']['output'];
-  person: Person;
+  person: AnnictPerson;
   sortNumber: Scalars['Int']['output'];
-  work: Work;
+  work: AnnictWork;
 };
 
 /** The connection type for Cast. */
-export type CastConnection = {
+export type AnnictCastConnection = {
   __typename?: 'CastConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<CastEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictCastEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Cast>>>;
+  nodes?: Maybe<Array<Maybe<AnnictCast>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type CastEdge = {
+export type AnnictCastEdge = {
   __typename?: 'CastEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<Cast>;
+  node?: Maybe<AnnictCast>;
 };
 
-export type CastOrder = {
-  direction: OrderDirection;
-  field: CastOrderField;
+export type AnnictCastOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictCastOrderField;
 };
 
-export enum CastOrderField {
+export enum AnnictCastOrderField {
   CreatedAt = 'CREATED_AT',
   SortNumber = 'SORT_NUMBER'
 }
 
-export type Channel = Node & {
+export type AnnictChannel = AnnictNode & {
   __typename?: 'Channel';
   annictId: Scalars['Int']['output'];
-  channelGroup: ChannelGroup;
+  channelGroup: AnnictChannelGroup;
   id: Scalars['ID']['output'];
   name: Scalars['String']['output'];
-  programs?: Maybe<ProgramConnection>;
+  programs?: Maybe<AnnictProgramConnection>;
   published: Scalars['Boolean']['output'];
   scChid: Scalars['Int']['output'];
 };
 
 
-export type ChannelProgramsArgs = {
+export type AnnictChannelProgramsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -125,43 +125,43 @@ export type ChannelProgramsArgs = {
 };
 
 /** The connection type for Channel. */
-export type ChannelConnection = {
+export type AnnictChannelConnection = {
   __typename?: 'ChannelConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<ChannelEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictChannelEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Channel>>>;
+  nodes?: Maybe<Array<Maybe<AnnictChannel>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type ChannelEdge = {
+export type AnnictChannelEdge = {
   __typename?: 'ChannelEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<Channel>;
+  node?: Maybe<AnnictChannel>;
 };
 
-export type ChannelGroup = Node & {
+export type AnnictChannelGroup = AnnictNode & {
   __typename?: 'ChannelGroup';
   annictId: Scalars['Int']['output'];
-  channels?: Maybe<ChannelConnection>;
+  channels?: Maybe<AnnictChannelConnection>;
   id: Scalars['ID']['output'];
   name: Scalars['String']['output'];
   sortNumber: Scalars['Int']['output'];
 };
 
 
-export type ChannelGroupChannelsArgs = {
+export type AnnictChannelGroupChannelsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
 };
 
-export type Character = Node & {
+export type AnnictCharacter = AnnictNode & {
   __typename?: 'Character';
   age: Scalars['String']['output'];
   ageEn: Scalars['String']['output'];
@@ -187,70 +187,70 @@ export type Character = Node & {
   nicknameEn: Scalars['String']['output'];
   occupation: Scalars['String']['output'];
   occupationEn: Scalars['String']['output'];
-  series?: Maybe<Series>;
+  series?: Maybe<AnnictSeries>;
   weight: Scalars['String']['output'];
   weightEn: Scalars['String']['output'];
 };
 
 /** The connection type for Character. */
-export type CharacterConnection = {
+export type AnnictCharacterConnection = {
   __typename?: 'CharacterConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<CharacterEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictCharacterEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Character>>>;
+  nodes?: Maybe<Array<Maybe<AnnictCharacter>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type CharacterEdge = {
+export type AnnictCharacterEdge = {
   __typename?: 'CharacterEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<Character>;
+  node?: Maybe<AnnictCharacter>;
 };
 
-export type CharacterOrder = {
-  direction: OrderDirection;
-  field: CharacterOrderField;
+export type AnnictCharacterOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictCharacterOrderField;
 };
 
-export enum CharacterOrderField {
+export enum AnnictCharacterOrderField {
   CreatedAt = 'CREATED_AT',
   FavoriteCharactersCount = 'FAVORITE_CHARACTERS_COUNT'
 }
 
 /** Autogenerated input type of CreateRecord */
-export type CreateRecordInput = {
+export type AnnictCreateRecordInput = {
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: InputMaybe<Scalars['String']['input']>;
   comment?: InputMaybe<Scalars['String']['input']>;
   episodeId: Scalars['ID']['input'];
-  ratingState?: InputMaybe<RatingState>;
+  ratingState?: InputMaybe<AnnictRatingState>;
   shareFacebook?: InputMaybe<Scalars['Boolean']['input']>;
   shareTwitter?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** Autogenerated return type of CreateRecord. */
-export type CreateRecordPayload = {
+export type AnnictCreateRecordPayload = {
   __typename?: 'CreateRecordPayload';
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: Maybe<Scalars['String']['output']>;
-  record?: Maybe<Record>;
+  record?: Maybe<AnnictRecord>;
 };
 
 /** Autogenerated input type of CreateReview */
-export type CreateReviewInput = {
+export type AnnictCreateReviewInput = {
   body: Scalars['String']['input'];
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: InputMaybe<Scalars['String']['input']>;
-  ratingAnimationState?: InputMaybe<RatingState>;
-  ratingCharacterState?: InputMaybe<RatingState>;
-  ratingMusicState?: InputMaybe<RatingState>;
-  ratingOverallState?: InputMaybe<RatingState>;
-  ratingStoryState?: InputMaybe<RatingState>;
+  ratingAnimationState?: InputMaybe<AnnictRatingState>;
+  ratingCharacterState?: InputMaybe<AnnictRatingState>;
+  ratingMusicState?: InputMaybe<AnnictRatingState>;
+  ratingOverallState?: InputMaybe<AnnictRatingState>;
+  ratingStoryState?: InputMaybe<AnnictRatingState>;
   shareFacebook?: InputMaybe<Scalars['Boolean']['input']>;
   shareTwitter?: InputMaybe<Scalars['Boolean']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
@@ -258,147 +258,147 @@ export type CreateReviewInput = {
 };
 
 /** Autogenerated return type of CreateReview. */
-export type CreateReviewPayload = {
+export type AnnictCreateReviewPayload = {
   __typename?: 'CreateReviewPayload';
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: Maybe<Scalars['String']['output']>;
-  review?: Maybe<Review>;
+  review?: Maybe<AnnictReview>;
 };
 
 /** Autogenerated input type of DeleteRecord */
-export type DeleteRecordInput = {
+export type AnnictDeleteRecordInput = {
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: InputMaybe<Scalars['String']['input']>;
   recordId: Scalars['ID']['input'];
 };
 
 /** Autogenerated return type of DeleteRecord. */
-export type DeleteRecordPayload = {
+export type AnnictDeleteRecordPayload = {
   __typename?: 'DeleteRecordPayload';
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: Maybe<Scalars['String']['output']>;
-  episode?: Maybe<Episode>;
+  episode?: Maybe<AnnictEpisode>;
 };
 
 /** Autogenerated input type of DeleteReview */
-export type DeleteReviewInput = {
+export type AnnictDeleteReviewInput = {
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: InputMaybe<Scalars['String']['input']>;
   reviewId: Scalars['ID']['input'];
 };
 
 /** Autogenerated return type of DeleteReview. */
-export type DeleteReviewPayload = {
+export type AnnictDeleteReviewPayload = {
   __typename?: 'DeleteReviewPayload';
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: Maybe<Scalars['String']['output']>;
-  work?: Maybe<Work>;
+  work?: Maybe<AnnictWork>;
 };
 
 /** An episode of a work */
-export type Episode = Node & {
+export type AnnictEpisode = AnnictNode & {
   __typename?: 'Episode';
   annictId: Scalars['Int']['output'];
   id: Scalars['ID']['output'];
-  nextEpisode?: Maybe<Episode>;
+  nextEpisode?: Maybe<AnnictEpisode>;
   number?: Maybe<Scalars['Int']['output']>;
   numberText?: Maybe<Scalars['String']['output']>;
-  prevEpisode?: Maybe<Episode>;
+  prevEpisode?: Maybe<AnnictEpisode>;
   recordCommentsCount: Scalars['Int']['output'];
-  records?: Maybe<RecordConnection>;
+  records?: Maybe<AnnictRecordConnection>;
   recordsCount: Scalars['Int']['output'];
   satisfactionRate?: Maybe<Scalars['Float']['output']>;
   sortNumber: Scalars['Int']['output'];
   title?: Maybe<Scalars['String']['output']>;
   viewerDidTrack: Scalars['Boolean']['output'];
   viewerRecordsCount: Scalars['Int']['output'];
-  work: Work;
+  work: AnnictWork;
 };
 
 
 /** An episode of a work */
-export type EpisodeRecordsArgs = {
+export type AnnictEpisodeRecordsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   hasComment?: InputMaybe<Scalars['Boolean']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<RecordOrder>;
+  orderBy?: InputMaybe<AnnictRecordOrder>;
 };
 
 /** The connection type for Episode. */
-export type EpisodeConnection = {
+export type AnnictEpisodeConnection = {
   __typename?: 'EpisodeConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<EpisodeEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictEpisodeEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Episode>>>;
+  nodes?: Maybe<Array<Maybe<AnnictEpisode>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type EpisodeEdge = {
+export type AnnictEpisodeEdge = {
   __typename?: 'EpisodeEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<Episode>;
+  node?: Maybe<AnnictEpisode>;
 };
 
-export type EpisodeOrder = {
-  direction: OrderDirection;
-  field: EpisodeOrderField;
+export type AnnictEpisodeOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictEpisodeOrderField;
 };
 
-export enum EpisodeOrderField {
+export enum AnnictEpisodeOrderField {
   CreatedAt = 'CREATED_AT',
   SortNumber = 'SORT_NUMBER'
 }
 
-export type LibraryEntry = Node & {
+export type AnnictLibraryEntry = AnnictNode & {
   __typename?: 'LibraryEntry';
   id: Scalars['ID']['output'];
-  nextEpisode?: Maybe<Episode>;
-  nextProgram?: Maybe<Program>;
+  nextEpisode?: Maybe<AnnictEpisode>;
+  nextProgram?: Maybe<AnnictProgram>;
   note: Scalars['String']['output'];
-  status?: Maybe<Status>;
-  user: User;
-  work: Work;
+  status?: Maybe<AnnictStatus>;
+  user: AnnictUser;
+  work: AnnictWork;
 };
 
 /** The connection type for LibraryEntry. */
-export type LibraryEntryConnection = {
+export type AnnictLibraryEntryConnection = {
   __typename?: 'LibraryEntryConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<LibraryEntryEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictLibraryEntryEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<LibraryEntry>>>;
+  nodes?: Maybe<Array<Maybe<AnnictLibraryEntry>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type LibraryEntryEdge = {
+export type AnnictLibraryEntryEdge = {
   __typename?: 'LibraryEntryEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<LibraryEntry>;
+  node?: Maybe<AnnictLibraryEntry>;
 };
 
-export type LibraryEntryOrder = {
-  direction: OrderDirection;
-  field: LibraryEntryOrderField;
+export type AnnictLibraryEntryOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictLibraryEntryOrderField;
 };
 
-export enum LibraryEntryOrderField {
+export enum AnnictLibraryEntryOrderField {
   /** 最後に記録またはスキップした日時 */
   LastTrackedAt = 'LAST_TRACKED_AT'
 }
 
 /** Media of anime */
-export enum Media {
+export enum AnnictMedia {
   Movie = 'MOVIE',
   Other = 'OTHER',
   Ova = 'OVA',
@@ -406,82 +406,82 @@ export enum Media {
   Web = 'WEB'
 }
 
-export type MultipleRecord = Node & {
+export type AnnictMultipleRecord = AnnictNode & {
   __typename?: 'MultipleRecord';
   annictId: Scalars['Int']['output'];
   createdAt: Scalars['DateTime']['output'];
   id: Scalars['ID']['output'];
-  records?: Maybe<RecordConnection>;
-  user: User;
-  work: Work;
+  records?: Maybe<AnnictRecordConnection>;
+  user: AnnictUser;
+  work: AnnictWork;
 };
 
 
-export type MultipleRecordRecordsArgs = {
+export type AnnictMultipleRecordRecordsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
 };
 
-export type Mutation = {
+export type AnnictMutation = {
   __typename?: 'Mutation';
-  createRecord?: Maybe<CreateRecordPayload>;
-  createReview?: Maybe<CreateReviewPayload>;
-  deleteRecord?: Maybe<DeleteRecordPayload>;
-  deleteReview?: Maybe<DeleteReviewPayload>;
-  updateRecord?: Maybe<UpdateRecordPayload>;
-  updateReview?: Maybe<UpdateReviewPayload>;
-  updateStatus?: Maybe<UpdateStatusPayload>;
+  createRecord?: Maybe<AnnictCreateRecordPayload>;
+  createReview?: Maybe<AnnictCreateReviewPayload>;
+  deleteRecord?: Maybe<AnnictDeleteRecordPayload>;
+  deleteReview?: Maybe<AnnictDeleteReviewPayload>;
+  updateRecord?: Maybe<AnnictUpdateRecordPayload>;
+  updateReview?: Maybe<AnnictUpdateReviewPayload>;
+  updateStatus?: Maybe<AnnictUpdateStatusPayload>;
 };
 
 
-export type MutationCreateRecordArgs = {
-  input: CreateRecordInput;
+export type AnnictMutationCreateRecordArgs = {
+  input: AnnictCreateRecordInput;
 };
 
 
-export type MutationCreateReviewArgs = {
-  input: CreateReviewInput;
+export type AnnictMutationCreateReviewArgs = {
+  input: AnnictCreateReviewInput;
 };
 
 
-export type MutationDeleteRecordArgs = {
-  input: DeleteRecordInput;
+export type AnnictMutationDeleteRecordArgs = {
+  input: AnnictDeleteRecordInput;
 };
 
 
-export type MutationDeleteReviewArgs = {
-  input: DeleteReviewInput;
+export type AnnictMutationDeleteReviewArgs = {
+  input: AnnictDeleteReviewInput;
 };
 
 
-export type MutationUpdateRecordArgs = {
-  input: UpdateRecordInput;
+export type AnnictMutationUpdateRecordArgs = {
+  input: AnnictUpdateRecordInput;
 };
 
 
-export type MutationUpdateReviewArgs = {
-  input: UpdateReviewInput;
+export type AnnictMutationUpdateReviewArgs = {
+  input: AnnictUpdateReviewInput;
 };
 
 
-export type MutationUpdateStatusArgs = {
-  input: UpdateStatusInput;
+export type AnnictMutationUpdateStatusArgs = {
+  input: AnnictUpdateStatusInput;
 };
 
 /** An object with an ID. */
-export type Node = {
+export type AnnictNode = {
   /** ID of the object. */
   id: Scalars['ID']['output'];
 };
 
-export enum OrderDirection {
+export enum AnnictOrderDirection {
   Asc = 'ASC',
   Desc = 'DESC'
 }
 
-export type Organization = Node & {
+export type AnnictOrganization = AnnictNode & {
   __typename?: 'Organization';
   annictId: Scalars['Int']['output'];
   favoriteOrganizationsCount: Scalars['Int']['output'];
@@ -499,37 +499,37 @@ export type Organization = Node & {
 };
 
 /** The connection type for Organization. */
-export type OrganizationConnection = {
+export type AnnictOrganizationConnection = {
   __typename?: 'OrganizationConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<OrganizationEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictOrganizationEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Organization>>>;
+  nodes?: Maybe<Array<Maybe<AnnictOrganization>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type OrganizationEdge = {
+export type AnnictOrganizationEdge = {
   __typename?: 'OrganizationEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<Organization>;
+  node?: Maybe<AnnictOrganization>;
 };
 
-export type OrganizationOrder = {
-  direction: OrderDirection;
-  field: OrganizationOrderField;
+export type AnnictOrganizationOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictOrganizationOrderField;
 };
 
-export enum OrganizationOrderField {
+export enum AnnictOrganizationOrderField {
   CreatedAt = 'CREATED_AT',
   FavoriteOrganizationsCount = 'FAVORITE_ORGANIZATIONS_COUNT'
 }
 
 /** Information about pagination in a connection. */
-export type PageInfo = {
+export type AnnictPageInfo = {
   __typename?: 'PageInfo';
   /** When paginating forwards, the cursor to continue. */
   endCursor?: Maybe<Scalars['String']['output']>;
@@ -541,7 +541,7 @@ export type PageInfo = {
   startCursor?: Maybe<Scalars['String']['output']>;
 };
 
-export type Person = Node & {
+export type AnnictPerson = AnnictNode & {
   __typename?: 'Person';
   annictId: Scalars['Int']['output'];
   birthday?: Maybe<Scalars['String']['output']>;
@@ -556,7 +556,7 @@ export type Person = Node & {
   nameKana: Scalars['String']['output'];
   nickname?: Maybe<Scalars['String']['output']>;
   nicknameEn: Scalars['String']['output'];
-  prefecture?: Maybe<Prefecture>;
+  prefecture?: Maybe<AnnictPrefecture>;
   staffsCount: Scalars['Int']['output'];
   twitterUsername?: Maybe<Scalars['String']['output']>;
   twitterUsernameEn: Scalars['String']['output'];
@@ -567,231 +567,231 @@ export type Person = Node & {
 };
 
 /** The connection type for Person. */
-export type PersonConnection = {
+export type AnnictPersonConnection = {
   __typename?: 'PersonConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PersonEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictPersonEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Person>>>;
+  nodes?: Maybe<Array<Maybe<AnnictPerson>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type PersonEdge = {
+export type AnnictPersonEdge = {
   __typename?: 'PersonEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<Person>;
+  node?: Maybe<AnnictPerson>;
 };
 
-export type PersonOrder = {
-  direction: OrderDirection;
-  field: PersonOrderField;
+export type AnnictPersonOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictPersonOrderField;
 };
 
-export enum PersonOrderField {
+export enum AnnictPersonOrderField {
   CreatedAt = 'CREATED_AT',
   FavoritePeopleCount = 'FAVORITE_PEOPLE_COUNT'
 }
 
-export type Prefecture = Node & {
+export type AnnictPrefecture = AnnictNode & {
   __typename?: 'Prefecture';
   annictId: Scalars['Int']['output'];
   id: Scalars['ID']['output'];
   name: Scalars['String']['output'];
 };
 
-export type Program = Node & {
+export type AnnictProgram = AnnictNode & {
   __typename?: 'Program';
   annictId: Scalars['Int']['output'];
-  channel: Channel;
-  episode: Episode;
+  channel: AnnictChannel;
+  episode: AnnictEpisode;
   id: Scalars['ID']['output'];
   rebroadcast: Scalars['Boolean']['output'];
   scPid?: Maybe<Scalars['Int']['output']>;
   startedAt: Scalars['DateTime']['output'];
-  state: ProgramState;
-  work: Work;
+  state: AnnictProgramState;
+  work: AnnictWork;
 };
 
 /** The connection type for Program. */
-export type ProgramConnection = {
+export type AnnictProgramConnection = {
   __typename?: 'ProgramConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<ProgramEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictProgramEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Program>>>;
+  nodes?: Maybe<Array<Maybe<AnnictProgram>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type ProgramEdge = {
+export type AnnictProgramEdge = {
   __typename?: 'ProgramEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<Program>;
+  node?: Maybe<AnnictProgram>;
 };
 
-export type ProgramOrder = {
-  direction: OrderDirection;
-  field: ProgramOrderField;
+export type AnnictProgramOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictProgramOrderField;
 };
 
-export enum ProgramOrderField {
+export enum AnnictProgramOrderField {
   StartedAt = 'STARTED_AT'
 }
 
-export enum ProgramState {
+export enum AnnictProgramState {
   Hidden = 'HIDDEN',
   Published = 'PUBLISHED'
 }
 
-export type Query = {
+export type AnnictQuery = {
   __typename?: 'Query';
   /** Fetches an object given its ID. */
-  node?: Maybe<Node>;
+  node?: Maybe<AnnictNode>;
   /** Fetches a list of objects given a list of IDs. */
-  nodes: Array<Maybe<Node>>;
-  searchCharacters?: Maybe<CharacterConnection>;
-  searchEpisodes?: Maybe<EpisodeConnection>;
-  searchOrganizations?: Maybe<OrganizationConnection>;
-  searchPeople?: Maybe<PersonConnection>;
-  searchWorks?: Maybe<WorkConnection>;
-  user?: Maybe<User>;
-  viewer?: Maybe<User>;
+  nodes: Array<Maybe<AnnictNode>>;
+  searchCharacters?: Maybe<AnnictCharacterConnection>;
+  searchEpisodes?: Maybe<AnnictEpisodeConnection>;
+  searchOrganizations?: Maybe<AnnictOrganizationConnection>;
+  searchPeople?: Maybe<AnnictPersonConnection>;
+  searchWorks?: Maybe<AnnictWorkConnection>;
+  user?: Maybe<AnnictUser>;
+  viewer?: Maybe<AnnictUser>;
 };
 
 
-export type QueryNodeArgs = {
+export type AnnictQueryNodeArgs = {
   id: Scalars['ID']['input'];
 };
 
 
-export type QueryNodesArgs = {
+export type AnnictQueryNodesArgs = {
   ids: Array<Scalars['ID']['input']>;
 };
 
 
-export type QuerySearchCharactersArgs = {
+export type AnnictQuerySearchCharactersArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   annictIds?: InputMaybe<Array<Scalars['Int']['input']>>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
   names?: InputMaybe<Array<Scalars['String']['input']>>;
-  orderBy?: InputMaybe<CharacterOrder>;
+  orderBy?: InputMaybe<AnnictCharacterOrder>;
 };
 
 
-export type QuerySearchEpisodesArgs = {
+export type AnnictQuerySearchEpisodesArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   annictIds?: InputMaybe<Array<Scalars['Int']['input']>>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<EpisodeOrder>;
+  orderBy?: InputMaybe<AnnictEpisodeOrder>;
 };
 
 
-export type QuerySearchOrganizationsArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  annictIds?: InputMaybe<Array<Scalars['Int']['input']>>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-  names?: InputMaybe<Array<Scalars['String']['input']>>;
-  orderBy?: InputMaybe<OrganizationOrder>;
-};
-
-
-export type QuerySearchPeopleArgs = {
+export type AnnictQuerySearchOrganizationsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   annictIds?: InputMaybe<Array<Scalars['Int']['input']>>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
   names?: InputMaybe<Array<Scalars['String']['input']>>;
-  orderBy?: InputMaybe<PersonOrder>;
+  orderBy?: InputMaybe<AnnictOrganizationOrder>;
 };
 
 
-export type QuerySearchWorksArgs = {
+export type AnnictQuerySearchPeopleArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   annictIds?: InputMaybe<Array<Scalars['Int']['input']>>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<WorkOrder>;
+  names?: InputMaybe<Array<Scalars['String']['input']>>;
+  orderBy?: InputMaybe<AnnictPersonOrder>;
+};
+
+
+export type AnnictQuerySearchWorksArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  annictIds?: InputMaybe<Array<Scalars['Int']['input']>>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<AnnictWorkOrder>;
   seasons?: InputMaybe<Array<Scalars['String']['input']>>;
   titles?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 
-export type QueryUserArgs = {
+export type AnnictQueryUserArgs = {
   username: Scalars['String']['input'];
 };
 
-export enum RatingState {
+export enum AnnictRatingState {
   Average = 'AVERAGE',
   Bad = 'BAD',
   Good = 'GOOD',
   Great = 'GREAT'
 }
 
-export type Record = Node & {
+export type AnnictRecord = AnnictNode & {
   __typename?: 'Record';
   annictId: Scalars['Int']['output'];
   comment?: Maybe<Scalars['String']['output']>;
   commentsCount: Scalars['Int']['output'];
   createdAt: Scalars['DateTime']['output'];
-  episode: Episode;
+  episode: AnnictEpisode;
   facebookClickCount: Scalars['Int']['output'];
   id: Scalars['ID']['output'];
   likesCount: Scalars['Int']['output'];
   modified: Scalars['Boolean']['output'];
   rating?: Maybe<Scalars['Float']['output']>;
-  ratingState?: Maybe<RatingState>;
+  ratingState?: Maybe<AnnictRatingState>;
   twitterClickCount: Scalars['Int']['output'];
   updatedAt: Scalars['DateTime']['output'];
-  user: User;
-  work: Work;
+  user: AnnictUser;
+  work: AnnictWork;
 };
 
 /** The connection type for Record. */
-export type RecordConnection = {
+export type AnnictRecordConnection = {
   __typename?: 'RecordConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<RecordEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictRecordEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Record>>>;
+  nodes?: Maybe<Array<Maybe<AnnictRecord>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type RecordEdge = {
+export type AnnictRecordEdge = {
   __typename?: 'RecordEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<Record>;
+  node?: Maybe<AnnictRecord>;
 };
 
-export type RecordOrder = {
-  direction: OrderDirection;
-  field: RecordOrderField;
+export type AnnictRecordOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictRecordOrderField;
 };
 
-export enum RecordOrderField {
+export enum AnnictRecordOrderField {
   CreatedAt = 'CREATED_AT',
   LikesCount = 'LIKES_COUNT'
 }
 
-export type Review = Node & {
+export type AnnictReview = AnnictNode & {
   __typename?: 'Review';
   annictId: Scalars['Int']['output'];
   body: Scalars['String']['output'];
@@ -800,184 +800,184 @@ export type Review = Node & {
   impressionsCount: Scalars['Int']['output'];
   likesCount: Scalars['Int']['output'];
   modifiedAt?: Maybe<Scalars['DateTime']['output']>;
-  ratingAnimationState?: Maybe<RatingState>;
-  ratingCharacterState?: Maybe<RatingState>;
-  ratingMusicState?: Maybe<RatingState>;
-  ratingOverallState?: Maybe<RatingState>;
-  ratingStoryState?: Maybe<RatingState>;
+  ratingAnimationState?: Maybe<AnnictRatingState>;
+  ratingCharacterState?: Maybe<AnnictRatingState>;
+  ratingMusicState?: Maybe<AnnictRatingState>;
+  ratingOverallState?: Maybe<AnnictRatingState>;
+  ratingStoryState?: Maybe<AnnictRatingState>;
   title?: Maybe<Scalars['String']['output']>;
   updatedAt: Scalars['DateTime']['output'];
-  user: User;
-  work: Work;
+  user: AnnictUser;
+  work: AnnictWork;
 };
 
 /** The connection type for Review. */
-export type ReviewConnection = {
+export type AnnictReviewConnection = {
   __typename?: 'ReviewConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<ReviewEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictReviewEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Review>>>;
+  nodes?: Maybe<Array<Maybe<AnnictReview>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type ReviewEdge = {
+export type AnnictReviewEdge = {
   __typename?: 'ReviewEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<Review>;
+  node?: Maybe<AnnictReview>;
 };
 
-export type ReviewOrder = {
-  direction: OrderDirection;
-  field: ReviewOrderField;
+export type AnnictReviewOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictReviewOrderField;
 };
 
-export enum ReviewOrderField {
+export enum AnnictReviewOrderField {
   CreatedAt = 'CREATED_AT',
   LikesCount = 'LIKES_COUNT'
 }
 
 /** Season name */
-export enum SeasonName {
+export enum AnnictSeasonName {
   Autumn = 'AUTUMN',
   Spring = 'SPRING',
   Summer = 'SUMMER',
   Winter = 'WINTER'
 }
 
-export type Series = Node & {
+export type AnnictSeries = AnnictNode & {
   __typename?: 'Series';
   annictId: Scalars['Int']['output'];
   id: Scalars['ID']['output'];
   name: Scalars['String']['output'];
   nameEn: Scalars['String']['output'];
   nameRo: Scalars['String']['output'];
-  works?: Maybe<SeriesWorkConnection>;
+  works?: Maybe<AnnictSeriesWorkConnection>;
 };
 
 
-export type SeriesWorksArgs = {
+export type AnnictSeriesWorksArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<SeriesWorkOrder>;
+  orderBy?: InputMaybe<AnnictSeriesWorkOrder>;
 };
 
 /** The connection type for Series. */
-export type SeriesConnection = {
+export type AnnictSeriesConnection = {
   __typename?: 'SeriesConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<SeriesEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictSeriesEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Series>>>;
+  nodes?: Maybe<Array<Maybe<AnnictSeries>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type SeriesEdge = {
+export type AnnictSeriesEdge = {
   __typename?: 'SeriesEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<Series>;
+  node?: Maybe<AnnictSeries>;
 };
 
 /** The connection type for Work. */
-export type SeriesWorkConnection = {
+export type AnnictSeriesWorkConnection = {
   __typename?: 'SeriesWorkConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<SeriesWorkEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictSeriesWorkEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Work>>>;
+  nodes?: Maybe<Array<Maybe<AnnictWork>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type SeriesWorkEdge = {
+export type AnnictSeriesWorkEdge = {
   __typename?: 'SeriesWorkEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
-  item: Work;
+  item: AnnictWork;
   /** The item at the end of the edge. */
-  node?: Maybe<Work>;
+  node?: Maybe<AnnictWork>;
   summary?: Maybe<Scalars['String']['output']>;
   summaryEn?: Maybe<Scalars['String']['output']>;
 };
 
-export type SeriesWorkOrder = {
-  direction: OrderDirection;
-  field: SeriesWorkOrderField;
+export type AnnictSeriesWorkOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictSeriesWorkOrderField;
 };
 
-export enum SeriesWorkOrderField {
+export enum AnnictSeriesWorkOrderField {
   Season = 'SEASON'
 }
 
-export type Staff = Node & {
+export type AnnictStaff = AnnictNode & {
   __typename?: 'Staff';
   annictId: Scalars['Int']['output'];
   id: Scalars['ID']['output'];
   name: Scalars['String']['output'];
   nameEn: Scalars['String']['output'];
-  resource: StaffResourceItem;
+  resource: AnnictStaffResourceItem;
   roleOther: Scalars['String']['output'];
   roleOtherEn: Scalars['String']['output'];
   roleText: Scalars['String']['output'];
   sortNumber: Scalars['Int']['output'];
-  work: Work;
+  work: AnnictWork;
 };
 
 /** The connection type for Staff. */
-export type StaffConnection = {
+export type AnnictStaffConnection = {
   __typename?: 'StaffConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<StaffEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictStaffEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Staff>>>;
+  nodes?: Maybe<Array<Maybe<AnnictStaff>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type StaffEdge = {
+export type AnnictStaffEdge = {
   __typename?: 'StaffEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<Staff>;
+  node?: Maybe<AnnictStaff>;
 };
 
-export type StaffOrder = {
-  direction: OrderDirection;
-  field: StaffOrderField;
+export type AnnictStaffOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictStaffOrderField;
 };
 
-export enum StaffOrderField {
+export enum AnnictStaffOrderField {
   CreatedAt = 'CREATED_AT',
   SortNumber = 'SORT_NUMBER'
 }
 
-export type StaffResourceItem = Organization | Person;
+export type AnnictStaffResourceItem = AnnictOrganization | AnnictPerson;
 
-export type Status = Node & {
+export type AnnictStatus = AnnictNode & {
   __typename?: 'Status';
   annictId: Scalars['Int']['output'];
   createdAt: Scalars['DateTime']['output'];
   id: Scalars['ID']['output'];
   likesCount: Scalars['Int']['output'];
-  state: StatusState;
-  user: User;
-  work: Work;
+  state: AnnictStatusState;
+  user: AnnictUser;
+  work: AnnictWork;
 };
 
-export enum StatusState {
+export enum AnnictStatusState {
   NoState = 'NO_STATE',
   OnHold = 'ON_HOLD',
   StopWatching = 'STOP_WATCHING',
@@ -987,34 +987,34 @@ export enum StatusState {
 }
 
 /** Autogenerated input type of UpdateRecord */
-export type UpdateRecordInput = {
+export type AnnictUpdateRecordInput = {
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: InputMaybe<Scalars['String']['input']>;
   comment?: InputMaybe<Scalars['String']['input']>;
-  ratingState?: InputMaybe<RatingState>;
+  ratingState?: InputMaybe<AnnictRatingState>;
   recordId: Scalars['ID']['input'];
   shareFacebook?: InputMaybe<Scalars['Boolean']['input']>;
   shareTwitter?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** Autogenerated return type of UpdateRecord. */
-export type UpdateRecordPayload = {
+export type AnnictUpdateRecordPayload = {
   __typename?: 'UpdateRecordPayload';
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: Maybe<Scalars['String']['output']>;
-  record?: Maybe<Record>;
+  record?: Maybe<AnnictRecord>;
 };
 
 /** Autogenerated input type of UpdateReview */
-export type UpdateReviewInput = {
+export type AnnictUpdateReviewInput = {
   body: Scalars['String']['input'];
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: InputMaybe<Scalars['String']['input']>;
-  ratingAnimationState: RatingState;
-  ratingCharacterState: RatingState;
-  ratingMusicState: RatingState;
-  ratingOverallState: RatingState;
-  ratingStoryState: RatingState;
+  ratingAnimationState: AnnictRatingState;
+  ratingCharacterState: AnnictRatingState;
+  ratingMusicState: AnnictRatingState;
+  ratingOverallState: AnnictRatingState;
+  ratingStoryState: AnnictRatingState;
   reviewId: Scalars['ID']['input'];
   shareFacebook?: InputMaybe<Scalars['Boolean']['input']>;
   shareTwitter?: InputMaybe<Scalars['Boolean']['input']>;
@@ -1022,50 +1022,50 @@ export type UpdateReviewInput = {
 };
 
 /** Autogenerated return type of UpdateReview. */
-export type UpdateReviewPayload = {
+export type AnnictUpdateReviewPayload = {
   __typename?: 'UpdateReviewPayload';
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: Maybe<Scalars['String']['output']>;
-  review?: Maybe<Review>;
+  review?: Maybe<AnnictReview>;
 };
 
 /** Autogenerated input type of UpdateStatus */
-export type UpdateStatusInput = {
+export type AnnictUpdateStatusInput = {
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: InputMaybe<Scalars['String']['input']>;
-  state: StatusState;
+  state: AnnictStatusState;
   workId: Scalars['ID']['input'];
 };
 
 /** Autogenerated return type of UpdateStatus. */
-export type UpdateStatusPayload = {
+export type AnnictUpdateStatusPayload = {
   __typename?: 'UpdateStatusPayload';
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: Maybe<Scalars['String']['output']>;
-  work?: Maybe<Work>;
+  work?: Maybe<AnnictWork>;
 };
 
-export type User = Node & {
+export type AnnictUser = AnnictNode & {
   __typename?: 'User';
-  activities?: Maybe<ActivityConnection>;
+  activities?: Maybe<AnnictActivityConnection>;
   annictId: Scalars['Int']['output'];
   avatarUrl?: Maybe<Scalars['String']['output']>;
   backgroundImageUrl?: Maybe<Scalars['String']['output']>;
   createdAt: Scalars['DateTime']['output'];
   description: Scalars['String']['output'];
   email?: Maybe<Scalars['String']['output']>;
-  followers?: Maybe<UserConnection>;
+  followers?: Maybe<AnnictUserConnection>;
   followersCount: Scalars['Int']['output'];
-  following?: Maybe<UserConnection>;
-  followingActivities?: Maybe<ActivityConnection>;
+  following?: Maybe<AnnictUserConnection>;
+  followingActivities?: Maybe<AnnictActivityConnection>;
   followingsCount: Scalars['Int']['output'];
   id: Scalars['ID']['output'];
-  libraryEntries?: Maybe<LibraryEntryConnection>;
+  libraryEntries?: Maybe<AnnictLibraryEntryConnection>;
   name: Scalars['String']['output'];
   notificationsCount?: Maybe<Scalars['Int']['output']>;
   onHoldCount: Scalars['Int']['output'];
-  programs?: Maybe<ProgramConnection>;
-  records?: Maybe<RecordConnection>;
+  programs?: Maybe<AnnictProgramConnection>;
+  records?: Maybe<AnnictRecordConnection>;
   recordsCount: Scalars['Int']['output'];
   stopWatchingCount: Scalars['Int']['output'];
   url?: Maybe<Scalars['String']['output']>;
@@ -1075,28 +1075,20 @@ export type User = Node & {
   wannaWatchCount: Scalars['Int']['output'];
   watchedCount: Scalars['Int']['output'];
   watchingCount: Scalars['Int']['output'];
-  works?: Maybe<WorkConnection>;
+  works?: Maybe<AnnictWorkConnection>;
 };
 
 
-export type UserActivitiesArgs = {
+export type AnnictUserActivitiesArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<ActivityOrder>;
+  orderBy?: InputMaybe<AnnictActivityOrder>;
 };
 
 
-export type UserFollowersArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-};
-
-
-export type UserFollowingArgs = {
+export type AnnictUserFollowersArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -1104,102 +1096,110 @@ export type UserFollowingArgs = {
 };
 
 
-export type UserFollowingActivitiesArgs = {
+export type AnnictUserFollowingArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<ActivityOrder>;
 };
 
 
-export type UserLibraryEntriesArgs = {
+export type AnnictUserFollowingActivitiesArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<LibraryEntryOrder>;
+  orderBy?: InputMaybe<AnnictActivityOrder>;
+};
+
+
+export type AnnictUserLibraryEntriesArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<AnnictLibraryEntryOrder>;
   seasonFrom?: InputMaybe<Scalars['String']['input']>;
   seasonUntil?: InputMaybe<Scalars['String']['input']>;
   seasons?: InputMaybe<Array<Scalars['String']['input']>>;
-  states?: InputMaybe<Array<StatusState>>;
+  states?: InputMaybe<Array<AnnictStatusState>>;
 };
 
 
-export type UserProgramsArgs = {
+export type AnnictUserProgramsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<ProgramOrder>;
+  orderBy?: InputMaybe<AnnictProgramOrder>;
   unwatched?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
-export type UserRecordsArgs = {
+export type AnnictUserRecordsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   hasComment?: InputMaybe<Scalars['Boolean']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<RecordOrder>;
+  orderBy?: InputMaybe<AnnictRecordOrder>;
 };
 
 
-export type UserWorksArgs = {
+export type AnnictUserWorksArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   annictIds?: InputMaybe<Array<Scalars['Int']['input']>>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<WorkOrder>;
+  orderBy?: InputMaybe<AnnictWorkOrder>;
   seasons?: InputMaybe<Array<Scalars['String']['input']>>;
-  state?: InputMaybe<StatusState>;
+  state?: InputMaybe<AnnictStatusState>;
   titles?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 /** The connection type for User. */
-export type UserConnection = {
+export type AnnictUserConnection = {
   __typename?: 'UserConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<UserEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictUserEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<User>>>;
+  nodes?: Maybe<Array<Maybe<AnnictUser>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type UserEdge = {
+export type AnnictUserEdge = {
   __typename?: 'UserEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<User>;
+  node?: Maybe<AnnictUser>;
 };
 
 /** An anime title */
-export type Work = Node & {
+export type AnnictWork = AnnictNode & {
   __typename?: 'Work';
   annictId: Scalars['Int']['output'];
-  casts?: Maybe<CastConnection>;
-  episodes?: Maybe<EpisodeConnection>;
+  casts?: Maybe<AnnictCastConnection>;
+  episodes?: Maybe<AnnictEpisodeConnection>;
   episodesCount: Scalars['Int']['output'];
   id: Scalars['ID']['output'];
-  image?: Maybe<WorkImage>;
+  image?: Maybe<AnnictWorkImage>;
   malAnimeId?: Maybe<Scalars['String']['output']>;
-  media: Media;
+  media: AnnictMedia;
   noEpisodes: Scalars['Boolean']['output'];
   officialSiteUrl?: Maybe<Scalars['String']['output']>;
   officialSiteUrlEn?: Maybe<Scalars['String']['output']>;
-  programs?: Maybe<ProgramConnection>;
-  reviews?: Maybe<ReviewConnection>;
+  programs?: Maybe<AnnictProgramConnection>;
+  reviews?: Maybe<AnnictReviewConnection>;
   reviewsCount: Scalars['Int']['output'];
   satisfactionRate?: Maybe<Scalars['Float']['output']>;
-  seasonName?: Maybe<SeasonName>;
+  seasonName?: Maybe<AnnictSeasonName>;
   seasonYear?: Maybe<Scalars['Int']['output']>;
-  seriesList?: Maybe<SeriesConnection>;
-  staffs?: Maybe<StaffConnection>;
+  seriesList?: Maybe<AnnictSeriesConnection>;
+  staffs?: Maybe<AnnictStaffConnection>;
   syobocalTid?: Maybe<Scalars['Int']['output']>;
   title: Scalars['String']['output'];
   titleEn?: Maybe<Scalars['String']['output']>;
@@ -1207,7 +1207,7 @@ export type Work = Node & {
   titleRo?: Maybe<Scalars['String']['output']>;
   twitterHashtag?: Maybe<Scalars['String']['output']>;
   twitterUsername?: Maybe<Scalars['String']['output']>;
-  viewerStatusState?: Maybe<StatusState>;
+  viewerStatusState?: Maybe<AnnictStatusState>;
   watchersCount: Scalars['Int']['output'];
   wikipediaUrl?: Maybe<Scalars['String']['output']>;
   wikipediaUrlEn?: Maybe<Scalars['String']['output']>;
@@ -1215,48 +1215,48 @@ export type Work = Node & {
 
 
 /** An anime title */
-export type WorkCastsArgs = {
+export type AnnictWorkCastsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<CastOrder>;
+  orderBy?: InputMaybe<AnnictCastOrder>;
 };
 
 
 /** An anime title */
-export type WorkEpisodesArgs = {
+export type AnnictWorkEpisodesArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<EpisodeOrder>;
+  orderBy?: InputMaybe<AnnictEpisodeOrder>;
 };
 
 
 /** An anime title */
-export type WorkProgramsArgs = {
+export type AnnictWorkProgramsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<ProgramOrder>;
+  orderBy?: InputMaybe<AnnictProgramOrder>;
 };
 
 
 /** An anime title */
-export type WorkReviewsArgs = {
+export type AnnictWorkReviewsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   hasBody?: InputMaybe<Scalars['Boolean']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<ReviewOrder>;
+  orderBy?: InputMaybe<AnnictReviewOrder>;
 };
 
 
 /** An anime title */
-export type WorkSeriesListArgs = {
+export type AnnictWorkSeriesListArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -1265,35 +1265,35 @@ export type WorkSeriesListArgs = {
 
 
 /** An anime title */
-export type WorkStaffsArgs = {
+export type AnnictWorkStaffsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<StaffOrder>;
+  orderBy?: InputMaybe<AnnictStaffOrder>;
 };
 
 /** The connection type for Work. */
-export type WorkConnection = {
+export type AnnictWorkConnection = {
   __typename?: 'WorkConnection';
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<WorkEdge>>>;
+  edges?: Maybe<Array<Maybe<AnnictWorkEdge>>>;
   /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<Work>>>;
+  nodes?: Maybe<Array<Maybe<AnnictWork>>>;
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: AnnictPageInfo;
 };
 
 /** An edge in a connection. */
-export type WorkEdge = {
+export type AnnictWorkEdge = {
   __typename?: 'WorkEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge. */
-  node?: Maybe<Work>;
+  node?: Maybe<AnnictWork>;
 };
 
-export type WorkImage = Node & {
+export type AnnictWorkImage = AnnictNode & {
   __typename?: 'WorkImage';
   annictId?: Maybe<Scalars['Int']['output']>;
   copyright?: Maybe<Scalars['String']['output']>;
@@ -1305,65 +1305,65 @@ export type WorkImage = Node & {
   twitterBiggerAvatarUrl?: Maybe<Scalars['String']['output']>;
   twitterMiniAvatarUrl?: Maybe<Scalars['String']['output']>;
   twitterNormalAvatarUrl?: Maybe<Scalars['String']['output']>;
-  work?: Maybe<Work>;
+  work?: Maybe<AnnictWork>;
 };
 
 
-export type WorkImageInternalUrlArgs = {
+export type AnnictWorkImageInternalUrlArgs = {
   size: Scalars['String']['input'];
 };
 
-export type WorkOrder = {
-  direction: OrderDirection;
-  field: WorkOrderField;
+export type AnnictWorkOrder = {
+  direction: AnnictOrderDirection;
+  field: AnnictWorkOrderField;
 };
 
-export enum WorkOrderField {
+export enum AnnictWorkOrderField {
   CreatedAt = 'CREATED_AT',
   Season = 'SEASON',
   WatchersCount = 'WATCHERS_COUNT'
 }
 
-export type SearchWorksQueryVariables = Exact<{
+export type AnnictSearchWorksQueryVariables = Exact<{
   titles?: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
 }>;
 
 
-export type SearchWorksQuery = { __typename?: 'Query', searchWorks?: { __typename?: 'WorkConnection', nodes?: Array<{ __typename?: 'Work', id: string, title: string, noEpisodes: boolean, episodes?: { __typename?: 'EpisodeConnection', nodes?: Array<{ __typename?: 'Episode', id: string, title?: string | null, number?: number | null, numberText?: string | null } | null> | null } | null, seriesList?: { __typename?: 'SeriesConnection', nodes?: Array<{ __typename?: 'Series', name: string } | null> | null } | null } | null> | null } | null };
+export type AnnictSearchWorksQuery = { __typename?: 'Query', searchWorks?: { __typename?: 'WorkConnection', nodes?: Array<{ __typename?: 'Work', id: string, title: string, noEpisodes: boolean, episodes?: { __typename?: 'EpisodeConnection', nodes?: Array<{ __typename?: 'Episode', id: string, title?: string | null, number?: number | null, numberText?: string | null } | null> | null } | null, seriesList?: { __typename?: 'SeriesConnection', nodes?: Array<{ __typename?: 'Series', name: string } | null> | null } | null } | null> | null } | null };
 
-export type ViewerActivitiesQueryVariables = Exact<{
+export type AnnictViewerActivitiesQueryVariables = Exact<{
   last?: InputMaybe<Scalars['Int']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
-export type ViewerActivitiesQuery = { __typename?: 'Query', viewer?: { __typename?: 'User', activities?: { __typename?: 'ActivityConnection', edges?: Array<{ __typename?: 'ActivityEdge', item?:
+export type AnnictViewerActivitiesQuery = { __typename?: 'Query', viewer?: { __typename?: 'User', activities?: { __typename?: 'ActivityConnection', edges?: Array<{ __typename?: 'ActivityEdge', item?:
           | { __typename?: 'MultipleRecord' }
           | { __typename: 'Record', createdAt: any, work: { __typename?: 'Work', id: string, title: string }, episode: { __typename?: 'Episode', id: string, numberText?: string | null, title?: string | null } }
           | { __typename: 'Review', createdAt: any, work: { __typename?: 'Work', id: string, title: string } }
           | { __typename?: 'Status' }
          | null } | null> | null, pageInfo: { __typename?: 'PageInfo', endCursor?: string | null } } | null } | null };
 
-export type CreateRecordMutationVariables = Exact<{
+export type AnnictCreateRecordMutationVariables = Exact<{
   id: Scalars['ID']['input'];
 }>;
 
 
-export type CreateRecordMutation = { __typename?: 'Mutation', createRecord?: { __typename?: 'CreateRecordPayload', clientMutationId?: string | null } | null };
+export type AnnictCreateRecordMutation = { __typename?: 'Mutation', createRecord?: { __typename?: 'CreateRecordPayload', clientMutationId?: string | null } | null };
 
-export type CreateReviewMutationVariables = Exact<{
+export type AnnictCreateReviewMutationVariables = Exact<{
   id: Scalars['ID']['input'];
 }>;
 
 
-export type CreateReviewMutation = { __typename?: 'Mutation', createReview?: { __typename?: 'CreateReviewPayload', clientMutationId?: string | null } | null };
+export type AnnictCreateReviewMutation = { __typename?: 'Mutation', createReview?: { __typename?: 'CreateReviewPayload', clientMutationId?: string | null } | null };
 
-export type FetchNodeQueryVariables = Exact<{
+export type AnnictFetchNodeQueryVariables = Exact<{
   id: Scalars['ID']['input'];
 }>;
 
 
-export type FetchNodeQuery = { __typename?: 'Query', node?:
+export type AnnictFetchNodeQuery = { __typename?: 'Query', node?:
     | { __typename: 'Activity' }
     | { __typename: 'Cast' }
     | { __typename: 'Channel' }
@@ -1386,9 +1386,140 @@ export type FetchNodeQuery = { __typename?: 'Query', node?:
     | { __typename: 'WorkImage' }
    | null };
 
+export class TypedDocumentString<TResult, TVariables>
+  extends String
+  implements DocumentTypeDecoration<TResult, TVariables>
+{
+  __apiType?: NonNullable<DocumentTypeDecoration<TResult, TVariables>['__apiType']>;
+  private value: string;
+  public __meta__?: Record<string, any> | undefined;
 
-export const SearchWorksDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"searchWorks"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"titles"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"searchWorks"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"titles"},"value":{"kind":"Variable","name":{"kind":"Name","value":"titles"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"noEpisodes"}},{"kind":"Field","name":{"kind":"Name","value":"episodes"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"field"},"value":{"kind":"EnumValue","value":"SORT_NUMBER"}},{"kind":"ObjectField","name":{"kind":"Name","value":"direction"},"value":{"kind":"EnumValue","value":"ASC"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"number"}},{"kind":"Field","name":{"kind":"Name","value":"numberText"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"seriesList"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<SearchWorksQuery, SearchWorksQueryVariables>;
-export const ViewerActivitiesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"viewerActivities"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"last"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"after"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"viewer"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"activities"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"Variable","name":{"kind":"Name","value":"last"}}},{"kind":"Argument","name":{"kind":"Name","value":"after"},"value":{"kind":"Variable","name":{"kind":"Name","value":"after"}}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"field"},"value":{"kind":"EnumValue","value":"CREATED_AT"}},{"kind":"ObjectField","name":{"kind":"Name","value":"direction"},"value":{"kind":"EnumValue","value":"DESC"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"item"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Review"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"work"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Record"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"work"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"Field","name":{"kind":"Name","value":"episode"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"numberText"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"pageInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"endCursor"}}]}}]}}]}}]}}]} as unknown as DocumentNode<ViewerActivitiesQuery, ViewerActivitiesQueryVariables>;
-export const CreateRecordDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"createRecord"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createRecord"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"episodeId"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"clientMutationId"}}]}}]}}]} as unknown as DocumentNode<CreateRecordMutation, CreateRecordMutationVariables>;
-export const CreateReviewDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"createReview"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createReview"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"workId"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"body"},"value":{"kind":"StringValue","value":"","block":false}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"clientMutationId"}}]}}]}}]} as unknown as DocumentNode<CreateReviewMutation, CreateReviewMutationVariables>;
-export const FetchNodeDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"fetchNode"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Episode"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","alias":{"kind":"Name","value":"episodeTitle"},"name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"number"}},{"kind":"Field","name":{"kind":"Name","value":"numberText"}},{"kind":"Field","name":{"kind":"Name","value":"work"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","alias":{"kind":"Name","value":"workTitle"},"name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"seriesList"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Work"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","alias":{"kind":"Name","value":"workTitle"},"name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"noEpisodes"}},{"kind":"Field","name":{"kind":"Name","value":"episodes"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"field"},"value":{"kind":"EnumValue","value":"SORT_NUMBER"}},{"kind":"ObjectField","name":{"kind":"Name","value":"direction"},"value":{"kind":"EnumValue","value":"ASC"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"number"}},{"kind":"Field","name":{"kind":"Name","value":"numberText"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"seriesList"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<FetchNodeQuery, FetchNodeQueryVariables>;
+  constructor(value: string, __meta__?: Record<string, any> | undefined) {
+    super(value);
+    this.value = value;
+    this.__meta__ = __meta__;
+  }
+
+  override toString(): string & DocumentTypeDecoration<TResult, TVariables> {
+    return this.value;
+  }
+}
+
+export const SearchWorksDocument = new TypedDocumentString(`
+    query searchWorks($titles: [String!]) {
+  searchWorks(titles: $titles) {
+    nodes {
+      id
+      title
+      noEpisodes
+      episodes(orderBy: {field: SORT_NUMBER, direction: ASC}) {
+        nodes {
+          id
+          title
+          number
+          numberText
+        }
+      }
+      seriesList {
+        nodes {
+          name
+        }
+      }
+    }
+  }
+}
+    `) as unknown as TypedDocumentString<AnnictSearchWorksQuery, AnnictSearchWorksQueryVariables>;
+export const ViewerActivitiesDocument = new TypedDocumentString(`
+    query viewerActivities($last: Int, $after: String) {
+  viewer {
+    activities(
+      first: $last
+      after: $after
+      orderBy: {field: CREATED_AT, direction: DESC}
+    ) {
+      edges {
+        item {
+          ... on Review {
+            __typename
+            createdAt
+            work {
+              id
+              title
+            }
+          }
+          ... on Record {
+            __typename
+            createdAt
+            work {
+              id
+              title
+            }
+            episode {
+              id
+              numberText
+              title
+            }
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+      }
+    }
+  }
+}
+    `) as unknown as TypedDocumentString<AnnictViewerActivitiesQuery, AnnictViewerActivitiesQueryVariables>;
+export const CreateRecordDocument = new TypedDocumentString(`
+    mutation createRecord($id: ID!) {
+  createRecord(input: {episodeId: $id}) {
+    clientMutationId
+  }
+}
+    `) as unknown as TypedDocumentString<AnnictCreateRecordMutation, AnnictCreateRecordMutationVariables>;
+export const CreateReviewDocument = new TypedDocumentString(`
+    mutation createReview($id: ID!) {
+  createReview(input: {workId: $id, body: ""}) {
+    clientMutationId
+  }
+}
+    `) as unknown as TypedDocumentString<AnnictCreateReviewMutation, AnnictCreateReviewMutationVariables>;
+export const FetchNodeDocument = new TypedDocumentString(`
+    query fetchNode($id: ID!) {
+  node(id: $id) {
+    __typename
+    ... on Episode {
+      id
+      episodeTitle: title
+      number
+      numberText
+      work {
+        id
+        workTitle: title
+        seriesList {
+          nodes {
+            name
+          }
+        }
+      }
+    }
+    ... on Work {
+      id
+      workTitle: title
+      noEpisodes
+      episodes(orderBy: {field: SORT_NUMBER, direction: ASC}) {
+        nodes {
+          id
+          title
+          number
+          numberText
+        }
+      }
+      seriesList {
+        nodes {
+          name
+        }
+      }
+    }
+  }
+}
+    `) as unknown as TypedDocumentString<AnnictFetchNodeQuery, AnnictFetchNodeQueryVariables>;

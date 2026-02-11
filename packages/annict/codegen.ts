@@ -16,6 +16,8 @@ const config: CodegenConfig = {
 		"src/gql/generated.ts": {
 			plugins: ["typescript", "typescript-operations", "typed-document-node"],
 			config: {
+				documentMode: "string",
+				typesPrefix: "Annict",
 				useTypeImports: true,
 			},
 		},
