@@ -2,7 +2,11 @@ import type { SearchParam, SearchResult } from "./types";
 import { searchWorks } from "./util/annict";
 import { extract, extractFullTitle } from "./util/extract/extract";
 import { isSameTitle } from "./util/normalize";
-import { findEpisode } from "./util/search/find-episode";
+import {
+	findEpisodeByNumberText,
+	findEpisodeByTitle,
+	findEpisodeByTitleAndNumberText,
+} from "./util/search/find-episode";
 import { variants } from "./util/search/variants";
 
 function buildFullTitle(params: SearchParam): string {
@@ -54,8 +58,10 @@ export async function search(
 			continue;
 		}
 
-		// title or numberText or numberが一致するエピソードを探す
-		const episode = findEpisode(work.episodes, target.episode, true);
+		// title or numberText が一致するエピソードを探す
+		const episode =
+			findEpisodeByTitle(work.episodes, target.episode) ??
+			findEpisodeByNumberText(work.episodes, target.episode);
 		if (episode) {
 			return {
 				id: work.id,
@@ -69,20 +75,26 @@ export async function search(
 	if (!target.episode) {
 		return;
 	}
+
+	// title + numberText が両方一致するエピソードを優先して探す
 	for (const work of works) {
-		// エピソードがない場合はスキップ
 		if (work.noEpisodes || !work.episodes) {
 			continue;
 		}
-
-		// titleが一致するエピソードを探す
-		const episode = findEpisode(work.episodes, target.episode, false);
+		const episode = findEpisodeByTitleAndNumberText(work.episodes, target.episode);
 		if (episode) {
-			return {
-				id: work.id,
-				title: work.title,
-				episode: episode,
-			};
+			return { id: work.id, title: work.title, episode };
+		}
+	}
+
+	// titleのみが一致するエピソードを探す
+	for (const work of works) {
+		if (work.noEpisodes || !work.episodes) {
+			continue;
+		}
+		const episode = findEpisodeByTitle(work.episodes, target.episode);
+		if (episode) {
+			return { id: work.id, title: work.title, episode };
 		}
 	}
 
