@@ -45,6 +45,19 @@ const dmm = async (url: URL): Promise<SearchParam[] | undefined> => {
 	}
 	const content = await fetchDMMContent(contentId);
 
+	if (!content.episodeNumberName) {
+		return [
+			{
+				workTitle: season.seasonName,
+				episodeTitle: content.episodeTitle,
+			},
+			{
+				workTitle: `${season.titleName} ${season.seasonName}`,
+				episodeTitle: content.episodeTitle,
+			},
+		];
+	}
+
 	return [
 		{
 			workTitle: season.seasonName,
