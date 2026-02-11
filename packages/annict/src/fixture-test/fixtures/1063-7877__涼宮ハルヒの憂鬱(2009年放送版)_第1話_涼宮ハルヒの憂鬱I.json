@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "createdAt": "2026-02-11T14:04:20.781Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "涼宮ハルヒの憂鬱(2009年放送版)",
+      "episodeNumber": "第1話",
+      "episodeTitle": "涼宮ハルヒの憂鬱 I"
+    },
+    "annictUrl": "https://annict.com/works/1063/episodes/7877"
+  },
+  "expected": {
+    "id": "V29yay0xMDYz",
+    "title": "涼宮ハルヒの憂鬱 (2009年版)",
+    "episode": {
+      "id": "RXBpc29kZS03ODc3",
+      "title": "涼宮ハルヒの憂鬱I",
+      "numberText": "第1話"
+    }
+  },
+  "variants": [
+    "涼宮ハルヒの憂鬱(2009年放送版)",
+    "涼宮ハルヒの憂鬱2009年放送版",
+    "涼宮ハルヒの憂鬱",
+    "年放送版"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay0xMDYy",
+      "title": "涼宮ハルヒの憂鬱",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS03NTcw",
+          "title": "朝比奈ミクルの冒険 Episode 00",
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS03NTcx",
+          "title": "涼宮ハルヒの憂鬱I",
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS03NTcy",
+          "title": "涼宮ハルヒの憂鬱II",
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS03NTcz",
+          "title": "涼宮ハルヒの退屈",
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS03NTc0",
+          "title": "涼宮ハルヒの憂鬱III",
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS03NTc1",
+          "title": "孤島症候群(前編)",
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS03NTc2",
+          "title": "ミステリックサイン",
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS03NTc3",
+          "title": "孤島症候群(後編)",
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS03NTc4",
+          "title": "サムデイ イン ザ レイン",
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS03NTc5",
+          "title": "涼宮ハルヒの憂鬱IV",
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS03NTgw",
+          "title": "射手座の日",
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS03NTgx",
+          "title": "ライブアライブ",
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS03NTgy",
+          "title": "涼宮ハルヒの憂鬱V",
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS03NTgz",
+          "title": "涼宮ハルヒの憂鬱VI",
+          "numberText": "第14話"
+        }
+      ],
+      "seriesList": [
+        "涼宮ハルヒ"
+      ]
+    },
+    {
+      "id": "V29yay0xMDYz",
+      "title": "涼宮ハルヒの憂鬱 (2009年版)",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS03ODc3",
+          "title": "涼宮ハルヒの憂鬱I",
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS03ODc4",
+          "title": "涼宮ハルヒの憂鬱II",
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS03ODc5",
+          "title": "涼宮ハルヒの憂鬱III",
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS03ODgw",
+          "title": "涼宮ハルヒの憂鬱IV",
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS03ODgx",
+          "title": "涼宮ハルヒの憂鬱V",
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS03ODgy",
+          "title": "涼宮ハルヒの憂鬱VI",
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS03ODgz",
+          "title": "涼宮ハルヒの退屈",
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS03ODg0",
+          "title": "笹の葉ラプソディ",
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS03ODg1",
+          "title": "ミステリックサイン",
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS03ODg2",
+          "title": "孤島症候群(前編)",
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS03ODg3",
+          "title": "孤島症候群(後編)",
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS03ODg4",
+          "title": "エンドレスエイトI",
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS03ODg5",
+          "title": "エンドレスエイトII",
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS03ODkw",
+          "title": "エンドレスエイトIII",
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS03ODkx",
+          "title": "エンドレスエイトIV",
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS03ODky",
+          "title": "エンドレスエイトV",
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS03ODkz",
+          "title": "エンドレスエイトVI",
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS03ODk0",
+          "title": "エンドレスエイトVII",
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS03ODk1",
+          "title": "エンドレスエイトVIII",
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS03ODk2",
+          "title": "涼宮ハルヒの溜息I",
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS03ODk3",
+          "title": "涼宮ハルヒの溜息II",
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS03ODk4",
+          "title": "涼宮ハルヒの溜息III",
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS03ODk5",
+          "title": "涼宮ハルヒの溜息IV",
+          "numberText": "第23話"
+        },
+        {
+          "id": "RXBpc29kZS03OTAw",
+          "title": "涼宮ハルヒの溜息V",
+          "numberText": "第24話"
+        },
+        {
+          "id": "RXBpc29kZS03OTAx",
+          "title": "朝比奈ミクルの冒険 Episode 00",
+          "numberText": "第25話"
+        },
+        {
+          "id": "RXBpc29kZS03OTAy",
+          "title": "ライブアライブ",
+          "numberText": "第26話"
+        },
+        {
+          "id": "RXBpc29kZS03OTAz",
+          "title": "射手座の日",
+          "numberText": "第27話"
+        },
+        {
+          "id": "RXBpc29kZS03OTA0",
+          "title": "サムデイ イン ザ レイン",
+          "numberText": "第28話"
+        }
+      ],
+      "seriesList": [
+        "涼宮ハルヒ"
+      ]
+    }
+  ]
+}

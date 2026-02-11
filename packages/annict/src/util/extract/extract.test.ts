@@ -16,6 +16,54 @@ describe("extract", () => {
 		});
 	});
 
+	test("workTitle & episodeNumber & episodeTitle", () => {
+		const result = extract({
+			workTitle: "響け！ユーフォニアム",
+			episodeNumber: "第一回",
+			episodeTitle: "ようこそハイスクール",
+		});
+		expect(result).toEqual({
+			workTitle: "響け！ユーフォニアム",
+			episode: {
+				number: 1,
+				numberText: "第一回",
+				title: "ようこそハイスクール",
+			},
+		});
+	});
+
+	test("episodeNumberが空文字の場合はepisodeTitleを再解釈", () => {
+		const result = extract({
+			workTitle: "響け！ユーフォニアム",
+			episodeNumber: "",
+			episodeTitle: "episode1",
+		});
+		expect(result).toEqual({
+			workTitle: "響け！ユーフォニアム",
+			episode: {
+				number: 1,
+				numberText: "episode1",
+				title: undefined,
+			},
+		});
+	});
+
+	test("episodeNumberはtrimされる", () => {
+		const result = extract({
+			workTitle: "響け！ユーフォニアム",
+			episodeNumber: "  第一回  ",
+			episodeTitle: "ようこそハイスクール",
+		});
+		expect(result).toEqual({
+			workTitle: "響け！ユーフォニアム",
+			episode: {
+				number: 1,
+				numberText: "第一回",
+				title: "ようこそハイスクール",
+			},
+		});
+	});
+
 	test("title", () => {
 		const result = extract({
 			title: "響け！ユーフォニアム 第一回 ようこそハイスクール",

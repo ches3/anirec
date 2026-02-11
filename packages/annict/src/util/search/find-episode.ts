@@ -1,35 +1,57 @@
 import type { Episode, ExtractedEpisode } from "../../types";
 import { isSameTitle } from "../normalize";
 
-export function findEpisode(
+// title のみが一致するエピソード
+export function findEpisodeByTitle(
 	episodes: Episode[],
 	target: ExtractedEpisode,
-	weak?: boolean,
 ): Episode | undefined {
-	// タイトルが一致するエピソード
-	const episodeByTitle = episodes.find(
+	return episodes.find(
 		(episode) =>
 			episode.title &&
 			target.title &&
 			isSameTitle(episode.title, target.title, true),
 	);
-	if (episodeByTitle) {
-		return episodeByTitle;
-	}
+}
 
-	// weakがtrueの場合、numberTextが一致するエピソードを探す
-	if (weak === false) {
-		return;
-	}
-	const episodeByNumberText = episodes.find(
+// numberText のみが一致するエピソード
+export function findEpisodeByNumberText(
+	episodes: Episode[],
+	target: ExtractedEpisode,
+): Episode | undefined {
+	return episodes.find(
 		(episode) =>
 			episode.numberText &&
 			target.numberText &&
 			isSameTitle(episode.numberText, target.numberText, true),
 	);
-	if (episodeByNumberText) {
-		return episodeByNumberText;
-	}
+}
 
-	// 誤検出を避けるため、numberによる一致は行わない
+// number のみが一致するエピソード
+export function findEpisodeByNumber(
+	episodes: Episode[],
+	target: ExtractedEpisode,
+): Episode | undefined {
+	return episodes.find(
+		(episode) =>
+			episode.number !== undefined &&
+			target.number !== undefined &&
+			episode.number === target.number,
+	);
+}
+
+// title と numberText が両方一致するエピソード
+export function findEpisodeByTitleAndNumberText(
+	episodes: Episode[],
+	target: ExtractedEpisode,
+): Episode | undefined {
+	return episodes.find(
+		(episode) =>
+			episode.title &&
+			target.title &&
+			isSameTitle(episode.title, target.title, true) &&
+			episode.numberText &&
+			target.numberText &&
+			isSameTitle(episode.numberText, target.numberText, true),
+	);
 }
