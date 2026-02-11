@@ -303,6 +303,19 @@ describe("workTitle & episodeNumber & episodeTitle", () => {
 		expect(result?.episode?.id).toEqual("RXBpc29kZS03NzU4Nw==");
 	});
 
+	test("'シリーズ名 シーズンタイトル' + episode1形式", async () => {
+		vi.mocked(searchWorks).mockResolvedValueOnce(mockValue);
+		const result = await search(
+			{
+				workTitle: "響け！ユーフォニアム 響け！ユーフォニアム2",
+				episodeNumber: "",
+				episodeTitle: "episode1",
+			},
+			"token",
+		);
+		expect(result?.episode?.id).toEqual("RXBpc29kZS03NzU4Nw==");
+	});
+
 	test("存在しないタイトル", async () => {
 		vi.mocked(searchWorks).mockResolvedValueOnce([]);
 		const result = await search(

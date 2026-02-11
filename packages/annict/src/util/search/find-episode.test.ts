@@ -1,4 +1,5 @@
 import {
+	findEpisodeByNumber,
 	findEpisodeByNumberText,
 	findEpisodeByTitle,
 	findEpisodeByTitleAndNumberText,
@@ -136,6 +137,48 @@ describe("findEpisodeByNumberText", () => {
 			number: 1,
 		};
 		const episode = findEpisodeByNumberText(episodes, target);
+		expect(episode?.id).toEqual(undefined);
+	});
+});
+
+describe("findEpisodeByNumber", () => {
+	test("numberで検索", () => {
+		const target = {
+			title: undefined,
+			numberText: undefined,
+			number: 1,
+		};
+		const episode = findEpisodeByNumber(episodes, target);
+		expect(episode?.id).toEqual("RXBpc29kZS0xODM1Mg==");
+	});
+
+	test("target.numberがundefinedの場合はundefinedを返す", () => {
+		const target = {
+			title: "ようこそハイスクール",
+			numberText: "第一回",
+			number: undefined,
+		};
+		const episode = findEpisodeByNumber(episodes, target);
+		expect(episode?.id).toEqual(undefined);
+	});
+
+	test("episode.numberがundefinedのみの場合はundefinedを返す", () => {
+		const target = {
+			title: undefined,
+			numberText: "番外編",
+			number: 99,
+		};
+		const episode = findEpisodeByNumber(
+			[
+				{
+					id: "RXBpc29kZS0zMjMwNA==",
+					title: "かけだすモナカ",
+					number: undefined,
+					numberText: "番外編",
+				},
+			],
+			target,
+		);
 		expect(episode?.id).toEqual(undefined);
 	});
 });

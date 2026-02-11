@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "createdAt": "2026-02-11T15:50:14.817Z"
+  },
+  "input": {
+    "params": {
+      "title": "キミと越えて恋になる episode1"
+    },
+    "annictUrl": "https://annict.com/works/15109/episodes/173841"
+  },
+  "expected": {
+    "id": "V29yay0xNTEwOQ==",
+    "title": "キミと越えて恋になる",
+    "episode": {
+      "id": "RXBpc29kZS0xNzM4NDE=",
+      "number": 1,
+      "numberText": "ep.01"
+    }
+  },
+  "variants": [
+    "キミと越えて恋になる"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay0xNTEwOQ==",
+      "title": "キミと越えて恋になる",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzM4NDE=",
+          "number": 1,
+          "numberText": "ep.01"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQwMDQ=",
+          "number": 2,
+          "numberText": "ep.02"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQxMzU=",
+          "number": 3,
+          "numberText": "ep.03"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQyODU=",
+          "number": 4,
+          "numberText": "ep.04"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQ0Mjg=",
+          "number": 5,
+          "numberText": "ep.05"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQ1ODM=",
+          "number": 6,
+          "numberText": "ep.06"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQ3Mjk=",
+          "number": 7,
+          "numberText": "ep.07"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQ4ODA=",
+          "number": 8,
+          "numberText": "ep.08"
+        },
+        {
+          "id": "RXBpc29kZS0xNzUyNzc=",
+          "number": 9,
+          "numberText": "ep.09"
+        },
+        {
+          "id": "RXBpc29kZS0xNzU0NjQ=",
+          "number": 10,
+          "numberText": "ep.10"
+        },
+        {
+          "id": "RXBpc29kZS0xNzU2OTE=",
+          "number": 11,
+          "numberText": "ep.11"
+        },
+        {
+          "id": "RXBpc29kZS0xNzU5Mjg=",
+          "number": 12,
+          "numberText": "ep.12"
+        }
+      ],
+      "seriesList": []
+    }
+  ]
+}

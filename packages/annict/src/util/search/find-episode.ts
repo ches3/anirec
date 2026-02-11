@@ -27,6 +27,19 @@ export function findEpisodeByNumberText(
 	);
 }
 
+// number のみが一致するエピソード
+export function findEpisodeByNumber(
+	episodes: Episode[],
+	target: ExtractedEpisode,
+): Episode | undefined {
+	return episodes.find(
+		(episode) =>
+			episode.number !== undefined &&
+			target.number !== undefined &&
+			episode.number === target.number,
+	);
+}
+
 // title と numberText が両方一致するエピソード
 export function findEpisodeByTitleAndNumberText(
 	episodes: Episode[],

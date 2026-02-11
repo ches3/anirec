@@ -3,6 +3,7 @@ import { searchWorks } from "./util/annict";
 import { extract, extractFullTitle } from "./util/extract/extract";
 import { isSameTitle } from "./util/normalize";
 import {
+	findEpisodeByNumber,
 	findEpisodeByNumberText,
 	findEpisodeByTitle,
 	findEpisodeByTitleAndNumberText,
@@ -21,6 +22,21 @@ function buildFullTitle(params: SearchParam): string {
 	return [params.workTitle, params.episodeTitle].filter(Boolean).join(" ");
 }
 
+function isMatchingWorkTitle(
+	work: { title: string; seriesList: string[] | undefined },
+	targetWorkTitle: string,
+): boolean {
+	if (isSameTitle(work.title, targetWorkTitle)) {
+		return true;
+	}
+	if (!work.seriesList) {
+		return false;
+	}
+	return work.seriesList.some((series) =>
+		isSameTitle(`${series} ${work.title}`, targetWorkTitle),
+	);
+}
+
 export async function search(
 	params: SearchParam,
 	token: string,
@@ -31,17 +47,8 @@ export async function search(
 
 	for (const work of works) {
 		// タイトルが一致しない場合はスキップ
-		if (!isSameTitle(work.title, target.workTitle)) {
-			if (!work.seriesList) {
-				continue;
-			}
-			// "シリーズ名 タイトル"の形式で一致するか確認
-			const series = work.seriesList.find((series) =>
-				isSameTitle(`${series} ${work.title}`, target.workTitle),
-			);
-			if (!series) {
-				continue;
-			}
+		if (!isMatchingWorkTitle(work, target.workTitle)) {
+			continue;
 		}
 
 		// 映画などのエピソードがない作品
@@ -81,7 +88,10 @@ export async function search(
 		if (work.noEpisodes || !work.episodes) {
 			continue;
 		}
-		const episode = findEpisodeByTitleAndNumberText(work.episodes, target.episode);
+		const episode = findEpisodeByTitleAndNumberText(
+			work.episodes,
+			target.episode,
+		);
 		if (episode) {
 			return { id: work.id, title: work.title, episode };
 		}
@@ -130,6 +140,20 @@ export async function search(
 				title: work.title,
 				episode: undefined,
 			};
+		}
+	}
+
+	// work.title & episode.number が一致するエピソードを探す
+	for (const work of works) {
+		if (work.noEpisodes || !work.episodes) {
+			continue;
+		}
+		if (!isMatchingWorkTitle(work, target.workTitle)) {
+			continue;
+		}
+		const episode = findEpisodeByNumber(work.episodes, target.episode);
+		if (episode) {
+			return { id: work.id, title: work.title, episode };
 		}
 	}
 }

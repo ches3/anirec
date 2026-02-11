@@ -21,11 +21,19 @@ export function extract(params: SearchParam): {
 	episode: ExtractedEpisode | undefined;
 } {
 	if ("episodeNumber" in params) {
+		const episodeNumber = params.episodeNumber.trim();
+		if (!episodeNumber) {
+			const episode = extractEpisode(params.episodeTitle);
+			return {
+				workTitle: params.workTitle,
+				episode,
+			};
+		}
 		return {
 			workTitle: params.workTitle,
 			episode: {
-				number: parseNumber(params.episodeNumber),
-				numberText: params.episodeNumber,
+				number: parseNumber(episodeNumber),
+				numberText: episodeNumber,
 				title: params.episodeTitle,
 			},
 		};
