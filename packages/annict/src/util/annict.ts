@@ -22,6 +22,13 @@ type GraphQLDocument<TResult, TVariables> = DocumentTypeDecoration<
 	toString(): string;
 };
 
+function normalizeText(value: string | null | undefined): string | undefined {
+	if (value === "") {
+		return undefined;
+	}
+	return value ?? undefined;
+}
+
 async function requestGraphQL<TResult, TVariables>(
 	document: GraphQLDocument<TResult, TVariables>,
 	variables: TVariables,
@@ -76,9 +83,9 @@ export async function fetchNode(
 	if (node.__typename === "Episode") {
 		const episode: Episode = {
 			id: node.id,
-			title: node.episodeTitle ?? undefined,
+			title: normalizeText(node.episodeTitle),
 			number: node.number ?? undefined,
-			numberText: node.numberText ?? undefined,
+			numberText: normalizeText(node.numberText),
 		};
 		const seriesList = node.work.seriesList?.nodes
 			?.map((series) => series?.name)
@@ -104,9 +111,9 @@ export async function fetchNode(
 				?.filter((episode) => !!episode)
 				.map((episode) => ({
 					id: episode.id,
-					title: episode.title || undefined,
-					number: episode.number || undefined,
-					numberText: episode.numberText || undefined,
+					title: normalizeText(episode.title),
+					number: episode.number ?? undefined,
+					numberText: normalizeText(episode.numberText),
 				})),
 			seriesList: seriesList,
 		};
@@ -137,9 +144,9 @@ export async function searchWorks(
 					(episode) =>
 						episode && {
 							id: episode.id,
-							title: episode.title || undefined,
-							number: episode.number || undefined,
-							numberText: episode.numberText || undefined,
+							title: normalizeText(episode.title),
+							number: episode.number ?? undefined,
+							numberText: normalizeText(episode.numberText),
 						},
 				)
 				.filter((episode) => !!episode);
