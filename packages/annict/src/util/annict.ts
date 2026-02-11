@@ -1,4 +1,4 @@
-import { request } from "graphql-request";
+import type { DocumentTypeDecoration } from "@graphql-typed-document-node/core";
 import {
 	CreateRecordDocument,
 	CreateReviewDocument,
@@ -10,6 +10,55 @@ import type { Activities, Episode, Work } from "../types";
 
 const endpoint = "https://api.annict.com/graphql";
 
+type GraphQLResponse<TResult> = {
+	data?: TResult;
+	errors?: { message?: string }[];
+};
+
+type GraphQLDocument<TResult, TVariables> = DocumentTypeDecoration<
+	TResult,
+	TVariables
+> & {
+	toString(): string;
+};
+
+async function requestGraphQL<TResult, TVariables>(
+	document: GraphQLDocument<TResult, TVariables>,
+	variables: TVariables,
+	token: string,
+): Promise<TResult> {
+	const response = await fetch(endpoint, {
+		method: "POST",
+		headers: {
+			authorization: `Bearer ${token}`,
+			"content-type": "application/json",
+		},
+		body: JSON.stringify({
+			query: document.toString(),
+			variables,
+		}),
+	});
+
+	if (!response.ok) {
+		throw new Error(`GraphQL request failed: ${response.status}`);
+	}
+
+	const payload = (await response.json()) as GraphQLResponse<TResult>;
+
+	if (payload?.errors?.length) {
+		const message = payload.errors
+			.map((error) => error.message)
+			.filter((message): message is string => !!message)
+			.join("\n");
+		throw new Error(message || "GraphQL request failed");
+	}
+	if (payload?.data === undefined) {
+		throw new Error("GraphQL response has no data");
+	}
+
+	return payload.data;
+}
+
 export async function fetchNode(
 	id: string,
 	token: string,
@@ -17,12 +66,7 @@ export async function fetchNode(
 	| { type: "Work"; work: Work; episode: null }
 	| { type: "Episode"; work: Omit<Work, "episodes">; episode: Episode }
 > {
-	const data = await request(
-		endpoint,
-		FetchNodeDocument,
-		{ id },
-		{ authorization: `Bearer ${token}` },
-	);
+	const data = await requestGraphQL(FetchNodeDocument, { id }, token);
 
 	const node = data.node;
 	if (!node) {
@@ -76,12 +120,7 @@ export async function searchWorks(
 	titles: string[],
 	token: string,
 ): Promise<Work[]> {
-	const data = await request(
-		endpoint,
-		SearchWorksDocument,
-		{ titles },
-		{ authorization: `Bearer ${token}` },
-	);
+	const data = await requestGraphQL(SearchWorksDocument, { titles }, token);
 	const nodes = data.searchWorks?.nodes;
 	if (!nodes) {
 		throw new Error("Failed to fetch data");
@@ -126,11 +165,10 @@ export async function viewerActivities(
 	after: string,
 	token: string,
 ): Promise<Activities> {
-	const data = await request(
-		endpoint,
+	const data = await requestGraphQL(
 		ViewerActivitiesDocument,
 		{ last, after },
-		{ authorization: `Bearer ${token}` },
+		token,
 	);
 	if (!data.viewer?.activities?.edges) {
 		throw new Error("Failed to fetch data");
@@ -153,33 +191,27 @@ export async function viewerActivities(
 }
 
 export async function createRecord(id: string, token: string) {
-	const data = await request(
-		endpoint,
-		CreateRecordDocument,
-		{ id },
-		{ authorization: `Bearer ${token}` },
-	).catch((e) => {
-		const regex = new RegExp(`^Invalid input: "${id}": (.*)`);
-		if (e instanceof Error && e.message.match(regex)) {
-			throw new Error(`Invalid id: ${id}`);
-		}
-		throw e;
-	});
+	const data = await requestGraphQL(CreateRecordDocument, { id }, token).catch(
+		(e) => {
+			const regex = new RegExp(`^Invalid input: "${id}": (.*)`);
+			if (e instanceof Error && e.message.match(regex)) {
+				throw new Error(`Invalid id: ${id}`);
+			}
+			throw e;
+		},
+	);
 	return data;
 }
 
 export async function createReview(id: string, token: string) {
-	const data = await request(
-		endpoint,
-		CreateReviewDocument,
-		{ id },
-		{ authorization: `Bearer ${token}` },
-	).catch((e) => {
-		const regex = new RegExp(`^Invalid input: "${id}"`);
-		if (e instanceof Error && e.message.match(regex)) {
-			throw new Error(`Invalid id: ${id}`);
-		}
-		throw e;
-	});
+	const data = await requestGraphQL(CreateReviewDocument, { id }, token).catch(
+		(e) => {
+			const regex = new RegExp(`^Invalid input: "${id}"`);
+			if (e instanceof Error && e.message.match(regex)) {
+				throw new Error(`Invalid id: ${id}`);
+			}
+			throw e;
+		},
+	);
 	return data;
 }
