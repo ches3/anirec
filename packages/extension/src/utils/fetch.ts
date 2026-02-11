@@ -1,5 +1,5 @@
 import type { BaseIssue, BaseSchema } from "valibot";
-import { literal, object, parse, string, union } from "valibot";
+import { literal, nullable, object, parse, string, union } from "valibot";
 
 export const fetchGql = async <T>(
 	endpoint: string,
@@ -60,7 +60,7 @@ export const fetchDMMContent = async (contentId: string) => {
 		data: object({
 			videoContent: object({
 				episodeTitle: string(),
-				episodeNumberName: string(),
+				episodeNumberName: nullable(string()),
 			}),
 		}),
 	});
