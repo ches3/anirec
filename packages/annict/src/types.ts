@@ -43,7 +43,7 @@ export type Activities = {
 				__typename: "Record";
 				createdAt: string;
 				work: Pick<Work, "id" | "title">;
-				episode: Pick<AnnictEpisode, "id" | "title">;
+				episode: Pick<AnnictEpisode, "id" | "title" | "numberText">;
 		  }
 		| {
 				__typename: "Review";

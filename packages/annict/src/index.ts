@@ -1,3 +1,4 @@
 export { isRecorded, record } from "./record";
 export { search } from "./search";
-export type { SearchParam, SearchResult } from "./types";
+export type { Activities, SearchParam, SearchResult } from "./types";
+export { viewerActivities } from "./util/annict";

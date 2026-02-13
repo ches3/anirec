@@ -43,6 +43,12 @@ bun run test
 - グレー系の色は`gray`ではなく`neutral`を使う
 - モダンでシンプルなデザインを心がける
 
+## Annict API
+
+- `query.gql`に必要なクエリを定義し、`bun run gql-gen`でDocument等を生成する
+- `generated.ts`は手動編集禁止
+- エピソードを含む作品は`Record`、エピソードを含まない作品は`Review`で記録する
+
 ## コメント
 
 - 複雑なロジックには説明を記載
