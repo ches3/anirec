@@ -1,4 +1,10 @@
-import { createRecord, createReview, viewerActivities } from "./util/annict";
+import {
+	createRecord,
+	createReview,
+	deleteRecord,
+	deleteReview,
+	viewerActivities,
+} from "./util/annict";
 
 function getType(id: string): "episode" | "work" | "invalid" {
 	try {
@@ -27,6 +33,38 @@ export async function record(id: string, token: string): Promise<void> {
 		await createReview(id, token);
 	} else if (type === "episode") {
 		await createRecord(id, token);
+	} else {
+		throw new Error(`Invalid id: ${id}`);
+	}
+}
+
+function getActivityType(id: string): "Record" | "Review" | "invalid" {
+	try {
+		const decoded = atob(id);
+		if (decoded.match(/^Record-[\d]+$/)) {
+			return "Record";
+		}
+		if (decoded.match(/^Review-[\d]+$/)) {
+			return "Review";
+		}
+		return "invalid";
+	} catch (e) {
+		if (e instanceof DOMException) {
+			if (e.name === "InvalidCharacterError") {
+				return "invalid";
+			}
+		}
+		throw e;
+	}
+}
+
+export async function deleteActivity(id: string, token: string): Promise<void> {
+	const type = getActivityType(id);
+
+	if (type === "Record") {
+		await deleteRecord(id, token);
+	} else if (type === "Review") {
+		await deleteReview(id, token);
 	} else {
 		throw new Error(`Invalid id: ${id}`);
 	}

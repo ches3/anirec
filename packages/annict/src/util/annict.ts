@@ -2,6 +2,8 @@ import type { DocumentTypeDecoration } from "@graphql-typed-document-node/core";
 import {
 	CreateRecordDocument,
 	CreateReviewDocument,
+	DeleteRecordDocument,
+	DeleteReviewDocument,
 	FetchNodeDocument,
 	SearchWorksDocument,
 	ViewerActivitiesDocument,
@@ -185,11 +187,9 @@ export async function viewerActivities(
 	const cursor = "endCursor" in pageInfo ? pageInfo.endCursor : null;
 	const items = edges
 		.map((edge) => {
-			if (
-				edge?.item?.__typename === "Record" ||
-				edge?.item?.__typename === "Review"
-			) {
-				return edge?.item;
+			const item = edge?.item;
+			if (item?.__typename === "Record" || item?.__typename === "Review") {
+				return item;
 			}
 			return undefined;
 		})
@@ -221,4 +221,12 @@ export async function createReview(id: string, token: string) {
 		},
 	);
 	return data;
+}
+
+export async function deleteRecord(id: string, token: string): Promise<void> {
+	await requestGraphQL(DeleteRecordDocument, { id }, token);
+}
+
+export async function deleteReview(id: string, token: string): Promise<void> {
+	await requestGraphQL(DeleteReviewDocument, { id }, token);
 }

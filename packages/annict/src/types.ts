@@ -41,12 +41,14 @@ export type Activities = {
 	items: (
 		| {
 				__typename: "Record";
+				id: string;
 				createdAt: string;
 				work: Pick<Work, "id" | "title">;
 				episode: Pick<AnnictEpisode, "id" | "title" | "numberText">;
 		  }
 		| {
 				__typename: "Review";
+				id: string;
 				createdAt: string;
 				work: Pick<AnnictWork, "id" | "title">;
 		  }

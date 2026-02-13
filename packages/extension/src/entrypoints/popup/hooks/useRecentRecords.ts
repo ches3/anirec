@@ -13,6 +13,7 @@ type RecentRecordsLoadState =
 			hasNext: boolean;
 			isLoadingMore: boolean;
 			handleLoadMore: () => Promise<LoadMoreResult>;
+			removeItem: (id: string) => void;
 	  };
 
 export function useRecentRecords(): RecentRecordsLoadState {
@@ -21,6 +22,10 @@ export function useRecentRecords(): RecentRecordsLoadState {
 	const [items, setItems] = useState<Activities["items"]>([]);
 	const [cursor, setCursor] = useState<Activities["cursor"]>(undefined);
 	const [isLoadingMore, setIsLoadingMore] = useState(false);
+
+	const removeItem = useCallback((id: string) => {
+		setItems((prev) => prev.filter((item) => item.id !== id));
+	}, []);
 
 	const handleLoadMore = useCallback(async () => {
 		if (status !== "success" || !cursor || isLoadingMore) {
@@ -70,5 +75,6 @@ export function useRecentRecords(): RecentRecordsLoadState {
 		hasNext: cursor != null,
 		isLoadingMore,
 		handleLoadMore,
+		removeItem,
 	};
 }

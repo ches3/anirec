@@ -1,10 +1,18 @@
-import { isRecorded, record } from "./record";
+import { deleteActivity, isRecorded, record } from "./record";
 import type { Activities } from "./types";
-import { createRecord, createReview, viewerActivities } from "./util/annict";
+import {
+	createRecord,
+	createReview,
+	deleteRecord,
+	deleteReview,
+	viewerActivities,
+} from "./util/annict";
 
 vi.mock("./util/annict", async () => ({
 	createRecord: vi.fn(),
 	createReview: vi.fn(),
+	deleteRecord: vi.fn(),
+	deleteReview: vi.fn(),
 	viewerActivities: vi.fn(),
 }));
 
@@ -38,6 +46,40 @@ describe("record", () => {
 	});
 });
 
+describe("deleteActivity", () => {
+	afterEach(() => {
+		vi.clearAllMocks();
+	});
+
+	test("RecordのIDを渡すとdeleteRecordが呼ばれる", async () => {
+		// atob("UmVjb3JkLTEyMw==") === "Record-123"
+		const id = "UmVjb3JkLTEyMw==";
+		await deleteActivity(id, "token");
+
+		expect(deleteRecord).toHaveBeenCalledWith(id, "token");
+		expect(deleteReview).not.toHaveBeenCalled();
+	});
+
+	test("ReviewのIDを渡すとdeleteReviewが呼ばれる", async () => {
+		// atob("UmV2aWV3LTQ1Ng==") === "Review-456"
+		const id = "UmV2aWV3LTQ1Ng==";
+		await deleteActivity(id, "token");
+
+		expect(deleteReview).toHaveBeenCalledWith(id, "token");
+		expect(deleteRecord).not.toHaveBeenCalled();
+	});
+
+	test("不正なidはエラーを投げる", async () => {
+		const id = "あああああああああああ";
+		await expect(deleteActivity(id, "token")).rejects.toThrow(
+			`Invalid id: ${id}`,
+		);
+
+		expect(deleteRecord).not.toHaveBeenCalled();
+		expect(deleteReview).not.toHaveBeenCalled();
+	});
+});
+
 describe("isRecorded", () => {
 	const currentDate = new Date();
 	const pastDate = new Date();
@@ -48,6 +90,7 @@ describe("isRecorded", () => {
 			items: [
 				{
 					__typename: "Record",
+					id: "record_1",
 					createdAt: currentDate.toISOString(),
 					work: {
 						id: "work_1",
@@ -59,6 +102,7 @@ describe("isRecorded", () => {
 				},
 				{
 					__typename: "Review",
+					id: "review_2",
 					createdAt: currentDate.toISOString(),
 					work: {
 						id: "work_2",
@@ -72,6 +116,7 @@ describe("isRecorded", () => {
 			items: [
 				{
 					__typename: "Record",
+					id: "record_3",
 					createdAt: currentDate.toISOString(),
 					work: {
 						id: "work_3",
@@ -88,6 +133,7 @@ describe("isRecorded", () => {
 			items: [
 				{
 					__typename: "Record",
+					id: "record_4",
 					createdAt: pastDate.toISOString(),
 					work: {
 						id: "work_4",
@@ -99,6 +145,7 @@ describe("isRecorded", () => {
 				},
 				{
 					__typename: "Review",
+					id: "review_5",
 					createdAt: pastDate.toISOString(),
 					work: {
 						id: "work_5",

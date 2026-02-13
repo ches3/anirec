@@ -54,3 +54,23 @@ export type PageInfoUpdateMessage = {
 	type: "PAGE_INFO_UPDATED";
 	pageInfo: PageInfo;
 };
+
+export type ScheduleDeleteMessage = {
+	type: "SCHEDULE_DELETE";
+	id: string;
+};
+
+export type CancelDeleteMessage = {
+	type: "CANCEL_DELETE";
+	id: string;
+};
+
+export type DeleteResultMessage = {
+	type: "DELETE_RESULT";
+	id: string;
+	ok: boolean;
+};
+
+export type GetPendingDeletionsMessage = {
+	type: "GET_PENDING_DELETIONS";
+};

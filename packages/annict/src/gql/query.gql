@@ -32,6 +32,7 @@ query viewerActivities($last: Int, $after: String) {
 				item {
 					... on Review {
 						__typename
+						id
 						createdAt
 						work {
 							id
@@ -40,6 +41,7 @@ query viewerActivities($last: Int, $after: String) {
 					}
 					... on Record {
 						__typename
+						id
 						createdAt
 						work {
 							id
@@ -68,6 +70,18 @@ mutation createRecord($id: ID!) {
 
 mutation createReview($id: ID!) {
 	createReview(input: { workId: $id, body: "" }) {
+		clientMutationId
+	}
+}
+
+mutation deleteRecord($id: ID!) {
+	deleteRecord(input: { recordId: $id }) {
+		clientMutationId
+	}
+}
+
+mutation deleteReview($id: ID!) {
+	deleteReview(input: { reviewId: $id }) {
 		clientMutationId
 	}
 }

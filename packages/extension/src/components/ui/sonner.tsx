@@ -15,6 +15,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
 			theme="light"
 			className="toaster group"
 			position="top-right"
+			duration={1500}
 			icons={{
 				success: <CircleCheck className="h-4 w-4" />,
 				info: <Info className="h-4 w-4" />,

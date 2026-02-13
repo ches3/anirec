@@ -1339,8 +1339,8 @@ export type AnnictViewerActivitiesQueryVariables = Exact<{
 
 export type AnnictViewerActivitiesQuery = { __typename?: 'Query', viewer?: { __typename?: 'User', activities?: { __typename?: 'ActivityConnection', edges?: Array<{ __typename?: 'ActivityEdge', item?:
           | { __typename?: 'MultipleRecord' }
-          | { __typename: 'Record', createdAt: any, work: { __typename?: 'Work', id: string, title: string }, episode: { __typename?: 'Episode', id: string, numberText?: string | null, title?: string | null } }
-          | { __typename: 'Review', createdAt: any, work: { __typename?: 'Work', id: string, title: string } }
+          | { __typename: 'Record', id: string, createdAt: any, work: { __typename?: 'Work', id: string, title: string }, episode: { __typename?: 'Episode', id: string, numberText?: string | null, title?: string | null } }
+          | { __typename: 'Review', id: string, createdAt: any, work: { __typename?: 'Work', id: string, title: string } }
           | { __typename?: 'Status' }
          | null } | null> | null, pageInfo: { __typename?: 'PageInfo', endCursor?: string | null } } | null } | null };
 
@@ -1357,6 +1357,20 @@ export type AnnictCreateReviewMutationVariables = Exact<{
 
 
 export type AnnictCreateReviewMutation = { __typename?: 'Mutation', createReview?: { __typename?: 'CreateReviewPayload', clientMutationId?: string | null } | null };
+
+export type AnnictDeleteRecordMutationVariables = Exact<{
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type AnnictDeleteRecordMutation = { __typename?: 'Mutation', deleteRecord?: { __typename?: 'DeleteRecordPayload', clientMutationId?: string | null } | null };
+
+export type AnnictDeleteReviewMutationVariables = Exact<{
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type AnnictDeleteReviewMutation = { __typename?: 'Mutation', deleteReview?: { __typename?: 'DeleteReviewPayload', clientMutationId?: string | null } | null };
 
 export type AnnictFetchNodeQueryVariables = Exact<{
   id: Scalars['ID']['input'];
@@ -1441,6 +1455,7 @@ export const ViewerActivitiesDocument = new TypedDocumentString(`
         item {
           ... on Review {
             __typename
+            id
             createdAt
             work {
               id
@@ -1449,6 +1464,7 @@ export const ViewerActivitiesDocument = new TypedDocumentString(`
           }
           ... on Record {
             __typename
+            id
             createdAt
             work {
               id
@@ -1483,6 +1499,20 @@ export const CreateReviewDocument = new TypedDocumentString(`
   }
 }
     `) as unknown as TypedDocumentString<AnnictCreateReviewMutation, AnnictCreateReviewMutationVariables>;
+export const DeleteRecordDocument = new TypedDocumentString(`
+    mutation deleteRecord($id: ID!) {
+  deleteRecord(input: {recordId: $id}) {
+    clientMutationId
+  }
+}
+    `) as unknown as TypedDocumentString<AnnictDeleteRecordMutation, AnnictDeleteRecordMutationVariables>;
+export const DeleteReviewDocument = new TypedDocumentString(`
+    mutation deleteReview($id: ID!) {
+  deleteReview(input: {reviewId: $id}) {
+    clientMutationId
+  }
+}
+    `) as unknown as TypedDocumentString<AnnictDeleteReviewMutation, AnnictDeleteReviewMutationVariables>;
 export const FetchNodeDocument = new TypedDocumentString(`
     query fetchNode($id: ID!) {
   node(id: $id) {

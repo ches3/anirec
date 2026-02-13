@@ -1,7 +1,10 @@
 import type { Activities } from "@anirec/annict";
+import { Trash2, Undo2 } from "lucide-react";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/utils/cn";
+import { useDeleteRecord } from "../hooks/useDeleteRecord";
 import type { LoadMoreResult } from "../hooks/useRecentRecords";
 import { useRecentRecords } from "../hooks/useRecentRecords";
 
@@ -29,7 +32,8 @@ export function RecentRecords() {
 		return <RecentRecordsErrorFallback />;
 	}
 
-	const { items, hasNext, isLoadingMore, handleLoadMore } = loadState;
+	const { items, hasNext, isLoadingMore, handleLoadMore, removeItem } =
+		loadState;
 
 	if (items.length === 0 && !hasNext) {
 		return (
@@ -45,6 +49,7 @@ export function RecentRecords() {
 			hasNext={hasNext}
 			isLoading={isLoadingMore}
 			onLoadMore={handleLoadMore}
+			removeItem={removeItem}
 		/>
 	);
 }
@@ -76,12 +81,17 @@ function ActivityList({
 	hasNext,
 	isLoading,
 	onLoadMore,
+	removeItem,
 }: {
 	items: Activities["items"];
 	hasNext: boolean;
 	isLoading: boolean;
 	onLoadMore: () => Promise<LoadMoreResult>;
+	removeItem: (id: string) => void;
 }) {
+	const { scheduleDelete, cancelDelete, pendingDeletions } =
+		useDeleteRecord(removeItem);
+
 	const handleLoadMore = async () => {
 		const result = await onLoadMore();
 		if (result === "error") {
@@ -102,19 +112,47 @@ function ActivityList({
 									.join(" ")
 							: undefined;
 
-					const id =
-						item.__typename === "Record" ? item.episode.id : item.work.id;
+					const pending = pendingDeletions.has(item.id);
 
 					return (
-						<li key={`${id}-${item.createdAt}`} className="py-3.5">
-							<p
-								className={cn(
-									"text-xs",
-									!episodeLabel && "text-sm font-medium",
+						<li
+							key={item.id}
+							className={cn(
+								"py-3.5 transition-opacity",
+								pending && "opacity-30",
+							)}
+						>
+							<div className="flex items-center justify-between gap-2">
+								<p
+									className={cn(
+										"text-xs flex-1 min-w-0",
+										!episodeLabel && "text-sm font-medium",
+									)}
+								>
+									{item.work.title}
+								</p>
+								{pending ? (
+									<Button
+										variant="ghost"
+										size="icon"
+										className="h-5 w-5 shrink-0 text-muted-foreground"
+										onClick={() => cancelDelete(item.id)}
+										aria-label="元に戻す"
+									>
+										<Undo2 className="h-3.5 w-3.5" />
+									</Button>
+								) : (
+									<Button
+										variant="ghost"
+										size="icon"
+										className="h-5 w-5 shrink-0 text-muted-foreground hover:text-destructive"
+										onClick={() => scheduleDelete(item.id)}
+										aria-label="削除"
+									>
+										<Trash2 className="h-3.5 w-3.5" />
+									</Button>
 								)}
-							>
-								{item.work.title}
-							</p>
+							</div>
 							<div className="flex items-end justify-between mt-2">
 								<p className="text-sm font-medium mr-2">{episodeLabel}</p>
 								<p className="text-xs text-muted-foreground shrink-0">
