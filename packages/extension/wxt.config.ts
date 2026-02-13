@@ -15,7 +15,12 @@ export default defineConfig({
 		plugins: [tsconfigPaths()],
 	}),
 	manifest: ({ browser, manifestVersion }) => {
-		const permissions = ["storage", "identity"];
+		const permissions: Browser.runtime.ManifestPermission | string[] = [
+			"storage",
+			"identity",
+			"activeTab",
+		] satisfies Browser.runtime.ManifestPermission[];
+
 		if (manifestVersion === 2) {
 			permissions.push("https://api.annict.com/graphql");
 		}
