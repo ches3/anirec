@@ -1,4 +1,4 @@
-import type { Activities } from "@anirec/annict";
+import { type Activities, getAnnictUrl } from "@anirec/annict";
 import { Trash2, Undo2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -123,13 +123,18 @@ function ActivityList({
 							)}
 						>
 							<div className="flex items-center justify-between gap-2">
-								<p
-									className={cn(
-										"text-xs flex-1 min-w-0",
-										!episodeLabel && "text-sm font-medium",
-									)}
-								>
-									{item.work.title}
+								<p className="flex-1 min-w-0">
+									<a
+										href={getAnnictUrl(item.work.id)}
+										target="_blank"
+										rel="noreferrer"
+										className={cn(
+											"text-xs hover:underline",
+											!episodeLabel && "text-sm font-medium",
+										)}
+									>
+										{item.work.title}
+									</a>
 								</p>
 								{pending ? (
 									<Button
@@ -154,7 +159,18 @@ function ActivityList({
 								)}
 							</div>
 							<div className="flex items-end justify-between mt-2">
-								<p className="text-sm font-medium mr-2">{episodeLabel}</p>
+								{item.__typename === "Record" ? (
+									<a
+										href={getAnnictUrl(item.work.id, item.episode.id)}
+										target="_blank"
+										rel="noreferrer"
+										className="text-sm font-medium mr-2 hover:underline"
+									>
+										{episodeLabel}
+									</a>
+								) : (
+									<p className="text-sm font-medium mr-2">{episodeLabel}</p>
+								)}
 								<p className="text-xs text-muted-foreground shrink-0">
 									{formatRelativeTime(item.createdAt)}
 								</p>
