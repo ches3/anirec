@@ -5,6 +5,7 @@ import {
 	MinusCircle,
 	XCircle,
 } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
 import type { RecordStatus, SkipReason } from "@/types";
 import { cn } from "@/utils/cn";
 
@@ -80,9 +81,12 @@ export function RecordStatusBadge({
 			<div className="flex-1 min-w-0">
 				<p className={`text-sm font-medium ${config.color}`}>{config.label}</p>
 				{status.status === "waiting" && (
-					<p className="text-xs text-muted-foreground">
-						録画タイミングを待っています
-					</p>
+					<>
+						<p className="text-xs text-muted-foreground">
+							録画タイミングを待っています
+						</p>
+						<Progress value={status.progress * 100} className="h-2 mt-2" />
+					</>
 				)}
 				{status.status === "error" && status.errorMessage && (
 					<p className="text-xs text-destructive mt-0.5">

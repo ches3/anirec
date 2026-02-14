@@ -1,6 +1,7 @@
 import { isRecorded, record } from "@anirec/annict";
 import type { ContentScriptContext } from "#imports";
 import type { WorkInfoData } from "@/types";
+import { asyncQuerySelector } from "@/utils/async-query-selector";
 import { searchFromList } from "@/utils/search";
 import { getRecordSettings, getToken } from "@/utils/settings";
 import { identifyVod, isVodEnabled } from "@/utils/vod";
@@ -154,9 +155,17 @@ async function script(ctx: ContentScriptContext, ver: number) {
 			return;
 		}
 
+		// video要素を取得
+		const videoElem = await asyncQuerySelector("video", document, 0);
+		if (!(videoElem instanceof HTMLVideoElement)) {
+			throw new Error("video要素の取得に失敗しました。");
+		}
+
 		// 待機
-		setRecordStatus({ status: "waiting" }, ver);
-		await wait(recordSettings.timing, ctx);
+		setRecordStatus({ status: "waiting", progress: 0 }, ver);
+		await wait(recordSettings.timing, videoElem, ctx, (progress) => {
+			setRecordStatus({ status: "waiting", progress }, ver);
+		});
 		setRecordStatus({ status: "processing" }, ver);
 
 		// 重複記録チェック(待機後)

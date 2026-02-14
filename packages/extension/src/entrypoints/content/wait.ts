@@ -1,16 +1,25 @@
 import type { ContentScriptContext } from "#imports";
-import { asyncQuerySelector } from "@/utils/async-query-selector";
 import type { RecordTiming } from "@/utils/settings";
 
-export function wait(recordTiming: RecordTiming, ctx: ContentScriptContext) {
+export function wait(
+	recordTiming: RecordTiming,
+	videoElem: HTMLVideoElement,
+	ctx: ContentScriptContext,
+	onProgress?: (progress: number) => void,
+) {
 	if (recordTiming.type === "delay") {
-		return waitDelay(recordTiming.delaySeconds, "video", ctx);
+		return waitDelay(recordTiming.delaySeconds, videoElem, ctx, onProgress);
 	}
 	if (recordTiming.type === "ended") {
-		return waitEnded("video");
+		return waitEnded(videoElem, ctx, onProgress);
 	}
 	if (recordTiming.type === "continued") {
-		return waitContinued(recordTiming.continuedSeconds, "video", ctx);
+		return waitContinued(
+			recordTiming.continuedSeconds,
+			videoElem,
+			ctx,
+			onProgress,
+		);
 	}
 	throw new Error("記録タイミングの値が不正です");
 }
@@ -32,42 +41,66 @@ function waitPlaying(elem: HTMLVideoElement) {
 // 再生開始からn秒待機
 function waitDelay(
 	waitSecond: number,
-	selector: string,
+	videoElem: HTMLVideoElement,
 	ctx: ContentScriptContext,
+	onProgress?: (progress: number) => void,
 ) {
 	return new Promise<void>((resolve, reject) => {
-		asyncQuerySelector(selector, document).then((elem) => {
-			if (!elem || !(elem instanceof HTMLVideoElement)) {
-				return reject(new Error("video要素の取得に失敗しました"));
-			}
+		// 再生開始まで待機
+		waitPlaying(videoElem).then(() => {
+			let elapsed = 0;
+			onProgress?.(0);
 
-			// 再生開始まで待機
-			waitPlaying(elem).then(() => {
-				const timeout = setTimeout(resolve, waitSecond * 1000);
+			const interval = setInterval(() => {
+				elapsed += 1;
+				onProgress?.(Math.min(elapsed / waitSecond, 1));
+			}, 1000);
 
-				// ページ遷移時にクリーンアップ & reject
-				ctx.addEventListener(window, "wxt:locationchange", () => {
-					clearTimeout(timeout);
-					return reject(new Error("locationChange"));
-				});
+			const timeout = setTimeout(() => {
+				clearInterval(interval);
+				resolve();
+			}, waitSecond * 1000);
+
+			// ページ遷移時にクリーンアップ & reject
+			ctx.addEventListener(window, "wxt:locationchange", () => {
+				clearTimeout(timeout);
+				clearInterval(interval);
+				return reject(new Error("locationChange"));
 			});
 		});
 	});
 }
 
 // 再生終了まで待機
-function waitEnded(selector: string) {
+function waitEnded(
+	videoElem: HTMLVideoElement,
+	ctx: ContentScriptContext,
+	onProgress?: (progress: number) => void,
+) {
 	return new Promise<void>((resolve, reject) => {
-		asyncQuerySelector(selector, document).then((elem) => {
-			if (!elem || !(elem instanceof HTMLVideoElement)) {
-				return reject(new Error("video要素の取得に失敗しました"));
+		const interval = setInterval(() => {
+			if (
+				onProgress &&
+				Number.isFinite(videoElem.duration) &&
+				videoElem.duration > 0
+			) {
+				onProgress(videoElem.currentTime / videoElem.duration);
 			}
+		}, 1000);
 
-			const onEnded = () => {
-				elem.removeEventListener("ended", onEnded);
-				return resolve();
-			};
-			elem.addEventListener("ended", onEnded);
+		const onEnded = () => {
+			clearInterval(interval);
+			videoElem.removeEventListener("ended", onEnded);
+			onProgress?.(1);
+			return resolve();
+		};
+		videoElem.addEventListener("ended", onEnded);
+
+		// ページ遷移時にクリーンアップ & reject
+		ctx.addEventListener(window, "wxt:locationchange", () => {
+			clearInterval(interval);
+			videoElem.removeEventListener("ended", onEnded);
+			return reject(new Error("locationChange"));
 		});
 	});
 }
@@ -75,33 +108,29 @@ function waitEnded(selector: string) {
 // 合計n秒間再生されるまで待機 (一時停止中はカウントしない)
 function waitContinued(
 	waitSecond: number,
-	selector: string,
+	videoElem: HTMLVideoElement,
 	ctx: ContentScriptContext,
+	onProgress?: (progress: number) => void,
 ) {
 	return new Promise<void>((resolve, reject) => {
-		asyncQuerySelector(selector, document).then((elem) => {
-			if (!elem || !(elem instanceof HTMLVideoElement)) {
-				return reject(new Error("video要素の取得に失敗しました"));
+		let totalTime = 0;
+
+		const interval = setInterval(() => {
+			if (videoElem.paused) {
+				return;
 			}
-
-			let totalTime = 0;
-
-			const interval = setInterval(() => {
-				if (elem.paused) {
-					return;
-				}
-				totalTime += 1;
-				if (totalTime >= waitSecond) {
-					clearInterval(interval);
-					return resolve();
-				}
-			}, 1000);
-
-			// ページ遷移時にクリーンアップ & reject
-			ctx.addEventListener(window, "wxt:locationchange", () => {
+			totalTime += 1;
+			onProgress?.(Math.min(totalTime / waitSecond, 1));
+			if (totalTime >= waitSecond) {
 				clearInterval(interval);
-				return reject(new Error("locationChange"));
-			});
+				return resolve();
+			}
+		}, 1000);
+
+		// ページ遷移時にクリーンアップ & reject
+		ctx.addEventListener(window, "wxt:locationchange", () => {
+			clearInterval(interval);
+			return reject(new Error("locationChange"));
 		});
 	});
 }
