@@ -1,16 +1,10 @@
 {
-	"$schema": "https://turborepo.dev/schema.json",
-	"tasks": {
-		"build": {
-			"outputs": ["dist/**", ".output/**"]
-		},
-		"typecheck": {},
-		"check": {
-			"inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/biome.json"]
-		},
-		"check:dry": {
-			"inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/biome.json"]
-		},
-		"test:run": {}
-	}
+  "$schema": "https://turborepo.dev/schema.json",
+  "tasks": {
+    "build": {
+      "outputs": ["dist/**", ".output/**"]
+    },
+    "typecheck": {},
+    "test:run": {}
+  }
 }
