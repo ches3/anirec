@@ -117,6 +117,42 @@ describe("findEpisodeByTitle", () => {
     const episode = findEpisodeByTitle(episodes, target);
     expect(episode?.id).toEqual(undefined);
   });
+
+  test("strictでは一致しないがweakで1件一致する場合に返す", () => {
+    // ！があるのでstrictでは不一致、weakで記号を除去して一致
+    const target = {
+      title: "ようこそ！ハイスクール",
+      numberText: undefined,
+      number: undefined,
+    };
+    const episode = findEpisodeByTitle(episodes, target);
+    expect(episode?.id).toEqual("RXBpc29kZS0xODM1Mg==");
+  });
+
+  test("weakで複数一致する場合はundefinedを返す", () => {
+    const ambiguous = [
+      {
+        id: "ep1",
+        title: "ようこそ！ハイスクール",
+        number: 1,
+        numberText: "第一回",
+      },
+      {
+        id: "ep2",
+        title: "ようこそ☆ハイスクール",
+        number: 2,
+        numberText: "第二回",
+      },
+    ];
+    // weakモードでは両方が「ようこそハイスクール」に正規化されて一致
+    const target = {
+      title: "ようこそハイスクール",
+      numberText: undefined,
+      number: undefined,
+    };
+    const episode = findEpisodeByTitle(ambiguous, target);
+    expect(episode?.id).toEqual(undefined);
+  });
 });
 
 describe("findEpisodeByNumberText", () => {
@@ -137,6 +173,28 @@ describe("findEpisodeByNumberText", () => {
       number: 1,
     };
     const episode = findEpisodeByNumberText(episodes, target);
+    expect(episode?.id).toEqual(undefined);
+  });
+
+  test("strictでは一致しないがweakで1件一致する場合に返す", () => {
+    // !があるのでstrictでは不一致、weakで記号を除去して一致
+    const target = {
+      title: undefined,
+      numberText: "第一回!",
+      number: undefined,
+    };
+    const episode = findEpisodeByNumberText(episodes, target);
+    expect(episode?.id).toEqual("RXBpc29kZS0xODM1Mg==");
+  });
+
+  test("weakで複数一致する場合はundefinedを返す", () => {
+    const ambiguous = [
+      { id: "ep1", title: "タイトル1", number: 1, numberText: "第1回!" },
+      { id: "ep2", title: "タイトル2", number: 2, numberText: "第1回?" },
+    ];
+    // weakモードでは両方が「第1回」に正規化されて一致
+    const target = { title: undefined, numberText: "第1回", number: undefined };
+    const episode = findEpisodeByNumberText(ambiguous, target);
     expect(episode?.id).toEqual(undefined);
   });
 });
@@ -216,6 +274,44 @@ describe("findEpisodeByTitleAndNumberText", () => {
       number: 1,
     };
     expect(findEpisodeByTitleAndNumberText(episodes, target)?.id).toEqual(
+      undefined,
+    );
+  });
+
+  test("strictでは一致しないがweakで1件一致する場合に返す", () => {
+    // titleに！、numberTextに!があるのでstrictでは不一致、weakで記号を除去して一致
+    const target = {
+      title: "ようこそ！ハイスクール",
+      numberText: "第一回!",
+      number: undefined,
+    };
+    expect(findEpisodeByTitleAndNumberText(episodes, target)?.id).toEqual(
+      "RXBpc29kZS0xODM1Mg==",
+    );
+  });
+
+  test("weakで複数一致する場合はundefinedを返す", () => {
+    const ambiguous = [
+      {
+        id: "ep1",
+        title: "ようこそ！ハイスクール",
+        number: 1,
+        numberText: "第1回!",
+      },
+      {
+        id: "ep2",
+        title: "ようこそ☆ハイスクール",
+        number: 2,
+        numberText: "第1回?",
+      },
+    ];
+    // weakモードでは両方のtitle・numberTextが同じ文字列に正規化されて一致
+    const target = {
+      title: "ようこそハイスクール",
+      numberText: "第1回",
+      number: undefined,
+    };
+    expect(findEpisodeByTitleAndNumberText(ambiguous, target)?.id).toEqual(
       undefined,
     );
   });

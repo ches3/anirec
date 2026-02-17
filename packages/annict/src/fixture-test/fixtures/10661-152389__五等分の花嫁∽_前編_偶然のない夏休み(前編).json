@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "createdAt": "2026-02-17T19:09:21.048Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "五等分の花嫁∽",
+      "episodeNumber": "前編",
+      "episodeTitle": "偶然のない夏休み(前編)"
+    },
+    "annictUrl": "https://annict.com/works/10661/episodes/152389"
+  },
+  "expected": {
+    "id": "V29yay0xMDY2MQ==",
+    "title": "五等分の花嫁∽",
+    "episode": {
+      "id": "RXBpc29kZS0xNTIzODk=",
+      "title": "偶然のない夏休み・前編",
+      "number": 1
+    }
+  },
+  "variants": [
+    "五等分の花嫁∽",
+    "五等分の花嫁"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay02MjA1",
+      "title": "五等分の花嫁",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMDYyMDU=",
+          "title": "五等分の花嫁",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDYzNDE=",
+          "title": "屋上の告白",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDY1NTY=",
+          "title": "問題は山積み",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDY2ODA=",
+          "title": "今日はお休み",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDY4MzA=",
+          "title": "全員で五等分",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDg3OTM=",
+          "title": "積み上げたもの",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDkxMzI=",
+          "title": "嘘つき嘘たろう",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDk3NzE=",
+          "title": "始まりの写真",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDk4NjQ=",
+          "title": "結びの伝説1日目",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDk5NzY=",
+          "title": "結びの伝説2日目",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTAxMzM=",
+          "title": "結びの伝説3日目",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTAzNjk=",
+          "title": "結びの伝説2000日目",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": [
+        "五等分の花嫁"
+      ]
+    },
+    {
+      "id": "V29yay0xMDY2MQ==",
+      "title": "五等分の花嫁∽",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTIzODk=",
+          "title": "偶然のない夏休み・前編",
+          "number": 1
+        },
+        {
+          "id": "RXBpc29kZS0xNTIzOTA=",
+          "title": "偶然のない夏休み・後編",
+          "number": 2
+        }
+      ],
+      "seriesList": [
+        "五等分の花嫁"
+      ]
+    },
+    {
+      "id": "V29yay04MTc4",
+      "title": "映画 五等分の花嫁",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "五等分の花嫁"
+      ]
+    },
+    {
+      "id": "V29yay0xMjkxMg==",
+      "title": "五等分の花嫁＊",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjM2ODc=",
+          "title": "五つ子ちゃん大事件",
+          "number": 1,
+          "numberText": "前編"
+        },
+        {
+          "id": "RXBpc29kZS0xNjM2ODg=",
+          "title": "五つ子ちゃん大作戦",
+          "number": 2,
+          "numberText": "後編"
+        }
+      ],
+      "seriesList": [
+        "五等分の花嫁"
+      ]
+    },
+    {
+      "id": "V29yay02NjYw",
+      "title": "五等分の花嫁∬",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMjgwNzg=",
+          "title": "今日と京都の凶と共",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjgyOTg=",
+          "title": "七つのさよなら 第一章",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg0MDg=",
+          "title": "七つのさよなら 第二章",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg1MTM=",
+          "title": "七つのさよなら 第三章",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg2MjI=",
+          "title": "今日はお疲れ",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg3Mjg=",
+          "title": "最後の試験",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjg5MjA=",
+          "title": "攻略開始",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjkwNzY=",
+          "title": "スクランブルエッグ",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjkxODI=",
+          "title": "ようこそ3年1組",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjkyOTM=",
+          "title": "五羽鶴の恩返し",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjk2MjM=",
+          "title": "シスターズウォー 前半戦",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjk3MzY=",
+          "title": "シスターズウォー 後半戦",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": [
+        "五等分の花嫁"
+      ]
+    }
+  ]
+}
