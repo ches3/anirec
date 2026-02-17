@@ -1,34 +1,34 @@
 {
-	"name": "@anirec/annict",
-	"private": true,
-	"type": "module",
-	"main": "./src/index.ts",
-	"exports": {
-		".": "./src/index.ts"
-	},
-	"scripts": {
-		"typecheck": "tsc --noEmit",
-		"test": "vitest",
-		"test:run": "vitest run",
-		"gql-gen": "graphql-codegen",
-		"check": "biome check --write .",
-		"check:dry": "biome check .",
-		"fixture": "bun run src/fixture-test/cli.ts"
-	},
-	"devDependencies": {
-		"@clack/prompts": "^1.0.0",
-		"@graphql-codegen/cli": "^6.1.1",
-		"@graphql-codegen/typed-document-node": "^6.1.5",
-		"@graphql-codegen/typescript": "^5.0.7",
-		"@graphql-codegen/typescript-operations": "^5.0.7",
-		"@graphql-typed-document-node/core": "^3.2.0",
-		"@types/node": "^25.2.1",
-		"dotenv": "^17.2.4",
-		"graphql": "^16.9.0"
-	},
-	"dependencies": {
-		"@ches3/zenhan": "^1.0.1",
-		"@geolonia/japanese-numeral": "^1.0.2",
-		"romans": "^3.1.0"
-	}
+  "name": "@anirec/annict",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "gql-gen": "graphql-codegen",
+    "check": "biome check --write .",
+    "check:dry": "biome check .",
+    "fixture": "bun run src/fixture-test/cli.ts"
+  },
+  "devDependencies": {
+    "@clack/prompts": "^1.0.0",
+    "@graphql-codegen/cli": "^6.1.1",
+    "@graphql-codegen/typed-document-node": "^6.1.5",
+    "@graphql-codegen/typescript": "^5.0.7",
+    "@graphql-codegen/typescript-operations": "^5.0.7",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@types/node": "^25.2.1",
+    "dotenv": "^17.2.4",
+    "graphql": "^16.9.0"
+  },
+  "dependencies": {
+    "@ches3/zenhan": "^1.0.1",
+    "@geolonia/japanese-numeral": "^1.0.2",
+    "romans": "^3.1.0"
+  }
 }
