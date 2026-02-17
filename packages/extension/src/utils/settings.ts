@@ -9,9 +9,8 @@ export async function getToken() {
 }
 
 export type RecordTiming = {
-  type: "continued" | "delay" | "ended";
+  type: "continued" | "ended";
   continuedSeconds: number;
-  delaySeconds: number;
 };
 
 export type ServiceEnabled = Record<Vod, boolean>;
@@ -50,7 +49,6 @@ const defaultRecordSettings: RecordSettings = {
   timing: {
     type: "continued",
     continuedSeconds: 90,
-    delaySeconds: 180,
   },
   enabledServices: {
     dmm: true,

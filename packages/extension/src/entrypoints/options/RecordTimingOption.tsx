@@ -68,7 +68,7 @@ export function RecordTimingOption({
   timing: RecordTiming;
   onChange: (patch: Partial<RecordTiming>) => void;
 }) {
-  const { type, continuedSeconds, delaySeconds } = timing;
+  const { type, continuedSeconds } = timing;
 
   return (
     <div className={className}>
@@ -94,19 +94,6 @@ export function RecordTimingOption({
               onChange({ continuedSeconds: num });
             }}
             isSelected={type === "continued"}
-          />
-          <RecordTimingOptionItem
-            value="delay"
-            label="再生開始からn秒後に記録"
-            secondsValue={delaySeconds}
-            onSecondsChange={(e) => {
-              const num = Number(e.target.value);
-              if (Number.isNaN(num)) {
-                return;
-              }
-              onChange({ delaySeconds: num });
-            }}
-            isSelected={type === "delay"}
           />
           <RecordTimingOptionItem
             value="ended"

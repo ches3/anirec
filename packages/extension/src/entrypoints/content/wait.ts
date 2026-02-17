@@ -21,9 +21,6 @@ export function wait(
   onProgress?: (progress: number) => void,
   signal?: AbortSignal,
 ) {
-  if (recordTiming.type === "delay") {
-    return waitDelay(recordTiming.delaySeconds, videoElem, onProgress, signal);
-  }
   if (recordTiming.type === "ended") {
     return waitEnded(videoElem, onProgress, signal);
   }
@@ -36,98 +33,6 @@ export function wait(
     );
   }
   throw new Error("記録タイミングの値が不正です");
-}
-
-// 再生開始まで待機
-function waitPlaying(elem: HTMLVideoElement, signal?: AbortSignal) {
-  return new Promise<WaitResult>((resolve) => {
-    if (signal?.aborted) {
-      resolve(createAbortedResult(signal.reason));
-      return;
-    }
-
-    const onAbort = () => {
-      elem.removeEventListener("playing", onPlaying);
-      resolve(createAbortedResult(signal?.reason));
-    };
-
-    if (!elem.paused) {
-      resolve(waitCompletedResult);
-      return;
-    }
-
-    const onPlaying = () => {
-      signal?.removeEventListener("abort", onAbort);
-      resolve(waitCompletedResult);
-    };
-
-    signal?.addEventListener("abort", onAbort, { once: true });
-    elem.addEventListener("playing", onPlaying, { once: true });
-  });
-}
-
-// 再生開始からn秒待機
-function waitDelay(
-  waitSecond: number,
-  videoElem: HTMLVideoElement,
-  onProgress?: (progress: number) => void,
-  signal?: AbortSignal,
-) {
-  return new Promise<WaitResult>((resolve) => {
-    if (signal?.aborted) {
-      resolve(createAbortedResult(signal.reason));
-      return;
-    }
-
-    let interval: ReturnType<typeof setInterval> | undefined;
-    let timeout: ReturnType<typeof setTimeout> | undefined;
-    let settled = false;
-
-    const cleanup = () => {
-      clearTimeout(timeout);
-      clearInterval(interval);
-      signal?.removeEventListener("abort", onAbort);
-    };
-
-    const resolveOnce = (result: WaitResult) => {
-      if (settled) {
-        return;
-      }
-      settled = true;
-      cleanup();
-      resolve(result);
-    };
-
-    const onAbort = () => {
-      resolveOnce(createAbortedResult(signal?.reason));
-    };
-    signal?.addEventListener("abort", onAbort, { once: true });
-
-    // 再生開始まで待機
-    waitPlaying(videoElem, signal).then((playingResult) => {
-      if (playingResult.status === "aborted") {
-        resolveOnce(playingResult);
-        return;
-      }
-
-      if (signal?.aborted) {
-        resolveOnce(createAbortedResult(signal.reason));
-        return;
-      }
-
-      let elapsed = 0;
-      onProgress?.(0);
-
-      interval = setInterval(() => {
-        elapsed += 1;
-        onProgress?.(Math.min(elapsed / waitSecond, 1));
-      }, 1000);
-
-      timeout = setTimeout(() => {
-        resolveOnce(waitCompletedResult);
-      }, waitSecond * 1000);
-    });
-  });
 }
 
 // 再生終了まで待機
