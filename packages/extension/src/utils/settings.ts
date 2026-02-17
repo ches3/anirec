@@ -1,3 +1,4 @@
+import type { ContentScriptContext } from "#imports";
 import type { Vod } from "@/types";
 
 export async function getToken() {
@@ -70,4 +71,32 @@ export async function getRecordSettings() {
 
 export async function saveRecordSettings(settings: RecordSettings) {
 	await storage.setItem<RecordSettings>("sync:recordSettings", settings);
+}
+
+export async function getAutoRecordEnabled(): Promise<boolean> {
+	return (await storage.getItem<boolean>("local:autoRecordEnabled")) ?? true;
+}
+
+export async function saveAutoRecordEnabled(enabled: boolean): Promise<void> {
+	await storage.setItem<boolean>("local:autoRecordEnabled", enabled);
+}
+
+export function watchAutoRecordEnabled(
+	ctx: ContentScriptContext,
+	callback: (newValue: boolean) => void,
+): () => void {
+	const unwatchStorage = storage.watch<boolean>(
+		"local:autoRecordEnabled",
+		(newValue) => callback(newValue ?? true),
+	);
+
+	function cleanup() {
+		unwatchStorage();
+		window.removeEventListener("wxt:locationchange", onLocationChange);
+	}
+
+	const onLocationChange = () => cleanup();
+	ctx.addEventListener(window, "wxt:locationchange", onLocationChange);
+
+	return cleanup;
 }

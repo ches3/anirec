@@ -1,40 +1,68 @@
-import type { ContentScriptContext } from "#imports";
 import type { RecordTiming } from "@/utils/settings";
+
+export type WaitAbortReason = "locationChange" | "disabled";
+
+export type WaitResult =
+	| { status: "completed" }
+	| { status: "aborted"; reason: WaitAbortReason };
+
+const waitCompletedResult: WaitResult = { status: "completed" };
+
+function createAbortedResult(reason: unknown): WaitResult {
+	if (reason === "locationChange") {
+		return { status: "aborted", reason };
+	}
+	return { status: "aborted", reason: "disabled" };
+}
 
 export function wait(
 	recordTiming: RecordTiming,
 	videoElem: HTMLVideoElement,
-	ctx: ContentScriptContext,
 	onProgress?: (progress: number) => void,
+	signal?: AbortSignal,
 ) {
 	if (recordTiming.type === "delay") {
-		return waitDelay(recordTiming.delaySeconds, videoElem, ctx, onProgress);
+		return waitDelay(recordTiming.delaySeconds, videoElem, onProgress, signal);
 	}
 	if (recordTiming.type === "ended") {
-		return waitEnded(videoElem, ctx, onProgress);
+		return waitEnded(videoElem, onProgress, signal);
 	}
 	if (recordTiming.type === "continued") {
 		return waitContinued(
 			recordTiming.continuedSeconds,
 			videoElem,
-			ctx,
 			onProgress,
+			signal,
 		);
 	}
 	throw new Error("記録タイミングの値が不正です");
 }
 
 // 再生開始まで待機
-function waitPlaying(elem: HTMLVideoElement) {
-	return new Promise<void>((resolve) => {
-		if (!elem.paused) {
-			return resolve();
+function waitPlaying(elem: HTMLVideoElement, signal?: AbortSignal) {
+	return new Promise<WaitResult>((resolve) => {
+		if (signal?.aborted) {
+			resolve(createAbortedResult(signal.reason));
+			return;
 		}
-		const onPlaying = () => {
+
+		const onAbort = () => {
 			elem.removeEventListener("playing", onPlaying);
-			return resolve();
+			resolve(createAbortedResult(signal?.reason));
 		};
-		elem.addEventListener("playing", onPlaying);
+
+		if (!elem.paused) {
+			resolve(waitCompletedResult);
+			return;
+		}
+
+		const onPlaying = () => {
+			signal?.removeEventListener("abort", onAbort);
+			resolve(waitCompletedResult);
+		};
+
+		signal?.addEventListener("abort", onAbort, { once: true });
+		elem.addEventListener("playing", onPlaying, { once: true });
 	});
 }
 
@@ -42,31 +70,62 @@ function waitPlaying(elem: HTMLVideoElement) {
 function waitDelay(
 	waitSecond: number,
 	videoElem: HTMLVideoElement,
-	ctx: ContentScriptContext,
 	onProgress?: (progress: number) => void,
+	signal?: AbortSignal,
 ) {
-	return new Promise<void>((resolve, reject) => {
+	return new Promise<WaitResult>((resolve) => {
+		if (signal?.aborted) {
+			resolve(createAbortedResult(signal.reason));
+			return;
+		}
+
+		let interval: ReturnType<typeof setInterval> | undefined;
+		let timeout: ReturnType<typeof setTimeout> | undefined;
+		let settled = false;
+
+		const cleanup = () => {
+			clearTimeout(timeout);
+			clearInterval(interval);
+			signal?.removeEventListener("abort", onAbort);
+		};
+
+		const resolveOnce = (result: WaitResult) => {
+			if (settled) {
+				return;
+			}
+			settled = true;
+			cleanup();
+			resolve(result);
+		};
+
+		const onAbort = () => {
+			resolveOnce(createAbortedResult(signal?.reason));
+		};
+		signal?.addEventListener("abort", onAbort, { once: true });
+
 		// 再生開始まで待機
-		waitPlaying(videoElem).then(() => {
+		waitPlaying(videoElem, signal).then((playingResult) => {
+			if (playingResult.status === "aborted") {
+				resolveOnce(playingResult);
+				return;
+			}
+
+			if (signal?.aborted) {
+				resolveOnce(createAbortedResult(signal.reason));
+				return;
+			}
+
 			let elapsed = 0;
 			onProgress?.(0);
 
-			const interval = setInterval(() => {
+			interval = setInterval(() => {
 				elapsed += 1;
 				onProgress?.(Math.min(elapsed / waitSecond, 1));
 			}, 1000);
 
-			const timeout = setTimeout(() => {
-				clearInterval(interval);
-				resolve();
+			timeout = setTimeout(() => {
+				resolveOnce(waitCompletedResult);
 			}, waitSecond * 1000);
-
-			// ページ遷移時にクリーンアップ & reject
-			ctx.addEventListener(window, "wxt:locationchange", () => {
-				clearTimeout(timeout);
-				clearInterval(interval);
-				return reject(new Error("locationChange"));
-			});
 		});
 	});
 }
@@ -74,10 +133,32 @@ function waitDelay(
 // 再生終了まで待機
 function waitEnded(
 	videoElem: HTMLVideoElement,
-	ctx: ContentScriptContext,
 	onProgress?: (progress: number) => void,
+	signal?: AbortSignal,
 ) {
-	return new Promise<void>((resolve, reject) => {
+	return new Promise<WaitResult>((resolve) => {
+		if (signal?.aborted) {
+			resolve(createAbortedResult(signal.reason));
+			return;
+		}
+
+		let settled = false;
+
+		const cleanup = () => {
+			clearInterval(interval);
+			videoElem.removeEventListener("ended", onEnded);
+			signal?.removeEventListener("abort", onAbort);
+		};
+
+		const resolveOnce = (result: WaitResult) => {
+			if (settled) {
+				return;
+			}
+			settled = true;
+			cleanup();
+			resolve(result);
+		};
+
 		const interval = setInterval(() => {
 			if (
 				onProgress &&
@@ -89,19 +170,15 @@ function waitEnded(
 		}, 1000);
 
 		const onEnded = () => {
-			clearInterval(interval);
-			videoElem.removeEventListener("ended", onEnded);
 			onProgress?.(1);
-			return resolve();
+			resolveOnce(waitCompletedResult);
 		};
 		videoElem.addEventListener("ended", onEnded);
 
-		// ページ遷移時にクリーンアップ & reject
-		ctx.addEventListener(window, "wxt:locationchange", () => {
-			clearInterval(interval);
-			videoElem.removeEventListener("ended", onEnded);
-			return reject(new Error("locationChange"));
-		});
+		const onAbort = () => {
+			resolveOnce(createAbortedResult(signal?.reason));
+		};
+		signal?.addEventListener("abort", onAbort, { once: true });
 	});
 }
 
@@ -109,11 +186,31 @@ function waitEnded(
 function waitContinued(
 	waitSecond: number,
 	videoElem: HTMLVideoElement,
-	ctx: ContentScriptContext,
 	onProgress?: (progress: number) => void,
+	signal?: AbortSignal,
 ) {
-	return new Promise<void>((resolve, reject) => {
+	return new Promise<WaitResult>((resolve) => {
+		if (signal?.aborted) {
+			resolve(createAbortedResult(signal.reason));
+			return;
+		}
+
 		let totalTime = 0;
+		let settled = false;
+
+		const cleanup = () => {
+			clearInterval(interval);
+			signal?.removeEventListener("abort", onAbort);
+		};
+
+		const resolveOnce = (result: WaitResult) => {
+			if (settled) {
+				return;
+			}
+			settled = true;
+			cleanup();
+			resolve(result);
+		};
 
 		const interval = setInterval(() => {
 			if (videoElem.paused) {
@@ -122,15 +219,13 @@ function waitContinued(
 			totalTime += 1;
 			onProgress?.(Math.min(totalTime / waitSecond, 1));
 			if (totalTime >= waitSecond) {
-				clearInterval(interval);
-				return resolve();
+				resolveOnce(waitCompletedResult);
 			}
 		}, 1000);
 
-		// ページ遷移時にクリーンアップ & reject
-		ctx.addEventListener(window, "wxt:locationchange", () => {
-			clearInterval(interval);
-			return reject(new Error("locationChange"));
-		});
+		const onAbort = () => {
+			resolveOnce(createAbortedResult(signal?.reason));
+		};
+		signal?.addEventListener("abort", onAbort, { once: true });
 	});
 }

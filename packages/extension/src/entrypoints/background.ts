@@ -5,9 +5,29 @@ import type {
 	GetPendingDeletionsMessage,
 	ScheduleDeleteMessage,
 } from "@/types";
-import { getToken } from "@/utils/settings";
+import { getAutoRecordEnabled, getToken } from "@/utils/settings";
 
-export default defineBackground(() => {
+function updateActionIcon(enabled: boolean) {
+	const dir = enabled ? "/icon" : "/icon/gray";
+	void browser.action.setIcon({
+		path: {
+			16: `${dir}/16.png`,
+			32: `${dir}/32.png`,
+			48: `${dir}/48.png`,
+			96: `${dir}/96.png`,
+			128: `${dir}/128.png`,
+		},
+	});
+}
+
+export default defineBackground(async () => {
+	const enabled = await getAutoRecordEnabled();
+	updateActionIcon(enabled);
+
+	storage.watch<boolean>("local:autoRecordEnabled", (newValue) => {
+		updateActionIcon(newValue ?? true);
+	});
+
 	const pendingTimers = new Map<string, ReturnType<typeof setTimeout>>();
 	const sendDeleteResult = (message: DeleteResultMessage) => {
 		void browser.runtime.sendMessage<DeleteResultMessage>(message).catch(() => {

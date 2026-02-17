@@ -1,9 +1,14 @@
-import { isRecorded, record } from "@anirec/annict";
+import { isRecorded, record, type SearchResult } from "@anirec/annict";
 import type { ContentScriptContext } from "#imports";
-import type { WorkInfoData } from "@/types";
+import type { Vod, WorkInfoData } from "@/types";
 import { asyncQuerySelector } from "@/utils/async-query-selector";
 import { searchFromList } from "@/utils/search";
-import { getRecordSettings, getToken } from "@/utils/settings";
+import {
+	getAutoRecordEnabled,
+	getRecordSettings,
+	getToken,
+	watchAutoRecordEnabled,
+} from "@/utils/settings";
 import { identifyVod, isVodEnabled } from "@/utils/vod";
 import { extractSearchParams } from "./extract-search-params";
 import {
@@ -40,6 +45,27 @@ async function getWorkInfoFromPage(): Promise<WorkInfoData | null> {
 		vod,
 		searchParams,
 	};
+}
+
+type Prefetched = {
+	vod: Vod;
+	token: string;
+	result: NonNullable<SearchResult>;
+};
+
+// enabled が true になったタイミングで scriptFromRecordSettings を再実行するウォッチャーを設定する
+function watchForReEnable(
+	ctx: ContentScriptContext,
+	ver: number,
+	prefetched: Prefetched,
+) {
+	const unwatch = watchAutoRecordEnabled(ctx, (newValue) => {
+		if (newValue) {
+			unwatch();
+			setRecordStatus({ status: "idle" }, ver);
+			void scriptFromRecordSettings(ctx, ver, prefetched);
+		}
+	});
 }
 
 export default defineContentScript({
@@ -127,6 +153,53 @@ async function script(ctx: ContentScriptContext, ver: number) {
 			return;
 		}
 
+		const autoRecordEnabled = await getAutoRecordEnabled();
+		if (!autoRecordEnabled) {
+			setRecordStatus(
+				{
+					status: "skipped",
+					skipReason: "disabled",
+				},
+				ver,
+			);
+			// enabled が true に変わったら待機を開始する
+			watchForReEnable(ctx, ver, { vod, token, result });
+			return;
+		}
+
+		await scriptFromRecordSettings(ctx, ver, { vod, token, result });
+	} catch (error) {
+		// エラー状態に更新
+		setRecordStatus(
+			{
+				status: "error",
+				errorMessage: error instanceof Error ? error.message : "不明なエラー",
+			},
+			ver,
+		);
+		if (error instanceof Error) {
+			console.error(error);
+		}
+	}
+}
+
+async function scriptFromRecordSettings(
+	ctx: ContentScriptContext,
+	ver: number,
+	{ vod, token, result }: Prefetched,
+) {
+	const abortController = new AbortController();
+	const unwatch = watchAutoRecordEnabled(ctx, (newValue) => {
+		if (!newValue) {
+			unwatch();
+			abortController.abort("disabled");
+		}
+	});
+	ctx.addEventListener(window, "wxt:locationchange", () => {
+		abortController.abort("locationChange");
+	});
+
+	try {
 		const recordSettings = await getRecordSettings();
 		if (!isVodEnabled(vod, recordSettings.enabledServices)) {
 			setRecordStatus(
@@ -163,9 +236,30 @@ async function script(ctx: ContentScriptContext, ver: number) {
 
 		// 待機
 		setRecordStatus({ status: "waiting", progress: 0 }, ver);
-		await wait(recordSettings.timing, videoElem, ctx, (progress) => {
-			setRecordStatus({ status: "waiting", progress }, ver);
-		});
+		const waitResult = await wait(
+			recordSettings.timing,
+			videoElem,
+			(progress) => {
+				setRecordStatus({ status: "waiting", progress }, ver);
+			},
+			abortController.signal,
+		);
+
+		if (waitResult.status === "aborted") {
+			if (waitResult.reason === "disabled") {
+				setRecordStatus(
+					{
+						status: "skipped",
+						skipReason: "disabled",
+					},
+					ver,
+				);
+				// enabled が true に変わったら待機を再開する
+				watchForReEnable(ctx, ver, { vod, token, result });
+			}
+			return;
+		}
+
 		setRecordStatus({ status: "processing" }, ver);
 
 		// 重複記録チェック(待機後)
@@ -191,10 +285,6 @@ async function script(ctx: ContentScriptContext, ver: number) {
 
 		console.log("エピソードを記録しました。", result);
 	} catch (error) {
-		if (error instanceof Error && error.message === "locationChange") {
-			return;
-		}
-
 		// エラー状態に更新
 		setRecordStatus(
 			{
@@ -206,5 +296,7 @@ async function script(ctx: ContentScriptContext, ver: number) {
 		if (error instanceof Error) {
 			console.error(error);
 		}
+	} finally {
+		unwatch();
 	}
 }

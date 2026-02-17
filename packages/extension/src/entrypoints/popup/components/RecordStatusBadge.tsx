@@ -105,6 +105,8 @@ export function RecordStatusBadge({
 
 function getSkipReasonText(reason: SkipReason): string {
 	switch (reason) {
+		case "disabled":
+			return "自動記録が無効です";
 		case "service_disabled":
 			return "このサービスは無効化されています";
 		case "duplicate":

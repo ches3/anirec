@@ -8,6 +8,7 @@ export type WorkInfoData = {
 };
 
 export type SkipReason =
+	| "disabled" // 自動記録が無効化されている
 	| "service_disabled" // サービスが無効化されている
 	| "duplicate" // 既に記録済み
 	| "not_found"; // エピソードが見つからない
