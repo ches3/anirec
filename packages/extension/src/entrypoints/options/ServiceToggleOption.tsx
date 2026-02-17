@@ -20,8 +20,9 @@ function ServiceToggleOptionItem({
         id={id}
         checked={enabled}
         onCheckedChange={(value) => onToggle(id, value)}
+        className="scale-80"
       />
-      <Label htmlFor={id} className="pl-4 cursor-pointer">
+      <Label htmlFor={id} className="pl-2 cursor-pointer">
         {label}
       </Label>
     </div>
@@ -45,7 +46,7 @@ export function ServiceToggleOption({
   return (
     <div className={className}>
       <h2 className="font-bold text-base">自動記録を有効にするサービス</h2>
-      <div className="flex flex-col gap-4 mt-4">
+      <div className="flex flex-col gap-2.5 mt-4">
         <ServiceToggleOptionItem
           id="dmm"
           label="DMM TV"

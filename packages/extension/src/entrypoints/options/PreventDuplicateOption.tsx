@@ -23,12 +23,13 @@ export function PreventDuplicateOption({
           id="prevent-duplicate"
           checked={value.enabled}
           onCheckedChange={(enabled) => onChange({ ...value, enabled })}
+          className="scale-80"
         />
-        <Label htmlFor="prevent-duplicate" className="pl-3 cursor-pointer">
+        <Label htmlFor="prevent-duplicate" className="pl-2 cursor-pointer">
           記録済みの場合はスキップ
         </Label>
       </div>
-      <div className="flex mt-4 ml-4 items-center gap-2">
+      <div className="flex mt-2 ml-4 items-center gap-2">
         <Input
           className="w-14 text-right"
           value={value.days}

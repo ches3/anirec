@@ -13,7 +13,7 @@ function SecondInput({
   isDisabled: boolean;
 }) {
   return (
-    <div className="flex mt-2 ml-8 items-center gap-2">
+    <div className="flex mt-2 ml-4 items-center gap-2">
       <Input
         className="w-14 text-right"
         value={value}
@@ -84,7 +84,7 @@ export function RecordTimingOption({
         >
           <RecordTimingOptionItem
             value="continued"
-            label="n秒間再生し続けたら記録"
+            label="一定時間再生後"
             secondsValue={continuedSeconds}
             onSecondsChange={(e) => {
               const num = Number(e.target.value);
@@ -97,7 +97,7 @@ export function RecordTimingOption({
           />
           <RecordTimingOptionItem
             value="ended"
-            label="再生終了時に記録"
+            label="再生終了時"
             isSelected={type === "ended"}
           />
         </RadioGroup>
