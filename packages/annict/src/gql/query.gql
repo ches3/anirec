@@ -1,126 +1,126 @@
 query searchWorks($titles: [String!]) {
-	searchWorks(titles: $titles) {
-		nodes {
-			id
-			title
-			noEpisodes
-			episodes(orderBy: { field: SORT_NUMBER, direction: ASC }) {
-				nodes {
-					id
-					title
-					number
-					numberText
-				}
-			}
-			seriesList {
-				nodes {
-					name
-				}
-			}
-		}
-	}
+  searchWorks(titles: $titles) {
+    nodes {
+      id
+      title
+      noEpisodes
+      episodes(orderBy: { field: SORT_NUMBER, direction: ASC }) {
+        nodes {
+          id
+          title
+          number
+          numberText
+        }
+      }
+      seriesList {
+        nodes {
+          name
+        }
+      }
+    }
+  }
 }
 
 query viewerActivities($last: Int, $after: String) {
-	viewer {
-		activities(
-			first: $last
-			after: $after
-			orderBy: { field: CREATED_AT, direction: DESC }
-		) {
-			edges {
-				item {
-					... on Review {
-						__typename
-						id
-						createdAt
-						work {
-							id
-							title
-						}
-					}
-					... on Record {
-						__typename
-						id
-						createdAt
-						work {
-							id
-							title
-						}
-						episode {
-							id
-							numberText
-							title
-						}
-					}
-				}
-			}
-			pageInfo {
-				endCursor
-			}
-		}
-	}
+  viewer {
+    activities(
+      first: $last
+      after: $after
+      orderBy: { field: CREATED_AT, direction: DESC }
+    ) {
+      edges {
+        item {
+          ... on Review {
+            __typename
+            id
+            createdAt
+            work {
+              id
+              title
+            }
+          }
+          ... on Record {
+            __typename
+            id
+            createdAt
+            work {
+              id
+              title
+            }
+            episode {
+              id
+              numberText
+              title
+            }
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+      }
+    }
+  }
 }
 
 mutation createRecord($id: ID!) {
-	createRecord(input: { episodeId: $id }) {
-		clientMutationId
-	}
+  createRecord(input: { episodeId: $id }) {
+    clientMutationId
+  }
 }
 
 mutation createReview($id: ID!) {
-	createReview(input: { workId: $id, body: "" }) {
-		clientMutationId
-	}
+  createReview(input: { workId: $id, body: "" }) {
+    clientMutationId
+  }
 }
 
 mutation deleteRecord($id: ID!) {
-	deleteRecord(input: { recordId: $id }) {
-		clientMutationId
-	}
+  deleteRecord(input: { recordId: $id }) {
+    clientMutationId
+  }
 }
 
 mutation deleteReview($id: ID!) {
-	deleteReview(input: { reviewId: $id }) {
-		clientMutationId
-	}
+  deleteReview(input: { reviewId: $id }) {
+    clientMutationId
+  }
 }
 
 query fetchNode($id: ID!) {
-	node(id: $id) {
-		__typename
-		... on Episode {
-			id
-			episodeTitle: title
-			number
-			numberText
-			work {
-				id
-				workTitle: title
-				seriesList {
-					nodes {
-						name
-					}
-				}
-			}
-		}
-		... on Work {
-			id
-			workTitle: title
-			noEpisodes
-			episodes(orderBy: { field: SORT_NUMBER, direction: ASC }) {
-				nodes {
-					id
-					title
-					number
-					numberText
-				}
-			}
-			seriesList {
-				nodes {
-					name
-				}
-			}
-		}
-	}
+  node(id: $id) {
+    __typename
+    ... on Episode {
+      id
+      episodeTitle: title
+      number
+      numberText
+      work {
+        id
+        workTitle: title
+        seriesList {
+          nodes {
+            name
+          }
+        }
+      }
+    }
+    ... on Work {
+      id
+      workTitle: title
+      noEpisodes
+      episodes(orderBy: { field: SORT_NUMBER, direction: ASC }) {
+        nodes {
+          id
+          title
+          number
+          numberText
+        }
+      }
+      seriesList {
+        nodes {
+          name
+        }
+      }
+    }
+  }
 }

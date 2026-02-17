@@ -4,73 +4,73 @@ import type { Vod } from "@/types";
 import type { ServiceEnabled } from "@/utils/settings";
 
 function ServiceToggleOptionItem({
-	id,
-	label,
-	enabled,
-	onToggle,
+  id,
+  label,
+  enabled,
+  onToggle,
 }: {
-	id: Vod;
-	label: string;
-	enabled: boolean;
-	onToggle: (service: Vod, isEnabled: boolean) => void;
+  id: Vod;
+  label: string;
+  enabled: boolean;
+  onToggle: (service: Vod, isEnabled: boolean) => void;
 }) {
-	return (
-		<div className="flex items-center">
-			<Switch
-				id={id}
-				checked={enabled}
-				onCheckedChange={(value) => onToggle(id, value)}
-			/>
-			<Label htmlFor={id} className="pl-4 cursor-pointer font-normal text-base">
-				{label}
-			</Label>
-		</div>
-	);
+  return (
+    <div className="flex items-center">
+      <Switch
+        id={id}
+        checked={enabled}
+        onCheckedChange={(value) => onToggle(id, value)}
+      />
+      <Label htmlFor={id} className="pl-4 cursor-pointer font-normal text-base">
+        {label}
+      </Label>
+    </div>
+  );
 }
 
 export function ServiceToggleOption({
-	className,
-	enabled,
-	onChange,
+  className,
+  enabled,
+  onChange,
 }: {
-	className?: string;
-	enabled: ServiceEnabled;
-	onChange: (nextEnabled: ServiceEnabled) => void;
+  className?: string;
+  enabled: ServiceEnabled;
+  onChange: (nextEnabled: ServiceEnabled) => void;
 }) {
-	const onToggle = (id: Vod, isEnabled: boolean) => {
-		const newEnabled = { ...enabled, [id]: isEnabled };
-		onChange(newEnabled);
-	};
+  const onToggle = (id: Vod, isEnabled: boolean) => {
+    const newEnabled = { ...enabled, [id]: isEnabled };
+    onChange(newEnabled);
+  };
 
-	return (
-		<div className={className}>
-			<h2 className="text-lg font-bold">自動記録を有効にするサービス</h2>
-			<div className="flex flex-col gap-4 mt-4">
-				<ServiceToggleOptionItem
-					id="dmm"
-					label="DMM TV"
-					enabled={enabled.dmm}
-					onToggle={onToggle}
-				/>
-				<ServiceToggleOptionItem
-					id="unext"
-					label="U-NEXT"
-					enabled={enabled.unext}
-					onToggle={onToggle}
-				/>
-				<ServiceToggleOptionItem
-					id="abema"
-					label="ABEMA"
-					enabled={enabled.abema}
-					onToggle={onToggle}
-				/>
-				<ServiceToggleOptionItem
-					id="danime"
-					label="dアニメストア"
-					enabled={enabled.danime}
-					onToggle={onToggle}
-				/>
-			</div>
-		</div>
-	);
+  return (
+    <div className={className}>
+      <h2 className="text-lg font-bold">自動記録を有効にするサービス</h2>
+      <div className="flex flex-col gap-4 mt-4">
+        <ServiceToggleOptionItem
+          id="dmm"
+          label="DMM TV"
+          enabled={enabled.dmm}
+          onToggle={onToggle}
+        />
+        <ServiceToggleOptionItem
+          id="unext"
+          label="U-NEXT"
+          enabled={enabled.unext}
+          onToggle={onToggle}
+        />
+        <ServiceToggleOptionItem
+          id="abema"
+          label="ABEMA"
+          enabled={enabled.abema}
+          onToggle={onToggle}
+        />
+        <ServiceToggleOptionItem
+          id="danime"
+          label="dアニメストア"
+          enabled={enabled.danime}
+          onToggle={onToggle}
+        />
+      </div>
+    </div>
+  );
 }

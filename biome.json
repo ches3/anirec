@@ -1,42 +1,49 @@
 {
-	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-	"root": true,
-	"vcs": {
-		"enabled": true,
-		"clientKind": "git",
-		"useIgnoreFile": true
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"suspicious": {
-				"noUnknownAtRules": {
-					"level": "error",
-					"options": {
-						"ignore": ["tailwind"]
-					}
-				}
-			},
-			"nursery": {
-				"useExhaustiveSwitchCases": "error"
-			}
-		}
-	},
-	"css": {
-		"parser": {
-			"tailwindDirectives": true
-		}
-	},
-	"assist": {
-		"enabled": true,
-		"actions": {
-			"source": {
-				"organizeImports": "on"
-			}
-		}
-	},
-	"files": {
-		"includes": ["**"]
-	}
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "root": true,
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noUnknownAtRules": {
+          "level": "error",
+          "options": {
+            "ignore": ["tailwind"]
+          }
+        }
+      },
+      "nursery": {
+        "useExhaustiveSwitchCases": "error"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 80,
+    "lineEnding": "lf"
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "files": {
+    "includes": ["**"]
+  }
 }

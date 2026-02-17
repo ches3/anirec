@@ -4,120 +4,120 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import type { RecordTiming } from "@/utils/settings";
 
 function SecondInput({
-	value,
-	onSecondsChange,
-	isDisabled,
+  value,
+  onSecondsChange,
+  isDisabled,
 }: {
-	value: number;
-	onSecondsChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-	isDisabled: boolean;
+  value: number;
+  onSecondsChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  isDisabled: boolean;
 }) {
-	return (
-		<div className="flex mt-2 ml-8 items-center gap-2">
-			<Input
-				className="w-14 text-right"
-				value={value}
-				onChange={onSecondsChange}
-				disabled={isDisabled}
-				type="number"
-				min={0}
-			/>
-			<span className={isDisabled ? "opacity-50" : ""}>秒</span>
-		</div>
-	);
+  return (
+    <div className="flex mt-2 ml-8 items-center gap-2">
+      <Input
+        className="w-14 text-right"
+        value={value}
+        onChange={onSecondsChange}
+        disabled={isDisabled}
+        type="number"
+        min={0}
+      />
+      <span className={isDisabled ? "opacity-50" : ""}>秒</span>
+    </div>
+  );
 }
 
 function RecordTimingOptionItem({
-	value,
-	label,
-	secondsValue,
-	onSecondsChange,
-	isSelected,
+  value,
+  label,
+  secondsValue,
+  onSecondsChange,
+  isSelected,
 }: {
-	value: RecordTiming["type"];
-	label: string;
-	secondsValue?: number;
-	onSecondsChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-	isSelected: boolean;
+  value: RecordTiming["type"];
+  label: string;
+  secondsValue?: number;
+  onSecondsChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  isSelected: boolean;
 }) {
-	return (
-		<div>
-			<div className="flex items-center">
-				<RadioGroupItem value={value} id={value} />
-				<Label
-					htmlFor={value}
-					className="pl-2 cursor-pointer font-normal text-base"
-				>
-					{label}
-				</Label>
-			</div>
-			{secondsValue !== undefined && onSecondsChange && (
-				<SecondInput
-					value={secondsValue}
-					onSecondsChange={onSecondsChange}
-					isDisabled={!isSelected}
-				/>
-			)}
-		</div>
-	);
+  return (
+    <div>
+      <div className="flex items-center">
+        <RadioGroupItem value={value} id={value} />
+        <Label
+          htmlFor={value}
+          className="pl-2 cursor-pointer font-normal text-base"
+        >
+          {label}
+        </Label>
+      </div>
+      {secondsValue !== undefined && onSecondsChange && (
+        <SecondInput
+          value={secondsValue}
+          onSecondsChange={onSecondsChange}
+          isDisabled={!isSelected}
+        />
+      )}
+    </div>
+  );
 }
 
 export function RecordTimingOption({
-	className,
-	timing,
-	onChange,
+  className,
+  timing,
+  onChange,
 }: {
-	className?: string;
-	timing: RecordTiming;
-	onChange: (patch: Partial<RecordTiming>) => void;
+  className?: string;
+  timing: RecordTiming;
+  onChange: (patch: Partial<RecordTiming>) => void;
 }) {
-	const { type, continuedSeconds, delaySeconds } = timing;
+  const { type, continuedSeconds, delaySeconds } = timing;
 
-	return (
-		<div className={className}>
-			<h2 className="font-bold text-lg">記録タイミング</h2>
-			<div className="mt-4">
-				<RadioGroup
-					value={type}
-					onValueChange={(v) => {
-						const value = v as RecordTiming["type"];
-						onChange({ type: value });
-					}}
-					className="flex flex-col gap-4"
-				>
-					<RecordTimingOptionItem
-						value="continued"
-						label="n秒間再生し続けたら記録"
-						secondsValue={continuedSeconds}
-						onSecondsChange={(e) => {
-							const num = Number(e.target.value);
-							if (Number.isNaN(num)) {
-								return;
-							}
-							onChange({ continuedSeconds: num });
-						}}
-						isSelected={type === "continued"}
-					/>
-					<RecordTimingOptionItem
-						value="delay"
-						label="再生開始からn秒後に記録"
-						secondsValue={delaySeconds}
-						onSecondsChange={(e) => {
-							const num = Number(e.target.value);
-							if (Number.isNaN(num)) {
-								return;
-							}
-							onChange({ delaySeconds: num });
-						}}
-						isSelected={type === "delay"}
-					/>
-					<RecordTimingOptionItem
-						value="ended"
-						label="再生終了時に記録"
-						isSelected={type === "ended"}
-					/>
-				</RadioGroup>
-			</div>
-		</div>
-	);
+  return (
+    <div className={className}>
+      <h2 className="font-bold text-lg">記録タイミング</h2>
+      <div className="mt-4">
+        <RadioGroup
+          value={type}
+          onValueChange={(v) => {
+            const value = v as RecordTiming["type"];
+            onChange({ type: value });
+          }}
+          className="flex flex-col gap-4"
+        >
+          <RecordTimingOptionItem
+            value="continued"
+            label="n秒間再生し続けたら記録"
+            secondsValue={continuedSeconds}
+            onSecondsChange={(e) => {
+              const num = Number(e.target.value);
+              if (Number.isNaN(num)) {
+                return;
+              }
+              onChange({ continuedSeconds: num });
+            }}
+            isSelected={type === "continued"}
+          />
+          <RecordTimingOptionItem
+            value="delay"
+            label="再生開始からn秒後に記録"
+            secondsValue={delaySeconds}
+            onSecondsChange={(e) => {
+              const num = Number(e.target.value);
+              if (Number.isNaN(num)) {
+                return;
+              }
+              onChange({ delaySeconds: num });
+            }}
+            isSelected={type === "delay"}
+          />
+          <RecordTimingOptionItem
+            value="ended"
+            label="再生終了時に記録"
+            isSelected={type === "ended"}
+          />
+        </RadioGroup>
+      </div>
+    </div>
+  );
 }

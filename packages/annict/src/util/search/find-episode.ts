@@ -3,55 +3,55 @@ import { isSameTitle } from "../normalize";
 
 // title のみが一致するエピソード
 export function findEpisodeByTitle(
-	episodes: Episode[],
-	target: ExtractedEpisode,
+  episodes: Episode[],
+  target: ExtractedEpisode,
 ): Episode | undefined {
-	return episodes.find(
-		(episode) =>
-			episode.title &&
-			target.title &&
-			isSameTitle(episode.title, target.title, true),
-	);
+  return episodes.find(
+    (episode) =>
+      episode.title &&
+      target.title &&
+      isSameTitle(episode.title, target.title, true),
+  );
 }
 
 // numberText のみが一致するエピソード
 export function findEpisodeByNumberText(
-	episodes: Episode[],
-	target: ExtractedEpisode,
+  episodes: Episode[],
+  target: ExtractedEpisode,
 ): Episode | undefined {
-	return episodes.find(
-		(episode) =>
-			episode.numberText &&
-			target.numberText &&
-			isSameTitle(episode.numberText, target.numberText, true),
-	);
+  return episodes.find(
+    (episode) =>
+      episode.numberText &&
+      target.numberText &&
+      isSameTitle(episode.numberText, target.numberText, true),
+  );
 }
 
 // number のみが一致するエピソード
 export function findEpisodeByNumber(
-	episodes: Episode[],
-	target: ExtractedEpisode,
+  episodes: Episode[],
+  target: ExtractedEpisode,
 ): Episode | undefined {
-	return episodes.find(
-		(episode) =>
-			episode.number !== undefined &&
-			target.number !== undefined &&
-			episode.number === target.number,
-	);
+  return episodes.find(
+    (episode) =>
+      episode.number !== undefined &&
+      target.number !== undefined &&
+      episode.number === target.number,
+  );
 }
 
 // title と numberText が両方一致するエピソード
 export function findEpisodeByTitleAndNumberText(
-	episodes: Episode[],
-	target: ExtractedEpisode,
+  episodes: Episode[],
+  target: ExtractedEpisode,
 ): Episode | undefined {
-	return episodes.find(
-		(episode) =>
-			episode.title &&
-			target.title &&
-			isSameTitle(episode.title, target.title, true) &&
-			episode.numberText &&
-			target.numberText &&
-			isSameTitle(episode.numberText, target.numberText, true),
-	);
+  return episodes.find(
+    (episode) =>
+      episode.title &&
+      target.title &&
+      isSameTitle(episode.title, target.title, true) &&
+      episode.numberText &&
+      target.numberText &&
+      isSameTitle(episode.numberText, target.numberText, true),
+  );
 }

@@ -1,19 +1,19 @@
 {
-	"name": "@anirec/server",
-	"private": true,
-	"scripts": {
-		"dev": "wrangler dev",
-		"typecheck": "tsc --noEmit",
-		"check": "biome check --write .",
-		"check:dry": "biome check ."
-	},
-	"dependencies": {
-		"@hono/valibot-validator": "^0.6.1",
-		"hono": "^4.6.7",
-		"valibot": "^1.2.0"
-	},
-	"devDependencies": {
-		"@cloudflare/workers-types": "^4.20260205.0",
-		"wrangler": "^4.63.0"
-	}
+  "name": "@anirec/server",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "typecheck": "tsc --noEmit",
+    "check": "biome check --write .",
+    "check:dry": "biome check ."
+  },
+  "dependencies": {
+    "@hono/valibot-validator": "^0.6.1",
+    "hono": "^4.6.7",
+    "valibot": "^1.2.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260205.0",
+    "wrangler": "^4.63.0"
+  }
 }
