@@ -1,3 +1,4 @@
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { generateToken, revokeToken } from "@/utils/auth";
 import { cn } from "@/utils/cn";
@@ -13,8 +14,10 @@ function LoginButton({
     try {
       await generateToken();
       setExists(true);
+      toast.success("Annictにログインしました");
     } catch (e) {
       console.error(e);
+      toast.error("ログインに失敗しました");
     }
   };
 
@@ -44,8 +47,10 @@ function LogoutButton({
     try {
       await revokeToken();
       setExists(false);
+      toast.success("ログアウトしました");
     } catch (e) {
       console.error(e);
+      toast.error("ログアウトに失敗しました");
     }
   };
 

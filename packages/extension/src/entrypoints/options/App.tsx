@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import {
   getRecordSettings,
   mergeRecordSettings,
@@ -49,6 +50,16 @@ function App() {
 
   return (
     <div className="mx-8 mt-2 mb-8 min-w-100 text-sm font-sans">
+      <Toaster
+        duration={3000}
+        toastOptions={{
+          style: {
+            width: "240px",
+            left: "auto",
+            right: "var(--offset-right)",
+          },
+        }}
+      />
       <TokenOption />
       {recordSettings && (
         <>
