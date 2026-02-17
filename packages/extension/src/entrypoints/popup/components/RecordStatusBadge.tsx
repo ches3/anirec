@@ -12,34 +12,26 @@ import { cn } from "@/utils/cn";
 type StatusConfig = {
 	icon: React.ComponentType<{ className?: string }>;
 	label: string;
-	color: string;
-	bgColor: string;
+	color?: string;
+	bgColor?: string;
 };
 
 const statusConfigs: Record<RecordStatus["status"], StatusConfig> = {
 	idle: {
 		icon: MinusCircle,
-		label: "未実行",
-		color: "text-muted-foreground",
-		bgColor: "bg-muted",
+		label: "ページ情報を取得中",
 	},
 	waiting: {
 		icon: Clock,
 		label: "待機中",
-		color: "text-blue-600",
-		bgColor: "bg-blue-50",
 	},
 	processing: {
 		icon: Loader2,
-		label: "処理中",
-		color: "text-blue-600",
-		bgColor: "bg-blue-50",
+		label: "記録中",
 	},
 	success: {
 		icon: CheckCircle2,
 		label: "記録完了",
-		color: "text-green-600",
-		bgColor: "bg-green-50",
 	},
 	error: {
 		icon: XCircle,
@@ -50,8 +42,6 @@ const statusConfigs: Record<RecordStatus["status"], StatusConfig> = {
 	skipped: {
 		icon: MinusCircle,
 		label: "スキップ",
-		color: "text-amber-600",
-		bgColor: "bg-amber-50",
 	},
 };
 
@@ -67,26 +57,31 @@ export function RecordStatusBadge({
 
 	return (
 		<div
-			className={cn("flex items-center gap-2 p-3 rounded-lg border", className)}
+			className={cn(
+				"flex items-center gap-2 p-3 min-h-16 rounded-lg border",
+				className,
+			)}
 		>
 			<div
-				className={`flex items-center justify-center w-8 h-8 rounded-full ${config.bgColor}`}
+				className={cn(
+					"flex items-center justify-center w-8 h-8 rounded-full bg-muted",
+					config.bgColor,
+				)}
 			>
 				<Icon
-					className={`w-4 h-4 ${config.color} ${
-						status.status === "processing" ? "animate-spin" : ""
-					}`}
+					className={cn(
+						"w-4 h-4 text-muted-foreground",
+						config.color,
+						status.status === "processing" && "animate-spin",
+					)}
 				/>
 			</div>
 			<div className="flex-1 min-w-0">
-				<p className={`text-sm font-medium ${config.color}`}>{config.label}</p>
+				<p className={cn("text-sm font-medium", config.color)}>
+					{config.label}
+				</p>
 				{status.status === "waiting" && (
-					<>
-						<p className="text-xs text-muted-foreground">
-							録画タイミングを待っています
-						</p>
-						<Progress value={status.progress * 100} className="h-2 mt-2" />
-					</>
+					<Progress value={status.progress * 100} className="h-2 mt-2" />
 				)}
 				{status.status === "error" && status.errorMessage && (
 					<p className="text-xs text-destructive mt-0.5">
@@ -108,7 +103,7 @@ function getSkipReasonText(reason: SkipReason): string {
 		case "disabled":
 			return "自動記録が無効です";
 		case "service_disabled":
-			return "このサービスは無効化されています";
+			return "このサービスは無効に設定されています";
 		case "duplicate":
 			return "既に記録済みです";
 		case "not_found":

@@ -67,7 +67,7 @@ export function PageState() {
 
 			{recordStatus.status !== "idle" && (
 				<div>
-					<Label className="text-xs text-muted-foreground mb-2">録画状態</Label>
+					<Label className="text-xs text-muted-foreground mb-2">記録状態</Label>
 					<RecordStatusBadge status={recordStatus} className="mt-1" />
 				</div>
 			)}

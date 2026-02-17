@@ -115,65 +115,67 @@ function ActivityList({
 					const pending = pendingDeletions.has(item.id);
 
 					return (
-						<li
-							key={item.id}
-							className={cn(
-								"py-3.5 transition-opacity",
-								pending && "opacity-30",
-							)}
-						>
-							<div className="flex items-center justify-between gap-2">
-								<p className="flex-1 min-w-0">
+						<li key={item.id} className="py-3.5">
+							<div className="flex justify-between gap-2">
+								<div
+									className={cn(
+										"flex-1 min-w-0 flex flex-col gap-2 transition-opacity",
+										pending && "opacity-30",
+									)}
+								>
 									<a
 										href={getAnnictUrl(item.work.id)}
 										target="_blank"
 										rel="noreferrer"
 										className={cn(
-											"text-xs hover:underline",
+											"w-fit text-xs hover:underline",
 											!episodeLabel && "text-sm font-medium",
 										)}
 									>
 										{item.work.title}
 									</a>
-								</p>
-								{pending ? (
-									<Button
-										variant="ghost"
-										size="icon"
-										className="h-5 w-5 shrink-0 text-muted-foreground"
-										onClick={() => cancelDelete(item.id)}
-										aria-label="元に戻す"
+									{item.__typename === "Record" && (
+										<a
+											href={getAnnictUrl(item.work.id, item.episode.id)}
+											target="_blank"
+											rel="noreferrer"
+											className="w-fit text-sm font-medium hover:underline"
+										>
+											{episodeLabel}
+										</a>
+									)}
+								</div>
+								<div className="flex flex-col items-end justify-end shrink-0 gap-2">
+									{pending ? (
+										<Button
+											variant="ghost"
+											size="icon"
+											className="h-5 w-5 text-muted-foreground"
+											onClick={() => cancelDelete(item.id)}
+											aria-label="元に戻す"
+										>
+											<Undo2 className="h-3.5 w-3.5" />
+										</Button>
+									) : (
+										<Button
+											variant="ghost"
+											size="icon"
+											className="h-5 w-5 text-muted-foreground hover:text-destructive"
+											onClick={() => scheduleDelete(item.id)}
+											aria-label="削除"
+										>
+											<Trash2 className="h-3.5 w-3.5" />
+										</Button>
+									)}
+									<p
+										className={cn(
+											"text-xs text-muted-foreground transition-opacity",
+											pending && "opacity-30",
+										)}
 									>
-										<Undo2 className="h-3.5 w-3.5" />
-									</Button>
-								) : (
-									<Button
-										variant="ghost"
-										size="icon"
-										className="h-5 w-5 shrink-0 text-muted-foreground hover:text-destructive"
-										onClick={() => scheduleDelete(item.id)}
-										aria-label="削除"
-									>
-										<Trash2 className="h-3.5 w-3.5" />
-									</Button>
-								)}
-							</div>
-							<div className="flex items-end justify-between mt-2">
-								{item.__typename === "Record" ? (
-									<a
-										href={getAnnictUrl(item.work.id, item.episode.id)}
-										target="_blank"
-										rel="noreferrer"
-										className="text-sm font-medium mr-2 hover:underline"
-									>
-										{episodeLabel}
-									</a>
-								) : (
-									<p className="text-sm font-medium mr-2">{episodeLabel}</p>
-								)}
-								<p className="text-xs text-muted-foreground shrink-0">
-									{formatRelativeTime(item.createdAt)}
-								</p>
+										{formatRelativeTime(item.createdAt)}
+									</p>
+								</div>
 							</div>
 						</li>
 					);
