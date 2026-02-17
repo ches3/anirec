@@ -214,9 +214,12 @@ async function scriptFromRecordSettings(
 
     // 重複記録チェック(待機前)
     const id = result.episode?.id || result.id;
-    const days = recordSettings.preventDuplicateDays;
+    const { preventDuplicate } = recordSettings;
 
-    if (days !== 0 && (await isRecorded(id, days, token))) {
+    if (
+      preventDuplicate.enabled &&
+      (await isRecorded(id, preventDuplicate.days, token))
+    ) {
       setRecordStatus(
         {
           status: "skipped",
@@ -263,7 +266,10 @@ async function scriptFromRecordSettings(
     setRecordStatus({ status: "processing" }, ver);
 
     // 重複記録チェック(待機後)
-    if (days !== 0 && (await isRecorded(id, days, token))) {
+    if (
+      preventDuplicate.enabled &&
+      (await isRecorded(id, preventDuplicate.days, token))
+    ) {
       setRecordStatus(
         {
           status: "skipped",

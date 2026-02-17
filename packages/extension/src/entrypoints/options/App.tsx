@@ -44,8 +44,10 @@ function App() {
     applyRecordSettings({ enabledServices: nextEnabled });
   };
 
-  const handlePreventDuplicateDaysChange = (days: number) => {
-    applyRecordSettings({ preventDuplicateDays: days });
+  const handlePreventDuplicateChange = (
+    next: RecordSettings["preventDuplicate"],
+  ) => {
+    applyRecordSettings({ preventDuplicate: next });
   };
 
   return (
@@ -73,10 +75,11 @@ function App() {
             timing={recordSettings.timing}
             onChange={handleTimingChange}
           />
+          <h2 className="font-bold text-base mt-6">その他の設定</h2>
           <PreventDuplicateOption
-            className="mt-6"
-            value={recordSettings.preventDuplicateDays}
-            onChange={handlePreventDuplicateDaysChange}
+            className="mt-4"
+            value={recordSettings.preventDuplicate}
+            onChange={handlePreventDuplicateChange}
           />
         </>
       )}
