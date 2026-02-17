@@ -57,7 +57,7 @@ export function mergeRecordSettings(
 const defaultRecordSettings: RecordSettings = {
   timing: {
     type: "continued",
-    continuedSeconds: 90,
+    continuedSeconds: 60,
   },
   enabledServices: {
     dmm: true,
