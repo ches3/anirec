@@ -1,32 +1,31 @@
-import { createRecord, createReview, viewerActivities } from "./util/annict";
+import {
+	createRecord,
+	createReview,
+	deleteRecord,
+	deleteReview,
+	viewerActivities,
+} from "./util/annict";
+import { toAnnictId } from "./utils";
 
-function getType(id: string): "episode" | "work" | "invalid" {
-	try {
-		const decoded = atob(id);
-		if (decoded.match(/^Work-[\d]+$/)) {
-			return "work";
-		}
-		if (decoded.match(/^Episode-[\d]+$/)) {
-			return "episode";
-		}
-		return "invalid";
-	} catch (e) {
-		if (e instanceof DOMException) {
-			if (e.name === "InvalidCharacterError") {
-				return "invalid";
-			}
-		}
-		throw e;
+export async function record(id: string, token: string): Promise<void> {
+	const annictId = toAnnictId(id);
+
+	if (annictId.type === "work") {
+		await createReview(id, token);
+	} else if (annictId.type === "episode") {
+		await createRecord(id, token);
+	} else {
+		throw new Error(`Invalid id: ${id}`);
 	}
 }
 
-export async function record(id: string, token: string): Promise<void> {
-	const type = getType(id);
+export async function deleteActivity(id: string, token: string): Promise<void> {
+	const annictId = toAnnictId(id);
 
-	if (type === "work") {
-		await createReview(id, token);
-	} else if (type === "episode") {
-		await createRecord(id, token);
+	if (annictId.type === "record") {
+		await deleteRecord(id, token);
+	} else if (annictId.type === "review") {
+		await deleteReview(id, token);
 	} else {
 		throw new Error(`Invalid id: ${id}`);
 	}

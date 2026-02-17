@@ -10,7 +10,7 @@
 	"packageManager": "bun@1.3.8",
 	"private": true,
 	"scripts": {
-		"dev:ext": "bun --filter @anirec/extension dev",
+		"dev:ext": "bun run --cwd packages/extension dev",
 		"dev:server": "bun --filter @anirec/server dev",
 		"build": "turbo run build --log-order=grouped",
 		"typecheck": "turbo run typecheck --continue --log-order=grouped",

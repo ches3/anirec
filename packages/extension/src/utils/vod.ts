@@ -2,16 +2,7 @@ import type { Vod } from "@/types";
 import type { ServiceEnabled } from "@/utils/settings";
 
 export const identifyVod = (url: string | URL): Vod | undefined => {
-	let urlObj: URL;
-	if (typeof url === "string") {
-		try {
-			urlObj = new URL(url);
-		} catch {
-			return;
-		}
-	} else {
-		urlObj = url;
-	}
+	const urlObj = typeof url === "string" ? new URL(url) : url;
 
 	const hostname = urlObj.hostname;
 	const pathname = urlObj.pathname;
