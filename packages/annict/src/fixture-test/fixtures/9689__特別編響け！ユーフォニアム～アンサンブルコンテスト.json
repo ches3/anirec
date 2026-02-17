@@ -1,0 +1,1179 @@
+{
+  "meta": {
+    "createdAt": "2026-02-17T19:16:34.543Z"
+  },
+  "input": {
+    "params": {
+      "title": "特別編 響け！ユーフォニアム～アンサンブルコンテスト"
+    },
+    "annictUrl": "https://annict.com/works/9689"
+  },
+  "expected": {
+    "id": "V29yay05Njg5",
+    "title": "特別編 響け！ユーフォニアム～アンサンブルコンテスト～",
+    "episode": null
+  },
+  "variants": [
+    "特別編 響け！ユーフォニアム～アンサンブルコンテスト",
+    "特別編 響け!ユーフォニアム~アンサンブルコンテスト",
+    "特別編",
+    "響け",
+    "ユーフォニアム",
+    "アンサンブルコンテスト"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay0xMTIy",
+      "title": "星界の紋章 特別編",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "星界"
+      ]
+    },
+    {
+      "id": "V29yay0xNDM2Mg==",
+      "title": "仮面のメイドガイ ご奉仕特別編 あの夏、いちばん豊かな乳。",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "仮面のメイドガイ"
+      ]
+    },
+    {
+      "id": "V29yay0xMDA0NQ==",
+      "title": "ASTRO BOY 鉄腕アトム特別編 アトム誕生の秘密",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "アトム"
+      ]
+    },
+    {
+      "id": "V29yay0xMDA0Ng==",
+      "title": "ASTRO BOY 鉄腕アトム特別編 イワンの惑星〜ロボットと人間の友情〜",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "アトム"
+      ]
+    },
+    {
+      "id": "V29yay0xNDUyNQ==",
+      "title": "「おねがい☆ツインズ」特別編～Relations～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "おねがい"
+      ]
+    },
+    {
+      "id": "V29yay0xNDUyNA==",
+      "title": "「おねがい☆ティーチャー」特別編～Experience～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "おねがい"
+      ]
+    },
+    {
+      "id": "V29yay03MTgy",
+      "title": "こどものじかん りんの学級日誌(特別編)",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "こどものじかん"
+      ]
+    },
+    {
+      "id": "V29yay0xNDU5Ng==",
+      "title": "ラーゼフォン 特別編集版「翼の記憶」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ラーゼフォン"
+      ]
+    },
+    {
+      "id": "V29yay0xMDA0Nw==",
+      "title": "ASTRO BOY 鉄腕アトム特別編 輝ける地球（ほし）〜あなたは青く、美しい…〜",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "アトム"
+      ]
+    },
+    {
+      "id": "V29yay03MTQ0",
+      "title": "劇場版 未来少年コナン 特別編 巨大機ギガントの復活",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay01ODc0",
+      "title": "みつどもえ 特別編「OPPAI IPPAI ママ元気」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "みつどもえ"
+      ]
+    },
+    {
+      "id": "V29yay0xMjI0OA==",
+      "title": "ヒカルの碁 特別編・裁きの一局!いにしえの華よ咲け!!",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ヒカルの碁"
+      ]
+    },
+    {
+      "id": "V29yay0xMDY3Ng==",
+      "title": "ジュエルペット てぃんくる☆ 特別編「ほほえみの虹にドッキ☆ドキ！」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xMjg1OQ==",
+      "title": "30歳まで童貞だと魔法使いになれるらしい 特別編集版",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "30歳まで童貞だと魔法使いになれるらしい"
+      ]
+    },
+    {
+      "id": "V29yay0xMTkxNw==",
+      "title": "無責任艦長タイラー特別編 ひとりぼっちの戦争",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": [
+        "無責任艦長タイラー"
+      ]
+    },
+    {
+      "id": "V29yay00MTAx",
+      "title": "あの夏で待ってる 特別編",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xMTUyMQ==",
+      "title": "スーパードラゴンボールヒーローズ ビッグバンミッション プロモーションアニメ 特別編『戦いの場所へ突き進め ドラゴンボールヒーローズ』",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "スーパードラゴンボールヒーローズ "
+      ]
+    },
+    {
+      "id": "V29yay0xNjY2NA==",
+      "title": "魍魎の匣～特別編　中禅寺敦子の事件簿「箱の幽霊の事」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "百鬼夜行"
+      ]
+    },
+    {
+      "id": "V29yay0yMDM0",
+      "title": "まほろまてぃっく特別編 ただいま◆おかえり",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0zNDU1OQ==",
+          "title": "ただいまの風",
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0zNDU2MA==",
+          "title": "おかえりの空",
+          "numberText": "第2話"
+        }
+      ],
+      "seriesList": [
+        "まほろまてぃっく"
+      ]
+    },
+    {
+      "id": "V29yay0xMjA0OA==",
+      "title": "紺碧の艦隊 特別編 蒼莱開発物語",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "紺碧の艦隊"
+      ]
+    },
+    {
+      "id": "V29yay05Njg5",
+      "title": "特別編 響け！ユーフォニアム～アンサンブルコンテスト～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay0xMDYxMA==",
+      "title": "永久少年 Eternal Boys 特別編集版",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "永久少年"
+      ]
+    },
+    {
+      "id": "V29yay0xMTI2Ng==",
+      "title": "いきものさん 特別編",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "いきものさん"
+      ]
+    },
+    {
+      "id": "V29yay00NDE1",
+      "title": "蟲師 特別編「鈴の雫」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "蟲師"
+      ]
+    },
+    {
+      "id": "V29yay00MzA4",
+      "title": "響け！ユーフォニアム",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xODM1Mg==",
+          "title": "ようこそハイスクール",
+          "number": 1,
+          "numberText": "第一回"
+        },
+        {
+          "id": "RXBpc29kZS0xODQ1Mw==",
+          "title": "よろしくユーフォニアム",
+          "number": 2,
+          "numberText": "第二回"
+        },
+        {
+          "id": "RXBpc29kZS0xODU3OQ==",
+          "title": "はじめてアンサンブル",
+          "number": 3,
+          "numberText": "第三回"
+        },
+        {
+          "id": "RXBpc29kZS0xODY4Mg==",
+          "title": "うたうよソルフェージュ",
+          "number": 4,
+          "numberText": "第四回"
+        },
+        {
+          "id": "RXBpc29kZS0xOTE2Ng==",
+          "title": "ただいまフェスティバル",
+          "number": 5,
+          "numberText": "第五回"
+        },
+        {
+          "id": "RXBpc29kZS0xOTM1MQ==",
+          "title": "きらきらチューバ",
+          "number": 6,
+          "numberText": "第六回"
+        },
+        {
+          "id": "RXBpc29kZS0xOTQ0MQ==",
+          "title": "なきむしサクソフォン",
+          "number": 7,
+          "numberText": "第七回"
+        },
+        {
+          "id": "RXBpc29kZS0xOTU1Mw==",
+          "title": "おまつりトライアングル",
+          "number": 8,
+          "numberText": "第八回"
+        },
+        {
+          "id": "RXBpc29kZS0xOTc1Nw==",
+          "title": "おねがいオーディション",
+          "number": 9,
+          "numberText": "第九回"
+        },
+        {
+          "id": "RXBpc29kZS0xOTg5Ng==",
+          "title": "まっすぐトランペット",
+          "number": 10,
+          "numberText": "第十回"
+        },
+        {
+          "id": "RXBpc29kZS0yMDAxNw==",
+          "title": "おかえりオーディション",
+          "number": 11,
+          "numberText": "第十一回"
+        },
+        {
+          "id": "RXBpc29kZS0yMDMxOQ==",
+          "title": "わたしのユーフォニアム",
+          "number": 12,
+          "numberText": "第十二回"
+        },
+        {
+          "id": "RXBpc29kZS0yMDM5MA==",
+          "title": "さよならコンクール",
+          "number": 13,
+          "numberText": "最終回"
+        },
+        {
+          "id": "RXBpc29kZS0zMjMwNA==",
+          "title": "かけだすモナカ",
+          "numberText": "番外編"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay0xNTAyNA==",
+      "title": "ユーチューニャー クリスマス特別編「クリスマスってみた」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ユーチューニャー"
+      ]
+    },
+    {
+      "id": "V29yay04NjAw",
+      "title": "ガラスの地球を救え ユニコ特別編",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0zMzQx",
+      "title": "新機動戦記ガンダムW ENDLESS WALTZ 特別編",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "新機動戦記ガンダムW "
+      ]
+    },
+    {
+      "id": "V29yay0xNzYy",
+      "title": "ひだまりスケッチ×365 特別編",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMDk3NQ==",
+          "title": "2月10日 どこでも自転車／2月11日 うさぎとかめ",
+          "numberText": "前編"
+        },
+        {
+          "id": "RXBpc29kZS0xMDk3Ng==",
+          "title": "6月6日 赤い糸／6月7日 イミシン",
+          "numberText": "後編"
+        }
+      ],
+      "seriesList": [
+        "ひだまりスケッチ"
+      ]
+    },
+    {
+      "id": "V29yay01MTI0",
+      "title": "ポケットモンスター XY特別編 最強メガシンカ ～Act IV～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ポケットモンスター XY特別編 最強メガシンカ"
+      ]
+    },
+    {
+      "id": "V29yay01OTc0",
+      "title": "それが声優！ 特別編「プチ打ち上げ」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "それが声優！"
+      ]
+    },
+    {
+      "id": "V29yay02MzU5",
+      "title": "アイドルマスター SideM 特別編「PASSION of the PASSION」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "アイドルマスター SideM"
+      ]
+    },
+    {
+      "id": "V29yay00ODE5",
+      "title": "劇場版 響け！ユーフォニアム～北宇治高校吹奏楽部へようこそ～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay01MzQw",
+      "title": "劇場版 響け！ユーフォニアム～誓いのフィナーレ～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay04ODkw",
+      "title": "機動戦士ガンダム 鉄血のオルフェンズ 特別編",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNDAyMTA=",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDAzODc=",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDA1Nzc=",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDA3NDc=",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDE0Nzc=",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDI5NzM=",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDMyMDg=",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM0MjU=",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM1NzA=",
+          "number": 9,
+          "numberText": "第9話"
+        }
+      ],
+      "seriesList": [
+        "機動戦士ガンダム 鉄血のオルフェンズ"
+      ]
+    },
+    {
+      "id": "V29yay0xNjIyMQ==",
+      "title": "猫猫のひとりごと 特別編",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzA5MzI=",
+          "number": 1,
+          "numberText": "前編"
+        },
+        {
+          "id": "RXBpc29kZS0xNzEwNjc=",
+          "number": 2,
+          "numberText": "後編"
+        }
+      ],
+      "seriesList": [
+        "薬屋のひとりごと"
+      ]
+    },
+    {
+      "id": "V29yay0xNjUwNg==",
+      "title": "劇場版 呪術廻戦 渋谷事変 特別編集版 × 死滅回游 先行上映",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "呪術廻戦"
+      ]
+    },
+    {
+      "id": "V29yay03OTE0",
+      "title": "天地創造デザイン部 特別編",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "天地創造デザイン部"
+      ]
+    },
+    {
+      "id": "V29yay02Njg4",
+      "title": "響け！ユーフォニアム3",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTg0NTI=",
+          "title": "あらたなユーフォニアム",
+          "number": 1,
+          "numberText": "第一回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg1Nzk=",
+          "title": "さんかくシンコペーション",
+          "number": 2,
+          "numberText": "第二回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg3Mjg=",
+          "title": "みずいろプレリュード",
+          "number": 3,
+          "numberText": "第三回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg4NTc=",
+          "title": "きみとのエチュード",
+          "number": 4,
+          "numberText": "第四回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg5NTc=",
+          "title": "ふたりでトワイライト",
+          "number": 5,
+          "numberText": "第五回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTkxMjc=",
+          "title": "ゆらぎのディゾナンス",
+          "number": 6,
+          "numberText": "第六回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTkyOTc=",
+          "title": "なついろフェルマータ",
+          "number": 7,
+          "numberText": "第七回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTk0Mjk=",
+          "title": "なやめるオスティナート",
+          "number": 8,
+          "numberText": "第八回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTk3MzU=",
+          "title": "ちぐはぐチューニング",
+          "number": 9,
+          "numberText": "第九回"
+        },
+        {
+          "id": "RXBpc29kZS0xNTk5MTc=",
+          "title": "つたえるアルペジオ",
+          "number": 10,
+          "numberText": "第十回"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAwNTY=",
+          "title": "みらいへオーケストラ",
+          "number": 11,
+          "numberText": "第十一回"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAxNjA=",
+          "title": "さいごのソリスト",
+          "number": 12,
+          "numberText": "第十二回"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAzMDc=",
+          "title": "つながるメロディ",
+          "number": 13,
+          "numberText": "最終回"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay0xMDQ1MA==",
+      "title": "エウレカセブンAO 特別編 ロード・ドント・ スロー・ミー・ダウン",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNDg2MTY=",
+          "number": 1,
+          "numberText": "A-part"
+        },
+        {
+          "id": "RXBpc29kZS0xNDg2MTc=",
+          "number": 2,
+          "numberText": "B-part"
+        },
+        {
+          "id": "RXBpc29kZS0xNDg2MTg=",
+          "number": 3,
+          "numberText": "C-part"
+        },
+        {
+          "id": "RXBpc29kZS0xNDg2MTk=",
+          "number": 4,
+          "numberText": "D-part"
+        },
+        {
+          "id": "RXBpc29kZS0xNDg2MjA=",
+          "number": 5,
+          "numberText": "E-part"
+        }
+      ],
+      "seriesList": [
+        "交響詩篇エウレカセブン"
+      ]
+    },
+    {
+      "id": "V29yay04Njk2",
+      "title": "響け！ユーフォニアム2 未放送ショートムービー",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzQ1NjA=",
+          "title": "花火大会キッスへようこそ！",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjE=",
+          "title": "プールへようこそ！",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjI=",
+          "title": "メイド服へようこそ！",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjM=",
+          "title": "バトル文化祭へようこそ！",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjQ=",
+          "title": "フライング滝へようこそ！",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjU=",
+          "title": "画伯へようこそ！",
+          "number": 6,
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjY=",
+          "title": "安眠へようこそ！",
+          "number": 7,
+          "numberText": "#7"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay00MzY0",
+      "title": "ポケットモンスター XY特別編 最強メガシンカ ～Act III～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ポケットモンスター XY特別編 最強メガシンカ"
+      ]
+    },
+    {
+      "id": "V29yay0xNzY1",
+      "title": "ひだまりスケッチ×☆☆☆ 特別編",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMDk4OQ==",
+          "title": "6月11日 ファミレスわっしょい!／4月7日 - 4月17日 なつめ…",
+          "numberText": "前編"
+        },
+        {
+          "id": "RXBpc29kZS0xMDk5MA==",
+          "title": "6月23日 - 6月25日 帰っちゃった／7月30日 バベキュ",
+          "numberText": "後編"
+        }
+      ],
+      "seriesList": [
+        "ひだまりスケッチ"
+      ]
+    },
+    {
+      "id": "V29yay04ODUz",
+      "title": "鬼滅の刃 竈門炭治郎 立志編 特別編集版",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzU5NTA=",
+          "title": "兄妹の絆",
+          "number": 1,
+          "numberText": "第一夜"
+        },
+        {
+          "id": "RXBpc29kZS0xMzU5NTE=",
+          "title": "浅草編",
+          "number": 2,
+          "numberText": "第二夜"
+        },
+        {
+          "id": "RXBpc29kZS0xMzU5NTI=",
+          "title": "鼓屋敷編",
+          "number": 3,
+          "numberText": "第三夜"
+        },
+        {
+          "id": "RXBpc29kZS0xMzU5NTM=",
+          "title": "那田蜘蛛山編",
+          "number": 4,
+          "numberText": "第四夜"
+        },
+        {
+          "id": "RXBpc29kZS0xMzU5NTQ=",
+          "title": "柱合会議・蝶屋敷編",
+          "number": 5,
+          "numberText": "第五夜"
+        }
+      ],
+      "seriesList": [
+        "鬼滅の刃"
+      ]
+    },
+    {
+      "id": "V29yay0xMTUxOA==",
+      "title": "スーパードラゴンボールヒーローズ プロモーションアニメ 特別編『決戦 タイムパトロールVS暗黒王』",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "スーパードラゴンボールヒーローズ "
+      ]
+    },
+    {
+      "id": "V29yay0xNzYw",
+      "title": "ひだまりスケッチ 特別編",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMDk1OQ==",
+          "title": "8月11日 そして元の位置に戻す",
+          "numberText": "特別編1"
+        },
+        {
+          "id": "RXBpc29kZS0xMDk2MA==",
+          "title": "11月27日 そこに愛はあるのか?",
+          "numberText": "特別編2"
+        }
+      ],
+      "seriesList": [
+        "ひだまりスケッチ"
+      ]
+    },
+    {
+      "id": "V29yay0xNTU0Ng==",
+      "title": "鬼滅の刃 柱稽古編 特別編集版",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjY1OTU=",
+          "title": "柱稽古 開幕編",
+          "number": 1
+        },
+        {
+          "id": "RXBpc29kZS0xNjY1OTY=",
+          "title": "柱稽古 柱結集編",
+          "number": 2
+        }
+      ],
+      "seriesList": [
+        "鬼滅の刃"
+      ]
+    },
+    {
+      "id": "V29yay04Njg0",
+      "title": "ロード・エルメロイII世の事件簿 -魔眼蒐集列車 Grace note- 特別編",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ロード・エルメロイII世の事件簿",
+        "Fate"
+      ]
+    },
+    {
+      "id": "V29yay04Njk1",
+      "title": "響け！ユーフォニアム 未放送ショートムービー「吹奏楽部の日常」",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzQ1NTM=",
+          "title": "楽器をお掃除だフォ！",
+          "number": 1,
+          "numberText": "その①"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTQ=",
+          "title": "こんなあだ名は嫌だチュー！",
+          "number": 2,
+          "numberText": "その②"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTU=",
+          "title": "吹奏楽部男子の日常だボーン！",
+          "number": 3,
+          "numberText": "その③"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTY=",
+          "title": "チューバ君は王子様なのバス！",
+          "number": 4,
+          "numberText": "その④"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTc=",
+          "title": "毎日は危険がいっぱいだフォ！",
+          "number": 5,
+          "numberText": "その⑤"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTg=",
+          "title": "滝先生の秘密だフォ！",
+          "number": 6,
+          "numberText": "その⑥"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTk=",
+          "title": "移調楽器って何だチュー！",
+          "number": 7,
+          "numberText": "その⑦"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay00ODI2",
+      "title": "響け！ユーフォニアム2",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS03NzU4Nw==",
+          "title": "まなつのファンファーレ",
+          "number": 1,
+          "numberText": "第一回"
+        },
+        {
+          "id": "RXBpc29kZS03NzgxNw==",
+          "title": "とまどいフルート",
+          "number": 2,
+          "numberText": "第二回"
+        },
+        {
+          "id": "RXBpc29kZS03ODUzMA==",
+          "title": "なやめるノクターン",
+          "number": 3,
+          "numberText": "第三回"
+        },
+        {
+          "id": "RXBpc29kZS04MDEwMg==",
+          "title": "めざめるオーボエ",
+          "number": 4,
+          "numberText": "第四回"
+        },
+        {
+          "id": "RXBpc29kZS04MDI2Mg==",
+          "title": "きせきのハーモニー",
+          "number": 5,
+          "numberText": "第五回"
+        },
+        {
+          "id": "RXBpc29kZS04MDQzNw==",
+          "title": "あめふりコンダクター",
+          "number": 6,
+          "numberText": "第六回"
+        },
+        {
+          "id": "RXBpc29kZS04MDU1NA==",
+          "title": "えきびるコンサート",
+          "number": 7,
+          "numberText": "第七回"
+        },
+        {
+          "id": "RXBpc29kZS04MDczMw==",
+          "title": "かぜひきラプソディー",
+          "number": 8,
+          "numberText": "第八回"
+        },
+        {
+          "id": "RXBpc29kZS04MzMwNQ==",
+          "title": "ひびけ！ユーフォニアム",
+          "number": 9,
+          "numberText": "第九回"
+        },
+        {
+          "id": "RXBpc29kZS04ODQ1Nw==",
+          "title": "ほうかごオブリガート",
+          "number": 10,
+          "numberText": "第十回"
+        },
+        {
+          "id": "RXBpc29kZS04ODY3MQ==",
+          "title": "はつこいトランペット",
+          "number": 11,
+          "numberText": "第十一回"
+        },
+        {
+          "id": "RXBpc29kZS04ODc5Ng==",
+          "title": "さいごのコンクール",
+          "number": 12,
+          "numberText": "第十二回"
+        },
+        {
+          "id": "RXBpc29kZS04ODg4Nw==",
+          "title": "はるさきエピローグ",
+          "number": 13,
+          "numberText": "最終回"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay0xMjc4MQ==",
+      "title": "鬼滅の刃 刀鍛冶の里編 特別編集版",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTgxMDQ=",
+          "title": "刀鍛冶の里 敵襲編",
+          "number": 1,
+          "numberText": "第一夜"
+        },
+        {
+          "id": "RXBpc29kZS0xNTgxMDU=",
+          "title": "刀鍛冶の里 繋いだ絆編",
+          "number": 2,
+          "numberText": "第二夜"
+        }
+      ],
+      "seriesList": [
+        "鬼滅の刃"
+      ]
+    },
+    {
+      "id": "V29yay01MzM4",
+      "title": "劇場版 響け！ユーフォニアム～届けたいメロディ～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay0xNjczMg==",
+      "title": "最強王図鑑 ～The Ultimate Tournament～ 特別編 テッペン決めようか！",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "最強王図鑑 ～The Ultimate Battles～"
+      ]
+    },
+    {
+      "id": "V29yay04OTQ3",
+      "title": "ヴァイオレット・エヴァーガーデン 特別編集版",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ヴァイオレット・エヴァーガーデン"
+      ]
+    },
+    {
+      "id": "V29yay0xMzY0Mg==",
+      "title": "劇場版 響け！ユーフォニアム～フォトセッションへようこそ",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjA1NzA=",
+          "number": 1,
+          "numberText": "1週目"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA1NzE=",
+          "number": 2,
+          "numberText": "2週目"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA1NzI=",
+          "number": 3,
+          "numberText": "3週目"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay0xMzU4NQ==",
+      "title": "響け！ユーフォニアム3 Extra Episode",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjA0MTE=",
+          "title": "いつでもナチュラル",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTI=",
+          "title": "かわいいドルチェ",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTM=",
+          "title": "てくてくアンダンテ",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTQ=",
+          "title": "すすむよラルゴ",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTU=",
+          "title": "きみへのアモローソ",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTY=",
+          "title": "あしたへコーダ",
+          "number": 6,
+          "numberText": "#6"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay04Mjc4",
+      "title": "ワンダーエッグ・プライオリティ 特別編 「私のプライオリティ」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ワンダーエッグ・プライオリティ"
+      ]
+    },
+    {
+      "id": "V29yay01MTIz",
+      "title": "ポケットモンスター XY特別編 最強メガシンカ ～Act II～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ポケットモンスター XY特別編 最強メガシンカ"
+      ]
+    },
+    {
+      "id": "V29yay05Njgx",
+      "title": "ちっちゃな雪使いシュガー 特別編「その胸にあるもの」",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNDM2OTg=",
+          "number": 1,
+          "numberText": "前編"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM2OTk=",
+          "number": 2,
+          "numberText": "後編"
+        }
+      ],
+      "seriesList": [
+        "ちっちゃな雪使いシュガー"
+      ]
+    },
+    {
+      "id": "V29yay0xMDU0OQ==",
+      "title": "鬼滅の刃 遊郭編 特別編集版",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNDk4MTg=",
+          "title": "遊郭潜入編",
+          "number": 1,
+          "numberText": "第一夜"
+        },
+        {
+          "id": "RXBpc29kZS0xNDk5NTU=",
+          "title": "遊郭決戦編",
+          "number": 2,
+          "numberText": "第二夜"
+        }
+      ],
+      "seriesList": [
+        "鬼滅の刃"
+      ]
+    },
+    {
+      "id": "V29yay00MDU3",
+      "title": "ポケットモンスター XY特別編 最強メガシンカ ～Act I～",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS01MDU1",
+          "title": "ポケットモンスター XY特別編 最強メガシンカ ～Act I～",
+          "number": 0
+        }
+      ],
+      "seriesList": [
+        "ポケットモンスター XY特別編 最強メガシンカ"
+      ]
+    },
+    {
+      "id": "V29yay02NDE5",
+      "title": "はたらく細胞 特別編「風邪症候群」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "はたらく細胞"
+      ]
+    },
+    {
+      "id": "V29yay0xNTcxNw==",
+      "title": "最終楽章 響け！ユーフォニアム 前編",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    }
+  ]
+}

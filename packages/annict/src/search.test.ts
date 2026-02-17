@@ -270,7 +270,7 @@ describe("workTitle & episodeNumber & episodeTitle", () => {
       },
       "token",
     );
-    expect(result?.episode?.id).toEqual(undefined);
+    expect(result?.episode?.id).toEqual("RXBpc29kZS0xODM1Mg==");
   });
 
   test("エピソードがない作品", async () => {
@@ -397,7 +397,7 @@ describe("workTitle & episodeTitle", () => {
       },
       "token",
     );
-    expect(result?.episode?.id).toEqual(undefined);
+    expect(result?.episode?.id).toEqual("RXBpc29kZS0xODM1Mg==");
   });
 
   test("エピソードがない作品", async () => {
@@ -486,7 +486,7 @@ describe("title", () => {
       },
       "token",
     );
-    expect(result?.episode?.id).toEqual(undefined);
+    expect(result?.episode?.id).toEqual("RXBpc29kZS0xODM1Mg==");
   });
 
   test("エピソードがない作品", async () => {
@@ -579,5 +579,83 @@ describe("Annict上のタイトルが`workTitle episodeTitle`となっている�
       title: "もめんたりー・リリィ 第14話「続いていく割烹、割烹！」",
       episode: undefined,
     });
+  });
+});
+
+describe("findUniqueWeakMatchWork", () => {
+  // noEpisodes作品と通常作品が混在するモックデータ
+  const weakModeWorks: Work[] = [
+    {
+      id: "V29yay05Njg5",
+      title: "特別編 響け！ユーフォニアム～アンサンブルコンテスト～",
+      noEpisodes: true,
+      episodes: [],
+      seriesList: ["響け！ユーフォニアム"],
+    },
+    {
+      id: "V29yay00MzA4",
+      title: "響け！ユーフォニアム",
+      noEpisodes: false,
+      episodes: [
+        {
+          id: "RXBpc29kZS0xODM1Mg==",
+          title: "ようこそハイスクール",
+          number: 1,
+          numberText: "第一回",
+        },
+      ],
+      seriesList: ["響け！ユーフォニアム"],
+    },
+  ];
+
+  test("noEpisodes作品のタイトルがweakで1件一致する場合に返す", async () => {
+    vi.mocked(searchWorks).mockResolvedValueOnce(weakModeWorks);
+    // 末尾の～がなく通常モードでは不一致、weakモードで1件のみ一致
+    const result = await search(
+      { title: "特別編 響け！ユーフォニアム～アンサンブルコンテスト" },
+      "token",
+    );
+    expect(result).toEqual({
+      id: "V29yay05Njg5",
+      title: "特別編 響け！ユーフォニアム～アンサンブルコンテスト～",
+      episode: undefined,
+    });
+  });
+
+  test("エピソードあり作品のタイトルがweakで1件一致してエピソードも一致する場合に返す", async () => {
+    vi.mocked(searchWorks).mockResolvedValueOnce(weakModeWorks);
+    // ！がなく通常モードでは不一致、weakモードで1件のみ一致 → エピソードも検索
+    const result = await search(
+      {
+        workTitle: "響けユーフォニアム",
+        episodeNumber: "第一回",
+        episodeTitle: "",
+      },
+      "token",
+    );
+    expect(result?.episode?.id).toEqual("RXBpc29kZS0xODM1Mg==");
+  });
+
+  test("weakで複数一致する場合はスキップする", async () => {
+    const multipleWeakWorks: Work[] = [
+      {
+        id: "work1",
+        title: "響け！☆ユーフォニアム",
+        noEpisodes: true,
+        episodes: [],
+        seriesList: [],
+      },
+      {
+        id: "work2",
+        title: "響け！★ユーフォニアム",
+        noEpisodes: true,
+        episodes: [],
+        seriesList: [],
+      },
+    ];
+    vi.mocked(searchWorks).mockResolvedValueOnce(multipleWeakWorks);
+    // weakモードで両方が「響けユーフォニアム」に一致するためスキップされ、undefinedを返す
+    const result = await search({ title: "響けユーフォニアム" }, "token");
+    expect(result).toEqual(undefined);
   });
 });

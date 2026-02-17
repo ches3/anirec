@@ -1,4 +1,4 @@
-import type { SearchParam, SearchResult } from "./types";
+import type { SearchParam, SearchResult, Work } from "./types";
 import { searchWorks } from "./util/annict";
 import { extract, extractFullTitle } from "./util/extract/extract";
 import { isSameTitle } from "./util/normalize";
@@ -35,6 +35,21 @@ function isMatchingWorkTitle(
   return work.seriesList.some((series) =>
     isSameTitle(`${series} ${work.title}`, targetWorkTitle),
   );
+}
+
+// weak モードでタイトルが一致する作品を探す。複数一致する場合は誤マッチを防ぐため undefined を返す
+function findUniqueWeakMatchWork(
+  works: Work[],
+  targetWorkTitle: string,
+): Work | undefined {
+  const matched = works.filter(
+    (work) =>
+      isSameTitle(work.title, targetWorkTitle, true) ||
+      work.seriesList?.some((series) =>
+        isSameTitle(`${series} ${work.title}`, targetWorkTitle, true),
+      ),
+  );
+  return matched.length === 1 ? matched[0] : undefined;
 }
 
 export async function search(
@@ -75,6 +90,26 @@ export async function search(
         title: work.title,
         episode: episode,
       };
+    }
+  }
+  // weak モードでワークタイトルが一致する作品に絞ってエピソードを探す（複数一致はスキップ）
+  const weakMatchWork = findUniqueWeakMatchWork(works, target.workTitle);
+  if (weakMatchWork) {
+    if (weakMatchWork.noEpisodes) {
+      return {
+        id: weakMatchWork.id,
+        title: weakMatchWork.title,
+        episode: undefined,
+      };
+    }
+
+    if (weakMatchWork.episodes && target.episode) {
+      const episode =
+        findEpisodeByTitle(weakMatchWork.episodes, target.episode) ??
+        findEpisodeByNumberText(weakMatchWork.episodes, target.episode);
+      if (episode) {
+        return { id: weakMatchWork.id, title: weakMatchWork.title, episode };
+      }
     }
   }
 
