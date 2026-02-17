@@ -65,12 +65,10 @@ export function PageState() {
 				)}
 			</div>
 
-			{recordStatus.status !== "idle" && (
-				<div>
-					<Label className="text-xs text-muted-foreground mb-2">記録状態</Label>
-					<RecordStatusBadge status={recordStatus} className="mt-1" />
-				</div>
-			)}
+			<div>
+				<Label className="text-xs text-muted-foreground mb-2">記録状態</Label>
+				<RecordStatusBadge status={recordStatus} className="mt-1" />
+			</div>
 		</div>
 	);
 }

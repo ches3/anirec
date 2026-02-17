@@ -10,7 +10,7 @@ import { identifyVod } from "@/utils/vod";
 import { fetchPageState, getCurrentTabInfo } from "../lib/page-state";
 
 const idlePageInfo: PageInfo = { status: "idle" };
-const idleRecordStatus: RecordStatus = { status: "idle" };
+const idleRecordStatus: RecordStatus = { status: "loading" };
 
 export type PageStateResult = {
 	error: string | null;

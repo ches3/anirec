@@ -16,7 +16,7 @@ export type SkipReason =
 // 録画状態の情報
 export type RecordStatus =
 	| {
-			status: "idle" | "processing" | "success";
+			status: "loading" | "processing" | "success";
 	  }
 	| {
 			status: "waiting";

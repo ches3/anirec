@@ -10,7 +10,7 @@ let pageInfo: PageInfo = {
 	status: "idle",
 };
 let recordStatus: RecordStatus = {
-	status: "idle",
+	status: "loading",
 };
 let currentStateVer = 0;
 

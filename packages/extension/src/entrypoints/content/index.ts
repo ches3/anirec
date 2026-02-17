@@ -62,7 +62,7 @@ function watchForReEnable(
 	const unwatch = watchAutoRecordEnabled(ctx, (newValue) => {
 		if (newValue) {
 			unwatch();
-			setRecordStatus({ status: "idle" }, ver);
+			setRecordStatus({ status: "loading" }, ver);
 			void scriptFromRecordSettings(ctx, ver, prefetched);
 		}
 	});
@@ -91,7 +91,7 @@ export default defineContentScript({
 
 			// ページ遷移時に状態をリセット
 			setPageInfo({ status: "idle" }, ver);
-			setRecordStatus({ status: "idle" }, ver);
+			setRecordStatus({ status: "loading" }, ver);
 
 			void script(ctx, ver);
 		});

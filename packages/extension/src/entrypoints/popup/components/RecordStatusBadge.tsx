@@ -17,8 +17,8 @@ type StatusConfig = {
 };
 
 const statusConfigs: Record<RecordStatus["status"], StatusConfig> = {
-	idle: {
-		icon: MinusCircle,
+	loading: {
+		icon: Loader2,
 		label: "ページ情報を取得中",
 	},
 	waiting: {
@@ -72,7 +72,8 @@ export function RecordStatusBadge({
 					className={cn(
 						"w-4 h-4 text-muted-foreground",
 						config.color,
-						status.status === "processing" && "animate-spin",
+						(status.status === "processing" || status.status === "loading") &&
+							"animate-spin",
 					)}
 				/>
 			</div>
