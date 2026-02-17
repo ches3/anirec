@@ -44,10 +44,7 @@ function RecordTimingOptionItem({
     <div>
       <div className="flex items-center">
         <RadioGroupItem value={value} id={value} />
-        <Label
-          htmlFor={value}
-          className="pl-2 cursor-pointer font-normal text-base"
-        >
+        <Label htmlFor={value} className="pl-2 cursor-pointer">
           {label}
         </Label>
       </div>
@@ -75,7 +72,7 @@ export function RecordTimingOption({
 
   return (
     <div className={className}>
-      <h2 className="font-bold text-lg">記録タイミング</h2>
+      <h2 className="font-bold text-base">記録タイミング</h2>
       <div className="mt-4">
         <RadioGroup
           value={type}

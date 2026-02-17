@@ -21,6 +21,7 @@ function LoginButton({
   return (
     <Button
       type="button"
+      size="sm"
       onClick={handleClick}
       className={cn(
         "bg-annict text-annict-foreground hover:bg-annict-hover",
@@ -51,6 +52,7 @@ function LogoutButton({
   return (
     <Button
       type="button"
+      size="sm"
       onClick={handleClick}
       variant="secondary"
       className={cn("hover:bg-secondary-hover", className)}
@@ -72,7 +74,7 @@ export function TokenOption({ className }: { className?: string }) {
 
   return (
     <div className={className}>
-      <h2 className="font-bold text-lg">Annict連携</h2>
+      <h2 className="font-bold text-base">Annict連携</h2>
       {existsToken ? (
         <LogoutButton setExists={setExistsToken} className="mt-4" />
       ) : (

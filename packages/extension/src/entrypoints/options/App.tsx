@@ -48,22 +48,22 @@ function App() {
   };
 
   return (
-    <div className="mx-12 mt-2 mb-12 min-w-[400px] text-base font-sans">
+    <div className="mx-8 mt-2 mb-8 min-w-100 text-sm font-sans">
       <TokenOption />
       {recordSettings && (
         <>
           <ServiceToggleOption
-            className="mt-8"
+            className="mt-6"
             enabled={recordSettings.enabledServices}
             onChange={handleEnabledServicesChange}
           />
           <RecordTimingOption
-            className="mt-8"
+            className="mt-6"
             timing={recordSettings.timing}
             onChange={handleTimingChange}
           />
           <PreventDuplicateOption
-            className="mt-8"
+            className="mt-6"
             value={recordSettings.preventDuplicateDays}
             onChange={handlePreventDuplicateDaysChange}
           />

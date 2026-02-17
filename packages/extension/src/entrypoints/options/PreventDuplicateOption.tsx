@@ -16,8 +16,8 @@ export function PreventDuplicateOption({
 
   return (
     <div className={className}>
-      <h2 className="text-lg font-bold">重複記録を防ぐ</h2>
-      <div className="mt-4">
+      <h2 className="font-bold text-base">重複記録を防ぐ</h2>
+      <div className="mt-4 text-sm">
         n日以内に記録済みの場合は記録しない (0で常に記録)
       </div>
       <div className="flex mt-2 items-center gap-2">
