@@ -9,23 +9,27 @@ export async function getToken() {
 }
 
 export type RecordTiming = {
-  type: "continued" | "delay" | "ended";
+  type: "continued" | "ended";
   continuedSeconds: number;
-  delaySeconds: number;
 };
 
 export type ServiceEnabled = Record<Vod, boolean>;
 
+export type PreventDuplicate = {
+  enabled: boolean;
+  days: number;
+};
+
 export type RecordSettings = {
   timing: RecordTiming;
   enabledServices: ServiceEnabled;
-  preventDuplicateDays: number;
+  preventDuplicate: PreventDuplicate;
 };
 
 export type RecordSettingsPatch = {
   timing?: Partial<RecordTiming>;
   enabledServices?: Partial<ServiceEnabled>;
-  preventDuplicateDays?: number;
+  preventDuplicate?: Partial<PreventDuplicate>;
 };
 
 export function mergeRecordSettings(
@@ -43,14 +47,17 @@ export function mergeRecordSettings(
       ...base.enabledServices,
       ...(incoming?.enabledServices ?? {}),
     },
+    preventDuplicate: {
+      ...base.preventDuplicate,
+      ...(incoming?.preventDuplicate ?? {}),
+    },
   };
 }
 
 const defaultRecordSettings: RecordSettings = {
   timing: {
     type: "continued",
-    continuedSeconds: 90,
-    delaySeconds: 180,
+    continuedSeconds: 60,
   },
   enabledServices: {
     dmm: true,
@@ -58,7 +65,10 @@ const defaultRecordSettings: RecordSettings = {
     abema: true,
     danime: true,
   },
-  preventDuplicateDays: 7,
+  preventDuplicate: {
+    enabled: true,
+    days: 7,
+  },
 };
 
 export async function getRecordSettings() {

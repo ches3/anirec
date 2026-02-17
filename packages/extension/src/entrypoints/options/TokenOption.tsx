@@ -1,3 +1,4 @@
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { generateToken, revokeToken } from "@/utils/auth";
 import { cn } from "@/utils/cn";
@@ -13,14 +14,17 @@ function LoginButton({
     try {
       await generateToken();
       setExists(true);
+      toast.success("Annictにログインしました");
     } catch (e) {
       console.error(e);
+      toast.error("ログインに失敗しました");
     }
   };
 
   return (
     <Button
       type="button"
+      size="sm"
       onClick={handleClick}
       className={cn(
         "bg-annict text-annict-foreground hover:bg-annict-hover",
@@ -43,14 +47,17 @@ function LogoutButton({
     try {
       await revokeToken();
       setExists(false);
+      toast.success("ログアウトしました");
     } catch (e) {
       console.error(e);
+      toast.error("ログアウトに失敗しました");
     }
   };
 
   return (
     <Button
       type="button"
+      size="sm"
       onClick={handleClick}
       variant="secondary"
       className={cn("hover:bg-secondary-hover", className)}
@@ -72,7 +79,7 @@ export function TokenOption({ className }: { className?: string }) {
 
   return (
     <div className={className}>
-      <h2 className="font-bold text-lg">Annict連携</h2>
+      <h2 className="font-bold text-base">Annict連携</h2>
       {existsToken ? (
         <LogoutButton setExists={setExistsToken} className="mt-4" />
       ) : (

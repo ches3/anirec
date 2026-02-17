@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import {
   getRecordSettings,
   mergeRecordSettings,
@@ -43,29 +44,42 @@ function App() {
     applyRecordSettings({ enabledServices: nextEnabled });
   };
 
-  const handlePreventDuplicateDaysChange = (days: number) => {
-    applyRecordSettings({ preventDuplicateDays: days });
+  const handlePreventDuplicateChange = (
+    next: RecordSettings["preventDuplicate"],
+  ) => {
+    applyRecordSettings({ preventDuplicate: next });
   };
 
   return (
-    <div className="mx-12 mt-2 mb-12 min-w-[400px] text-base font-sans">
+    <div className="mx-8 mt-2 mb-8 min-w-100 text-sm font-sans">
+      <Toaster
+        duration={3000}
+        toastOptions={{
+          style: {
+            width: "240px",
+            left: "auto",
+            right: "var(--offset-right)",
+          },
+        }}
+      />
       <TokenOption />
       {recordSettings && (
         <>
           <ServiceToggleOption
-            className="mt-8"
+            className="mt-6"
             enabled={recordSettings.enabledServices}
             onChange={handleEnabledServicesChange}
           />
           <RecordTimingOption
-            className="mt-8"
+            className="mt-6"
             timing={recordSettings.timing}
             onChange={handleTimingChange}
           />
+          <h2 className="font-bold text-base mt-6">その他の設定</h2>
           <PreventDuplicateOption
-            className="mt-8"
-            value={recordSettings.preventDuplicateDays}
-            onChange={handlePreventDuplicateDaysChange}
+            className="mt-4"
+            value={recordSettings.preventDuplicate}
+            onChange={handlePreventDuplicateChange}
           />
         </>
       )}

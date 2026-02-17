@@ -13,7 +13,7 @@ function SecondInput({
   isDisabled: boolean;
 }) {
   return (
-    <div className="flex mt-2 ml-8 items-center gap-2">
+    <div className="flex mt-2 ml-4 items-center gap-2">
       <Input
         className="w-14 text-right"
         value={value}
@@ -44,10 +44,7 @@ function RecordTimingOptionItem({
     <div>
       <div className="flex items-center">
         <RadioGroupItem value={value} id={value} />
-        <Label
-          htmlFor={value}
-          className="pl-2 cursor-pointer font-normal text-base"
-        >
+        <Label htmlFor={value} className="pl-2 cursor-pointer">
           {label}
         </Label>
       </div>
@@ -71,11 +68,11 @@ export function RecordTimingOption({
   timing: RecordTiming;
   onChange: (patch: Partial<RecordTiming>) => void;
 }) {
-  const { type, continuedSeconds, delaySeconds } = timing;
+  const { type, continuedSeconds } = timing;
 
   return (
     <div className={className}>
-      <h2 className="font-bold text-lg">記録タイミング</h2>
+      <h2 className="font-bold text-base">記録タイミング</h2>
       <div className="mt-4">
         <RadioGroup
           value={type}
@@ -87,7 +84,7 @@ export function RecordTimingOption({
         >
           <RecordTimingOptionItem
             value="continued"
-            label="n秒間再生し続けたら記録"
+            label="一定時間再生後"
             secondsValue={continuedSeconds}
             onSecondsChange={(e) => {
               const num = Number(e.target.value);
@@ -99,21 +96,8 @@ export function RecordTimingOption({
             isSelected={type === "continued"}
           />
           <RecordTimingOptionItem
-            value="delay"
-            label="再生開始からn秒後に記録"
-            secondsValue={delaySeconds}
-            onSecondsChange={(e) => {
-              const num = Number(e.target.value);
-              if (Number.isNaN(num)) {
-                return;
-              }
-              onChange({ delaySeconds: num });
-            }}
-            isSelected={type === "delay"}
-          />
-          <RecordTimingOptionItem
             value="ended"
-            label="再生終了時に記録"
+            label="再生終了時"
             isSelected={type === "ended"}
           />
         </RadioGroup>
