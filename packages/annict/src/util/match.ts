@@ -88,7 +88,6 @@ export const episodeNumberMatches = [
     `page.${num}`,
     `phase ${num}`,
     `player.${num}`,
-    `report ${num}`,
     `rd.${num}`,
     `ride.${num}`,
     `round${num}`,

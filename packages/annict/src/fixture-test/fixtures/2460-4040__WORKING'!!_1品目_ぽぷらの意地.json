@@ -1,0 +1,359 @@
+{
+  "meta": {
+    "createdAt": "2026-02-18T03:18:47.023Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "WORKING'!!",
+      "episodeNumber": "1品目",
+      "episodeTitle": "ぽぷらの意地"
+    },
+    "annictUrl": "https://annict.com/works/2460/episodes/4040"
+  },
+  "expected": {
+    "id": "V29yay0yNDYw",
+    "title": "WORKING'!!",
+    "episode": {
+      "id": "RXBpc29kZS00MDQw",
+      "title": "ぽぷらの意地",
+      "numberText": "1品目"
+    }
+  },
+  "variants": [
+    "WORKING'!!",
+    "WORKING"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay00NDIz",
+      "title": "WORKING!!!",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0yMDQ1Ng==",
+          "title": "ワグナリア戦線異状なし",
+          "number": 1,
+          "numberText": "1品目"
+        },
+        {
+          "id": "RXBpc29kZS0yMDU4Ng==",
+          "title": "愛の嵐!?",
+          "number": 2,
+          "numberText": "2品目"
+        },
+        {
+          "id": "RXBpc29kZS0yMDcyMw==",
+          "title": "史上最大の夜",
+          "number": 3,
+          "numberText": "3品目"
+        },
+        {
+          "id": "RXBpc29kZS0yMDkxNQ==",
+          "title": "ハート・ノッカー",
+          "number": 4,
+          "numberText": "4品目"
+        },
+        {
+          "id": "RXBpc29kZS0yMTExNQ==",
+          "title": "スーパーバッグ・イン・ザ・ハート",
+          "number": 5,
+          "numberText": "5品目"
+        },
+        {
+          "id": "RXBpc29kZS0yMTI5Nw==",
+          "title": "山田、やまーだ",
+          "number": 6,
+          "numberText": "6品目"
+        },
+        {
+          "id": "RXBpc29kZS0yMTY0Ng==",
+          "title": "グッバイ山田(ガール)",
+          "number": 7,
+          "numberText": "7品目"
+        },
+        {
+          "id": "RXBpc29kZS0yMTk5NQ==",
+          "title": "ミスティック・シュガー",
+          "number": 8,
+          "numberText": "8品目"
+        },
+        {
+          "id": "RXBpc29kZS0yMjE0Nw==",
+          "title": "危険な事情",
+          "number": 9,
+          "numberText": "9品目"
+        },
+        {
+          "id": "RXBpc29kZS0yMjIzNA==",
+          "title": "その女シズカ",
+          "number": 10,
+          "numberText": "10品目"
+        },
+        {
+          "id": "RXBpc29kZS0yMjU5Nw==",
+          "title": "愛と追憶のなにか",
+          "number": 11,
+          "numberText": "11品目"
+        },
+        {
+          "id": "RXBpc29kZS0yNjY0OA==",
+          "title": "ワーキング・ガール？",
+          "number": 12,
+          "numberText": "12品目"
+        },
+        {
+          "id": "RXBpc29kZS0zMjMwNg==",
+          "title": "まひるの決闘",
+          "number": 13,
+          "numberText": "13品目"
+        },
+        {
+          "id": "RXBpc29kZS02MjU2NQ==",
+          "title": "ロード・オブ・ザ・小鳥遊",
+          "numberText": "14品目"
+        }
+      ],
+      "seriesList": [
+        "WORKING!!"
+      ]
+    },
+    {
+      "id": "V29yay00OTUx",
+      "title": "WWW.WORKING!!",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS03NzQ4Ng==",
+          "title": "アルバイトは人生を変えてくれる",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS03NzYyOQ==",
+          "title": "人生そんなに甘くない",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS03Nzg2MA==",
+          "title": "君にしか頼めない",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS03OTc2NA==",
+          "title": "いけるきがする",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS04MDE2Mw==",
+          "title": "ふくしゅうしてみる",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS04MDI5Nw==",
+          "title": "運命サバイバル",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS04MDQ3OA==",
+          "title": "料理は愛情",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS04MDU4Ng==",
+          "title": "おかしなはなし",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS04MTQxMw==",
+          "title": "僕らはみんな病んでいる",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS04NDk3OA==",
+          "title": "明日に向かって吼えろ",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS04ODQ4OA==",
+          "title": "右の頬を殴られたら左腕でカウンター",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS04ODcwNQ==",
+          "title": "あらしの前の何か",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS04ODgyNQ==",
+          "title": "全てのことには理由がある",
+          "number": 13,
+          "numberText": "第13話"
+        }
+      ],
+      "seriesList": [
+        "WORKING!!"
+      ]
+    },
+    {
+      "id": "V29yay0yNDYw",
+      "title": "WORKING'!!",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS00MDQw",
+          "title": "ぽぷらの意地",
+          "numberText": "1品目"
+        },
+        {
+          "id": "RXBpc29kZS00MDQx",
+          "title": "理想の家族計画",
+          "numberText": "2品目"
+        },
+        {
+          "id": "RXBpc29kZS00MDQy",
+          "title": "スランプの理由（わけ）",
+          "numberText": "3品目"
+        },
+        {
+          "id": "RXBpc29kZS00MDQz",
+          "title": "マンホールスパイラル",
+          "numberText": "4品目"
+        },
+        {
+          "id": "RXBpc29kZS00MDQ0",
+          "title": "ワグナリアの巨大な胃袋",
+          "numberText": "5品目"
+        },
+        {
+          "id": "RXBpc29kZS00MDQ1",
+          "title": "就任、解任、もう堪忍",
+          "numberText": "6品目"
+        },
+        {
+          "id": "RXBpc29kZS00MDQ2",
+          "title": "恋のバッドチューニング",
+          "numberText": "7品目"
+        },
+        {
+          "id": "RXBpc29kZS00MDQ3",
+          "title": "嗚呼、妹よ",
+          "numberText": "8品目"
+        },
+        {
+          "id": "RXBpc29kZS00MDQ4",
+          "title": "愛はこんなにグローバル",
+          "numberText": "9品目"
+        },
+        {
+          "id": "RXBpc29kZS00MDQ5",
+          "title": "ケータイ無問題（モーマンタイ）",
+          "numberText": "10品目"
+        },
+        {
+          "id": "RXBpc29kZS00MDUw",
+          "title": "決意ですが、何か?",
+          "numberText": "11品目"
+        },
+        {
+          "id": "RXBpc29kZS00MDUx",
+          "title": "デイジー死す",
+          "numberText": "12品目"
+        },
+        {
+          "id": "RXBpc29kZS00MDUy",
+          "title": "さよならぽぷら",
+          "numberText": "13品目"
+        }
+      ],
+      "seriesList": [
+        "WORKING!!"
+      ]
+    },
+    {
+      "id": "V29yay0yNDU5",
+      "title": "WORKING!!",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS03MjY2",
+          "title": "ワグナリアへようこそ♪小鳥遊、働く。",
+          "numberText": "1品目"
+        },
+        {
+          "id": "RXBpc29kZS03MjY3",
+          "title": "伊波、男性恐怖症。だって怖いんだもん…",
+          "numberText": "2品目"
+        },
+        {
+          "id": "RXBpc29kZS03MjY4",
+          "title": "八千代と杏子と佐藤…と、帰ってきた音尾さん",
+          "numberText": "3品目"
+        },
+        {
+          "id": "RXBpc29kZS03MjY5",
+          "title": "相馬、さわやか すぎる青年",
+          "numberText": "4品目"
+        },
+        {
+          "id": "RXBpc29kZS03Mjcw",
+          "title": "ある風邪の日に…、いつもと違うワグナリア",
+          "numberText": "5品目"
+        },
+        {
+          "id": "RXBpc29kZS03Mjcx",
+          "title": "宗太の憂鬱、小鳥遊家の女達",
+          "numberText": "6品目"
+        },
+        {
+          "id": "RXBpc29kZS03Mjcy",
+          "title": "久しぶりの音尾と、新しいバイト=山田(!?)",
+          "numberText": "7品目"
+        },
+        {
+          "id": "RXBpc29kZS03Mjcz",
+          "title": "伊波、はじめて?のお・で・か・け!",
+          "numberText": "8品目"
+        },
+        {
+          "id": "RXBpc29kZS03Mjc0",
+          "title": "ことりちゃん登場!!",
+          "numberText": "9品目"
+        },
+        {
+          "id": "RXBpc29kZS03Mjc1",
+          "title": "疑惑の真相…、なずな働く。",
+          "numberText": "10品目"
+        },
+        {
+          "id": "RXBpc29kZS03Mjc2",
+          "title": "あの頃の二人、八千代と佐藤。と、ようこそ小鳥遊家へ",
+          "numberText": "11品目"
+        },
+        {
+          "id": "RXBpc29kZS03Mjc3",
+          "title": "なぜか!?の決戦前夜。種島の恩返し",
+          "numberText": "12品目"
+        },
+        {
+          "id": "RXBpc29kZS03Mjc4",
+          "title": "デートと言う名の\"決戦\"、小鳥遊と伊波のそれから…",
+          "numberText": "13品目"
+        }
+      ],
+      "seriesList": [
+        "WORKING!!"
+      ]
+    }
+  ]
+}
