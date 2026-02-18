@@ -71,6 +71,12 @@ export function ServiceToggleOption({
           enabled={enabled.danime}
           onToggle={onToggle}
         />
+        <ServiceToggleOptionItem
+          id="prime"
+          label="Prime Video"
+          enabled={enabled.prime}
+          onToggle={onToggle}
+        />
       </div>
     </div>
   );

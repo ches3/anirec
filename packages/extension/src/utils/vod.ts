@@ -22,9 +22,20 @@ export const identifyVod = (url: string | URL): Vod | undefined => {
   ) {
     return "danime";
   }
+  if (
+    hostname === "www.amazon.co.jp" &&
+    /\/gp\/video\/detail\//.test(pathname)
+  ) {
+    return "prime";
+  }
   return;
 };
 
 export const isVodEnabled = (vod: Vod, enabled: ServiceEnabled): boolean => {
   return enabled[vod];
+};
+
+export const getVideoSelector = (vod: Vod): string => {
+  if (vod === "prime") return "#dv-web-player video";
+  return "video";
 };

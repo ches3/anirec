@@ -1,6 +1,7 @@
 import type { SearchParam } from "@anirec/annict";
 import type { Vod } from "@/types";
 import { asyncQuerySelector } from "@/utils/async-query-selector";
+import { waitForTextContent } from "@/utils/dom";
 import { fetchDMMContent, fetchDMMSeason, fetchUnext } from "@/utils/fetch";
 
 type PageSource = {
@@ -21,6 +22,8 @@ export const extractSearchParams = async (
       return await abema(pageSource.queryRoot);
     case "danime":
       return await danime(pageSource.queryRoot);
+    case "prime":
+      return await prime(pageSource.queryRoot);
   }
 };
 
@@ -158,4 +161,43 @@ const danime = async (
     (await asyncQuerySelector(".backInfoTxt3", queryRoot))?.textContent || "";
 
   return [{ workTitle, episodeNumber, episodeTitle }];
+};
+
+const prime = async (
+  queryRoot: ParentNode,
+): Promise<SearchParam[] | undefined> => {
+  const titleElem = await asyncQuerySelector(
+    "#dv-web-player h1.atvwebplayersdk-title-text",
+    queryRoot,
+  );
+  if (!titleElem) {
+    return;
+  }
+  const workTitle = await waitForTextContent(titleElem);
+  if (!workTitle) {
+    return;
+  }
+
+  const subtitleElem = await asyncQuerySelector(
+    "#dv-web-player h2.atvwebplayersdk-subtitle-text",
+    queryRoot,
+  );
+  const subtitleText = subtitleElem
+    ? ((await waitForTextContent(subtitleElem)) ?? "")
+    : "";
+
+  // "シーズン1、エピソード1 エピソードタイトル" のような形式をパース
+  const subtitleMatch = subtitleText.match(
+    /^シーズン\d+、エピソード\d+\s*(.*)/,
+  );
+  if (subtitleMatch) {
+    return [
+      {
+        workTitle,
+        episodeTitle: subtitleMatch[1] || "",
+      },
+    ];
+  }
+
+  return [{ workTitle, episodeTitle: subtitleText }];
 };

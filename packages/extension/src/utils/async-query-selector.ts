@@ -18,6 +18,6 @@ export const asyncQuerySelector = (
     setTimeout(() => {
       clearInterval(interval);
       return resolve(undefined);
-    }, 30000);
+    }, 10000);
   });
 };

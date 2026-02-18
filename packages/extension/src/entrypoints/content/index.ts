@@ -9,7 +9,7 @@ import {
   getToken,
   watchAutoRecordEnabled,
 } from "@/utils/settings";
-import { identifyVod, isVodEnabled } from "@/utils/vod";
+import { getVideoSelector, identifyVod, isVodEnabled } from "@/utils/vod";
 import { extractSearchParams } from "./extract-search-params";
 import {
   bumpStateVer,
@@ -18,6 +18,7 @@ import {
   setRecordStatus,
 } from "./page-state";
 import { wait } from "./wait";
+import { watchNavigation } from "./watch-navigation";
 
 async function getWorkInfoFromPage(): Promise<WorkInfoData | null> {
   const url = new URL(location.href);
@@ -58,14 +59,17 @@ function watchForReEnable(
   ctx: ContentScriptContext,
   ver: number,
   prefetched: Prefetched,
+  signal: AbortSignal,
 ) {
   const unwatch = watchAutoRecordEnabled(ctx, (newValue) => {
     if (newValue) {
       unwatch();
       setRecordStatus({ status: "loading" }, ver);
-      void scriptFromRecordSettings(ctx, ver, prefetched);
+      void scriptFromRecordSettings(ctx, ver, prefetched, signal);
     }
   });
+  // triggerScript が呼ばれて signal が abort されたら監視を停止する
+  signal.addEventListener("abort", unwatch, { once: true });
 }
 
 export default defineContentScript({
@@ -74,6 +78,7 @@ export default defineContentScript({
     "*://video.unext.jp/*",
     "*://abema.tv/*",
     "*://animestore.docomo.ne.jp/*",
+    "*://www.amazon.co.jp/gp/video/*",
   ],
   main(ctx) {
     // メッセージリスナーを追加
@@ -84,21 +89,32 @@ export default defineContentScript({
       }
     });
 
-    const initialVer = bumpStateVer();
-    void script(ctx, initialVer);
-    ctx.addEventListener(window, "wxt:locationchange", () => {
-      const ver = bumpStateVer();
+    let currentScriptAbort: AbortController | undefined;
 
-      // ページ遷移時に状態をリセット
+    // ページ遷移またはエピソード変化時に状態をリセットしてスクリプトを再実行する
+    const triggerScript = () => {
+      currentScriptAbort?.abort();
+      currentScriptAbort = new AbortController();
+      const ver = bumpStateVer();
       setPageInfo({ status: "idle" }, ver);
       setRecordStatus({ status: "loading" }, ver);
+      void script(ctx, ver, currentScriptAbort.signal);
+    };
 
-      void script(ctx, ver);
-    });
+    // ページ遷移監視（locationchange + 必要に応じてDOM変化監視）
+    const vod = identifyVod(new URL(location.href));
+    watchNavigation(ctx, triggerScript, vod);
+
+    // 初回実行
+    triggerScript();
   },
 });
 
-async function script(ctx: ContentScriptContext, ver: number) {
+async function script(
+  ctx: ContentScriptContext,
+  ver: number,
+  signal: AbortSignal,
+) {
   try {
     const currentWorkInfo = await getWorkInfoFromPage();
     if (!currentWorkInfo) {
@@ -163,11 +179,11 @@ async function script(ctx: ContentScriptContext, ver: number) {
         ver,
       );
       // enabled が true に変わったら待機を開始する
-      watchForReEnable(ctx, ver, { vod, token, result });
+      watchForReEnable(ctx, ver, { vod, token, result }, signal);
       return;
     }
 
-    await scriptFromRecordSettings(ctx, ver, { vod, token, result });
+    await scriptFromRecordSettings(ctx, ver, { vod, token, result }, signal);
   } catch (error) {
     // エラー状態に更新
     setRecordStatus(
@@ -187,16 +203,19 @@ async function scriptFromRecordSettings(
   ctx: ContentScriptContext,
   ver: number,
   { vod, token, result }: Prefetched,
+  signal: AbortSignal,
 ) {
+  if (signal.aborted) return;
   const abortController = new AbortController();
+  // ページ遷移またはエピソード変化時に中断する（triggerScript 経由で signal が abort される）
+  signal.addEventListener("abort", () => abortController.abort(), {
+    once: true,
+  });
   const unwatch = watchAutoRecordEnabled(ctx, (newValue) => {
     if (!newValue) {
       unwatch();
       abortController.abort("disabled");
     }
-  });
-  ctx.addEventListener(window, "wxt:locationchange", () => {
-    abortController.abort("locationChange");
   });
 
   try {
@@ -232,7 +251,11 @@ async function scriptFromRecordSettings(
     }
 
     // video要素を取得
-    const videoElem = await asyncQuerySelector("video", document, 0);
+    const videoElem = await asyncQuerySelector(
+      getVideoSelector(vod),
+      document,
+      0,
+    );
     if (!(videoElem instanceof HTMLVideoElement)) {
       throw new Error("video要素の取得に失敗しました。");
     }
@@ -258,7 +281,7 @@ async function scriptFromRecordSettings(
           ver,
         );
         // enabled が true に変わったら待機を再開する
-        watchForReEnable(ctx, ver, { vod, token, result });
+        watchForReEnable(ctx, ver, { vod, token, result }, signal);
       }
       return;
     }
