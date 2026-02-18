@@ -150,8 +150,11 @@ const abema = async (
 const danime = async (
   queryRoot: ParentNode,
 ): Promise<SearchParam[] | undefined> => {
-  const workTitle = (await asyncQuerySelector(".backInfoTxt1", queryRoot))
-    ?.textContent;
+  const workElem = await asyncQuerySelector(".backInfoTxt1", queryRoot);
+  if (!workElem) {
+    return;
+  }
+  const workTitle = await waitForTextContent(workElem);
   if (!workTitle) {
     return;
   }
