@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "createdAt": "2026-02-18T03:08:06.007Z"
+  },
+  "input": {
+    "params": {
+      "title": "中二病でも恋がしたい! Last episode 終天の契約"
+    },
+    "annictUrl": "https://annict.com/works/1276/episodes/6575"
+  },
+  "expected": {
+    "id": "V29yay0xMjc2",
+    "title": "中二病でも恋がしたい！",
+    "episode": {
+      "id": "RXBpc29kZS02NTc1",
+      "title": "終天の契約（エターナル・エンゲージ）",
+      "number": 12,
+      "numberText": "Last Episode"
+    }
+  },
+  "variants": [
+    "中二病でも恋がしたい!",
+    "中二病でも恋がしたい"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay01OTA4",
+      "title": "中二病でも恋がしたい！ Lite",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS05OTAxNA==",
+          "title": "バレーボール",
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS05OTAxNQ==",
+          "title": "邪王真眼・黎明篇",
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS05OTAxNg==",
+          "title": "わたしのお兄ちゃん",
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS05OTAxNw==",
+          "title": "肉じゃが作るよ!",
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS05OTAxOA==",
+          "title": "眠れる放課後の美少女",
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS05OTAxOQ==",
+          "title": "凸守 VS 丹生谷",
+          "numberText": "第6話"
+        }
+      ],
+      "seriesList": [
+        "中二病でも恋がしたい！"
+      ]
+    },
+    {
+      "id": "V29yay01OTA5",
+      "title": "中二病でも恋がしたい！戀 Lite",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS05OTAyMA==",
+          "title": "こたつむり",
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS05OTAyMQ==",
+          "title": "ものもらい、めばちこ 或いは めいぼ と言う名の病",
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS05OTAyMg==",
+          "title": "邪王真眼風雲編",
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS05OTAyMw==",
+          "title": "凸守 VS 丹生谷 (2)",
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS05OTAyNA==",
+          "title": "わたしのお兄ちゃん(3) キャンプ編",
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS05OTAyNQ==",
+          "title": "大天使召喚",
+          "numberText": "第6話"
+        }
+      ],
+      "seriesList": [
+        "中二病でも恋がしたい！"
+      ]
+    },
+    {
+      "id": "V29yay0zNDM5",
+      "title": "小鳥遊六花・改 ～劇場版 中二病でも恋がしたい！～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "中二病でも恋がしたい！"
+      ]
+    },
+    {
+      "id": "V29yay0xMjc2",
+      "title": "中二病でも恋がしたい！",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS02NTY0",
+          "title": "邂逅の…邪王真眼",
+          "number": 1,
+          "numberText": "Episode I"
+        },
+        {
+          "id": "RXBpc29kZS02NTY1",
+          "title": "旋律の…聖調理人（プリーステス）",
+          "number": 2,
+          "numberText": "Episode II"
+        },
+        {
+          "id": "RXBpc29kZS02NTY2",
+          "title": "異端なる…双尾娘（ツインテール）",
+          "number": 3,
+          "numberText": "Episode III"
+        },
+        {
+          "id": "RXBpc29kZS02NTY3",
+          "title": "痛恨の…闇聖典（マビノギオン）",
+          "number": 4,
+          "numberText": "Episode IV"
+        },
+        {
+          "id": "RXBpc29kZS02NTY4",
+          "title": "束縛の…十字架（ハード・スタディ）",
+          "number": 5,
+          "numberText": "Episode V"
+        },
+        {
+          "id": "RXBpc29kZS02NTY5",
+          "title": "贖罪の…救世主（イノセント）",
+          "number": 6,
+          "numberText": "Episode VI"
+        },
+        {
+          "id": "RXBpc29kZS02NTcw",
+          "title": "追憶の…楽園喪失（パラダイス・ロスト）",
+          "number": 7,
+          "numberText": "Episode VII"
+        },
+        {
+          "id": "RXBpc29kZS02NTcx",
+          "title": "二人だけの…逃避行（エグザイル）",
+          "number": 8,
+          "numberText": "Episode VIII"
+        },
+        {
+          "id": "RXBpc29kZS02NTcy",
+          "title": "混沌の…初恋煩（カオス・ハート）",
+          "number": 9,
+          "numberText": "Episode IX"
+        },
+        {
+          "id": "RXBpc29kZS02NTcz",
+          "title": "聖母の…弁当箱（パンドラズ・ボックス）",
+          "number": 10,
+          "numberText": "Episode X"
+        },
+        {
+          "id": "RXBpc29kZS02NTc0",
+          "title": "片翼の堕天使（フォーリン・エンジェル）",
+          "number": 11,
+          "numberText": "Episode XI"
+        },
+        {
+          "id": "RXBpc29kZS02NTc1",
+          "title": "終天の契約（エターナル・エンゲージ）",
+          "number": 12,
+          "numberText": "Last Episode"
+        },
+        {
+          "id": "RXBpc29kZS02NTc2",
+          "title": "煌めきの…聖爆誕祭（スラップスティック・ノエル）",
+          "number": 13,
+          "numberText": "Extra Episode"
+        }
+      ],
+      "seriesList": [
+        "中二病でも恋がしたい！"
+      ]
+    },
+    {
+      "id": "V29yay0xMjc3",
+      "title": "中二病でも恋がしたい！戀",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0zMDE=",
+          "title": "復活の…邪王真眼",
+          "number": 1,
+          "numberText": "Episode I"
+        },
+        {
+          "id": "RXBpc29kZS0zMDI=",
+          "title": "海豚の…恋人契約 (ドルフィンリング・ストライカー)",
+          "number": 2,
+          "numberText": "Episode II"
+        },
+        {
+          "id": "RXBpc29kZS0zMDM=",
+          "title": "追撃の…魔法魔王少女",
+          "number": 3,
+          "numberText": "Episode III"
+        },
+        {
+          "id": "RXBpc29kZS0zMDQ=",
+          "title": "無垢なる…生徒会長選挙 (クイーンメーカー)",
+          "number": 4,
+          "numberText": "Episode IV"
+        },
+        {
+          "id": "RXBpc29kZS0zMDU=",
+          "title": "幻想の…昼寝迷宮 (シエスタラビリンス)",
+          "number": 5,
+          "numberText": "Episode V"
+        },
+        {
+          "id": "RXBpc29kZS0zMDY=",
+          "title": "躊躇いの…筑紫島周遊 (ツクシノシマ・トラベリング)",
+          "number": 6,
+          "numberText": "Episode VI"
+        },
+        {
+          "id": "RXBpc29kZS0zMDc=",
+          "title": "すれ違いの…心模様 (ヴォルケーノ・トライアングル)",
+          "number": 7,
+          "numberText": "Episode VII"
+        },
+        {
+          "id": "RXBpc29kZS0zMDg=",
+          "title": "偽りの…精霊聖母 (モリサマー)",
+          "number": 8,
+          "numberText": "Episode VIII"
+        },
+        {
+          "id": "RXBpc29kZS0zNDcx",
+          "title": "波打際の…究極奥義(リゾート・ラストリゾート)",
+          "number": 9,
+          "numberText": "Episode IX"
+        },
+        {
+          "id": "RXBpc29kZS0zNDcy",
+          "title": "真夏の夜の…(Gauntlet of rain)雨と鞭",
+          "number": 10,
+          "numberText": "Episode X"
+        },
+        {
+          "id": "RXBpc29kZS00MjAy",
+          "title": "青き月の…最終決戦(ブルームーン・ラグナロク)",
+          "number": 11,
+          "numberText": "Episode XI"
+        },
+        {
+          "id": "RXBpc29kZS00ODg1",
+          "title": "黄昏の…上級契約(ハイヤーエンゲージ)",
+          "number": 12,
+          "numberText": "Last Episode"
+        },
+        {
+          "id": "RXBpc29kZS03NTM0MQ==",
+          "title": "再生の…邪王真眼黙示録(The Rikka Wars)",
+          "number": 0,
+          "numberText": "Extra Episode"
+        }
+      ],
+      "seriesList": [
+        "中二病でも恋がしたい！"
+      ]
+    },
+    {
+      "id": "V29yay01MzI3",
+      "title": "映画 中二病でも恋がしたい！ -Take On Me-",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "中二病でも恋がしたい！"
+      ]
+    }
+  ]
+}

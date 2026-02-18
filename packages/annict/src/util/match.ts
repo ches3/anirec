@@ -155,6 +155,9 @@ export const episodeNumberMatches = [
     "OAD",
     "前編",
     "後編",
+    "総集編",
+    "特別編",
+    "Last episode",
   ],
   ...[`${num}`, `${num}\\.`, "第.*?話", "第.*?回", ".*?話", ".*?回"],
 ];
