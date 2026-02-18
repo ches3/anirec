@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "createdAt": "2026-02-18T03:16:32.877Z"
+  },
+  "input": {
+    "params": {
+      "title": "ReLIFE report 1 海崎新太(27)無職"
+    },
+    "annictUrl": "https://annict.com/works/4792/episodes/76045"
+  },
+  "expected": {
+    "id": "V29yay00Nzky",
+    "title": "ReLIFE",
+    "episode": {
+      "id": "RXBpc29kZS03NjA0NQ==",
+      "title": "海崎新太(27)無職",
+      "number": 1,
+      "numberText": "report 1"
+    }
+  },
+  "variants": [
+    "ReLIFE"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay01NzI2",
+      "title": "ReLIFE 完結編",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS05ODgxMg==",
+          "title": "Seed",
+          "number": 14,
+          "numberText": "Report14"
+        },
+        {
+          "id": "RXBpc29kZS05ODgxMw==",
+          "title": "Need",
+          "number": 15,
+          "numberText": "Report15"
+        },
+        {
+          "id": "RXBpc29kZS05ODgxNA==",
+          "title": "Date",
+          "number": 16,
+          "numberText": "Report16"
+        },
+        {
+          "id": "RXBpc29kZS05ODgxNQ==",
+          "title": "Life",
+          "number": 17,
+          "numberText": "Report17"
+        }
+      ],
+      "seriesList": [
+        "ReLIFE"
+      ]
+    },
+    {
+      "id": "V29yay00Nzky",
+      "title": "ReLIFE",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS03NjA0NQ==",
+          "title": "海崎新太(27)無職",
+          "number": 1,
+          "numberText": "report 1"
+        },
+        {
+          "id": "RXBpc29kZS03NjEzOQ==",
+          "title": "コミュニケーション能力0点",
+          "number": 2,
+          "numberText": "report 2"
+        },
+        {
+          "id": "RXBpc29kZS03NjIzMQ==",
+          "title": "オッサンなんですから",
+          "number": 3,
+          "numberText": "report 3"
+        },
+        {
+          "id": "RXBpc29kZS03NjM4OQ==",
+          "title": "堕ちる",
+          "number": 4,
+          "numberText": "report 4"
+        },
+        {
+          "id": "RXBpc29kZS03NjU2Nw==",
+          "title": "オーバーラップ",
+          "number": 5,
+          "numberText": "report 5"
+        },
+        {
+          "id": "RXBpc29kZS03NjYzNA==",
+          "title": "初めましてじゃないんだよ",
+          "number": 6,
+          "numberText": "report 6"
+        },
+        {
+          "id": "RXBpc29kZS03NjYzNQ==",
+          "title": "被験者001→002",
+          "number": 7,
+          "numberText": "report 7"
+        },
+        {
+          "id": "RXBpc29kZS03NjYzNg==",
+          "title": "亀裂",
+          "number": 8,
+          "numberText": "report 8"
+        },
+        {
+          "id": "RXBpc29kZS03NjYzNw==",
+          "title": "リベンジ",
+          "number": 9,
+          "numberText": "report 9"
+        },
+        {
+          "id": "RXBpc29kZS03NjYzOA==",
+          "title": "みんなのワガママ",
+          "number": 10,
+          "numberText": "report 10"
+        },
+        {
+          "id": "RXBpc29kZS03NjYzOQ==",
+          "title": "過去トリップ",
+          "number": 11,
+          "numberText": "report 11"
+        },
+        {
+          "id": "RXBpc29kZS03NjY0MA==",
+          "title": "ダブルパニック",
+          "number": 12,
+          "numberText": "report 12"
+        },
+        {
+          "id": "RXBpc29kZS03NjY0MQ==",
+          "title": "告白",
+          "number": 13,
+          "numberText": "report 13"
+        }
+      ],
+      "seriesList": [
+        "ReLIFE"
+      ]
+    }
+  ]
+}

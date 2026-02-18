@@ -115,93 +115,111 @@ export async function search(
   }
 
   // タイトルが一致する作品が見つからなかった場合、サブタイトルのみで検索
-  if (!target.episode) {
-    return;
+  if (target.episode) {
+    // title + numberText が両方一致するエピソードを優先して探す
+    for (const work of works) {
+      if (work.noEpisodes || !work.episodes) {
+        continue;
+      }
+      const episode = findEpisodeByTitleAndNumberText(
+        work.episodes,
+        target.episode,
+      );
+      if (episode) {
+        return { id: work.id, title: work.title, episode };
+      }
+    }
+
+    // titleのみが一致するエピソードを探す
+    for (const work of works) {
+      if (work.noEpisodes || !work.episodes) {
+        continue;
+      }
+      const episode = findEpisodeByTitle(work.episodes, target.episode);
+      if (episode) {
+        return { id: work.id, title: work.title, episode };
+      }
+    }
+
+    // カッコ内の文字列のみで一致するエピソードを探す
+    // e.g. "CLANNAD番外編 「夏休みの出来事」" → "夏休みの出来事" で検索
+    for (const work of works) {
+      if (work.noEpisodes || !work.episodes) {
+        continue;
+      }
+      const episode = findEpisodeByBracketTitle(work.episodes, target.episode);
+      if (episode) {
+        return { id: work.id, title: work.title, episode };
+      }
+    }
+
+    // OVA等でAnnictの作品タイトルにサブタイトルが含まれている場合の対応
+    // Annictタイトルをパースして、episode.titleが一致するか確認
+    for (const work of works) {
+      if (!work.noEpisodes) {
+        continue;
+      }
+      const parsed = extractFullTitle(work.title);
+      if (
+        parsed.episode?.title &&
+        target.episode?.title &&
+        isSameTitle(parsed.episode.title, target.episode.title, true)
+      ) {
+        return {
+          id: work.id,
+          title: work.title,
+          episode: undefined,
+        };
+      }
+    }
+
+    // エピソードが見つからなかった場合、フルタイトルで検索
+    const fullTitle = buildFullTitle(params);
+    for (const work of works) {
+      if (!work.noEpisodes) {
+        continue;
+      }
+      if (work.noEpisodes && isSameTitle(work.title, fullTitle)) {
+        return {
+          id: work.id,
+          title: work.title,
+          episode: undefined,
+        };
+      }
+    }
+
+    // work.title & episode.number が一致するエピソードを探す
+    for (const work of works) {
+      if (work.noEpisodes || !work.episodes) {
+        continue;
+      }
+      if (!isMatchingWorkTitle(work, target.workTitle)) {
+        continue;
+      }
+      const episode = findEpisodeByNumber(work.episodes, target.episode);
+      if (episode) {
+        return { id: work.id, title: work.title, episode };
+      }
+    }
   }
 
-  // title + numberText が両方一致するエピソードを優先して探す
+  const targetFullTitle = buildFullTitle(params);
   for (const work of works) {
-    if (work.noEpisodes || !work.episodes) {
+    const episodes = work.episodes;
+    if (!episodes) {
       continue;
     }
-    const episode = findEpisodeByTitleAndNumberText(
-      work.episodes,
-      target.episode,
-    );
-    if (episode) {
-      return { id: work.id, title: work.title, episode };
-    }
-  }
-
-  // titleのみが一致するエピソードを探す
-  for (const work of works) {
-    if (work.noEpisodes || !work.episodes) {
-      continue;
-    }
-    const episode = findEpisodeByTitle(work.episodes, target.episode);
-    if (episode) {
-      return { id: work.id, title: work.title, episode };
-    }
-  }
-
-  // カッコ内の文字列のみで一致するエピソードを探す
-  // e.g. "CLANNAD番外編 「夏休みの出来事」" → "夏休みの出来事" で検索
-  for (const work of works) {
-    if (work.noEpisodes || !work.episodes) {
-      continue;
-    }
-    const episode = findEpisodeByBracketTitle(work.episodes, target.episode);
-    if (episode) {
-      return { id: work.id, title: work.title, episode };
-    }
-  }
-
-  // OVA等でAnnictの作品タイトルにサブタイトルが含まれている場合の対応
-  // Annictタイトルをパースして、episode.titleが一致するか確認
-  for (const work of works) {
-    if (!work.noEpisodes) {
-      continue;
-    }
-    const parsed = extractFullTitle(work.title);
-    if (
-      parsed.episode?.title &&
-      target.episode?.title &&
-      isSameTitle(parsed.episode.title, target.episode.title, true)
-    ) {
-      return {
-        id: work.id,
-        title: work.title,
-        episode: undefined,
-      };
-    }
-  }
-
-  // エピソードが見つからなかった場合、フルタイトルで検索
-  const fullTitle = buildFullTitle(params);
-  for (const work of works) {
-    if (!work.noEpisodes) {
-      continue;
-    }
-    if (work.noEpisodes && isSameTitle(work.title, fullTitle)) {
-      return {
-        id: work.id,
-        title: work.title,
-        episode: undefined,
-      };
-    }
-  }
-
-  // work.title & episode.number が一致するエピソードを探す
-  for (const work of works) {
-    if (work.noEpisodes || !work.episodes) {
-      continue;
-    }
-    if (!isMatchingWorkTitle(work, target.workTitle)) {
-      continue;
-    }
-    const episode = findEpisodeByNumber(work.episodes, target.episode);
-    if (episode) {
-      return { id: work.id, title: work.title, episode };
+    for (const episode of episodes) {
+      const fullTitle = [work.title, episode.numberText, episode.title].join(
+        "",
+      );
+      if (isSameTitle(fullTitle, targetFullTitle)) {
+        return {
+          id: work.id,
+          title: work.title,
+          episode: episode,
+        };
+      }
     }
   }
 }

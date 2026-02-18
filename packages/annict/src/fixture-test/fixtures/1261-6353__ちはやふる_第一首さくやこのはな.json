@@ -1,0 +1,513 @@
+{
+  "meta": {
+    "createdAt": "2026-02-18T03:13:20.902Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "ちはやふる",
+      "episodeTitle": "第一首 さくやこのはな"
+    },
+    "annictUrl": "https://annict.com/works/1261/episodes/6353"
+  },
+  "expected": {
+    "id": "V29yay0xMjYx",
+    "title": "ちはやふる",
+    "episode": {
+      "id": "RXBpc29kZS02MzUz",
+      "title": "さくやこのはな",
+      "number": 1,
+      "numberText": "第一首"
+    }
+  },
+  "variants": [
+    "ちはやふる"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay02MzM2",
+      "title": "ちはやふる3",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMTY1ODE=",
+          "title": "なつのよは",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY3NDY=",
+          "title": "あさぼらけありあけのつきと",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY4MzI=",
+          "title": "よしののさとに",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTcwNDk=",
+          "title": "たかさごの",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTcxMDI=",
+          "title": "あまのかぐやま",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTcxMzY=",
+          "title": "にしきなりけり",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTcyMTA=",
+          "title": "あらしふく",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc0MDg=",
+          "title": "これやこの",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc2MTg=",
+          "title": "くだけてものをおもふころかな",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc3NjU=",
+          "title": "さねかづら",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc4NjY=",
+          "title": "きりたちのぼるあきのゆふぐれ",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc5NjE=",
+          "title": "はなさそふあらしのにはのゆきならで",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTgwNTM=",
+          "title": "ふりゆくものはわがみなりけり",
+          "number": 13,
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTkzNDc=",
+          "title": "あひみての",
+          "number": 14,
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTk3Nzk=",
+          "title": "ながれもあへぬ もみぢなりけり",
+          "number": 15,
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjAzMjg=",
+          "title": "いまひとたびの",
+          "number": 15,
+          "numberText": "第15.5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTk4Njg=",
+          "title": "ぬさもとりあへずたむけやま",
+          "number": 16,
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTk5NzA=",
+          "title": "わがころもではつゆにぬれつつ",
+          "number": 17,
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjA0MTE=",
+          "title": "あらざらむ",
+          "number": 18,
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjA1Mjc=",
+          "title": "みをつくしてや",
+          "number": 19,
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjA3MDY=",
+          "title": "なにしおはば",
+          "number": 20,
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjI2MjI=",
+          "title": "ひともをし",
+          "number": 21,
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjI3MDA=",
+          "title": "ながめせしまに",
+          "number": 22,
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjI4MjA=",
+          "title": "わたるふなびとかぢをたえ",
+          "number": 23,
+          "numberText": "第23話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjI5MDY=",
+          "title": "かぜをいたみ",
+          "number": 24,
+          "numberText": "第24話"
+        }
+      ],
+      "seriesList": [
+        "ちはやふる"
+      ]
+    },
+    {
+      "id": "V29yay0xMjYx",
+      "title": "ちはやふる",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS02MzUz",
+          "title": "さくやこのはな",
+          "number": 1,
+          "numberText": "第一首"
+        },
+        {
+          "id": "RXBpc29kZS02MzU0",
+          "title": "からくれなゐに",
+          "number": 2,
+          "numberText": "第二首"
+        },
+        {
+          "id": "RXBpc29kZS02MzU1",
+          "title": "ふれるしらゆき",
+          "number": 3,
+          "numberText": "第三首"
+        },
+        {
+          "id": "RXBpc29kZS02MzU2",
+          "title": "しつこころなくはなのちるらむ",
+          "number": 4,
+          "numberText": "第四首"
+        },
+        {
+          "id": "RXBpc29kZS02MzU3",
+          "title": "よはのつきかな",
+          "number": 5,
+          "numberText": "第五首"
+        },
+        {
+          "id": "RXBpc29kZS02MzU4",
+          "title": "けふここのへににほひぬるかな",
+          "number": 6,
+          "numberText": "第六首"
+        },
+        {
+          "id": "RXBpc29kZS02MzU5",
+          "title": "ひとこそみえねあきはきにけり",
+          "number": 7,
+          "numberText": "第七首"
+        },
+        {
+          "id": "RXBpc29kZS02MzYw",
+          "title": "たえてひさしくなりぬれど",
+          "number": 8,
+          "numberText": "第八首"
+        },
+        {
+          "id": "RXBpc29kZS02MzYx",
+          "title": "しのぶれど",
+          "number": 9,
+          "numberText": "第九首"
+        },
+        {
+          "id": "RXBpc29kZS02MzYy",
+          "title": "ゆくもかへるもわかれては",
+          "number": 10,
+          "numberText": "第十首"
+        },
+        {
+          "id": "RXBpc29kZS02MzYz",
+          "title": "あまつかぜ",
+          "number": 11,
+          "numberText": "第十一首"
+        },
+        {
+          "id": "RXBpc29kZS02MzY0",
+          "title": "むらさきのゆきしめのゆき",
+          "number": 12,
+          "numberText": "第十二首"
+        },
+        {
+          "id": "RXBpc29kZS02MzY1",
+          "title": "きみがため",
+          "number": 13,
+          "numberText": "第十三首"
+        },
+        {
+          "id": "RXBpc29kZS02MzY2",
+          "title": "はなよりほかにしるひともなし",
+          "number": 14,
+          "numberText": "第十四首"
+        },
+        {
+          "id": "RXBpc29kZS02MzY3",
+          "title": "つらぬきとめぬたまぞちりける",
+          "number": 15,
+          "numberText": "第十五首"
+        },
+        {
+          "id": "RXBpc29kZS02MzY4",
+          "title": "をぐらやま（総集編）",
+          "number": 16,
+          "numberText": "第十六首"
+        },
+        {
+          "id": "RXBpc29kZS02MzY5",
+          "title": "みちこそなけれ",
+          "number": 17,
+          "numberText": "第十七首"
+        },
+        {
+          "id": "RXBpc29kZS02Mzcw",
+          "title": "はなぞむかしのかににほひける",
+          "number": 18,
+          "numberText": "第十八首"
+        },
+        {
+          "id": "RXBpc29kZS02Mzcx",
+          "title": "ながらへば",
+          "number": 19,
+          "numberText": "第十九首"
+        },
+        {
+          "id": "RXBpc29kZS02Mzcy",
+          "title": "くもゐにまがふおきつしらなみ",
+          "number": 20,
+          "numberText": "第二十首"
+        },
+        {
+          "id": "RXBpc29kZS02Mzcz",
+          "title": "わがころもでにゆきはふりつつ",
+          "number": 21,
+          "numberText": "第二十一首"
+        },
+        {
+          "id": "RXBpc29kZS02Mzc0",
+          "title": "うつりにけりないたづらに",
+          "number": 22,
+          "numberText": "第二十二首"
+        },
+        {
+          "id": "RXBpc29kZS02Mzc1",
+          "title": "しろきをみればよぞふけにける",
+          "number": 23,
+          "numberText": "第二十三首"
+        },
+        {
+          "id": "RXBpc29kZS02Mzc2",
+          "title": "をのへのさくらさきにけり",
+          "number": 24,
+          "numberText": "第二十四首"
+        },
+        {
+          "id": "RXBpc29kZS02Mzc3",
+          "title": "もれいづるつきのかげのさやけさ",
+          "number": 25,
+          "numberText": "第二十五首"
+        }
+      ],
+      "seriesList": [
+        "ちはやふる"
+      ]
+    },
+    {
+      "id": "V29yay0xMjYy",
+      "title": "ちはやふる2",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS02OTc5",
+          "title": "はなのいろは",
+          "number": 1,
+          "numberText": "第一首"
+        },
+        {
+          "id": "RXBpc29kZS02OTgw",
+          "title": "こひすてふ",
+          "number": 2,
+          "numberText": "第二首"
+        },
+        {
+          "id": "RXBpc29kZS02OTgx",
+          "title": "つくばねの",
+          "number": 3,
+          "numberText": "第三首"
+        },
+        {
+          "id": "RXBpc29kZS02OTgy",
+          "title": "ひとにはつげよ あまのつりぶね",
+          "number": 4,
+          "numberText": "第四首"
+        },
+        {
+          "id": "RXBpc29kZS02OTgz",
+          "title": "なほあまりある むかしなりけり",
+          "number": 5,
+          "numberText": "第五首"
+        },
+        {
+          "id": "RXBpc29kZS02OTg0",
+          "title": "たつたのかはの にしきなりけり",
+          "number": 6,
+          "numberText": "第六首"
+        },
+        {
+          "id": "RXBpc29kZS02OTg1",
+          "title": "しるもしらぬも あふさかのせき",
+          "number": 7,
+          "numberText": "第七首"
+        },
+        {
+          "id": "RXBpc29kZS02OTg2",
+          "title": "みかさのやまに いでしつきかも",
+          "number": 8,
+          "numberText": "第八首"
+        },
+        {
+          "id": "RXBpc29kZS02OTg3",
+          "title": "わたのはら",
+          "number": 9,
+          "numberText": "第九首"
+        },
+        {
+          "id": "RXBpc29kZS02OTg4",
+          "title": "むらさめの",
+          "number": 10,
+          "numberText": "第十首"
+        },
+        {
+          "id": "RXBpc29kZS02OTg5",
+          "title": "さしもしらじな もゆるおもひを",
+          "number": 11,
+          "numberText": "第十一首"
+        },
+        {
+          "id": "RXBpc29kZS02OTkw",
+          "title": "みそぎぞなつの しるしなりける",
+          "number": 12,
+          "numberText": "第十二首"
+        },
+        {
+          "id": "RXBpc29kZS02OTkx",
+          "title": "ゆめのかよひぢ ひとめよくらむ",
+          "number": 13,
+          "numberText": "第十三首"
+        },
+        {
+          "id": "RXBpc29kZS02OTky",
+          "title": "ものやおもふと ひとのとふまで",
+          "number": 14,
+          "numberText": "第十四首"
+        },
+        {
+          "id": "RXBpc29kZS02OTkz",
+          "title": "たごのうらに",
+          "number": 15,
+          "numberText": "第十五首"
+        },
+        {
+          "id": "RXBpc29kZS02OTk0",
+          "title": "みゆきまたなむ（総集編）",
+          "number": 16,
+          "numberText": "第十六首"
+        },
+        {
+          "id": "RXBpc29kZS02OTk1",
+          "title": "ふくからに",
+          "number": 17,
+          "numberText": "第十七首"
+        },
+        {
+          "id": "RXBpc29kZS02OTk2",
+          "title": "わすれじの",
+          "number": 18,
+          "numberText": "第十八首"
+        },
+        {
+          "id": "RXBpc29kZS02OTk3",
+          "title": "ゆくへもしらぬ こひのみちかな",
+          "number": 19,
+          "numberText": "第十九首"
+        },
+        {
+          "id": "RXBpc29kZS02OTk4",
+          "title": "あきのたの",
+          "number": 20,
+          "numberText": "第二十首"
+        },
+        {
+          "id": "RXBpc29kZS02OTk5",
+          "title": "なこそながれて なほきこえけれ",
+          "number": 21,
+          "numberText": "第二十一首"
+        },
+        {
+          "id": "RXBpc29kZS03MDAw",
+          "title": "めぐりあひて",
+          "number": 22,
+          "numberText": "第二十二首"
+        },
+        {
+          "id": "RXBpc29kZS03MDAx",
+          "title": "をのへのさくら さきにけり",
+          "number": 23,
+          "numberText": "第二十三首"
+        },
+        {
+          "id": "RXBpc29kZS03MDAy",
+          "title": "かくとだに",
+          "number": 24,
+          "numberText": "第二十四首"
+        },
+        {
+          "id": "RXBpc29kZS03MDAz",
+          "title": "ふじのたかねにゆきはふりつつ",
+          "number": 25,
+          "numberText": "第二十五首"
+        },
+        {
+          "id": "RXBpc29kZS03MDA0",
+          "title": "わがみよにふるながめせしまに",
+          "number": 26,
+          "numberText": "第二十六首"
+        }
+      ],
+      "seriesList": [
+        "ちはやふる"
+      ]
+    }
+  ]
+}
