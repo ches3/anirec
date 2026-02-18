@@ -41,7 +41,7 @@ export default defineConfig({
       name: "AniRec",
       version: "0.1.0",
       description:
-        "DMM TV、U-NEXT、ABEMA、dアニメストアで視聴した作品を自動でAnnictに記録します。",
+        "DMM TV、U-NEXT、ABEMA、dアニメストア、Prime Videoで視聴した作品を自動でAnnictに記録します。",
       permissions,
       browser_specific_settings: browserSpecificSettings[browser],
     };

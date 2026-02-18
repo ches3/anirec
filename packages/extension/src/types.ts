@@ -1,6 +1,6 @@
 import type { SearchParam, SearchResult } from "@anirec/annict";
 
-export type Vod = "dmm" | "unext" | "abema" | "danime";
+export type Vod = "dmm" | "unext" | "abema" | "danime" | "prime";
 
 export type WorkInfoData = {
   vod: Vod;

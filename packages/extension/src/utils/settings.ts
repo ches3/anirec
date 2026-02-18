@@ -64,6 +64,7 @@ const defaultRecordSettings: RecordSettings = {
     unext: true,
     abema: true,
     danime: true,
+    prime: true,
   },
   preventDuplicate: {
     enabled: true,
