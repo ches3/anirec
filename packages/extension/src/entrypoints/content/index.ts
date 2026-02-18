@@ -13,9 +13,9 @@ import { getVideoSelector, identifyVod, isVodEnabled } from "@/utils/vod";
 import { extractSearchParams } from "./extract-search-params";
 import {
   bumpStateVer,
+  createStateUpdater,
   getPageStateResponse,
-  setPageInfo,
-  setRecordStatus,
+  type PageStateUpdater,
 } from "./page-state";
 import { wait } from "./wait";
 import { watchNavigation } from "./watch-navigation";
@@ -57,15 +57,15 @@ type Prefetched = {
 // enabled が true になったタイミングで scriptFromRecordSettings を再実行するウォッチャーを設定する
 function watchForReEnable(
   ctx: ContentScriptContext,
-  ver: number,
+  state: PageStateUpdater,
   prefetched: Prefetched,
   signal: AbortSignal,
 ) {
   const unwatch = watchAutoRecordEnabled(ctx, (newValue) => {
     if (newValue) {
       unwatch();
-      setRecordStatus({ status: "loading" }, ver);
-      void scriptFromRecordSettings(ctx, ver, prefetched, signal);
+      state.setRecordStatus({ status: "loading" });
+      void scriptFromRecordSettings(ctx, state, prefetched, signal);
     }
   });
   // triggerScript が呼ばれて signal が abort されたら監視を停止する
@@ -95,10 +95,10 @@ export default defineContentScript({
     const triggerScript = () => {
       currentScriptAbort?.abort();
       currentScriptAbort = new AbortController();
-      const ver = bumpStateVer();
-      setPageInfo({ status: "idle" }, ver);
-      setRecordStatus({ status: "loading" }, ver);
-      void script(ctx, ver, currentScriptAbort.signal);
+      const state = createStateUpdater(bumpStateVer());
+      state.setPageInfo({ status: "idle" });
+      state.setRecordStatus({ status: "loading" });
+      void script(ctx, state, currentScriptAbort.signal);
     };
 
     // ページ遷移監視（locationchange + 必要に応じてDOM変化監視）
@@ -112,30 +112,27 @@ export default defineContentScript({
 
 async function script(
   ctx: ContentScriptContext,
-  ver: number,
+  state: PageStateUpdater,
   signal: AbortSignal,
 ) {
   try {
     const currentWorkInfo = await getWorkInfoFromPage();
     if (!currentWorkInfo) {
-      setPageInfo({ status: "idle" }, ver);
+      state.setPageInfo({ status: "idle" });
       return;
     }
 
     const { vod, searchParams: titleList } = currentWorkInfo;
-    setPageInfo({ status: "loading" }, ver);
+    state.setPageInfo({ status: "loading" });
 
     const token = await getToken();
     if (!token) {
-      setPageInfo({ status: "idle" }, ver);
+      state.setPageInfo({ status: "idle" });
 
-      setRecordStatus(
-        {
-          status: "error",
-          errorMessage: "Annictトークンが設定されていません。",
-        },
-        ver,
-      );
+      state.setRecordStatus({
+        status: "error",
+        errorMessage: "Annictトークンが設定されていません。",
+      });
       console.error("Annictトークンが設定されていません。");
       return;
     }
@@ -148,51 +145,39 @@ async function script(
       }
     });
 
-    setPageInfo(
-      {
-        status: "ready",
-        workInfo: currentWorkInfo,
-        annictInfo: result || undefined,
-      },
-      ver,
-    );
+    state.setPageInfo({
+      status: "ready",
+      workInfo: currentWorkInfo,
+      annictInfo: result || undefined,
+    });
 
     if (!result) {
-      setRecordStatus(
-        {
-          status: "skipped",
-          skipReason: "not_found",
-        },
-        ver,
-      );
+      state.setRecordStatus({
+        status: "skipped",
+        skipReason: "not_found",
+      });
       console.error("エピソードが見つかりませんでした。", { titleList });
       return;
     }
 
     const autoRecordEnabled = await getAutoRecordEnabled();
     if (!autoRecordEnabled) {
-      setRecordStatus(
-        {
-          status: "skipped",
-          skipReason: "disabled",
-        },
-        ver,
-      );
+      state.setRecordStatus({
+        status: "skipped",
+        skipReason: "disabled",
+      });
       // enabled が true に変わったら待機を開始する
-      watchForReEnable(ctx, ver, { vod, token, result }, signal);
+      watchForReEnable(ctx, state, { vod, token, result }, signal);
       return;
     }
 
-    await scriptFromRecordSettings(ctx, ver, { vod, token, result }, signal);
+    await scriptFromRecordSettings(ctx, state, { vod, token, result }, signal);
   } catch (error) {
     // エラー状態に更新
-    setRecordStatus(
-      {
-        status: "error",
-        errorMessage: error instanceof Error ? error.message : "不明なエラー",
-      },
-      ver,
-    );
+    state.setRecordStatus({
+      status: "error",
+      errorMessage: error instanceof Error ? error.message : "不明なエラー",
+    });
     if (error instanceof Error) {
       console.error(error);
     }
@@ -201,7 +186,7 @@ async function script(
 
 async function scriptFromRecordSettings(
   ctx: ContentScriptContext,
-  ver: number,
+  state: PageStateUpdater,
   { vod, token, result }: Prefetched,
   signal: AbortSignal,
 ) {
@@ -221,13 +206,10 @@ async function scriptFromRecordSettings(
   try {
     const recordSettings = await getRecordSettings();
     if (!isVodEnabled(vod, recordSettings.enabledServices)) {
-      setRecordStatus(
-        {
-          status: "skipped",
-          skipReason: "service_disabled",
-        },
-        ver,
-      );
+      state.setRecordStatus({
+        status: "skipped",
+        skipReason: "service_disabled",
+      });
       return;
     }
 
@@ -239,13 +221,10 @@ async function scriptFromRecordSettings(
       preventDuplicate.enabled &&
       (await isRecorded(id, preventDuplicate.days, token))
     ) {
-      setRecordStatus(
-        {
-          status: "skipped",
-          skipReason: "duplicate",
-        },
-        ver,
-      );
+      state.setRecordStatus({
+        status: "skipped",
+        skipReason: "duplicate",
+      });
       console.log("このエピソードは記録済みです。", result);
       return;
     }
@@ -261,45 +240,39 @@ async function scriptFromRecordSettings(
     }
 
     // 待機
-    setRecordStatus({ status: "waiting", progress: 0 }, ver);
+    state.setRecordStatus({ status: "waiting", progress: 0 });
     const waitResult = await wait(
       recordSettings.timing,
       videoElem,
       (progress) => {
-        setRecordStatus({ status: "waiting", progress }, ver);
+        state.setRecordStatus({ status: "waiting", progress });
       },
       abortController.signal,
     );
 
     if (waitResult.status === "aborted") {
       if (waitResult.reason === "disabled") {
-        setRecordStatus(
-          {
-            status: "skipped",
-            skipReason: "disabled",
-          },
-          ver,
-        );
+        state.setRecordStatus({
+          status: "skipped",
+          skipReason: "disabled",
+        });
         // enabled が true に変わったら待機を再開する
-        watchForReEnable(ctx, ver, { vod, token, result }, signal);
+        watchForReEnable(ctx, state, { vod, token, result }, signal);
       }
       return;
     }
 
-    setRecordStatus({ status: "processing" }, ver);
+    state.setRecordStatus({ status: "processing" });
 
     // 重複記録チェック(待機後)
     if (
       preventDuplicate.enabled &&
       (await isRecorded(id, preventDuplicate.days, token))
     ) {
-      setRecordStatus(
-        {
-          status: "skipped",
-          skipReason: "duplicate",
-        },
-        ver,
-      );
+      state.setRecordStatus({
+        status: "skipped",
+        skipReason: "duplicate",
+      });
       console.log("このエピソードは記録済みです。", result);
       return;
     }
@@ -310,18 +283,15 @@ async function scriptFromRecordSettings(
         throw new Error("エピソードの記録に失敗しました。", { cause: e });
       }
     });
-    setRecordStatus({ status: "success" }, ver);
+    state.setRecordStatus({ status: "success" });
 
     console.log("エピソードを記録しました。", result);
   } catch (error) {
     // エラー状態に更新
-    setRecordStatus(
-      {
-        status: "error",
-        errorMessage: error instanceof Error ? error.message : "不明なエラー",
-      },
-      ver,
-    );
+    state.setRecordStatus({
+      status: "error",
+      errorMessage: error instanceof Error ? error.message : "不明なエラー",
+    });
     if (error instanceof Error) {
       console.error(error);
     }

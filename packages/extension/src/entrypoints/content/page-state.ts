@@ -19,11 +19,11 @@ export function bumpStateVer(): number {
   return currentStateVer;
 }
 
-function isCurrentVer(ver?: number): boolean {
-  return ver === undefined || ver === currentStateVer;
+function isCurrentVer(ver: number): boolean {
+  return ver === currentStateVer;
 }
 
-export function setPageInfo(info: PageInfo, ver?: number) {
+export function setPageInfo(info: PageInfo, ver: number) {
   if (!isCurrentVer(ver)) {
     return;
   }
@@ -36,7 +36,7 @@ export function setPageInfo(info: PageInfo, ver?: number) {
     .catch(() => {});
 }
 
-export function setRecordStatus(status: RecordStatus, ver?: number) {
+export function setRecordStatus(status: RecordStatus, ver: number) {
   if (!isCurrentVer(ver)) {
     return;
   }
@@ -47,6 +47,18 @@ export function setRecordStatus(status: RecordStatus, ver?: number) {
       recordStatus: status,
     })
     .catch(() => {});
+}
+
+export type PageStateUpdater = {
+  setPageInfo: (info: PageInfo) => void;
+  setRecordStatus: (status: RecordStatus) => void;
+};
+
+export function createStateUpdater(ver: number): PageStateUpdater {
+  return {
+    setPageInfo: (info) => setPageInfo(info, ver),
+    setRecordStatus: (status) => setRecordStatus(status, ver),
+  };
 }
 
 export function getPageStateResponse(): PageStateData {
