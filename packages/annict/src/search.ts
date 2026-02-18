@@ -3,6 +3,7 @@ import { searchWorks } from "./util/annict";
 import { extract, extractFullTitle } from "./util/extract/extract";
 import { isSameTitle } from "./util/normalize";
 import {
+  findEpisodeByBracketTitle,
   findEpisodeByNumber,
   findEpisodeByNumberText,
   findEpisodeByTitle,
@@ -138,6 +139,18 @@ export async function search(
       continue;
     }
     const episode = findEpisodeByTitle(work.episodes, target.episode);
+    if (episode) {
+      return { id: work.id, title: work.title, episode };
+    }
+  }
+
+  // カッコ内の文字列のみで一致するエピソードを探す
+  // e.g. "CLANNAD番外編 「夏休みの出来事」" → "夏休みの出来事" で検索
+  for (const work of works) {
+    if (work.noEpisodes || !work.episodes) {
+      continue;
+    }
+    const episode = findEpisodeByBracketTitle(work.episodes, target.episode);
     if (episode) {
       return { id: work.id, title: work.title, episode };
     }
