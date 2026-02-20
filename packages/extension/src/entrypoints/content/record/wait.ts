@@ -1,26 +1,30 @@
+import { asyncQuerySelector } from "@/utils/async-query-selector";
 import type { RecordTiming } from "@/utils/settings";
 
 export type WaitAbortReason = "locationChange" | "disabled";
 
-export type WaitResult =
-  | { status: "completed" }
-  | { status: "aborted"; reason: WaitAbortReason };
+export type WaitResult = { status: "completed" | WaitAbortReason };
 
 const waitCompletedResult: WaitResult = { status: "completed" };
 
 function createAbortedResult(reason: unknown): WaitResult {
   if (reason === "locationChange") {
-    return { status: "aborted", reason };
+    return { status: reason };
   }
-  return { status: "aborted", reason: "disabled" };
+  return { status: "disabled" };
 }
 
-export function wait(
+export async function wait(
   recordTiming: RecordTiming,
-  videoElem: HTMLVideoElement,
+  videoSelector: string,
   onProgress?: (progress: number) => void,
   signal?: AbortSignal,
-) {
+): Promise<WaitResult> {
+  const videoElem = await asyncQuerySelector(videoSelector, document, 0);
+  if (!(videoElem instanceof HTMLVideoElement)) {
+    throw new Error("video要素の取得に失敗しました。");
+  }
+
   if (recordTiming.type === "ended") {
     return waitEnded(videoElem, onProgress, signal);
   }
@@ -46,6 +50,8 @@ function waitEnded(
       resolve(createAbortedResult(signal.reason));
       return;
     }
+
+    onProgress?.(0);
 
     let settled = false;
 
@@ -99,6 +105,8 @@ function waitContinued(
       resolve(createAbortedResult(signal.reason));
       return;
     }
+
+    onProgress?.(0);
 
     let totalTime = 0;
     let settled = false;
