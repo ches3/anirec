@@ -23,11 +23,41 @@ function isCurrentVer(ver: number): boolean {
   return ver === currentStateVer;
 }
 
+function logPageInfo(info: PageInfo): void {
+  if (info.status !== "ready") {
+    return;
+  }
+
+  console.log("ページ情報を更新しました。", {
+    workInfo: info.workInfo,
+    annictInfo: info.annictInfo,
+  });
+}
+
+function logRecordStatus(status: RecordStatus): void {
+  if (status.status === "success") {
+    console.log("Annictに記録しました。");
+    return;
+  }
+
+  if (status.status === "skipped") {
+    console.log("記録をスキップしました。", { reason: status.skipReason });
+    return;
+  }
+
+  if (status.status === "error") {
+    console.error("記録に失敗しました。", {
+      errorMessage: status.errorMessage,
+    });
+  }
+}
+
 export function setPageInfo(info: PageInfo, ver: number) {
   if (!isCurrentVer(ver)) {
     return;
   }
   pageInfo = info;
+  logPageInfo(info);
   browser.runtime
     .sendMessage<PageInfoUpdateMessage>({
       type: "PAGE_INFO_UPDATED",
@@ -41,6 +71,7 @@ export function setRecordStatus(status: RecordStatus, ver: number) {
     return;
   }
   recordStatus = status;
+  logRecordStatus(status);
   browser.runtime
     .sendMessage<RecordStatusUpdateMessage>({
       type: "RECORD_STATUS_UPDATED",

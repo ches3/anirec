@@ -48,9 +48,6 @@ export async function runRecordFlow(
     const id = result.episode?.id || result.id;
     const preWaitGate = await getRecordGate(vod, id, token);
     if (preWaitGate !== "proceed") {
-      if (preWaitGate === "duplicate") {
-        console.log("このエピソードは記録済みです。", result);
-      }
       return { status: "skipped", skipReason: preWaitGate };
     }
 
@@ -80,9 +77,6 @@ export async function runRecordFlow(
     // 記録条件再チェック
     const postWaitGate = await getRecordGate(vod, id, token);
     if (postWaitGate !== "proceed") {
-      if (postWaitGate === "duplicate") {
-        console.log("このエピソードは記録済みです。", result);
-      }
       return { status: "skipped", skipReason: postWaitGate };
     }
 
@@ -91,7 +85,6 @@ export async function runRecordFlow(
       throw toError("エピソードの記録に失敗しました。", error);
     });
 
-    console.log("エピソードを記録しました。", result);
     return { status: "success" };
   } catch (error) {
     return {

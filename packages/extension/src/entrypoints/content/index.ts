@@ -53,7 +53,6 @@ async function script(state: PageStateUpdater, navigationSignal: AbortSignal) {
         status: "error",
         errorMessage: "Annictトークンが設定されていません。",
       });
-      console.error("Annictトークンが設定されていません。");
       return;
     }
 

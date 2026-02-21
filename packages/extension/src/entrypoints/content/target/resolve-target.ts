@@ -34,8 +34,6 @@ export async function resolveTarget(
     throw new Error("タイトルの取得に失敗しました。");
   }
 
-  console.log("タイトル情報", searchParams);
-
   const result = await searchFromList(searchParams, token).catch((error) => {
     throw toError("エピソードの検索に失敗しました。", error);
   });
@@ -43,9 +41,6 @@ export async function resolveTarget(
   const workInfo: WorkInfoData = { vod, searchParams };
 
   if (!result) {
-    console.error("エピソードが見つかりませんでした。", {
-      titleList: searchParams,
-    });
     return { status: "not_found", workInfo };
   }
 
