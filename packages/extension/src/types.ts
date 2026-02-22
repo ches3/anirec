@@ -84,3 +84,10 @@ export type DeleteResultMessage = {
 export type GetPendingDeletionsMessage = {
   type: "GET_PENDING_DELETIONS";
 };
+
+export type ManualRecordMessage = {
+  type: "MANUAL_RECORD";
+  id: string;
+};
+
+export type ManualRecordResponse = { ok: true } | { ok: false; error: string };

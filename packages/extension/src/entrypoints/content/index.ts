@@ -7,6 +7,7 @@ import {
   type PageStateUpdater,
 } from "./page-state";
 import { createAbortBinding, waitUntilAutoRecordEnabled } from "./record/abort";
+import { handleManualRecord } from "./record/manual-record";
 import { runRecordFlow } from "./record/run-record";
 import { getRecordErrorMessage } from "./record-error";
 import { resolveTarget } from "./target/resolve-target";
@@ -21,13 +22,19 @@ export default defineContentScript({
     "*://www.amazon.co.jp/gp/video/*",
   ],
   main(ctx) {
+    let currentScriptAbort: AbortController | undefined;
+
     browser.runtime.onMessage.addListener((message, _sender, sendResponse) => {
       if (message.type === "GET_PAGE_STATE") {
         sendResponse(getPageStateResponse());
+        return;
+      }
+      if (message.type === "MANUAL_RECORD") {
+        currentScriptAbort?.abort();
+        handleManualRecord(message.id).then(sendResponse);
+        return true;
       }
     });
-
-    let currentScriptAbort: AbortController | undefined;
 
     const triggerScript = () => {
       currentScriptAbort?.abort();

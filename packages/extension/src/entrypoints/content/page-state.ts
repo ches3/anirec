@@ -92,6 +92,10 @@ export function createStateUpdater(ver: number): PageStateUpdater {
   };
 }
 
+export function getCurrentStateVer(): number {
+  return currentStateVer;
+}
+
 export function getPageStateResponse(): PageStateData {
   return {
     pageInfo,

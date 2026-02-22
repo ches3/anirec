@@ -17,6 +17,7 @@ export type PageStateResult = {
   pageInfo: PageInfo;
   recordStatus: RecordStatus;
   vod: Vod | undefined;
+  tabId: number | null;
 };
 
 export function usePageState(): PageStateResult {
@@ -93,5 +94,5 @@ export function usePageState(): PageStateResult {
     };
   }, [tabId]);
 
-  return { error, pageInfo, recordStatus, vod };
+  return { error, pageInfo, recordStatus, vod, tabId };
 }

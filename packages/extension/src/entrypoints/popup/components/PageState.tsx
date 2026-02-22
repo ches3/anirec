@@ -1,11 +1,14 @@
-import { Info } from "lucide-react";
+import { Check, Info, Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useManualRecord } from "../hooks/useManualRecord";
 import { usePageState } from "../hooks/usePageState";
 import { RecordStatusBadge } from "./RecordStatusBadge";
 
 export function PageState() {
-  const { error, pageInfo, recordStatus, vod } = usePageState();
+  const { error, pageInfo, recordStatus, vod, tabId } = usePageState();
+  const { manualRecord, isRecording } = useManualRecord(tabId);
 
   if (error) {
     return (
@@ -37,6 +40,13 @@ export function PageState() {
   }
 
   const annictInfo = pageInfo.status === "ready" ? pageInfo.annictInfo : null;
+  const annictId = annictInfo?.episode?.id ?? annictInfo?.id;
+  const canManualRecord =
+    annictId !== undefined &&
+    recordStatus.status !== "processing" &&
+    recordStatus.status !== "success" &&
+    recordStatus.status !== "error" &&
+    !isRecording;
 
   const episodeTitle = [
     annictInfo?.episode?.numberText || annictInfo?.episode?.number,
@@ -69,6 +79,29 @@ export function PageState() {
         <Label className="text-xs text-muted-foreground mb-2">記録状態</Label>
         <RecordStatusBadge status={recordStatus} className="mt-1" />
       </div>
+
+      {annictId && (
+        <Button
+          size="sm"
+          className="w-full"
+          disabled={!canManualRecord}
+          onClick={() => manualRecord(annictId)}
+        >
+          {isRecording ? (
+            <>
+              <Loader2 className="animate-spin size-5 mr-1.5" />
+              記録中...
+            </>
+          ) : recordStatus.status === "success" ? (
+            <>
+              <Check className="size-5 mr-1.5" />
+              記録済み
+            </>
+          ) : (
+            "今すぐ記録"
+          )}
+        </Button>
+      )}
     </div>
   );
 }
