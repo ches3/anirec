@@ -1,8 +1,8 @@
 import type { SearchResult } from "@anirec/annict";
 import type { WorkInfoData } from "@/types";
-import { toError } from "@/utils/error";
 import { searchFromList } from "@/utils/search";
 import { identifyVod } from "@/utils/vod";
+import { createRecordError } from "../record-error";
 import { extractSearchParams } from "./extract-search-params";
 
 export type ResolveTargetResult =
@@ -27,15 +27,11 @@ export async function resolveTarget(
     url,
     queryRoot: document,
   }).catch((error) => {
-    throw toError("タイトルの取得に失敗しました。", error);
+    throw createRecordError("search_params_extract_failed", error);
   });
 
-  if (!searchParams) {
-    throw new Error("タイトルの取得に失敗しました。");
-  }
-
   const result = await searchFromList(searchParams, token).catch((error) => {
-    throw toError("エピソードの検索に失敗しました。", error);
+    throw createRecordError("annict_search_failed", error);
   });
 
   const workInfo: WorkInfoData = { vod, searchParams };

@@ -1,10 +1,10 @@
 import type { SearchResult } from "@anirec/annict";
 import { isRecorded, record } from "@anirec/annict";
 import type { RecordResult, SkipReason, Vod } from "@/types";
-import { toError, toErrorMessage } from "@/utils/error";
 import { getAutoRecordEnabled, getRecordSettings } from "@/utils/settings";
 import { getVideoSelector, isVodEnabled } from "@/utils/vod";
 import type { PageStateUpdater } from "../page-state";
+import { createRecordError, getRecordErrorMessage } from "../record-error";
 import { wait } from "./wait";
 
 type RecordGate = "proceed" | Exclude<SkipReason, "not_found">;
@@ -60,7 +60,9 @@ export async function runRecordFlow(
         state.setRecordStatus({ status: "waiting", progress });
       },
       signal,
-    );
+    ).catch((error) => {
+      throw createRecordError("wait_failed", error);
+    });
     const waitState = waitResult.status;
     if (waitState === "disabled") {
       return {
@@ -82,14 +84,15 @@ export async function runRecordFlow(
 
     // 記録
     await record(id, token).catch((error) => {
-      throw toError("エピソードの記録に失敗しました。", error);
+      throw createRecordError("annict_record_failed", error);
     });
 
     return { status: "success" };
   } catch (error) {
+    console.error(error);
     return {
       status: "error",
-      errorMessage: toErrorMessage(error),
+      errorMessage: getRecordErrorMessage(error),
     };
   }
 }

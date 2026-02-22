@@ -1,4 +1,3 @@
-import { toErrorMessage } from "@/utils/error";
 import { getToken } from "@/utils/settings";
 import { identifyVod } from "@/utils/vod";
 import {
@@ -9,6 +8,7 @@ import {
 } from "./page-state";
 import { createAbortBinding, waitUntilAutoRecordEnabled } from "./record/abort";
 import { runRecordFlow } from "./record/run-record";
+import { getRecordErrorMessage } from "./record-error";
 import { resolveTarget } from "./target/resolve-target";
 import { watchNavigation } from "./watch-navigation";
 
@@ -111,10 +111,8 @@ async function script(state: PageStateUpdater, navigationSignal: AbortSignal) {
   } catch (error) {
     state.setRecordStatus({
       status: "error",
-      errorMessage: toErrorMessage(error),
+      errorMessage: getRecordErrorMessage(error),
     });
-    if (error instanceof Error) {
-      console.error(error);
-    }
+    console.error(error);
   }
 }
