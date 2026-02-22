@@ -12,7 +12,7 @@ type PageSource = {
 export const extractSearchParams = async (
   vod: Vod,
   pageSource: PageSource,
-): Promise<SearchParam[] | undefined> => {
+): Promise<SearchParam[]> => {
   switch (vod) {
     case "dmm":
       return await dmm(pageSource.url);
@@ -27,14 +27,14 @@ export const extractSearchParams = async (
   }
 };
 
-const dmm = async (url: URL): Promise<SearchParam[] | undefined> => {
+const dmm = async (url: URL): Promise<SearchParam[]> => {
   const seasonId = url.searchParams.get("season");
   if (!seasonId) {
-    return;
+    throw new Error("season パラメータがありません。");
   }
   const contentId = url.searchParams.get("content");
   if (!contentId) {
-    return;
+    throw new Error("content パラメータがありません。");
   }
 
   const season = await fetchDMMSeason(seasonId);
@@ -75,11 +75,11 @@ const dmm = async (url: URL): Promise<SearchParam[] | undefined> => {
   ];
 };
 
-const unext = async (url: URL): Promise<SearchParam[] | undefined> => {
+const unext = async (url: URL): Promise<SearchParam[]> => {
   const pathname = url.pathname;
   const pathnameMatch = pathname.match(/^\/play\/([^/]+)\/([^/]+)/);
   if (!pathnameMatch) {
-    return;
+    throw new Error("再生ページの URL 形式が不正です。");
   }
   const workId = pathnameMatch[1];
   const episodeId = pathnameMatch[2];
@@ -105,9 +105,7 @@ const unext = async (url: URL): Promise<SearchParam[] | undefined> => {
   ];
 };
 
-const abema = async (
-  queryRoot: ParentNode,
-): Promise<SearchParam[] | undefined> => {
+const abema = async (queryRoot: ParentNode): Promise<SearchParam[]> => {
   const workTitle = (
     await asyncQuerySelector(".com-video-EpisodeTitle__series-info", queryRoot)
   )?.textContent;
@@ -119,7 +117,7 @@ const abema = async (
       )
     )?.textContent || "";
   if (!workTitle) {
-    return;
+    throw new Error("作品タイトルが取得できませんでした。");
   }
 
   // 複数シーズンある作品の場合
@@ -147,16 +145,14 @@ const abema = async (
   ];
 };
 
-const danime = async (
-  queryRoot: ParentNode,
-): Promise<SearchParam[] | undefined> => {
+const danime = async (queryRoot: ParentNode): Promise<SearchParam[]> => {
   const workElem = await asyncQuerySelector(".backInfoTxt1", queryRoot);
   if (!workElem) {
-    return;
+    throw new Error("作品タイトル要素が見つかりませんでした。");
   }
   const workTitle = await waitForTextContent(workElem);
   if (!workTitle) {
-    return;
+    throw new Error("作品タイトルの取得に失敗しました。");
   }
   const episodeNumber =
     (await asyncQuerySelector(".backInfoTxt2", queryRoot))?.textContent || "";
@@ -166,19 +162,17 @@ const danime = async (
   return [{ workTitle, episodeNumber, episodeTitle }];
 };
 
-const prime = async (
-  queryRoot: ParentNode,
-): Promise<SearchParam[] | undefined> => {
+const prime = async (queryRoot: ParentNode): Promise<SearchParam[]> => {
   const titleElem = await asyncQuerySelector(
     "#dv-web-player h1.atvwebplayersdk-title-text",
     queryRoot,
   );
   if (!titleElem) {
-    return;
+    throw new Error("作品タイトル要素が見つかりませんでした。");
   }
   const workTitle = await waitForTextContent(titleElem);
   if (!workTitle) {
-    return;
+    throw new Error("作品タイトルの取得に失敗しました。");
   }
 
   const subtitleElem = await asyncQuerySelector(

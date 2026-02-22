@@ -13,14 +13,9 @@ export type SkipReason =
   | "duplicate" // 既に記録済み
   | "not_found"; // エピソードが見つからない
 
-// 録画状態の情報
-export type RecordStatus =
+export type RecordResult =
   | {
-      status: "loading" | "processing" | "success";
-    }
-  | {
-      status: "waiting";
-      progress: number; // 0.0〜1.0
+      status: "success";
     }
   | {
       status: "error";
@@ -30,6 +25,16 @@ export type RecordStatus =
       status: "skipped";
       skipReason: SkipReason;
     };
+
+export type RecordStatus =
+  | {
+      status: "loading" | "processing";
+    }
+  | {
+      status: "waiting";
+      progress: number; // 0.0〜1.0
+    }
+  | RecordResult;
 
 export type PageStateMessage = {
   type: "GET_PAGE_STATE";
