@@ -10,10 +10,10 @@ type RecordErrorCode = (typeof RECORD_ERROR_CODES)[number];
 
 const RECORD_ERROR_MESSAGE_BY_CODE: Record<RecordErrorCode, string> = {
   search_params_extract_failed: "作品情報の抽出に失敗しました。",
-  annict_search_failed: "Annictでの作品検索に失敗しました。",
-  wait_failed: "記録タイミングの待機に失敗しました。",
+  annict_search_failed: "作品検索に失敗しました。",
+  wait_failed: "待機中にエラーが発生しました。",
   annict_record_failed: "Annictへの記録に失敗しました。",
-  unexpected_error: "記録に失敗しました。",
+  unexpected_error: "予期しないエラーが発生しました。",
 };
 
 export class RecordError extends Error {
