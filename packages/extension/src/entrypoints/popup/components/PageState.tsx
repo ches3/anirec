@@ -1,11 +1,18 @@
-import { Info } from "lucide-react";
+import { Check, Info, Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useManualRecord } from "../hooks/useManualRecord";
+import { useManualSkip } from "../hooks/useManualSkip";
 import { usePageState } from "../hooks/usePageState";
+import { useRetry } from "../hooks/useRetry";
 import { RecordStatusBadge } from "./RecordStatusBadge";
 
 export function PageState() {
-  const { error, pageInfo, recordStatus, vod } = usePageState();
+  const { error, pageInfo, recordStatus, vod, tabId } = usePageState();
+  const { manualRecord, isRecording } = useManualRecord(tabId);
+  const { manualSkip } = useManualSkip(tabId);
+  const { retry } = useRetry(tabId);
 
   if (error) {
     return (
@@ -37,6 +44,14 @@ export function PageState() {
   }
 
   const annictInfo = pageInfo.status === "ready" ? pageInfo.annictInfo : null;
+  const annictId = annictInfo?.episode?.id ?? annictInfo?.id;
+  const canManualRecord =
+    annictId !== undefined &&
+    recordStatus.status !== "processing" &&
+    recordStatus.status !== "success" &&
+    recordStatus.status !== "error" &&
+    !isRecording;
+  const canManualSkip = recordStatus.status === "waiting" && !isRecording;
 
   const episodeTitle = [
     annictInfo?.episode?.numberText || annictInfo?.episode?.number,
@@ -67,8 +82,49 @@ export function PageState() {
 
       <div>
         <Label className="text-xs text-muted-foreground mb-2">記録状態</Label>
-        <RecordStatusBadge status={recordStatus} className="mt-1" />
+        <RecordStatusBadge
+          status={recordStatus}
+          onRetry={recordStatus.status === "error" ? retry : undefined}
+          className="mt-1"
+        />
       </div>
+
+      {annictId && (
+        <div className="flex gap-2">
+          <Button
+            size="sm"
+            className="w-full text-xs"
+            disabled={!canManualRecord}
+            onClick={() => manualRecord(annictId)}
+          >
+            {isRecording ? (
+              <>
+                <Loader2 className="animate-spin size-5 mr-1.5" />
+                記録中...
+              </>
+            ) : recordStatus.status === "success" ? (
+              <>
+                <Check className="size-5 mr-1.5" />
+                記録済み
+              </>
+            ) : (
+              "今すぐ記録"
+            )}
+          </Button>
+          <Button
+            size="sm"
+            variant="outline"
+            className="w-full text-xs"
+            disabled={!canManualSkip}
+            onClick={() => {
+              if (!canManualSkip) return;
+              void manualSkip();
+            }}
+          >
+            記録をスキップ
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

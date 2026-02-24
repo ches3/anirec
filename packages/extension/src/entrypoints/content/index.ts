@@ -3,10 +3,13 @@ import { identifyVod } from "@/utils/vod";
 import {
   bumpStateVer,
   createStateUpdater,
+  getCurrentStateVer,
   getPageStateResponse,
   type PageStateUpdater,
 } from "./page-state";
 import { createAbortBinding, waitUntilAutoRecordEnabled } from "./record/abort";
+import { handleManualRecord } from "./record/manual-record";
+import { handleManualSkip } from "./record/manual-skip";
 import { runRecordFlow } from "./record/run-record";
 import { getRecordErrorMessage } from "./record-error";
 import { resolveTarget } from "./target/resolve-target";
@@ -21,12 +24,6 @@ export default defineContentScript({
     "*://www.amazon.co.jp/gp/video/*",
   ],
   main(ctx) {
-    browser.runtime.onMessage.addListener((message, _sender, sendResponse) => {
-      if (message.type === "GET_PAGE_STATE") {
-        sendResponse(getPageStateResponse());
-      }
-    });
-
     let currentScriptAbort: AbortController | undefined;
 
     const triggerScript = () => {
@@ -37,6 +34,30 @@ export default defineContentScript({
       state.setRecordStatus({ status: "loading" });
       void script(state, currentScriptAbort.signal);
     };
+
+    browser.runtime.onMessage.addListener((message, _sender, sendResponse) => {
+      if (message.type === "GET_PAGE_STATE") {
+        sendResponse(getPageStateResponse());
+        return;
+      }
+      if (message.type === "MANUAL_RECORD") {
+        currentScriptAbort?.abort();
+        const state = createStateUpdater(getCurrentStateVer());
+        handleManualRecord(message.id, state).then(sendResponse);
+        return true;
+      }
+      if (message.type === "MANUAL_SKIP") {
+        currentScriptAbort?.abort();
+        handleManualSkip();
+        sendResponse();
+        return;
+      }
+      if (message.type === "RETRY") {
+        triggerScript();
+        sendResponse();
+        return;
+      }
+    });
 
     const vod = identifyVod(new URL(location.href));
     watchNavigation(ctx, triggerScript, vod);

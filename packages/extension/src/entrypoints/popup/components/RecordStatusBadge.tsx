@@ -3,8 +3,10 @@ import {
   Clock,
   Loader2,
   MinusCircle,
+  RefreshCw,
   XCircle,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import type { RecordStatus, SkipReason } from "@/types";
 import { cn } from "@/utils/cn";
@@ -47,9 +49,11 @@ const statusConfigs: Record<RecordStatus["status"], StatusConfig> = {
 
 export function RecordStatusBadge({
   status,
+  onRetry,
   className,
 }: {
   status: RecordStatus;
+  onRetry?: () => void;
   className?: string;
 }) {
   const config = statusConfigs[status.status];
@@ -95,6 +99,17 @@ export function RecordStatusBadge({
           </p>
         )}
       </div>
+      {status.status === "error" && onRetry && (
+        <Button
+          variant="ghost"
+          size="sm"
+          className="shrink-0 text-destructive hover:text-destructive"
+          onClick={onRetry}
+          title="リトライ"
+        >
+          <RefreshCw className="w-4 h-4" />
+        </Button>
+      )}
     </div>
   );
 }
@@ -109,5 +124,7 @@ function getSkipReasonText(reason: SkipReason): string {
       return "既に記録済みです";
     case "not_found":
       return "エピソードが見つかりませんでした";
+    case "manual_skip":
+      return "手動スキップしました";
   }
 }
