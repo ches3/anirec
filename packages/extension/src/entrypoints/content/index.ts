@@ -8,6 +8,7 @@ import {
 } from "./page-state";
 import { createAbortBinding, waitUntilAutoRecordEnabled } from "./record/abort";
 import { handleManualRecord } from "./record/manual-record";
+import { handleManualSkip } from "./record/manual-skip";
 import { runRecordFlow } from "./record/run-record";
 import { getRecordErrorMessage } from "./record-error";
 import { resolveTarget } from "./target/resolve-target";
@@ -33,6 +34,12 @@ export default defineContentScript({
         currentScriptAbort?.abort();
         handleManualRecord(message.id).then(sendResponse);
         return true;
+      }
+      if (message.type === "MANUAL_SKIP") {
+        currentScriptAbort?.abort();
+        handleManualSkip();
+        sendResponse();
+        return;
       }
     });
 

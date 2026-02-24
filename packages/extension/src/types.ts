@@ -11,7 +11,8 @@ export type SkipReason =
   | "disabled" // 自動記録が無効化されている
   | "service_disabled" // サービスが無効化されている
   | "duplicate" // 既に記録済み
-  | "not_found"; // エピソードが見つからない
+  | "not_found" // エピソードが見つからない
+  | "manual_skip"; // ユーザーが手動でスキップ
 
 export type RecordResult =
   | {
@@ -91,3 +92,7 @@ export type ManualRecordMessage = {
 };
 
 export type ManualRecordResponse = { ok: true } | { ok: false; error: string };
+
+export type ManualSkipMessage = {
+  type: "MANUAL_SKIP";
+};

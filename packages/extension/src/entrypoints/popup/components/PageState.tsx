@@ -3,12 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useManualRecord } from "../hooks/useManualRecord";
+import { useManualSkip } from "../hooks/useManualSkip";
 import { usePageState } from "../hooks/usePageState";
 import { RecordStatusBadge } from "./RecordStatusBadge";
 
 export function PageState() {
   const { error, pageInfo, recordStatus, vod, tabId } = usePageState();
   const { manualRecord, isRecording } = useManualRecord(tabId);
+  const { manualSkip } = useManualSkip(tabId);
 
   if (error) {
     return (
@@ -47,6 +49,7 @@ export function PageState() {
     recordStatus.status !== "success" &&
     recordStatus.status !== "error" &&
     !isRecording;
+  const canManualSkip = recordStatus.status === "waiting" && !isRecording;
 
   const episodeTitle = [
     annictInfo?.episode?.numberText || annictInfo?.episode?.number,
@@ -81,26 +84,40 @@ export function PageState() {
       </div>
 
       {annictId && (
-        <Button
-          size="sm"
-          className="w-full"
-          disabled={!canManualRecord}
-          onClick={() => manualRecord(annictId)}
-        >
-          {isRecording ? (
-            <>
-              <Loader2 className="animate-spin size-5 mr-1.5" />
-              記録中...
-            </>
-          ) : recordStatus.status === "success" ? (
-            <>
-              <Check className="size-5 mr-1.5" />
-              記録済み
-            </>
-          ) : (
-            "今すぐ記録"
-          )}
-        </Button>
+        <div className="flex gap-2">
+          <Button
+            size="sm"
+            className="w-full text-xs"
+            disabled={!canManualRecord}
+            onClick={() => manualRecord(annictId)}
+          >
+            {isRecording ? (
+              <>
+                <Loader2 className="animate-spin size-5 mr-1.5" />
+                記録中...
+              </>
+            ) : recordStatus.status === "success" ? (
+              <>
+                <Check className="size-5 mr-1.5" />
+                記録済み
+              </>
+            ) : (
+              "今すぐ記録"
+            )}
+          </Button>
+          <Button
+            size="sm"
+            variant="outline"
+            className="w-full text-xs"
+            disabled={!canManualSkip}
+            onClick={() => {
+              if (!canManualSkip) return;
+              void manualSkip();
+            }}
+          >
+            記録をスキップ
+          </Button>
+        </div>
       )}
     </div>
   );

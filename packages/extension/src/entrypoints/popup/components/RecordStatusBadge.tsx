@@ -109,5 +109,7 @@ function getSkipReasonText(reason: SkipReason): string {
       return "既に記録済みです";
     case "not_found":
       return "エピソードが見つかりませんでした";
+    case "manual_skip":
+      return "手動スキップしました";
   }
 }
