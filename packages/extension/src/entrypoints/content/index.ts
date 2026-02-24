@@ -3,6 +3,7 @@ import { identifyVod } from "@/utils/vod";
 import {
   bumpStateVer,
   createStateUpdater,
+  getCurrentStateVer,
   getPageStateResponse,
   type PageStateUpdater,
 } from "./page-state";
@@ -41,7 +42,8 @@ export default defineContentScript({
       }
       if (message.type === "MANUAL_RECORD") {
         currentScriptAbort?.abort();
-        handleManualRecord(message.id).then(sendResponse);
+        const state = createStateUpdater(getCurrentStateVer());
+        handleManualRecord(message.id, state).then(sendResponse);
         return true;
       }
       if (message.type === "MANUAL_SKIP") {
