@@ -25,6 +25,15 @@ export default defineContentScript({
   main(ctx) {
     let currentScriptAbort: AbortController | undefined;
 
+    const triggerScript = () => {
+      currentScriptAbort?.abort();
+      currentScriptAbort = new AbortController();
+      const state = createStateUpdater(bumpStateVer());
+      state.setPageInfo({ status: "idle" });
+      state.setRecordStatus({ status: "loading" });
+      void script(state, currentScriptAbort.signal);
+    };
+
     browser.runtime.onMessage.addListener((message, _sender, sendResponse) => {
       if (message.type === "GET_PAGE_STATE") {
         sendResponse(getPageStateResponse());
@@ -41,16 +50,12 @@ export default defineContentScript({
         sendResponse();
         return;
       }
+      if (message.type === "RETRY") {
+        triggerScript();
+        sendResponse();
+        return;
+      }
     });
-
-    const triggerScript = () => {
-      currentScriptAbort?.abort();
-      currentScriptAbort = new AbortController();
-      const state = createStateUpdater(bumpStateVer());
-      state.setPageInfo({ status: "idle" });
-      state.setRecordStatus({ status: "loading" });
-      void script(state, currentScriptAbort.signal);
-    };
 
     const vod = identifyVod(new URL(location.href));
     watchNavigation(ctx, triggerScript, vod);

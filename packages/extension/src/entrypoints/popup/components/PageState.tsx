@@ -5,12 +5,14 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useManualRecord } from "../hooks/useManualRecord";
 import { useManualSkip } from "../hooks/useManualSkip";
 import { usePageState } from "../hooks/usePageState";
+import { useRetry } from "../hooks/useRetry";
 import { RecordStatusBadge } from "./RecordStatusBadge";
 
 export function PageState() {
   const { error, pageInfo, recordStatus, vod, tabId } = usePageState();
   const { manualRecord, isRecording } = useManualRecord(tabId);
   const { manualSkip } = useManualSkip(tabId);
+  const { retry } = useRetry(tabId);
 
   if (error) {
     return (
@@ -80,7 +82,11 @@ export function PageState() {
 
       <div>
         <Label className="text-xs text-muted-foreground mb-2">記録状態</Label>
-        <RecordStatusBadge status={recordStatus} className="mt-1" />
+        <RecordStatusBadge
+          status={recordStatus}
+          onRetry={recordStatus.status === "error" ? retry : undefined}
+          className="mt-1"
+        />
       </div>
 
       {annictId && (

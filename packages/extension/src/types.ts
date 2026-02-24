@@ -96,3 +96,7 @@ export type ManualRecordResponse = { ok: true } | { ok: false; error: string };
 export type ManualSkipMessage = {
   type: "MANUAL_SKIP";
 };
+
+export type RetryMessage = {
+  type: "RETRY";
+};
