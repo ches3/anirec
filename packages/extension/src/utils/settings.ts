@@ -64,6 +64,7 @@ const defaultRecordSettings: RecordSettings = {
     abema: true,
     danime: true,
     prime: true,
+    netflix: true,
   },
   preventDuplicate: {
     enabled: true,

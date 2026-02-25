@@ -2,7 +2,12 @@ import type { SearchParam } from "@anirec/annict";
 import type { Vod } from "@/types";
 import { asyncQuerySelector } from "@/utils/async-query-selector";
 import { waitForTextContent } from "@/utils/dom";
-import { fetchDMMContent, fetchDMMSeason, fetchUnext } from "@/utils/fetch";
+import {
+  fetchDMMContent,
+  fetchDMMSeason,
+  fetchNetflix,
+  fetchUnext,
+} from "@/utils/fetch";
 
 type PageSource = {
   url: URL;
@@ -24,6 +29,8 @@ export const extractSearchParams = async (
       return await danime(pageSource.queryRoot);
     case "prime":
       return await prime(pageSource.queryRoot);
+    case "netflix":
+      return await netflix(pageSource.url);
   }
 };
 
@@ -197,4 +204,54 @@ const prime = async (queryRoot: ParentNode): Promise<SearchParam[]> => {
   }
 
   return [{ workTitle, episodeTitle: subtitleText }];
+};
+
+const netflix = async (url: URL): Promise<SearchParam[]> => {
+  const videoIdStr = url.pathname.match(/^\/watch\/(\d+)/)?.[1];
+  if (!videoIdStr) {
+    throw new Error("Netflix の動画 ID を取得できませんでした。");
+  }
+  const videoId = Number(videoIdStr);
+
+  const data = await fetchNetflix(videoId);
+
+  if (data.__typename === "Movie") {
+    return [
+      {
+        workTitle: data.title,
+        episodeTitle: "",
+      },
+    ];
+  }
+
+  const params: SearchParam[] = [
+    {
+      workTitle: data.parentSeason.title,
+      episodeNumber: String(data.number),
+      episodeTitle: data.title,
+    },
+    {
+      workTitle: data.parentSeason.title,
+      episodeTitle: data.title,
+    },
+  ];
+
+  // titleGroupMemberships が非空の場合、コレクション名から " コレクション" を除去して show タイトルを導出
+  const collectionTitle = data.parentShow.titleGroupMemberships[0]?.title;
+  if (collectionTitle) {
+    const showTitle = collectionTitle.replace(/ コレクション$/, "");
+    params.unshift(
+      {
+        workTitle: showTitle,
+        episodeNumber: String(data.number),
+        episodeTitle: data.title,
+      },
+      {
+        workTitle: showTitle,
+        episodeTitle: data.title,
+      },
+    );
+  }
+
+  return params;
 };

@@ -77,6 +77,12 @@ export function ServiceToggleOption({
           enabled={enabled.prime}
           onToggle={onToggle}
         />
+        <ServiceToggleOptionItem
+          id="netflix"
+          label="Netflix"
+          enabled={enabled.netflix}
+          onToggle={onToggle}
+        />
       </div>
     </div>
   );

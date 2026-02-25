@@ -22,6 +22,7 @@ export default defineContentScript({
     "*://abema.tv/*",
     "*://animestore.docomo.ne.jp/*",
     "*://www.amazon.co.jp/gp/video/*",
+    "*://www.netflix.com/*",
   ],
   main(ctx) {
     let currentScriptAbort: AbortController | undefined;
