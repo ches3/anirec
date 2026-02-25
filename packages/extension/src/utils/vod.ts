@@ -28,6 +28,9 @@ export const identifyVod = (url: string | URL): Vod | undefined => {
   ) {
     return "prime";
   }
+  if (hostname === "www.netflix.com" && /\/watch\//.test(pathname)) {
+    return "netflix";
+  }
   return;
 };
 
