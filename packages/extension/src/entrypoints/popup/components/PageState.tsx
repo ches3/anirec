@@ -9,7 +9,7 @@ import { useRetry } from "../hooks/useRetry";
 import { RecordStatusBadge } from "./RecordStatusBadge";
 
 export function PageState() {
-  const { error, pageInfo, recordStatus, vod, tabId } = usePageState();
+  const { error, pageInfo, recordStatus, tabId } = usePageState();
   const { manualRecord, isRecording } = useManualRecord(tabId);
   const { manualSkip } = useManualSkip(tabId);
   const { retry } = useRetry(tabId);
@@ -25,7 +25,7 @@ export function PageState() {
     );
   }
 
-  if (pageInfo.status !== "loading" && !vod) {
+  if (pageInfo.status === "no_vod") {
     return (
       <div className="mt-8 flex justify-center flex-1">
         <div className="text-center space-y-3">
@@ -43,7 +43,7 @@ export function PageState() {
     );
   }
 
-  const annictInfo = pageInfo.status === "ready" ? pageInfo.annictInfo : null;
+  const annictInfo = pageInfo.status === "found" ? pageInfo.annictInfo : null;
   const annictId = annictInfo?.episode?.id ?? annictInfo?.id;
   const canManualRecord =
     annictId !== undefined &&

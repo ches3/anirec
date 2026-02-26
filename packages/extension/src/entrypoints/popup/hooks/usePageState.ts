@@ -4,19 +4,17 @@ import type {
   PageInfoUpdateMessage,
   RecordStatus,
   RecordStatusUpdateMessage,
-  Vod,
 } from "@/types";
 import { identifyVod } from "@/utils/vod";
 import { fetchPageState, getCurrentTabInfo } from "../lib/page-state";
 
-const idlePageInfo: PageInfo = { status: "idle" };
+const noVodPageInfo: PageInfo = { status: "no_vod" };
 const idleRecordStatus: RecordStatus = { status: "loading" };
 
 export type PageStateResult = {
   error: string | null;
   pageInfo: PageInfo;
   recordStatus: RecordStatus;
-  vod: Vod | undefined;
   tabId: number | null;
 };
 
@@ -26,7 +24,6 @@ export function usePageState(): PageStateResult {
   const [pageInfo, setPageInfo] = useState<PageInfo>({ status: "loading" });
   const [recordStatus, setRecordStatus] =
     useState<RecordStatus>(idleRecordStatus);
-  const [vod, setVod] = useState<Vod | undefined>(undefined);
 
   // タブ情報取得 + 初期状態取得
   useEffect(() => {
@@ -34,19 +31,15 @@ export function usePageState(): PageStateResult {
       try {
         const { tabId, tabUrl } = await getCurrentTabInfo();
         setTabId(tabId);
-        const currentVod = tabUrl ? identifyVod(tabUrl) : undefined;
-
-        setVod(currentVod);
-
-        if (!currentVod) {
-          setPageInfo(idlePageInfo);
+        const vod = tabUrl ? identifyVod(tabUrl) : undefined;
+        if (!vod) {
+          setPageInfo(noVodPageInfo);
           setRecordStatus(idleRecordStatus);
           setError(null);
           return;
         }
 
         const pageState = await fetchPageState(tabId);
-
         setPageInfo(pageState.pageInfo);
         setRecordStatus(pageState.recordStatus);
         setError(null);
@@ -54,7 +47,7 @@ export function usePageState(): PageStateResult {
         setError(
           err instanceof Error ? err.message : "作品情報の取得に失敗しました",
         );
-        setPageInfo(idlePageInfo);
+        setPageInfo(noVodPageInfo);
         setRecordStatus(idleRecordStatus);
       }
     })();
@@ -77,11 +70,6 @@ export function usePageState(): PageStateResult {
         setError(null);
       }
       if (message.type === "PAGE_INFO_UPDATED") {
-        if (message.pageInfo.status === "ready") {
-          setVod(message.pageInfo.workInfo.vod);
-        } else if (sender.tab?.url) {
-          setVod(identifyVod(sender.tab.url));
-        }
         setError(null);
         setPageInfo(message.pageInfo);
       }
@@ -94,5 +82,5 @@ export function usePageState(): PageStateResult {
     };
   }, [tabId]);
 
-  return { error, pageInfo, recordStatus, vod, tabId };
+  return { error, pageInfo, recordStatus, tabId };
 }

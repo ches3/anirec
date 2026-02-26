@@ -7,7 +7,7 @@ import type {
 } from "@/types";
 
 let pageInfo: PageInfo = {
-  status: "idle",
+  status: "no_vod",
 };
 let recordStatus: RecordStatus = {
   status: "loading",
@@ -24,14 +24,9 @@ function isCurrentVer(ver: number): boolean {
 }
 
 function logPageInfo(info: PageInfo): void {
-  if (info.status !== "ready") {
-    return;
+  if (info.status === "found" || info.status === "not_found") {
+    console.log("ページ情報", info);
   }
-
-  console.log("ページ情報を更新しました。", {
-    workInfo: info.workInfo,
-    annictInfo: info.annictInfo,
-  });
 }
 
 function logRecordStatus(status: RecordStatus): void {

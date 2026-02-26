@@ -1,12 +1,10 @@
 import type { SearchResult } from "@anirec/annict";
-import type { WorkInfoData } from "@/types";
+import type { Vod, WorkInfoData } from "@/types";
 import { searchFromList } from "@/utils/search";
-import { identifyVod } from "@/utils/vod";
 import { createRecordError } from "../record-error";
 import { extractSearchParams } from "./extract-search-params";
 
 export type ResolveTargetResult =
-  | { status: "no_vod" }
   | { status: "not_found"; workInfo: WorkInfoData }
   | {
       status: "found";
@@ -16,13 +14,9 @@ export type ResolveTargetResult =
 
 export async function resolveTarget(
   token: string,
+  vod: Vod,
+  url: URL,
 ): Promise<ResolveTargetResult> {
-  const url = new URL(location.href);
-  const vod = identifyVod(url);
-  if (!vod) {
-    return { status: "no_vod" };
-  }
-
   const searchParams = await extractSearchParams(vod, {
     url,
     queryRoot: document,
