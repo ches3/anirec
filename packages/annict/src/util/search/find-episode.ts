@@ -1,4 +1,5 @@
 import type { Episode, ExtractedEpisode } from "../../types";
+import { parseNumber } from "../extract/number";
 import { isSameTitle } from "../normalize";
 
 // strict → weak の順で検索し、weak は1件のみ一致した場合に返す
@@ -44,11 +45,15 @@ export function findEpisodeByNumber(
   episodes: Episode[],
   target: ExtractedEpisode,
 ): Episode | undefined {
+  const targetNumber = target.number;
+  if (targetNumber === undefined) {
+    return undefined;
+  }
+
   return episodes.find(
     (episode) =>
-      episode.number !== undefined &&
-      target.number !== undefined &&
-      episode.number === target.number,
+      (episode.number ?? parseNumber(episode.numberText ?? "")) ===
+      targetNumber,
   );
 }
 

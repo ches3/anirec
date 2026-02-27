@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "createdAt": "2026-02-27T02:26:03.902Z"
+  },
+  "input": {
+    "params": {
+      "title": "さよなら絶望先生 第一話 さよなら絶望先生/やっぱり学校といえば温泉よね"
+    },
+    "annictUrl": "https://annict.com/works/809/episodes/8491"
+  },
+  "expected": {
+    "id": "V29yay04MDk=",
+    "title": "さよなら絶望先生",
+    "episode": {
+      "id": "RXBpc29kZS04NDkx",
+      "title": "さよなら絶望先生",
+      "numberText": "#1"
+    }
+  },
+  "variants": [
+    "さよなら絶望先生"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay0yNzMw",
+      "title": "懺・さよなら絶望先生 番外地",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS02MzUxMA==",
+          "title": "デモの意図／流行り短し走れよ乙女／散る散る･満ちる",
+          "numberText": "上"
+        },
+        {
+          "id": "RXBpc29kZS02MzUxMQ==",
+          "title": "ウィルス将軍と三人兄弟の医者／神さんが流されてきた／言葉のある世界",
+          "numberText": "下"
+        }
+      ],
+      "seriesList": [
+        "さよなら絶望先生"
+      ]
+    },
+    {
+      "id": "V29yay04MDk=",
+      "title": "さよなら絶望先生",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS04NDkx",
+          "title": "さよなら絶望先生",
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS04NDky",
+          "title": "トンネルを抜けると白かった/僕の前に人はいない僕の後ろに君はいる",
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS04NDkz",
+          "title": "その国を飛び越して来い/僕たちは、どんなことがあっても/一緒に固まっていなければ駄目だ",
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS04NDk0",
+          "title": "ヒジニモ負ケズ ヒザニモ負ケズ/アンテナ立ちぬ いざ生きめやも",
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS04NDk1",
+          "title": "身のたけくらべ/シミと毒だし",
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS04NDk2",
+          "title": "見合う前に跳べ",
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS04NDk3",
+          "title": "仮名の告白/ある朝グレゴール・ザムザが目をさますと神輿を担いでいた",
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS04NDk4",
+          "title": "私は宿命的に日陰者である/それだから逃げるのだ ついて来い!フイロストラトス!",
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS04NDk5",
+          "title": "富士に月見草は間違っている/証明しようと思っていた。今年の正月",
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS04NTAw",
+          "title": "一人の文化人が羅生門の下で雨やどりしていた/生八ツ橋を焼かねばならぬ",
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS04NTAx",
+          "title": "あれ不可よ 原作があるじゃないかね",
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS04NTAy",
+          "title": "なんたる迷惑であることか!",
+          "numberText": "#12"
+        }
+      ],
+      "seriesList": [
+        "さよなら絶望先生"
+      ]
+    },
+    {
+      "id": "V29yay04NDA=",
+      "title": "懺・さよなら絶望先生",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS04MTMw",
+          "title": "落園への道／春の郵便配達は二度ベルを鳴らす／晒しが丘",
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS04MTMx",
+          "title": "持つ女／おろしや国タイム譚／晒しが丘パート2",
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS04MTMy",
+          "title": "×の悲劇／私は日本には帰りません そういう決心をできませんでした／ドクトル・カホゴ",
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS04MTMz",
+          "title": "余は如何にして真人間となりし乎／祝系図／ドクトル・カホゴパート2",
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS04MTM0",
+          "title": "過多たたき／アーとウルーとビィの冒険／ライ麦畑で見逃して",
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS04MTM1",
+          "title": "マディソン郡のはしか／夜の多角形／ライ麦畑で見逃してパート2",
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS04MTM2",
+          "title": "アンドロイドは機械の花嫁の夢を見るか／将軍失格／ああサプライズだよ、と私はうつろに呟くのであった",
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS04MTM3",
+          "title": "ああサプライズだよ、と私はうつろに呟くのであった／告白縮緬組／最後の、そして始まりのエノデン",
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS04MTM4",
+          "title": "尼になった急場／三十年後の正解／ジェレミーとドラゴンの卵",
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS04MTM5",
+          "title": "クラックな卵／君よ知るや隣の国／ジェレミーとドラコンの卵パート2",
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS04MTQw",
+          "title": "眼鏡子の家／閉門ノススメ／学者アゲアシトリの見た着物",
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS04MTQx",
+          "title": "三次のあと／葬られ損ねた秘密／閉門ノススメパート2／いけない！カエレ先生",
+          "numberText": "#12"
+        },
+        {
+          "id": "RXBpc29kZS04MTQy",
+          "title": "誤字院原の敵討／われらライナス／楽天大賞／夜間きよ飛行",
+          "numberText": "#13"
+        }
+      ],
+      "seriesList": [
+        "さよなら絶望先生"
+      ]
+    },
+    {
+      "id": "V29yay0xMTY3",
+      "title": "俗・さよなら絶望先生",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS04NTUy",
+          "title": "ほら、男爵の妄言／当組は問題の多い教室ですから どうかそこはご承知ください",
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS04NTUz",
+          "title": "まだ明け初めし前髪の／ティファニーで装飾を／新しくない人よ 目覚めよ",
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS04NTU0",
+          "title": "十七歳ね 自分のシワをつかんで見たくない？／義務と兵隊／さらっと言うな！とメロスはいきり立って反駁した",
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS04NTU1",
+          "title": "路傍の絵師／恥ずかしい本ばかり読んできました／薄めの夏",
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS04NTU2",
+          "title": "文化系図／私はその人を常に残りものと呼んでいた／恩着せの彼方に",
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS04NTU3",
+          "title": "君 知りたもうことなかれ／夢無し芳一の話／隠蔽卒",
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS04NTU4",
+          "title": "百万回言われた猫／赤頭巾ちゃん、寝る。気をつけて／津軽通信教育",
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS04NTU5",
+          "title": "スパイナツプリン／暴露の実の熟する時／半分捕物帖",
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS04NTYw",
+          "title": "絶望ファイト「絶望の大逆転戦法！」／一人より女夫の方がええいうことでっしゃろ／絶望ファイト「絶望ゲバゲバ地帯」「絶望はパンチがお好き」／奥の抜け道／絶望ファイト「この絶望の果て」「くたびれ損の絶望もうけ」",
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS04NTYx",
+          "title": "劣化流水／痴人のアリ／一見の條件",
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS04NTYy",
+          "title": "黒い十二人の絶望少女／今月今夜この月が僕の涙で曇りますように",
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS04NTYz",
+          "title": "着陸の栄え／或る女 役／波に乗ってくる ポロロッカ",
+          "numberText": "#12"
+        },
+        {
+          "id": "RXBpc29kZS04NTY0",
+          "title": "鎌倉妙本寺解雇／大導寺信輔の音声／あにいもうと、という前提で",
+          "numberText": "#13"
+        }
+      ],
+      "seriesList": [
+        "さよなら絶望先生"
+      ]
+    },
+    {
+      "id": "V29yay0yNzEw",
+      "title": "獄・さよなら絶望先生",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS02MzUwNw==",
+          "title": "あまい姫／発禁抄／原型の盾",
+          "numberText": "上"
+        },
+        {
+          "id": "RXBpc29kZS02MzUwOA==",
+          "title": "曰く、過程の幸福は諸悪の本／予言省告示／バラバラの名前",
+          "numberText": "註"
+        },
+        {
+          "id": "RXBpc29kZS02MzUwOQ==",
+          "title": "暗中問答／負けたの草子／一本昔ばなし",
+          "numberText": "下"
+        }
+      ],
+      "seriesList": [
+        "さよなら絶望先生"
+      ]
+    }
+  ]
+}
