@@ -1,12 +1,18 @@
 import type { Vod } from "@/types";
 import { asyncQuerySelector } from "@/utils/async-query-selector";
+import { waitForTextContent } from "@/utils/dom";
 import { identifyVod } from "@/utils/vod";
 
 async function isPrimePlaybackPage(
   root: ParentNode = document,
 ): Promise<boolean> {
-  const element = await asyncQuerySelector("#dv-web-player", root);
-  return element !== undefined;
+  const titleElem = await asyncQuerySelector(
+    "#dv-web-player h1.atvwebplayersdk-title-text",
+    root,
+  );
+  if (!titleElem) return false;
+  const workTitle = await waitForTextContent(titleElem);
+  return workTitle !== undefined;
 }
 
 export async function resolveVod(
