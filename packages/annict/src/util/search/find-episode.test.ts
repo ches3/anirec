@@ -260,6 +260,32 @@ describe("findEpisodeByNumber", () => {
     );
     expect(episode?.id).toEqual(undefined);
   });
+
+  test("同じnumberに複数一致する場合はundefinedを返す", () => {
+    const target = {
+      title: undefined,
+      numberText: undefined,
+      number: 1,
+    };
+    const episode = findEpisodeByNumber(
+      [
+        {
+          id: "ep1",
+          title: "タイトル1",
+          number: 1,
+          numberText: "第一話",
+        },
+        {
+          id: "ep2",
+          title: "タイトル2",
+          number: undefined,
+          numberText: "#1",
+        },
+      ],
+      target,
+    );
+    expect(episode?.id).toEqual(undefined);
+  });
 });
 
 describe("findEpisodeByBracketTitle", () => {
