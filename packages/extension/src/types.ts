@@ -43,12 +43,16 @@ export type PageStateMessage = {
 
 export type PageInfo =
   | {
-      status: "idle" | "loading";
+      status: "loading" | "no_vod" | "no_token";
     }
   | {
-      status: "ready";
+      status: "not_found";
       workInfo: WorkInfoData;
-      annictInfo: SearchResult;
+    }
+  | {
+      status: "found";
+      workInfo: WorkInfoData;
+      annictInfo: NonNullable<SearchResult>;
     };
 
 export type PageStateData = {

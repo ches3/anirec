@@ -22,10 +22,7 @@ export const identifyVod = (url: string | URL): Vod | undefined => {
   ) {
     return "danime";
   }
-  if (
-    hostname === "www.amazon.co.jp" &&
-    /\/gp\/video\/detail\//.test(pathname)
-  ) {
+  if (hostname === "www.amazon.co.jp") {
     return "prime";
   }
   if (hostname === "www.netflix.com" && /\/watch\//.test(pathname)) {

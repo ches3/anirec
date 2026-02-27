@@ -12,6 +12,7 @@ import { handleManualRecord } from "./record/manual-record";
 import { handleManualSkip } from "./record/manual-skip";
 import { runRecordFlow } from "./record/run-record";
 import { getRecordErrorMessage } from "./record-error";
+import { resolveVod } from "./resolve-vod";
 import { resolveTarget } from "./target/resolve-target";
 import { watchNavigation } from "./watch-navigation";
 
@@ -21,7 +22,7 @@ export default defineContentScript({
     "*://video.unext.jp/*",
     "*://abema.tv/*",
     "*://animestore.docomo.ne.jp/*",
-    "*://www.amazon.co.jp/gp/video/*",
+    "*://www.amazon.co.jp/*",
     "*://www.netflix.com/*",
   ],
   main(ctx) {
@@ -31,7 +32,7 @@ export default defineContentScript({
       currentScriptAbort?.abort();
       currentScriptAbort = new AbortController();
       const state = createStateUpdater(bumpStateVer());
-      state.setPageInfo({ status: "idle" });
+      state.setPageInfo({ status: "loading" });
       state.setRecordStatus({ status: "loading" });
       void script(state, currentScriptAbort.signal);
     };
@@ -68,9 +69,16 @@ export default defineContentScript({
 
 async function script(state: PageStateUpdater, navigationSignal: AbortSignal) {
   try {
+    const url = new URL(location.href);
+    const vod = await resolveVod(url, document);
+    if (!vod) {
+      state.setPageInfo({ status: "no_vod" });
+      return;
+    }
+
     const token = await getToken();
     if (!token) {
-      state.setPageInfo({ status: "idle" });
+      state.setPageInfo({ status: "no_token" });
       state.setRecordStatus({
         status: "error",
         errorMessage: "Annictトークンが設定されていません。",
@@ -79,22 +87,17 @@ async function script(state: PageStateUpdater, navigationSignal: AbortSignal) {
     }
 
     state.setPageInfo({ status: "loading" });
-    const targetResult = await resolveTarget(token);
-
-    if (targetResult.status === "no_vod") {
-      state.setPageInfo({ status: "idle" });
-      return;
-    }
+    const targetResult = await resolveTarget(token, vod, url);
 
     if (targetResult.status === "not_found") {
       const { workInfo } = targetResult;
-      state.setPageInfo({ status: "ready", workInfo, annictInfo: undefined });
+      state.setPageInfo({ status: "not_found", workInfo });
       state.setRecordStatus({ status: "skipped", skipReason: "not_found" });
       return;
     }
 
     const { workInfo, result } = targetResult;
-    state.setPageInfo({ status: "ready", workInfo, annictInfo: result });
+    state.setPageInfo({ status: "found", workInfo, annictInfo: result });
 
     while (!navigationSignal.aborted) {
       state.setRecordStatus({ status: "loading" });
