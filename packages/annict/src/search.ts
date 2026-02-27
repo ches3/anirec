@@ -1,4 +1,4 @@
-import type { SearchParam, SearchResult, Work } from "./types";
+import type { Episode, SearchParam, SearchResult, Work } from "./types";
 import { searchWorks } from "./util/annict";
 import { extract, extractFullTitle } from "./util/extract/extract";
 import { isSameTitle } from "./util/normalize";
@@ -175,17 +175,22 @@ export async function search(
 
     // エピソードが見つからなかった場合、フルタイトルで検索
     const fullTitle = buildFullTitle(params);
-    for (const work of works) {
-      if (!work.noEpisodes) {
-        continue;
-      }
-      if (work.noEpisodes && isSameTitle(work.title, fullTitle)) {
-        return {
-          id: work.id,
-          title: work.title,
-          episode: undefined,
-        };
-      }
+    const strictWork = works.find(
+      (work) => work.noEpisodes && isSameTitle(work.title, fullTitle),
+    );
+    if (strictWork) {
+      return { id: strictWork.id, title: strictWork.title, episode: undefined };
+    }
+
+    const weakWorks = works.filter(
+      (work) => work.noEpisodes && isSameTitle(work.title, fullTitle, true),
+    );
+    if (weakWorks.length === 1) {
+      return {
+        id: weakWorks[0].id,
+        title: weakWorks[0].title,
+        episode: undefined,
+      };
     }
 
     // work.title & episode.number が一致するエピソードを探す
@@ -204,22 +209,35 @@ export async function search(
   }
 
   const targetFullTitle = buildFullTitle(params);
+
+  // strict マッチ
   for (const work of works) {
-    const episodes = work.episodes;
-    if (!episodes) {
-      continue;
-    }
-    for (const episode of episodes) {
+    if (!work.episodes) continue;
+    for (const episode of work.episodes) {
       const fullTitle = [work.title, episode.numberText, episode.title].join(
         "",
       );
       if (isSameTitle(fullTitle, targetFullTitle)) {
-        return {
-          id: work.id,
-          title: work.title,
-          episode: episode,
-        };
+        return { id: work.id, title: work.title, episode };
       }
     }
+  }
+
+  // weak マッチ（1件のみ一致した場合）
+  const weakMatches: { work: Work; episode: Episode }[] = [];
+  for (const work of works) {
+    if (!work.episodes) continue;
+    for (const episode of work.episodes) {
+      const fullTitle = [work.title, episode.numberText, episode.title].join(
+        "",
+      );
+      if (isSameTitle(fullTitle, targetFullTitle, true)) {
+        weakMatches.push({ work, episode });
+      }
+    }
+  }
+  if (weakMatches.length === 1) {
+    const { work, episode } = weakMatches[0];
+    return { id: work.id, title: work.title, episode };
   }
 }
