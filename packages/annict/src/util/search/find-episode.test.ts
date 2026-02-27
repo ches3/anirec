@@ -211,6 +211,26 @@ describe("findEpisodeByNumber", () => {
     expect(episode?.id).toEqual("RXBpc29kZS0xODM1Mg==");
   });
 
+  test("episode.numberがundefinedでもnumberTextから解釈して一致する", () => {
+    const target = {
+      title: undefined,
+      numberText: undefined,
+      number: 1,
+    };
+    const episode = findEpisodeByNumber(
+      [
+        {
+          id: "ep1",
+          title: "さよなら絶望先生",
+          number: undefined,
+          numberText: "#1",
+        },
+      ],
+      target,
+    );
+    expect(episode?.id).toEqual("ep1");
+  });
+
   test("target.numberがundefinedの場合はundefinedを返す", () => {
     const target = {
       title: "ようこそハイスクール",
