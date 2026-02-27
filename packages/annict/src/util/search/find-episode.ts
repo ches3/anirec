@@ -40,7 +40,7 @@ export function findEpisodeByNumberText(
   );
 }
 
-// number のみが一致するエピソード
+// number のみが一致するエピソード（単独一致の場合のみ返す）
 export function findEpisodeByNumber(
   episodes: Episode[],
   target: ExtractedEpisode,
@@ -50,11 +50,12 @@ export function findEpisodeByNumber(
     return undefined;
   }
 
-  return episodes.find(
+  const matched = episodes.filter(
     (episode) =>
       (episode.number ?? parseNumber(episode.numberText ?? "")) ===
       targetNumber,
   );
+  return matched.length === 1 ? matched[0] : undefined;
 }
 
 // title と numberText が両方一致するエピソード
