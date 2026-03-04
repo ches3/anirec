@@ -17,17 +17,19 @@ export const asyncQuerySelector = (
       return resolve(undefined);
     }
 
+    const timer = setTimeout(() => {
+      clearInterval(interval);
+      resolve(undefined);
+    }, timeout);
+
     const interval = setInterval(() => {
       const element = root.querySelector(selector);
       if (element) {
         clearInterval(interval);
-        return resolve(element);
+        clearTimeout(timer);
+        resolve(element);
       }
     }, 500);
-    setTimeout(() => {
-      clearInterval(interval);
-      return resolve(undefined);
-    }, timeout);
   });
 };
 
@@ -46,17 +48,18 @@ export const getTextContent = (
       return resolve(undefined);
     }
 
+    const timer = setTimeout(() => {
+      clearInterval(interval);
+      resolve(undefined);
+    }, timeout);
+
     const interval = setInterval(() => {
       const text = element.textContent?.trim();
       if (text) {
         clearInterval(interval);
+        clearTimeout(timer);
         resolve(text);
       }
     }, 100);
-
-    setTimeout(() => {
-      clearInterval(interval);
-      resolve(undefined);
-    }, timeout);
   });
 };
