@@ -1,4 +1,4 @@
-import { asyncQuerySelector } from "@/utils/async-query-selector";
+import { asyncQuerySelector } from "@/entrypoints/content/dom";
 import type { RecordTiming } from "@/utils/settings";
 
 export type WaitAbortReason = "locationChange" | "disabled";
@@ -20,7 +20,7 @@ export async function wait(
   onProgress?: (progress: number) => void,
   signal?: AbortSignal,
 ): Promise<WaitResult> {
-  const videoElem = await asyncQuerySelector(videoSelector, document, 0);
+  const videoElem = await asyncQuerySelector(videoSelector);
   if (!(videoElem instanceof HTMLVideoElement)) {
     throw new Error("video要素の取得に失敗しました。");
   }
