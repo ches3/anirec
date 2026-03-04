@@ -17,10 +17,7 @@ export async function resolveTarget(
   vod: Vod,
   url: URL,
 ): Promise<ResolveTargetResult> {
-  const searchParams = await extractSearchParams(vod, {
-    url,
-    queryRoot: document,
-  }).catch((error) => {
+  const searchParams = await extractSearchParams(vod, url).catch((error) => {
     throw createRecordError("search_params_extract_failed", error);
   });
 

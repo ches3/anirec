@@ -70,7 +70,7 @@ export default defineContentScript({
 async function script(state: PageStateUpdater, navigationSignal: AbortSignal) {
   try {
     const url = new URL(location.href);
-    const vod = await resolveVod(url, document);
+    const vod = await resolveVod(url);
     if (!vod) {
       state.setPageInfo({ status: "no_vod" });
       return;

@@ -1,7 +1,6 @@
 import type { ContentScriptContext } from "#imports";
+import { asyncQuerySelector, getTextContent } from "@/entrypoints/content/dom";
 import type { Vod } from "@/types";
-import { asyncQuerySelector } from "@/utils/async-query-selector";
-import { waitForTextContent } from "@/utils/dom";
 
 // 同一URLのままエピソードが切り替わる場合に監視が必要なVODのセレクタ定義
 const MUTATION_KEY_SELECTORS: Partial<Record<Vod, string[]>> = {
@@ -24,9 +23,9 @@ async function observeMutation(
   // 全セレクタの要素とテキストを待つ
   const targets = await Promise.all(
     keySelectors.map(async (sel) => {
-      const elem = await asyncQuerySelector(sel, document);
+      const elem = await asyncQuerySelector(sel);
       if (!elem) return;
-      await waitForTextContent(elem);
+      await getTextContent(elem);
       return { sel, elem };
     }),
   );
