@@ -225,17 +225,18 @@ const netflix = async (url: URL): Promise<SearchParam[]> => {
   ];
 
   // titleGroupMemberships が非空の場合、コレクション名から " コレクション" を除去して show タイトルを導出
-  const collectionTitle = data.parentShow.titleGroupMemberships[0]?.title;
-  if (collectionTitle) {
-    const showTitle = collectionTitle.replace(/ コレクション$/, "");
+  const parentTitleGroup = data.parentShow.titleGroupMemberships[0];
+  if (parentTitleGroup) {
+    const groupTitle = parentTitleGroup.title.replace(/ コレクション$/, "");
+    const title = `${groupTitle} ${data.parentSeason.title}`;
     params.unshift(
       {
-        workTitle: showTitle,
+        workTitle: title,
         episodeNumber: String(data.number),
         episodeTitle: data.title,
       },
       {
-        workTitle: showTitle,
+        workTitle: title,
         episodeTitle: data.title,
       },
     );
