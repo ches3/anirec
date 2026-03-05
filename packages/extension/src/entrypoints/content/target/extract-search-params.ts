@@ -161,7 +161,7 @@ const danime = async (): Promise<SearchParam[]> => {
 
 const prime = async (): Promise<SearchParam[]> => {
   const titleElem = await asyncQuerySelector(
-    "#dv-web-player h1.atvwebplayersdk-title-text",
+    ".dv-player-fullscreen h1.atvwebplayersdk-title-text",
   );
   if (!titleElem) {
     throw new Error("作品タイトル要素が見つかりませんでした。");
@@ -172,7 +172,7 @@ const prime = async (): Promise<SearchParam[]> => {
   }
 
   const subtitleElem = await asyncQuerySelector(
-    "#dv-web-player h2.atvwebplayersdk-subtitle-text",
+    ".dv-player-fullscreen h2.atvwebplayersdk-subtitle-text",
   );
   const subtitleText = subtitleElem
     ? ((await getTextContent(subtitleElem)) ?? "")

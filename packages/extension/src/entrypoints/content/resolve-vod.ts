@@ -4,7 +4,7 @@ import { identifyVod } from "@/utils/vod";
 
 async function isPrimePlaybackPage(): Promise<boolean> {
   const titleElem = await asyncQuerySelector(
-    "#dv-web-player h1.atvwebplayersdk-title-text",
+    ".dv-player-fullscreen h1.atvwebplayersdk-title-text",
   );
   if (!titleElem) return false;
   const workTitle = await getTextContent(titleElem);

@@ -36,6 +36,6 @@ export const isVodEnabled = (vod: Vod, enabled: ServiceEnabled): boolean => {
 };
 
 export const getVideoSelector = (vod: Vod): string => {
-  if (vod === "prime") return "#dv-web-player video";
+  if (vod === "prime") return ".dv-player-fullscreen video";
   return "video";
 };
