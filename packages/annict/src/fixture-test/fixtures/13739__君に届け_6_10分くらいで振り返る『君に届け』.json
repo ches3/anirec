@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "createdAt": "2026-03-04T11:16:47.237Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "君に届け",
+      "episodeNumber": "6",
+      "episodeTitle": "10分くらいで振り返る『君に届け』"
+    },
+    "annictUrl": "https://annict.com/works/13739"
+  },
+  "expected": {
+    "id": "V29yay0xMzczOQ==",
+    "title": "10分くらいで振り返る『君に届け』",
+    "episode": null
+  },
+  "variants": [
+    "君に届け"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay01NDU=",
+      "title": "君に届け 2ND SEASON",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xODIyMw==",
+          "title": "片想い",
+          "numberText": "episode.0"
+        },
+        {
+          "id": "RXBpc29kZS0xODIyNA==",
+          "title": "バレンタイン",
+          "numberText": "episode.1"
+        },
+        {
+          "id": "RXBpc29kZS0xODIyNQ==",
+          "title": "2年生",
+          "numberText": "episode.2"
+        },
+        {
+          "id": "RXBpc29kZS0xODIyNg==",
+          "title": "忘れて",
+          "numberText": "episode.3"
+        },
+        {
+          "id": "RXBpc29kZS0xODIyNw==",
+          "title": "わかってない",
+          "numberText": "episode.4"
+        },
+        {
+          "id": "RXBpc29kZS0xODIyOA==",
+          "title": "すきな人",
+          "numberText": "episode.5"
+        },
+        {
+          "id": "RXBpc29kZS0xODIyOQ==",
+          "title": "好意と迷惑",
+          "numberText": "episode.6"
+        },
+        {
+          "id": "RXBpc29kZS0xODIzMA==",
+          "title": "あきらめちまえよ",
+          "numberText": "episode.7"
+        },
+        {
+          "id": "RXBpc29kZS0xODIzMQ==",
+          "title": "届け",
+          "numberText": "episode.8"
+        },
+        {
+          "id": "RXBpc29kZS0xODIzMg==",
+          "title": "告白",
+          "numberText": "episode.9"
+        },
+        {
+          "id": "RXBpc29kZS0xODIzMw==",
+          "title": "ここから",
+          "numberText": "episode.10"
+        },
+        {
+          "id": "RXBpc29kZS0xODIzNA==",
+          "title": "祭りのあと",
+          "numberText": "episode.11"
+        },
+        {
+          "id": "RXBpc29kZS0xODIzNQ==",
+          "title": "大事な人",
+          "numberText": "episode.12"
+        }
+      ],
+      "seriesList": [
+        "君に届け"
+      ]
+    },
+    {
+      "id": "V29yay0xMzczOQ==",
+      "title": "10分くらいで振り返る『君に届け』",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "君に届け"
+      ]
+    },
+    {
+      "id": "V29yay0xMTEwNg==",
+      "title": "君に届け 3RD SEASON",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjA5Mjk=",
+          "title": "嫌いになんてなるわけがないんだ",
+          "number": 1,
+          "numberText": "#01"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA5MzA=",
+          "title": "修学旅行",
+          "number": 2,
+          "numberText": "#02"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA5MzE=",
+          "title": "彼氏と彼女",
+          "number": 3,
+          "numberText": "#03"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA5MzI=",
+          "title": "クリスマスパーティー",
+          "number": 4,
+          "numberText": "#04"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA5MzM=",
+          "title": "幸せなひととき",
+          "number": 5,
+          "numberText": "#05"
+        }
+      ],
+      "seriesList": [
+        "君に届け"
+      ]
+    },
+    {
+      "id": "V29yay01NDQ=",
+      "title": "君に届け",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xODE5OA==",
+          "title": "プロローグ",
+          "numberText": "episode.1"
+        },
+        {
+          "id": "RXBpc29kZS0xODE5OQ==",
+          "title": "席替え",
+          "numberText": "episode.2"
+        },
+        {
+          "id": "RXBpc29kZS0xODIwMA==",
+          "title": "放課後",
+          "numberText": "episode.3"
+        },
+        {
+          "id": "RXBpc29kZS0xODIwMQ==",
+          "title": "噂",
+          "numberText": "episode.4"
+        },
+        {
+          "id": "RXBpc29kZS0xODIwMg==",
+          "title": "決意",
+          "numberText": "episode.5"
+        },
+        {
+          "id": "RXBpc29kZS0xODIwMw==",
+          "title": "友達",
+          "numberText": "episode.6"
+        },
+        {
+          "id": "RXBpc29kZS0xODIwNA==",
+          "title": "土曜の夜",
+          "numberText": "episode.7"
+        },
+        {
+          "id": "RXBpc29kZS0xODIwNQ==",
+          "title": "自主練",
+          "numberText": "episode.8"
+        },
+        {
+          "id": "RXBpc29kZS0xODIwNg==",
+          "title": "新しい友達",
+          "numberText": "episode.9"
+        },
+        {
+          "id": "RXBpc29kZS0xODIwNw==",
+          "title": "協力",
+          "numberText": "episode.10"
+        },
+        {
+          "id": "RXBpc29kZS0xODIwOA==",
+          "title": "とくべつ?",
+          "numberText": "episode.11"
+        },
+        {
+          "id": "RXBpc29kZS0xODIwOQ==",
+          "title": "恋愛感情",
+          "numberText": "episode.12"
+        },
+        {
+          "id": "RXBpc29kZS0xODIxMA==",
+          "title": "恋",
+          "numberText": "episode.13"
+        },
+        {
+          "id": "RXBpc29kZS0xODIxMQ==",
+          "title": "くるみ",
+          "numberText": "episode.14"
+        },
+        {
+          "id": "RXBpc29kZS0xODIxMg==",
+          "title": "ライバル",
+          "numberText": "episode.15"
+        },
+        {
+          "id": "RXBpc29kZS0xODIxMw==",
+          "title": "夜噺",
+          "numberText": "episode.16"
+        },
+        {
+          "id": "RXBpc29kZS0xODIxNA==",
+          "title": "休日",
+          "numberText": "episode.17"
+        },
+        {
+          "id": "RXBpc29kZS0xODIxNQ==",
+          "title": "千鶴の恋",
+          "numberText": "episode.18"
+        },
+        {
+          "id": "RXBpc29kZS0xODIxNg==",
+          "title": "夢",
+          "numberText": "episode.19"
+        },
+        {
+          "id": "RXBpc29kZS0xODIxNw==",
+          "title": "プレゼント",
+          "numberText": "episode.20"
+        },
+        {
+          "id": "RXBpc29kZS0xODIxOA==",
+          "title": "初雪",
+          "numberText": "episode.21"
+        },
+        {
+          "id": "RXBpc29kZS0xODIxOQ==",
+          "title": "クリスマス",
+          "numberText": "episode.22"
+        },
+        {
+          "id": "RXBpc29kZS0xODIyMA==",
+          "title": "ふたり",
+          "numberText": "episode.23"
+        },
+        {
+          "id": "RXBpc29kZS0xODIyMQ==",
+          "title": "誕生日",
+          "numberText": "episode.24"
+        },
+        {
+          "id": "RXBpc29kZS0xODIyMg==",
+          "title": "新年",
+          "numberText": "episode.25"
+        }
+      ],
+      "seriesList": [
+        "君に届け"
+      ]
+    }
+  ]
+}
