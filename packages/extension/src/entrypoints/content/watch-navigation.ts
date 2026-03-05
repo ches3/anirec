@@ -1,79 +1,38 @@
 import type { ContentScriptContext } from "#imports";
-import { asyncQuerySelector, getTextContent } from "@/entrypoints/content/dom";
 import type { Vod } from "@/types";
 
-// 同一URLのままエピソードが切り替わる場合に監視が必要なVODのセレクタ定義
-const MUTATION_KEY_SELECTORS: Partial<Record<Vod, string[]>> = {
+// 同一URLのままエピソードが切り替わる場合にポーリングが必要なVODのセレクタ定義
+const POLL_KEY_SELECTORS: Partial<Record<Vod, string[]>> = {
   prime: [
-    "#dv-web-player h1.atvwebplayersdk-title-text",
-    "#dv-web-player h2.atvwebplayersdk-subtitle-text",
+    ".dv-player-fullscreen h1.atvwebplayersdk-title-text",
+    ".dv-player-fullscreen h2.atvwebplayersdk-subtitle-text",
   ],
 };
 
-// MutationObserver を使って指定セレクタのテキスト変化を監視する。
-// いずれかのセレクタのテキストが変化した時点で onChange を呼び出す。
-// 全セレクタの要素が DOM に現れてテキストが設定されるまで待機してから監視を開始する。
-async function observeMutation(
+// setInterval を使って指定セレクタ群のテキスト変化を監視する。
+// 全セレクタのテキストを結合したキーが変化した場合に onChange を呼び出す。
+function pollSelectorTextChange(
   signal: AbortSignal,
   onChange: () => void,
-  keySelectors: string[],
-): Promise<void> {
+  selectors: string[],
+): void {
   if (signal.aborted) return;
 
-  // 全セレクタの要素とテキストを待つ
-  const targets = await Promise.all(
-    keySelectors.map(async (sel) => {
-      const elem = await asyncQuerySelector(sel);
-      if (!elem) return;
-      await getTextContent(elem);
-      return { sel, elem };
-    }),
-  );
+  const getSelectorTextKey = () =>
+    selectors
+      .map((sel) => document.querySelector(sel)?.textContent?.trim() ?? "")
+      .join("\0");
 
-  if (signal.aborted) return;
+  let lastKey = getSelectorTextKey();
 
-  let debounceTimer: ReturnType<typeof setTimeout> | undefined;
+  const timer = setInterval(() => {
+    const key = getSelectorTextKey();
+    if (key === lastKey) return;
+    lastKey = key;
+    onChange();
+  }, 500);
 
-  // 監視
-  const observers: MutationObserver[] = [];
-  for (const target of targets) {
-    if (!target) continue;
-    const { sel, elem } = target;
-    const { parentElement } = elem;
-    if (!parentElement) continue;
-
-    let lastText = elem.textContent?.trim() ?? "";
-
-    const observer = new MutationObserver(() => {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(() => {
-        const currentText =
-          document.querySelector(sel)?.textContent?.trim() ?? "";
-        if (currentText === lastText) return;
-        lastText = currentText;
-        onChange();
-      }, 200);
-    });
-
-    observer.observe(parentElement, {
-      childList: true,
-      subtree: true,
-      characterData: true,
-    });
-
-    observers.push(observer);
-  }
-
-  signal.addEventListener(
-    "abort",
-    () => {
-      for (const observer of observers) {
-        observer.disconnect();
-      }
-      clearTimeout(debounceTimer);
-    },
-    { once: true },
-  );
+  signal.addEventListener("abort", () => clearInterval(timer), { once: true });
 }
 
 // locationchange と DOM 変化監視を統合したページ遷移検知。
@@ -83,22 +42,21 @@ export function watchNavigation(
   onNavigate: () => void,
   vod?: Vod,
 ): void {
-  const keySelectors = vod ? MUTATION_KEY_SELECTORS[vod] : undefined;
-  let mutationAbort: AbortController | undefined;
+  const pollSelectors = vod ? POLL_KEY_SELECTORS[vod] : undefined;
+  let pollAbort: AbortController | undefined;
 
-  const startMutation = () => {
-    if (!keySelectors) return;
-    mutationAbort = new AbortController();
-    void observeMutation(mutationAbort.signal, handleNavigate, keySelectors);
+  const startPolling = () => {
+    if (!pollSelectors) return;
+    pollAbort = new AbortController();
+    pollSelectorTextChange(pollAbort.signal, handleNavigate, pollSelectors);
   };
 
   const handleNavigate = () => {
-    // DOM 変化監視を再起動（ページ遷移後に DOM が再構築されるため）
-    mutationAbort?.abort();
-    startMutation();
+    pollAbort?.abort();
+    startPolling();
     onNavigate();
   };
 
-  startMutation();
+  startPolling();
   ctx.addEventListener(window, "wxt:locationchange", handleNavigate);
 }
