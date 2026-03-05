@@ -173,6 +173,34 @@ export async function search(
       }
     }
 
+    // target.episode.title が work.title と一致する noEpisodes 作品を探す
+    // e.g. workTitle="君に届け", episodeTitle="10分くらいで振り返る『君に届け』"
+    //   → work.title="10分くらいで振り返る『君に届け』" に一致
+    if (target.episode.title) {
+      const episodeTitle = target.episode.title;
+      const strictWork = works.find(
+        (work) => work.noEpisodes && isSameTitle(work.title, episodeTitle),
+      );
+      if (strictWork) {
+        return {
+          id: strictWork.id,
+          title: strictWork.title,
+          episode: undefined,
+        };
+      }
+      const weakWorks = works.filter(
+        (work) =>
+          work.noEpisodes && isSameTitle(work.title, episodeTitle, true),
+      );
+      if (weakWorks.length === 1) {
+        return {
+          id: weakWorks[0].id,
+          title: weakWorks[0].title,
+          episode: undefined,
+        };
+      }
+    }
+
     // エピソードが見つからなかった場合、フルタイトルで検索
     const fullTitle = buildFullTitle(params);
     const strictWork = works.find(
