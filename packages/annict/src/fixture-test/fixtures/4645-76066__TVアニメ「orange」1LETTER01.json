@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "createdAt": "2026-03-06T11:03:39.848Z"
+  },
+  "input": {
+    "params": {
+      "title": "TVアニメ「orange」 1. LETTER01"
+    },
+    "annictUrl": "https://annict.com/works/4645/episodes/76066"
+  },
+  "expected": {
+    "id": "V29yay00NjQ1",
+    "title": "orange",
+    "episode": {
+      "id": "RXBpc29kZS03NjA2Ng==",
+      "number": 1,
+      "numberText": "LETTER01"
+    }
+  },
+  "variants": [
+    "TVアニメ「orange」",
+    "orange"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay03ODM1",
+      "title": "プラオレ！～PRIDE OF ORANGE～",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzY1OTE=",
+          "title": "face off",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzY3NDU=",
+          "title": "best friends",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzY4NzY=",
+          "title": "all for one",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzcwNzg=",
+          "title": "grinder",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzcxOTg=",
+          "title": "shoot out",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzczNDQ=",
+          "title": "debut",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc0OTY=",
+          "title": "cheer up!",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc2MjQ=",
+          "title": "accident",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc3NjU=",
+          "title": "awakening",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc5MDU=",
+          "title": "reunion",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzgxMDM=",
+          "title": "barn burner",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzgyMjQ=",
+          "title": "PRIDE OF ORANGE",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay00OTc0",
+      "title": "orange -未来-",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "orange"
+      ]
+    },
+    {
+      "id": "V29yay00NjQ1",
+      "title": "orange",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS03NjA2Ng==",
+          "number": 1,
+          "numberText": "LETTER01"
+        },
+        {
+          "id": "RXBpc29kZS03NjI1Ng==",
+          "number": 2,
+          "numberText": "LETTER02"
+        },
+        {
+          "id": "RXBpc29kZS03NjMwMw==",
+          "number": 3,
+          "numberText": "LETTER03"
+        },
+        {
+          "id": "RXBpc29kZS03NjQzOA==",
+          "number": 4,
+          "numberText": "LETTER04"
+        },
+        {
+          "id": "RXBpc29kZS03NjYxMA==",
+          "number": 5,
+          "numberText": "LETTER05"
+        },
+        {
+          "id": "RXBpc29kZS03NjcxMw==",
+          "number": 6,
+          "numberText": "LETTER06"
+        },
+        {
+          "id": "RXBpc29kZS03NjgzNg==",
+          "number": 7,
+          "numberText": "LETTER07"
+        },
+        {
+          "id": "RXBpc29kZS03NjkyOQ==",
+          "number": 8,
+          "numberText": "LETTER08"
+        },
+        {
+          "id": "RXBpc29kZS03NzAzMA==",
+          "number": 9,
+          "numberText": "LETTER09"
+        },
+        {
+          "id": "RXBpc29kZS03NzEyNQ==",
+          "number": 10,
+          "numberText": "LETTER10"
+        },
+        {
+          "id": "RXBpc29kZS03NzIyOA==",
+          "number": 11,
+          "numberText": "LETTER11"
+        },
+        {
+          "id": "RXBpc29kZS03NzMyNg==",
+          "number": 12,
+          "numberText": "LETTER12"
+        },
+        {
+          "id": "RXBpc29kZS03NzQyOQ==",
+          "title": "LAST LETTER",
+          "number": 13,
+          "numberText": "LETTER13"
+        }
+      ],
+      "seriesList": [
+        "orange"
+      ]
+    }
+  ]
+}

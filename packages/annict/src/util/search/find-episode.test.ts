@@ -4,6 +4,7 @@ import {
   findEpisodeByNumberText,
   findEpisodeByTitle,
   findEpisodeByTitleAndNumberText,
+  findEpisodeByTitleAsNumberText,
 } from "./find-episode";
 
 const episodes = [
@@ -401,6 +402,67 @@ describe("findEpisodeByTitleAndNumberText", () => {
       number: undefined,
     };
     expect(findEpisodeByTitleAndNumberText(ambiguous, target)?.id).toEqual(
+      undefined,
+    );
+  });
+});
+
+describe("findEpisodeByTitleAsNumberText", () => {
+  test("target.titleがep.numberTextにstrictで一致する場合に返す", () => {
+    const target = {
+      title: "第一回",
+      numberText: undefined,
+      number: undefined,
+    };
+    expect(findEpisodeByTitleAsNumberText(episodes, target)?.id).toEqual(
+      "RXBpc29kZS0xODM1Mg==",
+    );
+  });
+
+  test("strictでは一致しないがweakで1件一致する場合に返す", () => {
+    // ！があるのでstrictでは不一致、weakで記号を除去して一致
+    const target = {
+      title: "第一回！",
+      numberText: undefined,
+      number: undefined,
+    };
+    expect(findEpisodeByTitleAsNumberText(episodes, target)?.id).toEqual(
+      "RXBpc29kZS0xODM1Mg==",
+    );
+  });
+
+  test("weakで複数一致する場合はundefinedを返す", () => {
+    const ambiguous = [
+      { id: "ep1", title: "タイトルA", number: 1, numberText: "第一回！" },
+      { id: "ep2", title: "タイトルB", number: 2, numberText: "第一回？" },
+    ];
+    const target = {
+      title: "第一回",
+      numberText: undefined,
+      number: undefined,
+    };
+    expect(findEpisodeByTitleAsNumberText(ambiguous, target)?.id).toEqual(
+      undefined,
+    );
+  });
+
+  test("target.titleがundefinedの場合はundefinedを返す", () => {
+    const target = { title: undefined, numberText: "第一回", number: 1 };
+    expect(findEpisodeByTitleAsNumberText(episodes, target)?.id).toEqual(
+      undefined,
+    );
+  });
+
+  test("ep.numberTextがundefinedのエピソードはスキップする", () => {
+    const noNumberText = [
+      { id: "ep1", title: "タイトルA", number: 1, numberText: undefined },
+    ];
+    const target = {
+      title: "タイトルA",
+      numberText: undefined,
+      number: undefined,
+    };
+    expect(findEpisodeByTitleAsNumberText(noNumberText, target)?.id).toEqual(
       undefined,
     );
   });

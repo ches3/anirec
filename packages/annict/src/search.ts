@@ -8,6 +8,7 @@ import {
   findEpisodeByNumberText,
   findEpisodeByTitle,
   findEpisodeByTitleAndNumberText,
+  findEpisodeByTitleAsNumberText,
 } from "./util/search/find-episode";
 import { variants } from "./util/search/variants";
 
@@ -84,7 +85,8 @@ export async function search(
     // title or numberText が一致するエピソードを探す
     const episode =
       findEpisodeByTitle(work.episodes, target.episode) ??
-      findEpisodeByNumberText(work.episodes, target.episode);
+      findEpisodeByNumberText(work.episodes, target.episode) ??
+      findEpisodeByTitleAsNumberText(work.episodes, target.episode);
     if (episode) {
       return {
         id: work.id,
@@ -107,7 +109,8 @@ export async function search(
     if (weakMatchWork.episodes && target.episode) {
       const episode =
         findEpisodeByTitle(weakMatchWork.episodes, target.episode) ??
-        findEpisodeByNumberText(weakMatchWork.episodes, target.episode);
+        findEpisodeByNumberText(weakMatchWork.episodes, target.episode) ??
+        findEpisodeByTitleAsNumberText(weakMatchWork.episodes, target.episode);
       if (episode) {
         return { id: weakMatchWork.id, title: weakMatchWork.title, episode };
       }
