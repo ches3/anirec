@@ -101,6 +101,7 @@ export function normalize(title: string, options?: Options): string {
     normalizedTitle = normalizedTitle.replace(/﹣/g, "-");
     normalizedTitle = normalizedTitle.replace(/─/g, "-");
     normalizedTitle = normalizedTitle.replace(/━/g, "-");
+    normalizedTitle = normalizedTitle.replace(/’/g, "'");
   }
 
   if (options?.remove?.space === true) {
