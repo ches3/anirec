@@ -76,6 +76,19 @@ export function findEpisodeByTitleAndNumberText(
   );
 }
 
+// target.title が ep.numberText と一致するエピソード
+export function findEpisodeByTitleAsNumberText(
+  episodes: Episode[],
+  target: ExtractedEpisode,
+): Episode | undefined {
+  const title = target.title;
+  if (!title) return undefined;
+  return findWithStrictOrWeak(
+    episodes,
+    (ep, weak) => !!ep.numberText && isSameTitle(ep.numberText, title, weak),
+  );
+}
+
 // 「」内の文字列を抽出する
 function extractBracketContent(str: string): string | undefined {
   return str.match(/「([^」]+)」/)?.[1];
