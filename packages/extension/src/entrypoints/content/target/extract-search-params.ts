@@ -62,6 +62,25 @@ const dmm = async (url: URL): Promise<SearchParam[]> => {
     ];
   }
 
+  // episodeNumberNameにエピソードタイトルが入っているパターンに対応
+  // e.g. 続・終物語
+  // {
+  //   "episodeTitle": "",
+  //   "episodeNumberName": "こよみリバース 其ノ壹"
+  // }
+  if (!content.episodeTitle) {
+    return [
+      {
+        workTitle: season.seasonName,
+        episodeTitle: content.episodeNumberName,
+      },
+      {
+        workTitle: `${season.titleName} ${season.seasonName}`,
+        episodeTitle: content.episodeNumberName,
+      },
+    ];
+  }
+
   return [
     {
       workTitle: season.seasonName,
