@@ -11,19 +11,8 @@ import {
   findEpisodeByTitleAsNumberText,
 } from "./util/search/find-episode";
 import { applyMapping } from "./util/search/mapping";
+import { buildFullTitle } from "./util/search/title";
 import { variants } from "./util/search/variants";
-
-function buildFullTitle(params: SearchParam): string {
-  if ("title" in params) {
-    return params.title;
-  }
-  if ("episodeNumber" in params) {
-    return [params.workTitle, params.episodeNumber, params.episodeTitle]
-      .filter(Boolean)
-      .join(" ");
-  }
-  return [params.workTitle, params.episodeTitle].filter(Boolean).join(" ");
-}
 
 function isMatchingWorkTitle(
   work: { title: string; seriesList: string[] | undefined },
@@ -206,7 +195,7 @@ export async function search(
     }
 
     // エピソードが見つからなかった場合、フルタイトルで検索
-    const fullTitle = buildFullTitle(params);
+    const fullTitle = buildFullTitle(target);
     const strictWork = works.find(
       (work) => work.noEpisodes && isSameTitle(work.title, fullTitle),
     );
@@ -240,7 +229,7 @@ export async function search(
     }
   }
 
-  const targetFullTitle = buildFullTitle(params);
+  const targetFullTitle = buildFullTitle(target);
 
   // strict マッチ
   for (const work of works) {

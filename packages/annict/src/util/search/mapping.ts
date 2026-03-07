@@ -1,6 +1,7 @@
 import type { SearchTarget } from "../../types";
 import { isSameTitle } from "../normalize";
 import { mappingRules } from "./mapping-rules";
+import { buildFullTitle } from "./title";
 
 export function applyMapping(target: SearchTarget): SearchTarget {
   const mapped: SearchTarget = {
@@ -13,7 +14,24 @@ export function applyMapping(target: SearchTarget): SearchTarget {
       isSameTitle(mapped.workTitle, title),
     ),
   );
+
   if (!rule) {
+    if (!mapped.episode) {
+      return mapped;
+    }
+
+    const mergedTitle = buildFullTitle(mapped);
+    const mergedTitleRule = mappingRules.find((candidate) =>
+      candidate.workTitleFrom.some((title) => isSameTitle(mergedTitle, title)),
+    );
+    if (!mergedTitleRule) {
+      return mapped;
+    }
+
+    if (mergedTitleRule.workTitleTo) {
+      mapped.workTitle = mergedTitleRule.workTitleTo;
+    }
+    mapped.episode = undefined;
     return mapped;
   }
 

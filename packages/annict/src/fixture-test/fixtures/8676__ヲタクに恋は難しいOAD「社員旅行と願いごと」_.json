@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "createdAt": "2026-03-07T11:12:25.179Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "ヲタクに恋は難しい OAD「社員旅行と願いごと」",
+      "episodeTitle": ""
+    },
+    "annictUrl": "https://annict.com/works/8676"
+  },
+  "expected": {
+    "id": "V29yay04Njc2",
+    "title": "ヲタクに恋は難しい OAD3「社員旅行と願い事」",
+    "episode": null
+  },
+  "variants": [
+    "ヲタクに恋は難しい OAD3「社員旅行と願い事」",
+    "ヲタクに恋は難しい OAD3社員旅行と願い事",
+    "ヲタクに恋は難しい",
+    "社員旅行と願い事"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay04Njc2",
+      "title": "ヲタクに恋は難しい OAD3「社員旅行と願い事」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ヲタクに恋は難しい"
+      ]
+    },
+    {
+      "id": "V29yay03NzU1",
+      "title": "ヲタクに恋は難しい OAD2「トモダチの距離」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ヲタクに恋は難しい"
+      ]
+    },
+    {
+      "id": "V29yay02ODc4",
+      "title": "ヲタクに恋は難しい OAD「それは、いきなりおとづれた＝恋」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ヲタクに恋は難しい"
+      ]
+    },
+    {
+      "id": "V29yay01Mzc2",
+      "title": "ヲタクに恋は難しい",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS05ODgwOQ==",
+          "title": "成海と宏嵩の再会。そして…",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS05ODk5MQ==",
+          "title": "恋人？始めました",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS05OTY3Mw==",
+          "title": "即売会とゲーム会",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS05OTk1MA==",
+          "title": "オトナの恋も難しい？",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0xMDAxMzI=",
+          "title": "尚哉登場とゲーム会PartII",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0xMDAyOTE=",
+          "title": "憂鬱なクリスマス",
+          "number": 6,
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA0MTY=",
+          "title": "ネトゲと、それぞれの夜",
+          "number": 7,
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA2MjY=",
+          "title": "苦手な雷と、気になるお年頃",
+          "number": 8,
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA3NjU=",
+          "title": "デートへ行こうよ！",
+          "number": 9,
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA5Njc=",
+          "title": "光くん登場とネトゲリベンジ",
+          "number": 10,
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS0xMDEwODY=",
+          "title": "ヲタクに恋は難しい",
+          "number": 11,
+          "numberText": "#11"
+        }
+      ],
+      "seriesList": [
+        "ヲタクに恋は難しい"
+      ]
+    }
+  ]
+}

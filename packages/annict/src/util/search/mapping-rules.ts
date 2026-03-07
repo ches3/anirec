@@ -258,4 +258,22 @@ export const mappingRules: WorkMappingRule[] = [
     workTitleFrom: ["映画「小鳥遊六花・改 ～劇場版 中二病でも恋がしたい!～」"],
     workTitleTo: "小鳥遊六花・改 ～劇場版 中二病でも恋がしたい！～",
   },
+  {
+    workTitleFrom: ["ヲタクに恋は難しい OAD"],
+    workTitleTo: "ヲタクに恋は難しい OAD「それは、いきなりおとづれた＝恋」",
+  },
+  {
+    workTitleFrom: [
+      "ヲタクに恋は難しい OAD2",
+      "ヲタクに恋は難しい OAD「トモダチの距離」",
+    ],
+    workTitleTo: "ヲタクに恋は難しい OAD2「トモダチの距離」",
+  },
+  {
+    workTitleFrom: [
+      "ヲタクに恋は難しい OAD3",
+      "ヲタクに恋は難しい OAD「社員旅行と願いごと」",
+    ],
+    workTitleTo: "ヲタクに恋は難しい OAD3「社員旅行と願い事」",
+  },
 ];
