@@ -1,4 +1,4 @@
-import type { ExtractedEpisode, SearchParam } from "../../types";
+import type { ExtractedEpisode, SearchParam, SearchTarget } from "../../types";
 import { episodeNumberMatches } from "../match";
 import { parseNumber } from "./number";
 
@@ -16,10 +16,7 @@ function getMatch(
   }
 }
 
-export function extract(params: SearchParam): {
-  workTitle: string;
-  episode: ExtractedEpisode | undefined;
-} {
+export function extract(params: SearchParam): SearchTarget {
   if ("episodeNumber" in params) {
     const episodeNumber = params.episodeNumber.trim();
     if (!episodeNumber) {
