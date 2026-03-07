@@ -1,0 +1,1381 @@
+{
+  "meta": {
+    "createdAt": "2026-03-07T10:24:55.976Z"
+  },
+  "input": {
+    "params": {
+      "title": "〈物語〉シリーズ セカンドシーズン 第1話 猫物語(白) 第懇話『つばさタイガー其ノ壹』"
+    },
+    "annictUrl": "https://annict.com/works/2252/episodes/2803"
+  },
+  "expected": {
+    "id": "V29yay0yMjUy",
+    "title": "＜物語＞シリーズ セカンドシーズン",
+    "episode": {
+      "id": "RXBpc29kZS0yODAz",
+      "title": "猫物語(白) つばさタイガー 其ノ壹",
+      "numberText": "第懇話"
+    }
+  },
+  "variants": [
+    "＜物語＞シリーズ セカンドシーズン",
+    "<物語>シリーズ セカンドシーズン",
+    "セカンドシーズン"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay0xMTg1",
+      "title": "D.C.S.S ～ダ・カーポ セカンドシーズン～",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0yMjkzNg==",
+          "title": "あれから２年…",
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0yMjkzNw==",
+          "title": "読めない地図",
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0yMjkzOA==",
+          "title": "ひとつ屋根の下",
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0yMjkzOQ==",
+          "title": "桜並木の向こうに",
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk0MA==",
+          "title": "魔法のしっぽ",
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk0MQ==",
+          "title": "美春への手紙",
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk0Mg==",
+          "title": "すれ違い",
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk0Mw==",
+          "title": "嵐の予感",
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk0NA==",
+          "title": "枯れない想い",
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk0NQ==",
+          "title": "入部します！",
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk0Ng==",
+          "title": "ただいま執筆中！",
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk0Nw==",
+          "title": "初音島のＷスター",
+          "numberText": "#12"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk0OA==",
+          "title": "アイシアの夏",
+          "numberText": "#13"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk0OQ==",
+          "title": "心の扉",
+          "numberText": "#14"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk1MA==",
+          "title": "歌声を届けに",
+          "numberText": "#15"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk1MQ==",
+          "title": "芽生えた想い",
+          "numberText": "#16"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk1Mg==",
+          "title": "音夢と純一",
+          "numberText": "#17"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk1Mw==",
+          "title": "桜色の蜃気楼",
+          "numberText": "#18"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk1NA==",
+          "title": "さくらの言葉",
+          "numberText": "#19"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk1NQ==",
+          "title": "戻らない季節",
+          "numberText": "#20"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk1Ng==",
+          "title": "二人の魔法使い",
+          "numberText": "#21"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk1Nw==",
+          "title": "みんなの時間",
+          "numberText": "#22"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk1OA==",
+          "title": "沈黙の夏",
+          "numberText": "#23"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk1OQ==",
+          "title": "誓い",
+          "numberText": "#24"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk2MA==",
+          "title": "ダ・カーポ",
+          "numberText": "#25"
+        },
+        {
+          "id": "RXBpc29kZS0yMjk2MQ==",
+          "title": "幸せの鐘",
+          "numberText": "#26"
+        }
+      ],
+      "seriesList": [
+        "D.C. ～ダ・カーポ～"
+      ]
+    },
+    {
+      "id": "V29yay01ODcw",
+      "title": "ハイキュー!! セカンドシーズン OAD「VS\"赤点\"」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ハイキュー!!"
+      ]
+    },
+    {
+      "id": "V29yay00OTE3",
+      "title": "魔法少女なんてもういいですから。セカンドシーズン",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS03NzU3OA==",
+          "title": "魔法少女になってメリットはあったの？",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS03NzcxNw==",
+          "title": "水着って変じゃないですか？",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS03NzkzMw==",
+          "title": "魔法少女ちや、登場ちやっ！",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS03OTgzNQ==",
+          "title": "一緒にゆずかを愛でませんか？",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS04MDI1NQ==",
+          "title": "お姉さんが何でも教えてあげるね",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS04MDQyNQ==",
+          "title": "だって、このままの格好じゃ…",
+          "number": 6,
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS04MDU0Nw==",
+          "title": "見え過ぎなんじゃないの？",
+          "number": 7,
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS04MDcyMQ==",
+          "title": "僕の話かい？",
+          "number": 8,
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS04MzI5OQ==",
+          "title": "私は働く！家族のために!!",
+          "number": 9,
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS04ODQ0Nw==",
+          "title": "海…ですか？",
+          "number": 10,
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS04ODYxMA==",
+          "title": "選ばれし者よ！いまこそ力を合わせて囚われのプリンセスを救うのじゃ～！",
+          "number": 11,
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS04ODc4MQ==",
+          "title": "魔法少女になってよかった事",
+          "number": 12,
+          "numberText": "#12"
+        }
+      ],
+      "seriesList": [
+        "魔法少女なんてもういいですから。"
+      ]
+    },
+    {
+      "id": "V29yay00ODg0",
+      "title": "12歳。～ちっちゃなムネのトキメキ～ セカンドシーズン",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS03NzY2Nw==",
+          "title": "スキ・キス・キス!?",
+          "number": 13,
+          "numberText": "#13"
+        },
+        {
+          "id": "RXBpc29kZS03NzY3MA==",
+          "title": "ライバル",
+          "number": 14,
+          "numberText": "#14"
+        },
+        {
+          "id": "RXBpc29kZS03Nzg5MQ==",
+          "title": "ヤクソク",
+          "number": 15,
+          "numberText": "#15"
+        },
+        {
+          "id": "RXBpc29kZS03OTc5Nw==",
+          "title": "ココロ",
+          "number": 16,
+          "numberText": "#16"
+        },
+        {
+          "id": "RXBpc29kZS04MDIyMw==",
+          "title": "アメアガリ",
+          "number": 17,
+          "numberText": "#17"
+        },
+        {
+          "id": "RXBpc29kZS04MDMzMA==",
+          "title": "バランス",
+          "number": 18,
+          "numberText": "#18"
+        },
+        {
+          "id": "RXBpc29kZS04MDUxMw==",
+          "title": "カタオモイ",
+          "number": 19,
+          "numberText": "#19"
+        },
+        {
+          "id": "RXBpc29kZS04MDY4NQ==",
+          "title": "オトナ",
+          "number": 20,
+          "numberText": "#20"
+        },
+        {
+          "id": "RXBpc29kZS04MTQ0OQ==",
+          "title": "シュウガクリョコウ",
+          "number": 21,
+          "numberText": "#21"
+        },
+        {
+          "id": "RXBpc29kZS04Nzk1OA==",
+          "title": "バイバイ",
+          "number": 22,
+          "numberText": "#22"
+        },
+        {
+          "id": "RXBpc29kZS04ODUyNg==",
+          "title": "エイエン",
+          "number": 23,
+          "numberText": "#23"
+        },
+        {
+          "id": "RXBpc29kZS04ODc0NA==",
+          "title": "ダイスキ",
+          "number": 24,
+          "numberText": "#24"
+        }
+      ],
+      "seriesList": [
+        "12歳。"
+      ]
+    },
+    {
+      "id": "V29yay01MTg2",
+      "title": "モンスターストライク セカンドシーズン",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMDA4ODM=",
+          "title": "前夜祭スペシャル「渇望の果ての理想郷」",
+          "number": 0,
+          "numberText": "第0話"
+        },
+        {
+          "id": "RXBpc29kZS05MDY5Ng==",
+          "title": "転校生は超絶級？",
+          "number": 0,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS05MDY5Nw==",
+          "title": "穢土に轟く忿怒の業拳",
+          "number": 0,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4ODQ=",
+          "title": "ワルプルギスの夜",
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4ODU=",
+          "title": "焼き鳥・男気・冒険王",
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4ODY=",
+          "title": "炸裂！セブンス・ギャラクシー",
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4ODc=",
+          "title": "温泉、それは聖なる癒し",
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4ODg=",
+          "title": "美人天使の湯けむり事件簿",
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4ODk=",
+          "title": "斑目CEO",
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4OTA=",
+          "title": "争いの無い世界",
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4OTE=",
+          "title": "森羅万象の特異点",
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4OTI=",
+          "title": "占い師も困惑！エナジーポイントは何処に？",
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4OTM=",
+          "title": "恐怖の大王",
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4OTQ=",
+          "title": "大予言者ノストラダムス",
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4OTU=",
+          "title": "輪廻へ導く菩提樹の仙峡",
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4OTY=",
+          "title": "それぞれの想い",
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4OTc=",
+          "title": "森の英雄 ロビン・フッド",
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4OTg=",
+          "title": "永久を夢む女神",
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4OTk=",
+          "title": "ツクヨミVSツクヨミ零",
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA5MDA=",
+          "title": "女海賊アルビダの奮闘",
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA5MDE=",
+          "title": "神殺しの提督ネイヴィス",
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA5MDI=",
+          "title": "黒髭ティーチの企み",
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA5MDM=",
+          "title": "媽祖の真実",
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA5MDQ=",
+          "title": "最後の番人",
+          "numberText": "第23話"
+        }
+      ],
+      "seriesList": [
+        "モンスターストライク"
+      ]
+    },
+    {
+      "id": "V29yay0xMTgy",
+      "title": "D.C.II S.S. ～ダ・カーポII セカンドシーズン～",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0yNjMyNQ==",
+          "title": "深雪の如く",
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0yNjMyNg==",
+          "title": "雪の密室",
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0yNjMyNw==",
+          "title": "正義の魔法使い",
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0yNjMyOA==",
+          "title": "幸せの形",
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0yNjMyOQ==",
+          "title": "失望の雪原",
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0yNjMzMA==",
+          "title": "桜迷宮",
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS0yNjMzMQ==",
+          "title": "変えられない夢",
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS0yNjMzMg==",
+          "title": "さくらんぼとお兄ちゃん",
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS0yNjMzMw==",
+          "title": "壊れゆく春",
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS0yNjMzNA==",
+          "title": "夢の終わり",
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS0yNjMzNQ==",
+          "title": "枯色の島",
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS0yNjMzNg==",
+          "title": "記憶の淵",
+          "numberText": "#12"
+        },
+        {
+          "id": "RXBpc29kZS0yNjMzNw==",
+          "title": "巡りくる季節",
+          "numberText": "#13"
+        }
+      ],
+      "seriesList": [
+        "D.C. ～ダ・カーポ～"
+      ]
+    },
+    {
+      "id": "V29yay0xMDk3NQ==",
+      "title": "絆のアリル セカンドシーズン",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTMzNjI=",
+          "title": "～激戦のプレリュード～",
+          "number": 13,
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTQwNTE=",
+          "title": "決意のデパーチャー",
+          "number": 14,
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTQyNzM=",
+          "title": "私だけのザイル",
+          "number": 15,
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTQ1NzU=",
+          "title": "Answer",
+          "number": 16,
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTQ3MDc=",
+          "title": "片思いのライバル",
+          "number": 17,
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTQ5OTY=",
+          "title": "初めての感情",
+          "number": 18,
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTUyMjk=",
+          "title": "それぞれのソリチュード",
+          "number": 19,
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTU0MzM=",
+          "title": "羽ばたきの行方",
+          "number": 20,
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTU2MTQ=",
+          "title": "友情のシューズ",
+          "number": 21,
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTU3NDg=",
+          "title": "未知数の私たち",
+          "number": 22,
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTYwNDc=",
+          "title": "絶望のタイムリミット",
+          "number": 23,
+          "numberText": "第23話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTYyMzA=",
+          "title": "希望のコネクション",
+          "number": 24,
+          "numberText": "第24話"
+        }
+      ],
+      "seriesList": [
+        "絆のアリル"
+      ]
+    },
+    {
+      "id": "V29yay00MDky",
+      "title": "ヤマノススメ セカンドシーズン",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS04NDE4",
+          "title": "テントに泊まろう！",
+          "number": 1,
+          "numberText": "新一合目"
+        },
+        {
+          "id": "RXBpc29kZS04NzUw",
+          "title": "富士山を見に行こう!!",
+          "number": 2,
+          "numberText": "新二合目"
+        },
+        {
+          "id": "RXBpc29kZS04ODc0",
+          "title": "山に登るということ",
+          "number": 3,
+          "numberText": "新三合目"
+        },
+        {
+          "id": "RXBpc29kZS05Mzk0",
+          "title": "降りた後のお楽しみ！",
+          "number": 4,
+          "numberText": "新四合目"
+        },
+        {
+          "id": "RXBpc29kZS05NjE1",
+          "title": "ゆるして、あげない！",
+          "number": 5,
+          "numberText": "新五合目"
+        },
+        {
+          "id": "RXBpc29kZS05ODY3",
+          "title": "好きな事をするために",
+          "number": 6,
+          "numberText": "新六合目"
+        },
+        {
+          "id": "RXBpc29kZS05OTA3OA==",
+          "title": "ブラノススメ？",
+          "number": 0,
+          "numberText": "六・五合目"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4OA==",
+          "title": "カワノススメ？",
+          "number": 7,
+          "numberText": "新七合目"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQyNA==",
+          "title": "素敵な思い出を",
+          "number": 8,
+          "numberText": "新八合目"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU1OA==",
+          "title": "初めまして、富士山",
+          "number": 9,
+          "numberText": "新九合目"
+        },
+        {
+          "id": "RXBpc29kZS0xMDgwNQ==",
+          "title": "富士山って、甘くない…",
+          "number": 10,
+          "numberText": "新十合目"
+        },
+        {
+          "id": "RXBpc29kZS0xMDg5Mw==",
+          "title": "もぉ、やだ!!",
+          "number": 11,
+          "numberText": "新十一合目"
+        },
+        {
+          "id": "RXBpc29kZS0xMTExMw==",
+          "title": "Dear My Friend",
+          "number": 12,
+          "numberText": "新十二合目"
+        },
+        {
+          "id": "RXBpc29kZS0xNDA5NA==",
+          "title": "不思議なホタルの物語",
+          "number": 13,
+          "numberText": "新十三合目"
+        },
+        {
+          "id": "RXBpc29kZS0xNDE5Nw==",
+          "title": "お母さんと霧ヶ峰！",
+          "number": 14,
+          "numberText": "新十四合目"
+        },
+        {
+          "id": "RXBpc29kZS0xNDI5NQ==",
+          "title": "雨具の記憶～ねぇ、ゆうか。今なにしてるの？",
+          "number": 15,
+          "numberText": "新十五合目"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM3Ng==",
+          "title": "思いをうけついで",
+          "number": 16,
+          "numberText": "新十六合目"
+        },
+        {
+          "id": "RXBpc29kZS0xNDQ2OA==",
+          "title": "高いところって、平気？",
+          "number": 17,
+          "numberText": "新十七合目"
+        },
+        {
+          "id": "RXBpc29kZS0xNDU2NA==",
+          "title": "アルバイト、始めます！",
+          "number": 18,
+          "numberText": "新十八合目"
+        },
+        {
+          "id": "RXBpc29kZS0xNDY2OA==",
+          "title": "宿題が終わらないよぉ",
+          "number": 19,
+          "numberText": "新十九合目"
+        },
+        {
+          "id": "RXBpc29kZS0xNDgxMw==",
+          "title": "ここなの飯能大冒険",
+          "number": 20,
+          "numberText": "新二十合目"
+        },
+        {
+          "id": "RXBpc29kZS0xNDk2Ng==",
+          "title": "思い出の山へ",
+          "number": 21,
+          "numberText": "新二十一合目"
+        },
+        {
+          "id": "RXBpc29kZS0xNTExMQ==",
+          "title": "ともだちになろ？",
+          "number": 22,
+          "numberText": "新二十二合目"
+        },
+        {
+          "id": "RXBpc29kZS0xNTIxMA==",
+          "title": "約束",
+          "number": 23,
+          "numberText": "新二十三合目"
+        },
+        {
+          "id": "RXBpc29kZS0xNTM0OA==",
+          "title": "さよなら、わたしたちの夏",
+          "number": 24,
+          "numberText": "新二十四合目"
+        },
+        {
+          "id": "RXBpc29kZS05OTA3OQ==",
+          "title": "ヤマノススメ・ベストテン！",
+          "number": 0,
+          "numberText": "いきなり百合目(笑)"
+        }
+      ],
+      "seriesList": [
+        "ヤマノススメ"
+      ]
+    },
+    {
+      "id": "V29yay01NTAw",
+      "title": "One Room セカンドシーズン",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMDEzNjI=",
+          "title": "花坂結衣のプロローグ",
+          "number": 0,
+          "numberText": "第0話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDE0MTg=",
+          "title": "花坂結衣ははしゃいでる",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDE1MjM=",
+          "title": "花坂結衣は叱られる",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDMwMDM=",
+          "title": "花坂結衣は拗ねている",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDMxMzI=",
+          "title": "花坂結衣はそばにいる",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDMyMzY=",
+          "title": "七橋御乃梨は起こしに来る",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDMzNjA=",
+          "title": "七橋御乃梨はしんみりする",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDM0NjY=",
+          "title": "七橋御乃梨は無茶を言う",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDM3MTI=",
+          "title": "七橋御乃梨はここにいる",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDM4MDc=",
+          "title": "天月真白は探してる",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDM5NjI=",
+          "title": "天月真白はやってみる",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQwODk=",
+          "title": "天月真白は思い出す",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQyNTY=",
+          "title": "天月真白は待っている",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": [
+        "One Room"
+      ]
+    },
+    {
+      "id": "V29yay0xMzY3MA==",
+      "title": "パディントンのぼうけん セカンドシーズン",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjA2Nzk=",
+          "title": "植物には愛を／アートってなあに？",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2ODA=",
+          "title": "ツリーハウスのお客様／パディントンのスパイ作戦",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2ODE=",
+          "title": "バースデーパーティーはむずかしい／パディントンのトレーニング",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2ODI=",
+          "title": "なつかしい味／最強カードをとりもどせ！",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2ODM=",
+          "title": "卓球はがんばらないでやろう！／思い出のスケート靴",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2ODQ=",
+          "title": "真夜中の侵入者／バードさんのロッキングチェアー",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2ODU=",
+          "title": "どっちに投票する？／小さな生き物のおうち",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2ODY=",
+          "title": "イモムシと新しい先生／夢の宇宙旅行",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2ODc=",
+          "title": "空想のゲーム／ラッキー！幸運をお願い",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2ODg=",
+          "title": "ものは捨てずにアップサイクル／農場の動物たちのおでかけ",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2ODk=",
+          "title": "カリーさんのブラックベリー？／ピザ作りをたのしもう！",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2OTA=",
+          "title": "お隣さんがやってきた／歯をなくしたジュディ",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2OTE=",
+          "title": "おしごとはマーマレードサンドのように／新聞記者、ウィンザーガーデンを走る！",
+          "number": 13,
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2OTI=",
+          "title": "親切は渡していくもの／お花の食べ物をつくろう",
+          "number": 14,
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2OTM=",
+          "title": "たえられない夏のおくりもの／お泊まり会はシンプルに",
+          "number": 15,
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2OTQ=",
+          "title": "生まれてはじめてのかんじゃさん／ミツバチはおともだち",
+          "number": 16,
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2OTU=",
+          "title": "新記録にちょうせん！／けっこんしきをもう一度",
+          "number": 17,
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2OTY=",
+          "title": "古いことはダメじゃない／パディントンと卵",
+          "number": 18,
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2OTc=",
+          "title": "カリーさんと森のたんけん／クマが高所恐怖症？",
+          "number": 19,
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2OTg=",
+          "title": "海賊からのメッセージ／グルーバーさんの決心",
+          "number": 20,
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA2OTk=",
+          "title": "思いがけないクリスマス／ウィンザーガーデンパレードを止めるな！",
+          "number": 21,
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA3MDA=",
+          "title": "どっちのしつじが いいしつじ？／いきがいだったラジオドラマ",
+          "number": 22,
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA3MDE=",
+          "title": "ハロウィーンには幽霊がつきもの／ ペットショーの優勝者はだれ？",
+          "number": 23,
+          "numberText": "第23話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA3MDI=",
+          "title": "パディントン流ゴルフ攻略法／ペットホテルのお客さま",
+          "number": 24,
+          "numberText": "第24話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA3MDM=",
+          "title": "なかよくなれない おとなりさん／みんなでおはなし、キャンプファイア",
+          "number": 25,
+          "numberText": "第25話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA3MDQ=",
+          "title": "おうちを売らないで！／ハリネズミの大ぼうけん",
+          "number": 26,
+          "numberText": "第26話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA3MDU=",
+          "title": "おたんじょうびのロンドンツアー　パート１／おたんじょうびのロンドンツアー　パート２",
+          "number": 27,
+          "numberText": "第27話"
+        }
+      ],
+      "seriesList": [
+        "パディントンのぼうけん"
+      ]
+    },
+    {
+      "id": "V29yay0yMjUy",
+      "title": "＜物語＞シリーズ セカンドシーズン",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0yODAz",
+          "title": "猫物語(白) つばさタイガー 其ノ壹",
+          "numberText": "第懇話"
+        },
+        {
+          "id": "RXBpc29kZS0yODA0",
+          "title": "猫物語(白) つばさタイガー 其ノ貳",
+          "numberText": "第懇話"
+        },
+        {
+          "id": "RXBpc29kZS0yODA1",
+          "title": "猫物語(白) つばさタイガー 其ノ參",
+          "numberText": "第懇話"
+        },
+        {
+          "id": "RXBpc29kZS0yODA2",
+          "title": "猫物語(白) つばさタイガー 其ノ肆",
+          "numberText": "第懇話"
+        },
+        {
+          "id": "RXBpc29kZS0yODA3",
+          "title": "猫物語(白) つばさタイガー 其ノ伍",
+          "numberText": "第懇話"
+        },
+        {
+          "id": "RXBpc29kZS0yODA4",
+          "title": "猫物語(黒) 総集篇I",
+          "numberText": "第禁話"
+        },
+        {
+          "id": "RXBpc29kZS0yODA5",
+          "title": "傾物語 まよいキョンシー 其ノ壹",
+          "numberText": "第閑話"
+        },
+        {
+          "id": "RXBpc29kZS0yODEw",
+          "title": "傾物語 まよいキョンシー 其ノ貳",
+          "numberText": "第閑話"
+        },
+        {
+          "id": "RXBpc29kZS0yODEx",
+          "title": "傾物語 まよいキョンシー 其ノ參",
+          "numberText": "第閑話"
+        },
+        {
+          "id": "RXBpc29kZS0yODEy",
+          "title": "傾物語 まよいキョンシー 其ノ肆",
+          "numberText": "第閑話"
+        },
+        {
+          "id": "RXBpc29kZS0yODEz",
+          "title": "化物語 総集篇II",
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS0yODE0",
+          "title": "囮物語 なでこメドゥーサ 其ノ壹",
+          "numberText": "第亂話"
+        },
+        {
+          "id": "RXBpc29kZS0yODE1",
+          "title": "囮物語 なでこメドゥーサ 其ノ貳",
+          "numberText": "第亂話"
+        },
+        {
+          "id": "RXBpc29kZS0yODE2",
+          "title": "囮物語 なでこメドゥーサ 其ノ參",
+          "numberText": "第亂話"
+        },
+        {
+          "id": "RXBpc29kZS0yODE3",
+          "title": "囮物語 なでこメドゥーサ 其ノ肆",
+          "numberText": "第亂話"
+        },
+        {
+          "id": "RXBpc29kZS0yODE4",
+          "title": "化物語&偽物語 総集篇III",
+          "numberText": "#16"
+        },
+        {
+          "id": "RXBpc29kZS0yODE5",
+          "title": "鬼物語 しのぶタイム 其ノ壹",
+          "numberText": "第忍話"
+        },
+        {
+          "id": "RXBpc29kZS0yODIw",
+          "title": "鬼物語 しのぶタイム 其ノ貳",
+          "numberText": "第忍話"
+        },
+        {
+          "id": "RXBpc29kZS0yODIx",
+          "title": "鬼物語 しのぶタイム 其ノ參",
+          "numberText": "第忍話"
+        },
+        {
+          "id": "RXBpc29kZS0yODIy",
+          "title": "鬼物語 しのぶタイム 其ノ肆",
+          "numberText": "第忍話"
+        },
+        {
+          "id": "RXBpc29kZS0yODIz",
+          "title": "恋物語 ひたぎエンド 其ノ壹",
+          "numberText": "第恋話"
+        },
+        {
+          "id": "RXBpc29kZS0yODI0",
+          "title": "恋物語 ひたぎエンド 其ノ貳",
+          "numberText": "第恋話"
+        },
+        {
+          "id": "RXBpc29kZS0yODI1",
+          "title": "恋物語 ひたぎエンド 其ノ參",
+          "numberText": "第恋話"
+        },
+        {
+          "id": "RXBpc29kZS0yODI2",
+          "title": "恋物語 ひたぎエンド 其ノ肆",
+          "numberText": "第恋話"
+        },
+        {
+          "id": "RXBpc29kZS0yODI3",
+          "title": "恋物語 ひたぎエンド 其ノ伍",
+          "numberText": "第恋話"
+        },
+        {
+          "id": "RXBpc29kZS0yODI4",
+          "title": "恋物語 ひたぎエンド 其ノ陸",
+          "numberText": "第恋話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDM2NA==",
+          "title": "花物語 するがデビル 其ノ壹",
+          "numberText": "第變話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDM2NQ==",
+          "title": "花物語 するがデビル 其ノ貳",
+          "numberText": "第變話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDM2Ng==",
+          "title": "花物語 するがデビル 其ノ參",
+          "numberText": "第變話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDM2Nw==",
+          "title": "花物語 するがデビル 其ノ肆",
+          "numberText": "第變話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDM2OA==",
+          "title": "花物語 するがデビル 其ノ伍",
+          "numberText": "第變話"
+        }
+      ],
+      "seriesList": [
+        "〈物語〉"
+      ]
+    },
+    {
+      "id": "V29yay00NDcx",
+      "title": "ハイキュー!! セカンドシーズン",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0zMjk0OA==",
+          "title": "レッツゴートーキョー!!",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0zOTM1OQ==",
+          "title": "直射日光",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS00NzI0NA==",
+          "title": "“村人B”",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS01ODY3OQ==",
+          "title": "“センターエース”",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS01ODgwMA==",
+          "title": "『欲』",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS01OTY1Nw==",
+          "title": "“テンポ”",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS01OTgwMg==",
+          "title": "月の出",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS02MDIyNg==",
+          "title": "幻覚ヒーロー",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS02MDQ5Mw==",
+          "title": "VS“傘”",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS02MTY1NA==",
+          "title": "歯車",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS02MTc5Nw==",
+          "title": "“上”",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS02Mjc4OA==",
+          "title": "試合開始!!",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS02MzE1Ng==",
+          "title": "シンプルで純粋な力",
+          "number": 13,
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS02NTQwMA==",
+          "title": "育ち盛り",
+          "number": 14,
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS02NjM3OA==",
+          "title": "アソビバ",
+          "number": 15,
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS02ODEzNw==",
+          "title": "次へ",
+          "number": 16,
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS02ODc5Mw==",
+          "title": "根性無しの戦い",
+          "number": 17,
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS02OTU5OA==",
+          "title": "敗北者達",
+          "number": 18,
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS03MTgzNQ==",
+          "title": "鉄壁は何度でも築かれる",
+          "number": 19,
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS03MzAzMw==",
+          "title": "払拭",
+          "number": 20,
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS03MzE2Mw==",
+          "title": "壊し屋",
+          "number": 21,
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS03MzI2OA==",
+          "title": "元・根性無しの戦い",
+          "number": 22,
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS03MzQ0Ng==",
+          "title": "“チーム”",
+          "number": 23,
+          "numberText": "第23話"
+        },
+        {
+          "id": "RXBpc29kZS03MzUzOA==",
+          "title": "極限スイッチ",
+          "number": 24,
+          "numberText": "第24話"
+        },
+        {
+          "id": "RXBpc29kZS03MzkwMg==",
+          "title": "宣戦布告",
+          "number": 25,
+          "numberText": "第25話"
+        }
+      ],
+      "seriesList": [
+        "ハイキュー!!"
+      ]
+    }
+  ]
+}

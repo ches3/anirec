@@ -61,3 +61,8 @@ export type ExtractedEpisode = {
   numberText: string | undefined;
   title: string | undefined;
 };
+
+export type SearchTarget = {
+  workTitle: string;
+  episode: ExtractedEpisode | undefined;
+};

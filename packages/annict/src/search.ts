@@ -10,6 +10,7 @@ import {
   findEpisodeByTitleAndNumberText,
   findEpisodeByTitleAsNumberText,
 } from "./util/search/find-episode";
+import { applyMapping } from "./util/search/mapping";
 import { variants } from "./util/search/variants";
 
 function buildFullTitle(params: SearchParam): string {
@@ -58,7 +59,7 @@ export async function search(
   params: SearchParam,
   token: string,
 ): Promise<SearchResult> {
-  const target = extract(params);
+  const target = applyMapping(extract(params));
   const words = variants(target.workTitle);
   const works = await searchWorks(words, token);
 

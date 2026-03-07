@@ -5,6 +5,7 @@ import * as p from "@clack/prompts";
 import type { SearchParam } from "../types";
 import { fetchNode, searchWorks } from "../util/annict";
 import { extract } from "../util/extract/extract";
+import { applyMapping } from "../util/search/mapping";
 import { variants } from "../util/search/variants";
 import type { AnnictTarget, Expected, Fixture, ParamPattern } from "./types";
 
@@ -174,8 +175,8 @@ async function addFixture(
   const annictTarget = parseAnnictUrl(trimmedUrl);
 
   // variants, candidateWorks, expected を取得
-  const extracted = extract(trimmedParams);
-  const titleVariants = variants(extracted.workTitle);
+  const target = applyMapping(extract(trimmedParams));
+  const titleVariants = variants(target.workTitle);
   const candidateWorks = await searchWorks(titleVariants, token);
   const expected = await fetchExpected(annictTarget, token);
 
