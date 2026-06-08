@@ -140,6 +140,7 @@ export const episodeNumberMatches = [
     `復興計画その${num}`,
     `予約${num}`,
     `【MISSION：${num}】`,
+    `【MISSION:${num}】`,
     `${num}日記`,
     `すてっぷ${num}`,
     `特典${num}`,

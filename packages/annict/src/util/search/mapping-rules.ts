@@ -276,4 +276,26 @@ export const mappingRules: WorkMappingRule[] = [
     ],
     workTitleTo: "ヲタクに恋は難しい OAD3「社員旅行と願い事」",
   },
+  {
+    workTitleFrom: ["ヴァイオレット・エヴァーガーデン 総集編"],
+    workTitleTo: "ヴァイオレット・エヴァーガーデン 特別編集版",
+  },
+  {
+    workTitleFrom: ["ヴァイオレット・エヴァーガーデン Extra Episode"],
+    episodeMappings: [
+      {
+        episodeTitleFrom: ["第1話"],
+        episodeTitleTo: 'きっと"愛"を知る日が来るのだろう',
+      }
+    ]
+  },
+  {
+    workTitleFrom: ["SPY×FAMILY", "SPY×FAMILY SPY×FAMILY"],
+    episodeMappings: [
+      {
+        episodeTitleFrom: ["〈夜帳(とばり)〉／はじめての嫉妬"],
+        episodeTitleTo: "〈夜帷(とばり)〉／はじめての嫉妬"
+      }
+    ]
+  }
 ];
