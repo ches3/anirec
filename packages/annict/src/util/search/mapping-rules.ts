@@ -286,16 +286,16 @@ export const mappingRules: WorkMappingRule[] = [
       {
         episodeTitleFrom: ["第1話"],
         episodeTitleTo: 'きっと"愛"を知る日が来るのだろう',
-      }
-    ]
+      },
+    ],
   },
   {
     workTitleFrom: ["SPY×FAMILY", "SPY×FAMILY SPY×FAMILY"],
     episodeMappings: [
       {
         episodeTitleFrom: ["〈夜帳(とばり)〉／はじめての嫉妬"],
-        episodeTitleTo: "〈夜帷(とばり)〉／はじめての嫉妬"
-      }
-    ]
-  }
+        episodeTitleTo: "〈夜帷(とばり)〉／はじめての嫉妬",
+      },
+    ],
+  },
 ];
