@@ -1,0 +1,280 @@
+{
+  "meta": {
+    "createdAt": "2026-06-17T22:41:19.637Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "ネトゲの嫁は女の子じゃないと思った？",
+      "episodeTitle": "ネトゲの嫁は女の子じゃないと思った？　＃1　ネトゲの嫁は女の子じゃないと思った？"
+    },
+    "annictUrl": "https://annict.com/works/4658/episodes/74711"
+  },
+  "expected": {
+    "id": "V29yay00NjU4",
+    "title": "ネトゲの嫁は女の子じゃないと思った？",
+    "episode": {
+      "id": "RXBpc29kZS03NDcxMQ==",
+      "title": "ネトゲの嫁は女の子じゃないと思った？",
+      "number": 1,
+      "numberText": "LV.01"
+    }
+  },
+  "variants": [
+    "ネトゲの嫁は女の子じゃないと思った？",
+    "ネトゲの嫁は女の子じゃないと思った?",
+    "ネトゲの嫁は女の子じゃないと思った",
+    "じゃないと"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay00NjU4",
+      "title": "ネトゲの嫁は女の子じゃないと思った？",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS03NDcxMQ==",
+          "title": "ネトゲの嫁は女の子じゃないと思った？",
+          "number": 1,
+          "numberText": "LV.01"
+        },
+        {
+          "id": "RXBpc29kZS03NDgzNA==",
+          "title": "学校じゃネトゲはできないと思った？",
+          "number": 2,
+          "numberText": "LV.02"
+        },
+        {
+          "id": "RXBpc29kZS03NDkzMQ==",
+          "title": "ネトゲとリアルは違うと思った？",
+          "number": 3,
+          "numberText": "LV.03"
+        },
+        {
+          "id": "RXBpc29kZS03NTAzOA==",
+          "title": "あの子の秘密がバレないと思った？",
+          "number": 4,
+          "numberText": "LV.04"
+        },
+        {
+          "id": "RXBpc29kZS03NTEyMw==",
+          "title": "転生すればワンチャンあると思った？",
+          "number": 5,
+          "numberText": "LV.05"
+        },
+        {
+          "id": "RXBpc29kZS03NTI2Ng==",
+          "title": "告白したら成功確定だと思った？",
+          "number": 6,
+          "numberText": "LV.06"
+        },
+        {
+          "id": "RXBpc29kZS03NTM3OA==",
+          "title": "海に行ったらリア充になれると思った？",
+          "number": 7,
+          "numberText": "LV.07"
+        },
+        {
+          "id": "RXBpc29kZS03NTQ5NA==",
+          "title": "ネトゲの旦那を諦めると思った？",
+          "number": 8,
+          "numberText": "LV.08"
+        },
+        {
+          "id": "RXBpc29kZS03NTU3OQ==",
+          "title": "お泊まりしたら仲良くなれると思った？",
+          "number": 9,
+          "numberText": "LV.09"
+        },
+        {
+          "id": "RXBpc29kZS03NTY4Mw==",
+          "title": "文化祭なら頑張ると思った？",
+          "number": 10,
+          "numberText": "LV.10"
+        },
+        {
+          "id": "RXBpc29kZS03NTg0Ng==",
+          "title": "他人任せで勝てると思った？",
+          "number": 11,
+          "numberText": "LV.11"
+        },
+        {
+          "id": "RXBpc29kZS03NTk0Mw==",
+          "title": "ネトゲの嫁は女の子なんですよ！",
+          "number": 12,
+          "numberText": "LV.12"
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xMDcwMw==",
+      "title": "真の仲間じゃないと勇者のパーティーを追い出されたので、辺境でスローライフすることにしました2nd",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTY1Mjg=",
+          "title": "スローライフな旅をしよう",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTY2MzE=",
+          "title": "宝石の獣",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTY4MjA=",
+          "title": "ゾルタンの祝祭日",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTY5MjM=",
+          "title": "元勇者と暗殺者の日常",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTczNjA=",
+          "title": "スローライフが理解できない男",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTc1MDA=",
+          "title": "ロングバケーション",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTc2NjQ=",
+          "title": "二人の勇者",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTc3ODM=",
+          "title": "すべては加護と信仰の為に",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTc4OTc=",
+          "title": "恋する妖精と強欲な枢機卿を狙い撃て",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTgwMTE=",
+          "title": "勇者と導き手",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTgxNDQ=",
+          "title": "勇者の挑戦",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTgyODM=",
+          "title": "決着、次の旅へ",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": [
+        "真の仲間じゃないと勇者のパーティーを追い出されたので、辺境でスローライフすることにしました"
+      ]
+    },
+    {
+      "id": "V29yay03ODI3",
+      "title": "真の仲間じゃないと勇者のパーティーを追い出されたので、辺境でスローライフすることにしました",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzY1OTI=",
+          "title": "俺は真の仲間じゃないらしい",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzY3NDY=",
+          "title": "勇者の仲間にならなかったお姫様",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzY4NzU=",
+          "title": "2人でスローライフを始めよう",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzcwNzk=",
+          "title": "蜂蜜酒の理由",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzcxOTk=",
+          "title": "琥珀の中の指輪",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzczNDU=",
+          "title": "始まりの凶行",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc0OTc=",
+          "title": "嵐の後に燻る火",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc2MjU=",
+          "title": "英雄になろうとした男",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc3NjQ=",
+          "title": "穏やかな日々",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc5MDc=",
+          "title": "これは勇者を救う物語",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzgxMDI=",
+          "title": "英雄達はゾルタンに集う",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzgyMjY=",
+          "title": "別れ道",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzgzMTg=",
+          "title": "導き手",
+          "number": 13,
+          "numberText": "第13話"
+        }
+      ],
+      "seriesList": [
+        "真の仲間じゃないと勇者のパーティーを追い出されたので、辺境でスローライフすることにしました"
+      ]
+    }
+  ]
+}

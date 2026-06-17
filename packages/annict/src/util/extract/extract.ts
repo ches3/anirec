@@ -1,5 +1,6 @@
 import type { ExtractedEpisode, SearchParam, SearchTarget } from "../../types";
 import { episodeNumberMatches } from "../match";
+import { isSameTitle } from "../normalize";
 import { parseNumber } from "./number";
 
 function getMatch(
@@ -17,15 +18,16 @@ function getMatch(
 }
 
 export function extract(params: SearchParam): SearchTarget {
-  if ("episodeNumber" in params) {
+  if ("title" in params) {
+    const target = extractFullTitle(params.title);
+    return {
+      workTitle: target.title,
+      episode: target.episode,
+    };
+  }
+
+  if ("episodeNumber" in params && params.episodeNumber.trim()) {
     const episodeNumber = params.episodeNumber.trim();
-    if (!episodeNumber) {
-      const episode = extractEpisode(params.episodeTitle);
-      return {
-        workTitle: params.workTitle,
-        episode,
-      };
-    }
     return {
       workTitle: params.workTitle,
       episode: {
@@ -35,14 +37,26 @@ export function extract(params: SearchParam): SearchTarget {
       },
     };
   }
-  if ("title" in params) {
-    const target = extractFullTitle(params.title);
+
+  const episode = extractEpisode(params.episodeTitle);
+  if (episode?.number !== undefined || episode?.numberText !== undefined) {
     return {
-      workTitle: target.title,
-      episode: target.episode,
+      workTitle: params.workTitle,
+      episode,
     };
   }
-  const episode = extractEpisode(params.episodeTitle);
+
+  const episodeByFullTitle = extractFullTitle(params.episodeTitle);
+  if (
+    episodeByFullTitle.episode &&
+    isSameTitle(episodeByFullTitle.title, params.workTitle)
+  ) {
+    return {
+      workTitle: params.workTitle,
+      episode: episodeByFullTitle.episode,
+    };
+  }
+
   return {
     workTitle: params.workTitle,
     episode,
