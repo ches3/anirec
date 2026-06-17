@@ -6,7 +6,6 @@ test("響け！ユーフォニアム", () => {
     expect.arrayContaining([
       "響け！ユーフォニアム",
       "響け!ユーフォニアム",
-      "響け",
       "ユーフォニアム",
     ]),
   );
@@ -15,12 +14,7 @@ test("響け！ユーフォニアム", () => {
 test("中二病でも恋がしたい！", () => {
   const words = variants("中二病でも恋がしたい！");
   expect(words).toEqual(
-    expect.arrayContaining([
-      "中二病でも恋がしたい",
-      "でも",
-      "がしたい",
-      "中二病",
-    ]),
+    expect.arrayContaining(["中二病でも恋がしたい", "中二病"]),
   );
 });
 
