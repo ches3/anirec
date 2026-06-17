@@ -28,6 +28,7 @@ type Options = {
     space?: boolean;
     anime?: boolean;
     movie?: boolean;
+    reading?: boolean;
     bracket?: boolean;
     symbol?: boolean;
     nonNumAndLetter?: boolean;
@@ -119,6 +120,25 @@ export function normalize(title: string, options?: Options): string {
     normalizedTitle = normalizedTitle.replace(/^(映画)|(劇場版)/, "");
   }
 
+  if (options?.remove?.reading === true) {
+    normalizedTitle = normalizedTitle.replace(
+      /([\p{sc=Han}])\([\p{sc=Hira}ー]+\)/gu,
+      "$1",
+    );
+    normalizedTitle = normalizedTitle.replace(
+      /([\p{sc=Han}])（[\p{sc=Hira}ー]+）/gu,
+      "$1",
+    );
+    normalizedTitle = normalizedTitle.replace(
+      /([\p{sc=Han}])\([\p{sc=Kana}ー]+\)/gu,
+      "$1",
+    );
+    normalizedTitle = normalizedTitle.replace(
+      /([\p{sc=Han}])（[\p{sc=Kana}ー]+）/gu,
+      "$1",
+    );
+  }
+
   if (options?.remove?.bracket === true) {
     normalizedTitle = normalizedTitle.replace(/「(.+?)」/g, "$1");
     normalizedTitle = normalizedTitle.replace(/『(.+?)』/g, "$1");
@@ -153,6 +173,7 @@ export function isSameTitle(a: string, b: string, weak = false): boolean {
     remove: {
       space: true,
       anime: true,
+      reading: weak,
       bracket: true,
       nonNumAndLetter: weak,
     },

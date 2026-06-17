@@ -33,6 +33,36 @@ describe("normalize", () => {
     expect(normalize(raw, { unicode: "NFKC" })).toBe(nfkc);
   });
 
+  test("漢字直後の読みカッコを削除する", () => {
+    expect(
+      normalize("スランプの理由（わけ）", { remove: { reading: true } }),
+    ).toBe("スランプの理由");
+    expect(
+      normalize("スランプの理由(わけ)", { remove: { reading: true } }),
+    ).toBe("スランプの理由");
+    expect(
+      normalize("スランプの理由(ワケ)", { remove: { reading: true } }),
+    ).toBe("スランプの理由");
+    expect(
+      normalize("スランプの理由（ワケ）", { remove: { reading: true } }),
+    ).toBe("スランプの理由");
+  });
+
+  test("漢字直後でない読みカッコは削除しない", () => {
+    expect(normalize("の(わけ)", { remove: { reading: true } })).toBe(
+      "の(わけ)",
+    );
+  });
+
+  test("読みカッコ以外の括弧は削除しない", () => {
+    expect(normalize("猫物語(白)", { remove: { reading: true } })).toBe(
+      "猫物語(白)",
+    );
+    expect(normalize("海崎新太(27)無職", { remove: { reading: true } })).toBe(
+      "海崎新太(27)無職",
+    );
+  });
+
   test("Unicode NFC正規化はオプションなしでは適用されない", () => {
     // NFD: 結合文字で表現された濁点
     const nfd =
@@ -53,5 +83,34 @@ describe("isSameTitle", () => {
       "\u53cb\u9054\u306e\u59b9\u304c\u4ffa\u306b\u3060\u3051\u30a6\u30b6\u3044";
 
     expect(isSameTitle(nfd, nfc)).toBe(true);
+  });
+
+  test("weak=falseの場合は読みカッコ付きタイトルが一致しない", () => {
+    expect(isSameTitle("スランプの理由", "スランプの理由（わけ）")).toBe(false);
+    expect(isSameTitle("スランプの理由", "スランプの理由(わけ)")).toBe(false);
+    expect(isSameTitle("スランプの理由", "スランプの理由(ワケ)")).toBe(false);
+    expect(isSameTitle("スランプの理由", "スランプの理由（ワケ）")).toBe(false);
+  });
+
+  test("weak=trueの場合は読みカッコ付きタイトルが一致する", () => {
+    expect(isSameTitle("スランプの理由", "スランプの理由（わけ）", true)).toBe(
+      true,
+    );
+    expect(isSameTitle("スランプの理由", "スランプの理由(わけ)", true)).toBe(
+      true,
+    );
+    expect(isSameTitle("スランプの理由", "スランプの理由(ワケ)", true)).toBe(
+      true,
+    );
+    expect(isSameTitle("スランプの理由", "スランプの理由（ワケ）", true)).toBe(
+      true,
+    );
+  });
+
+  test("読みカッコ以外の括弧の内容が一致しない場合はfalseを返す", () => {
+    expect(isSameTitle("猫物語(白)", "猫物語(黒)", true)).toBe(false);
+    expect(isSameTitle("海崎新太(27)無職", "海崎新太(28)無職", true)).toBe(
+      false,
+    );
   });
 });
