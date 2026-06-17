@@ -25,86 +25,6 @@
   ],
   "candidateWorks": [
     {
-      "id": "V29yay03ODM1",
-      "title": "プラオレ！～PRIDE OF ORANGE～",
-      "noEpisodes": false,
-      "episodes": [
-        {
-          "id": "RXBpc29kZS0xMzY1OTE=",
-          "title": "face off",
-          "number": 1,
-          "numberText": "第1話"
-        },
-        {
-          "id": "RXBpc29kZS0xMzY3NDU=",
-          "title": "best friends",
-          "number": 2,
-          "numberText": "第2話"
-        },
-        {
-          "id": "RXBpc29kZS0xMzY4NzY=",
-          "title": "all for one",
-          "number": 3,
-          "numberText": "第3話"
-        },
-        {
-          "id": "RXBpc29kZS0xMzcwNzg=",
-          "title": "grinder",
-          "number": 4,
-          "numberText": "第4話"
-        },
-        {
-          "id": "RXBpc29kZS0xMzcxOTg=",
-          "title": "shoot out",
-          "number": 5,
-          "numberText": "第5話"
-        },
-        {
-          "id": "RXBpc29kZS0xMzczNDQ=",
-          "title": "debut",
-          "number": 6,
-          "numberText": "第6話"
-        },
-        {
-          "id": "RXBpc29kZS0xMzc0OTY=",
-          "title": "cheer up!",
-          "number": 7,
-          "numberText": "第7話"
-        },
-        {
-          "id": "RXBpc29kZS0xMzc2MjQ=",
-          "title": "accident",
-          "number": 8,
-          "numberText": "第8話"
-        },
-        {
-          "id": "RXBpc29kZS0xMzc3NjU=",
-          "title": "awakening",
-          "number": 9,
-          "numberText": "第9話"
-        },
-        {
-          "id": "RXBpc29kZS0xMzc5MDU=",
-          "title": "reunion",
-          "number": 10,
-          "numberText": "第10話"
-        },
-        {
-          "id": "RXBpc29kZS0xMzgxMDM=",
-          "title": "barn burner",
-          "number": 11,
-          "numberText": "第11話"
-        },
-        {
-          "id": "RXBpc29kZS0xMzgyMjQ=",
-          "title": "PRIDE OF ORANGE",
-          "number": 12,
-          "numberText": "第12話"
-        }
-      ],
-      "seriesList": []
-    },
-    {
       "id": "V29yay00OTc0",
       "title": "orange -未来-",
       "noEpisodes": true,
@@ -188,6 +108,86 @@
       "seriesList": [
         "orange"
       ]
+    },
+    {
+      "id": "V29yay03ODM1",
+      "title": "プラオレ！～PRIDE OF ORANGE～",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzY1OTE=",
+          "title": "face off",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzY3NDU=",
+          "title": "best friends",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzY4NzY=",
+          "title": "all for one",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzcwNzg=",
+          "title": "grinder",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzcxOTg=",
+          "title": "shoot out",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzczNDQ=",
+          "title": "debut",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc0OTY=",
+          "title": "cheer up!",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc2MjQ=",
+          "title": "accident",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc3NjU=",
+          "title": "awakening",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc5MDU=",
+          "title": "reunion",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzgxMDM=",
+          "title": "barn burner",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzgyMjQ=",
+          "title": "PRIDE OF ORANGE",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": []
     }
   ]
 }

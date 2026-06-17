@@ -19,9 +19,18 @@
     }
   },
   "variants": [
-    "ReLIFE"
+    "ReLIFE report",
+    "ReLIFE",
+    "report"
   ],
   "candidateWorks": [
+    {
+      "id": "V29yay0xMDAxOQ==",
+      "title": "Reporter Blues",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": []
+    },
     {
       "id": "V29yay01NzI2",
       "title": "ReLIFE 完結編",

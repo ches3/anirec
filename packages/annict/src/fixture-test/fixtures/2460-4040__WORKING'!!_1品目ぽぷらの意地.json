@@ -24,6 +24,94 @@
   ],
   "candidateWorks": [
     {
+      "id": "V29yay00OTUx",
+      "title": "WWW.WORKING!!",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS03NzQ4Ng==",
+          "title": "アルバイトは人生を変えてくれる",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS03NzYyOQ==",
+          "title": "人生そんなに甘くない",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS03Nzg2MA==",
+          "title": "君にしか頼めない",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS03OTc2NA==",
+          "title": "いけるきがする",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS04MDE2Mw==",
+          "title": "ふくしゅうしてみる",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS04MDI5Nw==",
+          "title": "運命サバイバル",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS04MDQ3OA==",
+          "title": "料理は愛情",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS04MDU4Ng==",
+          "title": "おかしなはなし",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS04MTQxMw==",
+          "title": "僕らはみんな病んでいる",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS04NDk3OA==",
+          "title": "明日に向かって吼えろ",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS04ODQ4OA==",
+          "title": "右の頬を殴られたら左腕でカウンター",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS04ODcwNQ==",
+          "title": "あらしの前の何か",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS04ODgyNQ==",
+          "title": "全てのことには理由がある",
+          "number": 13,
+          "numberText": "第13話"
+        }
+      ],
+      "seriesList": [
+        "WORKING!!"
+      ]
+    },
+    {
       "id": "V29yay00NDIz",
       "title": "WORKING!!!",
       "noEpisodes": false,
@@ -110,94 +198,6 @@
           "id": "RXBpc29kZS02MjU2NQ==",
           "title": "ロード・オブ・ザ・小鳥遊",
           "numberText": "14品目"
-        }
-      ],
-      "seriesList": [
-        "WORKING!!"
-      ]
-    },
-    {
-      "id": "V29yay00OTUx",
-      "title": "WWW.WORKING!!",
-      "noEpisodes": false,
-      "episodes": [
-        {
-          "id": "RXBpc29kZS03NzQ4Ng==",
-          "title": "アルバイトは人生を変えてくれる",
-          "number": 1,
-          "numberText": "第1話"
-        },
-        {
-          "id": "RXBpc29kZS03NzYyOQ==",
-          "title": "人生そんなに甘くない",
-          "number": 2,
-          "numberText": "第2話"
-        },
-        {
-          "id": "RXBpc29kZS03Nzg2MA==",
-          "title": "君にしか頼めない",
-          "number": 3,
-          "numberText": "第3話"
-        },
-        {
-          "id": "RXBpc29kZS03OTc2NA==",
-          "title": "いけるきがする",
-          "number": 4,
-          "numberText": "第4話"
-        },
-        {
-          "id": "RXBpc29kZS04MDE2Mw==",
-          "title": "ふくしゅうしてみる",
-          "number": 5,
-          "numberText": "第5話"
-        },
-        {
-          "id": "RXBpc29kZS04MDI5Nw==",
-          "title": "運命サバイバル",
-          "number": 6,
-          "numberText": "第6話"
-        },
-        {
-          "id": "RXBpc29kZS04MDQ3OA==",
-          "title": "料理は愛情",
-          "number": 7,
-          "numberText": "第7話"
-        },
-        {
-          "id": "RXBpc29kZS04MDU4Ng==",
-          "title": "おかしなはなし",
-          "number": 8,
-          "numberText": "第8話"
-        },
-        {
-          "id": "RXBpc29kZS04MTQxMw==",
-          "title": "僕らはみんな病んでいる",
-          "number": 9,
-          "numberText": "第9話"
-        },
-        {
-          "id": "RXBpc29kZS04NDk3OA==",
-          "title": "明日に向かって吼えろ",
-          "number": 10,
-          "numberText": "第10話"
-        },
-        {
-          "id": "RXBpc29kZS04ODQ4OA==",
-          "title": "右の頬を殴られたら左腕でカウンター",
-          "number": 11,
-          "numberText": "第11話"
-        },
-        {
-          "id": "RXBpc29kZS04ODcwNQ==",
-          "title": "あらしの前の何か",
-          "number": 12,
-          "numberText": "第12話"
-        },
-        {
-          "id": "RXBpc29kZS04ODgyNQ==",
-          "title": "全てのことには理由がある",
-          "number": 13,
-          "numberText": "第13話"
         }
       ],
       "seriesList": [

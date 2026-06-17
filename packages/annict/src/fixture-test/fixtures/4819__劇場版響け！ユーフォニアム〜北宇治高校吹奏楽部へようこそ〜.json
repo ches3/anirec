@@ -19,9 +19,113 @@
     " 響け！ユーフォニアム〜北宇治高校吹奏楽部へようこそ〜",
     "響け",
     "ユーフォニアム",
-    "北宇治高校吹奏楽部へようこそ"
+    "北宇治高校吹奏楽部へようこそ",
+    "へようこそ",
+    "北宇治高校吹奏楽部"
   ],
   "candidateWorks": [
+    {
+      "id": "V29yay0yMTU1",
+      "title": "ミラクル☆トレイン～大江戸線へようこそ～",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS01ODk1Nw==",
+          "title": "ラビリンス42.3",
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS01ODk1OA==",
+          "title": "パスポートをあなたに",
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS01ODk1OQ==",
+          "title": "十三万人の旅立ち",
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS01ODk2MA==",
+          "title": "未来発 過去行き",
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS01ODk2MQ==",
+          "title": "恋の0哩標識(マイル・マーカー・ゼロ)",
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS01ODk2Mg==",
+          "title": "レールウェイ フロム 月島",
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS01ODk2Mw==",
+          "title": "大江戸ミステリー☆トレイン",
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS01ODk2NA==",
+          "title": "小さなお客様",
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS01ODk2NQ==",
+          "title": "男たちのミラクル☆トレイン",
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS01ODk2Ng==",
+          "title": "大江戸線にほえろ！",
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS01ODk2Nw==",
+          "title": "3年後のプロポーズ",
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS01ODk2OA==",
+          "title": "もうひとりの乗客",
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS01ODk2OQ==",
+          "title": "聖夜の奇跡",
+          "numberText": "第13話"
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xNjY4Nw==",
+      "title": "にんにん亭へようこそ",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": [
+        "エンタメタイムズ"
+      ]
+    },
+    {
+      "id": "V29yay0xMDg5MA==",
+      "title": "Pia♥キャロットへようこそ!! 劇場版〜さやかの恋物語〜",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xNzYyNg==",
+      "title": "パイの実 おしの森へようこそ！",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzk3NTM=",
+          "number": 1,
+          "numberText": "第1話"
+        }
+      ],
+      "seriesList": []
+    },
     {
       "id": "V29yay00ODE5",
       "title": "劇場版 響け！ユーフォニアム～北宇治高校吹奏楽部へようこそ～",
@@ -29,6 +133,97 @@
       "episodes": [],
       "seriesList": [
         "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay01MzM4",
+      "title": "劇場版 響け！ユーフォニアム～届けたいメロディ～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay0xMjMyMg==",
+      "title": "日本へようこそエルフさん。",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjQ0NDE=",
+          "title": "おはよう、エルフさん。",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjQ1NTY=",
+          "title": "カツ丼ですよ、エルフさん。",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjQ3MjA=",
+          "title": "失われた魔石",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjUxMzE=",
+          "title": "おやすみなさい、エルフさん。",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjU2MjM=",
+          "title": "夢幻剣士",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjU4OTE=",
+          "title": "フレンチですよ、エルフさん。",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjYyNzM=",
+          "title": "輝く魔石",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjY0MjI=",
+          "title": "日本へようこそ、魔導竜さん。",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjY1NzU=",
+          "title": "天啓と愚直",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjc0Nzc=",
+          "title": "楽しい古代迷宮",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjgwMzQ=",
+          "title": "ぶらり青森、二人と一匹。",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjgzNzM=",
+          "title": "桜吹雪ですよ、エルフさん。",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": [
+        "日本へようこそエルフさん。"
       ]
     },
     {
@@ -125,85 +320,8 @@
       ]
     },
     {
-      "id": "V29yay0xMzY0Mg==",
-      "title": "劇場版 響け！ユーフォニアム～フォトセッションへようこそ",
-      "noEpisodes": false,
-      "episodes": [
-        {
-          "id": "RXBpc29kZS0xNjA1NzA=",
-          "number": 1,
-          "numberText": "1週目"
-        },
-        {
-          "id": "RXBpc29kZS0xNjA1NzE=",
-          "number": 2,
-          "numberText": "2週目"
-        },
-        {
-          "id": "RXBpc29kZS0xNjA1NzI=",
-          "number": 3,
-          "numberText": "3週目"
-        }
-      ],
-      "seriesList": [
-        "響け！ユーフォニアム"
-      ]
-    },
-    {
-      "id": "V29yay04Njk2",
-      "title": "響け！ユーフォニアム2 未放送ショートムービー",
-      "noEpisodes": false,
-      "episodes": [
-        {
-          "id": "RXBpc29kZS0xMzQ1NjA=",
-          "title": "花火大会キッスへようこそ！",
-          "number": 1,
-          "numberText": "#1"
-        },
-        {
-          "id": "RXBpc29kZS0xMzQ1NjE=",
-          "title": "プールへようこそ！",
-          "number": 2,
-          "numberText": "#2"
-        },
-        {
-          "id": "RXBpc29kZS0xMzQ1NjI=",
-          "title": "メイド服へようこそ！",
-          "number": 3,
-          "numberText": "#3"
-        },
-        {
-          "id": "RXBpc29kZS0xMzQ1NjM=",
-          "title": "バトル文化祭へようこそ！",
-          "number": 4,
-          "numberText": "#4"
-        },
-        {
-          "id": "RXBpc29kZS0xMzQ1NjQ=",
-          "title": "フライング滝へようこそ！",
-          "number": 5,
-          "numberText": "#5"
-        },
-        {
-          "id": "RXBpc29kZS0xMzQ1NjU=",
-          "title": "画伯へようこそ！",
-          "number": 6,
-          "numberText": "#6"
-        },
-        {
-          "id": "RXBpc29kZS0xMzQ1NjY=",
-          "title": "安眠へようこそ！",
-          "number": 7,
-          "numberText": "#7"
-        }
-      ],
-      "seriesList": [
-        "響け！ユーフォニアム"
-      ]
-    },
-    {
-      "id": "V29yay0xNTcxNw==",
-      "title": "最終楽章 響け！ユーフォニアム 前編",
+      "id": "V29yay0xNzMxNQ==",
+      "title": "今からでも楽しめる！響け！ユーフォニアム",
       "noEpisodes": true,
       "episodes": [],
       "seriesList": [
@@ -211,53 +329,193 @@
       ]
     },
     {
-      "id": "V29yay04Njk1",
-      "title": "響け！ユーフォニアム 未放送ショートムービー「吹奏楽部の日常」",
+      "id": "V29yay0xNDUzOA==",
+      "title": "プリキュアオールスターズDX the DANCE LIVE♥～ミラクルダンスステージへようこそ～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay02OTIy",
+      "title": "天華百剣 ～めいじ館へようこそ！～",
       "noEpisodes": false,
       "episodes": [
         {
-          "id": "RXBpc29kZS0xMzQ1NTM=",
-          "title": "楽器をお掃除だフォ！",
-          "number": 1,
-          "numberText": "その①"
+          "id": "RXBpc29kZS0xMjA2MDY=",
+          "numberText": "第01話"
         },
         {
-          "id": "RXBpc29kZS0xMzQ1NTQ=",
-          "title": "こんなあだ名は嫌だチュー！",
-          "number": 2,
-          "numberText": "その②"
+          "id": "RXBpc29kZS0xMjA2MDc=",
+          "numberText": "第02話"
         },
         {
-          "id": "RXBpc29kZS0xMzQ1NTU=",
-          "title": "吹奏楽部男子の日常だボーン！",
-          "number": 3,
-          "numberText": "その③"
+          "id": "RXBpc29kZS0xMjA2MDg=",
+          "numberText": "第03話"
         },
         {
-          "id": "RXBpc29kZS0xMzQ1NTY=",
-          "title": "チューバ君は王子様なのバス！",
-          "number": 4,
-          "numberText": "その④"
+          "id": "RXBpc29kZS0xMjA2MDk=",
+          "numberText": "第04話"
         },
         {
-          "id": "RXBpc29kZS0xMzQ1NTc=",
-          "title": "毎日は危険がいっぱいだフォ！",
-          "number": 5,
-          "numberText": "その⑤"
+          "id": "RXBpc29kZS0xMjA2MTA=",
+          "numberText": "第05話"
         },
         {
-          "id": "RXBpc29kZS0xMzQ1NTg=",
-          "title": "滝先生の秘密だフォ！",
-          "number": 6,
-          "numberText": "その⑥"
+          "id": "RXBpc29kZS0xMjA2MTE=",
+          "numberText": "第06話"
         },
         {
-          "id": "RXBpc29kZS0xMzQ1NTk=",
-          "title": "移調楽器って何だチュー！",
-          "number": 7,
-          "numberText": "その⑦"
+          "id": "RXBpc29kZS0xMjA2MTI=",
+          "numberText": "第07話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjA2MTM=",
+          "numberText": "第08話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjA2MTQ=",
+          "numberText": "第09話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjA2MTU=",
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjA2MTY=",
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjA2MTc=",
+          "numberText": "第12話"
         }
       ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0zMTY3",
+      "title": "宇宙ショーへようこそ",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xMDg4OQ==",
+      "title": "Pia♥キャロットへようこそ!!2 DX",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTEwNzQ=",
+          "title": "淡〜い恋のフルーツ・カクテル",
+          "number": 1,
+          "numberText": "ORDER.1"
+        },
+        {
+          "id": "RXBpc29kZS0xNTEwNzU=",
+          "title": "恋のラビリンス・パフェ",
+          "number": 2,
+          "numberText": "ORDER.2"
+        },
+        {
+          "id": "RXBpc29kZS0xNTEwNzY=",
+          "title": "恋のマスカレード・サンデー",
+          "number": 3,
+          "numberText": "ORDER.3"
+        },
+        {
+          "id": "RXBpc29kZS0xNTEwNzc=",
+          "title": "恋のミルク・シェイク",
+          "number": 4,
+          "numberText": "ORDER.4"
+        },
+        {
+          "id": "RXBpc29kZS0xNTEwNzg=",
+          "title": "恋のX'マス・ア・ラ・モード",
+          "number": 5,
+          "numberText": "ORDER.5"
+        },
+        {
+          "id": "RXBpc29kZS0xNTEwNzk=",
+          "title": "ラスト・オーダーは…どっち…!?",
+          "number": 6,
+          "numberText": "ORDER.6"
+        },
+        {
+          "id": "RXBpc29kZS0xNTEwODI=",
+          "title": "総集編",
+          "number": 7
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xMzU4NQ==",
+      "title": "響け！ユーフォニアム3 Extra Episode",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjA0MTE=",
+          "title": "いつでもナチュラル",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTI=",
+          "title": "かわいいドルチェ",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTM=",
+          "title": "てくてくアンダンテ",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTQ=",
+          "title": "すすむよラルゴ",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTU=",
+          "title": "きみへのアモローソ",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0MTY=",
+          "title": "あしたへコーダ",
+          "number": 6,
+          "numberText": "#6"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay05Njg5",
+      "title": "特別編 響け！ユーフォニアム～アンサンブルコンテスト～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay01MzQw",
+      "title": "劇場版 響け！ユーフォニアム～誓いのフィナーレ～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay0xNzUxOQ==",
+      "title": "最終楽章 響け！ユーフォニアム 後編",
+      "noEpisodes": true,
+      "episodes": [],
       "seriesList": [
         "響け！ユーフォニアム"
       ]
@@ -351,79 +609,6 @@
       ]
     },
     {
-      "id": "V29yay01MzM4",
-      "title": "劇場版 響け！ユーフォニアム～届けたいメロディ～",
-      "noEpisodes": true,
-      "episodes": [],
-      "seriesList": [
-        "響け！ユーフォニアム"
-      ]
-    },
-    {
-      "id": "V29yay0xMzU4NQ==",
-      "title": "響け！ユーフォニアム3 Extra Episode",
-      "noEpisodes": false,
-      "episodes": [
-        {
-          "id": "RXBpc29kZS0xNjA0MTE=",
-          "title": "いつでもナチュラル",
-          "number": 1,
-          "numberText": "#1"
-        },
-        {
-          "id": "RXBpc29kZS0xNjA0MTI=",
-          "title": "かわいいドルチェ",
-          "number": 2,
-          "numberText": "#2"
-        },
-        {
-          "id": "RXBpc29kZS0xNjA0MTM=",
-          "title": "てくてくアンダンテ",
-          "number": 3,
-          "numberText": "#3"
-        },
-        {
-          "id": "RXBpc29kZS0xNjA0MTQ=",
-          "title": "すすむよラルゴ",
-          "number": 4,
-          "numberText": "#4"
-        },
-        {
-          "id": "RXBpc29kZS0xNjA0MTU=",
-          "title": "きみへのアモローソ",
-          "number": 5,
-          "numberText": "#5"
-        },
-        {
-          "id": "RXBpc29kZS0xNjA0MTY=",
-          "title": "あしたへコーダ",
-          "number": 6,
-          "numberText": "#6"
-        }
-      ],
-      "seriesList": [
-        "響け！ユーフォニアム"
-      ]
-    },
-    {
-      "id": "V29yay05Njg5",
-      "title": "特別編 響け！ユーフォニアム～アンサンブルコンテスト～",
-      "noEpisodes": true,
-      "episodes": [],
-      "seriesList": [
-        "響け！ユーフォニアム"
-      ]
-    },
-    {
-      "id": "V29yay01MzQw",
-      "title": "劇場版 響け！ユーフォニアム～誓いのフィナーレ～",
-      "noEpisodes": true,
-      "episodes": [],
-      "seriesList": [
-        "響け！ユーフォニアム"
-      ]
-    },
-    {
       "id": "V29yay02Njg4",
       "title": "響け！ユーフォニアム3",
       "noEpisodes": false,
@@ -510,6 +695,580 @@
       "seriesList": [
         "響け！ユーフォニアム"
       ]
+    },
+    {
+      "id": "V29yay0xNjYwOQ==",
+      "title": "ハズビン・ホテルへようこそ シーズン2",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzQyODE=",
+          "title": "新しいペンシャス",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQyODA=",
+          "title": "ストーリーテラー",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQyOTU=",
+          "title": "ハズビン･ホテル 暴かれた裏側",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQyOTQ=",
+          "title": "取引",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQ0Mzg=",
+          "title": "口封じ",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQ0Mzk=",
+          "title": "叫びの雨",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQ1OTM=",
+          "title": "大量撹乱兵器",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQ1OTI=",
+          "title": "カーテンコール",
+          "number": 8,
+          "numberText": "第8話"
+        }
+      ],
+      "seriesList": [
+        "ハズビン・ホテル"
+      ]
+    },
+    {
+      "id": "V29yay0xNzY2NQ==",
+      "title": "オカルティックな喫茶店へようこそ！",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": [
+        "冠番組グランプリ"
+      ]
+    },
+    {
+      "id": "V29yay0xNDkzMA==",
+      "title": "追放者食堂へようこそ！",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzEwNzE=",
+          "title": "お前は自由だ",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzEyMzM=",
+          "title": "めっちゃおいしいです！",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzE0ODg=",
+          "title": "それが冒険者だ！",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzE2NjQ=",
+          "title": "じゃあ、日替わり定食で",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzE5MDU=",
+          "title": "プロポーズなんて早すぎるだろ！",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzIxNjY=",
+          "title": "アトリエお嬢様お迎えに上がりました",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzIzNjg=",
+          "title": "早く、良くなってね",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzI2MjQ=",
+          "title": "本日、所用につき臨時休業",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzI3NTY=",
+          "title": "大事なものなら、手放さないでください！",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzI5NDM=",
+          "title": "より遠く、遥かに高いところこそ、俺の目指す場所だ",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMwOTQ=",
+          "title": "最後のピース？",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMyNTg=",
+          "title": "追放者食堂へようこそ！",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay00NDcw",
+      "title": "雨色ココア Rainy colorへようこそ！",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0zOTMwNA==",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0zOTM3Ng==",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS00NzI2MA==",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS01ODY5Nw==",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS01ODgxNw==",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS01OTY3NA==",
+          "number": 6,
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS01OTgyMA==",
+          "number": 7,
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS02MDI0Mw==",
+          "number": 8,
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS02MDUxMg==",
+          "number": 9,
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS02MTY3Mg==",
+          "number": 10,
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS02MTgxNQ==",
+          "number": 11,
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS02MjgwNQ==",
+          "number": 12,
+          "numberText": "#12"
+        }
+      ],
+      "seriesList": [
+        "雨色ココア"
+      ]
+    },
+    {
+      "id": "V29yay0xMjQ1Mw==",
+      "title": "ハズビン・ホテルへようこそ",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTY4ODA=",
+          "title": "幕開け",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTY4ODE=",
+          "title": "ビデオ・スターの悲劇",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTY4ODI=",
+          "title": "スクランブルなエッギーズ",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTY4ODM=",
+          "title": "仮面",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTczODg=",
+          "title": "パパ対パパ",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTczODk=",
+          "title": "天国へようこそ",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTc0MTA=",
+          "title": "こんにちは ロージー",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTc0MTE=",
+          "title": "ザ・ショー・マスト・ゴー・オン",
+          "number": 8,
+          "numberText": "第8話"
+        }
+      ],
+      "seriesList": [
+        "ハズビン・ホテル"
+      ]
+    },
+    {
+      "id": "V29yay0xMDczMw==",
+      "title": "駒田蒸留所へようこそ",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "P.A.WORKSの“お仕事\""
+      ]
+    },
+    {
+      "id": "V29yay0xNTcxNw==",
+      "title": "最終楽章 響け！ユーフォニアム 前編",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay0xMzY0Mg==",
+      "title": "劇場版 響け！ユーフォニアム～フォトセッションへようこそ",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjA1NzA=",
+          "number": 1,
+          "numberText": "1週目"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA1NzE=",
+          "number": 2,
+          "numberText": "2週目"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA1NzI=",
+          "number": 3,
+          "numberText": "3週目"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay04Njk1",
+      "title": "響け！ユーフォニアム 未放送ショートムービー「吹奏楽部の日常」",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzQ1NTM=",
+          "title": "楽器をお掃除だフォ！",
+          "number": 1,
+          "numberText": "その①"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTQ=",
+          "title": "こんなあだ名は嫌だチュー！",
+          "number": 2,
+          "numberText": "その②"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTU=",
+          "title": "吹奏楽部男子の日常だボーン！",
+          "number": 3,
+          "numberText": "その③"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTY=",
+          "title": "チューバ君は王子様なのバス！",
+          "number": 4,
+          "numberText": "その④"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTc=",
+          "title": "毎日は危険がいっぱいだフォ！",
+          "number": 5,
+          "numberText": "その⑤"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTg=",
+          "title": "滝先生の秘密だフォ！",
+          "number": 6,
+          "numberText": "その⑥"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NTk=",
+          "title": "移調楽器って何だチュー！",
+          "number": 7,
+          "numberText": "その⑦"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay04Njk2",
+      "title": "響け！ユーフォニアム2 未放送ショートムービー",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzQ1NjA=",
+          "title": "花火大会キッスへようこそ！",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjE=",
+          "title": "プールへようこそ！",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjI=",
+          "title": "メイド服へようこそ！",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjM=",
+          "title": "バトル文化祭へようこそ！",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjQ=",
+          "title": "フライング滝へようこそ！",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjU=",
+          "title": "画伯へようこそ！",
+          "number": 6,
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS0xMzQ1NjY=",
+          "title": "安眠へようこそ！",
+          "number": 7,
+          "numberText": "#7"
+        }
+      ],
+      "seriesList": [
+        "響け！ユーフォニアム"
+      ]
+    },
+    {
+      "id": "V29yay01MTE0",
+      "title": "ボールルームへようこそ",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS05MTkzMA==",
+          "title": "小笠原ダンススタジオへようこそ",
+          "number": 1,
+          "numberText": "Heat.1"
+        },
+        {
+          "id": "RXBpc29kZS05MjExNA==",
+          "title": "兵藤清春",
+          "number": 2,
+          "numberText": "Heat.2"
+        },
+        {
+          "id": "RXBpc29kZS05MjIxMg==",
+          "title": "ワルツを踊れ",
+          "number": 3,
+          "numberText": "Heat.3"
+        },
+        {
+          "id": "RXBpc29kZS05MjMxMg==",
+          "title": "ダンサーズ・ハイ",
+          "number": 4,
+          "numberText": "Heat.4"
+        },
+        {
+          "id": "RXBpc29kZS05MjQxMA==",
+          "title": "パートナー",
+          "number": 5,
+          "numberText": "Heat.5"
+        },
+        {
+          "id": "RXBpc29kZS05MjQwOQ==",
+          "title": "ライン・オブ・ダンス",
+          "number": 6,
+          "numberText": "Heat.6"
+        },
+        {
+          "id": "RXBpc29kZS05Mjc2NQ==",
+          "title": "天平杯",
+          "number": 7,
+          "numberText": "Heat.7"
+        },
+        {
+          "id": "RXBpc29kZS05Mjg2Nw==",
+          "title": "現実",
+          "number": 8,
+          "numberText": "Heat.8"
+        },
+        {
+          "id": "RXBpc29kZS05Mjk2Ng==",
+          "title": "花と額縁",
+          "number": 9,
+          "numberText": "Heat.9"
+        },
+        {
+          "id": "RXBpc29kZS05MzExNw==",
+          "title": "ボルテージ",
+          "number": 10,
+          "numberText": "Heat.10"
+        },
+        {
+          "id": "RXBpc29kZS05MzIyNQ==",
+          "title": "評価",
+          "number": 11,
+          "numberText": "Heat.11"
+        },
+        {
+          "id": "RXBpc29kZS05MzQ5NA==",
+          "title": "出会い",
+          "number": 12,
+          "numberText": "Heat.12"
+        },
+        {
+          "id": "RXBpc29kZS05MzU4MA==",
+          "title": "お見合い",
+          "number": 13,
+          "numberText": "Heat.13"
+        },
+        {
+          "id": "RXBpc29kZS05MzY1Nw==",
+          "title": "結成",
+          "number": 14,
+          "numberText": "Heat.14"
+        },
+        {
+          "id": "RXBpc29kZS05NDAyMQ==",
+          "title": "じゃじゃ馬ならし",
+          "number": 15,
+          "numberText": "Heat.15"
+        },
+        {
+          "id": "RXBpc29kZS05NDE5NA==",
+          "title": "四本足",
+          "number": 16,
+          "numberText": "Heat.16"
+        },
+        {
+          "id": "RXBpc29kZS05NDg3MQ==",
+          "title": "表現者",
+          "number": 17,
+          "numberText": "Heat.17"
+        },
+        {
+          "id": "RXBpc29kZS05NDk5Mw==",
+          "title": "背番号13",
+          "number": 18,
+          "numberText": "Heat.18"
+        },
+        {
+          "id": "RXBpc29kZS05NTEwMw==",
+          "title": "敵(ライバル)",
+          "number": 19,
+          "numberText": "Heat.19"
+        },
+        {
+          "id": "RXBpc29kZS05NTI2Mw==",
+          "title": "友達",
+          "number": 20,
+          "numberText": "Heat.20"
+        },
+        {
+          "id": "RXBpc29kZS05NTM3NA==",
+          "title": "扉(ドア)",
+          "number": 21,
+          "numberText": "Heat.21"
+        },
+        {
+          "id": "RXBpc29kZS05NTQ4MQ==",
+          "title": "リーダーパートナー",
+          "number": 22,
+          "numberText": "Heat.22"
+        },
+        {
+          "id": "RXBpc29kZS05NTYwMg==",
+          "title": "伝統と進化",
+          "number": 23,
+          "numberText": "Heat.23"
+        },
+        {
+          "id": "RXBpc29kZS05NTczMw==",
+          "title": "ボールルームへようこそ",
+          "number": 24,
+          "numberText": "Heat.24"
+        }
+      ],
+      "seriesList": []
     }
   ]
 }

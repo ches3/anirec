@@ -42,6 +42,15 @@
       ]
     },
     {
+      "id": "V29yay05NTY3",
+      "title": "アイカツ！ 10th STORY ～未来へのSTARWAY～ (2022)",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "アイカツ！"
+      ]
+    },
+    {
       "id": "V29yay01Mzk3",
       "title": "Peeping Life: World History",
       "noEpisodes": false,
@@ -252,6 +261,46 @@
       ]
     },
     {
+      "id": "V29yay0xNzQzMA==",
+      "title": "テニスの王子様 OVA ANOTHER STORY～過去と未来のメッセージ ちびキャラフラッシュアニメ",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzg2MTY=",
+          "title": "或る日の忍足",
+          "number": 1
+        },
+        {
+          "id": "RXBpc29kZS0xNzg2MTc=",
+          "title": "或る日の忍足２",
+          "number": 2
+        }
+      ],
+      "seriesList": [
+        "テニスの王子様"
+      ]
+    },
+    {
+      "id": "V29yay0xNzQzMQ==",
+      "title": "テニスの王子様 OVA ANOTHER STORYⅡ～アノトキノボクラ ちびキャラフラッシュアニメ",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzg2MTg=",
+          "title": "投稿魂",
+          "number": 1
+        },
+        {
+          "id": "RXBpc29kZS0xNzg2MTk=",
+          "title": "ブン太の目覚め",
+          "number": 2
+        }
+      ],
+      "seriesList": [
+        "テニスの王子様"
+      ]
+    },
+    {
       "id": "V29yay0yOTA3",
       "title": "New Story of Aura Battler DUNBINE",
       "noEpisodes": false,
@@ -329,68 +378,85 @@
       ]
     },
     {
-      "id": "V29yay0xNjcxNQ==",
-      "title": "学園アイドルマスター Story of Re;IRIS",
+      "id": "V29yay05NzI2",
+      "title": "BIRDIE WING -Golf Girls' Story- Season 2",
       "noEpisodes": false,
       "episodes": [
         {
-          "id": "RXBpc29kZS0xNzYwODI=",
-          "number": 1,
-          "numberText": "第1話"
+          "id": "RXBpc29kZS0xNDk5MzI=",
+          "title": "少女の記憶の中に眠っている確かな真実",
+          "number": 14,
+          "numberText": "第14話"
         },
         {
-          "id": "RXBpc29kZS0xNzYwODM=",
-          "number": 2,
-          "numberText": "第2話"
+          "id": "RXBpc29kZS0xNTAwMzc=",
+          "title": "ただゴルフができるということがこれほどまでに幸福な理由",
+          "number": 15,
+          "numberText": "第15話"
         },
         {
-          "id": "RXBpc29kZS0xNzYwODQ=",
-          "number": 3,
-          "numberText": "第3話"
+          "id": "RXBpc29kZS0xNTAxOTM=",
+          "title": "大人のエゴに巻き込まれた若者たちの二代に渡る数奇な運命",
+          "number": 16,
+          "numberText": "第16話"
         },
         {
-          "id": "RXBpc29kZS0xNzYwODU=",
-          "number": 4,
-          "numberText": "第4話"
+          "id": "RXBpc29kZS0xNTAzMTQ=",
+          "title": "失った記憶を取り戻した少女は、故郷に戻って新たな真実を知る",
+          "number": 17,
+          "numberText": "第17話"
         },
         {
-          "id": "RXBpc29kZS0xNzYwODY=",
-          "number": 5,
-          "numberText": "第5話"
+          "id": "RXBpc29kZS0xNTA0NDU=",
+          "title": "偽りとの決別",
+          "number": 18,
+          "numberText": "第18話"
         },
         {
-          "id": "RXBpc29kZS0xNzYwODc=",
-          "number": 6,
-          "numberText": "第6話"
+          "id": "RXBpc29kZS0xNTA1OTU=",
+          "title": "輝ける翼",
+          "number": 19,
+          "numberText": "第19話"
         },
         {
-          "id": "RXBpc29kZS0xNzYwODg=",
-          "number": 7,
-          "numberText": "第7話"
+          "id": "RXBpc29kZS0xNTA3MjE=",
+          "title": "勝利を告げる虹",
+          "number": 20,
+          "numberText": "第20話"
         },
         {
-          "id": "RXBpc29kZS0xNzYwODk=",
-          "number": 8,
-          "numberText": "第8話"
+          "id": "RXBpc29kZS0xNTA5MTc=",
+          "title": "虹と弾丸",
+          "number": 21,
+          "numberText": "第21話"
         },
         {
-          "id": "RXBpc29kZS0xNzYwOTA=",
-          "number": 9,
-          "numberText": "第9話"
+          "id": "RXBpc29kZS0xNTEwNTI=",
+          "title": "オーバー・ザ・レインボー",
+          "number": 22,
+          "numberText": "第22話"
         },
         {
-          "id": "RXBpc29kZS0xNzYwOTE=",
-          "number": 10,
-          "numberText": "第10話"
+          "id": "RXBpc29kZS0xNTExODk=",
+          "title": "夢を叶えるために",
+          "number": 23,
+          "numberText": "第23話"
         },
         {
-          "id": "RXBpc29kZS0xNzYwOTI=",
-          "number": 11,
-          "numberText": "第11話"
+          "id": "RXBpc29kZS0xNTEyODk=",
+          "title": "約束",
+          "number": 24,
+          "numberText": "第24話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTEzODI=",
+          "title": "蘇る約束",
+          "number": 25,
+          "numberText": "第25話"
         }
       ],
       "seriesList": [
-        "アイドルマスター"
+        "BIRDIE WING -Golf Girls' Story-"
       ]
     },
     {
@@ -403,15 +469,6 @@
       ]
     },
     {
-      "id": "V29yay0xMDExOQ==",
-      "title": "アイカツ！ 10th STORY ～未来へのSTARWAY～ (2023)",
-      "noEpisodes": true,
-      "episodes": [],
-      "seriesList": [
-        "アイカツ！"
-      ]
-    },
-    {
       "id": "V29yay05NTYz",
       "title": "Rio RainbowGate! BONUS STORY「レッツ☆ハッピー&デイ☆ドリーム」",
       "noEpisodes": true,
@@ -421,12 +478,157 @@
       ]
     },
     {
-      "id": "V29yay0zMjc5",
-      "title": "劇場版 CLANNAD -クラナド-",
-      "noEpisodes": true,
-      "episodes": [],
+      "id": "V29yay02MTk5",
+      "title": "MIX MEISEI STORY",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMTA0NjM=",
+          "title": "明青のエース",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTA2MDA=",
+          "title": "おれが兄貴でおまえが弟",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTA4Mzg=",
+          "title": "明青学園なんて",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTA5Nzg=",
+          "title": "交換(トレード)してえなァ",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTExMTU=",
+          "title": "ピッチャーだろ？",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTEyMTI=",
+          "title": "春がくれば",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTEzMzA=",
+          "title": "心配？",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTE0NjA=",
+          "title": "うちのお兄ちゃん",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTE1NTI=",
+          "title": "大ニュースでしょ",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTE2ODE=",
+          "title": "ただの散歩",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTE3ODg=",
+          "title": "投げてみろ",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTM3OTY=",
+          "title": "なめてませんか",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTM4ODk=",
+          "title": "兄弟だから",
+          "number": 13,
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTM5OTM=",
+          "title": "負けてます",
+          "number": 14,
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTQwOTI=",
+          "title": "あの顔がみたくて",
+          "number": 15,
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTQyMTE=",
+          "title": "活気があって",
+          "number": 16,
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTQyOTU=",
+          "title": "やっぱりだれかに",
+          "number": 17,
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTUxNTU=",
+          "title": "こんな雨の日に",
+          "number": 18,
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTUzODE=",
+          "title": "うらやましいか？",
+          "number": 19,
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTU1MTk=",
+          "title": "神頼みなんですね",
+          "number": 20,
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTU2MDc=",
+          "title": "もしも…",
+          "number": 21,
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTU3MDU=",
+          "title": "妹思いなんですよ",
+          "number": 22,
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTU5MDY=",
+          "title": "時間の問題だな",
+          "number": 23,
+          "numberText": "第23話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTU5ODg=",
+          "title": "似てると思わないか？",
+          "number": 24,
+          "numberText": "第24話"
+        }
+      ],
       "seriesList": [
-        "CLANNAD"
+        "MIX"
       ]
     },
     {
@@ -460,157 +662,21 @@
       ]
     },
     {
-      "id": "V29yay02MTQ=",
-      "title": "CLANNAD -クラナド-",
-      "noEpisodes": false,
-      "episodes": [
-        {
-          "id": "RXBpc29kZS0zNDE2",
-          "title": "桜舞い散る坂道で",
-          "number": 1,
-          "numberText": "第1回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDE3",
-          "title": "最初の一歩",
-          "number": 2,
-          "numberText": "第2回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDE4",
-          "title": "涙のあとにもう一度",
-          "number": 3,
-          "numberText": "第3回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDE5",
-          "title": "仲間をさがそう",
-          "number": 4,
-          "numberText": "第4回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDIw",
-          "title": "彫刻のある風景",
-          "number": 5,
-          "numberText": "第5回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDIx",
-          "title": "姉と妹の創立者祭",
-          "number": 6,
-          "numberText": "第6回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDIy",
-          "title": "星形の気持ち",
-          "number": 7,
-          "numberText": "第7回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDIz",
-          "title": "黄昏に消える風",
-          "number": 8,
-          "numberText": "第8回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDI0",
-          "title": "夢の最後まで",
-          "number": 9,
-          "numberText": "第9回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDI1",
-          "title": "天才少女の挑戦",
-          "number": 10,
-          "numberText": "第10回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDI2",
-          "title": "放課後の狂想曲",
-          "number": 11,
-          "numberText": "第11回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDI3",
-          "title": "かくされた世界",
-          "number": 12,
-          "numberText": "第12回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDI4",
-          "title": "思い出の庭を",
-          "number": 13,
-          "numberText": "第13回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDI5",
-          "title": "Theory of Everything",
-          "number": 14,
-          "numberText": "第14回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDMw",
-          "title": "困った問題",
-          "number": 15,
-          "numberText": "第15回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDMx",
-          "title": "3 on 3",
-          "number": 16,
-          "numberText": "第16回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDMy",
-          "title": "不在の空間",
-          "number": 17,
-          "numberText": "第17回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDMz",
-          "title": "逆転の秘策",
-          "number": 18,
-          "numberText": "第18回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDM0",
-          "title": "新しい生活",
-          "number": 19,
-          "numberText": "第19回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDM1",
-          "title": "秘められた過去",
-          "number": 20,
-          "numberText": "第20回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDM2",
-          "title": "学園祭にむけて",
-          "number": 21,
-          "numberText": "第21回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDM3",
-          "title": "影二つ",
-          "number": 22,
-          "numberText": "最終回"
-        },
-        {
-          "id": "RXBpc29kZS0zNDM4",
-          "title": "夏休みの出来事",
-          "number": 23,
-          "numberText": "番外編"
-        },
-        {
-          "id": "RXBpc29kZS0zNDM5",
-          "title": "もうひとつの世界 智代編",
-          "number": 24,
-          "numberText": "番外編"
-        }
-      ],
+      "id": "V29yay0xMDExOQ==",
+      "title": "アイカツ！ 10th STORY ～未来へのSTARWAY～ (2023)",
+      "noEpisodes": true,
+      "episodes": [],
       "seriesList": [
-        "CLANNAD"
+        "アイカツ！"
+      ]
+    },
+    {
+      "id": "V29yay0yNTc0",
+      "title": "エイトマン AFTER",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": [
+        "エイトマン"
       ]
     },
     {
@@ -848,6 +914,209 @@
       ]
     },
     {
+      "id": "V29yay0zMjc5",
+      "title": "劇場版 CLANNAD -クラナド-",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "CLANNAD"
+      ]
+    },
+    {
+      "id": "V29yay0xNjM4OA==",
+      "title": "2.43 清陰高校男子バレー部 ミニアニメ inside story",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": [
+        "2.43 清陰高校男子バレー部"
+      ]
+    },
+    {
+      "id": "V29yay0xNjcxNQ==",
+      "title": "学園アイドルマスター Story of Re;IRIS",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzYwODI=",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYwODM=",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYwODQ=",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYwODU=",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYwODY=",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYwODc=",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYwODg=",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYwODk=",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYwOTA=",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYwOTE=",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYwOTI=",
+          "number": 11,
+          "numberText": "第11話"
+        }
+      ],
+      "seriesList": [
+        "アイドルマスター"
+      ]
+    },
+    {
+      "id": "V29yay05MDQ5",
+      "title": "BIRDIE WING -Golf Girls' Story-",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNDAyMTI=",
+          "title": "レインボー・バレット",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDAzODk=",
+          "title": "無邪気な暴君",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDA1Nzk=",
+          "title": "2人だけの試合",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDA3NDk=",
+          "title": "毒蛇",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDE0Nzk=",
+          "title": "VR",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDI5NzU=",
+          "title": "反逆の狼煙",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDMyMTA=",
+          "title": "葵色の弾丸",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM0Mjg=",
+          "title": "ファイナル・バレット",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM1NzI=",
+          "title": "早乙女イチナはプロキャディーを目指してる",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM3MDc=",
+          "title": "イヴァンジェリンはご立腹",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM4NDc=",
+          "title": "雑草がどんなに伸びても太陽には届かない",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM5NTE=",
+          "title": "葵とイヴで大丈夫？　開催、ダブルス選手権",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDQwNTc=",
+          "title": "女子の部屋割りって結構大事なことだと思うの",
+          "number": 13,
+          "numberText": "第13話"
+        }
+      ],
+      "seriesList": [
+        "BIRDIE WING -Golf Girls' Story-"
+      ]
+    },
+    {
+      "id": "V29yay0xNjgxNg==",
+      "title": "たすけあいstory",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzU0NTc=",
+          "title": "ふたりの場合",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzU0NTg=",
+          "title": "名前のない優先座席",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzgzOTU=",
+          "title": "恩送り",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzgzOTY=",
+          "title": "重なる想い",
+          "number": 4,
+          "numberText": "第4話"
+        }
+      ],
+      "seriesList": []
+    },
+    {
       "id": "V29yay02MTU=",
       "title": "CLANNAD～AFTER STORY～",
       "noEpisodes": false,
@@ -1005,374 +1274,157 @@
       ]
     },
     {
-      "id": "V29yay0yNTc0",
-      "title": "エイトマン AFTER",
-      "noEpisodes": false,
-      "episodes": [],
-      "seriesList": [
-        "エイトマン"
-      ]
-    },
-    {
-      "id": "V29yay02MTk5",
-      "title": "MIX MEISEI STORY",
+      "id": "V29yay02MTQ=",
+      "title": "CLANNAD -クラナド-",
       "noEpisodes": false,
       "episodes": [
         {
-          "id": "RXBpc29kZS0xMTA0NjM=",
-          "title": "明青のエース",
+          "id": "RXBpc29kZS0zNDE2",
+          "title": "桜舞い散る坂道で",
           "number": 1,
-          "numberText": "第1話"
+          "numberText": "第1回"
         },
         {
-          "id": "RXBpc29kZS0xMTA2MDA=",
-          "title": "おれが兄貴でおまえが弟",
+          "id": "RXBpc29kZS0zNDE3",
+          "title": "最初の一歩",
           "number": 2,
-          "numberText": "第2話"
+          "numberText": "第2回"
         },
         {
-          "id": "RXBpc29kZS0xMTA4Mzg=",
-          "title": "明青学園なんて",
+          "id": "RXBpc29kZS0zNDE4",
+          "title": "涙のあとにもう一度",
           "number": 3,
-          "numberText": "第3話"
+          "numberText": "第3回"
         },
         {
-          "id": "RXBpc29kZS0xMTA5Nzg=",
-          "title": "交換(トレード)してえなァ",
+          "id": "RXBpc29kZS0zNDE5",
+          "title": "仲間をさがそう",
           "number": 4,
-          "numberText": "第4話"
+          "numberText": "第4回"
         },
         {
-          "id": "RXBpc29kZS0xMTExMTU=",
-          "title": "ピッチャーだろ？",
+          "id": "RXBpc29kZS0zNDIw",
+          "title": "彫刻のある風景",
           "number": 5,
-          "numberText": "第5話"
+          "numberText": "第5回"
         },
         {
-          "id": "RXBpc29kZS0xMTEyMTI=",
-          "title": "春がくれば",
+          "id": "RXBpc29kZS0zNDIx",
+          "title": "姉と妹の創立者祭",
           "number": 6,
-          "numberText": "第6話"
+          "numberText": "第6回"
         },
         {
-          "id": "RXBpc29kZS0xMTEzMzA=",
-          "title": "心配？",
+          "id": "RXBpc29kZS0zNDIy",
+          "title": "星形の気持ち",
           "number": 7,
-          "numberText": "第7話"
+          "numberText": "第7回"
         },
         {
-          "id": "RXBpc29kZS0xMTE0NjA=",
-          "title": "うちのお兄ちゃん",
+          "id": "RXBpc29kZS0zNDIz",
+          "title": "黄昏に消える風",
           "number": 8,
-          "numberText": "第8話"
+          "numberText": "第8回"
         },
         {
-          "id": "RXBpc29kZS0xMTE1NTI=",
-          "title": "大ニュースでしょ",
+          "id": "RXBpc29kZS0zNDI0",
+          "title": "夢の最後まで",
           "number": 9,
-          "numberText": "第9話"
+          "numberText": "第9回"
         },
         {
-          "id": "RXBpc29kZS0xMTE2ODE=",
-          "title": "ただの散歩",
+          "id": "RXBpc29kZS0zNDI1",
+          "title": "天才少女の挑戦",
           "number": 10,
-          "numberText": "第10話"
+          "numberText": "第10回"
         },
         {
-          "id": "RXBpc29kZS0xMTE3ODg=",
-          "title": "投げてみろ",
+          "id": "RXBpc29kZS0zNDI2",
+          "title": "放課後の狂想曲",
           "number": 11,
-          "numberText": "第11話"
+          "numberText": "第11回"
         },
         {
-          "id": "RXBpc29kZS0xMTM3OTY=",
-          "title": "なめてませんか",
+          "id": "RXBpc29kZS0zNDI3",
+          "title": "かくされた世界",
           "number": 12,
-          "numberText": "第12話"
+          "numberText": "第12回"
         },
         {
-          "id": "RXBpc29kZS0xMTM4ODk=",
-          "title": "兄弟だから",
+          "id": "RXBpc29kZS0zNDI4",
+          "title": "思い出の庭を",
           "number": 13,
-          "numberText": "第13話"
+          "numberText": "第13回"
         },
         {
-          "id": "RXBpc29kZS0xMTM5OTM=",
-          "title": "負けてます",
+          "id": "RXBpc29kZS0zNDI5",
+          "title": "Theory of Everything",
           "number": 14,
-          "numberText": "第14話"
+          "numberText": "第14回"
         },
         {
-          "id": "RXBpc29kZS0xMTQwOTI=",
-          "title": "あの顔がみたくて",
+          "id": "RXBpc29kZS0zNDMw",
+          "title": "困った問題",
           "number": 15,
-          "numberText": "第15話"
+          "numberText": "第15回"
         },
         {
-          "id": "RXBpc29kZS0xMTQyMTE=",
-          "title": "活気があって",
+          "id": "RXBpc29kZS0zNDMx",
+          "title": "3 on 3",
           "number": 16,
-          "numberText": "第16話"
+          "numberText": "第16回"
         },
         {
-          "id": "RXBpc29kZS0xMTQyOTU=",
-          "title": "やっぱりだれかに",
+          "id": "RXBpc29kZS0zNDMy",
+          "title": "不在の空間",
           "number": 17,
-          "numberText": "第17話"
+          "numberText": "第17回"
         },
         {
-          "id": "RXBpc29kZS0xMTUxNTU=",
-          "title": "こんな雨の日に",
+          "id": "RXBpc29kZS0zNDMz",
+          "title": "逆転の秘策",
           "number": 18,
-          "numberText": "第18話"
+          "numberText": "第18回"
         },
         {
-          "id": "RXBpc29kZS0xMTUzODE=",
-          "title": "うらやましいか？",
+          "id": "RXBpc29kZS0zNDM0",
+          "title": "新しい生活",
           "number": 19,
-          "numberText": "第19話"
+          "numberText": "第19回"
         },
         {
-          "id": "RXBpc29kZS0xMTU1MTk=",
-          "title": "神頼みなんですね",
+          "id": "RXBpc29kZS0zNDM1",
+          "title": "秘められた過去",
           "number": 20,
-          "numberText": "第20話"
+          "numberText": "第20回"
         },
         {
-          "id": "RXBpc29kZS0xMTU2MDc=",
-          "title": "もしも…",
+          "id": "RXBpc29kZS0zNDM2",
+          "title": "学園祭にむけて",
           "number": 21,
-          "numberText": "第21話"
+          "numberText": "第21回"
         },
         {
-          "id": "RXBpc29kZS0xMTU3MDU=",
-          "title": "妹思いなんですよ",
+          "id": "RXBpc29kZS0zNDM3",
+          "title": "影二つ",
           "number": 22,
-          "numberText": "第22話"
+          "numberText": "最終回"
         },
         {
-          "id": "RXBpc29kZS0xMTU5MDY=",
-          "title": "時間の問題だな",
+          "id": "RXBpc29kZS0zNDM4",
+          "title": "夏休みの出来事",
           "number": 23,
-          "numberText": "第23話"
+          "numberText": "番外編"
         },
         {
-          "id": "RXBpc29kZS0xMTU5ODg=",
-          "title": "似てると思わないか？",
+          "id": "RXBpc29kZS0zNDM5",
+          "title": "もうひとつの世界 智代編",
           "number": 24,
-          "numberText": "第24話"
+          "numberText": "番外編"
         }
       ],
       "seriesList": [
-        "MIX"
-      ]
-    },
-    {
-      "id": "V29yay0xNjM4OA==",
-      "title": "2.43 清陰高校男子バレー部 ミニアニメ inside story",
-      "noEpisodes": false,
-      "episodes": [],
-      "seriesList": [
-        "2.43 清陰高校男子バレー部"
-      ]
-    },
-    {
-      "id": "V29yay05MDQ5",
-      "title": "BIRDIE WING -Golf Girls' Story-",
-      "noEpisodes": false,
-      "episodes": [
-        {
-          "id": "RXBpc29kZS0xNDAyMTI=",
-          "title": "レインボー・バレット",
-          "number": 1,
-          "numberText": "第1話"
-        },
-        {
-          "id": "RXBpc29kZS0xNDAzODk=",
-          "title": "無邪気な暴君",
-          "number": 2,
-          "numberText": "第2話"
-        },
-        {
-          "id": "RXBpc29kZS0xNDA1Nzk=",
-          "title": "2人だけの試合",
-          "number": 3,
-          "numberText": "第3話"
-        },
-        {
-          "id": "RXBpc29kZS0xNDA3NDk=",
-          "title": "毒蛇",
-          "number": 4,
-          "numberText": "第4話"
-        },
-        {
-          "id": "RXBpc29kZS0xNDE0Nzk=",
-          "title": "VR",
-          "number": 5,
-          "numberText": "第5話"
-        },
-        {
-          "id": "RXBpc29kZS0xNDI5NzU=",
-          "title": "反逆の狼煙",
-          "number": 6,
-          "numberText": "第6話"
-        },
-        {
-          "id": "RXBpc29kZS0xNDMyMTA=",
-          "title": "葵色の弾丸",
-          "number": 7,
-          "numberText": "第7話"
-        },
-        {
-          "id": "RXBpc29kZS0xNDM0Mjg=",
-          "title": "ファイナル・バレット",
-          "number": 8,
-          "numberText": "第8話"
-        },
-        {
-          "id": "RXBpc29kZS0xNDM1NzI=",
-          "title": "早乙女イチナはプロキャディーを目指してる",
-          "number": 9,
-          "numberText": "第9話"
-        },
-        {
-          "id": "RXBpc29kZS0xNDM3MDc=",
-          "title": "イヴァンジェリンはご立腹",
-          "number": 10,
-          "numberText": "第10話"
-        },
-        {
-          "id": "RXBpc29kZS0xNDM4NDc=",
-          "title": "雑草がどんなに伸びても太陽には届かない",
-          "number": 11,
-          "numberText": "第11話"
-        },
-        {
-          "id": "RXBpc29kZS0xNDM5NTE=",
-          "title": "葵とイヴで大丈夫？　開催、ダブルス選手権",
-          "number": 12,
-          "numberText": "第12話"
-        },
-        {
-          "id": "RXBpc29kZS0xNDQwNTc=",
-          "title": "女子の部屋割りって結構大事なことだと思うの",
-          "number": 13,
-          "numberText": "第13話"
-        }
-      ],
-      "seriesList": [
-        "BIRDIE WING -Golf Girls' Story-"
-      ]
-    },
-    {
-      "id": "V29yay05NzI2",
-      "title": "BIRDIE WING -Golf Girls' Story- Season 2",
-      "noEpisodes": false,
-      "episodes": [
-        {
-          "id": "RXBpc29kZS0xNDk5MzI=",
-          "title": "少女の記憶の中に眠っている確かな真実",
-          "number": 14,
-          "numberText": "第14話"
-        },
-        {
-          "id": "RXBpc29kZS0xNTAwMzc=",
-          "title": "ただゴルフができるということがこれほどまでに幸福な理由",
-          "number": 15,
-          "numberText": "第15話"
-        },
-        {
-          "id": "RXBpc29kZS0xNTAxOTM=",
-          "title": "大人のエゴに巻き込まれた若者たちの二代に渡る数奇な運命",
-          "number": 16,
-          "numberText": "第16話"
-        },
-        {
-          "id": "RXBpc29kZS0xNTAzMTQ=",
-          "title": "失った記憶を取り戻した少女は、故郷に戻って新たな真実を知る",
-          "number": 17,
-          "numberText": "第17話"
-        },
-        {
-          "id": "RXBpc29kZS0xNTA0NDU=",
-          "title": "偽りとの決別",
-          "number": 18,
-          "numberText": "第18話"
-        },
-        {
-          "id": "RXBpc29kZS0xNTA1OTU=",
-          "title": "輝ける翼",
-          "number": 19,
-          "numberText": "第19話"
-        },
-        {
-          "id": "RXBpc29kZS0xNTA3MjE=",
-          "title": "勝利を告げる虹",
-          "number": 20,
-          "numberText": "第20話"
-        },
-        {
-          "id": "RXBpc29kZS0xNTA5MTc=",
-          "title": "虹と弾丸",
-          "number": 21,
-          "numberText": "第21話"
-        },
-        {
-          "id": "RXBpc29kZS0xNTEwNTI=",
-          "title": "オーバー・ザ・レインボー",
-          "number": 22,
-          "numberText": "第22話"
-        },
-        {
-          "id": "RXBpc29kZS0xNTExODk=",
-          "title": "夢を叶えるために",
-          "number": 23,
-          "numberText": "第23話"
-        },
-        {
-          "id": "RXBpc29kZS0xNTEyODk=",
-          "title": "約束",
-          "number": 24,
-          "numberText": "第24話"
-        },
-        {
-          "id": "RXBpc29kZS0xNTEzODI=",
-          "title": "蘇る約束",
-          "number": 25,
-          "numberText": "第25話"
-        }
-      ],
-      "seriesList": [
-        "BIRDIE WING -Golf Girls' Story-"
-      ]
-    },
-    {
-      "id": "V29yay0xNjgxNg==",
-      "title": "たすけあいstory",
-      "noEpisodes": false,
-      "episodes": [
-        {
-          "id": "RXBpc29kZS0xNzU0NTc=",
-          "title": "ふたりの場合",
-          "number": 1,
-          "numberText": "第一話"
-        },
-        {
-          "id": "RXBpc29kZS0xNzU0NTg=",
-          "title": "マユミさんの話",
-          "number": 2,
-          "numberText": "第二話"
-        }
-      ],
-      "seriesList": []
-    },
-    {
-      "id": "V29yay05NTY3",
-      "title": "アイカツ！ 10th STORY ～未来へのSTARWAY～ (2022)",
-      "noEpisodes": true,
-      "episodes": [],
-      "seriesList": [
-        "アイカツ！"
+        "CLANNAD"
       ]
     }
   ]

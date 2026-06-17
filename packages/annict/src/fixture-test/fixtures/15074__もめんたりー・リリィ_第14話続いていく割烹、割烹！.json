@@ -16,9 +16,276 @@
   },
   "variants": [
     "もめんたりー・リリィ",
-    "もめんたりー"
+    "もめんたりー",
+    "リリィ"
   ],
   "candidateWorks": [
+    {
+      "id": "V29yay0xMzUzNw==",
+      "title": "魔法の姉妹ルルットリリィ",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzgyNzE=",
+          "title": "星をつかんだ日",
+          "number": 1,
+          "numberText": "Episode01"
+        },
+        {
+          "id": "RXBpc29kZS0xNzg0NzI=",
+          "title": "はじめましてリリィです！",
+          "number": 2,
+          "numberText": "Episode02"
+        },
+        {
+          "id": "RXBpc29kZS0xNzg2ODM=",
+          "title": "月をみあげたら",
+          "number": 3,
+          "numberText": "Episode03"
+        },
+        {
+          "id": "RXBpc29kZS0xNzg4MTQ=",
+          "title": "会いにきたルル",
+          "number": 4,
+          "numberText": "Episode04"
+        },
+        {
+          "id": "RXBpc29kZS0xNzg5NjM=",
+          "title": "地獄のクイズへようこそ",
+          "number": 5,
+          "numberText": "Episode05"
+        },
+        {
+          "id": "RXBpc29kZS0xNzkxMDI=",
+          "title": "夏といえば、合宿でしょ",
+          "number": 6,
+          "numberText": "Episode06"
+        },
+        {
+          "id": "RXBpc29kZS0xNzkyOTE=",
+          "title": "サマーデイドリーム",
+          "number": 7,
+          "numberText": "Episode07"
+        },
+        {
+          "id": "RXBpc29kZS0xNzk0MjQ=",
+          "title": "秋風と麦わら帽子",
+          "number": 8,
+          "numberText": "Episode08"
+        },
+        {
+          "id": "RXBpc29kZS0xNzk1OTI=",
+          "title": "すっきりしない土曜日",
+          "number": 9,
+          "numberText": "Episode09"
+        },
+        {
+          "id": "RXBpc29kZS0xNzk3Mjc=",
+          "title": "招かれて、フェリックススターへ",
+          "number": 10,
+          "numberText": "Episode10"
+        },
+        {
+          "id": "RXBpc29kZS0xODAwMTE=",
+          "title": "門限ありのシンデレラ",
+          "number": 11,
+          "numberText": "Episode11"
+        },
+        {
+          "id": "RXBpc29kZS0xODAyMDQ=",
+          "title": "歌おうルルットリリィ",
+          "number": 12,
+          "numberText": "Episode12"
+        }
+      ],
+      "seriesList": [
+        "ぴえろ魔法少女"
+      ]
+    },
+    {
+      "id": "V29yay0xNDUwNg==",
+      "title": "Needless+ -聖リリィ学園の秘密-",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": [
+        "NEEDLESS"
+      ]
+    },
+    {
+      "id": "V29yay0xNTA3NA==",
+      "title": "もめんたりー・リリィ 第14話「続いていく割烹、割烹！」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "もめんたりー・リリィ"
+      ]
+    },
+    {
+      "id": "V29yay02OTk3",
+      "title": "アサルトリリィ BOUQUET",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMjYxMTk=",
+          "title": "スイレン",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjYyMjE=",
+          "title": "スズラン",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjYzMzI=",
+          "title": "ワスレナグサ",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjY1MjU=",
+          "title": "キンモクセイ",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjY2ODQ=",
+          "title": "ヒスイカズラ",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjY3OTM=",
+          "title": "スミレ",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjY5NjE=",
+          "title": "フリージア",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjcyOTE=",
+          "title": "ツバキ",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjc0MDQ=",
+          "title": "コスモス",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjc1ODI=",
+          "title": "アネモネ",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjc3MTU=",
+          "title": "ユリ",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMjc4ODQ=",
+          "title": "ブーケ",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay03OTIz",
+      "title": "アサルトリリィふるーつ",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzQ4OTY=",
+          "title": "いちご",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzUxOTI=",
+          "title": "おれんじ",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzUzODI=",
+          "title": "さくらんぼ",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzU4Njg=",
+          "title": "めろん",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzYxMjg=",
+          "title": "まんごー",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzY1MTU=",
+          "title": "ぶどう",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzY3OTM=",
+          "title": "もも",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzcxODE=",
+          "title": "ぱいなっぷる",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzczNjI=",
+          "title": "あんず",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc2OTU=",
+          "title": "ゆず",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzc5OTc=",
+          "title": "きうい",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzgyNDg=",
+          "title": "すいか",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzg0MDU=",
+          "title": "みかん",
+          "number": 13,
+          "numberText": "第13話"
+        }
+      ],
+      "seriesList": []
+    },
     {
       "id": "V29yay0xMjkwNw==",
       "title": "もめんたりー・リリィ",
@@ -103,15 +370,6 @@
           "numberText": "第13話"
         }
       ],
-      "seriesList": [
-        "もめんたりー・リリィ"
-      ]
-    },
-    {
-      "id": "V29yay0xNTA3NA==",
-      "title": "もめんたりー・リリィ 第14話「続いていく割烹、割烹！」",
-      "noEpisodes": true,
-      "episodes": [],
       "seriesList": [
         "もめんたりー・リリィ"
       ]
