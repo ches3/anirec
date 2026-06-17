@@ -144,6 +144,33 @@
       ]
     },
     {
+      "id": "V29yay0xNzQwOA==",
+      "title": "君に届け ミニトド劇場",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzg1Njg=",
+          "title": "ウメデレラ",
+          "number": 1,
+          "numberText": "その1"
+        },
+        {
+          "id": "RXBpc29kZS0xNzg1Njk=",
+          "title": "白雪梅",
+          "number": 2,
+          "numberText": "その2"
+        },
+        {
+          "id": "RXBpc29kZS0xNzg1NzA=",
+          "title": "ロミオとジュリエット3D",
+          "number": 3
+        }
+      ],
+      "seriesList": [
+        "君に届け"
+      ]
+    },
+    {
       "id": "V29yay01NDQ=",
       "title": "君に届け",
       "noEpisodes": false,

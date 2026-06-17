@@ -23,9 +23,216 @@
     "さよなら絶望先生",
     "あまい姫",
     "発禁抄",
-    "原型の盾"
+    "原型の盾",
+    "さよなら",
+    "あまい",
+    "絶望先生",
+    "原型"
   ],
   "candidateWorks": [
+    {
+      "id": "V29yay01NzQ0",
+      "title": "甘い懲罰～私は看守専用ペット",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS05NzY0Nw==",
+          "title": "黒翼",
+          "number": 1,
+          "numberText": "episode 1"
+        },
+        {
+          "id": "RXBpc29kZS05NzkzOA==",
+          "title": "面会",
+          "number": 2,
+          "numberText": "episode 2"
+        },
+        {
+          "id": "RXBpc29kZS05ODg3Ng==",
+          "title": "刑罰",
+          "number": 3,
+          "numberText": "episode 3"
+        },
+        {
+          "id": "RXBpc29kZS05OTUzMA==",
+          "title": "計画",
+          "number": 4,
+          "numberText": "episode 4"
+        },
+        {
+          "id": "RXBpc29kZS05OTg0MA==",
+          "title": "脱獄",
+          "number": 5,
+          "numberText": "episode 5"
+        },
+        {
+          "id": "RXBpc29kZS0xMDAwMDc=",
+          "title": "天使",
+          "number": 6,
+          "numberText": "episode 6"
+        },
+        {
+          "id": "RXBpc29kZS0xMDAyMjE=",
+          "title": "屈辱",
+          "number": 7,
+          "numberText": "episode 7"
+        },
+        {
+          "id": "RXBpc29kZS0xMDAzMzg=",
+          "title": "悪人",
+          "number": 8,
+          "numberText": "episode 8"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA0NzA=",
+          "title": "傷跡",
+          "number": 9,
+          "numberText": "episode 9"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA2ODg=",
+          "title": "慈愛",
+          "number": 10,
+          "numberText": "episode 10"
+        },
+        {
+          "id": "RXBpc29kZS0xMDA4MTg=",
+          "title": "逆転",
+          "number": 11,
+          "numberText": "episode 11"
+        },
+        {
+          "id": "RXBpc29kZS0xMDEwMTA=",
+          "title": "明神亜貴",
+          "number": 12,
+          "numberText": "episode 12"
+        },
+        {
+          "id": "RXBpc29kZS0xMDExMjk=",
+          "title": "脱獄～てぶくろ探し編～",
+          "number": 13,
+          "numberText": "episode 13"
+        }
+      ],
+      "seriesList": [
+        "AnimeFestaオリジナル"
+      ]
+    },
+    {
+      "id": "V29yay02NjU1",
+      "title": "タッチ2 さよならの贈り物",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "タッチ"
+      ]
+    },
+    {
+      "id": "V29yay03Njc3",
+      "title": "さよなら私のクラマー",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzAyNzQ=",
+          "title": "みんな",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzA4MTk=",
+          "title": "インパクト",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzEyMjk=",
+          "title": "地獄の門",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzEzODQ=",
+          "title": "フロンティア",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzE3OTA=",
+          "title": "恋わずらい",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzE5Mzk=",
+          "title": "追う者、追われる者",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzIwNjQ=",
+          "title": "躍進のチーム",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzMwNDE=",
+          "title": "追いかけてくる過去",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzMyNTQ=",
+          "title": "赤の軍団",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzM0NDA=",
+          "title": "傷だらけの王者",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzM2MzA=",
+          "title": "隣を走る人",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzM4MDI=",
+          "title": "野心と選択",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzM5MjQ=",
+          "title": "根幹をなすもの",
+          "number": 13,
+          "numberText": "第13話"
+        }
+      ],
+      "seriesList": [
+        "さよなら私のクラマー"
+      ]
+    },
+    {
+      "id": "V29yay03Njc1",
+      "title": "映画 さよなら私のクラマー ファーストタッチ",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "さよなら私のクラマー"
+      ]
+    },
+    {
+      "id": "V29yay02OTkz",
+      "title": "さよなら銀河鉄道999 アンドロメダ終着駅",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "銀河鉄道999"
+      ]
+    },
     {
       "id": "V29yay0yNzMw",
       "title": "懺・さよなら絶望先生 番外地",
@@ -44,6 +251,389 @@
       ],
       "seriesList": [
         "さよなら絶望先生"
+      ]
+    },
+    {
+      "id": "V29yay0xMzAxMA==",
+      "title": "さよならララ",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay01MzU3",
+      "title": "さよならの朝に約束の花をかざろう",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay03Mjc2",
+      "title": "さよなら、ティラノ",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xOTIw",
+      "title": "プリティーリズム・ディアマイフューチャー",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0yMjQyOA==",
+          "title": "ハローマイフューチャー",
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQyOQ==",
+          "title": "あなたにきらめく王冠（クラウン）を",
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQzMA==",
+          "title": "ゲット!マイファンコール",
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQzMQ==",
+          "title": "ハートの革命・プリズムアクト!",
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQzMg==",
+          "title": "初恋!? マイ☆プリンス",
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQzMw==",
+          "title": "メモメモ禁止は困るのです!",
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQzNA==",
+          "title": "リーダー争奪!Prizmmy☆総選挙",
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQzNQ==",
+          "title": "ラストメンバーはムダがお嫌い!",
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQzNg==",
+          "title": "揺れるハート!イケメンデザイナー対決",
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQzNw==",
+          "title": "みあ脱退!?あいらとガチバトル",
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQzOA==",
+          "title": "MARsとドキドキ♥温泉合宿",
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQzOQ==",
+          "title": "スタンドアップ!マイガールズソウル!",
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ0MA==",
+          "title": "パフュームまとう運命の日!",
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ0MQ==",
+          "title": "PURETTY 波乱のP-nation",
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ0Mg==",
+          "title": "バラのときめき♥ヒミツの王子様",
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ0Mw==",
+          "title": "マジカルみおんDE自由研究!",
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ0NA==",
+          "title": "動物園の王者、シユン",
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ0NQ==",
+          "title": "サマーバカンス!夏色マーメイド",
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ0Ng==",
+          "title": "サマーフェス開幕!PURETTY Go! Go! Go!",
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ0Nw==",
+          "title": "ラストノートは情熱の香り",
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ0OA==",
+          "title": "羽ばたきの心、シンフォニアの目覚め",
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ0OQ==",
+          "title": "ビッグラブでハートをシャッフル",
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ1MA==",
+          "title": "銀幕セレブリティーストーリー",
+          "numberText": "第23話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ1MQ==",
+          "title": "お宝ゲットだ!チャムの大冒険!",
+          "numberText": "第24話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ1Mg==",
+          "title": "元気が一番!プリズム・クッキング",
+          "numberText": "第25話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ1Mw==",
+          "title": "白と黒のウェディング",
+          "numberText": "第26話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ1NA==",
+          "title": "新チームでシャル ウィ ダンス?",
+          "numberText": "第27話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ1NQ==",
+          "title": "りずむの告白 愛の言葉は……",
+          "numberText": "第28話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ1Ng==",
+          "title": "女神（ミューズ）にささぐ I LOVE YOU",
+          "numberText": "第29話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ1Nw==",
+          "title": "ハロウィンコーデはラブミックスコンチェルト",
+          "numberText": "第30話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ1OA==",
+          "title": "Cheer! Yeah! ×2 夢を咲かせちゃえ!",
+          "numberText": "第31話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ1OQ==",
+          "title": "風よ吹け!プリズムのハートに",
+          "numberText": "第32話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ2MA==",
+          "title": "恋のパクパクレストラン",
+          "numberText": "第33話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ2MQ==",
+          "title": "踊れダンスティーチャー",
+          "numberText": "第34話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ2Mg==",
+          "title": "ソミンのときめきハートブレイク",
+          "numberText": "第35話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ2Mw==",
+          "title": "乙女の競演 ロードトゥシンフォニア",
+          "numberText": "第36話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ2NA==",
+          "title": "あいらの決断",
+          "numberText": "第37話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ2NQ==",
+          "title": "夢と神秘のメタモルフォーゼ",
+          "numberText": "第38話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ2Ng==",
+          "title": "沈黙のプリンセス",
+          "numberText": "第39話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ2Nw==",
+          "title": "シンフォニア誕生の秘密",
+          "numberText": "第40話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ2OA==",
+          "title": "友情のプリティーリメイク",
+          "numberText": "第41話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ2OQ==",
+          "title": "宇宙の果てへ Go!スカイハイ",
+          "numberText": "第42話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ3MA==",
+          "title": "立ち上がれスタァ!",
+          "numberText": "第43話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ3MQ==",
+          "title": "情熱レボリューション",
+          "numberText": "第44話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ3Mg==",
+          "title": "星空のプレリュード",
+          "numberText": "第45話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ3Mw==",
+          "title": "センター争奪!ライバルは友達?",
+          "numberText": "第46話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ3NA==",
+          "title": "ワガママみあ 前代未聞のドタキャン騒動",
+          "numberText": "第47話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ3NQ==",
+          "title": "開演!グレイトフルシンフォニア",
+          "numberText": "第48話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ3Ng==",
+          "title": "失われる明日",
+          "numberText": "第49話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ3Nw==",
+          "title": "未来の私がいっちばーん!",
+          "numberText": "第50話"
+        },
+        {
+          "id": "RXBpc29kZS0yMjQ3OA==",
+          "title": "Dear マイフューチャー",
+          "numberText": "第51話"
+        }
+      ],
+      "seriesList": [
+        "プリティーリズム",
+        "プリティー"
+      ]
+    },
+    {
+      "id": "V29yay00MjYy",
+      "title": "ドアマイガーD",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTcwMQ==",
+          "title": "和ませろ！荒れた心に桜餅！",
+          "number": 1,
+          "numberText": "第一話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTc3Mw==",
+          "title": "あけろ！隠されし歴史の扉！",
+          "number": 2,
+          "numberText": "第二話"
+        },
+        {
+          "id": "RXBpc29kZS0xNTg4Mg==",
+          "title": "見せろ！巨大製菓機人の力！",
+          "number": 3,
+          "numberText": "第三話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjAxNA==",
+          "title": "決めろ！京菓子の名前！",
+          "number": 4,
+          "numberText": "第四話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjEyMw==",
+          "title": "響け！伝統の木型！",
+          "number": 5,
+          "numberText": "第五話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjMyOA==",
+          "title": "切り分けろ！京の都で水ようかん！",
+          "number": 6,
+          "numberText": "第六話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjUzNQ==",
+          "title": "暴け！吹き矢男の正体！",
+          "number": 7,
+          "numberText": "第七話"
+        },
+        {
+          "id": "RXBpc29kZS0xNjc5Mw==",
+          "title": "受けて立て！アメリカからの刺客",
+          "number": 8,
+          "numberText": "第八話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzAxNg==",
+          "title": "紐解け！ドアマイガーD誕生秘話！",
+          "number": 9,
+          "numberText": "第九話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzI5NA==",
+          "title": "伝承せよ！封印の真実！",
+          "number": 10,
+          "numberText": "第十話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzQ5OQ==",
+          "title": "心してかかれ！最強の敵！",
+          "number": 11,
+          "numberText": "第十一話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYxNA==",
+          "title": "手を取り合え！親子の絆！",
+          "number": 12,
+          "numberText": "第十二話"
+        },
+        {
+          "id": "RXBpc29kZS0xODE1NA==",
+          "title": "出し切れ！さらばドアマイガー",
+          "number": 13,
+          "numberText": "第十三話"
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0zNjk0",
+      "title": "劇場版 マクロスF 恋離飛翼～サヨナラノツバサ～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "マクロス",
+        "マクロスF"
       ]
     },
     {
@@ -117,74 +707,24 @@
       ]
     },
     {
-      "id": "V29yay04NDA=",
-      "title": "懺・さよなら絶望先生",
+      "id": "V29yay0yNzEw",
+      "title": "獄・さよなら絶望先生",
       "noEpisodes": false,
       "episodes": [
         {
-          "id": "RXBpc29kZS04MTMw",
-          "title": "落園への道／春の郵便配達は二度ベルを鳴らす／晒しが丘",
-          "numberText": "#1"
+          "id": "RXBpc29kZS02MzUwNw==",
+          "title": "あまい姫／発禁抄／原型の盾",
+          "numberText": "上"
         },
         {
-          "id": "RXBpc29kZS04MTMx",
-          "title": "持つ女／おろしや国タイム譚／晒しが丘パート2",
-          "numberText": "#2"
+          "id": "RXBpc29kZS02MzUwOA==",
+          "title": "曰く、過程の幸福は諸悪の本／予言省告示／バラバラの名前",
+          "numberText": "註"
         },
         {
-          "id": "RXBpc29kZS04MTMy",
-          "title": "×の悲劇／私は日本には帰りません そういう決心をできませんでした／ドクトル・カホゴ",
-          "numberText": "#3"
-        },
-        {
-          "id": "RXBpc29kZS04MTMz",
-          "title": "余は如何にして真人間となりし乎／祝系図／ドクトル・カホゴパート2",
-          "numberText": "#4"
-        },
-        {
-          "id": "RXBpc29kZS04MTM0",
-          "title": "過多たたき／アーとウルーとビィの冒険／ライ麦畑で見逃して",
-          "numberText": "#5"
-        },
-        {
-          "id": "RXBpc29kZS04MTM1",
-          "title": "マディソン郡のはしか／夜の多角形／ライ麦畑で見逃してパート2",
-          "numberText": "#6"
-        },
-        {
-          "id": "RXBpc29kZS04MTM2",
-          "title": "アンドロイドは機械の花嫁の夢を見るか／将軍失格／ああサプライズだよ、と私はうつろに呟くのであった",
-          "numberText": "#7"
-        },
-        {
-          "id": "RXBpc29kZS04MTM3",
-          "title": "ああサプライズだよ、と私はうつろに呟くのであった／告白縮緬組／最後の、そして始まりのエノデン",
-          "numberText": "#8"
-        },
-        {
-          "id": "RXBpc29kZS04MTM4",
-          "title": "尼になった急場／三十年後の正解／ジェレミーとドラゴンの卵",
-          "numberText": "#9"
-        },
-        {
-          "id": "RXBpc29kZS04MTM5",
-          "title": "クラックな卵／君よ知るや隣の国／ジェレミーとドラコンの卵パート2",
-          "numberText": "#10"
-        },
-        {
-          "id": "RXBpc29kZS04MTQw",
-          "title": "眼鏡子の家／閉門ノススメ／学者アゲアシトリの見た着物",
-          "numberText": "#11"
-        },
-        {
-          "id": "RXBpc29kZS04MTQx",
-          "title": "三次のあと／葬られ損ねた秘密／閉門ノススメパート2／いけない！カエレ先生",
-          "numberText": "#12"
-        },
-        {
-          "id": "RXBpc29kZS04MTQy",
-          "title": "誤字院原の敵討／われらライナス／楽天大賞／夜間きよ飛行",
-          "numberText": "#13"
+          "id": "RXBpc29kZS02MzUwOQ==",
+          "title": "暗中問答／負けたの草子／一本昔ばなし",
+          "numberText": "下"
         }
       ],
       "seriesList": [
@@ -267,26 +807,137 @@
       ]
     },
     {
-      "id": "V29yay0yNzEw",
-      "title": "獄・さよなら絶望先生",
+      "id": "V29yay01MzU0",
+      "title": "ご注文はうさぎですか？？ ～Dear My Sister～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "ご注文はうさぎですか？"
+      ]
+    },
+    {
+      "id": "V29yay04NDA=",
+      "title": "懺・さよなら絶望先生",
       "noEpisodes": false,
       "episodes": [
         {
-          "id": "RXBpc29kZS02MzUwNw==",
-          "title": "あまい姫／発禁抄／原型の盾",
-          "numberText": "上"
+          "id": "RXBpc29kZS04MTMw",
+          "title": "落園への道／春の郵便配達は二度ベルを鳴らす／晒しが丘",
+          "numberText": "#1"
         },
         {
-          "id": "RXBpc29kZS02MzUwOA==",
-          "title": "曰く、過程の幸福は諸悪の本／予言省告示／バラバラの名前",
-          "numberText": "註"
+          "id": "RXBpc29kZS04MTMx",
+          "title": "持つ女／おろしや国タイム譚／晒しが丘パート2",
+          "numberText": "#2"
         },
         {
-          "id": "RXBpc29kZS02MzUwOQ==",
-          "title": "暗中問答／負けたの草子／一本昔ばなし",
-          "numberText": "下"
+          "id": "RXBpc29kZS04MTMy",
+          "title": "×の悲劇／私は日本には帰りません そういう決心をできませんでした／ドクトル・カホゴ",
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS04MTMz",
+          "title": "余は如何にして真人間となりし乎／祝系図／ドクトル・カホゴパート2",
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS04MTM0",
+          "title": "過多たたき／アーとウルーとビィの冒険／ライ麦畑で見逃して",
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS04MTM1",
+          "title": "マディソン郡のはしか／夜の多角形／ライ麦畑で見逃してパート2",
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS04MTM2",
+          "title": "アンドロイドは機械の花嫁の夢を見るか／将軍失格／ああサプライズだよ、と私はうつろに呟くのであった",
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS04MTM3",
+          "title": "ああサプライズだよ、と私はうつろに呟くのであった／告白縮緬組／最後の、そして始まりのエノデン",
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS04MTM4",
+          "title": "尼になった急場／三十年後の正解／ジェレミーとドラゴンの卵",
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS04MTM5",
+          "title": "クラックな卵／君よ知るや隣の国／ジェレミーとドラコンの卵パート2",
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS04MTQw",
+          "title": "眼鏡子の家／閉門ノススメ／学者アゲアシトリの見た着物",
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS04MTQx",
+          "title": "三次のあと／葬られ損ねた秘密／閉門ノススメパート2／いけない！カエレ先生",
+          "numberText": "#12"
+        },
+        {
+          "id": "RXBpc29kZS04MTQy",
+          "title": "誤字院原の敵討／われらライナス／楽天大賞／夜間きよ飛行",
+          "numberText": "#13"
         }
       ],
+      "seriesList": [
+        "さよなら絶望先生"
+      ]
+    },
+    {
+      "id": "V29yay0xNzQwNw==",
+      "title": "さよなら絶望先生 Blu-ray BOX 記念盤 完全新作話",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzg1NjY=",
+          "title": "殺人現場に絶望が落ちていた",
+          "number": 1
+        },
+        {
+          "id": "RXBpc29kZS0xNzg1Njc=",
+          "title": "ニャン京の基督",
+          "number": 2
+        }
+      ],
+      "seriesList": [
+        "さよなら絶望先生"
+      ]
+    },
+    {
+      "id": "V29yay0xNzI5OA==",
+      "title": "塩対応の佐藤さんが俺にだけ甘い",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay05MjA2",
+      "title": "夏へのトンネル、さよならの出口",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xNzU1NA==",
+      "title": "さよなら絶望先生 序〜絶望少女撰集〜",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "さよなら絶望先生"
+      ]
+    },
+    {
+      "id": "V29yay0xNzU1NQ==",
+      "title": "さよなら絶望先生 序〜俗・絶望少女撰集〜",
+      "noEpisodes": true,
+      "episodes": [],
       "seriesList": [
         "さよなら絶望先生"
       ]

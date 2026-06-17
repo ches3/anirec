@@ -23,9 +23,268 @@
     "涼宮ハルヒの憂鬱(2009年放送版)",
     "涼宮ハルヒの憂鬱2009年放送版",
     "涼宮ハルヒの憂鬱",
-    "年放送版"
+    "年放送版",
+    "ハルヒ",
+    "涼宮",
+    "憂鬱"
   ],
   "candidateWorks": [
+    {
+      "id": "V29yay0xMzg2Nw==",
+      "title": "装脚戦車の憂鬱",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay04MjU5",
+      "title": "チャイナさんの憂鬱",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "チャイナさん",
+        "Spirit of Wonder"
+      ]
+    },
+    {
+      "id": "V29yay05NTYw",
+      "title": "狼と香辛料Ⅱ 第0幕「狼と琥珀色の憂鬱」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "狼と香辛料"
+      ]
+    },
+    {
+      "id": "V29yay0zODA4",
+      "title": "涼宮ハルヒちゃんの憂鬱",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0yMzY5NA==",
+          "title": "体は鶴でも心は鷹さっ",
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzY5NQ==",
+          "title": "ん？長門オンリー？",
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzY5Ng==",
+          "title": "あの犬の名前は何でしょう？",
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzY5Nw==",
+          "title": "キョンくん、長門さんが、長門さんが…",
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzY5OA==",
+          "title": "ドッチボールで勝負しよう！",
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzY5OQ==",
+          "title": "エッチなのは感心しませんっ！",
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcwMA==",
+          "title": "ドキっ、若干、女の子多めの運動会",
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcwMQ==",
+          "title": "豆でも喰うか…",
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcwMg==",
+          "title": "登場人物は全員メイドです！",
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcwMw==",
+          "title": "傘すげー",
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcwNA==",
+          "title": "じゃあ、みくるちゃん。さっそく服を脱いでちょうだい！",
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcwNQ==",
+          "title": "男もただもらうだけじゃなくてなんかこう努力しなさい！",
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcwNg==",
+          "title": "そうだハロウィンをしよう！",
+          "numberText": "第13話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcwNw==",
+          "title": "主人公がしちゃいけない顔になっているわよ",
+          "numberText": "第14話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcwOA==",
+          "title": "風船、すげー",
+          "numberText": "第15話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcwOQ==",
+          "title": "まっわーれっ！",
+          "numberText": "第16話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcxMA==",
+          "title": "そういうお前はとーさんだっ！",
+          "numberText": "第17話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcxMQ==",
+          "title": "キョンくん、キョンくん。こんなん見つけたー",
+          "numberText": "第18話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcxMg==",
+          "title": "みんな、今日はクリスマスパーティをするわよ！",
+          "numberText": "第19話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcxMw==",
+          "title": "キミドリさーーんっ！",
+          "numberText": "第20話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcxNA==",
+          "title": "ヒゲ仮面ーーんっ！",
+          "numberText": "第21話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcxNQ==",
+          "title": "これを着てもらえれば分かる",
+          "numberText": "第22話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcxNg==",
+          "title": "自称、オレの笑いは伝染する",
+          "numberText": "第23話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcxNw==",
+          "title": "あのころの私はそれはもう使命感に燃えていました",
+          "numberText": "第24話"
+        },
+        {
+          "id": "RXBpc29kZS0yMzcxOA==",
+          "title": "PCゲーム？『涼宮ハルヒちゃんの憂鬱』",
+          "numberText": "第25話"
+        }
+      ],
+      "seriesList": [
+        "涼宮ハルヒ"
+      ]
+    },
+    {
+      "id": "V29yay05Njcw",
+      "title": "デキる猫は今日も憂鬱",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNTE2NjI=",
+          "title": "デキる猫は今日も憂鬱",
+          "number": 1,
+          "numberText": "1缶め"
+        },
+        {
+          "id": "RXBpc29kZS0xNTE3NzA=",
+          "title": "デキる猫は大きく育った",
+          "number": 2,
+          "numberText": "2缶め"
+        },
+        {
+          "id": "RXBpc29kZS0xNTE5MDg=",
+          "title": "デキる猫はお世話がデキる",
+          "number": 3,
+          "numberText": "3缶め"
+        },
+        {
+          "id": "RXBpc29kZS0xNTIwNDY=",
+          "title": "デキる猫は水族館に行く",
+          "number": 4,
+          "numberText": "4缶め"
+        },
+        {
+          "id": "RXBpc29kZS0xNTIxODY=",
+          "title": "デキる猫はお誕生会にも行く",
+          "number": 5,
+          "numberText": "5缶め"
+        },
+        {
+          "id": "RXBpc29kZS0xNTIzMzc=",
+          "title": "デキる猫は写真映りがいい",
+          "number": 6,
+          "numberText": "6缶め"
+        },
+        {
+          "id": "RXBpc29kZS0xNTI0MzM=",
+          "title": "デキる猫はDIYもデキる",
+          "number": 7,
+          "numberText": "7缶め"
+        },
+        {
+          "id": "RXBpc29kZS0xNTI1MzA=",
+          "title": "デキる猫は心配が多い",
+          "number": 8,
+          "numberText": "8缶め"
+        },
+        {
+          "id": "RXBpc29kZS0xNTI2NDM=",
+          "title": "デキる猫は懐かれる",
+          "number": 9,
+          "numberText": "9缶め"
+        },
+        {
+          "id": "RXBpc29kZS0xNTI3NDM=",
+          "title": "デキる猫は留守番がデキる？",
+          "number": 10,
+          "numberText": "10缶め"
+        },
+        {
+          "id": "RXBpc29kZS0xNTI4Nzg=",
+          "title": "デキる猫は健康に気をつかう",
+          "number": 11,
+          "numberText": "11缶め"
+        },
+        {
+          "id": "RXBpc29kZS0xNTI5NzY=",
+          "title": "デキる猫は家を出て行く？",
+          "number": 12,
+          "numberText": "12缶め"
+        },
+        {
+          "id": "RXBpc29kZS0xNTMwODQ=",
+          "title": "デキる猫は明日も憂鬱",
+          "number": 13,
+          "numberText": "13缶め"
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0zMzcx",
+      "title": "涼宮ハルヒの消失",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "涼宮ハルヒ"
+      ]
+    },
     {
       "id": "V29yay0xMDYy",
       "title": "涼宮ハルヒの憂鬱",
@@ -34,71 +293,85 @@
         {
           "id": "RXBpc29kZS03NTcw",
           "title": "朝比奈ミクルの冒険 Episode 00",
+          "number": 1,
           "numberText": "第1話"
         },
         {
           "id": "RXBpc29kZS03NTcx",
           "title": "涼宮ハルヒの憂鬱I",
+          "number": 2,
           "numberText": "第2話"
         },
         {
           "id": "RXBpc29kZS03NTcy",
           "title": "涼宮ハルヒの憂鬱II",
+          "number": 3,
           "numberText": "第3話"
         },
         {
           "id": "RXBpc29kZS03NTcz",
           "title": "涼宮ハルヒの退屈",
+          "number": 4,
           "numberText": "第4話"
         },
         {
           "id": "RXBpc29kZS03NTc0",
           "title": "涼宮ハルヒの憂鬱III",
+          "number": 5,
           "numberText": "第5話"
         },
         {
           "id": "RXBpc29kZS03NTc1",
           "title": "孤島症候群(前編)",
+          "number": 6,
           "numberText": "第6話"
         },
         {
           "id": "RXBpc29kZS03NTc2",
           "title": "ミステリックサイン",
+          "number": 7,
           "numberText": "第7話"
         },
         {
           "id": "RXBpc29kZS03NTc3",
           "title": "孤島症候群(後編)",
+          "number": 8,
           "numberText": "第8話"
         },
         {
           "id": "RXBpc29kZS03NTc4",
           "title": "サムデイ イン ザ レイン",
+          "number": 9,
           "numberText": "第9話"
         },
         {
           "id": "RXBpc29kZS03NTc5",
           "title": "涼宮ハルヒの憂鬱IV",
+          "number": 10,
           "numberText": "第10話"
         },
         {
           "id": "RXBpc29kZS03NTgw",
           "title": "射手座の日",
+          "number": 11,
           "numberText": "第11話"
         },
         {
           "id": "RXBpc29kZS03NTgx",
           "title": "ライブアライブ",
+          "number": 12,
           "numberText": "第12話"
         },
         {
           "id": "RXBpc29kZS03NTgy",
           "title": "涼宮ハルヒの憂鬱V",
+          "number": 13,
           "numberText": "第13話"
         },
         {
           "id": "RXBpc29kZS03NTgz",
           "title": "涼宮ハルヒの憂鬱VI",
+          "number": 14,
           "numberText": "第14話"
         }
       ],

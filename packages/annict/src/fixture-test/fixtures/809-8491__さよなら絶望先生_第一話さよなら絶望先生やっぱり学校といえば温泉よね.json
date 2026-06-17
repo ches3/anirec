@@ -19,9 +19,126 @@
     }
   },
   "variants": [
-    "さよなら絶望先生"
+    "さよなら絶望先生",
+    "さよなら",
+    "絶望先生"
   ],
   "candidateWorks": [
+    {
+      "id": "V29yay02NjU1",
+      "title": "タッチ2 さよならの贈り物",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "タッチ"
+      ]
+    },
+    {
+      "id": "V29yay03Njc3",
+      "title": "さよなら私のクラマー",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMzAyNzQ=",
+          "title": "みんな",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzA4MTk=",
+          "title": "インパクト",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzEyMjk=",
+          "title": "地獄の門",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzEzODQ=",
+          "title": "フロンティア",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzE3OTA=",
+          "title": "恋わずらい",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzE5Mzk=",
+          "title": "追う者、追われる者",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzIwNjQ=",
+          "title": "躍進のチーム",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzMwNDE=",
+          "title": "追いかけてくる過去",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzMyNTQ=",
+          "title": "赤の軍団",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzM0NDA=",
+          "title": "傷だらけの王者",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzM2MzA=",
+          "title": "隣を走る人",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzM4MDI=",
+          "title": "野心と選択",
+          "number": 12,
+          "numberText": "第12話"
+        },
+        {
+          "id": "RXBpc29kZS0xMzM5MjQ=",
+          "title": "根幹をなすもの",
+          "number": 13,
+          "numberText": "第13話"
+        }
+      ],
+      "seriesList": [
+        "さよなら私のクラマー"
+      ]
+    },
+    {
+      "id": "V29yay03Njc1",
+      "title": "映画 さよなら私のクラマー ファーストタッチ",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "さよなら私のクラマー"
+      ]
+    },
+    {
+      "id": "V29yay02OTkz",
+      "title": "さよなら銀河鉄道999 アンドロメダ終着駅",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "銀河鉄道999"
+      ]
+    },
     {
       "id": "V29yay0yNzMw",
       "title": "懺・さよなら絶望先生 番外地",
@@ -40,6 +157,37 @@
       ],
       "seriesList": [
         "さよなら絶望先生"
+      ]
+    },
+    {
+      "id": "V29yay0xMzAxMA==",
+      "title": "さよならララ",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay01MzU3",
+      "title": "さよならの朝に約束の花をかざろう",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay03Mjc2",
+      "title": "さよなら、ティラノ",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0zNjk0",
+      "title": "劇場版 マクロスF 恋離飛翼～サヨナラノツバサ～",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "マクロス",
+        "マクロスF"
       ]
     },
     {
@@ -113,74 +261,24 @@
       ]
     },
     {
-      "id": "V29yay04NDA=",
-      "title": "懺・さよなら絶望先生",
+      "id": "V29yay0yNzEw",
+      "title": "獄・さよなら絶望先生",
       "noEpisodes": false,
       "episodes": [
         {
-          "id": "RXBpc29kZS04MTMw",
-          "title": "落園への道／春の郵便配達は二度ベルを鳴らす／晒しが丘",
-          "numberText": "#1"
+          "id": "RXBpc29kZS02MzUwNw==",
+          "title": "あまい姫／発禁抄／原型の盾",
+          "numberText": "上"
         },
         {
-          "id": "RXBpc29kZS04MTMx",
-          "title": "持つ女／おろしや国タイム譚／晒しが丘パート2",
-          "numberText": "#2"
+          "id": "RXBpc29kZS02MzUwOA==",
+          "title": "曰く、過程の幸福は諸悪の本／予言省告示／バラバラの名前",
+          "numberText": "註"
         },
         {
-          "id": "RXBpc29kZS04MTMy",
-          "title": "×の悲劇／私は日本には帰りません そういう決心をできませんでした／ドクトル・カホゴ",
-          "numberText": "#3"
-        },
-        {
-          "id": "RXBpc29kZS04MTMz",
-          "title": "余は如何にして真人間となりし乎／祝系図／ドクトル・カホゴパート2",
-          "numberText": "#4"
-        },
-        {
-          "id": "RXBpc29kZS04MTM0",
-          "title": "過多たたき／アーとウルーとビィの冒険／ライ麦畑で見逃して",
-          "numberText": "#5"
-        },
-        {
-          "id": "RXBpc29kZS04MTM1",
-          "title": "マディソン郡のはしか／夜の多角形／ライ麦畑で見逃してパート2",
-          "numberText": "#6"
-        },
-        {
-          "id": "RXBpc29kZS04MTM2",
-          "title": "アンドロイドは機械の花嫁の夢を見るか／将軍失格／ああサプライズだよ、と私はうつろに呟くのであった",
-          "numberText": "#7"
-        },
-        {
-          "id": "RXBpc29kZS04MTM3",
-          "title": "ああサプライズだよ、と私はうつろに呟くのであった／告白縮緬組／最後の、そして始まりのエノデン",
-          "numberText": "#8"
-        },
-        {
-          "id": "RXBpc29kZS04MTM4",
-          "title": "尼になった急場／三十年後の正解／ジェレミーとドラゴンの卵",
-          "numberText": "#9"
-        },
-        {
-          "id": "RXBpc29kZS04MTM5",
-          "title": "クラックな卵／君よ知るや隣の国／ジェレミーとドラコンの卵パート2",
-          "numberText": "#10"
-        },
-        {
-          "id": "RXBpc29kZS04MTQw",
-          "title": "眼鏡子の家／閉門ノススメ／学者アゲアシトリの見た着物",
-          "numberText": "#11"
-        },
-        {
-          "id": "RXBpc29kZS04MTQx",
-          "title": "三次のあと／葬られ損ねた秘密／閉門ノススメパート2／いけない！カエレ先生",
-          "numberText": "#12"
-        },
-        {
-          "id": "RXBpc29kZS04MTQy",
-          "title": "誤字院原の敵討／われらライナス／楽天大賞／夜間きよ飛行",
-          "numberText": "#13"
+          "id": "RXBpc29kZS02MzUwOQ==",
+          "title": "暗中問答／負けたの草子／一本昔ばなし",
+          "numberText": "下"
         }
       ],
       "seriesList": [
@@ -263,26 +361,121 @@
       ]
     },
     {
-      "id": "V29yay0yNzEw",
-      "title": "獄・さよなら絶望先生",
+      "id": "V29yay04NDA=",
+      "title": "懺・さよなら絶望先生",
       "noEpisodes": false,
       "episodes": [
         {
-          "id": "RXBpc29kZS02MzUwNw==",
-          "title": "あまい姫／発禁抄／原型の盾",
-          "numberText": "上"
+          "id": "RXBpc29kZS04MTMw",
+          "title": "落園への道／春の郵便配達は二度ベルを鳴らす／晒しが丘",
+          "numberText": "#1"
         },
         {
-          "id": "RXBpc29kZS02MzUwOA==",
-          "title": "曰く、過程の幸福は諸悪の本／予言省告示／バラバラの名前",
-          "numberText": "註"
+          "id": "RXBpc29kZS04MTMx",
+          "title": "持つ女／おろしや国タイム譚／晒しが丘パート2",
+          "numberText": "#2"
         },
         {
-          "id": "RXBpc29kZS02MzUwOQ==",
-          "title": "暗中問答／負けたの草子／一本昔ばなし",
-          "numberText": "下"
+          "id": "RXBpc29kZS04MTMy",
+          "title": "×の悲劇／私は日本には帰りません そういう決心をできませんでした／ドクトル・カホゴ",
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS04MTMz",
+          "title": "余は如何にして真人間となりし乎／祝系図／ドクトル・カホゴパート2",
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS04MTM0",
+          "title": "過多たたき／アーとウルーとビィの冒険／ライ麦畑で見逃して",
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS04MTM1",
+          "title": "マディソン郡のはしか／夜の多角形／ライ麦畑で見逃してパート2",
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS04MTM2",
+          "title": "アンドロイドは機械の花嫁の夢を見るか／将軍失格／ああサプライズだよ、と私はうつろに呟くのであった",
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS04MTM3",
+          "title": "ああサプライズだよ、と私はうつろに呟くのであった／告白縮緬組／最後の、そして始まりのエノデン",
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS04MTM4",
+          "title": "尼になった急場／三十年後の正解／ジェレミーとドラゴンの卵",
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS04MTM5",
+          "title": "クラックな卵／君よ知るや隣の国／ジェレミーとドラコンの卵パート2",
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS04MTQw",
+          "title": "眼鏡子の家／閉門ノススメ／学者アゲアシトリの見た着物",
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS04MTQx",
+          "title": "三次のあと／葬られ損ねた秘密／閉門ノススメパート2／いけない！カエレ先生",
+          "numberText": "#12"
+        },
+        {
+          "id": "RXBpc29kZS04MTQy",
+          "title": "誤字院原の敵討／われらライナス／楽天大賞／夜間きよ飛行",
+          "numberText": "#13"
         }
       ],
+      "seriesList": [
+        "さよなら絶望先生"
+      ]
+    },
+    {
+      "id": "V29yay0xNzQwNw==",
+      "title": "さよなら絶望先生 Blu-ray BOX 記念盤 完全新作話",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzg1NjY=",
+          "title": "殺人現場に絶望が落ちていた",
+          "number": 1
+        },
+        {
+          "id": "RXBpc29kZS0xNzg1Njc=",
+          "title": "ニャン京の基督",
+          "number": 2
+        }
+      ],
+      "seriesList": [
+        "さよなら絶望先生"
+      ]
+    },
+    {
+      "id": "V29yay05MjA2",
+      "title": "夏へのトンネル、さよならの出口",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xNzU1NA==",
+      "title": "さよなら絶望先生 序〜絶望少女撰集〜",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "さよなら絶望先生"
+      ]
+    },
+    {
+      "id": "V29yay0xNzU1NQ==",
+      "title": "さよなら絶望先生 序〜俗・絶望少女撰集〜",
+      "noEpisodes": true,
+      "episodes": [],
       "seriesList": [
         "さよなら絶望先生"
       ]

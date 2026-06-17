@@ -15,7 +15,7 @@
     "title": "負けヒロインが多すぎる！",
     "episode": {
       "id": "RXBpc29kZS0xNjA0OTA=",
-      "title": "プロ幼馴染み八奈見杏菜の負けっぷり",
+      "title": "プロ幼馴染 八奈見杏菜の負けっぷり",
       "number": 1,
       "numberText": "第1話"
     }
@@ -23,9 +23,838 @@
   "variants": [
     "負けヒロインが多すぎる！",
     "負けヒロインが多すぎる!",
-    "負けヒロインが多すぎる"
+    "負けヒロインが多すぎる",
+    "すぎる",
+    "ヒロイン"
   ],
   "candidateWorks": [
+    {
+      "id": "V29yay0xMjgz",
+      "title": "小さい潜水艦に恋をしたでかすぎるクジラの話",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xNTA4MQ==",
+      "title": "乙女ゲームのヒロインで最強サバイバル",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xNjAyMw==",
+      "title": "ヒロイン？聖女？いいえ、オールワークスメイドです（誇）！",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xNjU1Ng==",
+      "title": "【私のおふるで悪いんだけど】とお母様(ヒロイン)に取り巻きを押し付けられ、嫁いだ辺境でも嫁扱いされませんが、おかげで自由に生きれます！",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay04ODQ4",
+      "title": "ヒロインたるもの！～嫌われヒロインと内緒のお仕事～",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNDAyMzI=",
+          "title": "アイドルなんてようわからん！",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDA0NDg=",
+          "title": "マネージャー見習いのお仕事！",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDA2NjE=",
+          "title": "ノンファンタジー",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDA5MTE=",
+          "title": "うちにできること",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDIwMzk=",
+          "title": "アイドルってすごい！",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDI5OTc=",
+          "title": "ひよりをプロデュース。",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDMzMzc=",
+          "title": "うちの幼なじみ",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM0NTg=",
+          "title": "アイドルたるもの！",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM2MDc=",
+          "title": "スキャンダル",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM3MzE=",
+          "title": "うち、マネージャー見習いやめます！",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM4NjQ=",
+          "title": "嫌われヒロインの戦い",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM5Njg=",
+          "title": "大好きってやっぱ最強！",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": [
+        "告白実行委員会"
+      ]
+    },
+    {
+      "id": "V29yay0xMzczMg==",
+      "title": "勇者パーティーを追放された白魔導師、Sランク冒険者に拾われる ～この白魔導師が規格外すぎる～",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzA3Nzk=",
+          "title": "ロイド、追放される。",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzA3ODA=",
+          "title": "ロイド、拾われる。",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzA3ODE=",
+          "title": "ロイド、旅立つ。",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzA3ODI=",
+          "title": "ロイド、支援する。",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzA3ODM=",
+          "title": "ロイド、救出する。",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzA3ODQ=",
+          "title": "ロイド、解放する。",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzA3ODU=",
+          "title": "ロイド、イシュタルを救う。",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzA3ODY=",
+          "title": "ロイド、温泉地に留まる。",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzA3ODc=",
+          "title": "ロイド、Sランク冒険者、精進する。",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzA3ODg=",
+          "title": "ロイド、戦う。",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzA3ODk=",
+          "title": "ロイド、飛ぶ！",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzA3OTA=",
+          "title": "ロイド、実力不足を自覚する。",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": [
+        "勇者パーティーを追放された白魔導師、Sランク冒険者に拾われる"
+      ]
+    },
+    {
+      "id": "V29yay01Mzc3",
+      "title": "僕の彼女がマジメ過ぎるしょびっちな件",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS05Mzk2MA==",
+          "title": "やっ、そんなに広げないで下さい…",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS05NDEwOQ==",
+          "title": "「そのまま出して！」…って言えばいいの？",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS05NDc5NA==",
+          "title": "んっ、二本同時は初めて…です。",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS05NDkzMA==",
+          "title": "こ、こんな風になるんですのね…。",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS05NTA2MA==",
+          "title": "破れてたって…どうしよう!?",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS05NTIwNA==",
+          "title": "ほ、他の人には見せないでね？",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS05NTMxNg==",
+          "title": "もう…何も考えられない…",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS05NTQzMg==",
+          "title": "そ、そこまでしていいなんて言ってないっ！",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS05NTUzOQ==",
+          "title": "いきなりはダメって言ったのにぃぃ!!",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS05NTY3Mw==",
+          "title": "もう、我慢でき、ませんっ！",
+          "number": 10,
+          "numberText": "第10話"
+        }
+      ],
+      "seriesList": [
+        "僕の彼女がマジメ過ぎるしょびっちな件"
+      ]
+    },
+    {
+      "id": "V29yay0xNTg0MA==",
+      "title": "負けヒロインが多すぎる！2期",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": [
+        "負けヒロインが多すぎる！"
+      ]
+    },
+    {
+      "id": "V29yay05NTM5",
+      "title": "うちのメイドがウザすぎる！特典OVA「うちのメイドはやっぱりもうホントウザいんだなあ……」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "うちのメイドがウザすぎる！"
+      ]
+    },
+    {
+      "id": "V29yay0xNzE0OQ==",
+      "title": "バッドエンド目前のヒロインに転生した私、今世では恋愛するつもりがチートな兄が離してくれません！？",
+      "noEpisodes": false,
+      "episodes": [],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay05NDk1",
+      "title": " ヒロインたるもの！〜嫌われヒロインと内緒のお仕事〜 ミニアニメ",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNDAyNjU=",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0xNDAyNjY=",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0xNDAyNjc=",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0xNDAyNjg=",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0xNDAyNjk=",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0xNDAyNzA=",
+          "number": 6,
+          "numberText": "#6"
+        }
+      ],
+      "seriesList": [
+        "告白実行委員会"
+      ]
+    },
+    {
+      "id": "V29yay00MjIx",
+      "title": "こんな私たちがなりゆきでヒロインになった結果www (なりヒロwww)",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNDA4MA==",
+          "title": "ソクラ、賛同なくすねる／プラト、ヒロインの居場所をつきとめる／アリス、火にこだわる",
+          "number": 1,
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0xNDE3MA==",
+          "title": "ソクラ、結婚詐欺に合う／プラト、人生を振り返る／アリス、スイーツ好き設定が加わる",
+          "number": 2,
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0xNDI3NA==",
+          "title": "ソクラ、伸び悩む／プラト、操られる／アリス、辱めを受ける",
+          "number": 3,
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0xNDM2Mg==",
+          "title": "キャッツォ総括、在りし日を語る／BL、涙する",
+          "number": 4,
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0xNDQ1OA==",
+          "title": "ソクラ、諦める／プラト、悟る／アリス、記憶を飛ばす",
+          "number": 5,
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0xNDU1MQ==",
+          "title": "ソクラ、ゾクゾクする／プラト、好き嫌いが発覚／アリス、ぷよる",
+          "number": 6,
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS0xNDY1NA==",
+          "title": "ソクラ、おしりを奪われる／プラト、付き合わされうんざり／アリス、ハイテンション",
+          "number": 7,
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS0xNDc5OA==",
+          "title": "BL、自己暗示をかける／3姉妹、殺し合う",
+          "number": 8,
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS0xNDg5OA==",
+          "title": "ソクラ、変身する／プラト、変身する／アリス、変身する",
+          "number": 9,
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS0xNTA0OQ==",
+          "title": "ソクラ、ツイてる／プラト、肩が張る／アリス、やる気まんまん",
+          "number": 10,
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS0xNTE5NQ==",
+          "title": "統括、回想する／BL、生唾を飲む",
+          "number": 11,
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS0xNTMzNA==",
+          "title": "ソクラ、戦う／プラト、戦う／アリス、戦う／統括、逃げる／BL、逃げる",
+          "number": 12,
+          "numberText": "#12"
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xMDk4OQ==",
+      "title": "沖縄で好きになった子が方言すぎてツラすぎる",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjQzNzk=",
+          "title": "好きな人はうちなーぐち",
+          "number": 1,
+          "numberText": "てぃーち（#1）"
+        },
+        {
+          "id": "RXBpc29kZS0xNjQ0NjU=",
+          "title": "ビーチパーティで親睦会!?",
+          "number": 2,
+          "numberText": "たーち（#2）"
+        },
+        {
+          "id": "RXBpc29kZS0xNjQ1OTY=",
+          "title": "シーサーとエイサー",
+          "number": 3,
+          "numberText": "みーち（#3）"
+        },
+        {
+          "id": "RXBpc29kZS0xNjQ5MzY=",
+          "title": "指笛鳴らそう美ら海（ちゅらうみ）で！",
+          "number": 4,
+          "numberText": "ゆーち（#4）"
+        },
+        {
+          "id": "RXBpc29kZS0xNjUxNTc=",
+          "title": "勘違いでかりゆしウェア！",
+          "number": 5,
+          "numberText": "いちち（#5）"
+        },
+        {
+          "id": "RXBpc29kZS0xNjU3MzQ=",
+          "title": "沖縄そばって叫びたい！",
+          "number": 6,
+          "numberText": "むーち（#6）"
+        },
+        {
+          "id": "RXBpc29kZS0xNjU5MjA=",
+          "title": "ハブとマングース",
+          "number": 7,
+          "numberText": "ななち（#7）"
+        },
+        {
+          "id": "RXBpc29kZS0xNjYzMDU=",
+          "title": "音楽を乗せてゆいレール！",
+          "number": 8,
+          "numberText": "やーち（#8）"
+        },
+        {
+          "id": "RXBpc29kZS0xNjY0NTI=",
+          "title": "すごいぞ！イリオモテヤマネコ！",
+          "number": 9,
+          "numberText": "くくぬち（#9）"
+        },
+        {
+          "id": "RXBpc29kZS0xNjczODk=",
+          "title": "ヤールーの正体とは……！？",
+          "number": 10,
+          "numberText": "とぅー（#10）"
+        },
+        {
+          "id": "RXBpc29kZS0xNjc1MTI=",
+          "title": "ゴーヤ？ゴーヤー？",
+          "number": 11,
+          "numberText": "じゅーいち（#11）"
+        },
+        {
+          "id": "RXBpc29kZS0xNjgwNTk=",
+          "title": "あんしぇーまたやー(それじゃあまたね)",
+          "number": 12,
+          "numberText": "じゅーに（#12）"
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xMDUyNA==",
+      "title": "日清のどん兵衛CM「正直すぎる尻尾 篇」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "アニメどんぎつね",
+        "日清のどん兵衛CM"
+      ]
+    },
+    {
+      "id": "V29yay02MTE0",
+      "title": "僕の彼女がマジメ過ぎるしょびっちな件 第11話「お見せ、しちゃい…ましたね…／なんでも言うこと聞きますから～」",
+      "noEpisodes": true,
+      "episodes": [],
+      "seriesList": [
+        "僕の彼女がマジメ過ぎるしょびっちな件"
+      ]
+    },
+    {
+      "id": "V29yay0xNjIzOQ==",
+      "title": "魔王の娘は優しすぎる!!",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzYwMzg=",
+          "title": "魔王の娘は優しすぎる!!／魔王の娘はお手伝いがすぎる!!",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYwMzk=",
+          "title": "魔王の娘は人間をしいたけすぎる!!／魔王の側近は教育がすぎる!!",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYxOTc=",
+          "title": "使い魔探しは大変すぎる!!／誘惑の魔女（パリカー）がせくしーすぎる!!",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzYzODU=",
+          "title": "サンタがプレゼントを配りすぎる!!／魔王の使い魔は人間が好きすぎる!!",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzY1NjE=",
+          "title": "神の使いが迷惑すぎる!!／神の使い（真）は血の気が多すぎる!!",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzY3MDI=",
+          "title": "魔王の娘がイメチェンしすぎる!!／○△×は誘惑の魔女（パリカー）の天職すぎる!!",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzY4MzY=",
+          "title": "恐怖の怪物がみにくすぎる!!／霊怪楼はワクワクすぎる!!／魔王の側近は考えすぎる!!",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzY5Nzc=",
+          "title": "魔王の側近が落ち込みすぎる!!／魔王の側近はお疲れすぎる!!",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzcxMTk=",
+          "title": "先代魔王が怖すぎる!!／先代魔王がジジバカすぎる!!",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzcyNDc=",
+          "title": "魔女の薬が効きすぎる!!／勇者が頼りなさすぎる!!",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzc0MTE=",
+          "title": "魔王の嫁は娘が好きすぎる!!／顔見せの儀がもうすぐすぎる!!",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xNzc2NjE=",
+          "title": "顔見せの儀が賑やかすぎる!!／未来の魔王は優しすぎる!!",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay0xMDYxOA==",
+      "title": "この世界は不完全すぎる",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNjAzNjM=",
+          "title": "下働きのニコラ",
+          "number": 1,
+          "numberText": "No.01"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA0Njg=",
+          "title": "羽賀マコト",
+          "number": 2,
+          "numberText": "No.02"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA1NTk=",
+          "title": "テスラ",
+          "number": 3,
+          "numberText": "No.03"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA3NDM=",
+          "title": "天野イソラ",
+          "number": 4,
+          "numberText": "No.04"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA4NjA=",
+          "title": "潜入",
+          "number": 5,
+          "numberText": "No.05"
+        },
+        {
+          "id": "RXBpc29kZS0xNjA5NTI=",
+          "title": "狂乱の賢帝",
+          "number": 6,
+          "numberText": "No.06"
+        },
+        {
+          "id": "RXBpc29kZS0xNjEwNjc=",
+          "title": "社長",
+          "number": 7,
+          "numberText": "No.07"
+        },
+        {
+          "id": "RXBpc29kZS0xNjEyNDM=",
+          "title": "コンソールコマンド",
+          "number": 8,
+          "numberText": "No.08"
+        },
+        {
+          "id": "RXBpc29kZS0xNjEzNjU=",
+          "title": "加賀見アキラ",
+          "number": 9,
+          "numberText": "No.09"
+        },
+        {
+          "id": "RXBpc29kZS0xNjE1MTA=",
+          "title": "ゲーデルとヤマナカ",
+          "number": 10,
+          "numberText": "No.10"
+        },
+        {
+          "id": "RXBpc29kZS0xNjE2NjM=",
+          "title": "アルバ",
+          "number": 11,
+          "numberText": "No.11"
+        },
+        {
+          "id": "RXBpc29kZS0xNjE4MTY=",
+          "title": "ザ・ダイヤモンド",
+          "number": 12,
+          "numberText": "No.12"
+        },
+        {
+          "id": "RXBpc29kZS0xNjE5NjE=",
+          "title": "沈黙の悪魔(サイレンス)",
+          "number": 13,
+          "numberText": "No.13"
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay01OTQ0",
+      "title": "うちのメイドがウザすぎる！",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMDQ0NjA=",
+          "title": "うちのメイドがウザすぎる！",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQ1Nzk=",
+          "title": "うちのメイドにさらわれた",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQ3MjQ=",
+          "title": "うちのメイドが忍び寄る",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDQ4OTE=",
+          "title": "うちのメイドは幼女が尊い",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDUwNjg=",
+          "title": "うちのメイドはどこにでもいる",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDUxOTA=",
+          "title": "うちのメイドの昔のオンナ？",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDUzMDQ=",
+          "title": "うちのメイドがいない家",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU0Mzg=",
+          "title": "うちの元メイドはお嬢様",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU1NTc=",
+          "title": "うちのメイドとあの日の出会い",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU2ODQ=",
+          "title": "うちのメイドとヤスヒロと",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU4MTc=",
+          "title": "うちのメイドと開かずの部屋",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMDU5Mzg=",
+          "title": "うちのメイドとこれからも",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": [
+        "うちのメイドがウザすぎる！"
+      ]
+    },
+    {
+      "id": "V29yay0zNDA=",
+      "title": "俺の彼女と幼なじみが修羅場すぎる",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xNzMyMw==",
+          "title": "高校生活のスタートは修羅場",
+          "numberText": "#1"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMyNA==",
+          "title": "新しい部を結成して修羅場",
+          "numberText": "#2"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMyNQ==",
+          "title": "幼なじみの涙で修羅場",
+          "numberText": "#3"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMyNg==",
+          "title": "男の戦いは修羅場",
+          "numberText": "#4"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMyNw==",
+          "title": "ラブレターの真相は修羅場",
+          "numberText": "#5"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMyOA==",
+          "title": "灰色の世界を切り裂く修羅場",
+          "numberText": "#6"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMyOQ==",
+          "title": "夏季講習なのに修羅場",
+          "numberText": "#7"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMzMA==",
+          "title": "映画館Wデートで修羅場",
+          "numberText": "#8"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMzMQ==",
+          "title": "よみがえる約束は修羅場",
+          "numberText": "#9"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMzMg==",
+          "title": "夏合宿の会議で修羅場",
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMzMw==",
+          "title": "合宿前夜のワクワクは修羅場",
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMzNA==",
+          "title": "謀略の結末は修羅場",
+          "numberText": "#12"
+        },
+        {
+          "id": "RXBpc29kZS0xNzMzNQ==",
+          "title": "新しい世界への修羅場",
+          "numberText": "#13"
+        }
+      ],
+      "seriesList": []
+    },
     {
       "id": "V29yay0xMjA3NQ==",
       "title": "負けヒロインが多すぎる！",
@@ -33,7 +862,7 @@
       "episodes": [
         {
           "id": "RXBpc29kZS0xNjA0OTA=",
-          "title": "プロ幼馴染み八奈見杏菜の負けっぷり",
+          "title": "プロ幼馴染 八奈見杏菜の負けっぷり",
           "number": 1,
           "numberText": "第1話"
         },
@@ -109,13 +938,169 @@
       ]
     },
     {
-      "id": "V29yay0xNTg0MA==",
-      "title": "負けヒロインが多すぎる！2期",
+      "id": "V29yay01MjYw",
+      "title": "アクションヒロイン チアフルーツ",
       "noEpisodes": false,
-      "episodes": [],
-      "seriesList": [
-        "負けヒロインが多すぎる！"
-      ]
+      "episodes": [
+        {
+          "id": "RXBpc29kZS05MTg4OQ==",
+          "title": "いきなり超天界！",
+          "number": 1,
+          "numberText": "STAGE 1"
+        },
+        {
+          "id": "RXBpc29kZS05MjA0Nw==",
+          "title": "普通の【ろこ】がヒロインやってみてもいいんだけど",
+          "number": 2,
+          "numberText": "STAGE 2"
+        },
+        {
+          "id": "RXBpc29kZS05MjE3Ng==",
+          "title": "大暇人カノン",
+          "number": 3,
+          "numberText": "STAGE 3"
+        },
+        {
+          "id": "RXBpc29kZS05MjI2Nw==",
+          "title": "ゼロから始めるアクションヒロイン",
+          "number": 4,
+          "numberText": "STAGE 4"
+        },
+        {
+          "id": "RXBpc29kZS05MjM3MA==",
+          "title": "ぷろじぇくと・ぶる～",
+          "number": 5,
+          "numberText": "STAGE 5"
+        },
+        {
+          "id": "RXBpc29kZS05MjQ4MA==",
+          "title": "爆発天使はつりちゃん",
+          "number": 6,
+          "numberText": "STAGE 6"
+        },
+        {
+          "id": "RXBpc29kZS05MjgzMA==",
+          "title": "がんばれ!!ミカピョン",
+          "number": 7,
+          "numberText": "STAGE 7"
+        },
+        {
+          "id": "RXBpc29kZS05MjkyNQ==",
+          "title": "青山妹、演出はじめるってよ",
+          "number": 8,
+          "numberText": "STAGE 8"
+        },
+        {
+          "id": "RXBpc29kZS05MzA4NQ==",
+          "title": "白銀(ぎん)の本気(マジ) ～Silver Serious～",
+          "number": 9,
+          "numberText": "STAGE 9"
+        },
+        {
+          "id": "RXBpc29kZS05MzE4MQ==",
+          "title": "さよなら絶望戦士",
+          "number": 10,
+          "numberText": "STAGE 10"
+        },
+        {
+          "id": "RXBpc29kZS05MzQ1MQ==",
+          "title": "城ヶ根御前の憂鬱",
+          "number": 11,
+          "numberText": "STAGE 11"
+        },
+        {
+          "id": "RXBpc29kZS05MzU2MA==",
+          "title": "情熱☆フルーツ",
+          "number": 12,
+          "numberText": "STAGE 12"
+        }
+      ],
+      "seriesList": []
+    },
+    {
+      "id": "V29yay02MzMw",
+      "title": "慎重勇者 ～この勇者が俺TUEEEくせに慎重すぎる～",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS0xMTYxNTU=",
+          "title": "この勇者が傲慢すぎる",
+          "number": 1,
+          "numberText": "第1話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTYyNzY=",
+          "title": "新米女神には荷が重すぎる",
+          "number": 2,
+          "numberText": "第2話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY0NDQ=",
+          "title": "この勇者は身勝手すぎる",
+          "number": 3,
+          "numberText": "第3話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY1OTA=",
+          "title": "仲間なんて超いらなすぎる",
+          "number": 4,
+          "numberText": "第4話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTY4NDI=",
+          "title": "この女神が不気味すぎる",
+          "number": 5,
+          "numberText": "第5話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTcwODA=",
+          "title": "竜王なのにズルすぎる",
+          "number": 6,
+          "numberText": "第6話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTcyMTk=",
+          "title": "この女騎士が犬っぽすぎる",
+          "number": 7,
+          "numberText": "第7話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc1Mzk=",
+          "title": "清楚なくせに淫乱すぎる",
+          "number": 8,
+          "numberText": "第8話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc2Mjg=",
+          "title": "死神がとにかく無敵すぎる",
+          "number": 9,
+          "numberText": "第9話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc5Mjk=",
+          "number": 9,
+          "numberText": "総集編"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc3NzM=",
+          "title": "老人なのに強すぎる",
+          "number": 10,
+          "numberText": "第10話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTc4NzQ=",
+          "title": "その真実は重すぎる",
+          "number": 11,
+          "numberText": "第11話"
+        },
+        {
+          "id": "RXBpc29kZS0xMTgwNzU=",
+          "title": "この勇者が俺TUEEEくせに慎重すぎる",
+          "number": 12,
+          "numberText": "第12話"
+        }
+      ],
+      "seriesList": []
     }
   ]
 }

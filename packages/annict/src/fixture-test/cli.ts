@@ -1,4 +1,4 @@
-import { writeFileSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as p from "@clack/prompts";
@@ -11,6 +11,11 @@ import type { AnnictTarget, Expected, Fixture, ParamPattern } from "./types";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const fixturesDir = join(__dirname, "fixtures");
+const RATE_LIMIT_MS = 300;
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 /** 数値ID を Global ID (base64) に変換 */
 function toGlobalId(type: "Work" | "Episode", id: string): string {
@@ -100,6 +105,56 @@ async function fetchExpected(
   };
 }
 
+function validateExpected(
+  expected: Expected,
+  candidateWorks: Awaited<ReturnType<typeof searchWorks>>,
+): void {
+  const matchedWork = candidateWorks.find((w) => w.id === expected.id);
+  if (!matchedWork) {
+    throw new Error("Expected work not found in candidateWorks");
+  }
+
+  if (expected.episode) {
+    const matchedEpisode = matchedWork.episodes?.find(
+      (ep) => ep.id === expected.episode?.id,
+    );
+    if (!matchedEpisode) {
+      throw new Error("Expected episode not found in candidateWorks");
+    }
+  }
+}
+
+async function buildFixtureData(
+  params: SearchParam,
+  annictUrl: string,
+  token: string,
+  options?: { rateLimit?: boolean },
+): Promise<Pick<Fixture, "expected" | "variants" | "candidateWorks">> {
+  const trimmedParams = trimSearchParam(params);
+  const trimmedUrl = annictUrl.trim();
+  const annictTarget = parseAnnictUrl(trimmedUrl);
+
+  const target = applyMapping(extract(trimmedParams));
+  const titleVariants = variants(target.workTitle);
+  const candidateWorks = await searchWorks(titleVariants, token);
+  if (options?.rateLimit) {
+    await sleep(RATE_LIMIT_MS);
+  }
+
+  const expected = await fetchExpected(annictTarget, token);
+  if (options?.rateLimit) {
+    await sleep(RATE_LIMIT_MS);
+  }
+
+  validateExpected(expected, candidateWorks);
+
+  return {
+    expected,
+    variants: titleVariants,
+    candidateWorks,
+  };
+}
+
 async function promptParams(pattern: ParamPattern): Promise<SearchParam> {
   switch (pattern) {
     case "title": {
@@ -171,16 +226,13 @@ async function addFixture(
 ) {
   const trimmedParams = trimSearchParam(params);
   const trimmedUrl = annictUrl.trim();
-  // URL 検証
   const annictTarget = parseAnnictUrl(trimmedUrl);
+  const {
+    expected,
+    variants: titleVariants,
+    candidateWorks,
+  } = await buildFixtureData(trimmedParams, trimmedUrl, token);
 
-  // variants, candidateWorks, expected を取得
-  const target = applyMapping(extract(trimmedParams));
-  const titleVariants = variants(target.workTitle);
-  const candidateWorks = await searchWorks(titleVariants, token);
-  const expected = await fetchExpected(annictTarget, token);
-
-  // 取得結果を表示
   p.log.step(`Variants: ${titleVariants.length} 件`);
   p.log.message(titleVariants.map((v) => `- ${v}`).join("\n"));
 
@@ -196,30 +248,12 @@ async function addFixture(
     p.log.message(`  ${expected.title}`);
   }
 
-  // expected.id が candidateWorks に含まれるか検証
-  const matchedWork = candidateWorks.find((w) => w.id === expected.id);
-  if (!matchedWork) {
-    throw new Error("Expected work not found in candidateWorks");
-  }
-
-  // expected.episode.id が存在する場合、それも検証
-  if (expected.episode) {
-    const matchedEpisode = matchedWork.episodes?.find(
-      (ep) => ep.id === expected.episode?.id,
-    );
-    if (!matchedEpisode) {
-      throw new Error("Expected episode not found in candidateWorks");
-    }
-  }
-
-  // Continue? の確認
   const ok = await p.confirm({ message: "Continue?" });
   if (p.isCancel(ok) || !ok) {
     p.cancel("Aborted");
     process.exit(0);
   }
 
-  // ファイル書き出し
   const fixture: Fixture = {
     meta: { createdAt: new Date().toISOString() },
     input: { params: trimmedParams, annictUrl: trimmedUrl },
@@ -233,6 +267,57 @@ async function addFixture(
   p.outro(`Fixture saved: ${filepath}`);
 }
 
+/** フィクスチャ一括再生成 */
+async function runRegenerateFlow(token: string) {
+  p.intro("Regenerate Fixtures");
+
+  const filenames = readdirSync(fixturesDir)
+    .filter((f) => f.endsWith(".json"))
+    .sort();
+  const total = filenames.length;
+  const failures: { filename: string; error: string }[] = [];
+
+  for (const [index, filename] of filenames.entries()) {
+    const filepath = join(fixturesDir, filename);
+    const progress = `[${index + 1}/${total}] ${filename}`;
+
+    try {
+      const content = readFileSync(filepath, "utf-8");
+      const fixture = JSON.parse(content) as Fixture;
+      const data = await buildFixtureData(
+        fixture.input.params,
+        fixture.input.annictUrl,
+        token,
+        { rateLimit: true },
+      );
+
+      const updated: Fixture = {
+        ...fixture,
+        expected: data.expected,
+        variants: data.variants,
+        candidateWorks: data.candidateWorks,
+      };
+      writeFileSync(filepath, JSON.stringify(updated, null, 2), "utf-8");
+      p.log.success(`${progress} ... ok`);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      failures.push({ filename, error: message });
+      p.log.error(`${progress} ... failed: ${message}`);
+    }
+  }
+
+  if (failures.length > 0) {
+    p.log.error(`${failures.length} fixture(s) failed to regenerate`);
+    for (const { filename, error } of failures) {
+      p.log.message(`  - ${filename}: ${error}`);
+    }
+    p.cancel("Aborted");
+    process.exit(1);
+  }
+
+  p.outro(`Regenerated ${total} fixture(s)`);
+}
+
 /** メイン処理 */
 async function main() {
   const token = process.env.ANNICT_TOKEN;
@@ -240,7 +325,12 @@ async function main() {
     throw new Error("ANNICT_TOKEN environment variable is required");
   }
 
-  await runAddFlow(token);
+  const command = process.argv[2];
+  if (command === "regenerate") {
+    await runRegenerateFlow(token);
+  } else {
+    await runAddFlow(token);
+  }
 }
 
 main().catch((error) => {

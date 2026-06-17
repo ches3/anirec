@@ -13,7 +13,8 @@
     "gql-gen": "graphql-codegen",
     "check": "biome check --write .",
     "check:dry": "biome check .",
-    "fixture": "bun run src/fixture-test/cli.ts"
+    "fixture": "bun run src/fixture-test/cli.ts",
+    "fixture:regenerate": "bun run src/fixture-test/cli.ts regenerate"
   },
   "devDependencies": {
     "@clack/prompts": "^1.0.0",
