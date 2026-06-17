@@ -19,11 +19,19 @@ export function variants(title: string): string[] {
     }),
   ];
 
-  const matchList = normalize(title, {
+  const normalizedTitle = normalize(title, {
     remove: { anime: true, movie: true },
-  }).match(
-    /(?:\p{L}{4,}|(?:\p{sc=Han}|\p{sc=Hira}|\p{sc=Kana}){4,}|(?=\p{sc=Han})(?:\p{sc=Han}|\p{sc=Hira}|\p{sc=Kana}){2,})/gu,
-  );
+  });
+  const matchList = [
+    /(?:\p{L}{4,}|(?:\p{sc=Han}|[\p{sc=Hira}ーｰ]|[\p{sc=Kana}ーｰ]){4,}|(?=\p{sc=Han})(?:\p{sc=Han}|[\p{sc=Hira}ーｰ]|[\p{sc=Kana}ーｰ]){2,})/gu,
+    /(?:[\p{sc=Hira}ーｰ]){2,}/gu,
+    /(?:[\p{sc=Kana}ーｰ]){2,}/gu,
+    /\p{sc=Han}{2,}/gu,
+    /(?:\p{sc=Han}|[\p{sc=Hira}ーｰ]|[\p{sc=Kana}ーｰ]){2,}/gu,
+    /\p{Script=Latin}{2,}/gu,
+    /(?:\p{sc=Han}|[\p{sc=Hira}ーｰ]|[\p{sc=Kana}ーｰ]|\p{Script=Latin}){2,}/gu,
+    /\p{L}{2,}/gu,
+  ].flatMap((pattern) => normalizedTitle.match(pattern) ?? []);
   const ignoreList = [
     "season",
     "シーズン",
@@ -33,9 +41,9 @@ export function variants(title: string): string[] {
     "後編",
     "物語",
   ];
-  if (matchList) {
-    words.push(...matchList.filter((word) => !ignoreList.includes(word)));
-  }
+  words.push(
+    ...matchList.filter((word) => !ignoreList.includes(word.toLowerCase())),
+  );
 
   return [...new Set(words)];
 }
