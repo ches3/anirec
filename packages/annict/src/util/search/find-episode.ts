@@ -89,6 +89,42 @@ export function findEpisodeByTitleAsNumberText(
   );
 }
 
+// target.episode.title に work.title が含まれているケース
+export function findEpisodeByTitleWithWorkTitle(
+  work: { title: string; seriesList?: string[] },
+  episodes: Episode[],
+  target: ExtractedEpisode,
+): Episode | undefined {
+  const title = target.title;
+  if (!title) return undefined;
+
+  const workTitles = [
+    work.title,
+    ...(work.seriesList?.map((series) => `${series} ${work.title}`) ?? []),
+  ];
+
+  return findWithStrictOrWeak(episodes, (ep, weak) => {
+    const numberText = ep.numberText?.trim();
+    const episodeTitle = ep.title?.trim();
+
+    return workTitles.some((workTitle) => {
+      if (numberText && episodeTitle) {
+        const withNumber = [workTitle, numberText, episodeTitle].join(" ");
+        if (isSameTitle(withNumber, title, weak)) {
+          return true;
+        }
+      }
+      if (episodeTitle) {
+        const withoutNumber = [workTitle, episodeTitle].join(" ");
+        if (isSameTitle(withoutNumber, title, weak)) {
+          return true;
+        }
+      }
+      return false;
+    });
+  });
+}
+
 // 「」内の文字列を抽出する
 function extractBracketContent(str: string): string | undefined {
   return str.match(/「([^」]+)」/)?.[1];

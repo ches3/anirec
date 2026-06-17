@@ -9,6 +9,7 @@ import {
   findEpisodeByTitle,
   findEpisodeByTitleAndNumberText,
   findEpisodeByTitleAsNumberText,
+  findEpisodeByTitleWithWorkTitle,
 } from "./util/search/find-episode";
 import { applyMapping } from "./util/search/mapping";
 import { buildFullTitle } from "./util/search/title";
@@ -76,7 +77,8 @@ export async function search(
     const episode =
       findEpisodeByTitle(work.episodes, target.episode) ??
       findEpisodeByNumberText(work.episodes, target.episode) ??
-      findEpisodeByTitleAsNumberText(work.episodes, target.episode);
+      findEpisodeByTitleAsNumberText(work.episodes, target.episode) ??
+      findEpisodeByTitleWithWorkTitle(work, work.episodes, target.episode);
     if (episode) {
       return {
         id: work.id,
@@ -100,7 +102,15 @@ export async function search(
       const episode =
         findEpisodeByTitle(weakMatchWork.episodes, target.episode) ??
         findEpisodeByNumberText(weakMatchWork.episodes, target.episode) ??
-        findEpisodeByTitleAsNumberText(weakMatchWork.episodes, target.episode);
+        findEpisodeByTitleAsNumberText(
+          weakMatchWork.episodes,
+          target.episode,
+        ) ??
+        findEpisodeByTitleWithWorkTitle(
+          weakMatchWork,
+          weakMatchWork.episodes,
+          target.episode,
+        );
       if (episode) {
         return { id: weakMatchWork.id, title: weakMatchWork.title, episode };
       }

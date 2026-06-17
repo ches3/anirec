@@ -433,6 +433,43 @@ describe("workTitle & episodeTitle", () => {
     );
     expect(result?.episode?.id).toEqual("RXBpc29kZS03NzU4Nw==");
   });
+
+  test("episodeTitle に作品名が含まれる場合", async () => {
+    const relifeMock: Work[] = [
+      {
+        id: "V29yay00Nzky",
+        title: "ReLIFE",
+        noEpisodes: false,
+        episodes: [
+          {
+            id: "RXBpc29kZS03NjA0NQ==",
+            title: "海崎新太(27)無職",
+            number: 1,
+            numberText: "report 1",
+          },
+        ],
+        seriesList: ["ReLIFE"],
+      },
+    ];
+    vi.mocked(searchWorks).mockResolvedValueOnce(relifeMock);
+    const result = await search(
+      {
+        workTitle: "ReLIFE",
+        episodeTitle: "ReLIFE report1 海崎新太(27)無職",
+      },
+      "token",
+    );
+    expect(result).toEqual({
+      id: "V29yay00Nzky",
+      title: "ReLIFE",
+      episode: {
+        id: "RXBpc29kZS03NjA0NQ==",
+        title: "海崎新太(27)無職",
+        number: 1,
+        numberText: "report 1",
+      },
+    });
+  });
 });
 
 describe("title", () => {

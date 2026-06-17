@@ -5,6 +5,7 @@ import {
   findEpisodeByTitle,
   findEpisodeByTitleAndNumberText,
   findEpisodeByTitleAsNumberText,
+  findEpisodeByTitleWithWorkTitle,
 } from "./find-episode";
 
 const episodes = [
@@ -463,6 +464,105 @@ describe("findEpisodeByTitleAsNumberText", () => {
       number: undefined,
     };
     expect(findEpisodeByTitleAsNumberText(noNumberText, target)?.id).toEqual(
+      undefined,
+    );
+  });
+});
+
+describe("findEpisodeByTitleWithWorkTitle", () => {
+  const work = { title: "響け！ユーフォニアム", seriesList: undefined };
+
+  test("workTitle + episode.title が一致する場合", () => {
+    const target = {
+      title: "響け！ユーフォニアム ようこそハイスクール",
+      numberText: undefined,
+      number: undefined,
+    };
+    expect(findEpisodeByTitleWithWorkTitle(work, episodes, target)?.id).toEqual(
+      "RXBpc29kZS0xODM1Mg==",
+    );
+  });
+
+  test("workTitle + numberText + episode.title が一致する場合", () => {
+    const relifeWork = { title: "ReLIFE", seriesList: ["ReLIFE"] };
+    const relifeEpisodes = [
+      {
+        id: "RXBpc29kZS03NjA0NQ==",
+        title: "海崎新太(27)無職",
+        number: 1,
+        numberText: "report 1",
+      },
+    ];
+    const target = {
+      title: "ReLIFE report1 海崎新太(27)無職",
+      numberText: undefined,
+      number: undefined,
+    };
+    expect(
+      findEpisodeByTitleWithWorkTitle(relifeWork, relifeEpisodes, target)?.id,
+    ).toEqual("RXBpc29kZS03NjA0NQ==");
+  });
+
+  test("series + workTitle を使った複合タイトルでも一致する", () => {
+    const seriesWork = {
+      title: "アリシゼーション",
+      seriesList: ["ソードアート・オンライン"],
+    };
+    const target = {
+      title: "ソードアート・オンライン アリシゼーション 第1話 サブタイトル",
+      numberText: undefined,
+      number: undefined,
+    };
+    const seriesEpisodes = [
+      {
+        id: "ep1",
+        title: "サブタイトル",
+        number: 1,
+        numberText: "第1話",
+      },
+    ];
+    expect(
+      findEpisodeByTitleWithWorkTitle(seriesWork, seriesEpisodes, target)?.id,
+    ).toEqual("ep1");
+  });
+
+  test("target.titleがundefinedの場合はundefinedを返す", () => {
+    const target = {
+      title: undefined,
+      numberText: undefined,
+      number: undefined,
+    };
+    expect(findEpisodeByTitleWithWorkTitle(work, episodes, target)?.id).toEqual(
+      undefined,
+    );
+  });
+
+  test("episode.titleとnumberTextがundefinedの場合は作品タイトル単体で一致させない", () => {
+    const target = {
+      title: "響け！ユーフォニアム",
+      numberText: undefined,
+      number: undefined,
+    };
+    const episodesWithoutTitle = [
+      {
+        id: "ep1",
+        title: undefined,
+        number: 1,
+        numberText: undefined,
+      },
+    ];
+    expect(
+      findEpisodeByTitleWithWorkTitle(work, episodesWithoutTitle, target)?.id,
+    ).toEqual(undefined);
+  });
+
+  test("一致しない場合はundefinedを返す", () => {
+    const target = {
+      title: "ようこそハイスクール",
+      numberText: undefined,
+      number: undefined,
+    };
+    expect(findEpisodeByTitleWithWorkTitle(work, episodes, target)?.id).toEqual(
       undefined,
     );
   });
