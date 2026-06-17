@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "createdAt": "2026-06-17T22:39:27.956Z"
+  },
+  "input": {
+    "params": {
+      "workTitle": "ハルチカ～ハルタとチカは青春する～",
+      "episodeTitle": "ハルチカ～ハルタとチカは青春する～　＃1　メロディアスな暗号"
+    },
+    "annictUrl": "https://annict.com/works/4560/episodes/64553"
+  },
+  "expected": {
+    "id": "V29yay00NTYw",
+    "title": "ハルチカ ～ハルタとチカは青春する～",
+    "episode": {
+      "id": "RXBpc29kZS02NDU1Mw==",
+      "title": "メロディアスな暗号",
+      "number": 1,
+      "numberText": "#01"
+    }
+  },
+  "variants": [
+    "ハルチカ～ハルタとチカは青春する～",
+    "ハルチカ~ハルタとチカは青春する~",
+    "ハルチカ",
+    "ハルタとチカは青春する"
+  ],
+  "candidateWorks": [
+    {
+      "id": "V29yay00NTYw",
+      "title": "ハルチカ ～ハルタとチカは青春する～",
+      "noEpisodes": false,
+      "episodes": [
+        {
+          "id": "RXBpc29kZS02NDU1Mw==",
+          "title": "メロディアスな暗号",
+          "number": 1,
+          "numberText": "#01"
+        },
+        {
+          "id": "RXBpc29kZS02NTQ0MQ==",
+          "title": "クロスキューブ",
+          "number": 2,
+          "numberText": "#02"
+        },
+        {
+          "id": "RXBpc29kZS02NjQyMw==",
+          "title": "退出ゲーム",
+          "number": 3,
+          "numberText": "#03"
+        },
+        {
+          "id": "RXBpc29kZS02ODI4NQ==",
+          "title": "ヴァナキュラー・モダニズム",
+          "number": 4,
+          "numberText": "#04"
+        },
+        {
+          "id": "RXBpc29kZS02OTIzNA==",
+          "title": "エレファンツ・ブレス",
+          "number": 5,
+          "numberText": "#05"
+        },
+        {
+          "id": "RXBpc29kZS02OTYxOA==",
+          "title": "スプリングラフィ",
+          "number": 6,
+          "numberText": "#06"
+        },
+        {
+          "id": "RXBpc29kZS03MjExMg==",
+          "title": "周波数は77.4MHz",
+          "number": 7,
+          "numberText": "#07"
+        },
+        {
+          "id": "RXBpc29kZS03MzExNQ==",
+          "title": "初恋ソムリエ",
+          "number": 8,
+          "numberText": "#08"
+        },
+        {
+          "id": "RXBpc29kZS03MzIxOQ==",
+          "title": "アスモデウスの視線",
+          "number": 9,
+          "numberText": "#09"
+        },
+        {
+          "id": "RXBpc29kZS03MzMyMQ==",
+          "title": "ジャバウォックの鑑札",
+          "number": 10,
+          "numberText": "#10"
+        },
+        {
+          "id": "RXBpc29kZS03MzQ4Nw==",
+          "title": "エデンの谷",
+          "number": 11,
+          "numberText": "#11"
+        },
+        {
+          "id": "RXBpc29kZS03MzU4Mg==",
+          "title": "共鳴トライアングル",
+          "number": 12,
+          "numberText": "#12"
+        }
+      ],
+      "seriesList": []
+    }
+  ]
+}

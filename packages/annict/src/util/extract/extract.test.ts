@@ -77,6 +77,39 @@ describe("extract", () => {
       },
     });
   });
+
+  test("extractFullTitleにフォールバックしてepisodeTitleにworkTitleが含まれているケースに対応", () => {
+    const result = extract({
+      workTitle: "ハルチカ～ハルタとチカは青春する～",
+      episodeTitle:
+        "ハルチカ～ハルタとチカは青春する～　＃1　メロディアスな暗号",
+    });
+    expect(result).toEqual({
+      workTitle: "ハルチカ～ハルタとチカは青春する～",
+      episode: {
+        number: 1,
+        numberText: "＃1",
+        title: "メロディアスな暗号",
+      },
+    });
+  });
+
+  test("workTitleとepisodeTitleが一致しない場合はextractFullTitleによるフォールバック結果を返さない", () => {
+    const episodeTitle =
+      "ハルチカ～ハルタとチカは青春する～　＃1　メロディアスな暗号";
+    const result = extract({
+      workTitle: "別の作品",
+      episodeTitle,
+    });
+    expect(result).toEqual({
+      workTitle: "別の作品",
+      episode: {
+        number: undefined,
+        numberText: undefined,
+        title: episodeTitle,
+      },
+    });
+  });
 });
 
 describe("extractEpisode", () => {
