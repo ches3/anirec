@@ -23,14 +23,13 @@ export function variants(title: string): string[] {
     remove: { anime: true, movie: true },
   });
   const matchList = [
-    /(?:\p{L}{4,}|(?:\p{sc=Han}|[\p{sc=Hira}ーｰ]|[\p{sc=Kana}ーｰ]){4,}|(?=\p{sc=Han})(?:\p{sc=Han}|[\p{sc=Hira}ーｰ]|[\p{sc=Kana}ーｰ]){2,})/gu,
-    /(?:[\p{sc=Hira}ーｰ]){2,}/gu,
-    /(?:[\p{sc=Kana}ーｰ]){2,}/gu,
-    /\p{sc=Han}{2,}/gu,
-    /(?:\p{sc=Han}|[\p{sc=Hira}ーｰ]|[\p{sc=Kana}ーｰ]){2,}/gu,
-    /\p{Script=Latin}{2,}/gu,
-    /(?:\p{sc=Han}|[\p{sc=Hira}ーｰ]|[\p{sc=Kana}ーｰ]|\p{Script=Latin}){2,}/gu,
-    /\p{L}{2,}/gu,
+    /\p{L}{4,}/gu,
+    /\p{Script=Latin}{4,}/gu,
+    /(?:[\p{sc=Hira}ーｰ]){4,}/gu,
+    /(?:[\p{sc=Kana}ーｰ]){4,}/gu,
+    /\p{sc=Han}{3,}/gu,
+    /(?:\p{sc=Han}|[\p{sc=Hira}ーｰ]|[\p{sc=Kana}ーｰ]){3,}/gu,
+    /(?:\p{sc=Han}|[\p{sc=Hira}ーｰ]|[\p{sc=Kana}ーｰ]|\p{Script=Latin}){3,}/gu,
   ].flatMap((pattern) => normalizedTitle.match(pattern) ?? []);
   const ignoreList = [
     "season",
