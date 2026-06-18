@@ -298,4 +298,64 @@ export const mappingRules: WorkMappingRule[] = [
       },
     ],
   },
+  {
+    workTitleFrom: ["ちはやふる"],
+    episodeMappings: [
+      {
+        episodeTitleFrom: ["をぐらやま", "第十六首 をぐらやま"],
+        episodeTitleTo: "をぐらやま（総集編）",
+      },
+    ],
+  },
+  {
+    workTitleFrom: ["ちはやふる3", "ちはやふる 第3期"],
+    workTitleTo: "ちはやふる3",
+    episodeMappings: [
+      {
+        episodeTitleFrom: [
+          "いまひとたびの（総集編）",
+          "第十五、五首 いまひとたびの（総集編）",
+        ],
+        episodeTitleTo: "いまひとたびの",
+      },
+    ],
+  },
+  {
+    workTitleFrom: ["アイドルマスター"],
+    workTitleTo: "THE IDOLM@STER",
+  },
+  {
+    workTitleFrom: ["真夜中ハートチューン", "TVアニメ『真夜中ハートチューン』"],
+    workTitleTo: "真夜中ハートチューン",
+    episodeMappings: [
+      {
+        episodeTitleFrom: [
+          "「全部　キミのせいだよ」 「いつか見せてあげる」「晴天の霹靂」 「直接触れるんだ」",
+          "第9話 「全部　キミのせいだよ」 「いつか見せてあげる」「晴天の霹靂」 「直接触れるんだ」",
+        ],
+        episodeTitleTo:
+          "全部　キミのせいだよ／いつか見せてあげる／青天の霹靂／直接触れるんだ",
+      },
+      {
+        episodeTitleFrom: [
+          "「少し目を離した隙に」「ＳＥＣＲＥＴＴＲＡＣＫ」「celestial」",
+          "第11話「少し目を離した隙に」 「ＳＥＣＲＥＴＴＲＡＣＫ」 「celestial」",
+        ],
+        episodeTitleTo: "少し目を離した隙に／SECRET TRACK／celestial(天上の)",
+      },
+    ],
+  },
+  {
+    workTitleFrom: ["映画 この素晴らしい世界に祝福を！紅伝説"],
+    workTitleTo: "この素晴らしい世界に祝福を！紅伝説",
+  },
+  {
+    workTitleFrom: ["月刊少女野崎くん"],
+    episodeMappings: [
+      {
+        episodeTitleFrom: ["漫画家脳野崎くん", "第七号 漫画家脳野崎くん"],
+        episodeTitleTo: "マンガ家脳野崎くん",
+      },
+    ],
+  },
 ];
