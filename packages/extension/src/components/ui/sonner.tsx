@@ -12,7 +12,7 @@ type ToasterProps = React.ComponentProps<typeof Sonner>;
 const Toaster = ({ ...props }: ToasterProps) => {
   return (
     <Sonner
-      theme="light"
+      theme="system"
       className="toaster group"
       position="top-right"
       duration={1500}
@@ -20,7 +20,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
         success: <CircleCheck className="h-4 w-4" />,
         info: <Info className="h-4 w-4" />,
         warning: <TriangleAlert className="h-4 w-4" />,
-        error: <CircleX className="size-5 text-red-500 mr-10" />,
+        error: <CircleX className="size-5 text-destructive mr-10" />,
         loading: <LoaderCircle className="h-4 w-4 animate-spin" />,
       }}
       toastOptions={{
@@ -33,6 +33,10 @@ const Toaster = ({ ...props }: ToasterProps) => {
           cancelButton:
             "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
         },
+      }}
+      style={{
+        "--normal-bg": "var(--popover)",
+        "--normal-text": "var(--popover-foreground)",
       }}
       {...props}
     />
