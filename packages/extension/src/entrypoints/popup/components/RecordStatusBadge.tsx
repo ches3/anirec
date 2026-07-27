@@ -39,7 +39,7 @@ const statusConfigs: Record<RecordStatus["status"], StatusConfig> = {
     icon: XCircle,
     label: "エラー",
     color: "text-destructive",
-    bgColor: "bg-red-50",
+    bgColor: "bg-destructive/10",
   },
   skipped: {
     icon: MinusCircle,
