@@ -14,6 +14,7 @@ export const fetchGql = async <T>(
   endpoint: string,
   query: string,
   schema: BaseSchema<unknown, T, BaseIssue<unknown>>,
+  variables?: Record<string, unknown>,
 ) => {
   const res = await fetch(endpoint, {
     method: "POST",
@@ -22,6 +23,7 @@ export const fetchGql = async <T>(
     },
     body: JSON.stringify({
       query: query,
+      variables,
     }),
   });
 
@@ -95,31 +97,85 @@ export const fetchUnext = async (workId: string, episodeId: string) => {
       webfront_title_stage: object({
         titleName: string(),
         publishStyleCode: union([literal("VOD_SINGLE"), literal("VOD_MULTI")]),
-        episode: object({
-          displayNo: string(),
-          episodeName: string(),
-        }),
+      }),
+      webfront_title_titleEpisodes: object({
+        episodes: array(
+          object({
+            id: string(),
+            displayNo: string(),
+            episodeName: string(),
+          }),
+        ),
       }),
     }),
   });
 
-  const query = `
-		query FetchTitle {
-			webfront_title_stage(id: "${workId}") {
-				titleName
-				publishStyleCode
-				episode(id: "${episodeId}") {
-					displayNo
-					episodeName
-				}
-			}
-		}
-	`;
+  const query = `query cosmo_getTitle($id: ID!, $episodeCode: ID!, $episodePage: Int, $episodePageSize: Int) {
+  webfront_title_stage(id: $id) {
+    id
+    titleName
+    publishStyleCode
+    episode(id: $episodeCode) {
+      id
+      hasSubtitle
+      hasDub
+      __typename
+    }
+    __typename
+  }
+  webfront_title_titleEpisodes(
+    id: $id
+    page: $episodePage
+    pageSize: $episodePageSize
+  ) {
+    episodes {
+      id
+      episodeName
+      displayNo
+      thumbnail {
+        standard
+        __typename
+      }
+      duration
+      interruption
+      completeFlag
+      __typename
+    }
+    __typename
+  }
+}
+`;
 
   const endpoint = "https://cc.unext.jp";
 
-  const data = await fetchGql(endpoint, query, Schema);
-  return data?.data.webfront_title_stage;
+  for (let episodePage = 1; ; episodePage++) {
+    const { data } = await fetchGql(endpoint, query, Schema, {
+      id: workId,
+      episodeCode: episodeId,
+      episodePage,
+      episodePageSize: 1000,
+    });
+    const title = data.webfront_title_stage;
+    const episodes = data.webfront_title_titleEpisodes.episodes;
+    const episode = episodes.find((episode) => episode.id === episodeId);
+    if (episode) {
+      return {
+        ...title,
+        episode:
+          title.publishStyleCode === "VOD_SINGLE"
+            ? { displayNo: "", episodeName: "" }
+            : {
+                displayNo: episode.displayNo,
+                episodeName: episode.episodeName,
+              },
+      };
+    }
+    if (episodes.length === 0) {
+      throw new Error(
+        "U-NEXT のエピソードが作品の一覧に見つかりませんでした。",
+      );
+    }
+  }
 };
 
 export const fetchNetflix = async (videoId: number) => {
