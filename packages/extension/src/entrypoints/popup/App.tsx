@@ -59,6 +59,7 @@ export default function App() {
           value="recent-records"
           className="px-2 flex-1 overflow-y-auto"
           style={{ scrollbarWidth: "thin" }}
+          asChild
         >
           <RecentRecords />
         </TabsContent>
