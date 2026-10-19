@@ -4,7 +4,7 @@ import { getRecentRecords } from "../lib/recent-records";
 
 export type LoadMoreResult = "ok" | "error" | "noop";
 
-type RecentRecordsLoadState =
+export type RecentRecordsLoadState =
   | { status: "loading" }
   | { status: "error" }
   | {
