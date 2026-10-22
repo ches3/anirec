@@ -134,7 +134,7 @@ export function extractFullTitle(title: string): {
   // dアニメの劇場版等の作品
   // e.g. "リズと青い鳥 本編　"
   const honpen = trimmed.match(/^(.*)\s+本編$/);
-  if (honpen) {
+  if (honpen?.[1] !== undefined) {
     return {
       title: honpen[1],
       episode: undefined,

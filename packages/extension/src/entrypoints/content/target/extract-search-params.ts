@@ -98,11 +98,11 @@ const dmm = async (url: URL): Promise<SearchParam[]> => {
 const unext = async (url: URL): Promise<SearchParam[]> => {
   const pathname = url.pathname;
   const pathnameMatch = pathname.match(/^\/play\/([^/]+)\/([^/]+)/);
-  if (!pathnameMatch) {
+  const workId = pathnameMatch?.[1];
+  const episodeId = pathnameMatch?.[2];
+  if (workId === undefined || episodeId === undefined) {
     throw new Error("再生ページの URL 形式が不正です。");
   }
-  const workId = pathnameMatch[1];
-  const episodeId = pathnameMatch[2];
 
   const data = await fetchUnext(workId, episodeId);
 
@@ -140,7 +140,7 @@ const abema = async (): Promise<SearchParam[]> => {
   // e.g. 響け！ユーフォニアム | 響け!ユーフォニアム3
   // e.g. ちはやふる | 第1期
   const workTitleMatch = workTitle.match(/^(.*) \| (.*)$/);
-  if (workTitleMatch) {
+  if (workTitleMatch?.[1] !== undefined && workTitleMatch[2] !== undefined) {
     return [
       {
         workTitle: workTitleMatch[2],

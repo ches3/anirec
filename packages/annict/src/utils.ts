@@ -6,19 +6,19 @@ export function toAnnictId(encoded: string): AnnictId {
   try {
     const decoded = atob(encoded);
     const workMatch = decoded.match(/^Work-([\d]+)$/);
-    if (workMatch) {
+    if (workMatch?.[1] !== undefined) {
       return { type: "work", id: workMatch[1] };
     }
     const episodeMatch = decoded.match(/^Episode-([\d]+)$/);
-    if (episodeMatch) {
+    if (episodeMatch?.[1] !== undefined) {
       return { type: "episode", id: episodeMatch[1] };
     }
     const recordMatch = decoded.match(/^Record-([\d]+)$/);
-    if (recordMatch) {
+    if (recordMatch?.[1] !== undefined) {
       return { type: "record", id: recordMatch[1] };
     }
     const reviewMatch = decoded.match(/^Review-([\d]+)$/);
-    if (reviewMatch) {
+    if (reviewMatch?.[1] !== undefined) {
       return { type: "review", id: reviewMatch[1] };
     }
     return { type: "invalid" };

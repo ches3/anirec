@@ -195,10 +195,11 @@ export async function search(
         (work) =>
           work.noEpisodes && isSameTitle(work.title, episodeTitle, true),
       );
-      if (weakWorks.length === 1) {
+      const [weakWork] = weakWorks;
+      if (weakWorks.length === 1 && weakWork !== undefined) {
         return {
-          id: weakWorks[0].id,
-          title: weakWorks[0].title,
+          id: weakWork.id,
+          title: weakWork.title,
           episode: undefined,
         };
       }
@@ -216,10 +217,11 @@ export async function search(
     const weakWorks = works.filter(
       (work) => work.noEpisodes && isSameTitle(work.title, fullTitle, true),
     );
-    if (weakWorks.length === 1) {
+    const [weakWork] = weakWorks;
+    if (weakWorks.length === 1 && weakWork !== undefined) {
       return {
-        id: weakWorks[0].id,
-        title: weakWorks[0].title,
+        id: weakWork.id,
+        title: weakWork.title,
         episode: undefined,
       };
     }
@@ -267,8 +269,9 @@ export async function search(
       }
     }
   }
-  if (weakMatches.length === 1) {
-    const { work, episode } = weakMatches[0];
+  const [weakMatch] = weakMatches;
+  if (weakMatches.length === 1 && weakMatch !== undefined) {
+    const { work, episode } = weakMatch;
     return { id: work.id, title: work.title, episode };
   }
 }

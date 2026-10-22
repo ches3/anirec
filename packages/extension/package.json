@@ -1,5 +1,6 @@
 {
   "name": "@anirec/extension",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -38,10 +39,12 @@
     "@types/chrome": "^0.1.36",
     "@types/react": "^19.2.13",
     "@types/react-dom": "^19.2.3",
-    "@wxt-dev/module-react": "^1.1.1",
+    "@wxt-dev/module-react": "1.2.2",
     "postcss": "^8.4.47",
     "tailwindcss": "^4.1.18",
+    "vite": "7",
     "vite-tsconfig-paths": "^6.0.5",
-    "wxt": "^0.20.13"
+    "web-ext": "^10.8.0",
+    "wxt": "0.21.4"
   }
 }
