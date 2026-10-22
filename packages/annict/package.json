@@ -8,8 +8,8 @@
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "test": "vitest",
-    "test:run": "vitest run",
+    "test": "vp test",
+    "test:run": "vp test run",
     "gql-gen": "graphql-codegen",
     "check": "biome check --write .",
     "check:dry": "biome check .",

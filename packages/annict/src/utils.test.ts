@@ -1,4 +1,4 @@
-import { describe, expect, test } from "vitest";
+import { describe, expect, test } from "vite-plus/test";
 import { getAnnictUrl, toAnnictId } from "./utils";
 
 // atob("V29yay01MzQw") === "Work-5340"
