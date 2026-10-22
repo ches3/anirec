@@ -17,9 +17,9 @@
 ユーザーに実行させるのではなく、**コーディングエージェント(Claude CodeやCodex)自身で実行すること**。
 
 ```bash
-bun run typecheck
-bun run check
-bun run test
+pnpm run typecheck
+pnpm run check
+pnpm run test
 ```
 
 ## TypeScript規約
@@ -45,7 +45,7 @@ bun run test
 
 ## Annict API
 
-- `query.gql`に必要なクエリを定義し、`bun run gql-gen`でDocument等を生成する
+- `query.gql`に必要なクエリを定義し、`pnpm run gql-gen`でDocument等を生成する
 - `generated.ts`は手動編集禁止
 - エピソードを含む作品は`Record`、エピソードを含まない作品は`Review`で記録する
 
@@ -67,7 +67,7 @@ bun run test
 
 - **言語**: TypeScript
 - **モノレポ管理**: Turborepo
-- **パッケージマネージャー**: Bun
+- **パッケージマネージャー**: pnpm
 - **Lint/Format**: Biome
 - **テスト**: Vitest
 

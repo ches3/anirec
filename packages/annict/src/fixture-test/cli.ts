@@ -2,12 +2,15 @@ import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as p from "@clack/prompts";
+import dotenv from "dotenv";
 import type { SearchParam } from "../types";
 import { fetchNode, searchWorks } from "../util/annict";
 import { extract } from "../util/extract/extract";
 import { applyMapping } from "../util/search/mapping";
 import { variants } from "../util/search/variants";
 import type { AnnictTarget, Expected, Fixture, ParamPattern } from "./types";
+
+dotenv.config({ path: ".env" });
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const fixturesDir = join(__dirname, "fixtures");

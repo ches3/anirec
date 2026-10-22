@@ -13,8 +13,8 @@
     "gql-gen": "graphql-codegen",
     "check": "biome check --write .",
     "check:dry": "biome check .",
-    "fixture": "bun run src/fixture-test/cli.ts",
-    "fixture:regenerate": "bun run src/fixture-test/cli.ts regenerate"
+    "fixture": "tsx src/fixture-test/cli.ts",
+    "fixture:regenerate": "tsx src/fixture-test/cli.ts regenerate"
   },
   "devDependencies": {
     "@clack/prompts": "^1.0.0",
@@ -25,7 +25,8 @@
     "@graphql-typed-document-node/core": "^3.2.0",
     "@types/node": "^25.2.1",
     "dotenv": "^17.2.4",
-    "graphql": "^16.9.0"
+    "graphql": "^16.9.0",
+    "tsx": "^4.23.15"
   },
   "dependencies": {
     "@ches3/zenhan": "^1.0.1",
