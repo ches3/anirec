@@ -5,9 +5,7 @@ export type AbortBinding = {
   dispose: () => void;
 };
 
-export async function waitUntilAutoRecordEnabled(
-  navigationSignal: AbortSignal,
-): Promise<boolean> {
+export async function waitUntilAutoRecordEnabled(navigationSignal: AbortSignal): Promise<boolean> {
   if (navigationSignal.aborted) {
     return false;
   }
@@ -37,7 +35,9 @@ export async function waitUntilAutoRecordEnabled(
       resolve(value);
     };
 
-    const onAbort = () => resolveOnce(false);
+    const onAbort = () => {
+      resolveOnce(false);
+    };
     navigationSignal.addEventListener("abort", onAbort, { once: true });
     const unwatchAutoRecordEnabled = watchAutoRecordEnabled((newValue) => {
       if (newValue) {
@@ -47,15 +47,15 @@ export async function waitUntilAutoRecordEnabled(
   });
 }
 
-export function createAbortBinding(
-  navigationSignal: AbortSignal,
-): AbortBinding | null {
+export function createAbortBinding(navigationSignal: AbortSignal): AbortBinding | null {
   if (navigationSignal.aborted) {
     return null;
   }
 
   const abortController = new AbortController();
-  const onAbort = () => abortController.abort("locationChange");
+  const onAbort = () => {
+    abortController.abort("locationChange");
+  };
   navigationSignal.addEventListener("abort", onAbort, { once: true });
   const unwatchAutoRecordEnabled = watchAutoRecordEnabled((newValue) => {
     if (!newValue) {

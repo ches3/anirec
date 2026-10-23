@@ -19,7 +19,9 @@ function ServiceToggleOptionItem({
       <Switch
         id={id}
         checked={enabled}
-        onCheckedChange={(value) => onToggle(id, value)}
+        onCheckedChange={(value) => {
+          onToggle(id, value);
+        }}
         className="scale-80"
       />
       <Label htmlFor={id} className="pl-2 cursor-pointer">

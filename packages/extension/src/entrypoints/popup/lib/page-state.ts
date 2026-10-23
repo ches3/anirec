@@ -17,7 +17,7 @@ export async function getCurrentTabInfo(): Promise<CurrentTabInfo> {
 
   return {
     tabId: tab.id,
-    tabUrl: tab?.url,
+    tabUrl: tab.url,
   };
 }
 
@@ -47,16 +47,11 @@ export async function fetchPageState(tabId: number): Promise<PageStateData> {
     console.error("Failed to fetch page state:", error);
 
     // Content scriptが読み込まれていない場合
-    if (
-      error instanceof Error &&
-      error.message.includes("Receiving end does not exist")
-    ) {
+    if (error instanceof Error && error.message.includes("Receiving end does not exist")) {
       throw new Error("ページを再読み込みしてください。");
     }
 
-    throw new Error(
-      error instanceof Error ? error.message : "不明なエラーが発生しました。",
-    );
+    throw new Error(error instanceof Error ? error.message : "不明なエラーが発生しました。");
   } finally {
     if (timeoutId) {
       clearTimeout(timeoutId);

@@ -1,6 +1,8 @@
 import type { SearchResult } from "@anirec/annict";
+
 import type { Vod, WorkInfoData } from "@/types";
 import { searchFromList } from "@/utils/search";
+
 import { createRecordError } from "../record-error";
 import { extractSearchParams } from "./extract-search-params";
 
@@ -17,11 +19,11 @@ export async function resolveTarget(
   vod: Vod,
   url: URL,
 ): Promise<ResolveTargetResult> {
-  const searchParams = await extractSearchParams(vod, url).catch((error) => {
+  const searchParams = await extractSearchParams(vod, url).catch((error: unknown) => {
     throw createRecordError("search_params_extract_failed", error);
   });
 
-  const result = await searchFromList(searchParams, token).catch((error) => {
+  const result = await searchFromList(searchParams, token).catch((error: unknown) => {
     throw createRecordError("annict_search_failed", error);
   });
 

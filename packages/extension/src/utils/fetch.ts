@@ -1,14 +1,5 @@
 import type { BaseIssue, BaseSchema } from "valibot";
-import {
-  array,
-  literal,
-  nullable,
-  number,
-  object,
-  parse,
-  string,
-  union,
-} from "valibot";
+import { array, literal, nullable, number, object, parse, string, union } from "valibot";
 
 export const fetchGql = async <T>(
   endpoint: string,
@@ -31,7 +22,7 @@ export const fetchGql = async <T>(
     throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
   }
 
-  const json = await res.json();
+  const json: unknown = await res.json();
   const validated = parse(schema, json);
   return validated;
 };
@@ -42,10 +33,7 @@ export const fetchDMMSeason = async (seasonId: string) => {
       video: object({
         titleName: string(),
         seasonName: string(),
-        seasonType: union([
-          literal("SINGLE_EPISODE"),
-          literal("MULTI_EPISODES"),
-        ]),
+        seasonType: union([literal("SINGLE_EPISODE"), literal("MULTI_EPISODES")]),
       }),
     }),
   });
@@ -63,7 +51,7 @@ export const fetchDMMSeason = async (seasonId: string) => {
   const endpoint = "https://api.tv.dmm.com/graphql";
 
   const data = await fetchGql(endpoint, query, Schema);
-  return data?.data.video;
+  return data.data.video;
 };
 
 export const fetchDMMContent = async (contentId: string) => {
@@ -88,7 +76,7 @@ export const fetchDMMContent = async (contentId: string) => {
   const endpoint = "https://api.tv.dmm.com/graphql";
 
   const data = await fetchGql(endpoint, query, Schema);
-  return data?.data.videoContent;
+  return data.data.videoContent;
 };
 
 export const fetchUnext = async (workId: string, episodeId: string) => {
@@ -157,7 +145,7 @@ export const fetchUnext = async (workId: string, episodeId: string) => {
     });
     const title = data.webfront_title_stage;
     const episodes = data.webfront_title_titleEpisodes.episodes;
-    const episode = episodes.find((episode) => episode.id === episodeId);
+    const episode = episodes.find((candidate) => candidate.id === episodeId);
     if (episode) {
       return {
         ...title,
@@ -171,9 +159,7 @@ export const fetchUnext = async (workId: string, episodeId: string) => {
       };
     }
     if (episodes.length === 0) {
-      throw new Error(
-        "U-NEXT のエピソードが作品の一覧に見つかりませんでした。",
-      );
+      throw new Error("U-NEXT のエピソードが作品の一覧に見つかりませんでした。");
     }
   }
 };
@@ -241,7 +227,7 @@ export const fetchNetflix = async (videoId: number) => {
     throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
   }
 
-  const json = await res.json();
+  const json: unknown = await res.json();
   const validated = parse(Schema, json);
   const entity = validated.data.unifiedEntities[0];
   if (!entity) {

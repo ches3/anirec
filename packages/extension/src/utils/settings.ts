@@ -1,10 +1,8 @@
 import type { Vod } from "@/types";
 
 export async function getToken() {
-  const token =
-    (await storage.getItem<string>("sync:token")) ||
-    import.meta.env.WXT_ANNICT_TOKEN;
-  return token;
+  const token = await storage.getItem<string>("sync:token");
+  return token == null || token === "" ? import.meta.env.WXT_ANNICT_TOKEN : token;
 }
 
 export type RecordTiming = {
@@ -37,18 +35,18 @@ export function mergeRecordSettings(
 ): RecordSettings {
   return {
     ...base,
-    ...(incoming ?? {}),
+    ...incoming,
     timing: {
       ...base.timing,
-      ...(incoming?.timing ?? {}),
+      ...incoming?.timing,
     },
     enabledServices: {
       ...base.enabledServices,
-      ...(incoming?.enabledServices ?? {}),
+      ...incoming?.enabledServices,
     },
     preventDuplicate: {
       ...base.preventDuplicate,
-      ...(incoming?.preventDuplicate ?? {}),
+      ...incoming?.preventDuplicate,
     },
   };
 }
@@ -92,10 +90,8 @@ export async function saveAutoRecordEnabled(enabled: boolean): Promise<void> {
   await storage.setItem<boolean>("local:autoRecordEnabled", enabled);
 }
 
-export function watchAutoRecordEnabled(
-  callback: (newValue: boolean) => void,
-): () => void {
-  return storage.watch<boolean>("local:autoRecordEnabled", (newValue) =>
-    callback(newValue ?? true),
-  );
+export function watchAutoRecordEnabled(callback: (newValue: boolean) => void): () => void {
+  return storage.watch<boolean>("local:autoRecordEnabled", (newValue) => {
+    callback(newValue ?? true);
+  });
 }

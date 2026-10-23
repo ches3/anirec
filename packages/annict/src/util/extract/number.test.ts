@@ -112,7 +112,7 @@ describe("丸数字", () => {
 });
 
 describe("無効な入力", () => {
-  test("", () => {
+  it("空文字列", () => {
     expect(parseNumber("")).toBe(undefined);
   });
   test("第話", () => {

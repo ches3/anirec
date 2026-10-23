@@ -16,10 +16,7 @@ export const identifyVod = (url: string | URL): Vod | undefined => {
   if (hostname === "abema.tv" && /\/video\/episode\//.test(pathname)) {
     return "abema";
   }
-  if (
-    hostname === "animestore.docomo.ne.jp" &&
-    /\/animestore\/sc_d_pc/.test(pathname)
-  ) {
+  if (hostname === "animestore.docomo.ne.jp" && /\/animestore\/sc_d_pc/.test(pathname)) {
     return "danime";
   }
   if (hostname === "www.amazon.co.jp") {
@@ -36,6 +33,8 @@ export const isVodEnabled = (vod: Vod, enabled: ServiceEnabled): boolean => {
 };
 
 export const getVideoSelector = (vod: Vod): string => {
-  if (vod === "prime") return ".dv-player-fullscreen video";
+  if (vod === "prime") {
+    return ".dv-player-fullscreen video";
+  }
   return "video";
 };

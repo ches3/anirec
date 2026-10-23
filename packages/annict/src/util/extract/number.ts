@@ -1,6 +1,7 @@
 import { toHan } from "@ches3/zenhan";
 import { kanji2number } from "@geolonia/japanese-numeral";
 import { deromanize } from "romans";
+
 import { numMatch } from "../match";
 
 function normal(str: string): number | undefined {
@@ -57,7 +58,7 @@ function circle(str: string): number | undefined {
   }
   const circleChar = match[0];
   // "①②" のような複数文字に対応しない
-  if ([...circleChar].length > 1) {
+  if (Array.from(circleChar).length > 1) {
     return;
   }
   const num = circledNumbers.indexOf(circleChar);
@@ -67,5 +68,11 @@ function circle(str: string): number | undefined {
 }
 
 export function parseNumber(str: string): number | undefined {
-  return normal(str) || zen(str) || kansuji(str) || roman(str) || circle(str);
+  for (const parse of [normal, zen, kansuji, roman]) {
+    const number = parse(str);
+    if (number !== undefined && number !== 0 && !Number.isNaN(number)) {
+      return number;
+    }
+  }
+  return circle(str);
 }

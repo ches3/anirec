@@ -22,7 +22,9 @@ export function PreventDuplicateOption({
         <Switch
           id="prevent-duplicate"
           checked={value.enabled}
-          onCheckedChange={(enabled) => onChange({ ...value, enabled })}
+          onCheckedChange={(enabled) => {
+            onChange({ ...value, enabled });
+          }}
           className="scale-80"
         />
         <Label htmlFor="prevent-duplicate" className="pl-2 cursor-pointer">
@@ -38,9 +40,7 @@ export function PreventDuplicateOption({
           min={1}
           disabled={!value.enabled}
         />
-        <span className={value.enabled ? "" : "text-muted-foreground"}>
-          日以内に記録済みの場合
-        </span>
+        <span className={value.enabled ? "" : "text-muted-foreground"}>日以内に記録済みの場合</span>
       </div>
     </div>
   );

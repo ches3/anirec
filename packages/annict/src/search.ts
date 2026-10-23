@@ -25,30 +25,23 @@ function isMatchingWorkTitle(
   if (!work.seriesList) {
     return false;
   }
-  return work.seriesList.some((series) =>
-    isSameTitle(`${series} ${work.title}`, targetWorkTitle),
-  );
+  return work.seriesList.some((series) => isSameTitle(`${series} ${work.title}`, targetWorkTitle));
 }
 
 // weak モードでタイトルが一致する作品を探す。複数一致する場合は誤マッチを防ぐため undefined を返す
-function findUniqueWeakMatchWork(
-  works: Work[],
-  targetWorkTitle: string,
-): Work | undefined {
+function findUniqueWeakMatchWork(works: Work[], targetWorkTitle: string): Work | undefined {
   const matched = works.filter(
     (work) =>
       isSameTitle(work.title, targetWorkTitle, true) ||
-      work.seriesList?.some((series) =>
+      (work.seriesList?.some((series) =>
         isSameTitle(`${series} ${work.title}`, targetWorkTitle, true),
-      ),
+      ) ??
+        false),
   );
   return matched.length === 1 ? matched[0] : undefined;
 }
 
-export async function search(
-  params: SearchParam,
-  token: string,
-): Promise<SearchResult> {
+export async function search(params: SearchParam, token: string): Promise<SearchResult> {
   const target = applyMapping(extract(params));
   const words = variants(target.workTitle);
   const works = await searchWorks(words, token);
@@ -102,15 +95,8 @@ export async function search(
       const episode =
         findEpisodeByTitle(weakMatchWork.episodes, target.episode) ??
         findEpisodeByNumberText(weakMatchWork.episodes, target.episode) ??
-        findEpisodeByTitleAsNumberText(
-          weakMatchWork.episodes,
-          target.episode,
-        ) ??
-        findEpisodeByTitleWithWorkTitle(
-          weakMatchWork,
-          weakMatchWork.episodes,
-          target.episode,
-        );
+        findEpisodeByTitleAsNumberText(weakMatchWork.episodes, target.episode) ??
+        findEpisodeByTitleWithWorkTitle(weakMatchWork, weakMatchWork.episodes, target.episode);
       if (episode) {
         return { id: weakMatchWork.id, title: weakMatchWork.title, episode };
       }
@@ -124,10 +110,7 @@ export async function search(
       if (work.noEpisodes || !work.episodes) {
         continue;
       }
-      const episode = findEpisodeByTitleAndNumberText(
-        work.episodes,
-        target.episode,
-      );
+      const episode = findEpisodeByTitleAndNumberText(work.episodes, target.episode);
       if (episode) {
         return { id: work.id, title: work.title, episode };
       }
@@ -164,8 +147,10 @@ export async function search(
       }
       const parsed = extractFullTitle(work.title);
       if (
-        parsed.episode?.title &&
-        target.episode?.title &&
+        parsed.episode?.title != null &&
+        parsed.episode.title !== "" &&
+        target.episode.title != null &&
+        target.episode.title !== "" &&
         isSameTitle(parsed.episode.title, target.episode.title, true)
       ) {
         return {
@@ -179,7 +164,7 @@ export async function search(
     // target.episode.title が work.title と一致する noEpisodes 作品を探す
     // e.g. workTitle="君に届け", episodeTitle="10分くらいで振り返る『君に届け』"
     //   → work.title="10分くらいで振り返る『君に届け』" に一致
-    if (target.episode.title) {
+    if (target.episode.title != null && target.episode.title !== "") {
       const episodeTitle = target.episode.title;
       const strictWork = works.find(
         (work) => work.noEpisodes && isSameTitle(work.title, episodeTitle),
@@ -192,13 +177,13 @@ export async function search(
         };
       }
       const weakWorks = works.filter(
-        (work) =>
-          work.noEpisodes && isSameTitle(work.title, episodeTitle, true),
+        (work) => work.noEpisodes && isSameTitle(work.title, episodeTitle, true),
       );
-      if (weakWorks.length === 1) {
+      const weakWork = weakWorks.at(0);
+      if (weakWorks.length === 1 && weakWork !== undefined) {
         return {
-          id: weakWorks[0].id,
-          title: weakWorks[0].title,
+          id: weakWork.id,
+          title: weakWork.title,
           episode: undefined,
         };
       }
@@ -206,9 +191,7 @@ export async function search(
 
     // エピソードが見つからなかった場合、フルタイトルで検索
     const fullTitle = buildFullTitle(target);
-    const strictWork = works.find(
-      (work) => work.noEpisodes && isSameTitle(work.title, fullTitle),
-    );
+    const strictWork = works.find((work) => work.noEpisodes && isSameTitle(work.title, fullTitle));
     if (strictWork) {
       return { id: strictWork.id, title: strictWork.title, episode: undefined };
     }
@@ -216,10 +199,11 @@ export async function search(
     const weakWorks = works.filter(
       (work) => work.noEpisodes && isSameTitle(work.title, fullTitle, true),
     );
-    if (weakWorks.length === 1) {
+    const weakWork = weakWorks.at(0);
+    if (weakWorks.length === 1 && weakWork !== undefined) {
       return {
-        id: weakWorks[0].id,
-        title: weakWorks[0].title,
+        id: weakWork.id,
+        title: weakWork.title,
         episode: undefined,
       };
     }
@@ -243,11 +227,11 @@ export async function search(
 
   // strict マッチ
   for (const work of works) {
-    if (!work.episodes) continue;
+    if (!work.episodes) {
+      continue;
+    }
     for (const episode of work.episodes) {
-      const fullTitle = [work.title, episode.numberText, episode.title].join(
-        "",
-      );
+      const fullTitle = [work.title, episode.numberText, episode.title].join("");
       if (isSameTitle(fullTitle, targetFullTitle)) {
         return { id: work.id, title: work.title, episode };
       }
@@ -257,18 +241,19 @@ export async function search(
   // weak マッチ（1件のみ一致した場合）
   const weakMatches: { work: Work; episode: Episode }[] = [];
   for (const work of works) {
-    if (!work.episodes) continue;
+    if (!work.episodes) {
+      continue;
+    }
     for (const episode of work.episodes) {
-      const fullTitle = [work.title, episode.numberText, episode.title].join(
-        "",
-      );
+      const fullTitle = [work.title, episode.numberText, episode.title].join("");
       if (isSameTitle(fullTitle, targetFullTitle, true)) {
         weakMatches.push({ work, episode });
       }
     }
   }
-  if (weakMatches.length === 1) {
-    const { work, episode } = weakMatches[0];
+  const weakMatch = weakMatches.at(0);
+  if (weakMatches.length === 1 && weakMatch !== undefined) {
+    const { work, episode } = weakMatch;
     return { id: work.id, title: work.title, episode };
   }
 }

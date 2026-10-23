@@ -1,6 +1,7 @@
 import { toHan, toZen } from "@ches3/zenhan";
 import { kanji2number } from "@geolonia/japanese-numeral";
 import { deromanize } from "romans";
+
 import { numMatch } from "./match";
 
 type Options = {
@@ -110,10 +111,7 @@ export function normalize(title: string, options?: Options): string {
   }
 
   if (options?.remove?.anime === true) {
-    normalizedTitle = normalizedTitle.replace(
-      /^(アニメ)|(テレビアニメ)|(TVアニメ)/i,
-      "",
-    );
+    normalizedTitle = normalizedTitle.replace(/^(アニメ)|(テレビアニメ)|(TVアニメ)/i, "");
   }
 
   if (options?.remove?.movie === true) {
@@ -121,22 +119,10 @@ export function normalize(title: string, options?: Options): string {
   }
 
   if (options?.remove?.reading === true) {
-    normalizedTitle = normalizedTitle.replace(
-      /([\p{sc=Han}])\([\p{sc=Hira}ー]+\)/gu,
-      "$1",
-    );
-    normalizedTitle = normalizedTitle.replace(
-      /([\p{sc=Han}])（[\p{sc=Hira}ー]+）/gu,
-      "$1",
-    );
-    normalizedTitle = normalizedTitle.replace(
-      /([\p{sc=Han}])\([\p{sc=Kana}ー]+\)/gu,
-      "$1",
-    );
-    normalizedTitle = normalizedTitle.replace(
-      /([\p{sc=Han}])（[\p{sc=Kana}ー]+）/gu,
-      "$1",
-    );
+    normalizedTitle = normalizedTitle.replace(/([\p{sc=Han}])\([\p{sc=Hira}ー]+\)/gu, "$1");
+    normalizedTitle = normalizedTitle.replace(/([\p{sc=Han}])（[\p{sc=Hira}ー]+）/gu, "$1");
+    normalizedTitle = normalizedTitle.replace(/([\p{sc=Han}])\([\p{sc=Kana}ー]+\)/gu, "$1");
+    normalizedTitle = normalizedTitle.replace(/([\p{sc=Han}])（[\p{sc=Kana}ー]+）/gu, "$1");
   }
 
   if (options?.remove?.bracket === true) {

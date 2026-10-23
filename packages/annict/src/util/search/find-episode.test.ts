@@ -364,9 +364,7 @@ describe("findEpisodeByTitleAndNumberText", () => {
       numberText: "第一回",
       number: 1,
     };
-    expect(findEpisodeByTitleAndNumberText(episodes, target)?.id).toEqual(
-      undefined,
-    );
+    expect(findEpisodeByTitleAndNumberText(episodes, target)?.id).toEqual(undefined);
   });
 
   test("strictでは一致しないがweakで1件一致する場合に返す", () => {
@@ -376,9 +374,7 @@ describe("findEpisodeByTitleAndNumberText", () => {
       numberText: "第一回!",
       number: undefined,
     };
-    expect(findEpisodeByTitleAndNumberText(episodes, target)?.id).toEqual(
-      "RXBpc29kZS0xODM1Mg==",
-    );
+    expect(findEpisodeByTitleAndNumberText(episodes, target)?.id).toEqual("RXBpc29kZS0xODM1Mg==");
   });
 
   test("weakで複数一致する場合はundefinedを返す", () => {
@@ -402,9 +398,7 @@ describe("findEpisodeByTitleAndNumberText", () => {
       numberText: "第1回",
       number: undefined,
     };
-    expect(findEpisodeByTitleAndNumberText(ambiguous, target)?.id).toEqual(
-      undefined,
-    );
+    expect(findEpisodeByTitleAndNumberText(ambiguous, target)?.id).toEqual(undefined);
   });
 });
 
@@ -415,9 +409,7 @@ describe("findEpisodeByTitleAsNumberText", () => {
       numberText: undefined,
       number: undefined,
     };
-    expect(findEpisodeByTitleAsNumberText(episodes, target)?.id).toEqual(
-      "RXBpc29kZS0xODM1Mg==",
-    );
+    expect(findEpisodeByTitleAsNumberText(episodes, target)?.id).toEqual("RXBpc29kZS0xODM1Mg==");
   });
 
   test("strictでは一致しないがweakで1件一致する場合に返す", () => {
@@ -427,9 +419,7 @@ describe("findEpisodeByTitleAsNumberText", () => {
       numberText: undefined,
       number: undefined,
     };
-    expect(findEpisodeByTitleAsNumberText(episodes, target)?.id).toEqual(
-      "RXBpc29kZS0xODM1Mg==",
-    );
+    expect(findEpisodeByTitleAsNumberText(episodes, target)?.id).toEqual("RXBpc29kZS0xODM1Mg==");
   });
 
   test("weakで複数一致する場合はundefinedを返す", () => {
@@ -442,30 +432,22 @@ describe("findEpisodeByTitleAsNumberText", () => {
       numberText: undefined,
       number: undefined,
     };
-    expect(findEpisodeByTitleAsNumberText(ambiguous, target)?.id).toEqual(
-      undefined,
-    );
+    expect(findEpisodeByTitleAsNumberText(ambiguous, target)?.id).toEqual(undefined);
   });
 
   test("target.titleがundefinedの場合はundefinedを返す", () => {
     const target = { title: undefined, numberText: "第一回", number: 1 };
-    expect(findEpisodeByTitleAsNumberText(episodes, target)?.id).toEqual(
-      undefined,
-    );
+    expect(findEpisodeByTitleAsNumberText(episodes, target)?.id).toEqual(undefined);
   });
 
   test("ep.numberTextがundefinedのエピソードはスキップする", () => {
-    const noNumberText = [
-      { id: "ep1", title: "タイトルA", number: 1, numberText: undefined },
-    ];
+    const noNumberText = [{ id: "ep1", title: "タイトルA", number: 1, numberText: undefined }];
     const target = {
       title: "タイトルA",
       numberText: undefined,
       number: undefined,
     };
-    expect(findEpisodeByTitleAsNumberText(noNumberText, target)?.id).toEqual(
-      undefined,
-    );
+    expect(findEpisodeByTitleAsNumberText(noNumberText, target)?.id).toEqual(undefined);
   });
 });
 
@@ -498,9 +480,9 @@ describe("findEpisodeByTitleWithWorkTitle", () => {
       numberText: undefined,
       number: undefined,
     };
-    expect(
-      findEpisodeByTitleWithWorkTitle(relifeWork, relifeEpisodes, target)?.id,
-    ).toEqual("RXBpc29kZS03NjA0NQ==");
+    expect(findEpisodeByTitleWithWorkTitle(relifeWork, relifeEpisodes, target)?.id).toEqual(
+      "RXBpc29kZS03NjA0NQ==",
+    );
   });
 
   test("series + workTitle を使った複合タイトルでも一致する", () => {
@@ -521,9 +503,7 @@ describe("findEpisodeByTitleWithWorkTitle", () => {
         numberText: "第1話",
       },
     ];
-    expect(
-      findEpisodeByTitleWithWorkTitle(seriesWork, seriesEpisodes, target)?.id,
-    ).toEqual("ep1");
+    expect(findEpisodeByTitleWithWorkTitle(seriesWork, seriesEpisodes, target)?.id).toEqual("ep1");
   });
 
   test("target.titleがundefinedの場合はundefinedを返す", () => {
@@ -532,9 +512,7 @@ describe("findEpisodeByTitleWithWorkTitle", () => {
       numberText: undefined,
       number: undefined,
     };
-    expect(findEpisodeByTitleWithWorkTitle(work, episodes, target)?.id).toEqual(
-      undefined,
-    );
+    expect(findEpisodeByTitleWithWorkTitle(work, episodes, target)?.id).toEqual(undefined);
   });
 
   test("episode.titleとnumberTextがundefinedの場合は作品タイトル単体で一致させない", () => {
@@ -551,9 +529,9 @@ describe("findEpisodeByTitleWithWorkTitle", () => {
         numberText: undefined,
       },
     ];
-    expect(
-      findEpisodeByTitleWithWorkTitle(work, episodesWithoutTitle, target)?.id,
-    ).toEqual(undefined);
+    expect(findEpisodeByTitleWithWorkTitle(work, episodesWithoutTitle, target)?.id).toEqual(
+      undefined,
+    );
   });
 
   test("一致しない場合はundefinedを返す", () => {
@@ -562,8 +540,6 @@ describe("findEpisodeByTitleWithWorkTitle", () => {
       numberText: undefined,
       number: undefined,
     };
-    expect(findEpisodeByTitleWithWorkTitle(work, episodes, target)?.id).toEqual(
-      undefined,
-    );
+    expect(findEpisodeByTitleWithWorkTitle(work, episodes, target)?.id).toEqual(undefined);
   });
 });

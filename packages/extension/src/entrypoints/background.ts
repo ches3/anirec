@@ -1,4 +1,5 @@
 import { deleteActivity } from "@anirec/annict";
+
 import type {
   CancelDeleteMessage,
   DeleteResultMessage,
@@ -20,77 +21,83 @@ function updateActionIcon(enabled: boolean) {
   });
 }
 
-export default defineBackground(async () => {
-  const enabled = await getAutoRecordEnabled();
-  updateActionIcon(enabled);
+export default defineBackground(() => {
+  void (async () => {
+    const enabled = await getAutoRecordEnabled();
+    updateActionIcon(enabled);
 
-  storage.watch<boolean>("local:autoRecordEnabled", (newValue) => {
-    updateActionIcon(newValue ?? true);
-  });
-
-  const pendingTimers = new Map<string, ReturnType<typeof setTimeout>>();
-  const sendDeleteResult = (message: DeleteResultMessage) => {
-    void browser.runtime.sendMessage<DeleteResultMessage>(message).catch(() => {
-      // popup未起動時は受信者不在になるため通知失敗を許容する
+    storage.watch<boolean>("local:autoRecordEnabled", (newValue) => {
+      updateActionIcon(newValue ?? true);
     });
-  };
 
-  browser.runtime.onMessage.addListener(
-    (
-      message: GetPendingDeletionsMessage,
-      _sender,
-      sendResponse: (response: { ids: string[] }) => void,
-    ) => {
-      if (message.type !== "GET_PENDING_DELETIONS") return;
-      sendResponse({ ids: [...pendingTimers.keys()] });
-    },
-  );
+    const pendingTimers = new Map<string, ReturnType<typeof setTimeout>>();
+    const sendDeleteResult = (message: DeleteResultMessage) => {
+      void browser.runtime.sendMessage<DeleteResultMessage>(message).catch(() => {
+        // popup未起動時は受信者不在になるため通知失敗を許容する
+      });
+    };
 
-  browser.runtime.onMessage.addListener(
-    (message: ScheduleDeleteMessage | CancelDeleteMessage) => {
-      if (message.type === "SCHEDULE_DELETE") {
-        const { id } = message;
-        const existingTimer = pendingTimers.get(id);
-        if (existingTimer !== undefined) {
-          clearTimeout(existingTimer);
+    browser.runtime.onMessage.addListener(
+      (
+        message: GetPendingDeletionsMessage | ScheduleDeleteMessage | CancelDeleteMessage,
+        _sender,
+        sendResponse: (response: { ids: string[] }) => void,
+      ) => {
+        if (message.type !== "GET_PENDING_DELETIONS") {
+          return;
         }
-        const timer = setTimeout(async () => {
-          pendingTimers.delete(id);
-          try {
-            const token = await getToken();
-            if (!token) {
-              sendDeleteResult({
-                type: "DELETE_RESULT",
-                id,
-                ok: false,
-              });
-              return;
-            }
+        sendResponse({ ids: [...pendingTimers.keys()] });
+      },
+    );
 
-            await deleteActivity(id, token);
-            sendDeleteResult({
-              type: "DELETE_RESULT",
-              id,
-              ok: true,
-            });
-          } catch {
-            sendDeleteResult({
-              type: "DELETE_RESULT",
-              id,
-              ok: false,
-            });
+    browser.runtime.onMessage.addListener(
+      (message: ScheduleDeleteMessage | CancelDeleteMessage) => {
+        if (message.type === "SCHEDULE_DELETE") {
+          const { id } = message;
+          const existingTimer = pendingTimers.get(id);
+          if (existingTimer !== undefined) {
+            clearTimeout(existingTimer);
           }
-        }, 5000);
-        pendingTimers.set(id, timer);
-      }
+          const timer = setTimeout(() => {
+            void (async () => {
+              pendingTimers.delete(id);
+              try {
+                const token = await getToken();
+                if (token == null || token === "") {
+                  sendDeleteResult({
+                    type: "DELETE_RESULT",
+                    id,
+                    ok: false,
+                  });
+                  return;
+                }
 
-      if (message.type === "CANCEL_DELETE") {
-        const timer = pendingTimers.get(message.id);
-        if (timer !== undefined) {
-          clearTimeout(timer);
-          pendingTimers.delete(message.id);
+                await deleteActivity(id, token);
+                sendDeleteResult({
+                  type: "DELETE_RESULT",
+                  id,
+                  ok: true,
+                });
+              } catch {
+                sendDeleteResult({
+                  type: "DELETE_RESULT",
+                  id,
+                  ok: false,
+                });
+              }
+            })();
+          }, 5000);
+          pendingTimers.set(id, timer);
         }
-      }
-    },
-  );
+
+        if (message.type === "CANCEL_DELETE") {
+          const timer = pendingTimers.get(message.id);
+          if (timer !== undefined) {
+            clearTimeout(timer);
+            pendingTimers.delete(message.id);
+          }
+        }
+      },
+    );
+  })();
 });

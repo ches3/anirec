@@ -7,7 +7,9 @@ on:
     paths:
       - packages/tasker/**
       - packages/annict/**
-      - bun.lock
+      - package.json
+      - pnpm-lock.yaml
+      - pnpm-workspace.yaml
       - .github/workflows/deploy-tasker.yml
   workflow_dispatch:
 
@@ -28,16 +30,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
         with:
-          bun-version: latest
+          node-version: "26"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          cache: true
 
       - name: Install dependencies
-        run: bun install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build tasker bundle
-        run: bun --filter @anirec/tasker build
+        run: pnpm --filter @anirec/tasker build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

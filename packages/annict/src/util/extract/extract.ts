@@ -3,10 +3,7 @@ import { episodeNumberMatches } from "../match";
 import { isSameTitle } from "../normalize";
 import { parseNumber } from "./number";
 
-function getMatch(
-  str: string,
-  matches: string[],
-): Record<string, string> | undefined {
+function getMatch(str: string, matches: string[]): Record<string, string> | undefined {
   for (const match of matches) {
     const regex = new RegExp(match, "i");
     const result = str.match(regex);
@@ -47,10 +44,7 @@ export function extract(params: SearchParam): SearchTarget {
   }
 
   const episodeByFullTitle = extractFullTitle(params.episodeTitle);
-  if (
-    episodeByFullTitle.episode &&
-    isSameTitle(episodeByFullTitle.title, params.workTitle)
-  ) {
+  if (episodeByFullTitle.episode && isSameTitle(episodeByFullTitle.title, params.workTitle)) {
     return {
       workTitle: params.workTitle,
       episode: episodeByFullTitle.episode,
@@ -66,20 +60,16 @@ export function extract(params: SearchParam): SearchTarget {
 export function extractEpisode(str: string): ExtractedEpisode | undefined {
   const trimmed = str.trim();
   const matches = [
-    ...episodeNumberMatches.map(
-      (m) => `^(?<episodeNumber>${m})\\s+(?<episodeTitle>.*)$`,
-    ),
+    ...episodeNumberMatches.map((m) => `^(?<episodeNumber>${m})\\s+(?<episodeTitle>.*)$`),
     // カギ括弧で囲われたサブタイトルと話数の間にスペースがないケース
-    ...episodeNumberMatches.map(
-      (m) => `^(?<episodeNumber>${m})「(?<episodeTitle>[^」]+)」$`,
-    ),
+    ...episodeNumberMatches.map((m) => `^(?<episodeNumber>${m})「(?<episodeTitle>[^」]+)」$`),
     ...episodeNumberMatches.map((m) => `^(?<episodeNumber>${m})$`),
   ];
   const matchGroups = getMatch(trimmed, matches);
   const episodeNumber = matchGroups?.episodeNumber;
   const episodeTitle = matchGroups?.episodeTitle;
 
-  if (episodeNumber) {
+  if (episodeNumber != null && episodeNumber !== "") {
     const parsedNumber = parseNumber(episodeNumber);
     return {
       number: parsedNumber,
@@ -102,24 +92,20 @@ export function extractFullTitle(title: string): {
   const trimmed = title.trim();
   const matches = [
     ...episodeNumberMatches.map(
-      (m) =>
-        `^(?<workTitle>.*?)\\s+(?<episodeNumber>${m})\\s+(?<episodeTitle>.*)$`,
+      (m) => `^(?<workTitle>.*?)\\s+(?<episodeNumber>${m})\\s+(?<episodeTitle>.*)$`,
     ),
     // カギ括弧で囲われたサブタイトルと話数の間にスペースがないケース
     ...episodeNumberMatches.map(
-      (m) =>
-        `^(?<workTitle>.*?)\\s+(?<episodeNumber>${m})「(?<episodeTitle>[^」]+)」$`,
+      (m) => `^(?<workTitle>.*?)\\s+(?<episodeNumber>${m})「(?<episodeTitle>[^」]+)」$`,
     ),
-    ...episodeNumberMatches.map(
-      (m) => `^(?<workTitle>.*?)\\s+(?<episodeNumber>${m})$`,
-    ),
+    ...episodeNumberMatches.map((m) => `^(?<workTitle>.*?)\\s+(?<episodeNumber>${m})$`),
   ];
   const matchGroups = getMatch(trimmed, matches);
   const workTitle = matchGroups?.workTitle;
   const episodeNumber = matchGroups?.episodeNumber;
   const episodeTitle = matchGroups?.episodeTitle;
 
-  if (workTitle && episodeNumber) {
+  if (workTitle != null && workTitle !== "" && episodeNumber != null && episodeNumber !== "") {
     const parsedNumber = parseNumber(episodeNumber);
     return {
       title: workTitle,
@@ -132,9 +118,9 @@ export function extractFullTitle(title: string): {
   }
 
   // dアニメの劇場版等の作品
-  // e.g. "リズと青い鳥 本編　"
+  // e.g. "リズと青い鳥 本編\u3000"
   const honpen = trimmed.match(/^(.*)\s+本編$/);
-  if (honpen) {
+  if (honpen?.[1] !== undefined) {
     return {
       title: honpen[1],
       episode: undefined,

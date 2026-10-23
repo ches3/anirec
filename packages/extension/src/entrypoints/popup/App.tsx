@@ -1,9 +1,11 @@
 import { Settings } from "lucide-react";
 import { useEffect, useState } from "react";
+
 import { Toaster } from "@/components/ui/sonner";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getAutoRecordEnabled, saveAutoRecordEnabled } from "@/utils/settings";
+
 import { PageState } from "./components/PageState";
 import { RecentRecords } from "./components/RecentRecords";
 
@@ -11,7 +13,7 @@ export default function App() {
   const [autoRecordEnabled, setAutoRecordEnabled] = useState(true);
 
   useEffect(() => {
-    getAutoRecordEnabled().then((enabled) => {
+    void getAutoRecordEnabled().then((enabled) => {
       setAutoRecordEnabled(enabled);
     });
   }, []);
@@ -31,23 +33,24 @@ export default function App() {
         <div className="flex items-center gap-3">
           <Switch
             checked={autoRecordEnabled}
-            onCheckedChange={handleToggle}
+            onCheckedChange={(checked) => {
+              void handleToggle(checked);
+            }}
             aria-label="自動記録の有効・無効"
             className="scale-80"
           />
           <button
             type="button"
             className="text-muted-foreground hover:text-foreground transition-colors"
-            onClick={() => browser.runtime.openOptionsPage()}
+            onClick={() => {
+              void browser.runtime.openOptionsPage();
+            }}
           >
             <Settings className="w-5 h-5" />
           </button>
         </div>
       </div>
-      <Tabs
-        defaultValue="page-info"
-        className="flex flex-col flex-1 min-h-0 mt-3"
-      >
+      <Tabs defaultValue="page-info" className="flex flex-col flex-1 min-h-0 mt-3">
         <TabsList className="grid grid-cols-2 w-full shrink-0">
           <TabsTrigger value="page-info">ページ情報</TabsTrigger>
           <TabsTrigger value="recent-records">直近の記録</TabsTrigger>

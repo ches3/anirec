@@ -25,18 +25,14 @@ export async function wait(
     throw new Error("video要素の取得に失敗しました。");
   }
 
-  if (recordTiming.type === "ended") {
-    return waitEnded(videoElem, onProgress, signal);
+  switch (recordTiming.type) {
+    case "ended":
+      return waitEnded(videoElem, onProgress, signal);
+    case "continued":
+      return waitContinued(recordTiming.continuedSeconds, videoElem, onProgress, signal);
+    default:
+      throw new Error("記録タイミングの値が不正です");
   }
-  if (recordTiming.type === "continued") {
-    return waitContinued(
-      recordTiming.continuedSeconds,
-      videoElem,
-      onProgress,
-      signal,
-    );
-  }
-  throw new Error("記録タイミングの値が不正です");
 }
 
 // 再生終了まで待機
@@ -46,7 +42,7 @@ function waitEnded(
   signal?: AbortSignal,
 ) {
   return new Promise<WaitResult>((resolve) => {
-    if (signal?.aborted) {
+    if (signal?.aborted === true) {
       resolve(createAbortedResult(signal.reason));
       return;
     }
@@ -71,11 +67,7 @@ function waitEnded(
     };
 
     const interval = setInterval(() => {
-      if (
-        onProgress &&
-        Number.isFinite(videoElem.duration) &&
-        videoElem.duration > 0
-      ) {
+      if (onProgress && Number.isFinite(videoElem.duration) && videoElem.duration > 0) {
         onProgress(videoElem.currentTime / videoElem.duration);
       }
     }, 1000);
@@ -101,7 +93,7 @@ function waitContinued(
   signal?: AbortSignal,
 ) {
   return new Promise<WaitResult>((resolve) => {
-    if (signal?.aborted) {
+    if (signal?.aborted === true) {
       resolve(createAbortedResult(signal.reason));
       return;
     }

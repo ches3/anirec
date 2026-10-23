@@ -1,24 +1,22 @@
 {
   "name": "anirec",
-  "devDependencies": {
-    "@biomejs/biome": "^2.3.14",
-    "tsup": "^8.3.5",
-    "turbo": "^2.8.3",
-    "typescript": "^5.6.3",
-    "vitest": "^4.0.18"
-  },
-  "packageManager": "bun@1.3.8",
   "private": true,
   "scripts": {
-    "dev:ext": "bun run --cwd packages/extension dev",
-    "dev:server": "bun --filter @anirec/server dev",
-    "build": "turbo run build --log-order=grouped",
-    "typecheck": "turbo run typecheck --continue --log-order=grouped",
-    "check": "biome check --write .",
-    "check:dry": "biome check .",
-    "test": "turbo run test:run --continue --log-order=grouped"
+    "prepare": "vp config --no-agent",
+    "dev:ext": "vp run @anirec/extension#dev",
+    "dev:server": "vp run @anirec/server#dev",
+    "build": "vp run -r build",
+    "check": "vp check --fix",
+    "check:dry": "vp check",
+    "test": "vp test",
+    "gql-gen": "vp run @anirec/annict#gql-gen",
+    "fixture": "vp run @anirec/annict#fixture",
+    "fixture:regenerate": "vp run @anirec/annict#fixture:regenerate"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^7.0.2",
+    "vite-plus": "1.3.0"
+  },
+  "packageManager": "pnpm@12.15.0"
 }

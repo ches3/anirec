@@ -81,8 +81,7 @@ describe("extract", () => {
   test("extractFullTitleにフォールバックしてepisodeTitleにworkTitleが含まれているケースに対応", () => {
     const result = extract({
       workTitle: "ハルチカ～ハルタとチカは青春する～",
-      episodeTitle:
-        "ハルチカ～ハルタとチカは青春する～　＃1　メロディアスな暗号",
+      episodeTitle: "ハルチカ～ハルタとチカは青春する～　＃1　メロディアスな暗号",
     });
     expect(result).toEqual({
       workTitle: "ハルチカ～ハルタとチカは青春する～",
@@ -95,8 +94,7 @@ describe("extract", () => {
   });
 
   test("workTitleとepisodeTitleが一致しない場合はextractFullTitleによるフォールバック結果を返さない", () => {
-    const episodeTitle =
-      "ハルチカ～ハルタとチカは青春する～　＃1　メロディアスな暗号";
+    const episodeTitle = "ハルチカ～ハルタとチカは青春する～　＃1　メロディアスな暗号";
     const result = extract({
       workTitle: "別の作品",
       episodeTitle,
@@ -179,9 +177,7 @@ describe("extractEpisode", () => {
 
 describe("extractFullTitle", () => {
   test("響け！ユーフォニアム 第一回 ようこそハイスクール", () => {
-    const result = extractFullTitle(
-      "響け！ユーフォニアム 第一回 ようこそハイスクール",
-    );
+    const result = extractFullTitle("響け！ユーフォニアム 第一回 ようこそハイスクール");
     expect(result).toEqual({
       title: "響け！ユーフォニアム",
       episode: {
@@ -205,9 +201,7 @@ describe("extractFullTitle", () => {
   });
 
   test("響け！ユーフォニアム 第一回「ようこそハイスクール」", () => {
-    const result = extractFullTitle(
-      "響け！ユーフォニアム 第一回「ようこそハイスクール」",
-    );
+    const result = extractFullTitle("響け！ユーフォニアム 第一回「ようこそハイスクール」");
     expect(result).toEqual({
       title: "響け！ユーフォニアム",
       episode: {
@@ -227,9 +221,7 @@ describe("extractFullTitle", () => {
   });
 
   test("響け！ユーフォニアム 番外編 かけだすモナカ", () => {
-    const result = extractFullTitle(
-      "響け！ユーフォニアム 番外編 かけだすモナカ",
-    );
+    const result = extractFullTitle("響け！ユーフォニアム 番外編 かけだすモナカ");
     expect(result).toEqual({
       title: "響け！ユーフォニアム",
       episode: {
@@ -253,9 +245,7 @@ describe("extractFullTitle", () => {
   });
 
   test("中二病でも恋がしたい！ Episode I 邂逅の…邪王真眼", () => {
-    const result = extractFullTitle(
-      "中二病でも恋がしたい！ Episode I 邂逅の…邪王真眼",
-    );
+    const result = extractFullTitle("中二病でも恋がしたい！ Episode I 邂逅の…邪王真眼");
     expect(result).toEqual({
       title: "中二病でも恋がしたい！",
       episode: {

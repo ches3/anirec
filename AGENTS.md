@@ -6,20 +6,20 @@
 - ブラウザの拡張機能とAndroid向けのTaskerスクリプトを提供
 
 ## パッケージ構成
-  - `@anirec/extension`: ブラウザ拡張機能
-  - `@anirec/annict`: Annict APIクライアント・作品検索アルゴリズム
-  - `@anirec/server`: Annict OAuthトークン取得/失効用のAPIサーバー
-  - `@anirec/tasker`: Tasker用スクリプト
+
+- `@anirec/extension`: ブラウザ拡張機能
+- `@anirec/annict`: Annict APIクライアント・作品検索アルゴリズム
+- `@anirec/server`: Annict OAuthトークン取得/失効用のAPIサーバー
+- `@anirec/tasker`: Tasker用スクリプト
 
 ## 開発時の品質チェック
 
-**重要**: コード変更時やコミット前には必ず以下の3つのコマンドを実行してエラーを修正する。  
+**重要**: コード変更時やコミット前には必ず以下の2つのコマンドを実行してエラーを修正する。  
 ユーザーに実行させるのではなく、**コーディングエージェント(Claude CodeやCodex)自身で実行すること**。
 
 ```bash
-bun run typecheck
-bun run check
-bun run test
+pnpm run check
+pnpm run test
 ```
 
 ## TypeScript規約
@@ -45,7 +45,7 @@ bun run test
 
 ## Annict API
 
-- `query.gql`に必要なクエリを定義し、`bun run gql-gen`でDocument等を生成する
+- `query.gql`に必要なクエリを定義し、`pnpm run gql-gen`でDocument等を生成する
 - `generated.ts`は手動編集禁止
 - エピソードを含む作品は`Record`、エピソードを含まない作品は`Review`で記録する
 
@@ -65,10 +65,10 @@ bun run test
 
 ## 技術スタック
 
-- **言語**: TypeScript
-- **モノレポ管理**: Turborepo
-- **パッケージマネージャー**: Bun
-- **Lint/Format**: Biome
+- **言語**: TypeScript 7
+- **モノレポ管理**: pnpm workspaces
+- **パッケージマネージャー**: pnpm
+- **Lint/Format**: Oxlint / Oxfmt
 - **テスト**: Vitest
 
 ### packages/extension
@@ -96,8 +96,7 @@ bun run test
 
 ### ルート
 
-- `biome.json` - 共有Lint/Format設定
-- `turbo.json` - モノレポのタスク定義
+- `vite.config.ts` - 共有Lint/Format設定・テストプロジェクト定義
 
 ### packages/annict
 

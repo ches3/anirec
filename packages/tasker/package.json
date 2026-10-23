@@ -2,10 +2,7 @@
   "name": "@anirec/tasker",
   "private": true,
   "scripts": {
-    "build": "tsup",
-    "typecheck": "tsc --noEmit",
-    "check": "biome check --write .",
-    "check:dry": "biome check ."
+    "build": "tsup"
   },
   "dependencies": {
     "@anirec/annict": "workspace:*"

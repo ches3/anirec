@@ -1,13 +1,18 @@
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+
 import * as p from "@clack/prompts";
+import dotenv from "dotenv";
+
 import type { SearchParam } from "../types";
 import { fetchNode, searchWorks } from "../util/annict";
 import { extract } from "../util/extract/extract";
 import { applyMapping } from "../util/search/mapping";
 import { variants } from "../util/search/variants";
 import type { AnnictTarget, Expected, Fixture, ParamPattern } from "./types";
+
+dotenv.config({ path: ".env" });
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const fixturesDir = join(__dirname, "fixtures");
@@ -28,9 +33,7 @@ function parseAnnictUrl(url: string): AnnictTarget {
     throw new Error(`Invalid host: ${parsed.host}, expected annict.com`);
   }
 
-  const episodeMatch = parsed.pathname.match(
-    /^\/works\/(\d+)\/episodes\/(\d+)$/,
-  );
+  const episodeMatch = parsed.pathname.match(/^\/works\/(\d+)\/episodes\/(\d+)$/);
   if (episodeMatch) {
     return {
       type: "Episode",
@@ -64,10 +67,7 @@ function trimSearchParam(params: SearchParam): SearchParam {
   };
 }
 
-function generateFilename(
-  parsedUrl: AnnictTarget,
-  params: SearchParam,
-): string {
+function generateFilename(parsedUrl: AnnictTarget, params: SearchParam): string {
   const values: string[] = [];
   if ("title" in params) {
     values.push(params.title);
@@ -88,10 +88,7 @@ function generateFilename(
   return `${parsedUrl.workId}__${slug}.json`;
 }
 
-async function fetchExpected(
-  parsedUrl: AnnictTarget,
-  token: string,
-): Promise<Expected> {
+async function fetchExpected(parsedUrl: AnnictTarget, token: string): Promise<Expected> {
   const globalId =
     parsedUrl.type === "Episode"
       ? toGlobalId("Episode", parsedUrl.episodeId)
@@ -115,9 +112,7 @@ function validateExpected(
   }
 
   if (expected.episode) {
-    const matchedEpisode = matchedWork.episodes?.find(
-      (ep) => ep.id === expected.episode?.id,
-    );
+    const matchedEpisode = matchedWork.episodes?.find((ep) => ep.id === expected.episode?.id);
     if (!matchedEpisode) {
       throw new Error("Expected episode not found in candidateWorks");
     }
@@ -137,12 +132,12 @@ async function buildFixtureData(
   const target = applyMapping(extract(trimmedParams));
   const titleVariants = variants(target.workTitle);
   const candidateWorks = await searchWorks(titleVariants, token);
-  if (options?.rateLimit) {
+  if (options?.rateLimit === true) {
     await sleep(RATE_LIMIT_MS);
   }
 
   const expected = await fetchExpected(annictTarget, token);
-  if (options?.rateLimit) {
+  if (options?.rateLimit === true) {
     await sleep(RATE_LIMIT_MS);
   }
 
@@ -159,28 +154,40 @@ async function promptParams(pattern: ParamPattern): Promise<SearchParam> {
   switch (pattern) {
     case "title": {
       const title = await p.text({ message: "title:" });
-      if (p.isCancel(title)) process.exit(0);
+      if (p.isCancel(title)) {
+        process.exit(0);
+      }
 
       return { title };
     }
     case "workTitle-episodeTitle": {
       const workTitle = await p.text({ message: "workTitle:" });
-      if (p.isCancel(workTitle)) process.exit(0);
+      if (p.isCancel(workTitle)) {
+        process.exit(0);
+      }
 
       const episodeTitle = await p.text({ message: "episodeTitle:" });
-      if (p.isCancel(episodeTitle)) process.exit(0);
+      if (p.isCancel(episodeTitle)) {
+        process.exit(0);
+      }
 
       return { workTitle, episodeTitle };
     }
     case "workTitle-episodeNumber-episodeTitle": {
       const workTitle = await p.text({ message: "workTitle:" });
-      if (p.isCancel(workTitle)) process.exit(0);
+      if (p.isCancel(workTitle)) {
+        process.exit(0);
+      }
 
       const episodeNumber = await p.text({ message: "episodeNumber:" });
-      if (p.isCancel(episodeNumber)) process.exit(0);
+      if (p.isCancel(episodeNumber)) {
+        process.exit(0);
+      }
 
       const episodeTitle = await p.text({ message: "episodeTitle:" });
-      if (p.isCancel(episodeTitle)) process.exit(0);
+      if (p.isCancel(episodeTitle)) {
+        process.exit(0);
+      }
 
       return { workTitle, episodeNumber, episodeTitle };
     }
@@ -219,11 +226,7 @@ async function runAddFlow(token: string) {
 }
 
 /** フィクスチャ追加処理 */
-async function addFixture(
-  params: SearchParam,
-  annictUrl: string,
-  token: string,
-) {
+async function addFixture(params: SearchParam, annictUrl: string, token: string) {
   const trimmedParams = trimSearchParam(params);
   const trimmedUrl = annictUrl.trim();
   const annictTarget = parseAnnictUrl(trimmedUrl);
@@ -283,13 +286,11 @@ async function runRegenerateFlow(token: string) {
 
     try {
       const content = readFileSync(filepath, "utf-8");
-      const fixture = JSON.parse(content) as Fixture;
-      const data = await buildFixtureData(
-        fixture.input.params,
-        fixture.input.annictUrl,
-        token,
-        { rateLimit: true },
-      );
+      // oxlint-disable-next-line typescript/no-unsafe-assignment -- Fixtures are generated by this CLI and checked by the fixture tests.
+      const fixture: Fixture = JSON.parse(content);
+      const data = await buildFixtureData(fixture.input.params, fixture.input.annictUrl, token, {
+        rateLimit: true,
+      });
 
       const updated: Fixture = {
         ...fixture,
@@ -321,7 +322,7 @@ async function runRegenerateFlow(token: string) {
 /** メイン処理 */
 async function main() {
   const token = process.env.ANNICT_TOKEN;
-  if (!token) {
+  if (token == null || token === "") {
     throw new Error("ANNICT_TOKEN environment variable is required");
   }
 
@@ -333,8 +334,8 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  p.log.error(error.message || String(error));
+main().catch((error: unknown) => {
+  p.log.error(error instanceof Error && error.message !== "" ? error.message : String(error));
   p.cancel("Aborted");
   process.exit(1);
 });

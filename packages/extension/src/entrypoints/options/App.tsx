@@ -1,13 +1,12 @@
 import { Toaster } from "@/components/ui/sonner";
-import {
-  getRecordSettings,
-  mergeRecordSettings,
-  type RecordSettings,
-  type RecordSettingsPatch,
-  type RecordTiming,
-  type ServiceEnabled,
-  saveRecordSettings,
+import { getRecordSettings, mergeRecordSettings, saveRecordSettings } from "@/utils/settings";
+import type {
+  RecordSettings,
+  RecordSettingsPatch,
+  RecordTiming,
+  ServiceEnabled,
 } from "@/utils/settings";
+
 import { PreventDuplicateOption } from "./PreventDuplicateOption";
 import { RecordTimingOption } from "./RecordTimingOption";
 import { ServiceToggleOption } from "./ServiceToggleOption";
@@ -18,7 +17,7 @@ function App() {
   const recordSettingsRef = useRef<RecordSettings | null>(null);
 
   useEffect(() => {
-    (async () => {
+    void (async () => {
       const settings = await getRecordSettings();
       recordSettingsRef.current = settings;
       setRecordSettings(settings);
@@ -44,9 +43,7 @@ function App() {
     applyRecordSettings({ enabledServices: nextEnabled });
   };
 
-  const handlePreventDuplicateChange = (
-    next: RecordSettings["preventDuplicate"],
-  ) => {
+  const handlePreventDuplicateChange = (next: RecordSettings["preventDuplicate"]) => {
     applyRecordSettings({ preventDuplicate: next });
   };
 

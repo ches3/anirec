@@ -3,7 +3,7 @@ import type { Work } from "./types";
 import { searchWorks } from "./util/annict";
 
 vi.mock("./util/annict", () => ({
-  searchWorks: vi.fn(),
+  searchWorks: vi.fn<typeof searchWorks>(),
 }));
 
 const mockValue: Work[] = [

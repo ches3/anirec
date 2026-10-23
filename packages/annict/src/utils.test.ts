@@ -1,4 +1,5 @@
-import { describe, expect, test } from "vitest";
+import { describe, expect, test } from "vite-plus/test";
+
 import { getAnnictUrl, toAnnictId } from "./utils";
 
 // atob("V29yay01MzQw") === "Work-5340"
@@ -42,9 +43,7 @@ describe("getAnnictUrl", () => {
   });
 
   test("作品ID + エピソードID", () => {
-    expect(getAnnictUrl(WORK_ID, EPISODE_ID)).toBe(
-      "https://annict.com/works/5340/episodes/158452",
-    );
+    expect(getAnnictUrl(WORK_ID, EPISODE_ID)).toBe("https://annict.com/works/5340/episodes/158452");
   });
 
   test("不正な作品IDはエラーを投げる", () => {
@@ -52,6 +51,6 @@ describe("getAnnictUrl", () => {
   });
 
   test("不正なIDの組み合わせはエラーを投げる", () => {
-    expect(() => getAnnictUrl(WORK_ID, WORK_ID)).toThrow();
+    expect(() => getAnnictUrl(WORK_ID, WORK_ID)).toThrow(Error);
   });
 });

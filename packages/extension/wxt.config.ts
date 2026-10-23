@@ -1,4 +1,3 @@
-import tsconfigPaths from "vite-tsconfig-paths";
 import type { UserManifest } from "wxt";
 import { defineConfig } from "wxt";
 
@@ -12,7 +11,9 @@ export default defineConfig({
     },
   },
   vite: () => ({
-    plugins: [tsconfigPaths()],
+    resolve: {
+      tsconfigPaths: true,
+    },
   }),
   manifest: ({ browser, manifestVersion }) => {
     const permissions: Browser.runtime.ManifestPermission | string[] = [
@@ -25,10 +26,7 @@ export default defineConfig({
       permissions.push("https://api.annict.com/graphql");
     }
 
-    const browserSpecificSettings: Record<
-      string,
-      UserManifest["browser_specific_settings"]
-    > = {
+    const browserSpecificSettings: Record<string, UserManifest["browser_specific_settings"]> = {
       firefox: {
         gecko: {
           id: "annict-recorder@ches3.me",
@@ -39,7 +37,6 @@ export default defineConfig({
 
     return {
       name: "AniRec",
-      version: "0.1.0",
       description:
         "DMM TV、U-NEXT、ABEMA、dアニメストア、Prime Video、Netflixで視聴した作品を自動でAnnictに記録します。",
       permissions,

@@ -127,108 +127,63 @@ export const mappingRules: WorkMappingRule[] = [
         episodeTitleTo: "化物語&偽物語 総集篇III",
       },
       {
-        episodeTitleFrom: [
-          "鬼物語 第忍話『しのぶタイム 其ノ壹』",
-          "『しのぶタイム 其ノ壹』",
-        ],
+        episodeTitleFrom: ["鬼物語 第忍話『しのぶタイム 其ノ壹』", "『しのぶタイム 其ノ壹』"],
         episodeTitleTo: "鬼物語 しのぶタイム 其ノ壹",
       },
       {
-        episodeTitleFrom: [
-          "鬼物語 第忍話『しのぶタイム 其ノ貳』",
-          "『しのぶタイム 其ノ貳』",
-        ],
+        episodeTitleFrom: ["鬼物語 第忍話『しのぶタイム 其ノ貳』", "『しのぶタイム 其ノ貳』"],
         episodeTitleTo: "鬼物語 しのぶタイム 其ノ貳",
       },
       {
-        episodeTitleFrom: [
-          "鬼物語 第忍話『しのぶタイム 其ノ參』",
-          "『しのぶタイム 其ノ參』",
-        ],
+        episodeTitleFrom: ["鬼物語 第忍話『しのぶタイム 其ノ參』", "『しのぶタイム 其ノ參』"],
         episodeTitleTo: "鬼物語 しのぶタイム 其ノ參",
       },
       {
-        episodeTitleFrom: [
-          "鬼物語 第忍話『しのぶタイム 其ノ肆』",
-          "『しのぶタイム 其ノ肆』",
-        ],
+        episodeTitleFrom: ["鬼物語 第忍話『しのぶタイム 其ノ肆』", "『しのぶタイム 其ノ肆』"],
         episodeTitleTo: "鬼物語 しのぶタイム 其ノ肆",
       },
       {
-        episodeTitleFrom: [
-          "恋物語 第恋話『ひたぎエンド 其ノ壹』",
-          "『ひたぎエンド 其ノ壹』",
-        ],
+        episodeTitleFrom: ["恋物語 第恋話『ひたぎエンド 其ノ壹』", "『ひたぎエンド 其ノ壹』"],
         episodeTitleTo: "恋物語 ひたぎエンド 其ノ壹",
       },
       {
-        episodeTitleFrom: [
-          "恋物語 第恋話『ひたぎエンド 其ノ貳』",
-          "『ひたぎエンド 其ノ貳』",
-        ],
+        episodeTitleFrom: ["恋物語 第恋話『ひたぎエンド 其ノ貳』", "『ひたぎエンド 其ノ貳』"],
         episodeTitleTo: "恋物語 ひたぎエンド 其ノ貳",
       },
       {
-        episodeTitleFrom: [
-          "恋物語 第恋話『ひたぎエンド 其ノ參』",
-          "『ひたぎエンド 其ノ參』",
-        ],
+        episodeTitleFrom: ["恋物語 第恋話『ひたぎエンド 其ノ參』", "『ひたぎエンド 其ノ參』"],
         episodeTitleTo: "恋物語 ひたぎエンド 其ノ參",
       },
       {
-        episodeTitleFrom: [
-          "恋物語 第恋話『ひたぎエンド 其ノ肆』",
-          "『ひたぎエンド 其ノ肆』",
-        ],
+        episodeTitleFrom: ["恋物語 第恋話『ひたぎエンド 其ノ肆』", "『ひたぎエンド 其ノ肆』"],
         episodeTitleTo: "恋物語 ひたぎエンド 其ノ肆",
       },
       {
-        episodeTitleFrom: [
-          "恋物語 第恋話『ひたぎエンド 其ノ伍』",
-          "『ひたぎエンド 其ノ伍』",
-        ],
+        episodeTitleFrom: ["恋物語 第恋話『ひたぎエンド 其ノ伍』", "『ひたぎエンド 其ノ伍』"],
         episodeTitleTo: "恋物語 ひたぎエンド 其ノ伍",
       },
       {
-        episodeTitleFrom: [
-          "恋物語 第恋話『ひたぎエンド 其ノ陸』",
-          "『ひたぎエンド 其ノ陸』",
-        ],
+        episodeTitleFrom: ["恋物語 第恋話『ひたぎエンド 其ノ陸』", "『ひたぎエンド 其ノ陸』"],
         episodeTitleTo: "恋物語 ひたぎエンド 其ノ陸",
       },
       {
-        episodeTitleFrom: [
-          "花物語 第変話『するがデビル 其ノ壹』",
-          "『するがデビル 其ノ壹』",
-        ],
+        episodeTitleFrom: ["花物語 第変話『するがデビル 其ノ壹』", "『するがデビル 其ノ壹』"],
         episodeTitleTo: "花物語 するがデビル 其ノ壹",
       },
       {
-        episodeTitleFrom: [
-          "花物語 第変話『するがデビル 其ノ貳』",
-          "『するがデビル 其ノ貳』",
-        ],
+        episodeTitleFrom: ["花物語 第変話『するがデビル 其ノ貳』", "『するがデビル 其ノ貳』"],
         episodeTitleTo: "花物語 するがデビル 其ノ貳",
       },
       {
-        episodeTitleFrom: [
-          "花物語 第変話『するがデビル 其ノ參』",
-          "『するがデビル 其ノ參』",
-        ],
+        episodeTitleFrom: ["花物語 第変話『するがデビル 其ノ參』", "『するがデビル 其ノ參』"],
         episodeTitleTo: "花物語 するがデビル 其ノ參",
       },
       {
-        episodeTitleFrom: [
-          "花物語 第変話『するがデビル 其ノ肆』",
-          "『するがデビル 其ノ肆』",
-        ],
+        episodeTitleFrom: ["花物語 第変話『するがデビル 其ノ肆』", "『するがデビル 其ノ肆』"],
         episodeTitleTo: "花物語 するがデビル 其ノ肆",
       },
       {
-        episodeTitleFrom: [
-          "花物語 第変話『するがデビル 其ノ伍』",
-          "『するがデビル 其ノ伍』",
-        ],
+        episodeTitleFrom: ["花物語 第変話『するがデビル 其ノ伍』", "『するがデビル 其ノ伍』"],
         episodeTitleTo: "花物語 するがデビル 其ノ伍",
       },
     ],
@@ -263,17 +218,11 @@ export const mappingRules: WorkMappingRule[] = [
     workTitleTo: "ヲタクに恋は難しい OAD「それは、いきなりおとづれた＝恋」",
   },
   {
-    workTitleFrom: [
-      "ヲタクに恋は難しい OAD2",
-      "ヲタクに恋は難しい OAD「トモダチの距離」",
-    ],
+    workTitleFrom: ["ヲタクに恋は難しい OAD2", "ヲタクに恋は難しい OAD「トモダチの距離」"],
     workTitleTo: "ヲタクに恋は難しい OAD2「トモダチの距離」",
   },
   {
-    workTitleFrom: [
-      "ヲタクに恋は難しい OAD3",
-      "ヲタクに恋は難しい OAD「社員旅行と願いごと」",
-    ],
+    workTitleFrom: ["ヲタクに恋は難しい OAD3", "ヲタクに恋は難しい OAD「社員旅行と願いごと」"],
     workTitleTo: "ヲタクに恋は難しい OAD3「社員旅行と願い事」",
   },
   {
@@ -312,10 +261,7 @@ export const mappingRules: WorkMappingRule[] = [
     workTitleTo: "ちはやふる3",
     episodeMappings: [
       {
-        episodeTitleFrom: [
-          "いまひとたびの（総集編）",
-          "第十五、五首 いまひとたびの（総集編）",
-        ],
+        episodeTitleFrom: ["いまひとたびの（総集編）", "第十五、五首 いまひとたびの（総集編）"],
         episodeTitleTo: "いまひとたびの",
       },
     ],
@@ -333,8 +279,7 @@ export const mappingRules: WorkMappingRule[] = [
           "「全部　キミのせいだよ」 「いつか見せてあげる」「晴天の霹靂」 「直接触れるんだ」",
           "第9話 「全部　キミのせいだよ」 「いつか見せてあげる」「晴天の霹靂」 「直接触れるんだ」",
         ],
-        episodeTitleTo:
-          "全部　キミのせいだよ／いつか見せてあげる／青天の霹靂／直接触れるんだ",
+        episodeTitleTo: "全部　キミのせいだよ／いつか見せてあげる／青天の霹靂／直接触れるんだ",
       },
       {
         episodeTitleFrom: [

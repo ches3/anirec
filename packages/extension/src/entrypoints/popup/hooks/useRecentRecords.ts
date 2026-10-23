@@ -1,5 +1,6 @@
 import type { Activities } from "@anirec/annict";
 import { useCallback, useEffect, useState } from "react";
+
 import { getRecentRecords } from "../lib/recent-records";
 
 export type LoadMoreResult = "ok" | "error" | "noop";
@@ -17,8 +18,7 @@ export type RecentRecordsLoadState =
     };
 
 export function useRecentRecords(): RecentRecordsLoadState {
-  const [status, setStatus] =
-    useState<RecentRecordsLoadState["status"]>("loading");
+  const [status, setStatus] = useState<RecentRecordsLoadState["status"]>("loading");
   const [items, setItems] = useState<Activities["items"]>([]);
   const [cursor, setCursor] = useState<Activities["cursor"]>(undefined);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
@@ -28,7 +28,7 @@ export function useRecentRecords(): RecentRecordsLoadState {
   }, []);
 
   const handleLoadMore = useCallback(async () => {
-    if (status !== "success" || !cursor || isLoadingMore) {
+    if (status !== "success" || cursor == null || cursor === "" || isLoadingMore) {
       return "noop";
     }
 
@@ -50,7 +50,10 @@ export function useRecentRecords(): RecentRecordsLoadState {
 
     void (async () => {
       const state = await getRecentRecords();
-      if (!mounted) return;
+      // oxlint-disable-next-line typescript/no-unnecessary-condition -- Cleanup can run while the request is pending.
+      if (!mounted) {
+        return;
+      }
       if (state.status === "error") {
         setStatus("error");
         return;

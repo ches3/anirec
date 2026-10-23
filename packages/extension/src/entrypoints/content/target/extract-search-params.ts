@@ -1,17 +1,10 @@
 import type { SearchParam } from "@anirec/annict";
+
 import { asyncQuerySelector, getTextContent } from "@/entrypoints/content/dom";
 import type { Vod } from "@/types";
-import {
-  fetchDMMContent,
-  fetchDMMSeason,
-  fetchNetflix,
-  fetchUnext,
-} from "@/utils/fetch";
+import { fetchDMMContent, fetchDMMSeason, fetchNetflix, fetchUnext } from "@/utils/fetch";
 
-export const extractSearchParams = async (
-  vod: Vod,
-  url: URL,
-): Promise<SearchParam[]> => {
+export const extractSearchParams = async (vod: Vod, url: URL): Promise<SearchParam[]> => {
   switch (vod) {
     case "dmm":
       return await dmm(url);
@@ -30,11 +23,11 @@ export const extractSearchParams = async (
 
 const dmm = async (url: URL): Promise<SearchParam[]> => {
   const seasonId = url.searchParams.get("season");
-  if (!seasonId) {
+  if (seasonId == null || seasonId === "") {
     throw new Error("season パラメータがありません。");
   }
   const contentId = url.searchParams.get("content");
-  if (!contentId) {
+  if (contentId == null || contentId === "") {
     throw new Error("content パラメータがありません。");
   }
 
@@ -49,7 +42,7 @@ const dmm = async (url: URL): Promise<SearchParam[]> => {
   }
   const content = await fetchDMMContent(contentId);
 
-  if (!content.episodeNumberName) {
+  if (content.episodeNumberName == null || content.episodeNumberName === "") {
     return [
       {
         workTitle: season.seasonName,
@@ -98,11 +91,11 @@ const dmm = async (url: URL): Promise<SearchParam[]> => {
 const unext = async (url: URL): Promise<SearchParam[]> => {
   const pathname = url.pathname;
   const pathnameMatch = pathname.match(/^\/play\/([^/]+)\/([^/]+)/);
-  if (!pathnameMatch) {
+  const workId = pathnameMatch?.[1];
+  const episodeId = pathnameMatch?.[2];
+  if (workId === undefined || episodeId === undefined) {
     throw new Error("再生ページの URL 形式が不正です。");
   }
-  const workId = pathnameMatch[1];
-  const episodeId = pathnameMatch[2];
 
   const data = await fetchUnext(workId, episodeId);
 
@@ -126,13 +119,10 @@ const unext = async (url: URL): Promise<SearchParam[]> => {
 };
 
 const abema = async (): Promise<SearchParam[]> => {
-  const workTitle = (
-    await asyncQuerySelector(".com-video-EpisodeTitle__series-info")
-  )?.textContent;
+  const workTitle = (await asyncQuerySelector(".com-video-EpisodeTitle__series-info"))?.textContent;
   const episodeTitle =
-    (await asyncQuerySelector(".com-video-EpisodeTitle__episode-title"))
-      ?.textContent || "";
-  if (!workTitle) {
+    (await asyncQuerySelector(".com-video-EpisodeTitle__episode-title"))?.textContent ?? "";
+  if (workTitle == null || workTitle === "") {
     throw new Error("作品タイトルが取得できませんでした。");
   }
 
@@ -140,7 +130,7 @@ const abema = async (): Promise<SearchParam[]> => {
   // e.g. 響け！ユーフォニアム | 響け!ユーフォニアム3
   // e.g. ちはやふる | 第1期
   const workTitleMatch = workTitle.match(/^(.*) \| (.*)$/);
-  if (workTitleMatch) {
+  if (workTitleMatch?.[1] !== undefined && workTitleMatch[2] !== undefined) {
     return [
       {
         workTitle: workTitleMatch[2],
@@ -167,45 +157,37 @@ const danime = async (): Promise<SearchParam[]> => {
     throw new Error("作品タイトル要素が見つかりませんでした。");
   }
   const workTitle = await getTextContent(workElem);
-  if (!workTitle) {
+  if (workTitle == null || workTitle === "") {
     throw new Error("作品タイトルの取得に失敗しました。");
   }
-  const episodeNumber =
-    (await asyncQuerySelector(".backInfoTxt2"))?.textContent || "";
-  const episodeTitle =
-    (await asyncQuerySelector(".backInfoTxt3"))?.textContent || "";
+  const episodeNumber = (await asyncQuerySelector(".backInfoTxt2"))?.textContent ?? "";
+  const episodeTitle = (await asyncQuerySelector(".backInfoTxt3"))?.textContent ?? "";
 
   return [{ workTitle, episodeNumber, episodeTitle }];
 };
 
 const prime = async (): Promise<SearchParam[]> => {
-  const titleElem = await asyncQuerySelector(
-    ".dv-player-fullscreen h1.atvwebplayersdk-title-text",
-  );
+  const titleElem = await asyncQuerySelector(".dv-player-fullscreen h1.atvwebplayersdk-title-text");
   if (!titleElem) {
     throw new Error("作品タイトル要素が見つかりませんでした。");
   }
   const workTitle = await getTextContent(titleElem);
-  if (!workTitle) {
+  if (workTitle == null || workTitle === "") {
     throw new Error("作品タイトルの取得に失敗しました。");
   }
 
   const subtitleElem = await asyncQuerySelector(
     ".dv-player-fullscreen h2.atvwebplayersdk-subtitle-text",
   );
-  const subtitleText = subtitleElem
-    ? ((await getTextContent(subtitleElem)) ?? "")
-    : "";
+  const subtitleText = subtitleElem ? ((await getTextContent(subtitleElem)) ?? "") : "";
 
   // "シーズン1、エピソード1 エピソードタイトル" のような形式をパース
-  const subtitleMatch = subtitleText.match(
-    /^シーズン\d+、エピソード\d+\s*(.*)/,
-  );
+  const subtitleMatch = subtitleText.match(/^シーズン\d+、エピソード\d+\s*(.*)/);
   if (subtitleMatch) {
     return [
       {
         workTitle,
-        episodeTitle: subtitleMatch[1] || "",
+        episodeTitle: subtitleMatch[1] ?? "",
       },
     ];
   }
@@ -215,7 +197,7 @@ const prime = async (): Promise<SearchParam[]> => {
 
 const netflix = async (url: URL): Promise<SearchParam[]> => {
   const videoIdStr = url.pathname.match(/^\/watch\/(\d+)/)?.[1];
-  if (!videoIdStr) {
+  if (videoIdStr == null || videoIdStr === "") {
     throw new Error("Netflix の動画 ID を取得できませんでした。");
   }
   const videoId = Number(videoIdStr);

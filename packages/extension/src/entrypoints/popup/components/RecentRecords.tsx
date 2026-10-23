@@ -1,17 +1,19 @@
-import { type Activities, getAnnictUrl } from "@anirec/annict";
+import { getAnnictUrl } from "@anirec/annict";
+import type { Activities } from "@anirec/annict";
 import { useComposedRefs } from "@radix-ui/react-compose-refs";
 import { Trash2, Undo2 } from "lucide-react";
-import { type ComponentProps, useState } from "react";
+import { useState } from "react";
+import type { ComponentProps } from "react";
 import useInfiniteScroll from "react-infinite-scroll-hook";
 import { toast } from "sonner";
+
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/utils/cn";
+
 import { useDeleteRecord } from "../hooks/useDeleteRecord";
-import {
-  type RecentRecordsLoadState,
-  useRecentRecords,
-} from "../hooks/useRecentRecords";
+import { useRecentRecords } from "../hooks/useRecentRecords";
+import type { RecentRecordsLoadState } from "../hooks/useRecentRecords";
 
 function formatRelativeTime(dateString: string): string {
   const now = new Date();
@@ -21,8 +23,12 @@ function formatRelativeTime(dateString: string): string {
   const diffHours = Math.floor(diffMinutes / 60);
   const diffDays = Math.floor(diffHours / 24);
 
-  if (diffMinutes < 60) return `${diffMinutes}分前`;
-  if (diffHours < 24) return `${diffHours}時間前`;
+  if (diffMinutes < 60) {
+    return `${diffMinutes}分前`;
+  }
+  if (diffHours < 24) {
+    return `${diffHours}時間前`;
+  }
   return `${diffDays}日前`;
 }
 
@@ -31,7 +37,9 @@ export function RecentRecords({ ref, ...props }: ComponentProps<"div">) {
   const [loadError, setLoadError] = useState(false);
 
   const handleLoadMore = async () => {
-    if (loadState.status !== "success") return;
+    if (loadState.status !== "success") {
+      return;
+    }
 
     const result = await loadState.handleLoadMore();
     setLoadError(result === "error");
@@ -44,8 +52,7 @@ export function RecentRecords({ ref, ...props }: ComponentProps<"div">) {
 
   const [infiniteRef, { rootRef }] = useInfiniteScroll({
     loading:
-      loadState.status === "loading" ||
-      (loadState.status === "success" && loadState.isLoadingMore),
+      loadState.status === "loading" || (loadState.status === "success" && loadState.isLoadingMore),
     hasNextPage: loadState.status === "success" && loadState.hasNext,
     onLoadMore: handleLoadMore,
     disabled: loadError || loadState.status !== "success",
@@ -58,37 +65,30 @@ export function RecentRecords({ ref, ...props }: ComponentProps<"div">) {
       <RecentRecordsBody loadState={loadState} />
       <div
         ref={infiniteRef}
-        className={cn(
-          "text-center",
-          loadState.status === "success" && loadState.hasNext && "py-2",
-        )}
+        className={cn("text-center", loadState.status === "success" && loadState.hasNext && "py-2")}
       >
         {loadState.status === "success" &&
           loadState.hasNext &&
           (loadError ? (
             <button
               type="button"
-              onClick={handleLoadMore}
+              onClick={() => {
+                void handleLoadMore();
+              }}
               disabled={loadState.isLoadingMore}
               className="text-xs text-muted-foreground hover:text-foreground transition-colors disabled:opacity-50"
             >
               {loadState.isLoadingMore ? "読み込み中..." : "再試行"}
             </button>
           ) : (
-            <output className="text-xs text-muted-foreground">
-              読み込み中...
-            </output>
+            <output className="text-xs text-muted-foreground">読み込み中...</output>
           ))}
       </div>
     </div>
   );
 }
 
-function RecentRecordsBody({
-  loadState,
-}: {
-  loadState: RecentRecordsLoadState;
-}) {
+function RecentRecordsBody({ loadState }: { loadState: RecentRecordsLoadState }) {
   if (loadState.status === "loading") {
     return <RecentRecordsLoadingBody />;
   }
@@ -122,7 +122,7 @@ function RecentRecordsLoadingBody() {
   return (
     <div className="space-y-3 mt-2">
       {Array.from({ length: 5 }).map((_, i) => (
-        // biome-ignore lint/suspicious/noArrayIndexKey: スケルトン表示用の静的リスト
+        // oxlint-disable-next-line react/no-array-index-key -- スケルトン表示用の静的リスト
         <div key={i} className="py-2 border-b border-border">
           <Skeleton className="h-3 w-40" />
           <Skeleton className="h-3 w-28 mt-1.5" />
@@ -139,17 +139,14 @@ function ActivityList({
   items: Activities["items"];
   removeItem: (id: string) => void;
 }) {
-  const { scheduleDelete, cancelDelete, pendingDeletions } =
-    useDeleteRecord(removeItem);
+  const { scheduleDelete, cancelDelete, pendingDeletions } = useDeleteRecord(removeItem);
 
   return (
     <ul className="divide-y divide-border">
       {items.map((item) => {
         const episodeLabel =
           item.__typename === "Record"
-            ? [item.episode.numberText, item.episode.title]
-                .filter(Boolean)
-                .join(" ")
+            ? [item.episode.numberText, item.episode.title].filter(Boolean).join(" ")
             : undefined;
 
         const pending = pendingDeletions.has(item.id);
@@ -169,7 +166,7 @@ function ActivityList({
                   rel="noreferrer"
                   className={cn(
                     "w-fit text-xs hover:underline",
-                    !episodeLabel && "text-sm font-medium",
+                    (episodeLabel == null || episodeLabel === "") && "text-sm font-medium",
                   )}
                 >
                   {item.work.title}
@@ -191,7 +188,9 @@ function ActivityList({
                     variant="ghost"
                     size="icon"
                     className="h-5 w-5 text-muted-foreground"
-                    onClick={() => cancelDelete(item.id)}
+                    onClick={() => {
+                      cancelDelete(item.id);
+                    }}
                     aria-label="元に戻す"
                   >
                     <Undo2 className="h-3.5 w-3.5" />
@@ -201,7 +200,9 @@ function ActivityList({
                     variant="ghost"
                     size="icon"
                     className="h-5 w-5 text-muted-foreground hover:text-destructive"
-                    onClick={() => scheduleDelete(item.id)}
+                    onClick={() => {
+                      scheduleDelete(item.id);
+                    }}
                     aria-label="削除"
                   >
                     <Trash2 className="h-3.5 w-3.5" />

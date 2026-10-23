@@ -1,8 +1,10 @@
 import type { SearchResult } from "@anirec/annict";
 import { isRecorded, record } from "@anirec/annict";
+
 import type { RecordResult, SkipReason, Vod } from "@/types";
 import { getAutoRecordEnabled, getRecordSettings } from "@/utils/settings";
 import { getVideoSelector, isVodEnabled } from "@/utils/vod";
+
 import type { PageStateUpdater } from "../page-state";
 import { createRecordError, getRecordErrorMessage } from "../record-error";
 import { wait } from "./wait";
@@ -11,11 +13,7 @@ type RecordGate = "proceed" | Exclude<SkipReason, "not_found">;
 
 export type RunRecordFlowResult = RecordResult | { status: "locationChange" };
 
-async function getRecordGate(
-  vod: Vod,
-  id: string,
-  token: string,
-): Promise<RecordGate> {
+async function getRecordGate(vod: Vod, id: string, token: string): Promise<RecordGate> {
   if (!(await getAutoRecordEnabled())) {
     return "disabled";
   }
@@ -45,7 +43,7 @@ export async function runRecordFlow(
 ): Promise<RunRecordFlowResult> {
   try {
     // 記録条件チェック
-    const id = result.episode?.id || result.id;
+    const id = result.episode?.id === "" ? result.id : (result.episode?.id ?? result.id);
     const preWaitGate = await getRecordGate(vod, id, token);
     if (preWaitGate !== "proceed") {
       return { status: "skipped", skipReason: preWaitGate };
@@ -60,7 +58,7 @@ export async function runRecordFlow(
         state.setRecordStatus({ status: "waiting", progress });
       },
       signal,
-    ).catch((error) => {
+    ).catch((error: unknown) => {
       throw createRecordError("wait_failed", error);
     });
     const waitState = waitResult.status;
@@ -83,7 +81,7 @@ export async function runRecordFlow(
     }
 
     // 記録
-    await record(id, token).catch((error) => {
+    await record(id, token).catch((error: unknown) => {
       throw createRecordError("annict_record_failed", error);
     });
 
