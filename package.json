@@ -2,6 +2,7 @@
   "name": "anirec",
   "private": true,
   "scripts": {
+    "prepare": "vp config --no-agent",
     "dev:ext": "vp run @anirec/extension#dev",
     "dev:server": "vp run @anirec/server#dev",
     "build": "vp run -r build",
