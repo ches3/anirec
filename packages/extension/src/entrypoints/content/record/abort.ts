@@ -35,7 +35,9 @@ export async function waitUntilAutoRecordEnabled(navigationSignal: AbortSignal):
       resolve(value);
     };
 
-    const onAbort = () => resolveOnce(false);
+    const onAbort = () => {
+      resolveOnce(false);
+    };
     navigationSignal.addEventListener("abort", onAbort, { once: true });
     const unwatchAutoRecordEnabled = watchAutoRecordEnabled((newValue) => {
       if (newValue) {
@@ -51,7 +53,9 @@ export function createAbortBinding(navigationSignal: AbortSignal): AbortBinding 
   }
 
   const abortController = new AbortController();
-  const onAbort = () => abortController.abort("locationChange");
+  const onAbort = () => {
+    abortController.abort("locationChange");
+  };
   navigationSignal.addEventListener("abort", onAbort, { once: true });
   const unwatchAutoRecordEnabled = watchAutoRecordEnabled((newValue) => {
     if (!newValue) {

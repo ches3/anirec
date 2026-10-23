@@ -17,7 +17,7 @@ export async function getCurrentTabInfo(): Promise<CurrentTabInfo> {
 
   return {
     tabId: tab.id,
-    tabUrl: tab?.url,
+    tabUrl: tab.url,
   };
 }
 

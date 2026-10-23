@@ -22,7 +22,7 @@ export const fetchGql = async <T>(
     throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
   }
 
-  const json = await res.json();
+  const json: unknown = await res.json();
   const validated = parse(schema, json);
   return validated;
 };
@@ -51,7 +51,7 @@ export const fetchDMMSeason = async (seasonId: string) => {
   const endpoint = "https://api.tv.dmm.com/graphql";
 
   const data = await fetchGql(endpoint, query, Schema);
-  return data?.data.video;
+  return data.data.video;
 };
 
 export const fetchDMMContent = async (contentId: string) => {
@@ -76,7 +76,7 @@ export const fetchDMMContent = async (contentId: string) => {
   const endpoint = "https://api.tv.dmm.com/graphql";
 
   const data = await fetchGql(endpoint, query, Schema);
-  return data?.data.videoContent;
+  return data.data.videoContent;
 };
 
 export const fetchUnext = async (workId: string, episodeId: string) => {
@@ -145,7 +145,7 @@ export const fetchUnext = async (workId: string, episodeId: string) => {
     });
     const title = data.webfront_title_stage;
     const episodes = data.webfront_title_titleEpisodes.episodes;
-    const episode = episodes.find((episode) => episode.id === episodeId);
+    const episode = episodes.find((candidate) => candidate.id === episodeId);
     if (episode) {
       return {
         ...title,
@@ -227,7 +227,7 @@ export const fetchNetflix = async (videoId: number) => {
     throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
   }
 
-  const json = await res.json();
+  const json: unknown = await res.json();
   const validated = parse(Schema, json);
   const entity = validated.data.unifiedEntities[0];
   if (!entity) {

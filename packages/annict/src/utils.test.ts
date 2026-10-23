@@ -51,6 +51,6 @@ describe("getAnnictUrl", () => {
   });
 
   test("不正なIDの組み合わせはエラーを投げる", () => {
-    expect(() => getAnnictUrl(WORK_ID, WORK_ID)).toThrow();
+    expect(() => getAnnictUrl(WORK_ID, WORK_ID)).toThrow(Error);
   });
 });

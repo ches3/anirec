@@ -1,4 +1,5 @@
-import { isRecorded, record, type SearchParam, search } from "@anirec/annict";
+import { isRecorded, record, search } from "@anirec/annict";
+import type { SearchParam } from "@anirec/annict";
 
 type TitleParams = {
   nltext: string | undefined;
@@ -7,13 +8,13 @@ type TitleParams = {
 };
 
 const getSearchParams = ({ nltext, nltitle, nlpackage }: TitleParams): SearchParam | undefined => {
-  if (nlpackage === "com.nttdocomo.android.danimeapp" && nltitle) {
+  if (nlpackage === "com.nttdocomo.android.danimeapp" && nltitle != null && nltitle !== "") {
     return {
       title: nltitle,
     };
   }
-  if (nlpackage === "com.dmm.premium" && nltitle) {
-    if (nltext) {
+  if (nlpackage === "com.dmm.premium" && nltitle != null && nltitle !== "") {
+    if (nltext != null && nltext !== "") {
       return {
         workTitle: nltext,
         episodeTitle: nltitle,
@@ -38,7 +39,7 @@ type MainResult = {
 
 export const main = async ({ token, titleParams }: MainParams): Promise<MainResult> => {
   try {
-    if (!titleParams.nltitle) {
+    if (titleParams.nltitle == null || titleParams.nltitle === "") {
       return {
         localVars: {
           error: "タイトルの取得に失敗しました。",
@@ -66,7 +67,7 @@ export const main = async ({ token, titleParams }: MainParams): Promise<MainResu
         },
       };
     }
-    const id = result.episode?.id || result.id;
+    const id = result.episode?.id === "" ? result.id : (result.episode?.id ?? result.id);
 
     if (await isRecorded(id, 7, token)) {
       return {

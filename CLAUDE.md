@@ -69,7 +69,7 @@ pnpm run test
 - **言語**: TypeScript
 - **モノレポ管理**: Turborepo
 - **パッケージマネージャー**: pnpm
-- **Lint/Format**: Biome
+- **Lint/Format**: Oxlint / Oxfmt
 - **テスト**: Vitest
 
 ### packages/extension
@@ -97,7 +97,7 @@ pnpm run test
 
 ### ルート
 
-- `biome.json` - 共有Lint/Format設定
+- `vite.config.ts` - 共有Lint/Format設定
 - `turbo.json` - モノレポのタスク定義
 
 ### packages/annict

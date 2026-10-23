@@ -30,9 +30,9 @@ export function usePageState(): PageStateResult {
   useEffect(() => {
     void (async () => {
       try {
-        const { tabId, tabUrl } = await getCurrentTabInfo();
-        setTabId(tabId);
-        const vod = tabUrl ? identifyVod(tabUrl) : undefined;
+        const { tabId: currentTabId, tabUrl } = await getCurrentTabInfo();
+        setTabId(currentTabId);
+        const vod = tabUrl != null && tabUrl !== "" ? identifyVod(tabUrl) : undefined;
         if (!vod) {
           setPageInfo(noVodPageInfo);
           setRecordStatus(idleRecordStatus);
@@ -40,7 +40,7 @@ export function usePageState(): PageStateResult {
           return;
         }
 
-        const pageState = await fetchPageState(tabId);
+        const pageState = await fetchPageState(currentTabId);
         setPageInfo(pageState.pageInfo);
         setRecordStatus(pageState.recordStatus);
         setError(null);
@@ -54,7 +54,9 @@ export function usePageState(): PageStateResult {
 
   // リアルタイム更新の監視（content -> popup）
   useEffect(() => {
-    if (tabId === null) return;
+    if (tabId === null) {
+      return;
+    }
 
     const handleMessage = (
       message: RecordStatusUpdateMessage | PageInfoUpdateMessage,

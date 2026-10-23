@@ -69,7 +69,7 @@ export function extractEpisode(str: string): ExtractedEpisode | undefined {
   const episodeNumber = matchGroups?.episodeNumber;
   const episodeTitle = matchGroups?.episodeTitle;
 
-  if (episodeNumber) {
+  if (episodeNumber != null && episodeNumber !== "") {
     const parsedNumber = parseNumber(episodeNumber);
     return {
       number: parsedNumber,
@@ -105,7 +105,7 @@ export function extractFullTitle(title: string): {
   const episodeNumber = matchGroups?.episodeNumber;
   const episodeTitle = matchGroups?.episodeTitle;
 
-  if (workTitle && episodeNumber) {
+  if (workTitle != null && workTitle !== "" && episodeNumber != null && episodeNumber !== "") {
     const parsedNumber = parseNumber(episodeNumber);
     return {
       title: workTitle,
@@ -118,7 +118,7 @@ export function extractFullTitle(title: string): {
   }
 
   // dアニメの劇場版等の作品
-  // e.g. "リズと青い鳥 本編　"
+  // e.g. "リズと青い鳥 本編\u3000"
   const honpen = trimmed.match(/^(.*)\s+本編$/);
   if (honpen?.[1] !== undefined) {
     return {

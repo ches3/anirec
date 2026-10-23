@@ -1,3 +1,9 @@
+import type {
+  ManualRecordMessage,
+  ManualSkipMessage,
+  PageStateMessage,
+  RetryMessage,
+} from "@/types";
 import { getToken } from "@/utils/settings";
 import { identifyVod } from "@/utils/vod";
 
@@ -6,8 +12,8 @@ import {
   createStateUpdater,
   getCurrentStateVer,
   getPageStateResponse,
-  type PageStateUpdater,
 } from "./page-state";
+import type { PageStateUpdater } from "./page-state";
 import { getRecordErrorMessage } from "./record-error";
 import { createAbortBinding, waitUntilAutoRecordEnabled } from "./record/abort";
 import { handleManualRecord } from "./record/manual-record";
@@ -38,29 +44,34 @@ export default defineContentScript({
       void script(state, currentScriptAbort.signal);
     };
 
-    browser.runtime.onMessage.addListener((message, _sender, sendResponse) => {
-      if (message.type === "GET_PAGE_STATE") {
-        sendResponse(getPageStateResponse());
-        return;
-      }
-      if (message.type === "MANUAL_RECORD") {
-        currentScriptAbort?.abort();
-        const state = createStateUpdater(getCurrentStateVer());
-        handleManualRecord(message.id, state).then(sendResponse);
-        return true;
-      }
-      if (message.type === "MANUAL_SKIP") {
-        currentScriptAbort?.abort();
-        handleManualSkip();
-        sendResponse();
-        return;
-      }
-      if (message.type === "RETRY") {
-        triggerScript();
-        sendResponse();
-        return;
-      }
-    });
+    browser.runtime.onMessage.addListener(
+      (
+        message: PageStateMessage | ManualRecordMessage | ManualSkipMessage | RetryMessage,
+        _sender,
+        sendResponse,
+      ) => {
+        switch (message.type) {
+          case "GET_PAGE_STATE":
+            sendResponse(getPageStateResponse());
+            return;
+          case "MANUAL_RECORD": {
+            currentScriptAbort?.abort();
+            const state = createStateUpdater(getCurrentStateVer());
+            void handleManualRecord(message.id, state).then(sendResponse);
+            return true;
+          }
+          case "MANUAL_SKIP":
+            currentScriptAbort?.abort();
+            handleManualSkip();
+            sendResponse();
+            return;
+          case "RETRY":
+            triggerScript();
+            sendResponse();
+            return;
+        }
+      },
+    );
 
     const vod = identifyVod(new URL(location.href));
     watchNavigation(ctx, triggerScript, vod);
@@ -78,7 +89,7 @@ async function script(state: PageStateUpdater, navigationSignal: AbortSignal) {
     }
 
     const token = await getToken();
-    if (!token) {
+    if (token == null || token === "") {
       state.setPageInfo({ status: "no_token" });
       state.setRecordStatus({
         status: "error",

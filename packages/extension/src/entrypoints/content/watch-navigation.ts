@@ -16,21 +16,31 @@ function pollSelectorTextChange(
   onChange: () => void,
   selectors: string[],
 ): void {
-  if (signal.aborted) return;
+  if (signal.aborted) {
+    return;
+  }
 
   const getSelectorTextKey = () =>
-    selectors.map((sel) => document.querySelector(sel)?.textContent?.trim() ?? "").join("\0");
+    selectors.map((sel) => document.querySelector(sel)?.textContent.trim() ?? "").join("\0");
 
   let lastKey = getSelectorTextKey();
 
   const timer = setInterval(() => {
     const key = getSelectorTextKey();
-    if (key === lastKey) return;
+    if (key === lastKey) {
+      return;
+    }
     lastKey = key;
     onChange();
   }, 500);
 
-  signal.addEventListener("abort", () => clearInterval(timer), { once: true });
+  signal.addEventListener(
+    "abort",
+    () => {
+      clearInterval(timer);
+    },
+    { once: true },
+  );
 }
 
 // locationchange と DOM 変化監視を統合したページ遷移検知。
@@ -44,7 +54,9 @@ export function watchNavigation(
   let pollAbort: AbortController | undefined;
 
   const startPolling = () => {
-    if (!pollSelectors) return;
+    if (!pollSelectors) {
+      return;
+    }
     pollAbort = new AbortController();
     pollSelectorTextChange(pollAbort.signal, handleNavigate, pollSelectors);
   };

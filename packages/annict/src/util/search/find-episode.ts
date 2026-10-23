@@ -8,7 +8,9 @@ function findWithStrictOrWeak(
   matchFn: (episode: Episode, weak: boolean) => boolean,
 ): Episode | undefined {
   const strict = episodes.find((ep) => matchFn(ep, false));
-  if (strict) return strict;
+  if (strict) {
+    return strict;
+  }
   const weak = episodes.filter((ep) => matchFn(ep, true));
   return weak.length === 1 ? weak[0] : undefined;
 }
@@ -19,10 +21,12 @@ export function findEpisodeByTitle(
   target: ExtractedEpisode,
 ): Episode | undefined {
   const title = target.title;
-  if (!title) return undefined;
+  if (title == null || title === "") {
+    return undefined;
+  }
   return findWithStrictOrWeak(
     episodes,
-    (ep, weak) => !!ep.title && isSameTitle(ep.title, title, weak),
+    (ep, weak) => !(ep.title == null || ep.title === "") && isSameTitle(ep.title, title, weak),
   );
 }
 
@@ -32,10 +36,14 @@ export function findEpisodeByNumberText(
   target: ExtractedEpisode,
 ): Episode | undefined {
   const numberText = target.numberText;
-  if (!numberText) return undefined;
+  if (numberText == null || numberText === "") {
+    return undefined;
+  }
   return findWithStrictOrWeak(
     episodes,
-    (ep, weak) => !!ep.numberText && isSameTitle(ep.numberText, numberText, weak),
+    (ep, weak) =>
+      !(ep.numberText == null || ep.numberText === "") &&
+      isSameTitle(ep.numberText, numberText, weak),
   );
 }
 
@@ -62,13 +70,15 @@ export function findEpisodeByTitleAndNumberText(
 ): Episode | undefined {
   const title = target.title;
   const numberText = target.numberText;
-  if (!title || !numberText) return undefined;
+  if (title == null || title === "" || numberText == null || numberText === "") {
+    return undefined;
+  }
   return findWithStrictOrWeak(
     episodes,
     (ep, weak) =>
-      !!ep.title &&
+      !(ep.title == null || ep.title === "") &&
       isSameTitle(ep.title, title, weak) &&
-      !!ep.numberText &&
+      !(ep.numberText == null || ep.numberText === "") &&
       isSameTitle(ep.numberText, numberText, weak),
   );
 }
@@ -79,10 +89,13 @@ export function findEpisodeByTitleAsNumberText(
   target: ExtractedEpisode,
 ): Episode | undefined {
   const title = target.title;
-  if (!title) return undefined;
+  if (title == null || title === "") {
+    return undefined;
+  }
   return findWithStrictOrWeak(
     episodes,
-    (ep, weak) => !!ep.numberText && isSameTitle(ep.numberText, title, weak),
+    (ep, weak) =>
+      !(ep.numberText == null || ep.numberText === "") && isSameTitle(ep.numberText, title, weak),
   );
 }
 
@@ -93,7 +106,9 @@ export function findEpisodeByTitleWithWorkTitle(
   target: ExtractedEpisode,
 ): Episode | undefined {
   const title = target.title;
-  if (!title) return undefined;
+  if (title == null || title === "") {
+    return undefined;
+  }
 
   const workTitles = [
     work.title,
@@ -105,13 +120,13 @@ export function findEpisodeByTitleWithWorkTitle(
     const episodeTitle = ep.title?.trim();
 
     return workTitles.some((workTitle) => {
-      if (numberText && episodeTitle) {
+      if (numberText != null && numberText !== "" && episodeTitle != null && episodeTitle !== "") {
         const withNumber = [workTitle, numberText, episodeTitle].join(" ");
         if (isSameTitle(withNumber, title, weak)) {
           return true;
         }
       }
-      if (episodeTitle) {
+      if (episodeTitle != null && episodeTitle !== "") {
         const withoutNumber = [workTitle, episodeTitle].join(" ");
         if (isSameTitle(withoutNumber, title, weak)) {
           return true;
@@ -133,13 +148,18 @@ export function findEpisodeByBracketTitle(
   target: ExtractedEpisode,
 ): Episode | undefined {
   const title = target.title;
-  if (!title) return undefined;
+  if (title == null || title === "") {
+    return undefined;
+  }
 
   const bracketContent = extractBracketContent(title);
-  if (!bracketContent) return undefined;
+  if (bracketContent == null || bracketContent === "") {
+    return undefined;
+  }
 
   return findWithStrictOrWeak(
     episodes,
-    (ep, weak) => !!ep.title && isSameTitle(ep.title, bracketContent, weak),
+    (ep, weak) =>
+      !(ep.title == null || ep.title === "") && isSameTitle(ep.title, bracketContent, weak),
   );
 }

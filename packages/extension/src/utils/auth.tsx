@@ -1,6 +1,6 @@
 async function getOAuthCode(): Promise<string> {
   const clientId = import.meta.env.WXT_CLIENT_ID;
-  if (!clientId) {
+  if (clientId == null || clientId === "") {
     throw new Error("Client ID is not set.");
   }
   const redirectUrl = browser.identity.getRedirectURL();
@@ -17,11 +17,11 @@ async function getOAuthCode(): Promise<string> {
     url: requestUrl,
     interactive: true,
   });
-  if (!responseUrl) {
+  if (responseUrl == null || responseUrl === "") {
     throw new Error("Authorization failed.");
   }
   const code = new URL(responseUrl).searchParams.get("code");
-  if (!code) {
+  if (code == null || code === "") {
     throw new Error("Authorization failed.");
   }
   return code;
@@ -39,14 +39,22 @@ export async function generateToken(): Promise<void> {
   if (!res.ok) {
     throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
   }
-  const json = await res.json();
+  const json: unknown = await res.json();
+  if (
+    typeof json !== "object" ||
+    json === null ||
+    !("access_token" in json) ||
+    typeof json.access_token !== "string"
+  ) {
+    throw new Error("Authorization failed.");
+  }
   const token = json.access_token;
   await storage.setItem<string>("sync:token", token);
 }
 
 export async function revokeToken(): Promise<void> {
   const token = await storage.getItem<string>("sync:token");
-  if (!token) {
+  if (token == null || token === "") {
     return;
   }
   const res = await fetch(`${import.meta.env.WXT_SERVER_URL}/token?token=${token}`, {

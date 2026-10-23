@@ -26,7 +26,7 @@ export function applyMapping(target: SearchTarget): SearchTarget {
       return mapped;
     }
 
-    if (mergedTitleRule.workTitleTo) {
+    if (mergedTitleRule.workTitleTo != null && mergedTitleRule.workTitleTo !== "") {
       mapped.workTitle = mergedTitleRule.workTitleTo;
     }
     mapped.episode = undefined;
@@ -34,7 +34,7 @@ export function applyMapping(target: SearchTarget): SearchTarget {
   }
 
   // workTitle変換
-  if (rule.workTitleTo) {
+  if (rule.workTitleTo != null && rule.workTitleTo !== "") {
     mapped.workTitle = rule.workTitleTo;
   }
 
@@ -48,7 +48,7 @@ export function applyMapping(target: SearchTarget): SearchTarget {
   }
 
   const targetEpisodeTitle = mapped.episode.title;
-  if (!targetEpisodeTitle) {
+  if (targetEpisodeTitle == null || targetEpisodeTitle === "") {
     return mapped;
   }
 

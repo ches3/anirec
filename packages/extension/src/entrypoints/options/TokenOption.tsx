@@ -26,7 +26,9 @@ function LoginButton({
     <Button
       type="button"
       size="sm"
-      onClick={handleClick}
+      onClick={() => {
+        void handleClick();
+      }}
       className={cn("bg-annict text-annict-foreground hover:bg-annict-hover", className)}
     >
       ログイン
@@ -56,7 +58,9 @@ function LogoutButton({
     <Button
       type="button"
       size="sm"
-      onClick={handleClick}
+      onClick={() => {
+        void handleClick();
+      }}
       variant="secondary"
       className={cn("hover:bg-secondary-hover", className)}
     >
@@ -69,9 +73,9 @@ export function TokenOption({ className }: { className?: string }) {
   const [existsToken, setExistsToken] = useState<boolean>(false);
 
   useEffect(() => {
-    (async () => {
+    void (async () => {
       const token = await storage.getItem<string>("sync:token");
-      setExistsToken(!!token);
+      setExistsToken(!(token == null || token === ""));
     })();
   }, []);
 

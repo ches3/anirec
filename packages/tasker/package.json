@@ -4,8 +4,8 @@
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",
-    "check": "biome check --write .",
-    "check:dry": "biome check ."
+    "check": "vp check --fix",
+    "check:dry": "vp check"
   },
   "dependencies": {
     "@anirec/annict": "workspace:*"

@@ -8,12 +8,12 @@ import {
   viewerActivities,
 } from "./util/annict";
 
-vi.mock("./util/annict", async () => ({
-  createRecord: vi.fn(),
-  createReview: vi.fn(),
-  deleteRecord: vi.fn(),
-  deleteReview: vi.fn(),
-  viewerActivities: vi.fn(),
+vi.mock("./util/annict", () => ({
+  createRecord: vi.fn<typeof createRecord>(),
+  createReview: vi.fn<typeof createReview>(),
+  deleteRecord: vi.fn<typeof deleteRecord>(),
+  deleteReview: vi.fn<typeof deleteReview>(),
+  viewerActivities: vi.fn<typeof viewerActivities>(),
 }));
 
 describe("record", () => {

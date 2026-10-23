@@ -30,7 +30,7 @@ result = await search(
 result = await search({ title: "響け！ユーフォニアム 第一回 ようこそハイスクール" }, token);
 
 if (result) {
-  const id = result.episode?.id || result.id;
+  const id = result.episode?.id === "" ? result.id : (result.episode?.id ?? result.id);
 
   // 記録済みか確認
   if (await isRecorded(id, 7, token)) {

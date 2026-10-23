@@ -76,9 +76,10 @@ export function RecordTimingOption({
       <div className="mt-4">
         <RadioGroup
           value={type}
-          onValueChange={(v) => {
-            const value = v as RecordTiming["type"];
-            onChange({ type: value });
+          onValueChange={(value) => {
+            if (value === "continued" || value === "ended") {
+              onChange({ type: value });
+            }
           }}
           className="flex flex-col gap-4"
         >

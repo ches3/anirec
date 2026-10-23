@@ -34,7 +34,7 @@ export function toAnnictId(encoded: string): AnnictId {
 
 export function getAnnictUrl(workId: string, episodeId?: string): string {
   const work = toAnnictId(workId);
-  if (episodeId) {
+  if (episodeId != null && episodeId !== "") {
     const episode = toAnnictId(episodeId);
     if (work.type !== "work" || episode.type !== "episode") {
       throw new Error(`Invalid ids: workId=${workId}, episodeId=${episodeId}`);

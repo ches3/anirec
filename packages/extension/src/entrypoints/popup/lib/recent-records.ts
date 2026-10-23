@@ -8,7 +8,7 @@ export type RecentRecordsState = { status: "error" } | { status: "success"; data
 export async function getRecentRecords(cursor: string = ""): Promise<RecentRecordsState> {
   try {
     const token = await getToken();
-    if (!token) {
+    if (token == null || token === "") {
       return { status: "error" };
     }
 
@@ -17,7 +17,7 @@ export async function getRecentRecords(cursor: string = ""): Promise<RecentRecor
     for (let pageCount = 0; pageCount < 10; pageCount += 1) {
       const data = await viewerActivities(10, nextCursor, token);
 
-      if (data.items.length > 0 || !data.cursor) {
+      if (data.items.length > 0 || data.cursor == null || data.cursor === "") {
         return { status: "success", data };
       }
 

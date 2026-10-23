@@ -33,9 +33,10 @@ function findUniqueWeakMatchWork(works: Work[], targetWorkTitle: string): Work |
   const matched = works.filter(
     (work) =>
       isSameTitle(work.title, targetWorkTitle, true) ||
-      work.seriesList?.some((series) =>
+      (work.seriesList?.some((series) =>
         isSameTitle(`${series} ${work.title}`, targetWorkTitle, true),
-      ),
+      ) ??
+        false),
   );
   return matched.length === 1 ? matched[0] : undefined;
 }
@@ -146,8 +147,10 @@ export async function search(params: SearchParam, token: string): Promise<Search
       }
       const parsed = extractFullTitle(work.title);
       if (
-        parsed.episode?.title &&
-        target.episode?.title &&
+        parsed.episode?.title != null &&
+        parsed.episode.title !== "" &&
+        target.episode.title != null &&
+        target.episode.title !== "" &&
         isSameTitle(parsed.episode.title, target.episode.title, true)
       ) {
         return {
@@ -161,7 +164,7 @@ export async function search(params: SearchParam, token: string): Promise<Search
     // target.episode.title が work.title と一致する noEpisodes 作品を探す
     // e.g. workTitle="君に届け", episodeTitle="10分くらいで振り返る『君に届け』"
     //   → work.title="10分くらいで振り返る『君に届け』" に一致
-    if (target.episode.title) {
+    if (target.episode.title != null && target.episode.title !== "") {
       const episodeTitle = target.episode.title;
       const strictWork = works.find(
         (work) => work.noEpisodes && isSameTitle(work.title, episodeTitle),
@@ -176,7 +179,7 @@ export async function search(params: SearchParam, token: string): Promise<Search
       const weakWorks = works.filter(
         (work) => work.noEpisodes && isSameTitle(work.title, episodeTitle, true),
       );
-      const [weakWork] = weakWorks;
+      const weakWork = weakWorks.at(0);
       if (weakWorks.length === 1 && weakWork !== undefined) {
         return {
           id: weakWork.id,
@@ -196,7 +199,7 @@ export async function search(params: SearchParam, token: string): Promise<Search
     const weakWorks = works.filter(
       (work) => work.noEpisodes && isSameTitle(work.title, fullTitle, true),
     );
-    const [weakWork] = weakWorks;
+    const weakWork = weakWorks.at(0);
     if (weakWorks.length === 1 && weakWork !== undefined) {
       return {
         id: weakWork.id,
@@ -224,7 +227,9 @@ export async function search(params: SearchParam, token: string): Promise<Search
 
   // strict マッチ
   for (const work of works) {
-    if (!work.episodes) continue;
+    if (!work.episodes) {
+      continue;
+    }
     for (const episode of work.episodes) {
       const fullTitle = [work.title, episode.numberText, episode.title].join("");
       if (isSameTitle(fullTitle, targetFullTitle)) {
@@ -236,7 +241,9 @@ export async function search(params: SearchParam, token: string): Promise<Search
   // weak マッチ（1件のみ一致した場合）
   const weakMatches: { work: Work; episode: Episode }[] = [];
   for (const work of works) {
-    if (!work.episodes) continue;
+    if (!work.episodes) {
+      continue;
+    }
     for (const episode of work.episodes) {
       const fullTitle = [work.title, episode.numberText, episode.title].join("");
       if (isSameTitle(fullTitle, targetFullTitle, true)) {
@@ -244,7 +251,7 @@ export async function search(params: SearchParam, token: string): Promise<Search
       }
     }
   }
-  const [weakMatch] = weakMatches;
+  const weakMatch = weakMatches.at(0);
   if (weakMatches.length === 1 && weakMatch !== undefined) {
     const { work, episode } = weakMatch;
     return { id: work.id, title: work.title, episode };

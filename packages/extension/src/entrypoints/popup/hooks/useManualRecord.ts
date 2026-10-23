@@ -7,7 +7,9 @@ export function useManualRecord(tabId: number | null) {
   const [isRecording, setIsRecording] = useState(false);
 
   const manualRecord = async (id: string) => {
-    if (tabId === null || isRecording) return;
+    if (tabId === null || isRecording) {
+      return;
+    }
 
     setIsRecording(true);
     try {

@@ -50,12 +50,13 @@ async function requestGraphQL<TResult, TVariables>(
     throw new Error(`GraphQL request failed: ${response.status}`);
   }
 
-  const payload = (await response.json()) as GraphQLResponse<TResult>;
+  // oxlint-disable-next-line typescript/no-unsafe-assignment -- Generated documents determine the response type at this API boundary.
+  const payload: GraphQLResponse<TResult> | null = await response.json();
 
-  if (payload?.errors?.length) {
+  if (payload?.errors !== undefined && payload.errors.length > 0) {
     const message = payload.errors
       .map((error) => error.message)
-      .filter((message): message is string => !!message)
+      .filter((errorMessage) => errorMessage !== undefined && errorMessage !== "")
       .join("\n");
     throw new Error(message || "GraphQL request failed");
   }
@@ -173,7 +174,7 @@ export async function viewerActivities(
   if (!data.viewer?.activities?.edges) {
     throw new Error("Failed to fetch data");
   }
-  const edges = data.viewer?.activities?.edges;
+  const edges = data.viewer.activities.edges;
   const pageInfo = data.viewer.activities.pageInfo;
   const cursor = "endCursor" in pageInfo ? pageInfo.endCursor : null;
   const items = edges
@@ -189,7 +190,7 @@ export async function viewerActivities(
 }
 
 export async function createRecord(id: string, token: string) {
-  const data = await requestGraphQL(CreateRecordDocument, { id }, token).catch((e) => {
+  const data = await requestGraphQL(CreateRecordDocument, { id }, token).catch((e: unknown) => {
     const regex = new RegExp(`^Invalid input: "${id}": (.*)`);
     if (e instanceof Error && e.message.match(regex)) {
       throw new Error(`Invalid id: ${id}`);
@@ -200,7 +201,7 @@ export async function createRecord(id: string, token: string) {
 }
 
 export async function createReview(id: string, token: string) {
-  const data = await requestGraphQL(CreateReviewDocument, { id }, token).catch((e) => {
+  const data = await requestGraphQL(CreateReviewDocument, { id }, token).catch((e: unknown) => {
     const regex = new RegExp(`^Invalid input: "${id}"`);
     if (e instanceof Error && e.message.match(regex)) {
       throw new Error(`Invalid id: ${id}`);

@@ -12,13 +12,13 @@ export async function handleManualRecord(
 ): Promise<ManualRecordResponse> {
   try {
     const token = await getToken();
-    if (!token) {
+    if (token == null || token === "") {
       return { ok: false, error: "Annictトークンが設定されていません。" };
     }
 
     state.setRecordStatus({ status: "processing" });
 
-    await record(id, token).catch((error) => {
+    await record(id, token).catch((error: unknown) => {
       throw createRecordError("annict_record_failed", error);
     });
     state.setRecordStatus({ status: "success" });

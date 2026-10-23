@@ -52,11 +52,11 @@ export async function isRecorded(id: string, daysAgo: number, token: string): Pr
       }
       if (item.__typename === "Record") {
         records.push(item.episode.id);
-      } else if (item.__typename === "Review") {
+      } else {
         records.push(item.work.id);
       }
     }
-    if (!cursor) {
+    if (cursor == null || cursor === "") {
       break;
     }
     before = cursor;

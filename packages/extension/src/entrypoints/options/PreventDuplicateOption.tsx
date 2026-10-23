@@ -22,7 +22,9 @@ export function PreventDuplicateOption({
         <Switch
           id="prevent-duplicate"
           checked={value.enabled}
-          onCheckedChange={(enabled) => onChange({ ...value, enabled })}
+          onCheckedChange={(enabled) => {
+            onChange({ ...value, enabled });
+          }}
           className="scale-80"
         />
         <Label htmlFor="prevent-duplicate" className="pl-2 cursor-pointer">

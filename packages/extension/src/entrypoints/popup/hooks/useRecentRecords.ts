@@ -28,7 +28,7 @@ export function useRecentRecords(): RecentRecordsLoadState {
   }, []);
 
   const handleLoadMore = useCallback(async () => {
-    if (status !== "success" || !cursor || isLoadingMore) {
+    if (status !== "success" || cursor == null || cursor === "" || isLoadingMore) {
       return "noop";
     }
 
@@ -50,7 +50,10 @@ export function useRecentRecords(): RecentRecordsLoadState {
 
     void (async () => {
       const state = await getRecentRecords();
-      if (!mounted) return;
+      // oxlint-disable-next-line typescript/no-unnecessary-condition -- Cleanup can run while the request is pending.
+      if (!mounted) {
+        return;
+      }
       if (state.status === "error") {
         setStatus("error");
         return;

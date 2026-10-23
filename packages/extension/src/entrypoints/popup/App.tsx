@@ -13,7 +13,7 @@ export default function App() {
   const [autoRecordEnabled, setAutoRecordEnabled] = useState(true);
 
   useEffect(() => {
-    getAutoRecordEnabled().then((enabled) => {
+    void getAutoRecordEnabled().then((enabled) => {
       setAutoRecordEnabled(enabled);
     });
   }, []);
@@ -33,14 +33,18 @@ export default function App() {
         <div className="flex items-center gap-3">
           <Switch
             checked={autoRecordEnabled}
-            onCheckedChange={handleToggle}
+            onCheckedChange={(checked) => {
+              void handleToggle(checked);
+            }}
             aria-label="自動記録の有効・無効"
             className="scale-80"
           />
           <button
             type="button"
             className="text-muted-foreground hover:text-foreground transition-colors"
-            onClick={() => browser.runtime.openOptionsPage()}
+            onClick={() => {
+              void browser.runtime.openOptionsPage();
+            }}
           >
             <Settings className="w-5 h-5" />
           </button>

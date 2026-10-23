@@ -43,7 +43,7 @@ export async function runRecordFlow(
 ): Promise<RunRecordFlowResult> {
   try {
     // 記録条件チェック
-    const id = result.episode?.id || result.id;
+    const id = result.episode?.id === "" ? result.id : (result.episode?.id ?? result.id);
     const preWaitGate = await getRecordGate(vod, id, token);
     if (preWaitGate !== "proceed") {
       return { status: "skipped", skipReason: preWaitGate };
@@ -58,7 +58,7 @@ export async function runRecordFlow(
         state.setRecordStatus({ status: "waiting", progress });
       },
       signal,
-    ).catch((error) => {
+    ).catch((error: unknown) => {
       throw createRecordError("wait_failed", error);
     });
     const waitState = waitResult.status;
@@ -81,7 +81,7 @@ export async function runRecordFlow(
     }
 
     // 記録
-    await record(id, token).catch((error) => {
+    await record(id, token).catch((error: unknown) => {
       throw createRecordError("annict_record_failed", error);
     });
 

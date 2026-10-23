@@ -82,8 +82,12 @@ export type PageStateUpdater = {
 
 export function createStateUpdater(ver: number): PageStateUpdater {
   return {
-    setPageInfo: (info) => setPageInfo(info, ver),
-    setRecordStatus: (status) => setRecordStatus(status, ver),
+    setPageInfo: (info) => {
+      setPageInfo(info, ver);
+    },
+    setRecordStatus: (status) => {
+      setRecordStatus(status, ver);
+    },
   };
 }
 

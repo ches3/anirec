@@ -11,10 +11,12 @@ export const asyncQuerySelector = (
   return new Promise<Element | undefined>((resolve) => {
     const element = root.querySelector(selector);
     if (element) {
-      return resolve(element);
+      resolve(element);
+      return;
     }
     if (timeout <= 0) {
-      return resolve(undefined);
+      resolve(undefined);
+      return;
     }
 
     const timer = setTimeout(() => {
@@ -23,11 +25,11 @@ export const asyncQuerySelector = (
     }, timeout);
 
     const interval = setInterval(() => {
-      const element = root.querySelector(selector);
-      if (element) {
+      const currentElement = root.querySelector(selector);
+      if (currentElement) {
         clearInterval(interval);
         clearTimeout(timer);
-        resolve(element);
+        resolve(currentElement);
       }
     }, 500);
   });
@@ -42,10 +44,14 @@ export const getTextContent = (
   } = {},
 ): Promise<string | undefined> => {
   return new Promise((resolve) => {
-    const text = element.textContent?.trim();
-    if (text) return resolve(text);
+    const text = element.textContent.trim();
+    if (text) {
+      resolve(text);
+      return;
+    }
     if (timeout <= 0) {
-      return resolve(undefined);
+      resolve(undefined);
+      return;
     }
 
     const timer = setTimeout(() => {
@@ -54,11 +60,11 @@ export const getTextContent = (
     }, timeout);
 
     const interval = setInterval(() => {
-      const text = element.textContent?.trim();
-      if (text) {
+      const currentText = element.textContent.trim();
+      if (currentText) {
         clearInterval(interval);
         clearTimeout(timer);
-        resolve(text);
+        resolve(currentText);
       }
     }, 100);
   });

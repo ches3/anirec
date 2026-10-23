@@ -6,12 +6,11 @@
     "dev:server": "pnpm --filter @anirec/server dev",
     "build": "turbo run build --log-order=grouped",
     "typecheck": "turbo run typecheck --continue --log-order=grouped",
-    "check": "biome check --write .",
-    "check:dry": "biome check .",
+    "check": "vp check --fix",
+    "check:dry": "vp check",
     "test": "turbo run test:run --continue --log-order=grouped"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.14",
     "tsup": "^8.3.5",
     "turbo": "~2.9.18",
     "typescript": "^5.6.3",
