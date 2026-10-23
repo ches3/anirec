@@ -3,8 +3,6 @@ node_modules/
 dist/
 .output/
 
-.turbo
-
 .env
 .env.*
 .dev.vars

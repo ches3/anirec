@@ -10,9 +10,7 @@
     "build:firefox": "wxt build -b firefox",
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
-    "postinstall": "wxt prepare",
-    "check": "vp check --fix",
-    "check:dry": "vp check"
+    "postinstall": "wxt prepare"
   },
   "dependencies": {
     "@anirec/annict": "workspace:*",

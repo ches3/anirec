@@ -7,11 +7,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "test": "vp test",
-    "test:run": "vp test run",
     "gql-gen": "graphql-codegen",
-    "check": "vp check --fix",
-    "check:dry": "vp check",
     "fixture": "tsx src/fixture-test/cli.ts",
     "fixture:regenerate": "tsx src/fixture-test/cli.ts regenerate"
   },

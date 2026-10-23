@@ -66,7 +66,7 @@ pnpm run test
 ## 技術スタック
 
 - **言語**: TypeScript 7
-- **モノレポ管理**: Turborepo
+- **モノレポ管理**: pnpm workspaces
 - **パッケージマネージャー**: pnpm
 - **Lint/Format**: Oxlint / Oxfmt
 - **テスト**: Vitest
@@ -96,8 +96,7 @@ pnpm run test
 
 ### ルート
 
-- `vite.config.ts` - 共有Lint/Format設定
-- `turbo.json` - モノレポのタスク定義
+- `vite.config.ts` - 共有Lint/Format設定・テストプロジェクト定義
 
 ### packages/annict
 

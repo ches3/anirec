@@ -2,9 +2,7 @@
   "name": "@anirec/tasker",
   "private": true,
   "scripts": {
-    "build": "tsup",
-    "check": "vp check --fix",
-    "check:dry": "vp check"
+    "build": "tsup"
   },
   "dependencies": {
     "@anirec/annict": "workspace:*"
