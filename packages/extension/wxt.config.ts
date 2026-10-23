@@ -1,4 +1,3 @@
-import tsconfigPaths from "vite-tsconfig-paths";
 import type { UserManifest } from "wxt";
 import { defineConfig } from "wxt";
 
@@ -12,7 +11,9 @@ export default defineConfig({
     },
   },
   vite: () => ({
-    plugins: [tsconfigPaths()],
+    resolve: {
+      tsconfigPaths: true,
+    },
   }),
   manifest: ({ browser, manifestVersion }) => {
     const permissions: Browser.runtime.ManifestPermission | string[] = [

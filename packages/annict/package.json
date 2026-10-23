@@ -7,7 +7,6 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit",
     "test": "vp test",
     "test:run": "vp test run",
     "gql-gen": "graphql-codegen",

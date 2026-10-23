@@ -3,7 +3,6 @@
   "private": true,
   "scripts": {
     "build": "tsup",
-    "typecheck": "tsc --noEmit",
     "check": "vp check --fix",
     "check:dry": "vp check"
   },

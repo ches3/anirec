@@ -15,69 +15,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1.21.2
         with:
           node-version: "26"
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v6
-        with:
           cache: true
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+          run-install: |
+            args: ['--frozen-lockfile']
 
       - name: Test
         run: pnpm run test
 
   check:
-    name: Lint & Format
+    name: Check
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1.21.2
         with:
           node-version: "26"
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v6
-        with:
           cache: true
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Prepare extension types
-        run: pnpm --filter @anirec/extension exec wxt prepare
+          run-install: |
+            args: ['--frozen-lockfile']
 
       - name: Run Vite+ check
         run: pnpm run check:dry
-
-  typecheck:
-    name: Typecheck
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: "26"
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v6
-        with:
-          cache: true
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Run typecheck
-        run: pnpm run typecheck

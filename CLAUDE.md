@@ -14,11 +14,10 @@
 
 ## 開発時の品質チェック
 
-**重要**: コード変更時やコミット前には必ず以下の3つのコマンドを実行してエラーを修正する。  
+**重要**: コード変更時やコミット前には必ず以下の2つのコマンドを実行してエラーを修正する。  
 ユーザーに実行させるのではなく、**コーディングエージェント(Claude CodeやCodex)自身で実行すること**。
 
 ```bash
-pnpm run typecheck
 pnpm run check
 pnpm run test
 ```
@@ -66,7 +65,7 @@ pnpm run test
 
 ## 技術スタック
 
-- **言語**: TypeScript
+- **言語**: TypeScript 7
 - **モノレポ管理**: Turborepo
 - **パッケージマネージャー**: pnpm
 - **Lint/Format**: Oxlint / Oxfmt
