@@ -1,6 +1,8 @@
 import type { SearchResult } from "@anirec/annict";
+
 import type { Vod, WorkInfoData } from "@/types";
 import { searchFromList } from "@/utils/search";
+
 import { createRecordError } from "../record-error";
 import { extractSearchParams } from "./extract-search-params";
 

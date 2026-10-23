@@ -1,27 +1,20 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
-import type {
-  CancelDeleteMessage,
-  DeleteResultMessage,
-  ScheduleDeleteMessage,
-} from "@/types";
+
+import type { CancelDeleteMessage, DeleteResultMessage, ScheduleDeleteMessage } from "@/types";
 
 export function useDeleteRecord(removeItem: (id: string) => void) {
-  const [pendingDeletions, setPendingDeletions] = useState<Set<string>>(
-    new Set(),
-  );
+  const [pendingDeletions, setPendingDeletions] = useState<Set<string>>(new Set());
   // refで最新のSetを保持し、クロージャ問題を回避
   const pendingRef = useRef(pendingDeletions);
   pendingRef.current = pendingDeletions;
 
   useEffect(() => {
-    void browser.runtime
-      .sendMessage({ type: "GET_PENDING_DELETIONS" })
-      .then((response) => {
-        if (response?.ids.length > 0) {
-          setPendingDeletions(new Set(response.ids));
-        }
-      });
+    void browser.runtime.sendMessage({ type: "GET_PENDING_DELETIONS" }).then((response) => {
+      if (response?.ids.length > 0) {
+        setPendingDeletions(new Set(response.ids));
+      }
+    });
   }, []);
 
   useEffect(() => {

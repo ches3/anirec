@@ -6,10 +6,11 @@
 - ブラウザの拡張機能とAndroid向けのTaskerスクリプトを提供
 
 ## パッケージ構成
-  - `@anirec/extension`: ブラウザ拡張機能
-  - `@anirec/annict`: Annict APIクライアント・作品検索アルゴリズム
-  - `@anirec/server`: Annict OAuthトークン取得/失効用のAPIサーバー
-  - `@anirec/tasker`: Tasker用スクリプト
+
+- `@anirec/extension`: ブラウザ拡張機能
+- `@anirec/annict`: Annict APIクライアント・作品検索アルゴリズム
+- `@anirec/server`: Annict OAuthトークン取得/失効用のAPIサーバー
+- `@anirec/tasker`: Tasker用スクリプト
 
 ## 開発時の品質チェック
 

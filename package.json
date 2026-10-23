@@ -1,7 +1,6 @@
 {
   "name": "anirec",
   "private": true,
-  "packageManager": "pnpm@12.15.0",
   "scripts": {
     "dev:ext": "pnpm --filter @anirec/extension dev",
     "dev:server": "pnpm --filter @anirec/server dev",
@@ -17,5 +16,6 @@
     "turbo": "~2.9.18",
     "typescript": "^5.6.3",
     "vite-plus": "1.3.0"
-  }
+  },
+  "packageManager": "pnpm@12.15.0"
 }

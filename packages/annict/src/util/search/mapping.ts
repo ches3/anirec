@@ -10,9 +10,7 @@ export function applyMapping(target: SearchTarget): SearchTarget {
   };
 
   const rule = mappingRules.find((candidate) =>
-    candidate.workTitleFrom.some((title) =>
-      isSameTitle(mapped.workTitle, title),
-    ),
+    candidate.workTitleFrom.some((title) => isSameTitle(mapped.workTitle, title)),
   );
 
   if (!rule) {
@@ -56,11 +54,7 @@ export function applyMapping(target: SearchTarget): SearchTarget {
 
   // episodeTitle変換
   for (const episodeMapping of episodeMappings) {
-    if (
-      episodeMapping.episodeTitleFrom.some((title) =>
-        isSameTitle(targetEpisodeTitle, title),
-      )
-    ) {
+    if (episodeMapping.episodeTitleFrom.some((title) => isSameTitle(targetEpisodeTitle, title))) {
       mapped.episode.title = episodeMapping.episodeTitleTo;
       return mapped;
     }

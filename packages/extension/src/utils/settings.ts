@@ -1,9 +1,7 @@
 import type { Vod } from "@/types";
 
 export async function getToken() {
-  const token =
-    (await storage.getItem<string>("sync:token")) ||
-    import.meta.env.WXT_ANNICT_TOKEN;
+  const token = (await storage.getItem<string>("sync:token")) || import.meta.env.WXT_ANNICT_TOKEN;
   return token;
 }
 
@@ -92,9 +90,7 @@ export async function saveAutoRecordEnabled(enabled: boolean): Promise<void> {
   await storage.setItem<boolean>("local:autoRecordEnabled", enabled);
 }
 
-export function watchAutoRecordEnabled(
-  callback: (newValue: boolean) => void,
-): () => void {
+export function watchAutoRecordEnabled(callback: (newValue: boolean) => void): () => void {
   return storage.watch<boolean>("local:autoRecordEnabled", (newValue) =>
     callback(newValue ?? true),
   );

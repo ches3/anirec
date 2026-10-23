@@ -1,4 +1,5 @@
 import { toast } from "sonner";
+
 import type { ManualSkipMessage } from "@/types";
 
 export function useManualSkip(tabId: number | null) {

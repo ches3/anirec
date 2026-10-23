@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+
 import { search } from "../search";
 import { searchWorks } from "../util/annict";
 import type { Fixture } from "./types";

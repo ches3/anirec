@@ -1,4 +1,5 @@
 import type { DocumentTypeDecoration } from "@graphql-typed-document-node/core";
+
 import {
   CreateRecordDocument,
   CreateReviewDocument,
@@ -17,10 +18,7 @@ type GraphQLResponse<TResult> = {
   errors?: { message?: string }[];
 };
 
-type GraphQLDocument<TResult, TVariables> = DocumentTypeDecoration<
-  TResult,
-  TVariables
-> & {
+type GraphQLDocument<TResult, TVariables> = DocumentTypeDecoration<TResult, TVariables> & {
   toString(): string;
 };
 
@@ -125,10 +123,7 @@ export async function fetchNode(
   throw new Error(`Unexpected node type: ${node.__typename}`);
 }
 
-export async function searchWorks(
-  titles: string[],
-  token: string,
-): Promise<Work[]> {
+export async function searchWorks(titles: string[], token: string): Promise<Work[]> {
   const data = await requestGraphQL(SearchWorksDocument, { titles }, token);
   const nodes = data.searchWorks?.nodes;
   if (!nodes) {
@@ -174,11 +169,7 @@ export async function viewerActivities(
   after: string,
   token: string,
 ): Promise<Activities> {
-  const data = await requestGraphQL(
-    ViewerActivitiesDocument,
-    { last, after },
-    token,
-  );
+  const data = await requestGraphQL(ViewerActivitiesDocument, { last, after }, token);
   if (!data.viewer?.activities?.edges) {
     throw new Error("Failed to fetch data");
   }
@@ -198,28 +189,24 @@ export async function viewerActivities(
 }
 
 export async function createRecord(id: string, token: string) {
-  const data = await requestGraphQL(CreateRecordDocument, { id }, token).catch(
-    (e) => {
-      const regex = new RegExp(`^Invalid input: "${id}": (.*)`);
-      if (e instanceof Error && e.message.match(regex)) {
-        throw new Error(`Invalid id: ${id}`);
-      }
-      throw e;
-    },
-  );
+  const data = await requestGraphQL(CreateRecordDocument, { id }, token).catch((e) => {
+    const regex = new RegExp(`^Invalid input: "${id}": (.*)`);
+    if (e instanceof Error && e.message.match(regex)) {
+      throw new Error(`Invalid id: ${id}`);
+    }
+    throw e;
+  });
   return data;
 }
 
 export async function createReview(id: string, token: string) {
-  const data = await requestGraphQL(CreateReviewDocument, { id }, token).catch(
-    (e) => {
-      const regex = new RegExp(`^Invalid input: "${id}"`);
-      if (e instanceof Error && e.message.match(regex)) {
-        throw new Error(`Invalid id: ${id}`);
-      }
-      throw e;
-    },
-  );
+  const data = await requestGraphQL(CreateReviewDocument, { id }, token).catch((e) => {
+    const regex = new RegExp(`^Invalid input: "${id}"`);
+    if (e instanceof Error && e.message.match(regex)) {
+      throw new Error(`Invalid id: ${id}`);
+    }
+    throw e;
+  });
   return data;
 }
 

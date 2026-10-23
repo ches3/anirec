@@ -19,9 +19,7 @@ function pollSelectorTextChange(
   if (signal.aborted) return;
 
   const getSelectorTextKey = () =>
-    selectors
-      .map((sel) => document.querySelector(sel)?.textContent?.trim() ?? "")
-      .join("\0");
+    selectors.map((sel) => document.querySelector(sel)?.textContent?.trim() ?? "").join("\0");
 
   let lastKey = getSelectorTextKey();
 

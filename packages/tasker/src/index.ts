@@ -6,11 +6,7 @@ type TitleParams = {
   nlpackage: string | undefined;
 };
 
-const getSearchParams = ({
-  nltext,
-  nltitle,
-  nlpackage,
-}: TitleParams): SearchParam | undefined => {
+const getSearchParams = ({ nltext, nltitle, nlpackage }: TitleParams): SearchParam | undefined => {
   if (nlpackage === "com.nttdocomo.android.danimeapp" && nltitle) {
     return {
       title: nltitle,
@@ -40,10 +36,7 @@ type MainResult = {
   globalVars?: Record<string, string>;
 };
 
-export const main = async ({
-  token,
-  titleParams,
-}: MainParams): Promise<MainResult> => {
+export const main = async ({ token, titleParams }: MainParams): Promise<MainResult> => {
   try {
     if (!titleParams.nltitle) {
       return {
@@ -97,8 +90,7 @@ export const main = async ({
     if (message.match(/^GraphQL Error \(Code: 401\)/)) {
       return {
         localVars: {
-          error:
-            "Annictの認証に失敗しました。\nトークンが正しいか確認してください。",
+          error: "Annictの認証に失敗しました。\nトークンが正しいか確認してください。",
         },
       };
     }

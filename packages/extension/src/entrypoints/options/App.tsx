@@ -8,6 +8,7 @@ import {
   type ServiceEnabled,
   saveRecordSettings,
 } from "@/utils/settings";
+
 import { PreventDuplicateOption } from "./PreventDuplicateOption";
 import { RecordTimingOption } from "./RecordTimingOption";
 import { ServiceToggleOption } from "./ServiceToggleOption";
@@ -44,9 +45,7 @@ function App() {
     applyRecordSettings({ enabledServices: nextEnabled });
   };
 
-  const handlePreventDuplicateChange = (
-    next: RecordSettings["preventDuplicate"],
-  ) => {
+  const handlePreventDuplicateChange = (next: RecordSettings["preventDuplicate"]) => {
     applyRecordSettings({ preventDuplicate: next });
   };
 

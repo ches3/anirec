@@ -1,4 +1,5 @@
 import { toast } from "sonner";
+
 import { Button } from "@/components/ui/button";
 import { generateToken, revokeToken } from "@/utils/auth";
 import { cn } from "@/utils/cn";
@@ -26,10 +27,7 @@ function LoginButton({
       type="button"
       size="sm"
       onClick={handleClick}
-      className={cn(
-        "bg-annict text-annict-foreground hover:bg-annict-hover",
-        className,
-      )}
+      className={cn("bg-annict text-annict-foreground hover:bg-annict-hover", className)}
     >
       ログイン
     </Button>

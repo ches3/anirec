@@ -1,7 +1,9 @@
 import { Check, Info, Loader2 } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
+
 import { useManualRecord } from "../hooks/useManualRecord";
 import { useManualSkip } from "../hooks/useManualSkip";
 import { usePageState } from "../hooks/usePageState";
@@ -30,9 +32,7 @@ export function PageState() {
       <div className="mt-8 flex justify-center flex-1">
         <div className="text-center space-y-3">
           <Info className="w-12 h-12 mx-auto text-muted-foreground" />
-          <p className="text-sm text-muted-foreground">
-            対応している再生ページではありません
-          </p>
+          <p className="text-sm text-muted-foreground">対応している再生ページではありません</p>
           <p className="text-xs text-muted-foreground">
             DMM TV、U-NEXT、ABEMA、dアニメストアの
             <br />

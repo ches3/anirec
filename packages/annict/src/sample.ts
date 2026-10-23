@@ -27,10 +27,7 @@ result = await search(
 );
 
 // { title: "作品タイトル 話数 エピソードタイトル" }の形式で検索
-result = await search(
-  { title: "響け！ユーフォニアム 第一回 ようこそハイスクール" },
-  token,
-);
+result = await search({ title: "響け！ユーフォニアム 第一回 ようこそハイスクール" }, token);
 
 if (result) {
   const id = result.episode?.id || result.id;

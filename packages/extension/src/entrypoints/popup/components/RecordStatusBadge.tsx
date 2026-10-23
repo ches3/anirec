@@ -1,11 +1,5 @@
-import {
-  CheckCircle2,
-  Clock,
-  Loader2,
-  MinusCircle,
-  RefreshCw,
-  XCircle,
-} from "lucide-react";
+import { CheckCircle2, Clock, Loader2, MinusCircle, RefreshCw, XCircle } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import type { RecordStatus, SkipReason } from "@/types";
@@ -60,12 +54,7 @@ export function RecordStatusBadge({
   const Icon = config.icon;
 
   return (
-    <div
-      className={cn(
-        "flex items-center gap-2 p-3 min-h-16 rounded-lg border",
-        className,
-      )}
-    >
+    <div className={cn("flex items-center gap-2 p-3 min-h-16 rounded-lg border", className)}>
       <div
         className={cn(
           "flex items-center justify-center w-8 h-8 rounded-full bg-muted",
@@ -76,27 +65,20 @@ export function RecordStatusBadge({
           className={cn(
             "w-4 h-4 text-muted-foreground",
             config.color,
-            (status.status === "processing" || status.status === "loading") &&
-              "animate-spin",
+            (status.status === "processing" || status.status === "loading") && "animate-spin",
           )}
         />
       </div>
       <div className="flex-1 min-w-0">
-        <p className={cn("text-sm font-medium", config.color)}>
-          {config.label}
-        </p>
+        <p className={cn("text-sm font-medium", config.color)}>{config.label}</p>
         {status.status === "waiting" && (
           <Progress value={status.progress * 100} className="h-2 mt-2" />
         )}
         {status.status === "error" && status.errorMessage && (
-          <p className="text-xs text-destructive mt-0.5">
-            {status.errorMessage}
-          </p>
+          <p className="text-xs text-destructive mt-0.5">{status.errorMessage}</p>
         )}
         {status.status === "skipped" && (
-          <p className="text-xs text-muted-foreground">
-            {getSkipReasonText(status.skipReason)}
-          </p>
+          <p className="text-xs text-muted-foreground">{getSkipReasonText(status.skipReason)}</p>
         )}
       </div>
       {status.status === "error" && onRetry && (

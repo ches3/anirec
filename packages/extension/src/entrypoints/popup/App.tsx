@@ -1,9 +1,11 @@
 import { Settings } from "lucide-react";
 import { useEffect, useState } from "react";
+
 import { Toaster } from "@/components/ui/sonner";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getAutoRecordEnabled, saveAutoRecordEnabled } from "@/utils/settings";
+
 import { PageState } from "./components/PageState";
 import { RecentRecords } from "./components/RecentRecords";
 
@@ -44,10 +46,7 @@ export default function App() {
           </button>
         </div>
       </div>
-      <Tabs
-        defaultValue="page-info"
-        className="flex flex-col flex-1 min-h-0 mt-3"
-      >
+      <Tabs defaultValue="page-info" className="flex flex-col flex-1 min-h-0 mt-3">
         <TabsList className="grid grid-cols-2 w-full shrink-0">
           <TabsTrigger value="page-info">ページ情報</TabsTrigger>
           <TabsTrigger value="recent-records">直近の記録</TabsTrigger>

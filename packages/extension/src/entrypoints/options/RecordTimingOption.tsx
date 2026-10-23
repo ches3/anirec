@@ -95,11 +95,7 @@ export function RecordTimingOption({
             }}
             isSelected={type === "continued"}
           />
-          <RecordTimingOptionItem
-            value="ended"
-            label="再生終了時"
-            isSelected={type === "ended"}
-          />
+          <RecordTimingOptionItem value="ended" label="再生終了時" isSelected={type === "ended"} />
         </RadioGroup>
       </div>
     </div>

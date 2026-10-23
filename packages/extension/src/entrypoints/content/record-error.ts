@@ -31,10 +31,7 @@ export class RecordError extends Error {
   }
 }
 
-export function createRecordError(
-  code: RecordErrorCode,
-  cause: unknown,
-): RecordError {
+export function createRecordError(code: RecordErrorCode, cause: unknown): RecordError {
   return new RecordError(code, { cause });
 }
 

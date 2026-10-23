@@ -1,4 +1,5 @@
 import { deleteActivity } from "@anirec/annict";
+
 import type {
   CancelDeleteMessage,
   DeleteResultMessage,
@@ -46,51 +47,49 @@ export default defineBackground(async () => {
     },
   );
 
-  browser.runtime.onMessage.addListener(
-    (message: ScheduleDeleteMessage | CancelDeleteMessage) => {
-      if (message.type === "SCHEDULE_DELETE") {
-        const { id } = message;
-        const existingTimer = pendingTimers.get(id);
-        if (existingTimer !== undefined) {
-          clearTimeout(existingTimer);
-        }
-        const timer = setTimeout(async () => {
-          pendingTimers.delete(id);
-          try {
-            const token = await getToken();
-            if (!token) {
-              sendDeleteResult({
-                type: "DELETE_RESULT",
-                id,
-                ok: false,
-              });
-              return;
-            }
-
-            await deleteActivity(id, token);
-            sendDeleteResult({
-              type: "DELETE_RESULT",
-              id,
-              ok: true,
-            });
-          } catch {
+  browser.runtime.onMessage.addListener((message: ScheduleDeleteMessage | CancelDeleteMessage) => {
+    if (message.type === "SCHEDULE_DELETE") {
+      const { id } = message;
+      const existingTimer = pendingTimers.get(id);
+      if (existingTimer !== undefined) {
+        clearTimeout(existingTimer);
+      }
+      const timer = setTimeout(async () => {
+        pendingTimers.delete(id);
+        try {
+          const token = await getToken();
+          if (!token) {
             sendDeleteResult({
               type: "DELETE_RESULT",
               id,
               ok: false,
             });
+            return;
           }
-        }, 5000);
-        pendingTimers.set(id, timer);
-      }
 
-      if (message.type === "CANCEL_DELETE") {
-        const timer = pendingTimers.get(message.id);
-        if (timer !== undefined) {
-          clearTimeout(timer);
-          pendingTimers.delete(message.id);
+          await deleteActivity(id, token);
+          sendDeleteResult({
+            type: "DELETE_RESULT",
+            id,
+            ok: true,
+          });
+        } catch {
+          sendDeleteResult({
+            type: "DELETE_RESULT",
+            id,
+            ok: false,
+          });
         }
+      }, 5000);
+      pendingTimers.set(id, timer);
+    }
+
+    if (message.type === "CANCEL_DELETE") {
+      const timer = pendingTimers.get(message.id);
+      if (timer !== undefined) {
+        clearTimeout(timer);
+        pendingTimers.delete(message.id);
       }
-    },
-  );
+    }
+  });
 });

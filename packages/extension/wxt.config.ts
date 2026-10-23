@@ -25,10 +25,7 @@ export default defineConfig({
       permissions.push("https://api.annict.com/graphql");
     }
 
-    const browserSpecificSettings: Record<
-      string,
-      UserManifest["browser_specific_settings"]
-    > = {
+    const browserSpecificSettings: Record<string, UserManifest["browser_specific_settings"]> = {
       firefox: {
         gecko: {
           id: "annict-recorder@ches3.me",

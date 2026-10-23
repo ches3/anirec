@@ -23,11 +23,7 @@ query searchWorks($titles: [String!]) {
 
 query viewerActivities($last: Int, $after: String) {
   viewer {
-    activities(
-      first: $last
-      after: $after
-      orderBy: { field: CREATED_AT, direction: DESC }
-    ) {
+    activities(first: $last, after: $after, orderBy: { field: CREATED_AT, direction: DESC }) {
       edges {
         item {
           ... on Review {

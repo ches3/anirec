@@ -1,6 +1,8 @@
 import { record } from "@anirec/annict";
+
 import type { ManualRecordResponse } from "@/types";
 import { getToken } from "@/utils/settings";
+
 import type { PageStateUpdater } from "../page-state";
 import { createRecordError, getRecordErrorMessage } from "../record-error";
 

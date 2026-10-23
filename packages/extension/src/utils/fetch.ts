@@ -1,14 +1,5 @@
 import type { BaseIssue, BaseSchema } from "valibot";
-import {
-  array,
-  literal,
-  nullable,
-  number,
-  object,
-  parse,
-  string,
-  union,
-} from "valibot";
+import { array, literal, nullable, number, object, parse, string, union } from "valibot";
 
 export const fetchGql = async <T>(
   endpoint: string,
@@ -42,10 +33,7 @@ export const fetchDMMSeason = async (seasonId: string) => {
       video: object({
         titleName: string(),
         seasonName: string(),
-        seasonType: union([
-          literal("SINGLE_EPISODE"),
-          literal("MULTI_EPISODES"),
-        ]),
+        seasonType: union([literal("SINGLE_EPISODE"), literal("MULTI_EPISODES")]),
       }),
     }),
   });
@@ -171,9 +159,7 @@ export const fetchUnext = async (workId: string, episodeId: string) => {
       };
     }
     if (episodes.length === 0) {
-      throw new Error(
-        "U-NEXT のエピソードが作品の一覧に見つかりませんでした。",
-      );
+      throw new Error("U-NEXT のエピソードが作品の一覧に見つかりませんでした。");
     }
   }
 };

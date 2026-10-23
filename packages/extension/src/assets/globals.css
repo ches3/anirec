@@ -14,16 +14,12 @@
 }
 
 @theme {
-  --font-sans:
-    -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP",
-    sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
 }
 
 @font-face {
   font-family: "Noto Sans JP";
-  src:
-    local("Noto Sans JP"), local("Noto Sans CJK JP"),
-    local("Noto Sans CJK JP Regular");
+  src: local("Noto Sans JP"), local("Noto Sans CJK JP"), local("Noto Sans CJK JP Regular");
   ascent-override: 100%;
   descent-override: 25%;
 }

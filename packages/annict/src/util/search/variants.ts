@@ -31,18 +31,8 @@ export function variants(title: string): string[] {
     /(?:\p{sc=Han}|[\p{sc=Hira}ーｰ]|[\p{sc=Kana}ーｰ]){3,}/gu,
     /(?:\p{sc=Han}|[\p{sc=Hira}ーｰ]|[\p{sc=Kana}ーｰ]|\p{Script=Latin}){3,}/gu,
   ].flatMap((pattern) => normalizedTitle.match(pattern) ?? []);
-  const ignoreList = [
-    "season",
-    "シーズン",
-    "シリーズ",
-    "part",
-    "前編",
-    "後編",
-    "物語",
-  ];
-  words.push(
-    ...matchList.filter((word) => !ignoreList.includes(word.toLowerCase())),
-  );
+  const ignoreList = ["season", "シーズン", "シリーズ", "part", "前編", "後編", "物語"];
+  words.push(...matchList.filter((word) => !ignoreList.includes(word.toLowerCase())));
 
   return [...new Set(words)];
 }

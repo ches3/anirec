@@ -35,9 +35,7 @@ export async function generateToken(): Promise<void> {
     redirect_uri: redirectUrl,
   });
   const paramsStr = params.toString();
-  const res = await fetch(
-    `${import.meta.env.WXT_SERVER_URL}/token?${paramsStr}`,
-  );
+  const res = await fetch(`${import.meta.env.WXT_SERVER_URL}/token?${paramsStr}`);
   if (!res.ok) {
     throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
   }
@@ -51,12 +49,9 @@ export async function revokeToken(): Promise<void> {
   if (!token) {
     return;
   }
-  const res = await fetch(
-    `${import.meta.env.WXT_SERVER_URL}/token?token=${token}`,
-    {
-      method: "DELETE",
-    },
-  );
+  const res = await fetch(`${import.meta.env.WXT_SERVER_URL}/token?token=${token}`, {
+    method: "DELETE",
+  });
   if (!res.ok) {
     throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
   }

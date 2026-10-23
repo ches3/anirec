@@ -31,11 +31,7 @@ export async function deleteActivity(id: string, token: string): Promise<void> {
   }
 }
 
-export async function isRecorded(
-  id: string,
-  daysAgo: number,
-  token: string,
-): Promise<boolean> {
+export async function isRecorded(id: string, daysAgo: number, token: string): Promise<boolean> {
   if (daysAgo < 1) {
     throw new Error("daysAgo must be greater than 0");
   }

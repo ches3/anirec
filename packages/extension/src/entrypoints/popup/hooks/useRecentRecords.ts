@@ -1,5 +1,6 @@
 import type { Activities } from "@anirec/annict";
 import { useCallback, useEffect, useState } from "react";
+
 import { getRecentRecords } from "../lib/recent-records";
 
 export type LoadMoreResult = "ok" | "error" | "noop";
@@ -17,8 +18,7 @@ export type RecentRecordsLoadState =
     };
 
 export function useRecentRecords(): RecentRecordsLoadState {
-  const [status, setStatus] =
-    useState<RecentRecordsLoadState["status"]>("loading");
+  const [status, setStatus] = useState<RecentRecordsLoadState["status"]>("loading");
   const [items, setItems] = useState<Activities["items"]>([]);
   const [cursor, setCursor] = useState<Activities["cursor"]>(undefined);
   const [isLoadingMore, setIsLoadingMore] = useState(false);

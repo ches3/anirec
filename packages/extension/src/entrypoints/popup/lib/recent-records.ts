@@ -1,14 +1,11 @@
 import type { Activities } from "@anirec/annict";
 import { viewerActivities } from "@anirec/annict";
+
 import { getToken } from "@/utils/settings";
 
-export type RecentRecordsState =
-  | { status: "error" }
-  | { status: "success"; data: Activities };
+export type RecentRecordsState = { status: "error" } | { status: "success"; data: Activities };
 
-export async function getRecentRecords(
-  cursor: string = "",
-): Promise<RecentRecordsState> {
+export async function getRecentRecords(cursor: string = ""): Promise<RecentRecordsState> {
   try {
     const token = await getToken();
     if (!token) {

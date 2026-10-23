@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import type {
   PageInfo,
   PageInfoUpdateMessage,
@@ -6,6 +7,7 @@ import type {
   RecordStatusUpdateMessage,
 } from "@/types";
 import { identifyVod } from "@/utils/vod";
+
 import { fetchPageState, getCurrentTabInfo } from "../lib/page-state";
 
 const noVodPageInfo: PageInfo = { status: "no_vod" };
@@ -22,8 +24,7 @@ export function usePageState(): PageStateResult {
   const [tabId, setTabId] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [pageInfo, setPageInfo] = useState<PageInfo>({ status: "loading" });
-  const [recordStatus, setRecordStatus] =
-    useState<RecordStatus>(idleRecordStatus);
+  const [recordStatus, setRecordStatus] = useState<RecordStatus>(idleRecordStatus);
 
   // タブ情報取得 + 初期状態取得
   useEffect(() => {
@@ -44,9 +45,7 @@ export function usePageState(): PageStateResult {
         setRecordStatus(pageState.recordStatus);
         setError(null);
       } catch (err) {
-        setError(
-          err instanceof Error ? err.message : "作品情報の取得に失敗しました",
-        );
+        setError(err instanceof Error ? err.message : "作品情報の取得に失敗しました");
         setPageInfo(noVodPageInfo);
         setRecordStatus(idleRecordStatus);
       }

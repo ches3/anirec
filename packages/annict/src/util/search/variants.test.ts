@@ -3,19 +3,13 @@ import { variants } from "./variants";
 test("響け！ユーフォニアム", () => {
   const words = variants("響け！ユーフォニアム");
   expect(words).toEqual(
-    expect.arrayContaining([
-      "響け！ユーフォニアム",
-      "響け!ユーフォニアム",
-      "ユーフォニアム",
-    ]),
+    expect.arrayContaining(["響け！ユーフォニアム", "響け!ユーフォニアム", "ユーフォニアム"]),
   );
 });
 
 test("中二病でも恋がしたい！", () => {
   const words = variants("中二病でも恋がしたい！");
-  expect(words).toEqual(
-    expect.arrayContaining(["中二病でも恋がしたい", "中二病"]),
-  );
+  expect(words).toEqual(expect.arrayContaining(["中二病でも恋がしたい", "中二病"]));
 });
 
 test("CLANNAD番外編", () => {

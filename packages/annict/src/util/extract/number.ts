@@ -1,6 +1,7 @@
 import { toHan } from "@ches3/zenhan";
 import { kanji2number } from "@geolonia/japanese-numeral";
 import { deromanize } from "romans";
+
 import { numMatch } from "../match";
 
 function normal(str: string): number | undefined {

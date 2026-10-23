@@ -35,8 +35,7 @@ export function findEpisodeByNumberText(
   if (!numberText) return undefined;
   return findWithStrictOrWeak(
     episodes,
-    (ep, weak) =>
-      !!ep.numberText && isSameTitle(ep.numberText, numberText, weak),
+    (ep, weak) => !!ep.numberText && isSameTitle(ep.numberText, numberText, weak),
   );
 }
 
@@ -51,9 +50,7 @@ export function findEpisodeByNumber(
   }
 
   const matched = episodes.filter(
-    (episode) =>
-      (episode.number ?? parseNumber(episode.numberText ?? "")) ===
-      targetNumber,
+    (episode) => (episode.number ?? parseNumber(episode.numberText ?? "")) === targetNumber,
   );
   return matched.length === 1 ? matched[0] : undefined;
 }

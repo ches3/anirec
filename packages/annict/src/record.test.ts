@@ -71,9 +71,7 @@ describe("deleteActivity", () => {
 
   test("不正なidはエラーを投げる", async () => {
     const id = "あああああああああああ";
-    await expect(deleteActivity(id, "token")).rejects.toThrow(
-      `Invalid id: ${id}`,
-    );
+    await expect(deleteActivity(id, "token")).rejects.toThrow(`Invalid id: ${id}`);
 
     expect(deleteRecord).not.toHaveBeenCalled();
     expect(deleteReview).not.toHaveBeenCalled();
@@ -164,12 +162,7 @@ describe("isRecorded", () => {
 
     const result = await isRecorded("episode_1", 1, "token");
     expect(result).toBe(true);
-    expect(viewerActivities).toHaveBeenNthCalledWith(
-      2,
-      30,
-      "cursor_1",
-      "token",
-    );
+    expect(viewerActivities).toHaveBeenNthCalledWith(2, 30, "cursor_1", "token");
   });
 
   test("episode id - false", async () => {
@@ -218,8 +211,6 @@ describe("isRecorded", () => {
   });
 
   test("daysAgoが1未満の場合、エラーを投げる", async () => {
-    await expect(isRecorded("", 0, "token")).rejects.toThrow(
-      "daysAgo must be greater than 0",
-    );
+    await expect(isRecorded("", 0, "token")).rejects.toThrow("daysAgo must be greater than 0");
   });
 });

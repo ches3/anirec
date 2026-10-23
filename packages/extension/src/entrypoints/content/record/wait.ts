@@ -29,12 +29,7 @@ export async function wait(
     return waitEnded(videoElem, onProgress, signal);
   }
   if (recordTiming.type === "continued") {
-    return waitContinued(
-      recordTiming.continuedSeconds,
-      videoElem,
-      onProgress,
-      signal,
-    );
+    return waitContinued(recordTiming.continuedSeconds, videoElem, onProgress, signal);
   }
   throw new Error("記録タイミングの値が不正です");
 }
@@ -71,11 +66,7 @@ function waitEnded(
     };
 
     const interval = setInterval(() => {
-      if (
-        onProgress &&
-        Number.isFinite(videoElem.duration) &&
-        videoElem.duration > 0
-      ) {
+      if (onProgress && Number.isFinite(videoElem.duration) && videoElem.duration > 0) {
         onProgress(videoElem.currentTime / videoElem.duration);
       }
     }, 1000);

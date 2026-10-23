@@ -4,14 +4,13 @@ import { Trash2, Undo2 } from "lucide-react";
 import { type ComponentProps, useState } from "react";
 import useInfiniteScroll from "react-infinite-scroll-hook";
 import { toast } from "sonner";
+
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/utils/cn";
+
 import { useDeleteRecord } from "../hooks/useDeleteRecord";
-import {
-  type RecentRecordsLoadState,
-  useRecentRecords,
-} from "../hooks/useRecentRecords";
+import { type RecentRecordsLoadState, useRecentRecords } from "../hooks/useRecentRecords";
 
 function formatRelativeTime(dateString: string): string {
   const now = new Date();
@@ -44,8 +43,7 @@ export function RecentRecords({ ref, ...props }: ComponentProps<"div">) {
 
   const [infiniteRef, { rootRef }] = useInfiniteScroll({
     loading:
-      loadState.status === "loading" ||
-      (loadState.status === "success" && loadState.isLoadingMore),
+      loadState.status === "loading" || (loadState.status === "success" && loadState.isLoadingMore),
     hasNextPage: loadState.status === "success" && loadState.hasNext,
     onLoadMore: handleLoadMore,
     disabled: loadError || loadState.status !== "success",
@@ -58,10 +56,7 @@ export function RecentRecords({ ref, ...props }: ComponentProps<"div">) {
       <RecentRecordsBody loadState={loadState} />
       <div
         ref={infiniteRef}
-        className={cn(
-          "text-center",
-          loadState.status === "success" && loadState.hasNext && "py-2",
-        )}
+        className={cn("text-center", loadState.status === "success" && loadState.hasNext && "py-2")}
       >
         {loadState.status === "success" &&
           loadState.hasNext &&
@@ -75,20 +70,14 @@ export function RecentRecords({ ref, ...props }: ComponentProps<"div">) {
               {loadState.isLoadingMore ? "読み込み中..." : "再試行"}
             </button>
           ) : (
-            <output className="text-xs text-muted-foreground">
-              読み込み中...
-            </output>
+            <output className="text-xs text-muted-foreground">読み込み中...</output>
           ))}
       </div>
     </div>
   );
 }
 
-function RecentRecordsBody({
-  loadState,
-}: {
-  loadState: RecentRecordsLoadState;
-}) {
+function RecentRecordsBody({ loadState }: { loadState: RecentRecordsLoadState }) {
   if (loadState.status === "loading") {
     return <RecentRecordsLoadingBody />;
   }
@@ -139,17 +128,14 @@ function ActivityList({
   items: Activities["items"];
   removeItem: (id: string) => void;
 }) {
-  const { scheduleDelete, cancelDelete, pendingDeletions } =
-    useDeleteRecord(removeItem);
+  const { scheduleDelete, cancelDelete, pendingDeletions } = useDeleteRecord(removeItem);
 
   return (
     <ul className="divide-y divide-border">
       {items.map((item) => {
         const episodeLabel =
           item.__typename === "Record"
-            ? [item.episode.numberText, item.episode.title]
-                .filter(Boolean)
-                .join(" ")
+            ? [item.episode.numberText, item.episode.title].filter(Boolean).join(" ")
             : undefined;
 
         const pending = pendingDeletions.has(item.id);

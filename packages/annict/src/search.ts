@@ -25,16 +25,11 @@ function isMatchingWorkTitle(
   if (!work.seriesList) {
     return false;
   }
-  return work.seriesList.some((series) =>
-    isSameTitle(`${series} ${work.title}`, targetWorkTitle),
-  );
+  return work.seriesList.some((series) => isSameTitle(`${series} ${work.title}`, targetWorkTitle));
 }
 
 // weak モードでタイトルが一致する作品を探す。複数一致する場合は誤マッチを防ぐため undefined を返す
-function findUniqueWeakMatchWork(
-  works: Work[],
-  targetWorkTitle: string,
-): Work | undefined {
+function findUniqueWeakMatchWork(works: Work[], targetWorkTitle: string): Work | undefined {
   const matched = works.filter(
     (work) =>
       isSameTitle(work.title, targetWorkTitle, true) ||
@@ -45,10 +40,7 @@ function findUniqueWeakMatchWork(
   return matched.length === 1 ? matched[0] : undefined;
 }
 
-export async function search(
-  params: SearchParam,
-  token: string,
-): Promise<SearchResult> {
+export async function search(params: SearchParam, token: string): Promise<SearchResult> {
   const target = applyMapping(extract(params));
   const words = variants(target.workTitle);
   const works = await searchWorks(words, token);
@@ -102,15 +94,8 @@ export async function search(
       const episode =
         findEpisodeByTitle(weakMatchWork.episodes, target.episode) ??
         findEpisodeByNumberText(weakMatchWork.episodes, target.episode) ??
-        findEpisodeByTitleAsNumberText(
-          weakMatchWork.episodes,
-          target.episode,
-        ) ??
-        findEpisodeByTitleWithWorkTitle(
-          weakMatchWork,
-          weakMatchWork.episodes,
-          target.episode,
-        );
+        findEpisodeByTitleAsNumberText(weakMatchWork.episodes, target.episode) ??
+        findEpisodeByTitleWithWorkTitle(weakMatchWork, weakMatchWork.episodes, target.episode);
       if (episode) {
         return { id: weakMatchWork.id, title: weakMatchWork.title, episode };
       }
@@ -124,10 +109,7 @@ export async function search(
       if (work.noEpisodes || !work.episodes) {
         continue;
       }
-      const episode = findEpisodeByTitleAndNumberText(
-        work.episodes,
-        target.episode,
-      );
+      const episode = findEpisodeByTitleAndNumberText(work.episodes, target.episode);
       if (episode) {
         return { id: work.id, title: work.title, episode };
       }
@@ -192,8 +174,7 @@ export async function search(
         };
       }
       const weakWorks = works.filter(
-        (work) =>
-          work.noEpisodes && isSameTitle(work.title, episodeTitle, true),
+        (work) => work.noEpisodes && isSameTitle(work.title, episodeTitle, true),
       );
       const [weakWork] = weakWorks;
       if (weakWorks.length === 1 && weakWork !== undefined) {
@@ -207,9 +188,7 @@ export async function search(
 
     // エピソードが見つからなかった場合、フルタイトルで検索
     const fullTitle = buildFullTitle(target);
-    const strictWork = works.find(
-      (work) => work.noEpisodes && isSameTitle(work.title, fullTitle),
-    );
+    const strictWork = works.find((work) => work.noEpisodes && isSameTitle(work.title, fullTitle));
     if (strictWork) {
       return { id: strictWork.id, title: strictWork.title, episode: undefined };
     }
@@ -247,9 +226,7 @@ export async function search(
   for (const work of works) {
     if (!work.episodes) continue;
     for (const episode of work.episodes) {
-      const fullTitle = [work.title, episode.numberText, episode.title].join(
-        "",
-      );
+      const fullTitle = [work.title, episode.numberText, episode.title].join("");
       if (isSameTitle(fullTitle, targetFullTitle)) {
         return { id: work.id, title: work.title, episode };
       }
@@ -261,9 +238,7 @@ export async function search(
   for (const work of works) {
     if (!work.episodes) continue;
     for (const episode of work.episodes) {
-      const fullTitle = [work.title, episode.numberText, episode.title].join(
-        "",
-      );
+      const fullTitle = [work.title, episode.numberText, episode.title].join("");
       if (isSameTitle(fullTitle, targetFullTitle, true)) {
         weakMatches.push({ work, episode });
       }

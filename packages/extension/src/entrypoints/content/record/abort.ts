@@ -5,9 +5,7 @@ export type AbortBinding = {
   dispose: () => void;
 };
 
-export async function waitUntilAutoRecordEnabled(
-  navigationSignal: AbortSignal,
-): Promise<boolean> {
+export async function waitUntilAutoRecordEnabled(navigationSignal: AbortSignal): Promise<boolean> {
   if (navigationSignal.aborted) {
     return false;
   }
@@ -47,9 +45,7 @@ export async function waitUntilAutoRecordEnabled(
   });
 }
 
-export function createAbortBinding(
-  navigationSignal: AbortSignal,
-): AbortBinding | null {
+export function createAbortBinding(navigationSignal: AbortSignal): AbortBinding | null {
   if (navigationSignal.aborted) {
     return null;
   }

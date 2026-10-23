@@ -1,5 +1,6 @@
 import { getToken } from "@/utils/settings";
 import { identifyVod } from "@/utils/vod";
+
 import {
   bumpStateVer,
   createStateUpdater,
@@ -7,11 +8,11 @@ import {
   getPageStateResponse,
   type PageStateUpdater,
 } from "./page-state";
+import { getRecordErrorMessage } from "./record-error";
 import { createAbortBinding, waitUntilAutoRecordEnabled } from "./record/abort";
 import { handleManualRecord } from "./record/manual-record";
 import { handleManualSkip } from "./record/manual-skip";
 import { runRecordFlow } from "./record/run-record";
-import { getRecordErrorMessage } from "./record-error";
 import { resolveVod } from "./resolve-vod";
 import { resolveTarget } from "./target/resolve-target";
 import { watchNavigation } from "./watch-navigation";
@@ -121,10 +122,7 @@ async function script(state: PageStateUpdater, navigationSignal: AbortSignal) {
       }
 
       state.setRecordStatus(recordResult);
-      if (
-        recordResult.status === "skipped" &&
-        recordResult.skipReason === "disabled"
-      ) {
+      if (recordResult.status === "skipped" && recordResult.skipReason === "disabled") {
         const enabled = await waitUntilAutoRecordEnabled(navigationSignal);
         if (!enabled) {
           return;

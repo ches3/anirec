@@ -3,10 +3,6 @@
   "root": false,
   "extends": "//",
   "files": {
-    "includes": [
-      "**",
-      "!src/fixture-test/fixtures/*.json",
-      "!src/gql/generated.ts"
-    ]
+    "includes": ["**", "!src/fixture-test/fixtures/*.json", "!src/gql/generated.ts"]
   }
 }

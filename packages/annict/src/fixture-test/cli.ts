@@ -1,8 +1,10 @@
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+
 import * as p from "@clack/prompts";
 import dotenv from "dotenv";
+
 import type { SearchParam } from "../types";
 import { fetchNode, searchWorks } from "../util/annict";
 import { extract } from "../util/extract/extract";
@@ -31,9 +33,7 @@ function parseAnnictUrl(url: string): AnnictTarget {
     throw new Error(`Invalid host: ${parsed.host}, expected annict.com`);
   }
 
-  const episodeMatch = parsed.pathname.match(
-    /^\/works\/(\d+)\/episodes\/(\d+)$/,
-  );
+  const episodeMatch = parsed.pathname.match(/^\/works\/(\d+)\/episodes\/(\d+)$/);
   if (episodeMatch) {
     return {
       type: "Episode",
@@ -67,10 +67,7 @@ function trimSearchParam(params: SearchParam): SearchParam {
   };
 }
 
-function generateFilename(
-  parsedUrl: AnnictTarget,
-  params: SearchParam,
-): string {
+function generateFilename(parsedUrl: AnnictTarget, params: SearchParam): string {
   const values: string[] = [];
   if ("title" in params) {
     values.push(params.title);
@@ -91,10 +88,7 @@ function generateFilename(
   return `${parsedUrl.workId}__${slug}.json`;
 }
 
-async function fetchExpected(
-  parsedUrl: AnnictTarget,
-  token: string,
-): Promise<Expected> {
+async function fetchExpected(parsedUrl: AnnictTarget, token: string): Promise<Expected> {
   const globalId =
     parsedUrl.type === "Episode"
       ? toGlobalId("Episode", parsedUrl.episodeId)
@@ -118,9 +112,7 @@ function validateExpected(
   }
 
   if (expected.episode) {
-    const matchedEpisode = matchedWork.episodes?.find(
-      (ep) => ep.id === expected.episode?.id,
-    );
+    const matchedEpisode = matchedWork.episodes?.find((ep) => ep.id === expected.episode?.id);
     if (!matchedEpisode) {
       throw new Error("Expected episode not found in candidateWorks");
     }
@@ -222,11 +214,7 @@ async function runAddFlow(token: string) {
 }
 
 /** フィクスチャ追加処理 */
-async function addFixture(
-  params: SearchParam,
-  annictUrl: string,
-  token: string,
-) {
+async function addFixture(params: SearchParam, annictUrl: string, token: string) {
   const trimmedParams = trimSearchParam(params);
   const trimmedUrl = annictUrl.trim();
   const annictTarget = parseAnnictUrl(trimmedUrl);
@@ -287,12 +275,9 @@ async function runRegenerateFlow(token: string) {
     try {
       const content = readFileSync(filepath, "utf-8");
       const fixture = JSON.parse(content) as Fixture;
-      const data = await buildFixtureData(
-        fixture.input.params,
-        fixture.input.annictUrl,
-        token,
-        { rateLimit: true },
-      );
+      const data = await buildFixtureData(fixture.input.params, fixture.input.annictUrl, token, {
+        rateLimit: true,
+      });
 
       const updated: Fixture = {
         ...fixture,
